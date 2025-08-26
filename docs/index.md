@@ -1,14 +1,7 @@
 # Datos generales
 
-Bienvenido 👋  
-Esta es una **plantilla** basada en [MkDocs](https://www.mkdocs.org/) + [Material for MkDocs](https://squidfunk.github.io/mkdocs-material/) para cursos y proyectos.
+Bienvenido a mi página. Soy David López Ramírez, estudiante de ingeniería mecatrónica.
 
----
-
-## Empezar rápido (3 pasos)
-
-1. **Edita el nombre del sitio** en `mkdocs.yml`:
-   ```yaml
-   site_name: Documentación del Curso
-   theme:
-     name: material
+## Datos de contacto
+- **Correo:** _193167@iberopuebla.mx_
+- **Número de teléfono:** _221 914 4377_

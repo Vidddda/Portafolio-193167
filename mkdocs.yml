@@ -1,4 +1,12 @@
-site_name: Plantilla para Documentación
+site_name: Portafolio de Proyectos - David López Ramírez
+site_description: Documentación de proyectos realizados por David López Ramírez.
+nav:
+  - Página principal: index.md
+  - Formación académica:
+      - Sistemas Embebidos I:
+          #- Proyectos:
+          - Tareas:
+              - Tarea I - Comparación de microcontroladores: tarea_1.md
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -23,18 +31,15 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
       clickable_checkbox: true
-# Use the ReadTheDocs theme
 theme:
   name: material
   highlightjs: true 
   palette:
-      - scheme: default
-        primary: red
-
+    - scheme: default
+      primary: red
   features:
     - content.code.copy
     - content.tooltips
 extra_css:
   - https://use.fontawesome.com/releases/v6.5.2/css/all.css
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css
-
