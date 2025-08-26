@@ -16,11 +16,11 @@
 
 ## 3) Desarrollo
 
-| Microcontrolador     | STM32F411 | Raspberry Pi Pico 2 | Teensy 4.0 | STM32G4 |
-|---------------------:|:---------:|:-------------------:|:----------:|---------|
-| Periferícos          |           |                     |            |         |
-| Memoria              |           |                     |            |         |
-| Ecosistema           |           |                     |            |         |
-| Costos               |           |                     |            |         |
-| Arquitectura         |           |                     |            |         |
-| Velocidad de trabajo |           |                     |            |         |
+| Microcontrolador     | STM32F411               | Raspberry Pi Pico 2  | Teensy 4.0        | ATTINY85-20PU     |
+|---------------------:|:-----------------------:|:--------------------:|:---------------- :|-------------------|
+| Periferícos          |                         |                      |                   |                   |
+| Memoria              |Flash: 512 KB/RAM: 128 KB|RAM: 4 MB/SRAM: 520 KB|Flash: 1984 KB/RAM: 1024 KB/EEPROM: 1 KB|Flash: 8 KB/SRAM: 512 KB/EEPROM: 512KB               |
+| Ecosistema           |                         |                      |                   |               |
+| Costos               |$98MXN-$104MXN|$118.10MXN-$302.29MXN|$614.57MXN-$1165MXN|$87MXN-$110MXN|
+| Arquitectura         |ARM Cortex-M4(RISC)|Dual Cortex-M33/Hazard3|ARM Cortex-M7|RISC|
+| Velocidad de trabajo |100 MHz|150 MHz            |600 MHz|20 MHz|
