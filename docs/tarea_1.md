@@ -25,7 +25,7 @@
 | Arquitectura         |ARM Cortex-M4(RISC)|Dual Cortex-M33/Hazard3|ARM Cortex-M7|RISC|
 | Velocidad de trabajo |100 MHz|150 MHz            |600 MHz|20 MHz|
 
-### Análisis del rendimiento para micromouse
+### Raking de microcontroladores para micromouse
 
 #### 1) Raspberry Pi Pico 2
 - **Ventajas:** 
