@@ -8,6 +8,7 @@ nav:
           - Tareas:
               - Tarea I - Comparación de microcontroladores: tarea_1.md
               - Tarea II - Outputs básicos: tarea_2.md
+              - Tarea III - Inputs: tarea_3.md
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
