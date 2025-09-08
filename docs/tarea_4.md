@@ -239,6 +239,10 @@ void MOVER_PELOTA() {
 
 ### Esquemático
 
+<div style="display:flex; justify-content:center;">
+    <img src="../recursos/imgs/Tarea_4/Pong_esq.png" alt="Esquemático para Selector Ciclíco" width="420">
+</div>
+
 #### Cálculos de corriente
 
 #### Caso 1: LED consume 1.8V
