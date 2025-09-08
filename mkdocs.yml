@@ -9,7 +9,12 @@ nav:
               - Tarea I - Comparación de microcontroladores: tarea_1.md
               - Tarea II - Outputs básicos: tarea_2.md
               - Tarea III - Inputs: tarea_3.md
+              - Tarea IV - Mini-Pong: tarea_4.md
 markdown_extensions:
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.superfences
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -45,3 +50,8 @@ theme:
 extra_css:
   - https://use.fontawesome.com/releases/v6.5.2/css/all.css
   - https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js
+extra_javascript:
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js
+  - https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js

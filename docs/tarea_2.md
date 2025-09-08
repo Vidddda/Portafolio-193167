@@ -16,7 +16,7 @@
 - **Específicos:**
   - _Entender las funciones de básicas de programación en C para establecer sálidas_
 
-## 4) Requisitos
+## 3) Requisitos
 
 **Software**
 - _Visual Studio Code (Lenguaje de programación C)_
@@ -29,7 +29,7 @@
 - _Electrónica básica_
 ---
 
-## 5) Desarrollo
+## 4) Desarrollo
 
 ### 1)  Contador binario 4 bits
 
@@ -129,13 +129,16 @@ int main() {
 
 #### Esquemático de conexión
 
-<img src="../recursos/imgs/Tarea_2/Barrido_esq.png" alt="Esquemático para Barrido de 5 LEDs" width="420">
-
+<div style="display:flex; justify-content:center;">
+    <img src="../recursos/imgs/Tarea_2/Barrido_esq.png" alt="Esquemático para Barrido de 5 LEDs" width="420">
+</div>
 #### Vídeo
 
-<video style="width:30%" muted="" controls="" alt="type:video">
-   <source src="../recursos/archivos/Tarea_2/Barrido_LEDs.mp4" type="video/mp4">
-   </video>
+<div style="display:flex; justify-content:center;">
+  <video style="width:100%; max-width:300px;" muted controls>
+    <source src="../recursos/archivos/Tarea_2/Barrido_LEDs.mp4" type="video/mp4">
+  </video>
+</div>
 
 ### 3) Secuencia en código Gray
 
@@ -178,10 +181,14 @@ int main() {
 
 #### Esquemático de conexión
 
-<img src="../recursos/imgs/Tarea_2/Secuencia_de_Gray_esq.png" alt="Esquemático para Secuencia de Gray" width="420">
+<div style="display:flex; justify-content:center;">
+    <img src="../recursos/imgs/Tarea_2/Secuencia_de_Gray_esq.png" alt="Esquemático para Secuencia de Gray" width="420">
+</div>
 
 #### Vídeo
 
-<video style="width:30%" muted="" controls="" alt="type:video">
-   <source src="../recursos/archivos/Tarea_2/Secuencia_De_Gray.mp4" type="video/mp4">
-   </video>
+<div style="display:flex; justify-content:center;">
+  <video style="width:100%; max-width:300px;" muted controls>
+    <source src="../recursos/archivos/Tarea_2/Secuencia_de_Gray.mp4" type="video/mp4">
+  </video>
+</div>

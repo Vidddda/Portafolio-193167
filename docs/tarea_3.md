@@ -1,4 +1,4 @@
-# Outpus básicos
+# Inputs
 
 ## 1) Resumen
 
@@ -16,7 +16,7 @@
 - **Específicos:**
   - _Entender las funciones de básicas de programación en C para establecer entradas._
 
-## 4) Requisitos
+## 3) Requisitos
 
 **Software**
 - _Visual Studio Code (Lenguaje de programación C)_
@@ -29,11 +29,13 @@
 - _Electrónica básica_
 ---
 
-## 5) Desarrollo
+## 4) Desarrollo
 
 ### 1)  Compuertas básicas AND / OR / XOR con 2 botones
 
 #### Función
+
+Con dos botones (pull-up; presionado=0) para simular cada compuerta, se encienden tres LEDs que muestran en paralelo los resultados de AND, OR y XOR. 
 
 #### Código
 ```bash
@@ -128,17 +130,29 @@ int main(void) {
 ```
 #### Esquemático de conexión
 
-<img src="../recursos/imgs/Tarea_2/Contador_binario_esq.png" alt="Esquemático para contador de 4 bits" width="420">
+<div style="display:flex; justify-content:center;">
+    <img src="../recursos/imgs/Tarea_3/Compuertas_esq.png" alt="Esquemático para Selector Ciclíco" width="420">
+</div>
 
 #### Vídeo
 
-<video style="width:30%" muted="" controls="" alt="type:video">
-   <source src="../recursos/archivos/Tarea_2/Contador_binario.mp4" type="video/mp4">
-   </video>
+<div style="display:flex; justify-content:center;">
+  <video style="width:70%; max-width:200px;" muted controls>
+    <source src="../recursos/archivos/Tarea_3/AND.mp4" type="video/mp4">
+  </video>
+  <video style="width:70%; max-width:200px;" muted controls>
+    <source src="../recursos/archivos/Tarea_3/OR.mp4" type="video/mp4">
+  </video>
+  <video style="width:70%; max-width:200px;" muted controls>
+    <source src="../recursos/archivos/Tarea_3/XOR.mp4" type="video/mp4">
+  </video>
+</div>
 
 ### 2) Selector cíclico de 4 LEDs con avance/retroceso
 
 #### Función
+
+Con ayuda de dos botones (NEXT y PREVIOUS) se puede seleccionar la posición deseada del LED. Este inicia apagado y comienza en el primer LED (si se presiona NEXT) o en el último (si se presiona PREVIOUS). En caso de superar la posición del último LED, se reinicia hacia la primera posición o la última (dependiendo si se presionó NEXT o PREVIOUS). Asimismo, se implementó un antirrebote para evitar que el cíclo continue cuando se mantiene pulsado un botón.
 
 ```bash
 
@@ -210,10 +224,14 @@ int main(void) {
 
 #### Esquemático de conexión
 
-<img src="../recursos/imgs/Tarea_2/Barrido_esq.png" alt="Esquemático para Barrido de 5 LEDs" width="420">
+<div style="display:flex; justify-content:center;">
+    <img src="../recursos/imgs/Tarea_3/Selector_ciclico_esq.png" alt="Esquemático para Selector Ciclíco" width="420">
+</div>
 
 #### Vídeo
 
-<video style="width:30%" muted="" controls="" alt="type:video">
-   <source src="../recursos/archivos/Tarea_2/Barrido_LEDs.mp4" type="video/mp4">
-   </video>
+<div style="display:flex; justify-content:center;">
+  <video style="width:100%; max-width:300px;" muted controls>
+    <source src="../recursos/archivos/Tarea_3/Selector_ciclico.mp4" type="video/mp4">
+  </video>
+</div>
