@@ -305,7 +305,7 @@ Debido a que se cuentan con 3 botones, la resistencia miníma para cada uno de e
 
 $R_{MIN} = \frac{3.3V}{0.78\,mA} = 4.23\,k\Omega$
 
-Sin embargo, esto forzaría al RP2350, por lo tanto, se escogió una resistencia de $10\,k\Omega$.
+Sin embargo, esto forzaría al RP2350, por lo tanto, se escogió una resistencia de $10\,k\Omega$. Donde la corriente sería $I = 0.33\,mA$.
 
 
 ### Video
