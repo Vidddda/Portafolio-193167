@@ -10,6 +10,8 @@ nav:
               - Tarea II - Outputs básicos: tarea_2.md
               - Tarea III - Inputs: tarea_3.md
               - Tarea IV - Mini-Pong: tarea_4.md
+              - Tarea V - Comparación de alarmas: tarea_5.md
+              - Tarea VI - Alarmas aplicadas: tarea_6.md
 markdown_extensions:
   - admonition
   - pymdownx.arithmatex:
