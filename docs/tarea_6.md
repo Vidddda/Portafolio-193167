@@ -36,95 +36,62 @@
 
 #### Función
 
-Con dos botones (pull-up; presionado=0) para simular cada compuerta, se encienden tres LEDs que muestran en paralelo los resultados de AND, OR y XOR. 
+Se controlan cuatro LEDs conectados a distintos pines, cada uno con una frecuencia propia. Al iniciar, todos los LEDs se configuran como salidas y permanecen apagados. Mediante intervalos predefinidos en microsegundos, cada LED cambia de estado de manera independiente cuando llega su turno, logrando parpadeos simultáneos pero a diferentes velocidades.
 
 #### Código
 ```bash
 
 #include "pico/stdlib.h"
+#include "pico/time.h"
+#include "hardware/gpio.h"
 
-// Pines AND
-#define BTN_A 0      
-#define BTN_B 1    
-#define LED0   6
-// Pines OR
-#define BTN_C 2     
-#define BTN_D 3    
-#define LED1   7
-// Pines XOR
-#define BTN_E 4      
-#define BTN_F 5    
-#define LED2   8
+//
+#define LED0_GPIO 1   
+#define LED1_GPIO 0
+#define LED2_GPIO 2
+#define LED3_GPIO 3
 
-bool AND() {
-    bool A_PRESS = !gpio_get(BTN_A);
-    bool B_PRESS = !gpio_get(BTN_B);
-    return (A_PRESS && B_PRESS);
-}
+// Arreglo con los pines de los LEDs 
+static const uint8_t pines_led[4] = { LED0_GPIO, LED1_GPIO, LED2_GPIO, LED3_GPIO };
 
-bool OR() {
-    bool C_PRESS = !gpio_get(BTN_C);
-    bool D_PRESS = !gpio_get(BTN_D);
-    return (C_PRESS || D_PRESS);
-}
 
-bool XOR() {
-    bool E_PRESS = !gpio_get(BTN_E);
-    bool F_PRESS = !gpio_get(BTN_F);
-    return (E_PRESS ^ F_PRESS);
-}
+static const uint32_t intervalo_us[4] = {
+    300000u, // LED0_GPIO (GPIO 1): 300 ms
+    200000u, // LED1_GPIO (GPIO 0): 200 ms
+    120000u, // LED2_GPIO (GPIO 2): 120 ms
+     80000u  // LED3_GPIO (GPIO 3): 80 ms
+};
+
+static uint32_t proximo_toggle_us[4];
 
 int main(void) {
-    // Inicialización pines AND
-    gpio_init(LED0);
-    gpio_set_dir(LED0, GPIO_OUT);
+    // Inicializo cada LED como salida y lo dejo apagado
+    for (int i = 0; i < 4; ++i) {
+        gpio_init(pines_led[i]);
+        gpio_set_dir(pines_led[i], GPIO_OUT);
+        gpio_put(pines_led[i], 0);
+    }
 
-    gpio_init(BTN_A);
-    gpio_set_dir(BTN_A, GPIO_IN);
-    gpio_pull_up(BTN_A);
-
-    gpio_init(BTN_B);
-    gpio_set_dir(BTN_B, GPIO_IN);
-    gpio_pull_up(BTN_B);
-
-    // Inicialización pines OR
-    gpio_init(LED1);
-    gpio_set_dir(LED1, GPIO_OUT);
-
-    gpio_init(BTN_C);
-    gpio_set_dir(BTN_C, GPIO_IN);
-    gpio_pull_up(BTN_C);
-
-    gpio_init(BTN_D);
-    gpio_set_dir(BTN_D, GPIO_IN);
-    gpio_pull_up(BTN_D);
-
-    // Inicialización pines XOR
-    gpio_init(LED2);
-    gpio_set_dir(LED2, GPIO_OUT);
-
-    gpio_init(BTN_E);
-    gpio_set_dir(BTN_E, GPIO_IN);
-    gpio_pull_up(BTN_E);
-
-    gpio_init(BTN_F);
-    gpio_set_dir(BTN_F, GPIO_IN);
-    gpio_pull_up(BTN_F);
+    // Punto de partida para todos los "deadlines"
+    uint32_t ahora_us = time_us_32();
+    for (int i = 0; i < 4; ++i) {
+        proximo_toggle_us[i] = ahora_us + intervalo_us[i];
+    }
 
     while (true) {
-        // Función AND
-        if (AND())  gpio_put(LED0, 1);
-        else        gpio_put(LED0, 0);
+        ahora_us = time_us_32();
 
-        // Función OR
-        if (OR())   gpio_put(LED1, 1);
-        else        gpio_put(LED1, 0);
+        // Recorro los 4 LEDs y verifico si "ya es hora" de togglear
+        for (int i = 0; i < 4; ++i) {
+            if ((int32_t)(ahora_us - proximo_toggle_us[i]) >= 0) {
+                // Toggle del LED i (XOR con su bit)
+                gpio_xor_mask(1u << pines_led[i]);
 
-        // Función XOR
-        if (XOR())  gpio_put(LED2, 1);
-        else        gpio_put(LED2, 0);
-
-        sleep_ms(10);
+                // Rearme acumulativo del próximo instante
+                proximo_toggle_us[i] += intervalo_us[i];
+            }
+        }
+        tight_loop_contents();
     }
 }
 
