@@ -13,6 +13,7 @@ nav:
               - Tarea V - Comparación de alarmas: tarea_5.md
               - Tarea VI - Alarmas aplicadas: tarea_6.md
               - Tarea VII - Modulación por ancho de pulso - PWM: tarea_7.md
+              - Tarea VIII - Comunicación UART: tarea_8.md
 markdown_extensions:
   - admonition
   - pymdownx.arithmatex:
