@@ -118,7 +118,7 @@ int main() {
 ```
 #### Esquemático de conexión
 
-<img src="../recursos/imgs/Tarea_7/Motor_DC.png" alt="Esquemático para contador de 4 bits" width="420">
+<img src="../recursos/imgs/Tarea_7/Motor_DC.jpg" alt="Esquemático para contador de 4 bits" width="420">
 
 #### Vídeo
 
@@ -210,7 +210,7 @@ int main() {
 #### Esquemático de conexión
 
 <div style="display:flex; justify-content:center;">
-    <img src="../recursos/imgs/Tarea_2/Barrido_esq.png" alt="Esquemático para Barrido de 5 LEDs" width="420">
+    <img src="../recursos/imgs/Tarea_7/Buzzer.jpg" alt="Esquemático para Barrido de 5 LEDs" width="420">
 </div>
 
 #### Vídeo
@@ -282,7 +282,7 @@ int main() {
 #### Esquemático de conexión
 
 <div style="display:flex; justify-content:center;">
-    <img src="../recursos/imgs/Tarea_2/Secuencia_de_Gray_esq.png" alt="Esquemático para Secuencia de Gray" width="420">
+    <img src="../recursos/imgs/Tarea_7/Seno.jpg" alt="Esquemático para Secuencia de Gray" width="420">
 </div>
 
 #### Señal PWM sin filtro RC
