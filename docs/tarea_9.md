@@ -1,12 +1,12 @@
-# Modulación por ancho de pulso - PWM
+# Convertidor analógico a digital
 
 ## 1) Resumen
 
-- **Nombre del proyecto:** _Control ADC_  
+- **Nombre del proyecto:** _Convertidor analógico a digital_  
 - **Equipo:** _Carlos Ernesto Camacho Gonzalez, David López Ramírez, Rodrigo Miranda Flores y Luis Javier Vega Tello_  
 - **Curso:** _Sistemas Embebidos I_  
 - **Fecha:** _06/11/2025_  
-- **Descripción breve:** _Control ADC_
+- **Descripción breve:** _Se realizaron practicas de conversión analógico a digital_
 
 ---
 
