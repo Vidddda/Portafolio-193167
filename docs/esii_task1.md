@@ -41,7 +41,7 @@
 | LED | *Low* | It is only visual feedback and not functionally critical. |
 | Error messages | *Low* | Logging is useful but not urgent compared to control or safety tasks. |
 
-### 2.4) Exercise 5 — Suggested Task Configuration
+### 2.4) Exercise 4 — Design Judgment
 | *Component* | *Type* | *Period / Trigger* | *Priority* | *Description* |
 |--------------|----------|---------------------|--------------|-----------------|
 | Emergency Button | Interrupt (ISR) | Button press | — | Triggers ISR, no heavy processing. |
