@@ -15,6 +15,9 @@ nav:
               - Tarea VII - Modulación por ancho de pulso - PWM: tarea_7.md
               - Tarea VIII - Comunicación UART: tarea_8.md
               - Tarea IX - Convertidor analógico a digital: tarea_9.md
+      - Embedded Systems II:
+          - Tasks:
+              - Task I - FreeRTOS Tasks and Priorities: esii_task1.md
 markdown_extensions:
   - admonition
   - pymdownx.arithmatex:
