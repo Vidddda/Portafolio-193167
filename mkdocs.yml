@@ -18,6 +18,7 @@ nav:
       - Embedded Systems II:
           - Tasks:
               - Task I - FreeRTOS Tasks and Priorities: esii_task1.md
+              - Task II - Labs: esii_task2.md
 markdown_extensions:
   - admonition
   - pymdownx.arithmatex:
