@@ -20,6 +20,7 @@ nav:
               - Task I - FreeRTOS Tasks and Priorities: esii_task1.md
               - Task II - Labs: esii_task2.md
               - Task III - Tasks: esii_task3.md
+              - Task IV - HTTP_WiFi_Lab: esii_task4.md
 markdown_extensions:
   - admonition
   - pymdownx.arithmatex:
