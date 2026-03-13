@@ -21,6 +21,8 @@ nav:
               - Task II - Labs: esii_task2.md
               - Task III - Tasks: esii_task3.md
               - Task IV - HTTP_WiFi_Lab: esii_task4.md
+              - Task V - MQTT LAB pt1: esii_task5.md
+              - Task VI - MQTT LAB pt2: esii_task6.md
 markdown_extensions:
   - admonition
   - pymdownx.arithmatex:
