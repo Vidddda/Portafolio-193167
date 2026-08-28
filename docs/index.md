@@ -4,4 +4,4 @@ Bienvenido a mi página. Soy David López Ramírez, estudiante de ingeniería me
 
 ## Datos de contacto
 - **Correo:** _193167@iberopuebla.mx_
-- **Número de teléfono:** _221 914 4377_
+- **Número de teléfono:** _971 190 0150_

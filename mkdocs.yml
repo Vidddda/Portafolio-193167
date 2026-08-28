@@ -23,6 +23,8 @@ nav:
               - Task IV - HTTP_WiFi_Lab: esii_task4.md
               - Task V - MQTT LAB pt1: esii_task5.md
               - Task VI - MQTT LAB pt2: esii_task6.md
+      - Proyecto de ingeniería IV:
+              - Semana 1 - Firma de Syllabus y método SCAMPER: pi4_s1.md 
 markdown_extensions:
   - admonition
   - pymdownx.arithmatex:
