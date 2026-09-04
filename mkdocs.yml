@@ -25,6 +25,7 @@ nav:
               - Task VI - MQTT LAB pt2: esii_task6.md
       - Proyecto de ingeniería IV:
               - Semana 1 - Firma de Syllabus y método SCAMPER: pi4_s1.md 
+              - Semana 2 - Búsqueda de Oportunidades: pi4_s2.md 
 markdown_extensions:
   - admonition
   - pymdownx.arithmatex:
