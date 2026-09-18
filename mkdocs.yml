@@ -26,6 +26,8 @@ nav:
       - Proyecto de ingeniería IV:
               - Semana 1 - Firma de Syllabus y método SCAMPER: pi4_s1.md 
               - Semana 2 - Búsqueda de Oportunidades: pi4_s2.md 
+              - Semana 3 - Propiedad intelectual, marca y vigilancia tecnológica: pi4_s3.md 
+              - Semana 4 - Mercado, valor y propuesta de valor: pi4_s4.md 
 markdown_extensions:
   - admonition
   - pymdownx.arithmatex:
