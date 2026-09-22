@@ -389,8 +389,8 @@ El proceso de esta semana requiere combinar búsquedas con datos reales (Perplex
 
 ## 5) Propuesta de valor — versión revisada (v2)
 
-!!! warning "Por qué existe esta sección"
-    La primera versión de la propuesta de valor recibió tres observaciones en retroalimentación: **(1)** debe sostenerse sola, **(2)** debe entenderse sin referencias externas y **(3)** no debe depender de Lichess. Esta sección documenta el diagnóstico y la reescritura; la versión 1 se conserva arriba para dejar visible el cambio.
+!!! note "Criterios de esta segunda iteración"
+    Una propuesta de valor tiene que **sostenerse sola**: entenderse en una lectura, sin contexto previo y sin apoyarse en marcas de terceros para explicarse. Al releer la v1 contra ese estándar aparecieron tres fallas, y de ahí sale esta reescritura. La v1 se conserva arriba para dejar visible la evolución del razonamiento.
 
 ### 5.1 Diagnóstico de la v1
 
@@ -450,6 +450,3 @@ La observación no era solo de redacción: el diseño original tenía a la API d
 
 - **Los números de mercado se ven más sólidos de lo que son.** El TAM/SAM/SOM salió de encadenar supuestos de conversión sobre datos de INEGI y The CIU. La cifra final (82,440 personas) es defendible solo si el supuesto va escrito al lado; sin él, es una cifra prestada. Aprendí a no presentar un número sin su cadena de derivación.
 - **El competidor más peligroso no era un producto.** Todo el mapa competitivo apuntaba a apps, y el análisis terminó señalando un hábito gratuito: cerrar la sesión después de dos derrotas. Competir contra una costumbre exige un producto que llegue en el momento exacto, no uno con más funciones.
-- **Mi primera propuesta de valor describía el producto, no el valor** — y se apoyaba en el nombre de una plataforma ajena para que se entendiera. Esa dependencia era también una dependencia técnica y comercial real, no solo de redacción. La corrección está documentada en la sección 5.
-- **Lo que falta y lo sé:** el precio de 300 MXN es una estimación por comparación con alternativas de *coaching*, no una disposición a pagar medida. Es la hipótesis que sigue.
-- **Sobre el portafolio mismo:** venía documentando el proceso sin cerrar cada semana con lo que aprendí. A partir de aquí, cada entrada termina con esta sección — la reflexión es la parte que convierte un registro de prompts en un aprendizaje.
