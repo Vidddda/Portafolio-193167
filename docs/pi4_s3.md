@@ -66,9 +66,9 @@ El proceso se dividió en ideación y filtrado inicial (Claude), seguido de una 
     Sé crítico en la evaluación; si un nombre falla en un criterio, señálalo claramente.
 
 ??? abstract "Respuesta completa — Ronda 2 (Perplexity, auditoría)"
-    Como experto en naming y branding, he analizado rigurosamente los tres candidatos[cite: 1]. La conclusión es clara: ninguno de los tres nombres es óptimo sin reservas, pero uno destaca por su equilibrio entre emoción, registrabilidad y coherencia con la ficción[cite: 1].
+    Como experto en naming y branding, he analizado rigurosamente los tres candidatos. La conclusión es clara: ninguno de los tres nombres es óptimo sin reservas, pero uno destaca por su equilibrio entre emoción, registrabilidad y coherencia con la ficción.
 
-    **Tabla comparativa detallada:**[cite: 1]
+    **Tabla comparativa detallada:**
 
     | Criterio | Mindforge | Pawnquest | Zaqora |
     |---|---|---|---|
@@ -79,13 +79,13 @@ El proceso se dividió en ideación y filtrado inicial (Claude), seguido de una 
     | **Dominio** | ❌ No disponible. mindforge.com en venta premium. | ⚠️ Probablemente no disponible debido al juego existente. | ✔ Alta probabilidad. Sin menciones previas. |
     | **Emoción** | ⚠️ Parcial. Suena a entrenamiento cerebral serio, no a aventura. | Alto. "Quest" comunica narrativa claramente. | Muy alto. Suena a mundo propio o saga (tipo Zelda). |
 
-    **Diagnóstico crítico por nombre:**[cite: 1]
-    *   **Mindforge:** Dominio tomado/premium y marca registrada en software en EE.UU., lo que complica su registro en México[cite: 1].
-    *   **Pawnquest:** Riesgo de descriptivo ante el IMPI, existe un juego anunciado con el nombre y "peón" choca con el empoderamiento del jugador en español[cite: 1].
-    *   **Zaqora:** Único y registrable, sin conflictos de marca o dominio, y con una emoción alineada a "saga"[cite: 1]. Requiere un esfuerzo de branding inicial (tagline) para asociarlo con el ajedrez[cite: 1].
+    **Diagnóstico crítico por nombre:**
+    *   **Mindforge:** Dominio tomado/premium y marca registrada en software en EE.UU., lo que complica su registro en México.
+    *   **Pawnquest:** Riesgo de descriptivo ante el IMPI, existe un juego anunciado con el nombre y "peón" choca con el empoderamiento del jugador en español.
+    *   **Zaqora:** Único y registrable, sin conflictos de marca o dominio, y con una emoción alineada a "saga". Requiere un esfuerzo de branding inicial (tagline) para asociarlo con el ajedrez.
 
-    **Decisión estratégica recomendada:**[cite: 1]
-    **Zaqora** es el nombre más viable para el concepto. Sus competidores presentan problemas legales y de dominios casi insalvables[cite: 1]. Se recomienda registrar el dominio de inmediato y anexar un tagline como *"Zaqora: La saga de tu ajedrez"*[cite: 1].
+    **Decisión estratégica recomendada:**
+    **Zaqora** es el nombre más viable para el concepto. Sus competidores presentan problemas legales y de dominios casi insalvables. Se recomienda registrar el dominio de inmediato y anexar un tagline como *"Zaqora: La saga de tu ajedrez"*.
 
 ### Paso 3 — Verificación digital de pertinencia de la marca elegida: Zaqora
 
@@ -275,8 +275,8 @@ El proceso se dividió en ideación y filtrado inicial (Claude), seguido de una 
     - Conclusión: densidad MX/LATAM + implicación para el equipo
 
 ??? abstract "Respuesta completa — Mapeo de actores tecnológicos (Perplexity)"
-    **Actores en México: ajedrez gamificado y edtech**[cite: 3]
-    No existe en México (ni en LATAM) un actor que opere exactamente bajo el concepto descrito (campaña de un solo jugador, villanos = patrones de error, venta por temporadas)[cite: 3]. El ecosistema local de ajedrez educativo está dominado por programas institucionales y el uso de plataformas globales[cite: 3].
+    **Actores en México: ajedrez gamificado y edtech**
+    No existe en México (ni en LATAM) un actor que opere exactamente bajo el concepto descrito (campaña de un solo jugador, villanos = patrones de error, venta por temporadas). El ecosistema local de ajedrez educativo está dominado por programas institucionales y el uso de plataformas globales.
 
     | Nombre | Tipo | Qué hace | Nivel de actividad |
     |---|---|---|---|
@@ -286,42 +286,42 @@ El proceso se dividió en ideación y filtrado inicial (Claude), seguido de una 
     | **Lichess** | Plataforma global open-source | Juego libre, puzzles; usado por autodidactas y entrenadores. | Alta (gratuito). |
     | **Startups edtech (Ginia, Emmi Tec, O-lab, Ozaru)** | Edtech general | Gamificación, gestión escolar, simuladores laborales. | Activas, pero fuera del nicho de ajedrez. |
 
-    *Conclusión MX:* Densidad baja en el nicho específico[cite: 3]. Hay infraestructura educativa, pero cero productos nativos que encajen con la campaña narrativa de villanos-patrón[cite: 3].
+    *Conclusión MX:* Densidad baja en el nicho específico. Hay infraestructura educativa, pero cero productos nativos que encajen con la campaña narrativa de villanos-patrón.
 
     ---
 
-    **Actores en LATAM (BR, CO, AR, CL, PE)**[cite: 3]
-    Dinámica similar: fuerte impulso institucional, sin productos comerciales nativos[cite: 3].
-    *   **Brasil:** Federación activa (CBX), proyectos escolares municipales/estatales (algunos con gamificación básica), y plataformas globales[cite: 3].
-    *   **Colombia:** Escalamiento documentado de ChessKid (20,000+ estudiantes en ONG) y promoción institucional[cite: 3].
-    *   **Argentina:** FADA promueve torneos; dominio de Chess.com, Lichess y ChessKid[cite: 3].
-    *   **Chile y Perú:** Adopción de plataformas globales como estándar en escuelas y clubes[cite: 3].
+    **Actores en LATAM (BR, CO, AR, CL, PE)**
+    Dinámica similar: fuerte impulso institucional, sin productos comerciales nativos.
+    *   **Brasil:** Federación activa (CBX), proyectos escolares municipales/estatales (algunos con gamificación básica), y plataformas globales.
+    *   **Colombia:** Escalamiento documentado de ChessKid (20,000+ estudiantes en ONG) y promoción institucional.
+    *   **Argentina:** FADA promueve torneos; dominio de Chess.com, Lichess y ChessKid.
+    *   **Chile y Perú:** Adopción de plataformas globales como estándar en escuelas y clubes.
 
-    *Conclusión LATAM:* Mercado dominado por actores globales; no hay competencia directa al concepto de Zaqora[cite: 3].
-
-    ---
-
-    **Actores globales con presencia en LATAM**[cite: 3]
-    Ninguno implementa la mecánica de villanos como patrones de error ni venta por temporadas[cite: 3].
-    *   **ChessKid / Chess.com:** Suscripciones con lecciones, puzzles y análisis IA (Dr. Wolf). Sin narrativa de campaña[cite: 3].
-    *   **Magnus Trainer:** App de entrenamiento con elementos gamificados. Sin campaña narrativa[cite: 3].
-    *   **AI Coaches (Chessy, Chessiro, Chesslyzer):** Analizan partidas y detectan patrones de error, pero lo presentan como explicaciones en lenguaje natural y puzzles, no como ficción interactiva con villanos[cite: 3].
+    *Conclusión LATAM:* Mercado dominado por actores globales; no hay competencia directa al concepto de Zaqora.
 
     ---
 
-    **Papers relevantes (últimos 3 años)**[cite: 3]
-    La literatura sobre gamificación narrativa en ajedrez es escasa[cite: 3].
-    1.  *"Blunder prediction in chess"* (Applied Intelligence, 2026): Demuestra que es posible identificar patrones de error recurrentes aprendiendo un "perfil de blunder" por jugador[cite: 3].
-    2.  *"THE LEARNER'S JOURNEY..."* (IATED, 2025): Sugiere que la narrativa mejora el engagement en entornos gamificados[cite: 3].
-    3.  *"Gamifying Education: Trends..."* (IEJEE, 2026): Muestra crecimiento del 23.1% anual en gamificación educativa, con contribuciones crecientes en LATAM[cite: 3].
-    *(Nota: No existe paper que combine ajedrez, narrativa de videojuego y villanos como patrones de error[cite: 3]).*
+    **Actores globales con presencia en LATAM**
+    Ninguno implementa la mecánica de villanos como patrones de error ni venta por temporadas.
+    *   **ChessKid / Chess.com:** Suscripciones con lecciones, puzzles y análisis IA (Dr. Wolf). Sin narrativa de campaña.
+    *   **Magnus Trainer:** App de entrenamiento con elementos gamificados. Sin campaña narrativa.
+    *   **AI Coaches (Chessy, Chessiro, Chesslyzer):** Analizan partidas y detectan patrones de error, pero lo presentan como explicaciones en lenguaje natural y puzzles, no como ficción interactiva con villanos.
 
     ---
 
-    **Conclusión: Implicación para el equipo**[cite: 3]
-    1.  **Oportunidad de primer movedor:** No hay competencia directa en LATAM; el concepto es novedoso a nivel global[cite: 3].
-    2.  **Diferenciación clara:** Zaqora añade narrativa inmersiva y diseño de niveles frente al estándar de "análisis + puzzles" de los competidores globales[cite: 3].
-    3.  **Estrategia de entrada sugerida:** Pilotar en MX/CO aprovechando la infraestructura escolar existente y explorar partnerships con edtechs locales de gamificación (ej. O-lab, Ozaru) para integrar el producto[cite: 3].
+    **Papers relevantes (últimos 3 años)**
+    La literatura sobre gamificación narrativa en ajedrez es escasa.
+    1.  *"Blunder prediction in chess"* (Applied Intelligence, 2026): Demuestra que es posible identificar patrones de error recurrentes aprendiendo un "perfil de blunder" por jugador.
+    2.  *"THE LEARNER'S JOURNEY..."* (IATED, 2025): Sugiere que la narrativa mejora el engagement en entornos gamificados.
+    3.  *"Gamifying Education: Trends..."* (IEJEE, 2026): Muestra crecimiento del 23.1% anual en gamificación educativa, con contribuciones crecientes en LATAM.
+    *(Nota: No existe paper que combine ajedrez, narrativa de videojuego y villanos como patrones de error).*
+
+    ---
+
+    **Conclusión: Implicación para el equipo**
+    1.  **Oportunidad de primer movedor:** No hay competencia directa en LATAM; el concepto es novedoso a nivel global.
+    2.  **Diferenciación clara:** Zaqora añade narrativa inmersiva y diseño de niveles frente al estándar de "análisis + puzzles" de los competidores globales.
+    3.  **Estrategia de entrada sugerida:** Pilotar en MX/CO aprovechando la infraestructura escolar existente y explorar partnerships con edtechs locales de gamificación (ej. O-lab, Ozaru) para integrar el producto.
 
 ### Paso 7 — Síntesis de entrevistas de validación
 
@@ -330,38 +330,48 @@ Para validar los dolores identificados y las hipótesis sobre el comportamiento 
 **Herramienta:** Claude (Investigador de usuario experto).
 
 ??? quote "Prompt completo — Síntesis de entrevistas (Claude)"
-    Actúa como investigador de usuario experto en sintetizar entrevistas de validación para equipos early-stage[cite: 4].
+    Actúa como investigador de usuario experto en sintetizar entrevistas de validación para equipos early-stage.
     
     ENTREVISTA 1 — Usuario: Aficionado competitivo — Notas: ¿Cuándo fue la última vez que resolviste la frustración? ¿Qué hiciste?
-    Fue hace unos días, después de perder una partida que tenía prácticamente ganada[cite: 4]. Me frustré bastante porque cometí un error muy simple por ir demasiado rápido[cite: 4]. Cerré el ordenador, me alejé unos 20 minutos y luego revisé la partida sin motor para entender en qué momento empecé a jugar mal[cite: 4].
-    ¿Qué es lo más frustrante de cómo lo resuelves hoy? Que muchas veces sé que debería parar, pero sigo jugando para “recuperar” la partida anterior[cite: 4]. Normalmente eso termina empeorando las cosas[cite: 4].
-    ¿Cuánto te cuesta no tener una mejor solución? Sobre todo en tiempo y rendimiento[cite: 4]. Puedo pasar una hora jugando partidas que realmente no quería jugar[cite: 4].
+    Fue hace unos días, después de perder una partida que tenía prácticamente ganada. Me frustré bastante porque cometí un error muy simple por ir demasiado rápido. Cerré el ordenador, me alejé unos 20 minutos y luego revisé la partida sin motor para entender en qué momento empecé a jugar mal.
+    ¿Qué es lo más frustrante de cómo lo resuelves hoy? Que muchas veces sé que debería parar, pero sigo jugando para “recuperar” la partida anterior. Normalmente eso termina empeorando las cosas.
+    ¿Cuánto te cuesta no tener una mejor solución? Sobre todo en tiempo y rendimiento. Puedo pasar una hora jugando partidas que realmente no quería jugar.
     
     ENTREVISTAS 2 y 3 — Usuario: Jugador online frecuente / de torneo — Notas: ¿Cuándo fue la última vez que resolviste la frustración? ¿Qué hiciste?
-    Ayer[cite: 4]. Perdí tres partidas seguidas y empecé a sentir que estaba jugando fatal[cite: 4]. Lo que hice fue apagar Lichess y ponerme a hacer otra cosa[cite: 4]. En realidad no intenté analizar las partidas en ese momento porque sabía que iba a buscar excusas[cite: 4].
-    ¿Qué es lo más frustrante? Que la solución suele ser simplemente dejar de jugar[cite: 4]. No siento que haya aprendido a manejar la frustración; simplemente espero a que desaparezca[cite: 4].
-    ¿Cuánto te cuesta? Principalmente rating y tiempo[cite: 4]. Cuando entro en una mala racha puedo perder bastante rating y después necesito muchas partidas para recuperarlo[cite: 4].
+    Ayer. Perdí tres partidas seguidas y empecé a sentir que estaba jugando fatal. Lo que hice fue apagar Lichess y ponerme a hacer otra cosa. En realidad no intenté analizar las partidas en ese momento porque sabía que iba a buscar excusas.
+    ¿Qué es lo más frustrante? Que la solución suele ser simplemente dejar de jugar. No siento que haya aprendido a manejar la frustración; simplemente espero a que desaparezca.
+    ¿Cuánto te cuesta? Principalmente rating y tiempo. Cuando entro en una mala racha puedo perder bastante rating y después necesito muchas partidas para recuperarlo.
     
     Hipótesis a evaluar:
-    - H1: el jugador amateur mexicano que evita la comparación pierde o deja de jugar semanas por miedo al juicio, y pagaría $100-200 MXN/mes por una campaña de un solo jugador sin ranking[cite: 4].
-    - H2: preferiría enfrentar a «El Espectro de las Horquillas» dentro de una narrativa antes que una clase particular o un curso en video, porque elimina la exposición de ser evaluado en tiempo real[cite: 4].
+    - H1: el jugador amateur mexicano que evita la comparación pierde o deja de jugar semanas por miedo al juicio, y pagaría $100-200 MXN/mes por una campaña de un solo jugador sin ranking.
+    - H2: preferiría enfrentar a «El Espectro de las Horquillas» dentro de una narrativa antes que una clase particular o un curso en video, porque elimina la exposición de ser evaluado en tiempo real.
     
-    Entrega: Verificación de cada hipótesis, Insight emergente, Cita más importante, Impacto en el concepto y Próxima hipótesis urgente[cite: 4].
+    Entrega: Verificación de cada hipótesis, Insight emergente, Cita más importante, Impacto en el concepto y Próxima hipótesis urgente.
 
 ??? abstract "Respuesta completa — Síntesis de Validación (Claude)"
     **Verificación de cada hipótesis:**
-    * ⚠️ **H1: Parcialmente refutada en la causa raíz.** La hipótesis asume que el jugador deja de jugar por "miedo al juicio social" y "evitar la comparación"[cite: 4]. Sin embargo, la evidencia muestra que el abandono temporal no es por miedo al qué dirán, sino por *tilt* (pérdida de control emocional) tras rachas perdedoras[cite: 4]. El dolor principal no es "me juzgan", sino "juego para recuperar la partida anterior y empeoro las cosas"[cite: 4].
-    * ⚠️ **H2: Parcial / Sin evidencia directa.** Los usuarios no hablaron de cursos o clases, pero revelaron algo crítico: cuando están frustrados, son incapaces de usar herramientas de análisis tradicionales porque "buscan excusas" o "les cuesta mucho hacerlo estando enfadados"[cite: 4]. Esto abre la puerta a que una narrativa ficticia ("El Espectro de las Horquillas") funcione no para ocultarse del juicio humano, sino para sortear la barrera del propio ego herido[cite: 4].
+    * ⚠️ **H1: Parcialmente refutada en la causa raíz.** La hipótesis asume que el jugador deja de jugar por "miedo al juicio social" y "evitar la comparación". Sin embargo, la evidencia muestra que el abandono temporal no es por miedo al qué dirán, sino por *tilt* (pérdida de control emocional) tras rachas perdedoras. El dolor principal no es "me juzgan", sino "juego para recuperar la partida anterior y empeoro las cosas".
+    * ⚠️ **H2: Parcial / Sin evidencia directa.** Los usuarios no hablaron de cursos o clases, pero revelaron algo crítico: cuando están frustrados, son incapaces de usar herramientas de análisis tradicionales porque "buscan excusas" o "les cuesta mucho hacerlo estando enfadados". Esto abre la puerta a que una narrativa ficticia ("El Espectro de las Horquillas") funcione no para ocultarse del juicio humano, sino para sortear la barrera del propio ego herido.
 
     **Insight emergente:**
-    La "espiral de revancha" es el verdadero enemigo[cite: 4]. Los usuarios carecen de mecanismos de regulación en el momento de la frustración; su única solución actual es el abandono total ("apagar Lichess", "alejarme 20 minutos")[cite: 4]. Zaqora no compite contra el análisis de Chess.com; compite contra el botón de "Cerrar ventana"[cite: 4].
+    La "espiral de revancha" es el verdadero enemigo. Los usuarios carecen de mecanismos de regulación en el momento de la frustración; su única solución actual es el abandono total ("apagar Lichess", "alejarme 20 minutos"). Zaqora no compite contra el análisis de Chess.com; compite contra el botón de "Cerrar ventana".
 
     **Cita más importante + por qué:**
-    * *"En realidad no intenté analizar las partidas en ese momento porque sabía que iba a buscar excusas."* (Entrevista 2 y 3)[cite: 4].
-    * **Por qué:** Demuestra que el análisis crudo requiere un estado mental frío que el usuario no tiene tras perder[cite: 4]. Esto valida la necesidad de un "puente emocional" (como la narrativa de La Campaña) que permita al usuario procesar el error sin sentir un ataque directo a su inteligencia[cite: 4].
+    * *"En realidad no intenté analizar las partidas en ese momento porque sabía que iba a buscar excusas."* (Entrevista 2 y 3).
+    * **Por qué:** Demuestra que el análisis crudo requiere un estado mental frío que el usuario no tiene tras perder. Esto valida la necesidad de un "puente emocional" (como la narrativa de La Campaña) que permita al usuario procesar el error sin sentir un ataque directo a su inteligencia.
 
     **Impacto en el concepto:**
-    **Ajusta.** El concepto de **La Campaña** es altamente viable, pero el ángulo de venta debe ajustarse[cite: 4]. Debe posicionarse como la **cámara de descompresión**[cite: 4]. Un refugio al que el jugador acude inmediatamente después de una racha perdedora para seguir jugando ajedrez, pero sin arriesgar rating y transformando su enojo en progreso[cite: 4].
+    **Ajusta.** El concepto de **La Campaña** es altamente viable, pero el ángulo de venta debe ajustarse. Debe posicionarse como la **cámara de descompresión**. Un refugio al que el jugador acude inmediatamente después de una racha perdedora para seguir jugando ajedrez, pero sin arriesgar rating y transformando su enojo en progreso.
 
     **Próxima hipótesis urgente:**
-    *Hipótesis de transición:* "Creemos que un jugador en estado de *tilt*, en lugar de cerrar la computadora por completo, está dispuesto a abrir Zaqora para jugar un nivel narrativo (sin rating) como mecanismo para 'desquitarse' y recuperar confianza"[cite: 4].
+    *Hipótesis de transición:* "Creemos que un jugador en estado de *tilt*, en lugar de cerrar la computadora por completo, está dispuesto a abrir Zaqora para jugar un nivel narrativo (sin rating) como mecanismo para 'desquitarse' y recuperar confianza".
+
+---
+
+## 4) Reflexión
+
+- **El cuello de botella del naming no es la creatividad, es la auditoría.** Generar cincuenta nombres bonitos toma una hora; la mayoría muere al chocar con el IMPI, con un dominio ocupado o con un significado incómodo en otro idioma. Conviene generar pensando ya en el filtro, no generar primero y filtrar después.
+- **La vigilancia tecnológica sirvió para algo distinto de lo que esperaba.** No respondió «¿puedo patentar esto?», sino «¿qué está ya reclamado y por dónde queda espacio libre?». Leer reivindicaciones ajenas fue más útil como mapa de terreno que como trámite legal.
+- **El hallazgo que rompió la semana:** las entrevistas refutaron parcialmente H1. La causa raíz del abandono no es el miedo al juicio social, sino el *tilt* — la espiral de revancha después de perder. Una sola cita («no intenté analizar las partidas porque sabía que iba a buscar excusas») reorientó el producto más que todo el análisis de escritorio de la Semana 2.
+- **Error de proceso que corregí:** pegué las respuestas del asistente con sus marcas de citación internas y quedaron publicadas en el portafolio. Las salidas de IA hay que editarlas antes de publicarlas, no copiarlas tal cual; el portafolio es mío, no un volcado de la conversación.
+- **Pendiente honesto:** la validación fue con pocas entrevistas y sin diversidad de perfiles. El *insight* del *tilt* es fuerte, pero todavía no está medido — no sé con qué frecuencia ocurre ni a cuántos jugadores describe.

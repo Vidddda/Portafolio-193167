@@ -553,3 +553,13 @@ Es **falseable**: alguien podría objetar «lo que el jugador amateur quiere es 
 - **¿Quién específicamente tiene el problema?** El jugador amateur adulto de ajedrez en México/LATAM, ~1200–1800 Elo en rápidas/blitz online, que evita clubes, foros y partidas rankeadas por miedo a la comparación o la burla y que ya gasta dinero en mejorar.
 - **¿Qué evidencia de que el problema es real y duele?** 5 de 5 señales verificadas; en particular la **Señal 1** (pagos observables a clases, cursos y suscripciones — Superprof, ChessEnigma, Chess.com) y la **Señal 3** (40–60 % de partidas perdidas y semanas de evitación documentadas en foros de r/chess y Lichess).
 - **Primera hipótesis a probar en la Semana 3 (H1):** «Creemos que el jugador amateur que evita la comparación pierde partidas o deja de jugar semanas seguidas por miedo al juicio y pagaría $100–200 MXN/mes por una campaña de un solo jugador sin ranking, porque sus workarounds actuales le dan anonimato pero ningún feedback estructurado. Si esto es falso, el concepto necesita ofrecer una señal de progreso comparativa (aunque sea anónima) y reposicionarse como entrenamiento serio y no como juego.»
+
+---
+
+## 4) Reflexión
+
+- **Separar la IA en dos roles cambió la calidad del resultado.** Perplexity se usó solo para traer hechos con fuente (precios, pilotos, tamaños de comunidad) y Claude solo para estresar y filtrar. Cuando una misma herramienta hacía las dos cosas, devolvía afirmaciones que sonaban verificadas pero no lo estaban.
+- **El paso más útil no fue generar ideas, fue el Pain-Gain Map.** SCAMPER produjo ocho conceptos en minutos; lo que realmente movió el proyecto fue ordenar dolores por intensidad y frecuencia, porque ahí quedó claro que el dolor que yo daba por central no era el más urgente.
+- **Lo más incómodo de la semana:** aceptar que «no sé qué estudiar» (D2) era el dolor más cómodo de resolver con un LLM, no el que más duele. El dolor real resultó ser emocional y social —perder de forma constante y sentirse menospreciado al pedir ayuda—, y eso obligó a reescribir el concepto entero.
+- **Límite del método que reconozco:** las cinco señales se verificaron con evidencia pública (foros, precios, comunidades), no con personas. Mientras no hubiera entrevistas, «verificado» significaba «hay rastro público del problema», no «este usuario me lo dijo». Por eso la Semana 3 tenía que traer voces reales — y efectivamente corrigieron la hipótesis.
+- **Qué haría distinto:** fijar desde el inicio un criterio de descarte numérico (por ejemplo, ninguna oportunidad avanza con menos de 4/5 señales), en vez de decidir al final leyendo todo junto.

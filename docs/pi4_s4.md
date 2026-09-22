@@ -12,7 +12,7 @@
 
 ## 2) Punto de partida
 
-**Concepto base (Zaqora):** El aprendizaje de ajedrez se convierte en el diseño de niveles de un videojuego de un solo jugador: cada «capítulo» es una lección disfrazada de misión, protagonizada por un personaje-villano que encarna un patrón de error real y recurrente del jugador[cite: 2]. No hay ranking, no hay rival humano, no hay partida en línea contra otros: solo el jugador contra el mapa de la campaña, a su propio ritmo[cite: 2]. El coaching ocurre dentro de la ficción —lo que dice el personaje, la trampa que tiende—, nunca como corrección fría ni comparación social[cite: 2]. 
+**Concepto base (Zaqora):** El aprendizaje de ajedrez se convierte en el diseño de niveles de un videojuego de un solo jugador: cada «capítulo» es una lección disfrazada de misión, protagonizada por un personaje-villano que encarna un patrón de error real y recurrente del jugador. No hay ranking, no hay rival humano, no hay partida en línea contra otros: solo el jugador contra el mapa de la campaña, a su propio ritmo. El coaching ocurre dentro de la ficción —lo que dice el personaje, la trampa que tiende—, nunca como corrección fría ni comparación social. 
 
 - **Objetivo de la semana:** Traducir este concepto técnico y emocional en un segmento accionable, un tamaño de mercado defendible, un mapa competitivo con sus barreras y una propuesta de valor clara (Canvas de mercado).
 
@@ -32,7 +32,7 @@ El proceso de esta semana requiere combinar búsquedas con datos reales (Perplex
     Somos emprendedores en México desarrollando un negocio que combina una aplicación con IA y una página web de venta. Hemos hecho entrevistas de validación:
 
     INSIGHTS DE ENTREVISTAS:
-    La "espiral de revancha" es el verdadero enemigo[cite: 4]. Los usuarios carecen de mecanismos de regulación en el momento de la frustración; su única solución actual es el abandono total ("apagar Lichess", "alejarme 20 minutos")[cite: 4]. Zaqora no compite contra el análisis de Chess.com; compite contra el botón de "Cerrar ventana"[cite: 4].
+    La "espiral de revancha" es el verdadero enemigo. Los usuarios carecen de mecanismos de regulación en el momento de la frustración; su única solución actual es el abandono total ("apagar Lichess", "alejarme 20 minutos"). Zaqora no compite contra el análisis de Chess.com; compite contra el botón de "Cerrar ventana".
 
     SEGMENTO HIPÓTESIS DEL PAIN-GAIN MAP (semana 2):
     El dolor de perder partidas y el dolor social de la soberbia son suficientemente distintos de «no sé qué estudiar» como para probarlos en paralelo (dos framings de landing) antes de apostar todo el roadmap a la currícula de planes.
@@ -43,11 +43,11 @@ El proceso de esta semana requiere combinar búsquedas con datos reales (Perplex
     Construye el perfil de segmento accionable en cuatro capas. Para cada dato indica si es VERIFICADO (viene de entrevistas o fuentes reales) o HIPÓTESIS (razonado pero sin confirmar). Si una capa no tiene evidencia suficiente, indícalo — no la inventes.
 
 ??? abstract "Respuesta completa — Ronda 1 (Claude)"
-    **Nota metodológica previa:** Solo tengo tres insumos: (1) un extracto citado de entrevistas sobre la "espiral de revancha"[cite: 4], (2) una hipótesis de trabajo del pain-gain map (semana 2, ya etiquetada como hipótesis por el propio equipo), y (3) una oración de oportunidad sin fuente explícita. No hay transcripciones completas, ni conteo de entrevistados, ni datos demográficos crudos. Eso limita fuertemente las Capas 1 y 4.
+    **Nota metodológica previa:** Solo tengo tres insumos: (1) un extracto citado de entrevistas sobre la "espiral de revancha", (2) una hipótesis de trabajo del pain-gain map (semana 2, ya etiquetada como hipótesis por el propio equipo), y (3) una oración de oportunidad sin fuente explícita. No hay transcripciones completas, ni conteo de entrevistados, ni datos demográficos crudos. Eso limita fuertemente las Capas 1 y 4.
 
     **CAPA 1 — DEMOGRÁFICA**
     ¿Quién es con suficiente detalle para encontrarlo?
-    · Juega ajedrez online en plataformas como Lichess (y probablemente Chess.com) → VERIFICADO (mención directa de "apagar Lichess" y referencia comparativa a Chess.com)[cite: 4]
+    · Juega ajedrez online en plataformas como Lichess (y probablemente Chess.com) → VERIFICADO (mención directa de "apagar Lichess" y referencia comparativa a Chess.com)
     · Es jugador "amateur" (no profesional/titulado) → HIPÓTESIS (aparece en la oración de oportunidad, sin cita de entrevista que lo respalde)
     · Rango de edad, género, ubicación geográfica, nivel socioeconómico, ocupación → SIN EVIDENCIA — no inventar. 
     · Nivel de habilidad (ELO aproximado, tiempo jugando ajedrez) → SIN EVIDENCIA
@@ -56,16 +56,16 @@ El proceso de esta semana requiere combinar búsquedas con datos reales (Perplex
 
     **CAPA 2 — CONDUCTUAL**
     ¿Qué hace hoy para resolver el problema — proceso exacto, frecuencia, herramientas, workarounds?
-    · Cuando pierde o se frustra, su único mecanismo es abandonar la sesión por completo ("apagar Lichess") → VERIFICADO[cite: 4]
-    · Como alternativa, se aleja físicamente de la actividad ("alejarme 20 minutos") en lugar de regular la frustración dentro del juego → VERIFICADO[cite: 4]
-    · No tiene un mecanismo de regulación emocional en el momento de la frustración — el abandono es la única herramienta disponible → VERIFICADO[cite: 4]
+    · Cuando pierde o se frustra, su único mecanismo es abandonar la sesión por completo ("apagar Lichess") → VERIFICADO
+    · Como alternativa, se aleja físicamente de la actividad ("alejarme 20 minutos") en lugar de regular la frustración dentro del juego → VERIFICADO
+    · No tiene un mecanismo de regulación emocional en el momento de la frustración — el abandono es la única herramienta disponible → VERIFICADO
     · Su método actual de estudio/mejora es memorizar jugadas (aperturas, líneas) en lugar de entender posiciones → HIPÓTESIS 
     · Usa o conoce las funciones de análisis post-partida de Chess.com como referencia de mercado → HIPÓTESIS 
 
     **CAPA 3 — PSICOGRÁFICA**
     ¿Qué le preocupa en sus propias palabras? ¿Qué lo motivaría a cambiar de solución?
-    · Nombra su propio patrón de tilt/revancha compulsiva como el enemigo real, más que la falta de herramientas analíticas → VERIFICADO ("espiral de revancha")[cite: 4]
-    · Citas textuales de coping: "apagar Lichess", "alejarme 20 minutos" → VERIFICADO[cite: 4] — muestran evitación como respuesta emocional, no resolución
+    · Nombra su propio patrón de tilt/revancha compulsiva como el enemigo real, más que la falta de herramientas analíticas → VERIFICADO ("espiral de revancha")
+    · Citas textuales de coping: "apagar Lichess", "alejarme 20 minutos" → VERIFICADO — muestran evitación como respuesta emocional, no resolución
     · Existe una dimensión de dolor social ligada a la soberbia (vergüenza/orgullo frente a otros jugadores) distinta del dolor de perder → HIPÓTESIS EXPLÍCITA del equipo
     · Qué lo motivaría concretamente a cambiar de solución → SIN EVIDENCIA
 
@@ -77,7 +77,7 @@ El proceso de esta semana requiere combinar búsquedas con datos reales (Perplex
     ────────────────────────────────────────────────────────
     **NIVEL DE CONOCIMIENTO DEL SEGMENTO:**
 
-    *   **Capas con mayoría VERIFICADA:** Capa 2 (Conductual) y Capa 3 (Psicográfica)[cite: 4].
+    *   **Capas con mayoría VERIFICADA:** Capa 2 (Conductual) y Capa 3 (Psicográfica).
     *   **Capas con mayoría de HIPÓTESIS o sin evidencia:** Capa 1 (Demográfica) y Capa 4 (Económica).
 
     **HIPÓTESIS CRÍTICAS SIN VERIFICAR:**
@@ -162,8 +162,8 @@ El proceso de esta semana requiere combinar búsquedas con datos reales (Perplex
 
     Somos emprendedores en México con un negocio que combina una aplicación con IA y una página web de venta.
     Concepto: Zaqora, empresa de un videojuego para aprender ajedrez y que construye su propia historia en base al usuario.
-    Segmento objetivo: Jugador de ajedrez online (Lichess) que, al perder o frustrarse, no tiene forma de regular esa frustración dentro del juego y solo sabe abandonar la sesión[cite: 2, 4].
-    Dolor ⭐ que resolvemos: Frustración al perder[cite: 2, 4].
+    Segmento objetivo: Jugador de ajedrez online (Lichess) que, al perder o frustrarse, no tiene forma de regular esa frustración dentro del juego y solo sabe abandonar la sesión.
+    Dolor ⭐ que resolvemos: Frustración al perder.
     Precio estimado: 300 MXN.
 
     Mapea los tres tipos con evidencia real y observable:
@@ -176,39 +176,39 @@ El proceso de esta semana requiere combinar búsquedas con datos reales (Perplex
 ??? abstract "Respuesta completa — Ronda 3 (Perplexity, Mapa Competitivo)"
     ════════════════════════════════════════════════════════
     MAPA COMPETITIVO — ZAQORA
-    Segmento: Jugador de ajedrez online (Lichess/Chess.com) que abandona la sesión por frustración tras perder[cite: 2, 4]
+    Segmento: Jugador de ajedrez online (Lichess/Chess.com) que abandona la sesión por frustración tras perder
     ════════════════════════════════════════════════════════
 
     **DIRECTOS**
-    *(Misma solución: videojuego de ajedrez con narrativa + mismo usuario: jugador frustrado que necesita regulación emocional)*[cite: 2]
-    1. **Chess Story** — Aventura de ajedrez offline con modo historia por capítulos y países, pero sin adaptación emocional ni IA narrativa — Opera en: Global (Google Play MX) — Precio: Gratis con compras in-app — **Debilidad específica:** La narrativa es preescrita y genérica, no responde al estado emocional del usuario ni construye historia basada en sus derrotas; el jugador frustrado no encuentra validación emocional ni transformación de su pérdida en progreso narrativo[cite: 2].
-    2. **AI Dungeon + Chess (combinación usuario)** — Plataforma de narrativa IA que usuarios adaptan manualmente para incluir ajedrez mediante scripts como BronzeChess — Opera en: Global — Precio: Freemium ($9.99-19.99/mes) — **Debilidad específica:** Requiere que el usuario configure manualmente la experiencia; no hay integración nativa ajedrez-emoción-narrativa, y el jugador frustrado no tiene la energía cognitiva ni el interés en "construir" su propia herramienta en estado de *tilt*[cite: 2].
-    3. **Story Time Chess** — Juego de tablero físico con narrativa para niños que enseña ajedrez mediante historias — Opera en: Global (envío a MX) — Precio: ~$60-80 USD — **Debilidad específica:** Diseñado para niños de 4+ años sin experiencia; el jugador online frustrado (adolescente/adulto) lo percibe como infantil y no resuelve su dolor emocional post-derrota en plataformas digitales[cite: 2].
+    *(Misma solución: videojuego de ajedrez con narrativa + mismo usuario: jugador frustrado que necesita regulación emocional)*
+    1. **Chess Story** — Aventura de ajedrez offline con modo historia por capítulos y países, pero sin adaptación emocional ni IA narrativa — Opera en: Global (Google Play MX) — Precio: Gratis con compras in-app — **Debilidad específica:** La narrativa es preescrita y genérica, no responde al estado emocional del usuario ni construye historia basada en sus derrotas; el jugador frustrado no encuentra validación emocional ni transformación de su pérdida en progreso narrativo.
+    2. **AI Dungeon + Chess (combinación usuario)** — Plataforma de narrativa IA que usuarios adaptan manualmente para incluir ajedrez mediante scripts como BronzeChess — Opera en: Global — Precio: Freemium ($9.99-19.99/mes) — **Debilidad específica:** Requiere que el usuario configure manualmente la experiencia; no hay integración nativa ajedrez-emoción-narrativa, y el jugador frustrado no tiene la energía cognitiva ni el interés en "construir" su propia herramienta en estado de *tilt*.
+    3. **Story Time Chess** — Juego de tablero físico con narrativa para niños que enseña ajedrez mediante historias — Opera en: Global (envío a MX) — Precio: ~$60-80 USD — **Debilidad específica:** Diseñado para niños de 4+ años sin experiencia; el jugador online frustrado (adolescente/adulto) lo percibe como infantil y no resuelve su dolor emocional post-derrota en plataformas digitales.
 
     **INDIRECTOS**
-    *(Diferente solución: coaching/entrenamiento emocional — mismo problema: frustración y abandono post-derrota)*[cite: 2, 4]
-    1. **Chess.com Game Review + Lessons** — Análisis de partidas y lecciones estructuradas con componente psicológico implícito — Opera en: Global (fuerte presencia en MX/LATAM) — Precio: $49.99-79.99 USD/año — **Debilidad específica:** El análisis es técnico y frío; no hay acompañamiento emocional explícito ni transformación de la frustración en narrativa; el usuario en *tilt* recibe datos ("perdiste aquí") sin validación, lo que intensifica la autocrítica negativa[cite: 2].
-    2. **Chess Coach Pro / Chessy (AI Coach apps)** — Apps de coaching IA que analizan partidas y dan feedback personalizado — Opera en: Global (App Store MX) — Precio: $7.99/mes o $49.99-79.99 USD/año — **Debilidad específica:** Se enfocan en mejora técnica (aperturas, tácticas), no en regulación emocional; el jugador en *tilt* necesita primero calmarse, no que le digan "tu error fue en la jugada 23"[cite: 2].
-    3. **MyMentalCoach / Chess Psychology Training** — Servicios de coaching psicológico especializado en ajedrez (humano o contenido guiado) — Opera en: Global — Precio: Desde $50-150 USD/sesión — **Debilidad específica:** Requiere iniciativa proactiva del usuario (buscar, agendar, pagar); el jugador frustrado que abandona la sesión no va a buscar un coach psicológico en ese momento[cite: 2].
+    *(Diferente solución: coaching/entrenamiento emocional — mismo problema: frustración y abandono post-derrota)*
+    1. **Chess.com Game Review + Lessons** — Análisis de partidas y lecciones estructuradas con componente psicológico implícito — Opera en: Global (fuerte presencia en MX/LATAM) — Precio: $49.99-79.99 USD/año — **Debilidad específica:** El análisis es técnico y frío; no hay acompañamiento emocional explícito ni transformación de la frustración en narrativa; el usuario en *tilt* recibe datos ("perdiste aquí") sin validación, lo que intensifica la autocrítica negativa.
+    2. **Chess Coach Pro / Chessy (AI Coach apps)** — Apps de coaching IA que analizan partidas y dan feedback personalizado — Opera en: Global (App Store MX) — Precio: $7.99/mes o $49.99-79.99 USD/año — **Debilidad específica:** Se enfocan en mejora técnica (aperturas, tácticas), no en regulación emocional; el jugador en *tilt* necesita primero calmarse, no que le digan "tu error fue en la jugada 23".
+    3. **MyMentalCoach / Chess Psychology Training** — Servicios de coaching psicológico especializado en ajedrez (humano o contenido guiado) — Opera en: Global — Precio: Desde $50-150 USD/sesión — **Debilidad específica:** Requiere iniciativa proactiva del usuario (buscar, agendar, pagar); el jugador frustrado que abandona la sesión no va a buscar un coach psicológico en ese momento.
 
     **SUSTITUTOS**
-    *(Comportamientos naturales de regulación sin software especializado)*[cite: 2, 4]
-    1. **Regla de "2 derrotas = cerrar la app"** — Comportamiento documentado en comunidades: el usuario se autoimpone detenerse tras 2 pérdidas consecutivas — **Costo para el usuario:** Tiempo perdido (sesión abortada sin aprendizaje ni cierre emocional) + frustración acumulada que se traslada a otras actividades; no hay transformación, solo evitación[cite: 2, 4].
-    2. **Análisis manual post-enfriamiento** — El usuario espera 30+ minutos, luego revisa la partida solo o con motor — **Costo para el usuario:** 20-60 minutos adicionales + carga cognitiva emocional de autoanalizarse sin guía; muchos abandonan este proceso por ser doloroso, perpetuando el ciclo de frustración[cite: 2].
+    *(Comportamientos naturales de regulación sin software especializado)*
+    1. **Regla de "2 derrotas = cerrar la app"** — Comportamiento documentado en comunidades: el usuario se autoimpone detenerse tras 2 pérdidas consecutivas — **Costo para el usuario:** Tiempo perdido (sesión abortada sin aprendizaje ni cierre emocional) + frustración acumulada que se traslada a otras actividades; no hay transformación, solo evitación.
+    2. **Análisis manual post-enfriamiento** — El usuario espera 30+ minutos, luego revisa la partida solo o con motor — **Costo para el usuario:** 20-60 minutos adicionales + carga cognitiva emocional de autoanalizarse sin guía; muchos abandonan este proceso por ser doloroso, perpetuando el ciclo de frustración.
 
     ────────────────────────────────────────────────────────
     **EL COMPETIDOR MÁS PELIGROSO:**
-    **La "Regla de 2 derrotas = cerrar la app" (Sustituto #1)**[cite: 2, 4]
+    **La "Regla de 2 derrotas = cerrar la app" (Sustituto #1)**
 
-    *   **Por qué es difícil de desplazar:** Cero fricción (no requiere descargas ni pagos)[cite: 2]; inmediato (se activa en el instante exacto del dolor); validación social en comunidades (Reddit, foros)[cite: 2]; y es 100% gratuito[cite: 2].
+    *   **Por qué es difícil de desplazar:** Cero fricción (no requiere descargas ni pagos); inmediato (se activa en el instante exacto del dolor); validación social en comunidades (Reddit, foros); y es 100% gratuito.
     *   **Qué tendría que ofrecer Zaqora para que el usuario cambie:**
-        1. *Intervención en el momento exacto:* Acceso o integración fluida previa a cerrar la sesión[cite: 2].
-        2. *Validación emocional inmediata:* Reconocer y normalizar el estado de *tilt* en los primeros 30 segundos[cite: 2].
-        3. *Transformación narrativa en tiempo real:* Convertir la derrota específica en un "capítulo" de su historia personal[cite: 2].
-        4. *Cero fricción de adopción:* Onboarding de 1-2 minutos máximo[cite: 2].
-        5. *Precio anclado a valor:* $300 MXN posicionado como "menos que una sesión de coaching tradicional"[cite: 2].
+        1. *Intervención en el momento exacto:* Acceso o integración fluida previa a cerrar la sesión.
+        2. *Validación emocional inmediata:* Reconocer y normalizar el estado de *tilt* en los primeros 30 segundos.
+        3. *Transformación narrativa en tiempo real:* Convertir la derrota específica en un "capítulo" de su historia personal.
+        4. *Cero fricción de adopción:* Onboarding de 1-2 minutos máximo.
+        5. *Precio anclado a valor:* $300 MXN posicionado como "menos que una sesión de coaching tradicional".
 
-    *Nota de Océano Azul:* No se identificaron competidores directos con tracción observable en México/LATAM que combinen videojuego de ajedrez + narrativa IA adaptativa + regulación emocional post-derrota, confirmando un espacio blanco comercial[cite: 2].
+    *Nota de Océano Azul:* No se identificaron competidores directos con tracción observable en México/LATAM que combinen videojuego de ajedrez + narrativa IA adaptativa + regulación emocional post-derrota, confirmando un espacio blanco comercial.
 
 ---
 
@@ -356,7 +356,7 @@ El proceso de esta semana requiere combinar búsquedas con datos reales (Perplex
     *   **Propuesta de valor (por qué lo compran):** "Cuando pierdes en Lichess y estás por cerrar la app, Zaqora valida tu frustración y la convierte en el próximo capítulo de tu historia."
 
     **La diferencia en una línea:**
-    La oferta describe *qué* hace el motor; la propuesta describe *cuándo y por qué* el usuario la elige en vez de cerrar la app — el sujeto pasa del producto a la persona en el momento exacto del dolor[cite: 4], apuntando directamente al hábito gratuito que hoy gana esa pelea.
+    La oferta describe *qué* hace el motor; la propuesta describe *cuándo y por qué* el usuario la elige en vez de cerrar la app — el sujeto pasa del producto a la persona en el momento exacto del dolor, apuntando directamente al hábito gratuito que hoy gana esa pelea.
 
 ---
 
@@ -384,3 +384,72 @@ El proceso de esta semana requiere combinar búsquedas con datos reales (Perplex
 | | **Propuesta de valor** | *«Cuando pierdes en Lichess y estás por cerrar la app, Zaqora valida tu frustración y la convierte en el próximo capítulo de tu historia.»* |
 | | **Nivel Pirámide Bain** | Emocional |
 | | **Error de la 1ª versión** | Se enfocaba en describir las funcionalidades técnicas o analíticas del producto en lugar de conectar directamente con el sujeto en el momento exacto del dolor emocional frente a su alternativa competitiva. |
+
+---
+
+## 5) Propuesta de valor — versión revisada (v2)
+
+!!! warning "Por qué existe esta sección"
+    La primera versión de la propuesta de valor recibió tres observaciones en retroalimentación: **(1)** debe sostenerse sola, **(2)** debe entenderse sin referencias externas y **(3)** no debe depender de Lichess. Esta sección documenta el diagnóstico y la reescritura; la versión 1 se conserva arriba para dejar visible el cambio.
+
+### 5.1 Diagnóstico de la v1
+
+> *«Cuando pierdes en Lichess y estás por cerrar la app, Zaqora valida tu frustración y la convierte en el próximo capítulo de tu historia.»*
+
+| Falla | Dónde está | Por qué importa |
+| :--- | :--- | :--- |
+| **Depende de una marca ajena** | «en Lichess» | Excluye a quien juega en otra plataforma o en tablero físico, y ata el posicionamiento a una plataforma que no controlo. Si el lector no conoce Lichess, la frase pierde su anclaje. |
+| **Promesa abstracta** | «valida tu frustración» | No describe nada observable. El usuario no puede imaginar qué pasa en pantalla, y la frase roza el registro terapéutico sin serlo. |
+| **Requiere contexto previo** | «el próximo capítulo de tu historia» | Solo se entiende si ya se leyó qué es La Campaña. Una propuesta de valor no puede exigir haber leído las semanas anteriores. |
+
+### 5.2 Tres versiones nuevas (máx. 25 palabras, sin marcas de terceros)
+
+=== "Funcional"
+
+    > *«Zaqora toma la partida que acabas de perder y la convierte en un nivel diseñado contra tu error, para que sigas jugando en vez de cerrar.»*
+
+    **Fuerza:** todo es observable — se entiende qué hace el producto sin conocer el mercado.
+    **Limitación:** no dice por qué se elegiría frente al análisis gratuito que ya existe.
+
+=== "Emocional"
+
+    > *«Perder deja de terminar tu sesión: Zaqora transforma tu peor racha en una partida que sí quieres jugar, sin rating y sin nadie mirando.»*
+
+    **Fuerza:** nombra el momento exacto del dolor y el alivio concreto.
+    **Limitación:** deja implícito el mecanismo; si no se acompaña, suena a promesa.
+
+=== "La más fuerte ⭐"
+
+    > *«Cuando pierdes y estás por cerrar el tablero, Zaqora convierte esa derrota en el siguiente nivel de tu campaña: juegas contra tu error, sin rating.»*
+
+    **Por qué esta:** intercepta al usuario en el instante de decisión que el análisis identificó como el campo de batalla real; «juegas contra tu error» explica el mecanismo en tres palabras y «sin rating» dice, sin decirlo, por qué esto y no el análisis técnico que hoy existe. No nombra ninguna plataforma: *«el tablero»* funciona igual para quien juega en línea o en persona.
+
+!!! tip "Prueba de autonomía aplicada"
+    Criterio: **un lector que no conoce el proyecto, el mercado ni el ajedrez en línea debe entenderla completa en una lectura.** La v2 se verificó eliminando toda palabra que exigiera contexto previo (nombres de plataformas, «capítulo», «validar») y comprobando que cada término restante fuera una acción o un objeto reconocible: *perder*, *cerrar*, *tablero*, *nivel*, *error*, *rating*.
+
+### 5.3 Cómo deja Zaqora de depender de Lichess
+
+La observación no era solo de redacción: el diseño original tenía a la API de Lichess como **única** vía de entrada de datos, lo que convertía a un tercero en punto único de falla (cambio de términos de uso, cierre de la API, o simplemente un usuario que juega en otro sitio). El producto se rediseña con tres vías de captura, en orden de independencia:
+
+| Vía | Cómo entra la partida | Dependencia externa |
+| :--- | :--- | :--- |
+| **1. Tablero propio (núcleo)** | El usuario juega los niveles de la campaña dentro de Zaqora; el error se detecta sobre partidas generadas en casa. | **Ninguna.** Zaqora funciona completa aunque no exista ningún conector. |
+| **2. Importación de PGN** | El usuario sube o pega el archivo PGN de cualquier partida. El PGN es un formato abierto y estándar, no propiedad de nadie. | **Ninguna.** Cubre cualquier plataforma, torneo presencial o app. |
+| **3. Conectores opcionales** | APIs públicas de plataformas en línea para sincronizar el historial automáticamente. | **Sustituible.** Son una comodidad de *onboarding*, no el motor. Si una cae, quedan las vías 1 y 2. |
+
+**Consecuencia para el segmento:** el perfil deja de describirse como «jugador de Lichess» y pasa a describirse por conducta — *jugador amateur de ajedrez en línea que, tras perder, abandona la sesión porque no tiene forma de seguir jugando sin arriesgar su rating*. La conducta es la que define el mercado; la plataforma donde ocurre es un detalle de implementación.
+
+!!! note "Actualización del Canvas"
+    La fila **PROPUESTA DE VALOR** del Canvas de la sección 4 queda reemplazada por la v2:
+    *«Cuando pierdes y estás por cerrar el tablero, Zaqora convierte esa derrota en el siguiente nivel de tu campaña: juegas contra tu error, sin rating.»*
+    La **oferta técnica** se reformula sin marca ajena: *«Una aplicación con IA que genera una campaña narrativa personalizada a partir de tus propias partidas, jugadas en Zaqora o importadas desde cualquier plataforma.»*
+
+---
+
+## 6) Reflexión
+
+- **Los números de mercado se ven más sólidos de lo que son.** El TAM/SAM/SOM salió de encadenar supuestos de conversión sobre datos de INEGI y The CIU. La cifra final (82,440 personas) es defendible solo si el supuesto va escrito al lado; sin él, es una cifra prestada. Aprendí a no presentar un número sin su cadena de derivación.
+- **El competidor más peligroso no era un producto.** Todo el mapa competitivo apuntaba a apps, y el análisis terminó señalando un hábito gratuito: cerrar la sesión después de dos derrotas. Competir contra una costumbre exige un producto que llegue en el momento exacto, no uno con más funciones.
+- **Mi primera propuesta de valor describía el producto, no el valor** — y se apoyaba en el nombre de una plataforma ajena para que se entendiera. Esa dependencia era también una dependencia técnica y comercial real, no solo de redacción. La corrección está documentada en la sección 5.
+- **Lo que falta y lo sé:** el precio de 300 MXN es una estimación por comparación con alternativas de *coaching*, no una disposición a pagar medida. Es la hipótesis que sigue.
+- **Sobre el portafolio mismo:** venía documentando el proceso sin cerrar cada semana con lo que aprendí. A partir de aquí, cada entrada termina con esta sección — la reflexión es la parte que convierte un registro de prompts en un aprendizaje.
