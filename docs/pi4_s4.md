@@ -92,9 +92,11 @@ El proceso de esta semana requiere combinar búsquedas con datos reales (Perplex
 
 ### Paso 2 — Dimensionamiento TAM / SAM / SOM 
 
-**Herramienta:** Perplexity (Búsqueda de mercado con fuentes reales).
+**Herramienta:** Perplexity.
 
-??? quote "Prompt completo — Ronda 2 (Perplexity, TAM/SAM/SOM)"
+Como en el paso siguiente, este dimensionamiento se trabajó en **dos rondas con prompts de autoría distinta**: el prompt del profesor (mercado mexicano en pesos, enfoque *top-down*) y uno propio (mercado global en dólares, *top-down* y *bottom-up*). Al final se comparan ambos.
+
+??? quote "Prompt completo — Ronda 2, prompt del profesor (Perplexity, TAM/SAM/SOM)"
     Actúa como analista de mercado con especialización en dimensionamiento para startups de software en América Latina. Tu metodología es el enfoque top-down con triangulación de fuentes verificables: INEGI, CEPAL, BID, reportes de industria con autor y año identificables. No inventes cifras — si no existe fuente verificable para un número, lo señalas y explicas cómo estimarlo con lógica de primer principio.
 
     Somos emprendedores en México:
@@ -110,7 +112,7 @@ El proceso de esta semana requiere combinar búsquedas con datos reales (Perplex
     SAM: El subconjunto alcanzable con el modelo actual. Especificar exactamente qué lo reduce: geografía, canal, precio, idioma, tamaño mínimo de cliente.
     SOM: La porción realista en los primeros 2 años. Justificar el porcentaje con lógica de go-to-market concreta: cuántos vendedores, qué canal, qué geografía piloto. El número sin lógica no sirve.
 
-??? abstract "Respuesta completa — Ronda 2 (Perplexity)"
+??? abstract "Respuesta completa — Ronda 2, prompt del profesor (Perplexity)"
     **DIMENSIONAMIENTO DE MERCADO**
     Concepto: Zaqora - videojuego narrativo para aprender ajedrez y regular la frustración después de perder partidas online.
     Mercado base: México. Precio de referencia: 300 MXN mensuales (3,600 MXN anuales).
@@ -150,6 +152,147 @@ El proceso de esta semana requiere combinar búsquedas con datos reales (Perplex
     · The Competitive Intelligence Unit, Evolución del Gaming Móvil 2024.
     · Bango/3Gem, Subscription Wars 2024.
     · Lichess, End of Year Update 2025.
+
+
+---
+
+#### Segunda ronda — prompt de autoría propia
+
+Los bloques anteriores corresponden al **prompt provisto por el profesor**, que dimensiona el mercado mexicano en pesos a partir del segmento conductual. A continuación se repite el ejercicio con un **prompt escrito por mí**, que pide el dimensionamiento global en dólares combinando enfoque *top-down* y *bottom-up* con fuentes oficiales. La comparación de ambos cierra esta sección.
+
+??? quote "Prompt completo — versión propia (Perplexity, TAM/SAM/SOM global)"
+    Actúa como un analista de mercado e inversiones especializado en valoraciones para startups. Tu objetivo es calcular e investigar el TAM (Total Addressable Market), SAM (Serviceable Addressable Market) y SOM (Serviceable Obtainable Market) para el siguiente negocio:
+
+    Videojuego de ajedrez que sirve para aprender y divertirse
+
+    Para entregar el análisis, debes seguir estrictamente estas reglas:
+
+    **1. METODOLOGÍA DE CÁLCULO**
+    Utiliza una combinación de enfoque Top-Down (de arriba hacia abajo usando datos macroeconómicos) y Bottom-Up (de abajo hacia arriba usando precio medio de venta × número de clientes potenciales).
+    Muestra explícitamente las fórmulas matemáticas que utilizaste para llegar a cada número.
+
+    **2. INVESTIGACIÓN Y FUENTES REALES**
+    Todos los datos macroeconómicos, tamaño del sector, tasa de crecimiento (CAGR) y número de empresas/consumidores deben provenir de fuentes oficiales y reconocidas (por ejemplo: Statista, Grand View Research, IBISWorld, McKinsey, Banco Mundial, informes de asociaciones del sector o entidades gubernamentales).
+    Incluye el nombre de la fuente y el año del informe o dato utilizado junto a cada cifra relevante. Si no tienes un dato exacto de la fuente, indica la suposición (*assumption*) de manera explícita y lógica.
+
+    **3. ESTRUCTURA DE LA RESPUESTA**
+    TAM (Mercado Total Direccionable): Define la oportunidad global o regional total de la industria.
+    SAM (Mercado Direccionable Servible): Filtra el TAM según el segmento de mercado específico al que realmente podemos atender según geografía, perfil de cliente o modelo de negocio actual.
+    SOM (Mercado Alcanzable Servible): Estima la cuota de mercado realista que la empresa puede capturar en un horizonte de 3 a 5 años, considerando la competencia, capacidad operativa y presupuesto de marketing.
+
+    **4. TABLA RESUMEN FINAL**
+    Presenta los resultados finales en una tabla con las siguientes columnas:
+    | Métrica | Valor Monetario (USD) | Metodología / Fórmula | Fuentes / Justificación |
+
+??? abstract "Respuesta completa — versión propia (Perplexity)"
+    **Alcance y supuestos**
+
+    El producto se analiza como un videojuego digital multiplataforma de ajedrez, con aprendizaje integrado, modelo potencial *freemium* y monetización mediante suscripción, compra única o contenido premium.
+
+    !!! warning "Advertencia de la propia herramienta"
+        Las cifras son estimaciones de mercado, no una valoración financiera definitiva. El resultado depende especialmente de: precio medio anual por usuario de pago · porcentaje de jugadores de ajedrez interesados en aprender · geografías atendidas · capacidad de adquisición y retención · modelo de monetización elegido.
+
+    Para evitar mezclar mercados no comparables se utilizan dos referencias: **mercado amplio** (industria global de videojuegos) y **mercado específico** (mercado global del ajedrez, que incluye productos digitales, físicos, educación, torneos y servicios relacionados).
+
+    - Fortune Business Insights estimó el **mercado global del ajedrez en 3,450 millones de USD en 2025**, con un CAGR previsto del **9.28%** entre 2026 y 2034.
+    - Como referencia del mercado digital, Newzoo estimó los ingresos globales de videojuegos de 2024 en **182,700 millones de USD**, con un CAGR de ~3.3% entre 2024 y 2027.
+
+    ────────────────────────────────────────────────────────
+    **TAM — Mercado Total Direccionable**
+
+    *Enfoque top-down.* El TAM más defendible es el mercado global de ajedrez:
+
+    > **TAM top-down = 3,450 millones de USD anuales** *(Fortune Business Insights, 2025)*
+
+    Este valor es deliberadamente amplio: incluye productos físicos, digitales y servicios educativos, por lo que no todo el TAM es capturable por un videojuego. Proyección a cinco años con el CAGR publicado:
+
+    > 3,450 × (1 + 0.0928)⁵ ≈ **5,400 millones de USD en 2030**
+    > *Supone que el CAGR publicado para 2026-2034 se mantiene durante los cinco años.*
+
+    *Enfoque bottom-up.* Se parte de la base de usuarios de Chess.com, que comunicó **más de 243 millones de miembros al 31 de diciembre de 2025**. Como no todos son activos ni todos pagarían, se aplican supuestos explícitos:
+
+    | Variable | Valor | Origen |
+    | :--- | :--- | :--- |
+    | Miembros registrados | 243 millones | Chess.com Board Report, Q4 2025 |
+    | Interesados en una experiencia de aprendizaje gamificada | 25% | *Assumption* |
+    | Precio medio anual equivalente | 30 USD | *Assumption* (≈2.50 USD/mes) |
+
+    > 243,000,000 × 0.25 × 30 USD = **1,823 millones de USD anuales**
+
+    *TAM seleccionado.* Para planificación financiera se toma el **resultado bottom-up (1,823 millones)**, porque representa mejor el mercado monetizable de usuarios digitales interesados en aprender ajedrez. El dato top-down de 3,450 millones funciona como techo sectorial, pero incluye categorías que el producto no puede atender directamente.
+
+    ────────────────────────────────────────────────────────
+    **SAM — Mercado Direccionable Servible**
+
+    Se supone que la primera versión estará disponible en Estados Unidos y Canadá, Europa Occidental, Australia y Nueva Zelanda, y Latinoamérica con soporte en español e inglés; distribución digital en PC, móvil y posiblemente consolas; público infantil, juvenil, familiar y adulto principiante.
+
+    La ITU estimó ~6,000 millones de usuarios de Internet en 2025 (74% de la población mundial). Para no asumir que todo usuario conectado es cliente de videojuegos, se usa la base de Chess.com como *proxy* de interés demostrado en ajedrez.
+
+    - **Filtro geográfico.** No existe desglose público de los 243 millones de miembros por geografía, así que se aplica una hipótesis prudente: **60%** pertenece a geografías atendibles por idioma, pagos, distribución y soporte → 243M × 0.60 = **145.8 millones de usuarios atendibles**.
+    - **Filtro de interés por aprendizaje.** Duolingo informó en su carta a accionistas del 2T de 2025 que su curso de ajedrez superó **1 millón de usuarios activos diarios** solo en iOS y en inglés, poco después de su lanzamiento — valida la demanda por combinar ajedrez, aprendizaje y gamificación. Se mantiene el supuesto del **25%** de interés → 145.8M × 0.25 = **36.45 millones de usuarios**.
+
+    > 145,800,000 × 0.25 × 30 USD = **1,094 millones de USD anuales**
+
+    ────────────────────────────────────────────────────────
+    **SOM — Mercado Alcanzable Servible**
+
+    El SOM debe reflejar una empresa nueva que compite con Chess.com, Lichess, Duolingo Chess, apps móviles de tácticas y entrenamiento, videojuegos de ajedrez tradicionales y plataformas educativas de contenido gratuito. Por eso **no se aplica una cuota genérica del 1% o 5%**, sino una estimación *bottom-up* de usuarios de pago alcanzables.
+
+    *Supuestos operativos a cinco años:* 25 millones de USD de inversión acumulada en producto, contenido, marketing y operaciones · adquisición principalmente digital y orgánica · conversión a pago del 3% de los registros captados · 1.5 millones de registros acumulados al quinto año · 30 USD de ingreso anual medio por usuario de pago.
+
+    > 1,500,000 registros ÷ 145,800,000 atendibles ≈ **1.03%** de los usuarios geográficamente atendibles de Chess.com — ambicioso, pero más realista que suponer una cuota elevada frente a operadores establecidos.
+    >
+    > 1,500,000 × 3% = 45,000 usuarios de pago × 30 USD = **SOM base: 1.35 millones de USD anuales**
+
+    *Escenario alternativo.* Si el producto alcanza 5 millones de registros y convierte al 5%:
+
+    > 5,000,000 × 5% = 250,000 × 30 USD = **SOM alto: 7.5 millones de USD anuales**
+
+    El SOM representa **ingresos recurrentes anualizados** al final del horizonte de 3 a 5 años, no ingresos acumulados del período. El SOM base equivale a ~**0.12% del SAM**; la baja cuota es coherente con un producto nuevo en una categoría dominada por plataformas con cientos de millones de usuarios.
+
+    ────────────────────────────────────────────────────────
+    **Tabla resumen final**
+
+    | Métrica | Valor monetario (USD) | Metodología / Fórmula | Fuentes / Justificación |
+    | :--- | :--- | :--- | :--- |
+    | **TAM top-down** | 3,450 millones anuales | Tamaño de industria reportado | Fortune Business Insights, dato 2025: el mercado global del ajedrez se estimó en 3,450 millones de USD. |
+    | **TAM proyectado 2030** | 5,400 millones anuales | 3,450 × (1 + 0.0928)⁵ | CAGR de 9.28% publicado por Fortune Business Insights para 2026-2034. |
+    | **TAM bottom-up (seleccionado)** | 1,823 millones anuales | 243M miembros × 25% × 30 USD | Chess.com reportó más de 243 millones de miembros a diciembre de 2025. El 25% de interés y los 30 USD anuales son *assumptions* explícitas. |
+    | **SAM** | 1,094 millones anuales | 243M × 60% × 25% × 30 USD | 60% geográficamente atendible y 25% interesado son *assumptions*. Compatible con ~6,000 millones de usuarios de Internet en 2025 según ITU. |
+    | **SOM base (año 3-5)** | 1.35 millones anuales | 1.5M registros × 3% × 30 USD | *Assumptions* operativas de startup: 1.5 millones de registros acumulados, 3% de conversión y ARPU anual de 30 USD. |
+    | **SOM alto (año 3-5)** | 7.5 millones anuales | 5M registros × 5% × 30 USD | Escenario de ejecución fuerte, sujeto a mayor inversión, distribución y retención. |
+
+    **Interpretación para inversión.** La oportunidad es suficientemente grande para justificar la creación de una empresa: el TAM sectorial supera los 3,000 millones de USD y el SAM monetizable estimado supera los 1,000 millones. Sin embargo, **el principal riesgo no es el tamaño del mercado, sino la distribución**: Chess.com ya cuenta con más de 243 millones de miembros y Duolingo demostró una adopción inicial muy rápida de su producto de ajedrez. La tesis de inversión debería centrarse en una diferenciación clara: narrativa y progresión propias de un videojuego · mejor experiencia infantil y familiar · aprendizaje adaptativo con IA · modo historia, personajes, recompensas y competición · distribución mediante escuelas, creadores de contenido y plataformas educativas · enfoque en mercados donde las plataformas dominantes tengan menor localización.
+
+    Estas cifras deben actualizarse después de validar con métricas reales de adquisición, retención a 30/90 días, conversión a pago y costo de adquisición de cliente.
+
+    ??? note "Fuentes principales citadas por Perplexity"
+        fortunebusinessinsights.com/chess-market-113098 · newzoo.com (Global Games Market Update, Q2 2025) · chess.com/board-reports/2025-q4 · itu.int (Statistics 2025) · investors.duolingo.com (carta a accionistas 2T 2025)
+
+#### Comparación de los dos prompts
+
+| | **Prompt del profesor** (bloques anteriores) | **Prompt propio** |
+| :--- | :--- | :--- |
+| **Unidad de medida** | Personas con el problema en México, valorizadas en MXN. | Dinero de la categoría a nivel global, en USD. |
+| **Definición del producto** | Zaqora con su segmento conductual: quien abandona la sesión tras perder. | Genérica: «videojuego de ajedrez que sirve para aprender y divertirse». |
+| **Metodología exigida** | Solo *top-down*, con embudo de filtros explícito y fuente por número. | *Top-down* **y** *bottom-up*, con las fórmulas matemáticas a la vista. |
+| **Fuentes** | INEGI, The CIU, Bango/3Gem — nacionales y recientes. | Fortune Business Insights, Newzoo, Chess.com Board Report, ITU, Duolingo — sectoriales y globales, con enlace verificable. |
+| **Resultado TAM** | 82,440 personas · 296.8 millones MXN anuales. | 1,823 millones de USD anuales. |
+| **Resultado SAM** | 65,952 personas · 237.4 millones MXN anuales. | 1,094 millones de USD anuales. |
+| **Resultado SOM** | 1,200 clientes · 4.32 millones MXN anuales (años 1-2). | 1.35 millones USD base / 7.5 millones USD alto (años 3-5). |
+| **Lógica del SOM** | *Go-to-market* concreto: 2 personas en ventas, 40 aliados × 30 clientes, piloto en cinco estados. | Conversión del 3% sobre 1.5 millones de registros, con 25 millones de USD de inversión acumulada. |
+
+**Qué aportó cada uno**
+
+- **No miden lo mismo, y esa es la lección principal.** Uno cuenta *personas con un dolor específico en un país*; el otro cuenta *dinero de una categoría en el mundo*. Puestos lado a lado parecen contradecirse, pero responden a preguntas distintas: el primero sirve para planear la operación del primer año, el segundo para argumentar ante un inversionista que la categoría es lo bastante grande.
+- **Mi prompt gana en trazabilidad, el del profesor en pertinencia.** Pedir las fórmulas explícitas y fuentes reconocidas produjo una cadena auditable: cada cifra se puede recalcular y cada supuesto está etiquetado como *assumption*. En cambio, al describir el producto de forma genérica («aprender y divertirse»), el mercado que dimensiona no es el de Zaqora, sino el de cualquier videojuego de ajedrez — un número grande que no me pertenece.
+- **El embudo del profesor encadena supuestos sin fuente.** Los filtros de 2% (juegan ajedrez online), 60% (frustración post-derrota) y 10% (disposición de pago) son estimaciones sin respaldo; multiplicados entre sí determinan prácticamente todo el resultado. Su virtud es que apuntan exactamente al usuario de Zaqora; su riesgo es que un error en cualquiera de los tres mueve el TAM en un orden de magnitud.
+- **Exigir *top-down* y *bottom-up* a la vez sirvió de control cruzado.** Los dos caminos dieron 3,450 y 1,823 millones de USD: una brecha de casi el doble que obligó a justificar cuál usar y por qué. El prompt del profesor, al pedir un solo método, no tiene con qué contrastar su propio resultado.
+- **Escala incomparable en el SOM, por un supuesto que no es mío.** El SOM global de 1.35 millones de USD anuales equivale a unos 24 millones de MXN —cerca de seis veces el SOM nacional de 4.32 millones—, pero descansa en 25 millones de USD de inversión acumulada a cinco años, una cifra ajena a la realidad de este proyecto. El SOM del profesor, con dos personas en ventas y 40 aliados, es el único de los dos que puedo defender como plan.
+- **Coinciden en el riesgo de fondo.** Ambos análisis concluyen que el problema no es el tamaño del mercado sino la distribución frente a plataformas con cientos de millones de usuarios. Esa coincidencia, viniendo de dos marcos y dos geografías distintas, es la conclusión más sólida del paso.
+
+!!! note "Nota sobre la conversión de divisas"
+    La comparación entre pesos y dólares es orientativa: se usó un tipo de cambio de referencia aproximado de 18 MXN/USD únicamente para poder contrastar los órdenes de magnitud, no como supuesto financiero del proyecto.
 
 ---
 
