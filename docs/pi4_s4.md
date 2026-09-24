@@ -926,29 +926,42 @@ Los bloques anteriores corresponden al **prompt provisto por el profesor**, que 
 
 ## 4) Entregable — Canvas de Mercado
 
+**Equipo:** _David López Ramírez_ · **Concepto:** _Zaqora_
 
 | Sección del Canvas | Componente | Descripción y Hallazgos |
 | :--- | :--- | :--- |
-| **SEGMENTO ACCIONABLE** | **Demográfica** | Jugadores de ajedrez online (Lichess/Chess.com) de nivel amateur (intermedios y avanzados en desarrollo), mayoritariamente adultos jóvenes en México. |
-| | **Conductual** | Cuando pierden o se frustran, no regulan la emoción dentro de la plataforma y su único workaround es abandonar la sesión por completo («cerrar Lichess» o alejarse 20 minutos). |
-| | **Psicográfica** | Sienten frustración intensa ante la derrota y la soberbia de jugadores más experimentados; atrapados en la espiral de revancha, reconocen que saben que deben parar pero terminan empeorando su rendimiento y humor. |
-| | **Económica** | Costo medido en tiempo perdido, caídas severas de rating en malas rachas y frustración acumulada; disposición a pagar estimada en torno a 300 MXN mensuales (comparable con alternativas de coaching o suscripciones de valor). |
-| | **Hipótesis críticas** | Que el usuario prefiera una experiencia narrativa frente a la inercia del hábito gratuito de cerrar la app, y que la integración técnica permita capturarlo en el instante exacto del *tilt*. |
-| **TAMAÑO DE MERCADO** | **TAM** | **82,440 personas** con el problema y disposición de pago en México · *Fuente:* INEGI, The CIU y estimación de conversión sobre usuarios activos. |
-| | **SAM** | **65,952 personas** · *Filtros:* Usuarios con dispositivos compatibles y alcance geográfico nacional en México. |
-| | **SOM (Año 1-2)** | **1,200 clientes pagadores** (1.82% del SAM) · *Lógica:* Canales de adquisición mediante aliados clave (clubes y streamers) y estrategias de *go-to-market* piloto en zonas urbanas principales. |
-| **MAPA COMPETITIVO** | **Directos (3)** | • **Chess Story:** Narrativa genérica y preescrita, sin adaptación al estado emocional ni integración de datos reales de derrotas.<br>• **AI Dungeon + Chess:** Requiere configuración manual compleja por usuario, careciendo de integración nativa.<br>• **Story Time Chess:** Enfocado puramente en niños pequeños, inadecuado para jugadores online adultos. |
-| | **Indirectos (3)** | • **Chess.com Game Review + Lessons:** Análisis frío y estrictamente técnico que intensifica la autocrítica sin validación emocional.<br>• **Chess Coach Pro / Chessy:** Centrados exclusivamente en tácticas y aperturas, ignorando por completo la regulación emocional del *tilt*.<br>• **MyMentalCoach / Chess Psychology Training:** Solución reactiva que exige proactividad y presupuesto elevado por sesión, llegando tarde al momento crítico. |
-| | **Sustitutos (2)** | • **Regla de «2 derrotas = cerrar la app»:** Costo de tiempo perdido, sesión abortada sin aprendizaje ni cierre, y frustración trasladada a otras actividades.<br>• **Análisis manual post-enfriamiento:** Costo de 20 a 60 minutos adicionales de carga cognitiva y autoevaluación dolorosa sin guía experta. |
-| | **El más peligroso** | El sustituto de la **«Regla de 2 derrotas = cerrar la app»** por su total ausencia de fricción, inmediatez absoluta, gratuidad y validación dentro de la comunidad de ajedrez. |
-| **LIENZO BLUE OCEAN** | **Atributos (6–7)** | Profundidad técnica del análisis, Ranking interno, Facilidad de onboarding, Validación emocional inmediata, Transformación narrativa personalizada, Integración nativa con la sesión, Motor narrativo adaptativo (LLM), Relación precio/valor. |
-| | **Tabla de puntuación** | Liderazgo contundente de Zaqora en validación emocional (5), narrativa personalizada (5) y motor LLM adaptativo (5), con puntaje cero en ranking competitivo interno para evitar la presión. |
+| **1. SEGMENTO ACCIONABLE** | **Demográfica** | Jugadores de ajedrez en línea de nivel amateur (intermedios y avanzados en desarrollo), mayoritariamente adultos jóvenes en México, que juegan varias veces por semana en plataformas gratuitas. |
+| | **Conductual** | Tras perder dos o tres partidas seguidas no regulan la emoción dentro de la plataforma: su único *workaround* es abandonar la sesión por completo —cerrar la app o alejarse 20 minutos—. Algunos aplican una regla autoimpuesta de «2 derrotas = cerrar». |
+| | **Psicográfica** | *«No intenté analizar las partidas en ese momento porque sabía que iba a buscar excusas.»* Sienten frustración intensa ante la derrota y ante la soberbia de jugadores más experimentados; quedan atrapados en la espiral de revancha y reconocen que deberían parar, pero siguen jugando y empeoran su rendimiento y su humor. |
+| | **Económica** | Costo medido en tiempo perdido, caídas de rating en las malas rachas y frustración acumulada. Disposición a pagar estimada en 300 MXN por comparación con alternativas de *coaching* (clases particulares en México: 200-220 MXN/hora). **Quién decide:** el propio usuario paga; no hay comprador institucional. |
+| | **Hipótesis críticas sin verificar** | **1. Modelo de ingresos sin definir:** los 300 MXN se han tratado como *suscripción mensual* en el dimensionamiento y como *pago único* en la estrategia de precio y la propuesta de valor — una diferencia de 12× en ingreso por usuario que arrastra todo el TAM.<br>**2. Preferencia frente al hábito gratuito:** que el usuario elija una experiencia narrativa en vez de la inercia de cerrar la app.<br>**3. Captura en el momento del *tilt*:** que sea viable intervenir antes de que cierre la sesión; si debe abrir una app aparte, el argumento se debilita.<br>**4. Disposición a pagar real:** los 300 MXN son una estimación por comparación, no una cifra medida con usuarios. |
+| **2. TAMAÑO DE MERCADO** | **TAM** | **82,440 personas** con el problema y disposición de pago en México · **296.8 millones de MXN anuales** (82,440 × 3,600 MXN).<br>*Fuente:* INEGI ENDUTIH 2024 (100.2 millones de usuarios de internet) y The CIU 2024 (68.7 millones de jugadores; 42.1% con afinidad por estrategia).<br>*Advertencia:* los tres últimos filtros del embudo —2% juega ajedrez en línea, 60% se frustra al perder, 10% convierte— son supuestos propios sin fuente y determinan la mayor parte del resultado. |
+| | **SAM** | **65,952 personas** · **237.4 millones de MXN anuales**.<br>*Filtros:* geografía (solo México) e idioma español; dispositivo compatible —smartphone o navegador—, que recorta al 80%. |
+| | **SOM (año 1-2)** | **1,200 clientes pagadores** (1.82% del SAM) · **4.32 millones de MXN anuales** teóricos, antes de *churn* y descuentos.<br>*Lógica:* 2 personas dedicadas a ventas y alianzas; 40 aliados (clubes y *streamers*) activados en 24 meses, con 30 clientes cada uno; piloto en CDMX, Edomex, Nuevo León, Jalisco y Puebla.<br>*Señal de viabilidad:* marginal — el ingreso efectivo rondaría 2.4-3.24 millones de MXN, suficiente solo para una operación muy austera. |
+| **3. MAPA COMPETITIVO** | **Directos (3)** | • **Chess Story:** narrativa preescrita y genérica; no se adapta al estado emocional ni usa los datos reales de las derrotas.<br>• **AI Dungeon + Chess:** exige configuración manual del usuario; sin integración nativa ajedrez-emoción-narrativa, y alguien en *tilt* no tiene energía para construir su propia herramienta.<br>• **Story Time Chess:** diseñado para niños de 4+ años; el adulto que juega en línea lo percibe como infantil. |
+| | **Indirectos (3)** | • **Chess.com Game Review + Lessons:** análisis técnico y frío que intensifica la autocrítica justo cuando el usuario necesita lo contrario.<br>• **Chess Coach Pro / Chessy:** centrados en tácticas y aperturas; ignoran la regulación emocional del *tilt*.<br>• **MyMentalCoach / Chess Psychology Training:** exigen iniciativa y presupuesto por sesión; llegan tarde al momento crítico. |
+| | **Sustitutos (2)** | • **Regla de «2 derrotas = cerrar la app»:** sesión abortada sin aprendizaje ni cierre emocional, y frustración trasladada a otras actividades.<br>• **Análisis manual tras enfriarse:** 20 a 60 minutos adicionales de carga cognitiva y autoevaluación dolorosa sin guía. |
+| | **El más peligroso** | La **regla de «2 derrotas = cerrar la app»**. No es un producto, es un hábito: cero fricción, gratuito, inmediato en el instante exacto del dolor y validado dentro de la comunidad. Zaqora no compite contra el análisis de Chess.com, compite contra el botón de cerrar la ventana. |
+| **4. LIENZO BLUE OCEAN** | **Atributos (7)** | Profundidad técnica del análisis · Ranking competitivo interno · Facilidad de *onboarding* · Validación emocional inmediata post-derrota · Transformación narrativa personalizada mediante LLM · Integración nativa con la sesión de juego · Relación precio/valor. |
+| | **Tabla de puntuación** | Zaqora lidera en validación emocional inmediata (5) y transformación narrativa personalizada (5), y puntúa **cero en ranking competitivo interno** — una decisión, no una carencia: el segmento ya tiene un rating, y ese número es precisamente la fuente de su frustración. *(Tabla completa debajo.)* |
 | | **El hueco azul** | Zaqora crea un espacio donde la derrota específica del usuario, en el momento exacto en que ocurre y sin salir de su sesión, se transforma en parte de una historia personal construida con sus propios datos. |
-| **PROPUESTA DE VALOR** | **Oferta técnica** | Una aplicación con inteligencia artificial que genera una historia narrativa personalizada a partir de tus partidas de ajedrez en Lichess, usando tu historial real de derrotas y victorias. |
-| | **Propuesta de valor** | *«Cuando pierdes en Lichess y estás por cerrar la app, Zaqora valida tu frustración y la convierte en el próximo capítulo de tu historia.»* |
-| | **Nivel Pirámide Bain** | Emocional |
-| | **Error de la 1ª versión** | Se enfocaba en describir las funcionalidades técnicas o analíticas del producto en lugar de conectar directamente con el sujeto en el momento exacto del dolor emocional frente a su alternativa competitiva. |
+| | **Advertencia de océano rojo** | En facilidad de *onboarding* Zaqora empata con Chess Story y queda por debajo del hábito de cerrar la app; en integración nativa con la sesión pierde 3 contra 5. Competir por fricción de instalación sería pelear en el terreno donde el hábito gratuito ya ganó. |
+| **5. PROPUESTA DE VALOR** | **Oferta (descripción técnica)** | Una aplicación con inteligencia artificial que genera una historia narrativa personalizada a partir de tus partidas de ajedrez, usando tu historial real de derrotas y victorias. |
+| | **Propuesta de valor** (23 palabras) | *«Cuando pierdes en Lichess y estás por cerrar la app, Zaqora valida tu frustración y la convierte en el próximo capítulo de tu historia.»* |
+| | **Nivel en pirámide de Bain** | **Emocional.** El atributo que domina el lienzo —validación emocional inmediata— no es una función, es un alivio afectivo en el momento de la derrota. El motor narrativo podría empujar hacia lo transformador, pero prometerlo hoy, sin evidencia de retención, sería exagerar. |
+| | **Error de la 1ª versión** | **Describir el producto en lugar del valor.** Se enfocaba en las funcionalidades técnicas y analíticas en vez de situar al usuario en el instante exacto del dolor frente a su alternativa actual. La corrección fue cambiar el sujeto de la frase: del producto a la persona. |
 
+**Tabla de puntuación del lienzo** (1 = muy bajo · 5 = muy alto):
+
+| Atributo | Chess.com Lessons | Chess Story | Regla «2 derrotas» | **Zaqora** |
+| :--- | :---: | :---: | :---: | :---: |
+| Profundidad técnica del análisis | 5 | 1 | 1 | **2** |
+| Ranking competitivo interno | 4 | 1 | 1 | **0** |
+| Facilidad de *onboarding* | 3 | 4 | 5 | **4** |
+| Validación emocional inmediata | 1 | 1 | 2 | **5** |
+| Transformación narrativa personalizada (LLM) | 0 | 2 | 0 | **5** |
+| Integración nativa con la sesión | 1 | 0 | 5 | **3** |
+| Relación precio/valor | 3 | 4 | 5 | **3** |
 ---
 
 ## 5) Reflexión
