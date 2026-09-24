@@ -587,9 +587,11 @@ Los bloques anteriores corresponden al **prompt provisto por el profesor** para 
 
 ### Paso 5 — La Propuesta de Valor (IDEO / Bain)
 
-**Herramienta:** Claude (Síntesis de propuesta de valor con framework IDEO y Pirámide de Bain).
+**Herramienta:** Claude.
 
-??? quote "Prompt completo — Ronda 5 (Claude, Propuesta de Valor)"
+Como en los pasos 2 y 3, la propuesta de valor se trabajó en **dos rondas con prompts de autoría distinta**: el prompt del profesor (IDEO + Pirámide de Bain) y uno propio (*Value Proposition Canvas* + fórmula de Geoff Moore). Al final se comparan ambos.
+
+??? quote "Prompt completo — Ronda 5, prompt del profesor (Claude, Propuesta de Valor)"
     Actúa como estratega de marca y comunicación con experiencia construyendo propuestas de valor para productos de software en etapa early-stage en mercados latinoamericanos. Tu metodología combina el framework Insightful/Unique/Targeted de IDEO con la Pirámide de Valor de Bain: una propuesta sólida opera en el nivel funcional como mínimo, aspira al emocional, y es articulable en una oración que cualquier persona puede memorizar y repetir sin haber visto el producto.
 
     Los criterios que no negocias:
@@ -611,7 +613,7 @@ Los bloques anteriores corresponden al **prompt provisto por el profesor** para 
     PASO 2 — VALIDACIÓN IDEO (Insightful, Unique, Targeted).
     PASO 3 — TRES VERSIONES (Funcional, Emocional, La más fuerte) en máximo 25 palabras y justificadas. Finaliza con la diferencia entre Oferta y Propuesta de Valor.
 
-??? abstract "Respuesta completa — Ronda 5 (Claude)"
+??? abstract "Respuesta completa — Ronda 5, prompt del profesor (Claude)"
     ════════════════════════════════════════════════════════
     PROPUESTA DE VALOR — ZAQORA
     ════════════════════════════════════════════════════════
@@ -649,6 +651,139 @@ Los bloques anteriores corresponden al **prompt provisto por el profesor** para 
 
     **La diferencia en una línea:**
     La oferta describe *qué* hace el motor; la propuesta describe *cuándo y por qué* el usuario la elige en vez de cerrar la app — el sujeto pasa del producto a la persona en el momento exacto del dolor, apuntando directamente al hábito gratuito que hoy gana esa pelea.
+
+
+---
+
+#### Segunda ronda — prompt de autoría propia
+
+Los bloques anteriores corresponden al **prompt provisto por el profesor**, que sintetiza la propuesta de valor con los marcos IDEO y Pirámide de Bain. A continuación se repite el ejercicio con un **prompt escrito por mí**, construido sobre el *Value Proposition Canvas* de Osterwalder y la fórmula de Geoff Moore, y con entregables listos para usar en la página de venta. La comparación de ambos cierra esta sección.
+
+??? quote "Prompt completo — versión propia (Value Proposition Canvas + Geoff Moore)"
+    Actúa como un estratega de marca y especialista en marketing de producto (PMM). Tu objetivo es redactar una propuesta de valor sólida, clara y persuasiva para el siguiente negocio:
+
+    Zaqora, empresa de un videojuego para aprender ajedrez y que construye su propia historia en base al usuario. Segmento objetivo: Jugador de ajedrez online (Lichess) que, al perder o frustrarse, no tiene forma de regular esa frustración dentro del juego y solo sabe abandonar la sesión. Dolor ⭐ que resolvemos: Frustración al perder. Precio estimado: 300 MXN.
+
+    Para desarrollar la propuesta de valor, sigue estrictamente este proceso:
+
+    **1. PERFIL DEL CLIENTE (Value Proposition Canvas)**
+    Trabajos del cliente (*Customer Jobs*): ¿Qué intenta lograr el cliente en su día a día o trabajo?
+    Dolores (*Pains*): ¿Qué le frustra, obstaculiza o genera riesgo antes, durante o después de intentar resolver su problema?
+    Ganancias (*Gains*): ¿Qué resultados o beneficios concretos espera o le sorprenderían positivamente?
+
+    **2. MAPA DEL VALOR**
+    Productos/Servicios: Lo que ofrece la empresa para solucionar el problema.
+    Aliviadores de dolores (*Pain Relievers*): Cómo el producto elimina explícitamente los dolores identificados.
+    Creadores de ganancias (*Gain Creators*): Cómo el producto genera el resultado esperado o supera las expectativas.
+
+    **3. FORMULACIÓN DE LA PROPUESTA DE VALOR**
+    La declaración corta (Fórmula de Geoff Moore): «Para [cliente objetivo] que [necesidad o problema], nuestro [nombre del producto/servicio] es un [categoría de mercado] que [beneficio clave/solución]. A diferencia de [competencia/alternativa actual], nosotros [diferenciador clave].»
+    Elevator Pitch (2-3 frases): Una versión conversacional, clara y sin jerga técnica para explicar en 30 segundos.
+    Titular para sitio web (Landing Page): 1 Titular llamativo (H1) + 1 Subtitular explicativo (H2) + 3 Puntos clave de beneficios (*bullet points*).
+
+    **4. PRUEBA DE ÁCIDO (Validación)**
+    Analiza la propuesta generada y responde brevemente:
+    ¿Es clara? (¿Se entiende en menos de 5 segundos?)
+    ¿Es específica? (¿Evita clichés como «somos los mejores» o «servicio de calidad»?)
+    ¿Es diferenciada? (¿Explica por qué elegirte a ti y no a la competencia?)
+
+??? abstract "Respuesta completa — versión propia"
+    **Propuesta de valor: Zaqora**
+
+    **1. Perfil del cliente**
+
+    | Dimensión | Contenido |
+    | :--- | :--- |
+    | **Trabajos funcionales** | Mejorar su rating, entender por qué pierde y aprender aperturas, táctica y finales sin que se le haga pesado. |
+    | **Trabajos emocionales** | Disfrutar el ajedrez aunque pierda y sentir que avanza. |
+    | **Trabajos sociales** | Que lo vean como un jugador que mejora, no como alguien que se rinde. |
+
+    **Dolores**
+
+    - Pierde una o varias partidas seguidas y lo único que hace es cerrar la sesión.
+    - Se enoja, juega partidas rápidas por revancha (*tilt*) y sigue perdiendo rating.
+    - La plataforma no le da nada para procesar la derrota: hay análisis técnico, pero nada que atienda cómo se siente.
+    - Después de una racha mala vuelve con miedo a jugar, o deja de jugar varios días.
+    - Los cursos y puzzles tradicionales le parecen tareas escolares y no lo enganchan.
+
+    **Ganancias**
+
+    - Que perder tenga sentido: sentir que cada derrota sirve para algo.
+    - Mejorar su rating y su comprensión del juego.
+    - Una experiencia que se sienta suya, adaptada a su estilo y a sus errores.
+    - Le sorprendería positivamente que el juego «recordara» sus partidas y las convirtiera en historia.
+
+    ────────────────────────────────────────────────────────
+    **2. Mapa del valor**
+
+    **Productos y servicios**
+
+    - Un videojuego de ajedrez con narrativa adaptativa: la historia se construye con las partidas, errores y victorias del jugador.
+    - Misiones de aprendizaje (táctica, aperturas, finales) integradas en la trama.
+    - Mecánicas de pausa y reflexión después de una derrota.
+    - Pago único de 300 MXN, sin suscripción.
+
+    | Dolor identificado | Aliviador de dolor |
+    | :--- | :--- |
+    | La derrota termina la sesión | Perder no termina la sesión, **abre un capítulo nuevo**: el personaje reacciona, aparece un reto de redención y el jugador tiene una razón para quedarse. |
+    | Revancha impulsiva (*tilt*) | En vez de lanzar otra partida rápida, el juego propone **pausas guiadas y misiones cortas de bajo riesgo** que bajan la tensión. |
+    | Falta de acompañamiento emocional | El error se convierte en una lección dentro de la historia: *«tu rival explotó la columna abierta; tu mentor te enseña a defenderla»*. |
+    | Aburrimiento del entrenamiento | El aprendizaje llega como **progreso narrativo**, no como lista de ejercicios. |
+
+    **Creadores de ganancias**
+
+    - **Progreso visible:** la historia avanza también cuando pierdes, así que siempre hay sensación de avance.
+    - **Personalización:** los errores recurrentes del jugador se vuelven los rivales y retos de su historia.
+    - **Transferencia a la partida real:** practica justo lo que le cuesta y lo aplica en sus partidas en línea.
+    - **Memoria emocional:** la historia es única para cada jugador y le da orgullo seguirla.
+
+    ────────────────────────────────────────────────────────
+    **3. Formulación de la propuesta de valor**
+
+    **Declaración corta (fórmula de Geoff Moore)**
+
+    > Para **jugadores de ajedrez online que, al perder, se frustran y solo saben abandonar la sesión**, Zaqora es un **videojuego de ajedrez narrativo** que **convierte cada derrota en un capítulo de su propia historia y en una lección que los hace volver con más ganas**. A diferencia de las plataformas de juego y las apps de entrenamiento, **que te muestran el error y te dejan solo con el enojo**, nosotros **construimos una historia alrededor de tus partidas, para que perder se sienta como avanzar**.
+
+    **Elevator pitch**
+
+    > ¿Sabes esa sensación de perder tres partidas seguidas y cerrar todo con coraje? Zaqora es un videojuego que toma tus derrotas y las convierte en la historia de tu personaje: cada error se vuelve un reto que te enseña justo lo que te faltó. Juegas, aprendes y, sobre todo, ya no te vas enojado.
+
+    **Titulares para la página de venta**
+
+    | Elemento | Texto |
+    | :--- | :--- |
+    | **H1** | Perder también es parte de tu historia. |
+    | **H2** | Zaqora es el videojuego de ajedrez que convierte tus derrotas en capítulos, retos y lecciones hechos a tu medida, para que dejes de abandonar y empieces a mejorar. |
+    | **Beneficio 1** | *Pierdes, pero no te vas:* cada derrota abre una misión de redención en lugar de una pantalla vacía. |
+    | **Beneficio 2** | *Aprendes de tus propios errores:* la historia se construye con las jugadas que más te cuestan. |
+    | **Beneficio 3** | *Una aventura solo tuya:* por 300 MXN, pago único, sin suscripciones. |
+
+    ────────────────────────────────────────────────────────
+    **4. Prueba de ácido**
+
+    | Criterio | Veredicto | Análisis |
+    | :--- | :--- | :--- |
+    | **¿Es clara?** | ✅ Sí | «Perder también es parte de tu historia» se entiende en menos de 5 segundos y conecta directo con el dolor. *Riesgo:* sin el H2, alguien podría no saber que se trata de ajedrez — conviene poner un tablero o una pieza visible junto al titular. |
+    | **¿Es específica?** | ✅ Sí | Evita clichés y nombra un momento concreto (perder y cerrar la sesión), un mecanismo concreto (la derrota abre un capítulo o misión) y un precio concreto. *Falta* un dato que la respalde, como «X % de jugadores sigue jugando después de una derrota»: vale la pena medirlo en pruebas con usuarios. |
+    | **¿Es diferenciada?** | ✅ Sí | Las plataformas de juego compiten en análisis técnico y los cursos en contenido; nadie ataca la frustración con narrativa personalizada. *La debilidad es el precio:* la alternativa principal es gratuita, así que hay que justificar los 300 MXN con una demo o un primer capítulo sin costo que haga sentir el valor antes de pagar. |
+
+#### Comparación de los dos prompts
+
+| | **Prompt del profesor** (bloques anteriores) | **Prompt propio** |
+| :--- | :--- | :--- |
+| **Marco metodológico** | IDEO (*Insightful / Unique / Targeted*) + Pirámide de Valor de Bain. | *Value Proposition Canvas* de Osterwalder + fórmula de Geoff Moore. |
+| **Punto de partida** | Insumos ya sintetizados en los pasos previos: perfil, dolor ⭐, competidor más peligroso, precio. | El cliente desde cero: trabajos, dolores y ganancias antes de redactar una sola línea. |
+| **Restricciones de forma** | Máximo 25 palabras, lista explícita de palabras prohibidas (*plataforma, solución integral, innovador, ecosistema*…). | Ninguna restricción de extensión ni de vocabulario. |
+| **Entregable** | Tres versiones de una frase (funcional, emocional, la más fuerte) + diferencia entre oferta y propuesta de valor. | Canvas completo + declaración larga + *elevator pitch* + H1/H2/beneficios + prueba de ácido. |
+| **Validación incluida** | Evaluación IDEO y nivel en la pirámide de Bain. | Prueba de ácido de tres preguntas: claridad, especificidad y diferenciación. |
+
+**Qué aportó cada uno**
+
+- **El del profesor produce una frase; el mío produce el material de la página.** Las restricciones de extensión y la lista de palabras prohibidas obligan a destilar hasta una oración memorizable. Mi prompt, sin ese límite, entrega una declaración de Geoff Moore de casi sesenta palabras: completa y precisa, pero imposible de repetir de memoria. A cambio, deja listos el titular, el subtitular, los tres beneficios y el *pitch* hablado.
+- **Mi prompt muestra de dónde sale la propuesta.** Al exigir el Canvas antes de redactar, queda visible la cadena dolor → aliviador → frase. El prompt del profesor parte de un diagnóstico ya hecho en los pasos anteriores, así que su propuesta es más afilada pero menos auditable: no se ve el razonamiento, solo el resultado.
+- **La prueba de ácido encontró una debilidad que el otro marco no toca:** la alternativa principal del usuario es gratuita, y ninguna de las dos propuestas lo resuelve. De ahí sale una decisión concreta de producto — primer capítulo o demo sin costo antes de pedir los 300 MXN — que no aparecía en ninguna parte del análisis previo.
+- **Discrepancia detectada entre pasos.** Mi prompt entregó el precio como «300 MXN» sin especificar periodicidad, y la respuesta lo interpretó como **pago único sin suscripción**. En el Paso 2, en cambio, los mismos 300 MXN se dimensionaron como **suscripción mensual** (3,600 MXN anuales). Es la misma cifra leída de dos formas que difieren por un factor de doce en ingreso por usuario, y por lo tanto en todo el TAM. Definir el modelo de ingresos —pago único o suscripción— es un pendiente que ninguno de los dos prompts resolvió, porque ninguno lo preguntó.
+- **Coinciden en el núcleo, otra vez.** Ambos marcos, con métodos y salidas distintas, llegan a la misma idea: la derrota deja de cerrar la sesión y pasa a abrir un capítulo. Que dos caminos independientes aterricen en la misma frase es la mejor señal de que el posicionamiento no depende de cómo se formuló la pregunta.
 
 ---
 
