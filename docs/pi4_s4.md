@@ -506,9 +506,11 @@ Los bloques anteriores corresponden al **prompt provisto por el profesor** para 
 
 ### Paso 4 — Lienzo Estratégico (Océano Azul)
 
-**Herramienta:** Claude (Lienzo estratégico Blue Ocean y Marco de las Cuatro Acciones).
+**Herramienta:** Claude.
 
-??? quote "Prompt completo — Ronda 4 (Claude, Lienzo Estratégico Blue Ocean)"
+Como en los pasos 2, 3 y 5, este lienzo se trabajó en **dos rondas con prompts de autoría distinta**: el prompt del profesor (lienzo contra competidores concretos) y uno propio (metodología canónica de Kim & Mauborgne contra la industria promedio). Al final se comparan ambos.
+
+??? quote "Prompt completo — Ronda 4, prompt del profesor (Claude, Lienzo Estratégico Blue Ocean)"
     Actúa como estratega de innovación con experiencia en Blue Ocean Strategy aplicada a startups de software en mercados emergentes latinoamericanos. Tu especialidad es construir lienzos estratégicos que revelan la diferenciación real — no la que el equipo quiere ver sino la que los datos del mercado sugieren. Aplicas el Marco de las Cuatro Acciones (Eliminar / Reducir / Incrementar / Crear) antes de construir el lienzo, porque el lienzo es la consecuencia del marco, no el punto de partida. Cuando el equipo no tiene ventaja en un atributo, lo puntúas bajo — la honestidad del lienzo es su único valor real.
 
     Tenemos este mapa competitivo:
@@ -522,7 +524,7 @@ Los bloques anteriores corresponden al **prompt provisto por el profesor** para 
     PASO 1 — MARCO DE LAS CUATRO ACCIONES (Eliminar, Reducir, Incrementar, Crear con justificación).
     PASO 2 — LIENZO ESTRATÉGICO (Atributos, Tabla de Puntuación de 1 a 5, Lectura del Lienzo, Advertencia de Océano Rojo y Pregunta clave para el equipo).
 
-??? abstract "Respuesta completa — Ronda 4 (Claude)"
+??? abstract "Respuesta completa — Ronda 4, prompt del profesor (Claude)"
     ════════════════════════════════════════════════════════
     LIENZO ESTRATÉGICO BLUE OCEAN
     Concepto: Zaqora · Segmento: Jugador de ajedrez online en Lichess que, tras perder y frustrarse, no tiene forma de regular esa emoción dentro del juego y solo sabe cerrar la sesión.
@@ -582,6 +584,141 @@ Los bloques anteriores corresponden al **prompt provisto por el profesor** para 
 
     **PREGUNTA CLAVE PARA EL EQUIPO:**
     ¿Es técnica y comercialmente viable construir una integración lo suficientemente cercana a la sesión de Lichess (overlay, extensión o notificación instantánea post-derrota) en el MVP? Si el usuario debe abrir una app aparte, el argumento de desplazar a la "regla de 2 derrotas" se debilita.
+
+
+---
+
+#### Segunda ronda — prompt de autoría propia
+
+Los bloques anteriores corresponden al **prompt provisto por el profesor**, que parte del mapa competitivo del Paso 3 y puntúa a competidores concretos. A continuación se repite el ejercicio con un **prompt escrito por mí**, apegado a la metodología canónica de Kim & Mauborgne: curva de la industria promedio, matriz ERRC, lienzo con justificación por factor y validación con los tres criterios (foco, divergencia y mensaje contundente). La comparación de ambos cierra esta sección.
+
+??? quote "Prompt completo — versión propia (Lienzo Estratégico, Kim & Mauborgne)"
+    Actúa como un consultor en estrategia de negocio e innovación especializado en la metodología de la Estrategia del Océano Azul (Chan Kim & Renée Mauborgne). Tu objetivo es ayudarme a construir un Lienzo Estratégico (*Strategy Canvas*) y desarrollar un perfil estratégico divergente para el siguiente negocio:
+
+    Zaqora, empresa de un videojuego para aprender ajedrez y que construye su propia historia en base al usuario. Segmento objetivo: Jugador de ajedrez online (Lichess) que, al perder o frustrarse, no tiene forma de regular esa frustración dentro del juego y solo sabe abandonar la sesión. Dolor ⭐ que resolvemos: Frustración al perder. Precio estimado: 300 MXN.
+
+    Por favor, sigue estrictamente esta estructura paso a paso:
+
+    **1. FACTORES DE COMPETENCIA DE LA INDUSTRIA (Curva de Valor Actual)**
+    Identifica de 6 a 8 factores clave en los que la industria actualmente invierte y compite (ej. precio, personalización, velocidad, variedad, complejidad de uso, etc.).
+    Asigna una puntuación estimada del 1 (muy bajo) al 5 (muy alto) al competidor promedio/estándar de la industria en cada factor.
+
+    **2. MATRIZ DE LAS 4 ACCIONES (Esquema de las Cuatro Acciones / ERRC)**
+    Aplica el marco de trabajo para romper el *trade-off* entre valor y costo:
+    ELIMINAR: Factores que la industria da por sentados pero que aportan poco valor real al cliente.
+    REDUCIR: Factores que pueden ser reducidos muy por debajo del estándar de la industria para bajar costos.
+    INCREMENTAR: Factores que deben elevarse muy por encima del estándar actual para resolver fricciones del usuario.
+    CREAR: Factores completamente nuevos que la industria nunca ha ofrecido para atraer a «no clientes».
+
+    **3. LIENZO ESTRATÉGICO EN TABLA (Comparativa de Curvas de Valor)**
+    Genera una tabla comparativa ordenando los factores de competencia con la siguiente estructura:
+    | Factor de Competencia / Valor | Industria Tradicional (1-5) | Nuestra Propuesta Océano Azul (1-5) | Acción ERRC Aplicada | Justificación Estratégica |
+
+    **4. EVALUACIÓN Y MENSAJE DE LA NUEVA ESTRATEGIA**
+    Sintetiza los resultados validando que la nueva curva de valor cumpla con los 3 criterios clave:
+    Foco: ¿En cuáles factores específicos se concentra el esfuerzo de la empresa?
+    Divergencia: ¿De qué manera la curva de valor se aleja visual y funcionalmente del estándar de la industria?
+    Slogan contundente: Redacta una frase impactante, clara y transparente (máximo 12 palabras) que resuma la nueva propuesta de valor.
+
+??? abstract "Respuesta completa — versión propia"
+    **Estrategia del Océano Azul: Zaqora**
+
+    **Planteamiento.** Zaqora no compite con Lichess o Chess.com por ser «mejor plataforma de ajedrez». Atiende al jugador que la industria ya pierde: el que cierra la pestaña enojado después de una derrota. Ese jugador es un **no cliente de primer nivel**: juega, pero está a un paso de irse.
+
+    ────────────────────────────────────────────────────────
+    **1. Factores de competencia de la industria (curva de valor actual)**
+
+    Se toma como referencia al competidor promedio: Lichess, Chess.com, Chessable y apps de puzzles.
+
+    | # | Factor | Industria (1–5) | Por qué |
+    | :---: | :--- | :---: | :--- |
+    | 1 | Precio (nivel de cobro) | 3 | Va de gratis (Lichess) a suscripciones premium y cursos caros. |
+    | 2 | Ranking ELO y tablas públicas | 5 | Es el centro de la experiencia. El número manda. |
+    | 3 | Volumen de contenido (puzzles, cursos, aperturas) | 5 | Compiten por tener bibliotecas enormes. |
+    | 4 | Análisis técnico con motor (evaluaciones, líneas) | 5 | Stockfish, precisión en %, *blunders* marcados en rojo. |
+    | 5 | Variedad de ritmos y modos (bullet, blitz, torneos, variantes) | 5 | Juego rápido e inmediato, muchas partidas seguidas. |
+    | 6 | Personalización del aprendizaje | 2 | Casi siempre es genérica: el mismo curso para todos. |
+    | 7 | Progresión y motivación (gamificación) | 3 | Rachas, insignias y puzzles diarios, sin un hilo que les dé sentido. |
+
+    **Lo que nadie ofrece:** qué hacer con la emoción después de perder. La derrota solo aparece como un número de ELO que baja y un análisis frío.
+
+    ────────────────────────────────────────────────────────
+    **2. Matriz de las 4 acciones (ERRC)**
+
+    | ELIMINAR | REDUCIR |
+    | :--- | :--- |
+    | **ELO y tablas públicas:** el juicio público alimenta la frustración. El nivel se calibra de forma interna e invisible.<br><br>**Ritmos hiperrápidos (bullet/blitz):** favorecen el «una más» impulsivo y el *tilt*. | **Volumen de contenido:** menos lecciones, pero elegidas para cada jugador.<br><br>**Análisis técnico con motor:** se reduce a 1 o 2 ideas clave explicadas en lenguaje humano, sin *centipawns*.<br><br>**Precio:** 300 MXN en un solo pago, por debajo de las suscripciones premium anuales. |
+
+    | INCREMENTAR | CREAR |
+    | :--- | :--- |
+    | **Personalización del aprendizaje:** el juego detecta los errores recurrentes del jugador y construye el reto siguiente a partir de ellos.<br><br>**Progresión y motivación:** cada partida, ganada o perdida, avanza algo que importa. | **Regulación emocional de la frustración:** micro-rituales después de perder (pausa, reencuadre, «¿qué aprendiste?») y un cierre de sesión sano en lugar de huir.<br><br>**Historia adaptativa construida por el jugador:** la narrativa cambia según su estilo, sus errores y sus derrotas. Perder abre capítulos en vez de castigar. |
+
+    ────────────────────────────────────────────────────────
+    **3. Lienzo estratégico**
+
+    | Factor de competencia / valor | Industria tradicional (1–5) | Zaqora Océano Azul (1–5) | Acción ERRC | Justificación estratégica |
+    | :--- | :---: | :---: | :---: | :--- |
+    | Precio (nivel de cobro) | 3 | 2 | Reducir | Un pago único de 300 MXN baja la barrera de entrada y evita la fatiga de las suscripciones. |
+    | Ranking ELO y tablas públicas | 5 | 1 | Eliminar | La comparación pública es el detonante principal de la frustración del segmento. |
+    | Ritmos hiperrápidos y torneos | 5 | 1 | Eliminar | Favorecen el *tilt* y las revanchas impulsivas, justo lo contrario de regular la emoción. |
+    | Volumen de contenido | 5 | 2 | Reducir | Menos contenido, pero relevante, cuesta menos producir y abruma menos al jugador. |
+    | Análisis técnico con motor | 5 | 2 | Reducir | Un «−3.2» no enseña a un jugador frustrado. Una idea clara sí. |
+    | Personalización del aprendizaje | 2 | 5 | Incrementar | Ataca la causa de las derrotas repetidas: los errores propios, no los genéricos. |
+    | Progresión y motivación | 3 | 5 | Incrementar | Si perder también hace avanzar algo, el jugador deja de abandonar la sesión. |
+    | Regulación emocional post-derrota | 1 | 5 | Crear | Es el dolor principal que resuelve: da una salida a la frustración dentro del juego. |
+    | Historia adaptativa construida por el jugador | 1 | 5 | Crear | Es la diferencia más difícil de copiar. Convierte cada partida en narrativa personal. |
+
+    **Curvas de valor (visualización rápida):**
+
+    ```text
+                            1   2   3   4   5
+    Precio                  ····I···Z
+    ELO público             Z···············I
+    Ritmos rápidos          Z···············I
+    Volumen contenido       ····Z···········I
+    Análisis motor          ····Z···········I
+    Personalización         ····I···········Z
+    Progresión              ········I·······Z
+    Regulación emocional    I···············Z
+    Historia adaptativa     I···············Z
+
+    I = Industria   Z = Zaqora
+    ```
+
+    Las dos curvas casi se cruzan en espejo: donde la industria está en su punto más alto, Zaqora está en el más bajo, y al revés.
+
+    ────────────────────────────────────────────────────────
+    **4. Evaluación de la nueva estrategia**
+
+    **Foco.** La inversión se concentra en tres factores: **regulación emocional después de perder** (el dolor principal), **historia adaptativa** (la diferencia difícil de copiar) y **personalización del aprendizaje** (lo que convierte el alivio emocional en mejora real). Todo lo demás se recorta a propósito, lo que libera recursos: no hace falta competir en motor, volumen ni infraestructura de torneos.
+
+    **Divergencia.** La industria compite en la dimensión competitiva y técnica —rating, velocidad, cantidad, precisión—; Zaqora compite en la dimensión emocional y narrativa. *Visualmente:* la curva de Zaqora es casi el negativo de la de la industria. *Funcionalmente:* en una plataforma tradicional una derrota es un número que baja; en Zaqora es un capítulo que empieza. No es «otro Lichess con mejor diseño», sino otra categoría: **videojuego narrativo de crecimiento a través del ajedrez**.
+
+    **Slogan (11 palabras):**
+
+    > **«Pierde una partida, gana un capítulo: el ajedrez que te entiende.»**
+
+    *Opciones alternativas:* «Aquí perder no te saca del juego: te hace avanzar.» · «Tu historia se escribe con cada derrota.»
+
+#### Comparación de los dos prompts
+
+| | **Prompt del profesor** (bloques anteriores) | **Prompt propio** |
+| :--- | :--- | :--- |
+| **Contra quién se compara** | Cuatro curvas: Chess.com Lessons, Chess Story, el hábito «2 derrotas» y Zaqora. | Dos curvas: el competidor promedio de la industria y Zaqora. |
+| **Insumo de partida** | El mapa competitivo del Paso 3 y las capacidades técnicas del equipo. | Solo el concepto, el segmento, el dolor y el precio. |
+| **Atributos resultantes** | Centrados en el mecanismo del producto: *onboarding*, integración nativa con la sesión, motor LLM. | Centrados en cómo compite la industria: ELO público, ritmos rápidos, volumen de contenido, precio. |
+| **Trazabilidad ERRC → lienzo** | El marco y el lienzo van en secciones separadas. | Una columna del lienzo indica la acción ERRC de cada factor. |
+| **Cierre** | Advertencia de océano rojo + pregunta crítica para el equipo. | Validación de foco y divergencia + eslogan de 11 palabras. |
+
+**Qué aportó cada uno**
+
+- **El del profesor se puede accionar; el mío se puede explicar.** Comparar contra competidores con nombre dice exactamente dónde Zaqora gana y dónde pierde frente a cada uno. Comparar contra una «industria promedio», que es el método canónico de Kim & Mauborgne, muestra algo distinto y también útil: que toda la industria compite en la misma dimensión, y que ahí no hay nada que ganar.
+- **Mi lienzo no admite ni una desventaja, y eso es un problema.** Los nueve factores salen a favor de Zaqora, y la conclusión —«la curva es casi el negativo de la industria»— suena contundente precisamente porque nada la contradice. El prompt del profesor incluía una instrucción que el mío no tiene: *cuando el equipo no tiene ventaja en un atributo, puntúalo bajo*. De ahí salen la advertencia de océano rojo y la brecha honesta en integración nativa (3 contra 5 del hábito de cerrar la app), que es el riesgo mayor del proyecto. **Mi lienzo no lo ve porque ni siquiera incluye ese factor.**
+- **Mi prompt aporta dos decisiones de producto que el otro no toca:** eliminar los ritmos hiperrápidos —bullet y blitz favorecen la revancha impulsiva, justo lo contrario de regular la emoción— y bajar deliberadamente el nivel de cobro. Ninguna aparecía en el análisis previo.
+- **La trazabilidad ERRC → lienzo es la mejora de forma más útil.** Que cada factor cargue su acción (*eliminar, reducir, incrementar, crear*) y su justificación impide el lienzo decorativo donde las puntuaciones se ponen a ojo; cada número queda amarrado a una decisión declarada.
+- **El eslogan es el entregable que faltaba.** Kim & Mauborgne exigen tres criterios: foco, divergencia y **mensaje contundente**. El prompt del profesor cubre los dos primeros; sin pedir el tercero, el lienzo queda sin la frase que lo comunica hacia afuera.
+- **Segunda aparición del mismo desajuste de precio.** Esta ronda vuelve a tratar los 300 MXN como **pago único** («un pago único de 300 MXN… evita la fatiga de las suscripciones»), igual que la ronda propia del Paso 5, mientras que el dimensionamiento del Paso 2 los asume como **suscripción mensual**. Que la discrepancia aparezca en dos rondas independientes confirma que el modelo de ingresos sigue sin estar definido, y que la definición cambia tanto la estrategia de precio como el tamaño de mercado.
+- **Coinciden en las dos decisiones estructurales.** Ambos marcos, por caminos distintos, **eliminan el ranking competitivo** y **crean la narrativa adaptativa**. Son las dos decisiones que sobreviven a cualquier formulación de la pregunta, y por eso son las que definen el producto.
 
 ---
 
