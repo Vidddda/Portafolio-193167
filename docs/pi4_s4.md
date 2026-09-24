@@ -155,9 +155,11 @@ El proceso de esta semana requiere combinar búsquedas con datos reales (Perplex
 
 ### Paso 3 — Análisis Competitivo
 
-**Herramienta:** Perplexity (Mapa de inteligencia competitiva de tres capas).
+**Herramienta:** Perplexity.
 
-??? quote "Prompt completo — Ronda 3 (Perplexity, Mapa Competitivo)"
+Este paso se trabajó en **dos rondas con prompts de autoría distinta**: primero el prompt provisto por el profesor (mapa de inteligencia competitiva en tres capas) y después uno propio, planteado desde el marco de Océano Azul. Al final se comparan ambos.
+
+??? quote "Prompt completo — Ronda 3, prompt del profesor (Perplexity, Mapa Competitivo)"
     Actúa como analista de inteligencia competitiva especializado en mercados de producto digital en América Latina. Tu metodología identifica tres capas de competidores con énfasis en actores reales y con tracción observable — no en listados genéricos de industria ni en productos que no han lanzado. Para cada competidor buscas su debilidad específica para el segmento del equipo, no sus debilidades generales.
 
     Somos emprendedores en México con un negocio que combina una aplicación con IA y una página web de venta.
@@ -173,7 +175,7 @@ El proceso de esta semana requiere combinar búsquedas con datos reales (Perplex
 
     Para cada competidor: Nombre y descripción (1 oración), Dónde opera, Precio o modelo de ingresos, y Su debilidad específica para nuestro segmento.
 
-??? abstract "Respuesta completa — Ronda 3 (Perplexity, Mapa Competitivo)"
+??? abstract "Respuesta completa — Ronda 3, prompt del profesor (Perplexity, Mapa Competitivo)"
     ════════════════════════════════════════════════════════
     MAPA COMPETITIVO — ZAQORA
     Segmento: Jugador de ajedrez online (Lichess/Chess.com) que abandona la sesión por frustración tras perder
@@ -209,6 +211,153 @@ El proceso de esta semana requiere combinar búsquedas con datos reales (Perplex
         5. *Precio anclado a valor:* $300 MXN posicionado como "menos que una sesión de coaching tradicional".
 
     *Nota de Océano Azul:* No se identificaron competidores directos con tracción observable en México/LATAM que combinen videojuego de ajedrez + narrativa IA adaptativa + regulación emocional post-derrota, confirmando un espacio blanco comercial.
+
+
+---
+
+#### Segunda ronda — prompt de autoría propia
+
+Los bloques anteriores corresponden al **prompt provisto por el profesor** para este bloque, con la estructura de mapa competitivo en tres capas. A continuación se repite el ejercicio con un **prompt escrito por mí**, que ataca el mismo objetivo desde el marco de Océano Azul (matriz de las cuatro acciones y curva de valor) en lugar del mapa de tres capas. La comparación de ambos cierra esta sección.
+
+??? quote "Prompt completo — versión propia (Perplexity, Análisis Competitivo y Océano Azul)"
+    Actúa como un estratega experto en negocios y posicionamiento de mercado. Tu objetivo es ayudarme a desarrollar el Análisis Competitivo y Estrategia de Océano Azul para mi proyecto.
+
+    Información de mi proyecto:
+    Nombre/Idea de negocio: Zaqora — videojuego de ajedrez donde tú escribes tu propia historia
+    Producto/Servicio principal: Videojuego para aprender ajedrez que arma una historia en base a tus partidas
+    Público objetivo: Jugadores de ajedrez que suelen perder partidas
+    Competidores principales conocidos: Chess Story, AI Dungeon + Chess y Story Time Chess
+
+    Por favor, genera lo siguiente:
+
+    **Matriz de Análisis Competitivo:**
+    Identifica a los competidores directos e indirectos clave.
+    Analiza sus fortalezas, debilidades, propuesta de valor y modelo de precios.
+
+    **Diagnóstico del «Océano Rojo»:**
+    Resume los factores principales en los que compite la industria actualmente y por qué el mercado está saturado o commodificado en esos puntos.
+
+    **Matriz de las Cuatro Acciones (Estrategia Océano Azul):**
+    Eliminar: Factores que la industria da por sentados pero que no aportan valor real.
+    Reducir: Factores que se pueden reducir muy por debajo del estándar de la industria para bajar costos.
+    Incrementar: Factores que deben elevarse muy por encima del estándar del mercado.
+    Crear: Factores completamente nuevos que la industria nunca ha ofrecido para abrir una nueva demanda.
+
+    **Curva de Valor y Propuesta Divergente:**
+    Redacta una propuesta de valor única basada en las cuatro acciones anteriores, explicando cómo este enfoque nos saca de la competencia directa y nos posiciona en un espacio de mercado no disputado.
+
+    Por favor, presenta la información de forma visual utilizando tablas donde aplique y puntos clave para facilitar su lectura.
+
+??? abstract "Respuesta completa — versión propia (Perplexity)"
+    **Análisis competitivo de Zaqora**
+
+    Zaqora no debería posicionarse como «otra plataforma para aprender ajedrez». Su oportunidad está en convertir cada partida —especialmente una derrota— en una experiencia narrativa, emocional y educativa que motive al jugador a volver y mejorar.
+
+    !!! warning "Advertencia de la propia herramienta"
+        La información pública sobre Chess Story es limitada y puede referirse a productos distintos. Conviene validar sus características y precios antes de usar este análisis en un *pitch* formal.
+
+    **1. Matriz competitiva**
+
+    | Competidor | Tipo | Propuesta de valor | Fortalezas | Debilidades / oportunidad para Zaqora | Modelo de precios observado |
+    | :--- | :--- | :--- | :--- | :--- | :--- |
+    | **Chess Story / Chess2Story** | Directo | Convierte una partida de ajedrez en una historia ilustrada, con capítulos, personajes, arco dramático y ejercicios tácticos. | Combina análisis ajedrecístico con narrativa; ofrece análisis ilimitado, *teasers*, personajes y ejercicios. | Puede sentirse como un informe generado después de jugar, no como una aventura interactiva durante el aprendizaje. La personalización emocional y la progresión del jugador pueden ser limitadas. | Gratis con funciones básicas; historias desde ~2.79 USD; planes de 9, 19 y 39 USD al mes. |
+    | **AI Dungeon + Chess** | Directo / sustituto | Usa IA generativa para crear aventuras abiertas y narrativas controladas por el jugador. | Gran libertad narrativa, alta rejugabilidad y capacidad de improvisación. | No está diseñado específicamente para enseñar ajedrez; separa la historia de la calidad de las decisiones en el tablero. La IA puede producir narrativas inconsistentes o poco pedagógicas. | Plan gratuito y suscripciones desde 14.99 USD mensuales; niveles superiores hasta 99.99 USD. |
+    | **Story Time Chess** | Indirecto fuerte | Enseña ajedrez a niños mediante cuentos, personajes, piezas especiales y actividades físicas. | Excelente accesibilidad para principiantes; aprendizaje basado en cuentos; fuerte atractivo familiar. | Orientado principalmente a niños pequeños y a una experiencia de mesa. No resuelve el problema del jugador digital que pierde partidas y quiere comprender sus errores. | Juego físico ~39.99 USD; planes digitales de 15.99 y 22.99 USD mensuales según el contenido. |
+    | **Chess.com / Lichess** | Indirecto | Jugar, estudiar, analizar partidas, resolver tácticas y competir en línea. | Gran base de usuarios, contenido abundante, análisis, rankings y efectos de red. | Experiencia centrada en rendimiento, rating y volumen de funciones; puede aumentar la frustración del jugador que pierde. La narrativa personal no es el centro del producto. | Lichess gratuito; Chess.com con funciones gratuitas y planes premium. |
+    | **Lecciones y cursos de ajedrez** | Sustituto | Enseñanza estructurada mediante videos, ejercicios, entrenadores o profesores. | Profundidad pedagógica, autoridad de instructores y rutas de aprendizaje claras. | Menor interactividad emocional; normalmente no transforma los errores del usuario en una experiencia memorable. | Pago único, membresía o clases individuales, según el proveedor. |
+    | **Videojuegos narrativos y RPG** | Sustituto | Ofrecen progresión, personajes, decisiones, recompensas y una historia que evoluciona. | Alta capacidad de *engagement* y retención; el jugador tiene una razón emocional para continuar. | Generalmente no enseñan ajedrez ni conectan narrativa con decisiones estratégicas reales. | Freemium, pago único, DLC o suscripción. |
+
+    **Lectura estratégica.** Los competidores cubren dos extremos: **ajedrez educativo y competitivo** (precisión, rating, tácticas, progreso medible) y **narrativa interactiva** (libertad, personajes, drama, exploración). Zaqora puede ocupar el espacio entre ambos: *un juego narrativo en el que la calidad de tus decisiones ajedrecísticas cambia la historia.*
+
+    ────────────────────────────────────────────────────────
+    **2. Diagnóstico del Océano Rojo**
+
+    | Factor dominante | Cómo compite la industria | Por qué está saturado |
+    | :--- | :--- | :--- |
+    | Rating y ranking | Se usan como medida principal de progreso. | Todas las plataformas ofrecen algún sistema de puntuación; es difícil diferenciarse únicamente por Elo. |
+    | Cantidad de partidas | Se incentiva jugar más y acumular actividad. | La oferta es abundante y muchas partidas son intercambiables para el usuario. |
+    | Análisis técnico | Se muestran evaluaciones de motor, errores, mejores jugadas y variantes. | Los motores están ampliamente disponibles y la información puede resultar intimidante para principiantes. |
+    | Tácticas y puzzles | Ejercicios repetitivos para mejorar patrones. | Es funcionalidad estándar en casi todos los servicios importantes. |
+    | Clases y videos | Se venden cursos, lecciones y contenido educativo. | Existe una enorme cantidad de contenido gratuito y de bajo costo. |
+    | Competencia online | Torneos, partidas rápidas, rankings y desafíos. | Modelo dominado por plataformas con grandes comunidades y efectos de red. |
+    | Suscripción | Se monetiza el acceso a análisis, contenido o funciones premium. | El usuario compara precios entre muchas plataformas similares. |
+    | Precisión del motor | Se promete detectar los errores más importantes. | La precisión por sí sola no crea una experiencia emocional ni garantiza que el jugador aprenda. |
+
+    **Problema central del mercado.** La industria trata la derrota como un dato: *«Perdiste porque tu evaluación cayó de +0.8 a −2.4.»* Para quien suele perder, esa explicación no responde: ¿en qué momento cambió realmente mi partida?, ¿qué estaba intentando hacer?, ¿qué patrón de error repito?, ¿cómo evito sentir que cada derrota es un fracaso?, ¿por qué debería jugar otra partida después de perder? **Ahí aparece la oportunidad: hacer que una derrota sea el inicio de una historia y no el final de una sesión.**
+
+    ────────────────────────────────────────────────────────
+    **3. Matriz de las Cuatro Acciones**
+
+    | Acción | Decisiones estratégicas para Zaqora | Resultado esperado |
+    | :--- | :--- | :--- |
+    | **Eliminar** | La dependencia del rating como protagonista de la experiencia; el lenguaje excesivamente técnico; las listas interminables de variantes que el usuario no entiende. | Menor ansiedad y una experiencia más accesible para jugadores frustrados. |
+    | **Reducir** | Funciones competitivas secundarias, tablas de clasificación, estadísticas vanidosas y análisis que no conducen a una acción concreta. | Menores costos de desarrollo y una experiencia más enfocada. |
+    | **Incrementar** | La explicación contextual de los errores; la sensación de progreso; la personalización de personajes; la conexión entre una decisión del tablero y sus consecuencias; la calidad de los momentos de aprendizaje. | Mayor comprensión, motivación y retención. |
+    | **Crear** | Una historia persistente basada en las partidas; personajes que representan patrones de juego; mundos y conflictos que cambian según las decisiones; capítulos de «revancha»; misiones diseñadas alrededor de errores recurrentes; un diario personal del jugador. | Nueva demanda entre jugadores que quieren mejorar pero no disfrutan del entrenamiento tradicional. |
+
+    !!! example "Aplicación concreta propuesta"
+        Después de una partida, Zaqora podría mostrar algo como:
+
+        *«En el movimiento 18 abandonaste la defensa de la torre para atacar al rey enemigo. La maniobra parecía valiente, pero dejó abierto el paso hacia tu propio rey. En la historia, el consejo de la ciudad interpreta ese momento como una ruptura de confianza. En tu próxima misión tendrás que aprender a reconocer ataques prematuros.»*
+
+        La clave es que la narrativa **no sustituya** al análisis ajedrecístico: debe traducirlo a una explicación que el jugador pueda recordar y aplicar.
+
+    ────────────────────────────────────────────────────────
+    **4. Curva de valor** — escala orientativa: 1 = bajo, 5 = alto.
+
+    | Factor competitivo | Plataformas tradicionales | Chess Story | AI Dungeon + Chess | Story Time Chess | **Zaqora propuesto** |
+    | :--- | :---: | :---: | :---: | :---: | :---: |
+    | Juego competitivo | 5 | 2 | 1 | 1 | **3** |
+    | Profundidad técnica | 5 | 3 | 1 | 2 | **3** |
+    | Cantidad de puzzles | 5 | 4 | 1 | 2 | **3** |
+    | Narrativa personalizada | 1 | 4 | 5 | 4 | **5** |
+    | Consecuencias de las jugadas | 1 | 3 | 3 | 2 | **5** |
+    | Progresión emocional | 2 | 3 | 4 | 4 | **5** |
+    | Relevancia para jugadores que pierden | 2 | 3 | 2 | 1 | **5** |
+    | Aprendizaje desde errores propios | 4 | 4 | 1 | 2 | **5** |
+    | Libertad creativa | 1 | 3 | 5 | 3 | **4** |
+    | Fricción y complejidad de uso | 4 | 3 | 2 | 3 | **2** |
+
+    **Interpretación.** La curva debe ser deliberadamente distinta: no intentar ganar en cantidad de usuarios, funciones competitivas o profundidad técnica frente a Chess.com y Lichess; no intentar ganar a AI Dungeon en libertad narrativa general; no competir con Story Time Chess por el segmento infantil y familiar. **Dominar la conexión entre partida, error, historia y deseo de revancha.**
+
+    ────────────────────────────────────────────────────────
+    **5. Propuesta divergente**
+
+    > **Propuesta de valor.** Zaqora convierte tus partidas de ajedrez en una aventura personal: cada jugada crea consecuencias, cada error revela un patrón de aprendizaje y cada derrota desbloquea una nueva oportunidad para cambiar tu historia.
+
+    A diferencia de las plataformas tradicionales, Zaqora no presenta la derrota únicamente como una caída de rating. La convierte en: un capítulo jugable · una explicación comprensible del momento decisivo · una misión específica para corregir el error · una consecuencia dentro de un mundo persistente · una razón emocional para volver a intentarlo.
+
+    **Posicionamiento recomendado.** *Para jugadores de ajedrez que suelen perder y se sienten frustrados con el entrenamiento tradicional, Zaqora es el videojuego narrativo que transforma sus partidas reales en una historia interactiva de aprendizaje, donde mejorar no significa solo subir el rating, sino cambiar el destino de su propio mundo.*
+
+    **Espacio de mercado no disputado.** Zaqora puede crear una categoría propia: **«Ajedrez narrativo de superación personal.»** No sería principalmente una plataforma de torneos, ni un entrenador técnico tradicional, ni un generador de historias desconectadas del tablero, ni un producto infantil para aprender las reglas. Sería un sistema híbrido de: videojuego narrativo + entrenador basado en errores reales + simulador de decisiones y consecuencias + experiencia emocional de progreso.
+
+    **Recomendaciones de enfoque para el producto inicial:** (1) importar o jugar una partida real, para que el usuario comience desde una experiencia propia; (2) detectar un único momento decisivo, evitando sobrecargarlo con diez errores técnicos; (3) convertirlo en una misión de revancha: practicar el patrón y volver a jugar una situación similar.
+
+    **Métricas propuestas más allá del rating:** porcentaje de usuarios que vuelven después de perder · errores recurrentes corregidos · misiones completadas · partidas de revancha jugadas · retención a 7 y 30 días · percepción del jugador sobre su mejora y confianza.
+
+    **Ventaja competitiva más difícil de copiar:** no la IA en sí, sino el conjunto de *memoria narrativa del jugador + historial de errores + mundo persistente + sistema de misiones personalizado*.
+
+    ??? note "Fuentes citadas por Perplexity"
+        chess2story.com/pricing · help.aidungeon.com/memberships-benefits · home.storytimechess.com · vat19.com/item/story-time-chess · storytimechess.com.au · dreamgen.com/blog/articles/ai-dungeon-review · dungeonsdeep.ai/blog/ai-dungeon-review-2026 · techshark.io/tools/ai-dungeon · store.steampowered.com/app/2002270 · smarterlearningguide.com/story-time-chess-review · prnewswire.com (Story Time Chess Level 2-3) · toolradar.com/tools/ai-dungeon/pricing
+
+#### Comparación de los dos prompts
+
+| | **Prompt del profesor** (bloques anteriores) | **Prompt propio** |
+| :--- | :--- | :--- |
+| **Rol asignado a la IA** | Analista de inteligencia competitiva en mercados digitales de LATAM. | Estratega de negocios y posicionamiento de mercado. |
+| **Marco de salida exigido** | Mapa de tres capas: directos, indirectos y **sustitutos**, con mínimos por capa. | Océano Azul completo: matriz competitiva, diagnóstico de océano rojo, cuatro acciones y curva de valor. |
+| **Contexto que entrega** | Segmento definido **por conducta** (abandona la sesión tras perder), dolor, precio y país. | Idea, producto, público general y una lista de competidores ya escogidos por mí. |
+| **Restricción metodológica** | Exige actores **reales con tracción observable** y una debilidad específica para *nuestro* segmento. | Pide formato visual y tablas, sin restringir la evidencia. |
+| **Resultado característico** | Identifica al competidor más peligroso: un **hábito gratuito** («2 derrotas = cerrar la app»). | Cuantifica la diferenciación en una **curva de valor** y define qué eliminar, reducir, incrementar y crear. |
+
+**Qué aportó cada uno**
+
+- **El prompt del profesor encuentra competidores que no son productos.** Al obligar a incluir una capa de sustitutos, aparece el hallazgo que sostiene toda la semana: el rival real es el gesto de cerrar la app, no otra empresa. Mi prompt nunca pidió esa capa, y por eso su matriz contiene únicamente productos — ninguna de sus seis filas es un comportamiento del usuario.
+- **Mi prompt fuerza una decisión, no solo un diagnóstico.** La matriz de las cuatro acciones obliga a nombrar qué se va a **eliminar y reducir**, no únicamente qué hacer mejor. De ahí salen decisiones que el mapa competitivo no exigía: quitar el rating como protagonista y recortar funciones competitivas secundarias para bajar costos.
+- **Mi prompt trajo precios con fuente verificable** (enlaces a las páginas de precios de cada competidor), mientras que el mapa de tres capas dio rangos de precio sin referencia. En sentido inverso, mi prompt aceptó como «competidores conocidos» los tres que yo ya había elegido, sin cuestionar si eran los correctos — sesgo que el prompt del profesor evita al pedirle a la IA que los descubra.
+- **Coinciden en el núcleo del posicionamiento.** Dos prompts distintos, con marcos distintos, llegan a la misma frontera: la derrota como punto de partida y no como final de sesión. Esa coincidencia es la señal más fuerte de que el ángulo es sólido, porque no depende de cómo se formuló la pregunta.
+
+**Limitación que ambos comparten:** ninguno verificó la existencia real de los competidores. La propia respuesta advierte que la información sobre Chess Story «es limitada y puede referirse a productos distintos» — el análisis sirve para orientar la estrategia, no para sostener un *pitch* sin validación previa.
 
 ---
 
