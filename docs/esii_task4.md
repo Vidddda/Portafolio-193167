@@ -62,7 +62,7 @@ Implement an ESP32-C6 HTTP server (GET-only UI) to control two LEDs, read a butt
 
 ### Wi-Fi Scan Results
 
-![WiFi Scan Results](../recursos/imgs/Esii_task4/wifi_scan_results.png)
+![WiFi Scan Results](recursos/imgs/Esii_task4/wifi_scan_results.png)
 
 **Figure 1.** Serial terminal showing the Wi-Fi scan results table with multiple access points detected. The strongest RSSI detected was **-57 dBm** on channel **11**, with networks including **IBERO**, **IBERO_CORTESIA**, and **IBERO_INVITADOS**.
 
@@ -70,7 +70,7 @@ Implement an ESP32-C6 HTTP server (GET-only UI) to control two LEDs, read a butt
 
 ### Successful Wi-Fi Connection
 
-![WiFi Connection Success](../recursos/imgs/Esii_task4/wifi_connection_success.png)
+![WiFi Connection Success](recursos/imgs/Esii_task4/wifi_connection_success.png)
 
 **Figure 2.** Serial terminal showing a successful Wi-Fi connection to the network **"iPhone de Carlos"**, including the assigned IP address **172.20.10.2** and confirmation that the device is ready to start the HTTP server.
 
@@ -78,7 +78,7 @@ Implement an ESP32-C6 HTTP server (GET-only UI) to control two LEDs, read a butt
 
 ### Failed Wi-Fi Connection Attempt
 
-![WiFi Connection Failure](../recursos/imgs/Esii_task4/wifi_connection_failure.png)
+![WiFi Connection Failure](recursos/imgs/Esii_task4/wifi_connection_failure.png)
 
 **Figure 3.** Serial terminal showing an intentional failed connection attempt with multiple retry attempts and the final message **"Failed to connect after 10 retries."**
 
