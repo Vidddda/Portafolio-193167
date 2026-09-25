@@ -1270,48 +1270,68 @@ Para la segunda ronda escribí un prompt que no solo corrigiera los requerimient
 
 ## 4) Entregable — PDS de Zaqora
 
-**Equipo:** _David López Ramírez_ · **Producto:** _Zaqora_ · **Versión:** _1.0_ · **Fecha:** _24/09/2026_
-
-El PDS consolida las dos validaciones en el formato de la plantilla del curso. Cuando los documentos se contradecían, elegí un solo valor y lo anoto en la columna de origen.
+El PDS sigue la plantilla del curso y consolida las dos validaciones del Paso 2. Donde los documentos no coincidían, se eligió un solo valor; el origen de cada requerimiento está en el bloque desplegable al final de la plantilla.
 
 **First-iteration product:** una PWA web en la que el jugador conecta su cuenta de Lichess, recibe un capítulo cuyo villano encarna su patrón de error más frecuente y lo juega contra Stockfish, sin que el equipo esté presente.
 
-### Requerimientos funcionales
+!!! abstract "PRODUCT DESIGN SPECIFICATION"
+    **Producto:** Zaqora · **Versión:** 1.0  
+    **Equipo:** David López Ramírez · **Fecha:** 24/09/2026
 
-| ID | Requerimiento | Verificación | Origen |
-| :--- | :--- | :--- | :--- |
-| **RF-01** | El sistema debe analizar cada partida importada con Stockfish ≥ 16 NNUE (profundidad ≥ 18) y clasificar cada jugada por caída de Win%: imprecisión ≥ 10 pp, error ≥ 20 pp, error grave ≥ 30 pp. | F1 ≥ 0.90 frente a Stockfish a profundidad ≥ 24 en un conjunto de 500 partidas. | REQ-03/04/05 (propio); se descartan los umbrales en centipeones de la revisión. |
-| **RF-02** | El sistema debe mantener una taxonomía cerrada de 8–12 patrones de error, cada uno asociado a un solo villano, y elegir el siguiente capítulo con el patrón de mayor frecuencia normalizada en las últimas 10 partidas (ponderado por recencia). | Auditoría de 20 capítulos: el 100 % declara en su metadata el patrón y los registros de detección que lo originaron. | Revisión del profesor (RF 2 y 5). |
-| **RF-03** | El sistema debe generar cada capítulo con 1 villano, ≥ 3 encuentros y 1 jefe, en ≤ 20 s y de forma asíncrona; ≥ 70 % de los encuentros parten de o llegan a posiciones con el patrón débil del jugador. | Prueba con 30 perfiles sintéticos + telemetría del piloto. | REQ-15/16 (propio). |
-| **RF-04** | Ante ≥ 3 derrotas consecutivas asociadas al mismo patrón, el sistema debe abrir un evento o capítulo narrativo de ese patrón, sin mensajes de consejo directo, tutoriales modales ni estadísticas comparativas fuera de la ficción; máximo 1 intervención por encuentro. | Secuencias de derrotas simuladas + revisión de los textos mostrados contra la lista de términos vetados (0 coincidencias). | Revisión del profesor (RF 4) + REQ-17/18 (propio). |
-| **RF-05** | Para un usuario sin Lichess o con < 5 partidas, el sistema debe generar el perfil inicial con 5 partidas o puzzles de diagnóstico dentro del juego. | Prueba con 5 cuentas nuevas: todas reciben un primer capítulo sin importar partidas. | REQ-26 (propio) + revisión (RF 6). |
+    ---
 
-### Requerimientos de desempeño
+    **REQUERIMIENTOS FUNCIONALES**
 
-| ID | Requerimiento | Verificación | Origen |
-| :--- | :--- | :--- | :--- |
-| **RD-01** | Bandas cerradas de dificultad: débil 500–999, fuerte 1000–1499, subjefe 1500–1799, jefe 1800–2200. Debajo de 1320 se usa `Skill Level` + límite de nodos + ruido de jugada; desde 1320, `UCI_LimitStrength` + `UCI_Elo`. | ≥ 200 partidas simuladas por banda contra bots calibrados; rating medido dentro de ± 100 del rango. | REQ-10/11 (propio); se corrige la revisión, que pedía `UCI_Elo` para 500 y 1000. |
-| **RD-02** | El etiquetador de patrones debe acertar el tema táctico de una posición. | Macro-F1 ≥ 0.70 en 1 000 puzzles de Lichess estratificados en 10 temas. | REQ-07 (propio); la arquitectura del profesor propone 200 puzzles. |
-| **RD-03** | La jugada del villano debe mostrarse en p95 ≤ 3.0 s y p99 ≤ 4.0 s, con una pausa mínima de 0.4 s. | Prueba 1: 200 partidas automatizadas en Android de 4 GB con Chrome y 4G simulada, medidas con `performance.now()`. | REQ-13 (propio). |
-| **RD-04** | El diálogo del LLM nunca bloquea la jugada: tiempo máximo de 4.0 s y después plantilla (p95 ≤ 300 ms); ≥ 98 % de los textos del LLM pasan el validador y 0 textos inválidos se muestran. | Prueba 1 con fallas inyectadas: 30 % lentas, 10 % HTTP 500, 5 % con jugadas ilegales. | REQ-08/14 (propio). |
+    - **RF-01:** El sistema debe analizar cada partida importada con Stockfish ≥ 16 NNUE (profundidad ≥ 18) y clasificar cada jugada por caída de Win%: imprecisión ≥ 10 pp, error ≥ 20 pp, error grave ≥ 30 pp. — **Verificación:** F1 ≥ 0.90 frente a Stockfish a profundidad ≥ 24 en un conjunto de 500 partidas.
+    - **RF-02:** El sistema debe mantener una taxonomía cerrada de 8–12 patrones de error, cada uno asociado a un solo villano, y elegir el siguiente capítulo con el patrón de mayor frecuencia normalizada en las últimas 10 partidas (ponderado por recencia). Si el usuario no tiene Lichess o tiene < 5 partidas, el perfil inicial sale de 5 partidas de diagnóstico dentro del juego. — **Verificación:** auditoría de 20 capítulos (el 100 % declara en su metadata el patrón y los registros de detección que lo originaron) y 5 cuentas nuevas que reciben su primer capítulo sin importar partidas.
+    - **RF-03:** El sistema debe generar cada capítulo con 1 villano, ≥ 3 encuentros y 1 jefe, en ≤ 20 s y de forma asíncrona, con ≥ 70 % de los encuentros partiendo de o llegando a posiciones con el patrón débil del jugador. — **Verificación:** prueba con 30 perfiles sintéticos + telemetría del piloto.
+    - **RF-04:** El sistema debe abrir un evento o capítulo narrativo del patrón correspondiente ante ≥ 3 derrotas consecutivas asociadas a él, sin mensajes de consejo directo, tutoriales modales ni estadísticas comparativas fuera de la ficción, y con máximo 1 intervención por encuentro. — **Verificación:** secuencias de derrotas simuladas + revisión de los textos mostrados contra la lista de términos vetados (0 coincidencias).
 
-### Requerimientos de interfaz
+    **REQUERIMIENTOS DE DESEMPEÑO**
 
-| ID | Requerimiento | Verificación | Origen |
-| :--- | :--- | :--- | :--- |
-| **RI-01** | Stockfish ≥ 16 NNUE como *worker* UCI en el cliente (WASM) y como proceso UCI en el servidor. El servidor envía *headers* COOP/COEP y hay ruta *single-thread* para navegadores sin `SharedArrayBuffer`. | Partida completa en las 2 últimas versiones de Chrome, Edge, Firefox y Safari, con y sin aislamiento *cross-origin*. | RI-1 original + revisión del profesor. |
-| **RI-02** | Login con Lichess por OAuth 2.0 + PKCE con el conjunto mínimo de permisos; importación de hasta 100 partidas en NDJSON con `since` incremental; 1 petición simultánea por usuario y ≥ 60 s de espera tras un HTTP 429. | Prueba 4: *mock* con 20 % de respuestas 429 y cortes de *stream*, más 5 cuentas reales. | REQ-29/30 (propio). |
-| **RI-03** | Accesibilidad WCAG 2.2 AA: contraste ≥ 4.5:1 (≥ 3:1 en componentes), 3 modos para daltonismo, «Reducir movimiento», *click-to-move* y destinos táctiles ≥ 24×24 px. | Prueba 3: axe-core y Lighthouse ≥ 95, auditoría manual con NVDA y VoiceOver, ΔE2000 ≥ 20. | REQ-19 a 22 (propio) + revisión (*click-to-move*). |
-| **RI-04** | El LLM recibe solo un JSON de hechos calculados por el motor (sin FEN crudo ni datos personales) y devuelve JSON `{line, emotion, hint_level}` de ≤ 2 frases. | Inspección de código: 0 llamadas al LLM sin hechos del motor; validador sobre 1 000 salidas. | REQ-09 (propio) + arquitectura propia. |
+    - **RD-01:** El sistema debe ofrecer bandas cerradas de dificultad: débil 500–999, fuerte 1000–1499, subjefe 1500–1799 y jefe 1800–2200 (debajo de 1320: `Skill Level` + límite de nodos + ruido de jugada; desde 1320: `UCI_LimitStrength` + `UCI_Elo`). — **Criterio:** rating medido dentro de ± 100 del rango, en ≥ 200 partidas simuladas por banda contra bots calibrados.
+    - **RD-02:** El sistema debe identificar el tema táctico de una posición con el etiquetador de patrones. — **Criterio:** macro-F1 ≥ 0.70 en 1 000 puzzles de Lichess estratificados en 10 temas.
+    - **RD-03:** El sistema debe mostrar la jugada del villano sin demoras perceptibles. — **Criterio:** p95 ≤ 3.0 s y p99 ≤ 4.0 s (pausa mínima 0.4 s), en Android de 4 GB con Chrome y 4G simulada, en 200 partidas automatizadas.
+    - **RD-04:** El sistema debe mostrar el diálogo del villano sin bloquear nunca la jugada. — **Criterio:** tiempo máximo del LLM 4.0 s y después plantilla en p95 ≤ 300 ms; ≥ 98 % de los textos del LLM pasan el validador y 0 textos inválidos se muestran, con 30 % de respuestas lentas, 10 % HTTP 500 y 5 % de jugadas ilegales inyectadas.
 
-### Requerimientos de restricción
+    **REQUERIMIENTOS DE INTERFAZ**
 
-| ID | Requerimiento | Verificación | Origen |
-| :--- | :--- | :--- | :--- |
-| **RR-01** | Costo de LLM + cómputo + BD ≤ $30 MXN por usuario activo al mes (activo = completó ≥ 1 capítulo o importó ≥ 1 partida en 30 días). Al 80 % se cambia a un modelo más barato; al 100 %, solo plantillas. | Prueba 2: simulación de 1 000 usuarios durante 30 días, con sensibilidad de +20 % en tarifas y +10 % en tipo de cambio. | REQ-32/33 (propio) + revisión (definición de usuario activo). |
-| **RR-02** | ≥ 60 % de las palabras mostradas en diálogos de villano y narrador provienen de plantillas; biblioteca ≥ 300 plantillas en v1.0. | Telemetría: conteo de palabras por capítulo y por usuario. | Revisión (unidad: palabras) + REQ-34 (propio). |
-| **RR-03** | Stockfish (GPLv3) corre como *worker*/proceso UCI separado; la app enlaza la fuente exacta del *build* WASM y muestra el aviso de licencia. | Inspección legal antes del piloto. | REQ-35 (propio). |
-| **RR-04** | Aviso de Privacidad (LFPDPPP) previo al registro; derechos ARCO desde la app con supresión ≤ 20 días hábiles (respaldos ≤ 35 días); declaración de edad y consentimiento de tutor para menores de 18 años. | Solicitud ARCO simulada + inspección del flujo de registro. | Revisión del profesor + REQ-36/37 (propio). |
+    - **RI-01:** La interfaz debe integrar Stockfish ≥ 16 NNUE como *worker* UCI en el cliente (WASM) para el rival y como proceso UCI en el servidor para el análisis; el servidor envía *headers* COOP/COEP y hay ruta *single-thread* para navegadores sin `SharedArrayBuffer`. — **Verificación:** partida completa en las 2 últimas versiones de Chrome, Edge, Firefox y Safari, con y sin aislamiento *cross-origin*.
+    - **RI-02:** La interfaz debe autenticar con Lichess por OAuth 2.0 + PKCE con el conjunto mínimo de permisos, importar hasta 100 partidas en NDJSON con `since` incremental, y hacer 1 petición simultánea por usuario con ≥ 60 s de espera tras un HTTP 429. — **Verificación:** *mock* de Lichess con 20 % de respuestas 429 y cortes de *stream*, más 5 cuentas reales.
+    - **RI-03:** La interfaz debe cumplir WCAG 2.2 AA: contraste ≥ 4.5:1 (≥ 3:1 en componentes), 3 modos para daltonismo, «Reducir movimiento», *click-to-move* y destinos táctiles ≥ 24×24 px. — **Verificación:** axe-core y Lighthouse ≥ 95, auditoría manual con NVDA y VoiceOver, ΔE2000 ≥ 20 entre pares críticos.
+    - **RI-04:** La interfaz con el LLM debe enviar solo un JSON de hechos calculados por el motor (sin FEN crudo ni datos personales) y recibir un JSON `{line, emotion, hint_level}` de ≤ 2 frases. — **Verificación:** inspección de código (0 llamadas al LLM sin hechos del motor) y validador sobre 1 000 salidas.
+
+    **REQUERIMIENTOS DE RESTRICCIÓN**
+
+    - **RR-01:** El sistema no debe superar $30 MXN de costo (LLM + cómputo + BD) por usuario activo al mes, entendido como quien completó ≥ 1 capítulo o importó ≥ 1 partida en 30 días; al 80 % cambia a un modelo más barato y al 100 % usa solo plantillas. — **Verificación:** simulación de 1 000 usuarios durante 30 días, con sensibilidad de +20 % en tarifas y +10 % en tipo de cambio.
+    - **RR-02:** El sistema debe cumplir que ≥ 60 % de las palabras mostradas en diálogos de villano y narrador provengan de plantillas, con una biblioteca ≥ 300 plantillas en v1.0. — **Verificación:** telemetría con conteo de palabras por capítulo y por usuario.
+    - **RR-03:** El sistema debe cumplir la licencia GPLv3 de Stockfish: el motor corre como *worker*/proceso UCI separado y la app enlaza la fuente exacta del *build* WASM y muestra el aviso de licencia. — **Verificación:** inspección legal antes del piloto.
+    - **RR-04:** El sistema debe cumplir la LFPDPPP: Aviso de Privacidad previo al registro, derechos ARCO desde la app con supresión ≤ 20 días hábiles (respaldos ≤ 35 días), y declaración de edad con consentimiento de tutor para menores de 18 años. — **Verificación:** solicitud ARCO simulada + inspección del flujo de registro.
+
+    ---
+
+    **DIAGRAMA DE ARQUITECTURA:** [ver diagrama](#diagrama-de-arquitectura)  
+    **BOM PRELIMINAR:** [ver BOM](#bom-preliminar)
+
+??? info "Origen de cada requerimiento"
+    | ID | Origen |
+    | :--- | :--- |
+    | RF-01 | REQ-03/04/05 del PDS propio; se descartan los umbrales en centipeones de la revisión del profesor. |
+    | RF-02 | Revisión del profesor (RF 2, 5 y 6) + REQ-26 del PDS propio (*cold start*). |
+    | RF-03 | REQ-15/16 del PDS propio. |
+    | RF-04 | Revisión del profesor (RF 4) + REQ-17/18 del PDS propio. |
+    | RD-01 | REQ-10/11 del PDS propio; corrige la revisión, que pedía `UCI_Elo` para 500 y 1000. |
+    | RD-02 | REQ-07 del PDS propio; la arquitectura del profesor propone 200 puzzles. |
+    | RD-03 | REQ-13 del PDS propio. |
+    | RD-04 | REQ-08/14 del PDS propio. |
+    | RI-01 | RI-1 original + revisión del profesor (COOP/COEP). |
+    | RI-02 | REQ-29/30 del PDS propio. |
+    | RI-03 | REQ-19 a 22 del PDS propio + revisión del profesor (*click-to-move*). |
+    | RI-04 | REQ-09 del PDS propio + arquitectura propia. |
+    | RR-01 | REQ-32/33 del PDS propio + revisión del profesor (definición de usuario activo). |
+    | RR-02 | Revisión del profesor (unidad: palabras) + REQ-34 del PDS propio. |
+    | RR-03 | REQ-35 del PDS propio. |
+    | RR-04 | Revisión del profesor (Aviso de Privacidad, menores) + REQ-36/37 del PDS propio. |
 
 ### Diagrama de arquitectura
 
@@ -1353,7 +1373,7 @@ graph TD
 
 **Flujo de datos:** partida perdida en Lichess → el sincronizador la importa → A la evalúa → B etiqueta el patrón → C convierte el perfil en capítulo → Postgres → la app lo muestra por WSS al abrirse.
 
-### BOM preliminar (costo por usuario y del piloto)
+### BOM preliminar
 
 Zaqora no tiene hardware, así que el BOM se traduce a costo variable por usuario y costo fijo del piloto (cifras de la respuesta del profesor):
 
