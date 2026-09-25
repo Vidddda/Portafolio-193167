@@ -27,19 +27,23 @@ nav:
               - Semana 1 - Firma de Syllabus y método SCAMPER: pi4_s1.md 
               - Semana 2 - Búsqueda de Oportunidades: pi4_s2.md 
               - Semana 3 - Propiedad intelectual, marca y vigilancia tecnológica: pi4_s3.md 
-              - Semana 4 - Mercado, valor y propuesta de valor: pi4_s4.md 
+              - Semana 4 - Mercado, valor y propuesta de valor: pi4_s4.md
+              - Semana 5 - Diseño de producto, PDS y arquitectura del sistema: pi4_s5.md
 markdown_extensions:
   - admonition
   - pymdownx.arithmatex:
       generic: true
-  - pymdownx.superfences
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
-  - pymdownx.superfences
   - pymdownx.critic:
       mode: view
   - pymdownx.caret
