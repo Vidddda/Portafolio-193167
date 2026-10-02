@@ -1747,7 +1747,7 @@ flowchart TD
 - **Indicador sin abrir la app:** notificación push opcional y con límite de frecuencia; la alternativa silenciosa es el aura.
 
 !!! warning "Lo que todavía falta en el boceto"
-    Las dos críticas dieron el veredicto *necesita revisión*. El esquema acotado y la columna «siguiente iteración» describen cómo debe quedar el boceto, no cómo está hoy: en la captura de Figma y en la grabación de v0 el tablero todavía desborda la pantalla.
+    Las dos críticas dieron el veredicto *necesita revisión*. El esquema acotado y la columna «siguiente iteración» describen cómo debe quedar el boceto: en esta primera captura de Figma y en la grabación de v0 el tablero todavía desborda la pantalla. La segunda iteración, que ya aplica varias correcciones, está en el punto 5.
 
 Ajustes a resolver antes de programar:
 
@@ -1755,7 +1755,8 @@ Ajustes a resolver antes de programar:
 - [ ] **Una sola fuente de verdad entre Figma y v0:** mismo tema, mismas piezas y mismas marcas.
 - [ ] **Dibujar los estados que faltan:** jugada incorrecta (el villano reacciona sin castigar y se reintenta), sin partidas en Lichess y sin conexión.
 - [ ] **Definir qué hace «Déjame en paz»** y dónde se guarda el progreso sin registro.
-- [ ] **Degradar la pista** a botón secundario, deshabilitado en Sellado y escalonado (zona → pieza → jugada).
+- [x] **Degradar la pista** a botón secundario, deshabilitado en Sellado (resuelto en la segunda iteración; falta el escalonado zona → pieza → jugada).
+- [x] **Dibujar el flujo de entrada:** campo de usuario → carga → Sellado → instalación (segunda iteración, en el punto 5).
 - [ ] **Probar el tono del villano** con usuarios que acaban de perder.
 
 ### 5. Wireframe de la app
@@ -1776,9 +1777,27 @@ Ajustes a resolver antes de programar:
 | :---: | :--- | :--- |
 | **1** | Un solo campo: usuario de Lichess. Sin cuenta ni OAuth. | Abre el enlace y escribe su usuario. |
 | **2** | Carga dentro de la ficción («La Horquilla está preparando su trampa…»), con la primera frase del villano en menos de 5 s. | Espera; no hay nada que configurar. |
-| **3** | Escena en estado Sellado con su última derrota. Al terminar el primer encuentro aparece «Guarda a tu villano», que instala la PWA y ofrece activar las notificaciones. | Elige «Muéstrame» o «Déjame en paz». |
+| **3** | Escena en estado Sellado con su última derrota. Al terminar el primer encuentro aparece «Guarda a tu villano», que instala la PWA y ofrece activar el aviso. | Elige «Muéstrame» o «Déjame en paz»; después, «Instalar» o «Ahora no». |
 
-Estas tres pantallas son el flujo que propusieron las dos críticas: **todavía no están dibujadas** en Figma ni en v0, donde el prototipo arranca directamente en el Capítulo 4.
+Segunda iteración del boceto en Figma, hecha después de las dos críticas: Entrada → Carga dentro de la ficción → Escena en estado Sellado → «Guarda a tu villano», con su hoja de componentes (`ChoiceButton`, `SpeechBubble`, `HintButton`, `VillainAvatar`, `InstallSheet`):
+
+![Flujo de instalación en Figma: entrada, carga, escena sellada y hoja de instalación](recursos/imgs/PI4_S6/flujo_instalacion_figma.png)
+
+Qué corrige respecto al primer boceto:
+
+- **Entrada sin registro:** un solo campo con el usuario de Lichess, sin OAuth.
+- **Villano compacto:** avatar y burbuja en una sola fila, lo que deja espacio al tablero.
+- **Jerarquía de acciones:** «Muéstrame» y «Déjame en paz» viven dentro del tablero sellado, y la pista pasa a botón de contorno, deshabilitado en Sellado.
+- **Piezas y color:** figuras en lugar de letras, y el rosa reservado para el villano.
+- **Tono:** la primera línea valida («Esa partida dolió. Yo estaba ahí.») en lugar de burlarse.
+- **Instalación como recompensa:** «Guarda a tu villano» aparece después de resolver el encuentro, con el aviso desmarcado por defecto y la opción «Ahora no».
+
+Pendiente en esta iteración:
+
+- [ ] **Mover la frase de la pantalla de carga.** Ahí aparece «Minuto 12. Moviste el caballo. Yo esperaba.» antes de la línea que valida; esa frase corresponde al estado Despierto y debe decir «Jugada 12».
+- [ ] **Variante para iPhone:** en Safari el botón «Instalar» no puede abrir la instalación; hace falta la instrucción «Compartir → Añadir a pantalla de inicio».
+- [ ] **Errores de entrada:** usuario de Lichess inexistente o sin partidas.
+- [ ] **Etiqueta visible en el campo de usuario** y textos de 12 px como mínimo («Encuentro 1 de 3», «Encuentro sellado»).
 
 ---
 
