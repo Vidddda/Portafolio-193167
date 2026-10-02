@@ -29,6 +29,7 @@ nav:
               - Semana 3 - Propiedad intelectual, marca y vigilancia tecnológica: pi4_s3.md 
               - Semana 4 - Mercado, valor y propuesta de valor: pi4_s4.md
               - Semana 5 - Diseño de producto, PDS y arquitectura del sistema: pi4_s5.md
+              - Semana 6 - Generación y selección de concepto de diseño: pi4_s6.md
 markdown_extensions:
   - admonition
   - pymdownx.arithmatex:
