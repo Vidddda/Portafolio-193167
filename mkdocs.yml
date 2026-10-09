@@ -30,6 +30,7 @@ nav:
               - Semana 4 - Mercado, valor y propuesta de valor: pi4_s4.md
               - Semana 5 - Diseño de producto, PDS y arquitectura del sistema: pi4_s5.md
               - Semana 6 - Generación y selección de concepto de diseño: pi4_s6.md
+              - Semana 7 - Viabilidad técnica y económica: pi4_s7.md
 markdown_extensions:
   - admonition
   - pymdownx.arithmatex:

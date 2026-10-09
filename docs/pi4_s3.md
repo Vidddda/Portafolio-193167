@@ -343,7 +343,7 @@ Para validar los dolores identificados y las hipótesis sobre el comportamiento 
     ¿Cuánto te cuesta? Principalmente rating y tiempo. Cuando entro en una mala racha puedo perder bastante rating y después necesito muchas partidas para recuperarlo.
     
     Hipótesis a evaluar:
-    - H1: el jugador amateur mexicano que evita la comparación pierde o deja de jugar semanas por miedo al juicio, y pagaría $100-200 MXN/mes por una campaña de un solo jugador sin ranking.
+    - H1: el jugador amateur mexicano que evita la comparación pierde o deja de jugar semanas por miedo al juicio, y pagaría \$100-200 MXN/mes por una campaña de un solo jugador sin ranking.
     - H2: preferiría enfrentar a «El Espectro de las Horquillas» dentro de una narrativa antes que una clase particular o un curso en video, porque elimina la exposición de ser evaluado en tiempo real.
     
     Entrega: Verificación de cada hipótesis, Insight emergente, Cita más importante, Impacto en el concepto y Próxima hipótesis urgente.

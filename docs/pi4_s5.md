@@ -23,7 +23,7 @@
 | **Funcionales (RF)** | RF-1 analizar las partidas del usuario · RF-2 crear historias personalizadas según sus partidas · RF-3 asesorar al usuario cuando su racha de derrotas sea alta · RF-4 explotar sus debilidades para crear enemigos que lo obliguen a mejorar. |
 | **Desempeño (RD)** | RD-1 dificultad de enemigos: débiles (>500 Elo), fuertes (>1000), subjefes (>1500), jefes (>1800) · RD-2 precisión del módulo de análisis ≥ 90 % · RD-3 precisión de la IA al interpretar jugadas ≥ 70 % · RD-4 jugada de los enemigos en < 3 s. |
 | **Interfaz (RI)** | RI-1 Stockfish ≥ 16 NNUE en cliente (WASM) y servidor · RI-2 WCAG 2.2 AA · RI-3 OAuth 2.0 + PKCE con Lichess (`preference:read`) e importación de 100 partidas · RI-4 *rate limiting* de Lichess · RI-5 base de puzzles CC0 de Lichess. |
-| **Restricción (RC)** | RC-1 costo de IA e infraestructura ≤ $30 MXN por usuario activo al mes · RC-2 licencia GPLv3 de Stockfish · RC-3 ≥ 60 % de narrativa precompuesta · RC-4 derechos ARCO con supresión en ≤ 20 días hábiles. |
+| **Restricción (RC)** | RC-1 costo de IA e infraestructura ≤ \$30 MXN por usuario activo al mes · RC-2 licencia GPLv3 de Stockfish · RC-3 ≥ 60 % de narrativa precompuesta · RC-4 derechos ARCO con supresión en ≤ 20 días hábiles. |
 
 **Decisión de arquitectura de IA (tomada antes de abrir Claude):** **Cloud**, con tres puntos de justificación:
 
@@ -53,7 +53,7 @@ Igual que en la semana 4, cada paso se trabajó en **dos rondas con prompts de a
 
     - Software: Python, C/C++, JavaScript/React, React Native
     - IA: TensorFlow Lite, PyTorch, APIs de modelos (OpenAI, Anthropic, Google), bases de datos vectoriales básicas
-    - Presupuesto de materiales: máximo $3,000 MXN para prototipo
+    - Presupuesto de materiales: máximo \$3,000 MXN para prototipo
 
     Nuestro producto:
     Nombre: Zaqora
@@ -195,31 +195,31 @@ Igual que en la semana 4, cada paso se trabajó en **dos rondas con prompts de a
 
     **VIABILIDAD DE PROTOTIPO Y PRIMERA TIRADA**
 
-    La economía unitaria pasa con holgura (~$5–10 MXN por usuario al mes); el riesgo real es la disposición a pagar.
+    La economía unitaria pasa con holgura (~\$5–10 MXN por usuario al mes); el riesgo real es la disposición a pagar.
 
-    **Volumen objetivo:** 15–20 usuarios beta en lugar de 5–10 «unidades». Cada usuario adicional cuesta casi $0, y en una prueba de retención la mitad suele abandonar la primera semana.
+    **Volumen objetivo:** 15–20 usuarios beta en lugar de 5–10 «unidades». Cada usuario adicional cuesta casi \$0, y en una prueba de retención la mitad suele abandonar la primera semana.
 
     **«BOM» por unidad → costo variable por usuario activo al mes (aproximado):**
 
-    - LLM: ~20 capítulos × ~3k tokens de entrada y ~1k de salida con un modelo tipo Haiku ≈ $0.15–0.30 USD.
-    - Worker compartido: ~$5 USD al mes entre todos.
-    - Total: ≈ $5–10 MXN por usuario al mes con 15–20 usuarios.
+    - LLM: ~20 capítulos × ~3k tokens de entrada y ~1k de salida con un modelo tipo Haiku ≈ \$0.15–0.30 USD.
+    - Worker compartido: ~\$5 USD al mes entre todos.
+    - Total: ≈ \$5–10 MXN por usuario al mes con 15–20 usuarios.
 
-    **Costo fijo del piloto (dentro de los $3,000 MXN):**
+    **Costo fijo del piloto (dentro de los \$3,000 MXN):**
 
     | Concepto | Costo aprox. (MXN) |
     | :--- | ---: |
-    | Cuenta de Google Play (pago único, $25 USD) | ~$460 |
-    | Dominio para la *landing* | ~$250 |
-    | Créditos de API del LLM ($20 USD) | ~$370 |
-    | Worker durante 2 meses | ~$185 |
-    | **Total** | **~$1,300** |
+    | Cuenta de Google Play (pago único, \$25 USD) | ~\$460 |
+    | Dominio para la *landing* | ~\$250 |
+    | Créditos de API del LLM (\$20 USD) | ~\$370 |
+    | Worker durante 2 meses | ~\$185 |
+    | **Total** | **~\$1,300** |
 
-    La cuenta de Apple ($99 USD, ~$1,800 MXN) llevaría el gasto al límite. Para el piloto: Android y web; iOS después.
+    La cuenta de Apple (\$99 USD, ~\$1,800 MXN) llevaría el gasto al límite. Para el piloto: Android y web; iOS después.
 
-    **⚠️ Precio de venta mínimo viable (costo ÷ 30 %):** ≈ $17–33 MXN al mes.
+    **⚠️ Precio de venta mínimo viable (costo ÷ 30 %):** ≈ \$17–33 MXN al mes.
 
-    **¿El segmento pagaría ese precio?** La regla de costos se cumple, pero el usuario objetivo usa Lichess precisamente porque es gratis. Propuesta: que el piloto pruebe una hipótesis de ~$49–79 MXN al mes (o un pago único por «temporada») y mida el uso en la semana 2 antes de cobrar.
+    **¿El segmento pagaría ese precio?** La regla de costos se cumple, pero el usuario objetivo usa Lichess precisamente porque es gratis. Propuesta: que el piloto pruebe una hipótesis de ~\$49–79 MXN al mes (o un pago único por «temporada») y mida el uso en la semana 2 antes de cobrar.
 
     ---
 
@@ -807,7 +807,7 @@ El prompt del profesor está pensado para un producto mecatrónico (sensores, BO
 | **Cliente** | React Native con Expo + *build* web; tablero chessground en WebView. | TypeScript + Phaser 3 + chess.js; web, con Tauri y Capacitor. React Native, descartado. |
 | **Dónde juega el villano** | Stockfish WASM en el cliente: respuesta inmediata y sin costo de servidor por jugada. | Stockfish en el servidor con selector pedagógico; WASM solo como respaldo sin conexión. |
 | **Nivel de detalle** | Decisiones y justificación; tabla de flujo con latencia y falla por paso. | Esquema de base de datos, *payloads* JSON de los 3 eventos, algoritmo del villano, diagramas Mermaid. |
-| **Costos** | Costo por usuario (~$5–10 MXN/mes) y piloto (~$1,300 MXN). | No los evalúa. |
+| **Costos** | Costo por usuario (~\$5–10 MXN/mes) y piloto (~\$1,300 MXN). | No los evalúa. |
 
 **Qué aportó cada uno**
 
@@ -860,7 +860,7 @@ Con la arquitectura esbozada, el PDS preliminar de 17 requerimientos se sometió
 
     **REQUERIMIENTOS DE RESTRICCIÓN:**
 
-    - El costo de APIs de IA generativa y de infraestructura de análisis no debe superar $30 MXN por usuario activo al mes, es decir, el 10 % del precio de $300 MXN. Si se alcanza ese límite, el sistema debe pasar a narrativa precompuesta.
+    - El costo de APIs de IA generativa y de infraestructura de análisis no debe superar \$30 MXN por usuario activo al mes, es decir, el 10 % del precio de \$300 MXN. Si se alcanza ese límite, el sistema debe pasar a narrativa precompuesta.
     - Stockfish se distribuye bajo GPLv3. El componente que lo incorpora debe cumplir con esa licencia (código fuente disponible) o ejecutarse como proceso separado que se comunica por UCI.
     - Al menos el 60 % de los fragmentos narrativos debe estar precompuesto (plantillas con variables). La IA generativa solo se usa para personalizar, lo que controla el costo y la latencia.
     - El usuario debe poder ejercer sus derechos ARCO (Acceso, Rectificación, Cancelación y Oposición) desde la aplicación. La eliminación total de datos debe completarse en ≤ 20 días hábiles.
@@ -949,8 +949,8 @@ Con la arquitectura esbozada, el PDS preliminar de 17 requerimientos se sometió
 
     **⚠️ Con problema**
 
-    1. *«$30 MXN por usuario activo al mes»* — «usuario activo» no está definido; sin definición nadie puede auditar si se cumplió el tope.
-        - **Corrección:** …no debe superar $30 MXN por usuario activo mensual (definido como todo usuario que completó ≥ 1 capítulo o importó ≥ 1 partida en los últimos 30 días)…
+    1. *«\$30 MXN por usuario activo al mes»* — «usuario activo» no está definido; sin definición nadie puede auditar si se cumplió el tope.
+        - **Corrección:** …no debe superar \$30 MXN por usuario activo mensual (definido como todo usuario que completó ≥ 1 capítulo o importó ≥ 1 partida en los últimos 30 días)…
     2. *«Al menos 60 % de los fragmentos narrativos debe estar precompuesto»* — «fragmentos» no tiene unidad de medida.
         - **Corrección:** Al menos el 60 % de las palabras mostradas en diálogos de villano/narrador, medido por conteo de palabras por capítulo, debe provenir de plantillas precompuestas con variables.
 
@@ -996,7 +996,7 @@ Con la arquitectura esbozada, el PDS preliminar de 17 requerimientos se sometió
 
     *Requerimientos de restricción*
 
-    1. Costo de IA generativa + infraestructura de análisis ≤ $30 MXN por usuario activo mensual (usuario que completó ≥ 1 capítulo o importó ≥ 1 partida en 30 días). Al alcanzar el límite, el sistema pasa a narrativa precompuesta.
+    1. Costo de IA generativa + infraestructura de análisis ≤ \$30 MXN por usuario activo mensual (usuario que completó ≥ 1 capítulo o importó ≥ 1 partida en 30 días). Al alcanzar el límite, el sistema pasa a narrativa precompuesta.
     2. Stockfish (GPLv3): el componente que lo incorpora debe cumplir la licencia (código fuente disponible) o ejecutarse como proceso separado vía UCI.
     3. ≥ 60 % de las palabras de diálogo de villano/narrador, medido por conteo de palabras por capítulo, debe provenir de plantillas precompuestas con variables.
     4. El usuario debe poder ejercer derechos ARCO desde la aplicación; eliminación total de datos en ≤ 20 días hábiles.
@@ -1020,8 +1020,8 @@ Para la segunda ronda escribí un prompt que no solo corrigiera los requerimient
 
     Datos de mercado y modelo de negocio:
 
-    - Precio de venta objetivo: $300 MXN / mes por usuario activo.
-    - Límite de costo de APIs e infraestructura (10% del precio): ≤ $30 MXN / mes por usuario activo.
+    - Precio de venta objetivo: \$300 MXN / mes por usuario activo.
+    - Límite de costo de APIs e infraestructura (10% del precio): ≤ \$30 MXN / mes por usuario activo.
     - Stack principal: Stockfish (WASM cliente + Servidor), OAuth 2.0 Lichess, DB Puzzles Lichess (CC0), LLMs en Nube + Plantillas narrativas precompuestas (≥ 60%).
 
     **REQUERIMIENTOS Y RESTRICCIONES REUNIDOS HASTA AHORA**
@@ -1050,7 +1050,7 @@ Para la segunda ronda escribí un prompt que no solo corrigiera los requerimient
 
     Requerimientos de Restricción y Cumplimiento:
 
-    - RC-1: Límite de costo en Nube e IA de $30 MXN/mes por usuario activo. Fallback a narrativa precompuesta si se rebasa.
+    - RC-1: Límite de costo en Nube e IA de \$30 MXN/mes por usuario activo. Fallback a narrativa precompuesta si se rebasa.
     - RC-2: Cumplimiento de licencia GPLv3 para Stockfish (aislamiento del módulo por proceso UCI o liberación de componentes requeridos).
     - RC-3: Al menos el 60 % de los fragmentos narrativos debe ser precompuesto (plantillas con variables).
     - RC-4: Cumplimiento normativo de Derechos ARCO (LFPDPPP MX / GDPR) con eliminación total de datos en ≤ 20 días hábiles.
@@ -1081,7 +1081,7 @@ Para la segunda ronda escribí un prompt que no solo corrigiera los requerimient
     Diseña 4 pruebas integrales cuantitativas que el sistema debe aprobar antes del lanzamiento:
 
     1. Prueba de Latencia y Desempeño (Jugada de enemigo < 3s + Fallback de LLM).
-    2. Prueba de Control de Costos (Simulación de consumo de Tokens ≤ $30 MXN/usuario).
+    2. Prueba de Control de Costos (Simulación de consumo de Tokens ≤ \$30 MXN/usuario).
     3. Prueba de Accesibilidad e Interfaz (Cumplimiento WCAG 2.2 AA).
     4. Prueba de Integración y Rate Limiting (Lichess OAuth + Manejo de HTTP 429).
 
@@ -1104,7 +1104,7 @@ Para la segunda ronda escribí un prompt que no solo corrigiera los requerimient
     - **Riesgo de que el LLM «alucine ajedrez».** Si el LLM interpreta las posiciones por su cuenta, va a inventar jugadas ilegales y amenazas que no existen. El motor debe calcular y el LLM solo narrar, a partir de un JSON de hechos ya verificados. Todo texto debe pasar un validador de legalidad antes de mostrarse.
     - **RD-4 frente al LLM.** El diálogo del villano no puede bloquear la jugada. El LLM corre en paralelo y, si pasa su tiempo máximo, se muestra una plantilla. Tampoco se define qué percentil debe cumplir los < 3 s ni en qué dispositivo de referencia.
     - **RI-3: el permiso `preference:read` no sirve para importar partidas.** Las partidas públicas se exportan sin permisos especiales, y la identidad se obtiene con un token sin permisos. Por mínimo privilegio, conviene pedir el conjunto mínimo de permisos (vacío si se puede). Verifíquenlo contra la documentación vigente de Lichess.
-    - **RC-1: la base del 10 % está incompleta.** No dice si los $300 incluyen IVA; neto serían ≈ $258.62. Tampoco si la comisión de la pasarela de pago cuenta dentro del límite, ni qué tipo de cambio MXN/USD se usa. Los proveedores de LLM y de nube cobran en USD.
+    - **RC-1: la base del 10 % está incompleta.** No dice si los \$300 incluyen IVA; neto serían ≈ \$258.62. Tampoco si la comisión de la pasarela de pago cuenta dentro del límite, ni qué tipo de cambio MXN/USD se usa. Los proveedores de LLM y de nube cobran en USD.
     - **RC-2: el WASM en el cliente sí es distribución.** Enviar `stockfish.wasm` al navegador cuenta como distribuir el programa, así que hay que ofrecer el código fuente de ese *build* y mantenerlo como archivo separado (*worker* UCI). En el servidor no hay obligación, porque GPLv3 no es AGPL.
     - **RC-4: falta contemplar a los menores de edad.** Muchos jugadores de ajedrez son menores. No hay control de edad ni consentimiento parental. Las partidas importadas también contienen datos de terceros (los nombres de usuario de los rivales), y no se dice cómo se purgan los respaldos.
     - **Cold start: un usuario sin Lichess o con < 20 partidas deja RF-2 y RF-4 sin datos.** Se necesita una ruta alterna, como partidas de diagnóstico dentro del juego.
@@ -1129,8 +1129,8 @@ Para la segunda ronda escribí un prompt que no solo corrigiera los requerimient
 
     **Supuestos de trabajo (por confirmar)**
 
-    - $300 MXN con IVA incluido (neto ≈ $258.62 MXN).
-    - La comisión de la pasarela de pago queda fuera del límite de $30 (es costo comercial, no infraestructura).
+    - \$300 MXN con IVA incluido (neto ≈ \$258.62 MXN).
+    - La comisión de la pasarela de pago queda fuera del límite de \$30 (es costo comercial, no infraestructura).
     - Tipo de cambio de referencia fijo por trimestre (supuesto: 18.5 MXN/USD).
     - Plataforma de la versión 1.0: PWA web.
 
@@ -1173,8 +1173,8 @@ Para la segunda ronda escribí un prompt que no solo corrigiera los requerimient
     | **REQ-29** | Integración | OAuth 2.0 + PKCE con Lichess (antes RI-3) | D | Permisos solicitados | Conjunto mínimo (sin permisos de escritura); verificar que `preference:read` sea necesario, si no, eliminarlo | Inspección |
     | **REQ-30** | Integración | *Rate limiting* de Lichess (antes RI-4) | D | Concurrencia; espera tras HTTP 429 | 1 petición por usuario y ≤ N globales configurable; ≥ 60 s tras un 429 con *backoff* exponencial (máx. 15 min); 0 peticiones durante la espera | Prueba |
     | **REQ-31** | Integración | Base de puzzles CC0 (antes RI-5) | D | Cobertura temática; actualización | ≥ 10 temas con ≥ 500 puzzles por banda de rating; actualización ≤ trimestral | Inspección |
-    | **REQ-32** | Costo/BOM | Límite de costo variable por usuario activo mensual (antes RC-1) | D | Costo total (LLM + cómputo + BD + CDN) por usuario activo mensual | ≤ $30.00 MXN; presupuesto: LLM ≤ $15, cómputo ≤ $6, BD/almac./CDN ≤ $4, otros ≤ $2, reserva $3 | Simulación + inspección de facturas |
-    | **REQ-33** | Costo/BOM | Respaldo escalonado por consumo | D | Umbrales por usuario / mes | 80 % ($24): modelo LLM más barato + 80 % plantillas · 100 % ($30): 100 % plantillas hasta el siguiente ciclo | Prueba |
+    | **REQ-32** | Costo/BOM | Límite de costo variable por usuario activo mensual (antes RC-1) | D | Costo total (LLM + cómputo + BD + CDN) por usuario activo mensual | ≤ \$30.00 MXN; presupuesto: LLM ≤ \$15, cómputo ≤ \$6, BD/almac./CDN ≤ \$4, otros ≤ \$2, reserva \$3 | Simulación + inspección de facturas |
+    | **REQ-33** | Costo/BOM | Respaldo escalonado por consumo | D | Umbrales por usuario / mes | 80 % (\$24): modelo LLM más barato + 80 % plantillas · 100 % (\$30): 100 % plantillas hasta el siguiente ciclo | Prueba |
     | **REQ-34** | Costo/BOM | Piso de plantillas (antes RC-3) | D | % de fragmentos narrativos mostrados provenientes de plantillas (por conteo, mensual) | ≥ 60 % por usuario; biblioteca ≥ 300 plantillas en v1.0 | Inspección + telemetría |
     | **REQ-35** | Seguridad/Normativa | Licencia GPLv3 de Stockfish (antes RC-2) | D | Fuente disponible; aislamiento | Enlace a la fuente exacta del *build* WASM y del servidor; motor como *worker*/proceso UCI separado; aviso de licencia en la app | Inspección legal |
     | **REQ-36** | Seguridad/Normativa | Derechos ARCO / GDPR (antes RC-4) | D | Plazo de supresión | Producción ≤ 20 días hábiles; respaldos ≤ 35 días naturales; constancia al titular | Prueba (solicitud simulada) |
@@ -1229,7 +1229,7 @@ Para la segunda ronda escribí un prompt que no solo corrigiera los requerimient
     **Prueba 2: Control de costos (simulación de consumo)**
 
     - *Procedimiento:* simular 1 000 usuarios activos mensuales durante 30 días con tres perfiles de uso: ligero 50 %, medio 35 % y pesado 15 % (pesado = ≥ 4 h/semana, 100 partidas importadas y 60 partidas nuevas al mes). Registrar tokens de entrada y salida por modelo, CPU-s de Stockfish, GB almacenados y GB servidos, y valorarlos con las tarifas vigentes al tipo de cambio de referencia. Forzar a 50 usuarios a superar el umbral del 80 % y a 20 usuarios el del 100 %.
-    - *Criterio de aceptación (PASS si se cumplen todas):* costo medio ≤ $30.00 MXN por usuario activo al mes y p95 por usuario ≤ $30.00 MXN; cada rubro dentro de su presupuesto (REQ-32); cambio de nivel en ≤ 60 s tras cruzar el umbral en el 100 % de los usuarios forzados; fragmentos de plantilla ≥ 60 % para todo usuario; con una alza del 20 % en tarifas y del 10 % en el tipo de cambio, el costo medio sigue ≤ $30.
+    - *Criterio de aceptación (PASS si se cumplen todas):* costo medio ≤ \$30.00 MXN por usuario activo al mes y p95 por usuario ≤ \$30.00 MXN; cada rubro dentro de su presupuesto (REQ-32); cambio de nivel en ≤ 60 s tras cruzar el umbral en el 100 % de los usuarios forzados; fragmentos de plantilla ≥ 60 % para todo usuario; con una alza del 20 % en tarifas y del 10 % en el tipo de cambio, el costo medio sigue ≤ \$30.
 
     **Prueba 3: Accesibilidad e interfaz (WCAG 2.2 AA)**
 
@@ -1241,7 +1241,7 @@ Para la segunda ronda escribí un prompt que no solo corrigiera los requerimient
     - *Procedimiento:* contra un *mock* de Lichess y además con 5 cuentas reales de prueba, ejecutar el flujo OAuth PKCE completo (incluye `code_verifier` inválido, denegación del usuario y *token* revocado); importar 100 partidas por cuenta; lanzar 50 usuarios concurrentes mientras el *mock* responde HTTP 429 en el 20 % de las peticiones y corta la conexión a mitad del *stream* NDJSON; registrar marcas de tiempo por petición.
     - *Criterio de aceptación (PASS si se cumplen todas):* nunca más de 1 petición simultánea por usuario; 0 peticiones antes de 60 s tras un 429 para el mismo cliente; 100 % de las importaciones completas y sin duplicados tras reintentos (reanudación con `since`); permisos solicitados = conjunto mínimo aprobado; errores de OAuth manejados sin exponer *tokens* (0 *tokens* en logs o en el cliente); importación de 100 partidas ≤ 5 min (p95) sin 429 inyectados.
 
-    **Pendientes antes de cerrar la matriz:** confirmar si los $300 incluyen IVA y si el permiso `preference:read` es realmente necesario. Las dos cambian valores de REQ-32 y REQ-29.
+    **Pendientes antes de cerrar la matriz:** confirmar si los \$300 incluyen IVA y si el permiso `preference:read` es realmente necesario. Las dos cambian valores de REQ-32 y REQ-29.
 
 [Descargar la respuesta completa (DOCX)](recursos/archivos/PI4_S5/PDS_Prompt_Propio.docx)
 
@@ -1250,7 +1250,7 @@ Para la segunda ronda escribí un prompt que no solo corrigiera los requerimient
 | | **Prompt del profesor** | **Prompt propio** |
 | :--- | :--- | :--- |
 | **Rol asignado** | Ingeniero de producto senior en PDS de hardware + software. | Gerente de producto senior y líder de ingeniería de sistemas en EdTech, con BS 7000 / método Pugh. |
-| **Insumos extra** | Usuario final y *first-iteration product*. | Precio ($300 MXN/mes), tope de costo del 10 % y *stack* principal. |
+| **Insumos extra** | Usuario final y *first-iteration product*. | Precio (\$300 MXN/mes), tope de costo del 10 % y *stack* principal. |
 | **Salida** | Diagnóstico por categoría, correcciones con verificación, faltantes y PDS corregido: **17 → 27 requerimientos**. | Auditoría ⚠️/✅/❌, matriz de **40 requerimientos** con D/W, métrica, valor objetivo y método; alcance dentro/fuera; interfaces; 4 pruebas *Pass/Fail*. |
 | **Referencia del 90 %** | Clasificación humana (≥ 1800 Elo) sobre 500 jugadas. | F1 frente a Stockfish a profundidad ≥ 24 sobre 500 partidas. |
 | **Umbrales de error** | Centipeones: *blunder* ≥ 300, error 100–299, imprecisión 50–99. | Caída de Win%: 10 / 20 / 30 puntos porcentuales. |
@@ -1303,7 +1303,7 @@ El PDS sigue la plantilla del curso y consolida las dos validaciones del Paso 2.
 
     **REQUERIMIENTOS DE RESTRICCIÓN**
 
-    - **RR-01:** El sistema no debe superar $30 MXN de costo (LLM + cómputo + BD) por usuario activo al mes, entendido como quien completó ≥ 1 capítulo o importó ≥ 1 partida en 30 días; al 80 % cambia a un modelo más barato y al 100 % usa solo plantillas. — **Verificación:** simulación de 1 000 usuarios durante 30 días, con sensibilidad de +20 % en tarifas y +10 % en tipo de cambio.
+    - **RR-01:** El sistema no debe superar \$30 MXN de costo (LLM + cómputo + BD) por usuario activo al mes, entendido como quien completó ≥ 1 capítulo o importó ≥ 1 partida en 30 días; al 80 % cambia a un modelo más barato y al 100 % usa solo plantillas. — **Verificación:** simulación de 1 000 usuarios durante 30 días, con sensibilidad de +20 % en tarifas y +10 % en tipo de cambio.
     - **RR-02:** El sistema debe cumplir que ≥ 60 % de las palabras mostradas en diálogos de villano y narrador provengan de plantillas, con una biblioteca ≥ 300 plantillas en v1.0. — **Verificación:** telemetría con conteo de palabras por capítulo y por usuario.
     - **RR-03:** El sistema debe cumplir la licencia GPLv3 de Stockfish: el motor corre como *worker*/proceso UCI separado y la app enlaza la fuente exacta del *build* WASM y muestra el aviso de licencia. — **Verificación:** inspección legal antes del piloto.
     - **RR-04:** El sistema debe cumplir la LFPDPPP: Aviso de Privacidad previo al registro, derechos ARCO desde la app con supresión ≤ 20 días hábiles (respaldos ≤ 35 días), y declaración de edad con consentimiento de tutor para menores de 18 años. — **Verificación:** solicitud ARCO simulada + inspección del flujo de registro.
@@ -1379,20 +1379,20 @@ Zaqora no tiene hardware, así que el BOM se traduce a costo variable por usuari
 
 | Concepto | Proveedor | Costo aprox. (MXN) | Tipo |
 | :--- | :--- | ---: | :--- |
-| LLM (~20 capítulos/mes, modelo tipo Haiku) | Anthropic o Google | $3–6 por usuario/mes | Variable |
-| *Worker* con Stockfish (compartido) | Railway o Fly.io | ~$5 USD/mes entre todos | Variable |
-| **Costo variable total** | | **≈ $5–10 por usuario/mes** | Tope RR-01: $30 |
-| Cuenta de Google Play (pago único) | Google | ~$460 | Fijo |
-| Dominio para la *landing* | Registrador | ~$250 | Fijo |
-| Créditos de API del LLM ($20 USD) | Proveedor LLM | ~$370 | Fijo |
-| *Worker* durante 2 meses | Railway o Fly.io | ~$185 | Fijo |
-| **Total del piloto** | | **~$1,300** | Tope del curso: $3,000 |
+| LLM (~20 capítulos/mes, modelo tipo Haiku) | Anthropic o Google | \$3–6 por usuario/mes | Variable |
+| *Worker* con Stockfish (compartido) | Railway o Fly.io | ~\$5 USD/mes entre todos | Variable |
+| **Costo variable total** | | **≈ \$5–10 por usuario/mes** | Tope RR-01: \$30 |
+| Cuenta de Google Play (pago único) | Google | ~\$460 | Fijo |
+| Dominio para la *landing* | Registrador | ~\$250 | Fijo |
+| Créditos de API del LLM (\$20 USD) | Proveedor LLM | ~\$370 | Fijo |
+| *Worker* durante 2 meses | Railway o Fly.io | ~\$185 | Fijo |
+| **Total del piloto** | | **~\$1,300** | Tope del curso: \$3,000 |
 
 ### Decisiones pendientes
 
 - **Dónde juega el villano.** Mi arquitectura lo pone en el servidor para tender trampas; el PDS y la del profesor, en el cliente. El PDS manda (RI-01): falta comprobar si el selector pedagógico cabe en el cliente con MultiPV del WASM.
 - **Stack del cliente.** Phaser (experiencia de juego) frente a React Native con Expo (lo que el equipo domina y resuelve las notificaciones push).
-- **Precio.** La semana 4 usó $300 MXN; el precio mínimo viable es ≈ $17–33 MXN/mes y el profesor propone probar $49–79 MXN en el piloto. Tampoco está definido si incluye IVA.
+- **Precio.** La semana 4 usó \$300 MXN; el precio mínimo viable es ≈ \$17–33 MXN/mes y el profesor propone probar \$49–79 MXN en el piloto. Tampoco está definido si incluye IVA.
 - **Permiso `preference:read`.** Verificar en la documentación de Lichess si hace falta.
 - **Componente físico.** Confirmar con el profesor si el curso exige hardware; si sí, hay que diseñarlo desde ahora.
 
@@ -1404,7 +1404,7 @@ Zaqora no tiene hardware, así que el BOM se traduce a costo variable por usuari
 - **Mi arquitectura contradecía mi propio PDS.** Diseñé al villano en el servidor y, en paralelo, escribí en el PDS que el rival corre en el cliente. Sin el PDS no lo habría notado hasta programar. Esa es la razón de escribir los requisitos antes del código.
 - **Tres documentos, tres umbrales para lo mismo.** Clasificar un error tenía tres criterios distintos, y la referencia del 90 % y el tiempo máximo del LLM también variaban. Cada IA dio un número razonable; el problema era que nadie había elegido uno. El PDS es el lugar donde se elige.
 - **La regla más firme es que el LLM no juega ajedrez.** Los cuatro documentos llegaron a la misma conclusión por caminos distintos: el motor calcula, el LLM narra y siempre hay una plantilla de respaldo. Es la decisión que menos voy a tener que defender.
-- **El costo no es el riesgo; el precio sí.** Cada usuario cuesta entre $5 y $10 MXN al mes, muy por debajo del tope. Lo que no cuadra es cobrar $300 MXN a quien usa Lichess porque es gratis. Es el mismo pendiente de la semana 4 (modelo de ingresos), ahora con un número al lado.
+- **El costo no es el riesgo; el precio sí.** Cada usuario cuesta entre \$5 y \$10 MXN al mes, muy por debajo del tope. Lo que no cuadra es cobrar \$300 MXN a quien usa Lichess porque es gratis. Es el mismo pendiente de la semana 4 (modelo de ingresos), ahora con un número al lado.
 
 ### Preguntas de cierre
 

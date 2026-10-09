@@ -16,7 +16,7 @@
 
 **Propuesta de valor (semana 4):** _«Cuando pierdes en Lichess y estás por cerrar la app, Zaqora valida tu frustración y la convierte en el próximo capítulo de tu historia.»_
 
-**Lo que ya fijó el PDS (semana 5):** PWA web como plataforma de la versión 1.0, integración con Lichess por OAuth 2.0 + PKCE, rival con Stockfish WASM en el cliente, análisis en servidor, costo ≤ $30 MXN por usuario activo al mes y cero comparación social.
+**Lo que ya fijó el PDS (semana 5):** PWA web como plataforma de la versión 1.0, integración con Lichess por OAuth 2.0 + PKCE, rival con Stockfish WASM en el cliente, análisis en servidor, costo ≤ \$30 MXN por usuario activo al mes y cero comparación social.
 
 **Concepto de producto vs. concepto de diseño:** el concepto de producto (semanas 2–4) dice qué problema resuelve Zaqora y para quién. El concepto de diseño (esta semana) dice cómo se experimenta: cómo se instala, cómo avisa sin abrir la app, qué lenguaje visual tiene, cómo se toca y qué hace el usuario en los primeros 30 segundos.
 
@@ -44,7 +44,7 @@
     Restricciones del PDS relevantes para el diseño:
 
     - Resistencia ambiental: Diferentes dispositivos, batería, IP, Hábitos del usurio,
-    - Presupuesto de software por unidad: $300 MXN
+    - Presupuesto de software por unidad: \$300 MXN
     - Instalación: Abriendo una página en internet o descargando la aplicación de google play
     - Dimensiones máximas si las hay: Interfaz responsiva
 
@@ -74,7 +74,7 @@
     | **Indicador de estado sin necesidad de abrir la app** | Widget de pantalla de inicio Android que muestra al villano del capítulo actual y su «amenaza» (Jetpack Glance o home_widget en Flutter; solo en Android, no en web) | Notificación push escrita en la voz del villano tras detectar una derrota nueva (Web Push/FCM + cron que consulta partidas; hay que limitar la frecuencia para no ser invasivo) | *Badge* numérico en el ícono con capítulos pendientes y atajos dinámicos de «Continuar misión» (Badging API + App Shortcuts; es el más barato, pero el soporte varía según el *launcher*) |
     | **Material y acabado exterior (lenguaje visual)** | Pixel art 2D con *sprites* de villanos por patrón de error (hojas de *sprites* hechas en Aseprite/LibreSprite; *assets* muy ligeros, ideales para gama baja) | Ilustración vectorial plana en SVG con tema claro/oscuro (escala perfecta en cualquier pantalla; los villanos se pueden recolorear por variables CSS) | Estética «tinta y papel» con texturas y tipografía de manuscrito (texturas WebP comprimidas; hay que vigilar el peso inicial y usar carga diferida por capítulo) |
     | **Interfaz física con el usuario (*touchpoints*)** | Tap origen → tap destino con casillas grandes y botones inferiores de «Pista del villano» (chessground o react-chessboard; es la opción más precisa en pantallas pequeñas) | Arrastrar y soltar con vibración háptica cuando el jugador cae en la trampa del villano (Vibration API o HapticFeedback; hay que desactivarla en modo ahorro) | Modo a una mano: decisiones de diálogo de opción múltiple en la zona del pulgar y tablero solo para la jugada clave (menos entrada de ajedrez libre y validación más simple de las respuestas) |
-    | **Fuente de energía (dónde se procesa)** | Análisis en servidor: Stockfish en el *backend* y cliente ligero (menor consumo de batería; el costo del servidor por usuario debe caber en los $300 MXN, por lo que conviene limitar la profundidad o usar colas) | Stockfish WASM en el dispositivo, sin servidor de análisis (funciona offline y el costo de servidor es casi cero; gasta batería y es lento en gama baja, por lo que se necesita un límite de profundidad adaptativo) | Híbrido diferido: el análisis se procesa por lotes solo con Wi-Fi o con el teléfono cargando, y el capítulo se genera antes de que el jugador lo necesite (restricciones de WorkManager y caché local en IndexedDB/SQLite) |
+    | **Fuente de energía (dónde se procesa)** | Análisis en servidor: Stockfish en el *backend* y cliente ligero (menor consumo de batería; el costo del servidor por usuario debe caber en los \$300 MXN, por lo que conviene limitar la profundidad o usar colas) | Stockfish WASM en el dispositivo, sin servidor de análisis (funciona offline y el costo de servidor es casi cero; gasta batería y es lento en gama baja, por lo que se necesita un límite de profundidad adaptativo) | Híbrido diferido: el análisis se procesa por lotes solo con Wi-Fi o con el teléfono cargando, y el capítulo se genera antes de que el jugador lo necesite (restricciones de WorkManager y caché local en IndexedDB/SQLite) |
     | **Integración con partidas de ajedrez** | Importación automática desde la API pública de Lichess con OAuth2/PKCE o por nombre de usuario (*streaming* NDJSON; hay que respetar los *rate limits* y detectar derrotas nuevas por sondeo) | Botón «Compartir» desde la app o web de Lichess hacia Zaqora (Web Share Target en la PWA o *intent-filter* en Android; se activa justo en el momento de frustración, sin cuenta vinculada) | Pegar un PGN o un enlace de partida de cualquier plataforma, incluida la PubAPI de Chess.com (*parser* PGN con chess.js; es la opción más universal, pero depende de que el usuario haga el paso manual) |
 
 #### Segunda ronda — prompt de autoría propia
@@ -568,7 +568,7 @@ Con la tabla enriquecida con la variante D, se eligieron dos combinaciones de va
     - Indicador de estado sin necesidad de abrir la app: Variante B — Notificación push escrita en la voz del villano tras detectar una derrota nueva (Web Push/FCM + cron que consulta partidas; hay que limitar la frecuencia para no ser invasivo).
     - Material y acabado exterior (lenguaje visual): Variante B — Ilustración vectorial plana en SVG con tema claro/oscuro (escala perfecta en cualquier pantalla; los villanos se pueden recolorear por variables CSS).
     - Interfaz digital con el usuario (touchpoints): Variante A — Tap origen → tap destino con casillas grandes y botones inferiores de "Pista del villano" (chessground o react-chessboard; es la opción más precisa en pantallas pequeñas).
-    - Fuente de procesamiento (dónde se procesa): Variante A — Análisis en servidor: Stockfish en el backend y cliente ligero (menor consumo de batería; el costo del servidor por usuario debe caber en los $300 MXN, por lo que conviene limitar la profundidad o usar colas).
+    - Fuente de procesamiento (dónde se procesa): Variante A — Análisis en servidor: Stockfish en el backend y cliente ligero (menor consumo de batería; el costo del servidor por usuario debe caber en los \$300 MXN, por lo que conviene limitar la profundidad o usar colas).
     - Integración con partidas de ajedrez: Variante A — Importación automática desde la API pública de Lichess con OAuth2/PKCE o por nombre de usuario (streaming NDJSON; hay que respetar los rate limits y detectar derrotas nuevas por sondeo).
 
     **CONCEPTO 2 — Zaqora "Cazador Fricción-Cero" (Conversacional + Ejecución Local)**
@@ -760,7 +760,7 @@ Para la segunda ronda definí yo el tercer concepto, «El Entrenador Invisible»
     - Indicador de Estado: Widget de pantalla de inicio Android que muestra al villano activo y su amenaza (Jetpack Glance / home_widget) o el mismo hilo de chat como indicador silencioso.
     - Lenguaje Visual (Materiales): Pixel art 2D con sprites de villanos por patrón de error (hojas de sprites ligeras para gama baja).
     - Interfaz Digital (Touchpoints): Arrastrar y soltar (drag and drop) con vibración háptica al caer en trampas (Vibration API).
-    - Fuente de Procesamiento (Energía): Stockfish WASM ejecutándose localmente en el dispositivo (funciona offline, costo $0 de servidor, profundidad adaptativa según batería).
+    - Fuente de Procesamiento (Energía): Stockfish WASM ejecutándose localmente en el dispositivo (funciona offline, costo \$0 de servidor, profundidad adaptativa según batería).
     - Integración con Ajedrez: Botón nativo de "Compartir" (Web Share Target / intent-filter) enviado directamente desde Lichess al chat/app en el momento del tilt.
 
     *CONCEPTO 3 — Zaqora "El Entrenador Invisible" (IA Adaptativa + Batalla Fuera de la App)*
@@ -1110,7 +1110,7 @@ Para elegir entre los tres conceptos se construyó la matriz con El Entrenador I
     Nuestras restricciones de manufactura (construcción y despliegue):
 
     - Proceso disponible: desarrollo propio con medios universitarios y servicios de plan gratuito, 8 semanas de desarrollo efectivo. El PDS de la versión 1.0 fija PWA web, OAuth 2.0 + PKCE con Lichess, rival con Stockfish WASM en el cliente y análisis en servidor.
-    - Presupuesto por unidad: ≤ $30 MXN por usuario activo al mes (IA + infraestructura)
+    - Presupuesto por unidad: ≤ \$30 MXN por usuario activo al mes (IA + infraestructura)
     - Volumen objetivo: 15–20 usuarios beta para prueba de mercado
 
     Construye la Matriz de Pugh con estas especificaciones:
@@ -1142,7 +1142,7 @@ Para elegir entre los tres conceptos se construyó la matriz con El Entrenador I
 
     - **F1. Construible en 8 semanas (15 %):** alcance realista con medios universitarios y el *stack* que el equipo domina.
     - **F2. Alineación con el PDS v1.0 (10 %):** PWA, OAuth 2.0 + PKCE, Stockfish WASM en cliente y análisis en servidor.
-    - **F3. Costo por usuario activo (10 %):** se mantiene en ≤ $30 MXN al mes con planes gratuitos.
+    - **F3. Costo por usuario activo (10 %):** se mantiene en ≤ \$30 MXN al mes con planes gratuitos.
     - **F4. Despliegue a 15–20 beta (10 %):** distribución y actualizaciones sin tiendas ni cuentas de desarrollador de pago.
 
     ---
@@ -1232,7 +1232,7 @@ Repetí la matriz con un prompt propio, con los mismos tres conceptos y el mismo
 
     **Contexto de mi proyecto:**
 
-    - Problema o decisión a tomar: Elegir el concepto de diseño de la versión 1.0 de Zaqora, un videojuego de un solo jugador para aprender ajedrez donde cada «capítulo» es una lección disfrazada de misión y el villano encarna un patrón de error real y recurrente del jugador. Propuesta de valor: «Cuando pierdes en Lichess y estás por cerrar la app, Zaqora valida tu frustración y la convierte en el próximo capítulo de tu historia.» El usuario es un jugador amateur de Lichess que, al perder, solo sabe cerrar la app; llega desde el celular, en pleno tilt, y no quiere fricción de instalación ni ver Elo, rankings o comparación social. Restricciones del PDS: PWA web, OAuth 2.0 + PKCE con Lichess, Stockfish WASM en el cliente, análisis en servidor, costo ≤ $30 MXN por usuario activo al mes, 8 semanas de desarrollo efectivo y 15–20 usuarios beta para la prueba de mercado.
+    - Problema o decisión a tomar: Elegir el concepto de diseño de la versión 1.0 de Zaqora, un videojuego de un solo jugador para aprender ajedrez donde cada «capítulo» es una lección disfrazada de misión y el villano encarna un patrón de error real y recurrente del jugador. Propuesta de valor: «Cuando pierdes en Lichess y estás por cerrar la app, Zaqora valida tu frustración y la convierte en el próximo capítulo de tu historia.» El usuario es un jugador amateur de Lichess que, al perder, solo sabe cerrar la app; llega desde el celular, en pleno tilt, y no quiere fricción de instalación ni ver Elo, rankings o comparación social. Restricciones del PDS: PWA web, OAuth 2.0 + PKCE con Lichess, Stockfish WASM en el cliente, análisis en servidor, costo ≤ \$30 MXN por usuario activo al mes, 8 semanas de desarrollo efectivo y 15–20 usuarios beta para la prueba de mercado.
     - Línea base / Opción de referencia (Datum): Concepto 3 — El Entrenador Invisible: app nativa en Flutter con tablero único y diario, estética de tinta y papel, modo a una mano y análisis diferido (Wi-Fi / cargando) que importa 100–200 partidas de Lichess para revelar el elenco de villanos. El estado se comunica con una «forja» y un aura sin notificaciones, y el villano solo cae cuando el patrón deja de aparecer en las partidas reales.
     - Opciones a evaluar (Alternativas):
         - Concepto 1 — Ghost Engine: PWA instalable desde URL con formato de novela visual por capítulos, ilustración vectorial SVG, análisis con Stockfish en servidor e importación automática desde la API de Lichess (OAuth). Tras una derrota, llega una notificación push en la voz del villano que abre una escena con la posición de esa partida.
@@ -1261,7 +1261,7 @@ Repetí la matriz con un prompt propio, con los mismos tres conceptos y el mismo
     | D2 | Validación emocional de la frustración justo después de perder | Deseabilidad | 15 % |
     | D3 | Ausencia de Elo, rankings y comparación social | Deseabilidad | 10 % |
     | D4 | Fidelidad del villano al patrón de error real del jugador | Deseabilidad | 10 % |
-    | F1 | Costo operativo ≤ $30 MXN por usuario activo al mes | Factibilidad | 15 % |
+    | F1 | Costo operativo ≤ \$30 MXN por usuario activo al mes | Factibilidad | 15 % |
     | F2 | Viabilidad en 8 semanas de desarrollo efectivo | Factibilidad | 15 % |
     | F3 | Compatibilidad con el PDS (PWA, OAuth + PKCE, Stockfish WASM en cliente, análisis en servidor) | Factibilidad | 15 % |
 
@@ -1325,7 +1325,7 @@ Repetí la matriz con un prompt propio, con los mismos tres conceptos y el mismo
 
     Con el WASM en cliente, el híbrido cumple los cuatro puntos técnicos del PDS y convierte el único `−` de C1 en al menos un `0`.
 
-    Antes de cerrar la decisión conviene comprobar dos cosas: una estimación real del costo de análisis en servidor por usuario contra el tope de $30 MXN, y la proporción de usuarios beta en iOS, porque de eso depende cuánto pesa la entrada alternativa por compartir.
+    Antes de cerrar la decisión conviene comprobar dos cosas: una estimación real del costo de análisis en servidor por usuario contra el tope de \$30 MXN, y la proporción de usuarios beta en iOS, porque de eso depende cuánto pesa la entrada alternativa por compartir.
 
 #### Comparación de los dos prompts
 
@@ -1451,7 +1451,7 @@ El prompt del profesor limita la crítica a 3 problemas. Para la segunda ronda p
 
     - ¿Qué representa?: El boceto técnico y el wireframe del concepto [Ghost Engine / Cazador Fricción-Cero / El Entrenador Invisible] de Zaqora, un videojuego de un solo jugador para aprender ajedrez donde cada «capítulo» es una lección disfrazada de misión y el villano encarna un patrón de error real y recurrente del jugador. Muestra las pantallas con sus medidas (tablero, zonas táctiles), la pantalla principal en estado normal y en estado de alerta, y el flujo de instalación en 3 pasos.
     - Público u objetivo final: Prototipo de la versión 1.0 para una prueba de mercado con 15–20 usuarios beta. El usuario es un jugador amateur de Lichess que, al perder, solo sabe cerrar la app; llega a Zaqora desde el celular, en pleno tilt, segundos después de una derrota.
-    - Restricciones o aspectos clave a considerar: Interfaz responsiva pensada primero para celular, con zonas táctiles de ≥ 44 px y WCAG 2.2 AA. No debe mostrar Elo, rankings, barra de evaluación ni comparación social: el coaching ocurre dentro de la ficción y la frustración se valida antes de corregir. La entrada no debe pedir descargas pesadas ni registro antes de dar valor. Debe poder construirse en 8 semanas con medios universitarios y respetar el PDS (PWA web, OAuth 2.0 + PKCE con Lichess, Stockfish WASM en el cliente, análisis en servidor, costo ≤ $30 MXN por usuario activo al mes).
+    - Restricciones o aspectos clave a considerar: Interfaz responsiva pensada primero para celular, con zonas táctiles de ≥ 44 px y WCAG 2.2 AA. No debe mostrar Elo, rankings, barra de evaluación ni comparación social: el coaching ocurre dentro de la ficción y la frustración se valida antes de corregir. La entrada no debe pedir descargas pesadas ni registro antes de dar valor. Debe poder construirse en 8 semanas con medios universitarios y respetar el PDS (PWA web, OAuth 2.0 + PKCE con Lichess, Stockfish WASM en el cliente, análisis en servidor, costo ≤ \$30 MXN por usuario activo al mes).
 
     Por favor, estructura tu crítica técnica en las siguientes secciones:
 
