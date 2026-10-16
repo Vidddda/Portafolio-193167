@@ -1,0 +1,2778 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de proyectos realizados por David López Ramírez.">
+      
+      
+      
+      
+        <link rel="prev" href="../pi4_s7/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Semana 8 - Prototipado y diseño para manufactura - Portafolio de Proyectos - David López Ramírez</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#semana-8-prototipado-y-diseno-para-manufactura" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Portafolio de Proyectos - David López Ramírez" class="md-header__button md-logo" aria-label="Portafolio de Proyectos - David López Ramírez" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Portafolio de Proyectos - David López Ramírez
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Semana 8 - Prototipado y diseño para manufactura
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Portafolio de Proyectos - David López Ramírez" class="md-nav__button md-logo" aria-label="Portafolio de Proyectos - David López Ramírez" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Portafolio de Proyectos - David López Ramírez
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Página principal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formación académica
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Formación académica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistemas Embebidos I
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sistemas Embebidos I
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tareas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tareas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea I - Comparación de microcontroladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea II - Outputs básicos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea III - Inputs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea IV - Mini-Pong
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea V - Comparación de alarmas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea VI - Alarmas aplicadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea VII - Modulación por ancho de pulso - PWM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea VIII - Comunicación UART
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea IX - Convertidor analógico a digital
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embedded Systems II
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Embedded Systems II
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tasks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tasks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esii_task1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task I - FreeRTOS Tasks and Priorities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esii_task2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task II - Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esii_task3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task III - Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esii_task4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task IV - HTTP_WiFi_Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esii_task5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task V - MQTT LAB pt1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esii_task6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task VI - MQTT LAB pt2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proyecto de ingeniería IV
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Proyecto de ingeniería IV
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 1 - Firma de Syllabus y método SCAMPER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 2 - Búsqueda de Oportunidades
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 3 - Propiedad intelectual, marca y vigilancia tecnológica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 4 - Mercado, valor y propuesta de valor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 5 - Diseño de producto, PDS y arquitectura del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 6 - Generación y selección de concepto de diseño
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 7 - Viabilidad técnica y económica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 8 - Prototipado y diseño para manufactura
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 8 - Prototipado y diseño para manufactura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Resumen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-punto-de-partida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Punto de partida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-proceso-prototipo-y-dfm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Proceso — Prototipo y DFM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3) Proceso — Prototipo y DFM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-el-supuesto-mas-riesgoso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 1 — El supuesto más riesgoso
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-plan-de-prototipado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 2 — Plan de prototipado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-3-construccion-y-prueba-con-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 3 — Construcción y prueba con usuarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-4-revision-dfm-del-concepto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 4 — Revisión DFM del concepto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-entregable-prototipo-y-dfm-de-zaqora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) Entregable — Prototipo y DFM de Zaqora
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Entregable — Prototipo y DFM de Zaqora">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-plan-de-prototipado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Plan de prototipado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-reporte-de-prototipo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Reporte de prototipo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-revision-dfm-y-bom-actualizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Revisión DFM y BOM actualizado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-economia-circular" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Economía circular
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-pendientes-del-entregable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Pendientes del entregable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-reflexion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) Reflexión
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Reflexión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preguntas-de-cierre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preguntas de cierre
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Resumen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-punto-de-partida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Punto de partida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-proceso-prototipo-y-dfm" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Proceso — Prototipo y DFM
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3) Proceso — Prototipo y DFM">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-el-supuesto-mas-riesgoso" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 1 — El supuesto más riesgoso
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-plan-de-prototipado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 2 — Plan de prototipado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-3-construccion-y-prueba-con-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 3 — Construcción y prueba con usuarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-4-revision-dfm-del-concepto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 4 — Revisión DFM del concepto
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-entregable-prototipo-y-dfm-de-zaqora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) Entregable — Prototipo y DFM de Zaqora
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Entregable — Prototipo y DFM de Zaqora">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-plan-de-prototipado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Plan de prototipado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-reporte-de-prototipo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Reporte de prototipo
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-revision-dfm-y-bom-actualizado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Revisión DFM y BOM actualizado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-economia-circular" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Economía circular
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-pendientes-del-entregable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Pendientes del entregable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-reflexion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) Reflexión
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Reflexión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preguntas-de-cierre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preguntas de cierre
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="semana-8-prototipado-y-diseno-para-manufactura">Semana 8 — Prototipado y diseño para manufactura</h1>
+<h2 id="1-resumen">1) Resumen</h2>
+<ul>
+<li><strong>Nombre de la actividad:</strong> <em>Plan de prototipado, prueba con usuarios y revisión DFM</em></li>
+<li><strong>Curso:</strong> <em>Proyecto de Ingeniería IV</em></li>
+<li><strong>Equipo:</strong> <em>David López Ramírez</em></li>
+<li><strong>Fecha:</strong> <em>15/10/2026</em></li>
+<li><strong>Descripción breve:</strong> <em>Con el concepto <strong>Ghost Engine</strong> elegido (semana 6) y su modelo económico (semana 7), esta semana se formuló la pregunta más riesgosa de <strong>Zaqora</strong> —si un jugador que acaba de perder abre el capítulo de su villano— y se construyó el prototipo mínimo para responderla: un prototipo de experiencia de baja resolución, en modo «mago de Oz», con avisos push de la app en dos tonos. En paralelo, el concepto pasa por una revisión de diseño para manufactura (DFM) adaptada a un producto de software.</em></li>
+</ul>
+<hr />
+<h2 id="2-punto-de-partida">2) Punto de partida</h2>
+<p><strong>Concepto (semana 6):</strong> <strong>Ghost Engine</strong>, una PWA en formato de novela visual: tras perder en Lichess, el villano que encarna el error del jugador le escribe y lo invita a un capítulo construido sobre esa misma partida.</p>
+<p><strong>Lo que dejaron abierto las semanas anteriores:</strong></p>
+<ul>
+<li><strong>El tono del villano decide el concepto.</strong> En la Matriz de Pugh (semana 6), el +39 de Ghost Engine depende de que el villano valide en lugar de burlarse; si suena a burla, baja a +15. Las dos críticas del boceto marcaron la misma duda.</li>
+<li><strong>Sin uso no hay conversión.</strong> El modelo económico (semana 7) muestra que el año 1 solo cierra si al menos 2 de cada 20 usuarios pagan, y nadie paga por un capítulo que no abre.</li>
+<li><strong>Costo actual:</strong> $18.83 MXN por usuario activo al mes a 10 usuarios y $14.84 a 100; el componente más caro es la infraestructura <em>cloud</em> (71 % del costo directo a 10 usuarios).</li>
+</ul>
+<p><strong>Prototipo de exploración vs. producto:</strong> el prototipo de esta semana no es el <em>first-iteration product</em>. Sirve para responder una pregunta concreta antes de programar el motor, el cron y el narrador.</p>
+<ul>
+<li><strong>Objetivo de la semana:</strong> Validar con comportamiento real el supuesto más riesgoso de Zaqora y rediseñar el concepto para que sea más barato y simple de construir y mantener.</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Adaptación a un producto de software</p>
+<p>La semana está pensada para un producto físico (carcasa, ensamble, JLCPCB). Como en las semanas 5 a 7, en Zaqora la «carcasa» son los servicios que hay que integrar, el «ensamble» es el trabajo de integrarlos más los pasos que da el usuario para empezar, y la «manufactura» es construir y desplegar el software.</p>
+</div>
+<hr />
+<h2 id="3-proceso-prototipo-y-dfm">3) Proceso — Prototipo y DFM</h2>
+<h3 id="paso-1-el-supuesto-mas-riesgoso">Paso 1 — El supuesto más riesgoso</h3>
+<p>Los supuestos se priorizaron por riesgo, indefinición y controversia:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Supuesto</th>
+<th style="text-align: left;">Riesgo si es falso</th>
+<th style="text-align: left;">¿Qué tan definido está?</th>
+<th style="text-align: left;">¿Hay controversia?</th>
+<th style="text-align: center;">Prioridad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>El jugador que acaba de perder abre el capítulo del villano</strong></td>
+<td style="text-align: left;">El concepto entero no sirve: sin apertura no hay producto ni cobro</td>
+<td style="text-align: left;">Nada: nunca se ha probado</td>
+<td style="text-align: left;">Sí: la propuesta de valor lo da por hecho</td>
+<td style="text-align: center;"><strong>1</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">El tono validante retiene más que el burlón</td>
+<td style="text-align: left;">El margen de Ghost Engine en la Matriz de Pugh baja de +39 a +15</td>
+<td style="text-align: left;">Poco: el boceto usa el tono burlón</td>
+<td style="text-align: left;">Sí: Pugh y las dos críticas lo cuestionan</td>
+<td style="text-align: center;"><strong>1</strong> (se prueba junto con el anterior)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Al menos 2 de cada 20 usuarios pagan $59 MXN al mes</td>
+<td style="text-align: left;">El año 1 no cierra</td>
+<td style="text-align: left;">Nada</td>
+<td style="text-align: left;">Sí: el usuario usa Lichess porque es gratis</td>
+<td style="text-align: center;">2 (depende del 1)</td>
+</tr>
+<tr>
+<td style="text-align: left;">El narrador no inventa jugadas</td>
+<td style="text-align: left;">Se rompe la confianza en la ficción</td>
+<td style="text-align: left;">Parcial: hay validador en el diseño</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: center;">3</td>
+</tr>
+</tbody>
+</table>
+<p>El supuesto de pago va después: antes de saber si alguien paga, hay que saber si alguien abre.</p>
+<h3 id="paso-2-plan-de-prototipado">Paso 2 — Plan de prototipado</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Plan</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Equipo</strong></td>
+<td style="text-align: left;">David López Ramírez</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Concepto</strong></td>
+<td style="text-align: left;">Zaqora — Ghost Engine</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Supuesto a validar</strong></td>
+<td style="text-align: left;">Un jugador que acaba de perder en Lichess abre el capítulo que le envía el villano, en lugar de cerrar todo; y el tono validante retiene más que el burlón.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pregunta precisa</strong></td>
+<td style="text-align: left;">¿Puede un jugador de Lichess que acaba de perder <strong>abrir y terminar</strong> el capítulo de su villano <strong>sin</strong> que nadie se lo pida ni le explique qué es?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tipo de prototipo</strong></td>
+<td style="text-align: left;"><strong>Experiencia</strong> (forma / función / experiencia / negocio)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Resolución</strong></td>
+<td style="text-align: left;"><strong>Baja</strong>, en modo «mago de Oz»: el aviso sale de la app de Zaqora como notificación push, igual que en el producto, pero lo dispara un script del equipo en lugar del sistema real (no hay cron, motor ni LLM).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Por qué esta resolución</strong></td>
+<td style="text-align: left;">La pregunta es si el aviso y la escena hacen actuar al jugador; para eso no hacen falta el motor ni el narrador, pero sí el canal real.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Qué vamos a construir</strong></td>
+<td style="text-align: left;">Una PWA mínima (página para activar los avisos y escena con la posición real del error), un script que detecta las derrotas en Lichess y envía el aviso push del villano, y un registro de eventos en Supabase. Un día de preparación y una ventana de prueba de 3 a 5 días.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cómo capturamos la evidencia</strong></td>
+<td style="text-align: left;">Cuántos participantes activan los avisos cuando se les pide. Hora de la derrota (API de Lichess), del aviso (script) y de la apertura (Supabase) → minutos hasta abrir. Qué elige en la escena («Muéstrame» o «Déjame en paz»), cuántos intentos hace y si termina el encuentro, registrado por la escena. Si se atasca, una sola pregunta al final: «¿Qué esperabas que pasara aquí?».</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Umbral de éxito</strong></td>
+<td style="text-align: left;"><strong>Al menos 3 de 5</strong> participantes abren el aviso <strong>en menos de 30 minutos</strong> tras perder y <strong>al menos 2 de 5</strong> terminan el encuentro. Se prefiere el tono con mayor tasa de apertura en las mismas personas.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Diseño de la observación</strong> (Paso 3 del curso: definir antes de prototipar):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pregunta del Paso 3</th>
+<th style="text-align: left;">Respuesta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">¿Cuántos usuarios?</td>
+<td style="text-align: left;">5 jugadores amateur de Lichess (mínimo 3), mayores de edad, que juegan al menos 3 veces por semana.</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Qué comportamientos observaremos?</td>
+<td style="text-align: left;">Si activa los avisos; minutos desde la derrota hasta abrir el aviso; si elige «Muéstrame» o «Déjame en paz»; si pide la pista; cuántos intentos hace; si termina el encuentro.</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Cómo los registraremos?</td>
+<td style="text-align: left;">Automáticamente: la escena guarda cada evento con la hora en Supabase, y el script registra la hora de la derrota y del aviso. No hace falta video ni grabación de pantalla.</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Qué preguntaremos si se atasca?</td>
+<td style="text-align: left;">Una sola pregunta, al final de la prueba: «¿Qué esperabas que pasara aquí?». Y en el cierre: «La última vez que perdiste, ¿qué hiciste justo después?».</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Diseño de la prueba:</strong></p>
+<ul>
+<li><strong>Participantes:</strong> 5 jugadores amateur de Lichess, mayores de edad, que juegan al menos 3 veces por semana.</li>
+<li><strong>Dos variantes por persona, sin detalle de la jugada (diseño principal):</strong> cada participante recibe el tono validante en una derrota y el burlón en otra. Tres empiezan por el validante y dos por el burlón, para que el orden no decida el resultado. Los mensajes no citan la jugada exacta porque, tras la revisión DFM (Paso 4), el análisis corre en el teléfono y el producto solo podrá avisar que hubo una derrota; el error se revela al abrir la escena.</li>
+<li><strong>Alternativa con tres variantes:</strong> sumar un mensaje validante <strong>con</strong> la jugada exacta (C), que el producto solo podrá enviar cuando Lichess ya tenga el análisis de la partida. Cada participante recibiría las tres en orden rotado. Solo conviene si los participantes pierden al menos 3 veces en la ventana de prueba; si no, los resultados quedan demasiado repartidos.</li>
+<li><strong>Un solo mensaje por derrota y ningún recordatorio:</strong> si no abre, no se insiste. También es una regla del producto (tecnología calmada).</li>
+<li><strong>Detección de derrotas:</strong> consultar cada 15–30 minutos las partidas nuevas de cada participante en la API pública de Lichess y enviar el mensaje en menos de 10 minutos tras la derrota.</li>
+</ul>
+<p><strong>Mensajes</strong> (los avisos salen de la app como notificación push: el título es el nombre del villano y, al tocarlo, se abre la escena; los textos entre llaves los llena el script con la partida real; no se menciona al rival porque es un tercero):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Momento</th>
+<th style="text-align: left;">Mensaje</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Invitación y consentimiento</strong></td>
+<td style="text-align: left;">«Hola, {nombre}. Soy David, estudiante de Ingeniería. Estoy probando Zaqora, un juego que convierte tus derrotas de ajedrez en capítulos de una historia. Durante los próximos 5 días revisaría tus partidas públicas de Lichess y, cuando pierdas, te llegaría un mensaje con un enlace. No necesitas instalar nada ni crear cuenta. No guardo tus datos fuera de esta prueba, y puedes salirte cuando quieras escribiendo ALTO. ¿Aceptas? Si sí, mándame tu usuario de Lichess.»</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>A · Validante, sin detalle</strong></td>
+<td style="text-align: left;">«Esa partida dolió. Te vi caer con {color} en {n} jugadas, y yo estaba ahí. Soy {villano}. Ya sé dónde fue; cuando quieras, te lo enseño.»</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>B · Burlona, sin detalle</strong> (tono del boceto actual)</td>
+<td style="text-align: left;">«Te estaba esperando. {n} jugadas con {color} y caíste justo donde yo sabía. ¿Vienes a ver dónde fue?»</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>C · Validante, con detalle</strong> (solo en la alternativa de tres variantes)</td>
+<td style="text-align: left;">«Esa partida dolió. Yo estaba ahí, en la jugada {jugada}: moviste {pieza} a {casilla}. Soy {villano}, y no es la primera vez que nos vemos. Cuando quieras, te enseño dónde te encontré.»</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cierre de la prueba</strong></td>
+<td style="text-align: left;">«Gracias por participar, {nombre}. Una última pregunta: la última vez que perdiste esta semana, ¿qué hiciste justo después? Cuéntame lo que hiciste, no lo que pensaste.»</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Cuidados de la prueba</p>
+<p>Solo participa quien acepta el mensaje de invitación, y quien escriba ALTO sale de inmediato. No participan menores de edad (el PDS exige consentimiento de tutor). Se usa solo el nombre de usuario de Lichess y la hora de las partidas; en Supabase cada participante aparece solo con un alias, y los registros se borran al terminar el reporte. WhatsApp se usa solo para la invitación y el cierre. En iPhone, los avisos web solo funcionan con la app agregada a la pantalla de inicio (iOS 16.4 o más reciente).</p>
+</div>
+<h3 id="paso-3-construccion-y-prueba-con-usuarios">Paso 3 — Construcción y prueba con usuarios</h3>
+<p><strong>Cómo se construyó el prototipo</strong> (un día de trabajo):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pieza</th>
+<th style="text-align: left;">Qué hace</th>
+<th style="text-align: left;">Herramienta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Escena web</strong></td>
+<td style="text-align: left;">La página que se abre al tocar el aviso: villano, tablero sellado con la posición real de su error, «Muéstrame» / «Déjame en paz», pista del villano y jugada clave. Sigue el presupuesto vertical de la semana 6 (encabezado de 48 px, franja del villano de 80, tablero de 352 con casillas de 44, pie de 64).</td>
+<td style="text-align: left;">Una sola página HTML, sin instalar nada; <a href="../prototipo/escena.html">ver la escena de ejemplo</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Detector de derrotas</strong></td>
+<td style="text-align: left;">Revisa cada 15 minutos las partidas públicas de Lichess de cada participante. Por cada derrota nueva toma la posición antes de su peor error (del análisis de Lichess) y la mejor jugada, y envía el aviso push del villano en la variante que le toca, con el enlace a la escena.</td>
+<td style="text-align: left;">Script en Python con la API pública de Lichess, python-chess y pywebpush</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Registro de comportamiento</strong></td>
+<td style="text-align: left;">Guarda, con la hora, quién activa los avisos y qué hace cada participante en la escena (abrir, «Muéstrame», «Déjame en paz», pista, intento fallido, resuelto), identificado solo con un alias (P1…P5).</td>
+<td style="text-align: left;">Tablas en Supabase Free con permiso de solo inserción</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Avisos de la app</strong></td>
+<td style="text-align: left;">La escena y la página de activación forman una PWA instalable; su <em>service worker</em> muestra el aviso del villano y abre la escena al tocarlo. Un solo aviso por derrota: no se acumulan.</td>
+<td style="text-align: left;">Web Push con claves VAPID; <a href="../prototipo/activar.html">página de activación</a></td>
+</tr>
+</tbody>
+</table>
+<div class="grid">
+<p><img alt="Escena sellada: el villano valida la derrota y el tablero espera a que el jugador decida" src="../recursos/imgs/PI4_S8/escena_sellada.png" width="300" /></p>
+<p><img alt="Escena despierta: la posición antes del error, con la pista del villano disponible" src="../recursos/imgs/PI4_S8/escena_despierta.png" width="300" /></p>
+</div>
+<p><em>Capturas de la escena de ejemplo a 360 px de ancho. En la prueba, cada enlace lleva la posición real de la derrota del participante.</em></p>
+<p><strong>Prueba de funcionamiento (15/10/2026).</strong> Antes de invitar a los participantes, el prototipo se probó de punta a punta con un celular real y una partida real del equipo:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Paso</th>
+<th style="text-align: left;">Qué se comprobó</th>
+<th style="text-align: center;">Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Publicación</td>
+<td style="text-align: left;">La PWA responde en una dirección https (necesaria para los avisos)</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">Activación de avisos</td>
+<td style="text-align: left;">La página de activación pide el permiso y guarda la suscripción en Supabase</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aviso de prueba</td>
+<td style="text-align: left;">El script envía la notificación y llega al celular</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">Escena</td>
+<td style="text-align: left;">Tocar el aviso abre la escena; «Muéstrame» revela el tablero</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">Registro</td>
+<td style="text-align: left;">Supabase guarda los eventos de la escena con la hora</td>
+<td style="text-align: center;">✅</td>
+</tr>
+<tr>
+<td style="text-align: left;">Detección de derrotas</td>
+<td style="text-align: left;">El script detecta una derrota real en Lichess, toma la posición antes del error y arma el aviso</td>
+<td style="text-align: center;">✅</td>
+</tr>
+</tbody>
+</table>
+<div class="admonition warning">
+<p class="admonition-title">Prueba con usuarios: programada para el 16, 17 y 18 de octubre</p>
+<p>La prueba con los participantes todavía no se ha podido hacer porque necesita <strong>3 días seguidos</strong>: el aviso solo llega cuando el jugador pierde una partida real, y cada participante debe perder al menos dos veces para recibir los dos tonos. Se hará el <strong>viernes 16, sábado 17 y domingo 18 de octubre de 2026</strong>, cuando los participantes juegan más. El comportamiento se registra solo en Supabase y se pasa después a la hoja de observación, que calcula el umbral de éxito y la tasa de apertura por tono.</p>
+</div>
+<h3 id="paso-4-revision-dfm-del-concepto">Paso 4 — Revisión DFM del concepto</h3>
+<p><strong>Herramienta:</strong> Claude.</p>
+<details class="quote">
+<summary>Prompt completo — Prompt del profesor adaptado a Zaqora (Claude, revisión DFM)</summary>
+<p>Actúa como un ingeniero de manufactura con experiencia en diseño para manufactura y ensamble (DFM/DFA), aplicado a productos de software en etapa temprana. Sigues el método de 5 pasos de Ulrich &amp; Eppinger y prefieres soluciones viables con recursos universitarios y servicios de plan gratuito. Como el producto no tiene hardware, tradúcelo así: la «carcasa» son los servicios que hay que integrar, el «ensamble» es el trabajo de integrar y desplegar esos servicios más los pasos que da el usuario para empezar, y la «manufactura» es construir y desplegar el software. Cuando una mejora tenga un costo oculto, dilo directamente.</p>
+<p><strong>NUESTRO CONCEPTO:</strong>
+Nombre: Zaqora — concepto Ghost Engine
+Descripción del artefacto: PWA web en formato de novela visual que convierte el aprendizaje de ajedrez en un videojuego de un solo jugador. Tras perder en Lichess, el villano que encarna el error recurrente del jugador le escribe y lo invita a un capítulo construido sobre esa misma partida. Pantalla de referencia de 360 × 640 px útiles: encabezado de 48 px, franja del villano de 80 px, tablero de 352 px (casillas de 44 px), progreso de 24 px y pie de 64 px. Lenguaje visual: ilustración vectorial SVG y piezas en SVG.
+Método de instalación: se abre desde una URL, sin cuenta; el usuario escribe su nombre de usuario de Lichess, ve la primera escena y después se le ofrece instalar la PWA («Guarda a tu villano»). También se publica en Google Play (cuenta de desarrollador incluida en el piloto).
+«Carcasa» (servicios integrados): 7 partes — (1) PWA y landing en Cloudflare Pages (plan gratuito); (2) base de datos y autenticación en Supabase (plan Free; pausa tras 1 semana sin actividad); (3) worker en Python con Stockfish en Railway (plan Hobby); (4) API de Anthropic como narrador (Claude Haiku 4.5); (5) API pública de Lichess (partidas en NDJSON, por nombre de usuario); (6) Stripe México para los cobros; (7) Google Play (cuenta de desarrollador). Se unen por APIs HTTPS y un cron que consulta partidas nuevas.</p>
+<p><strong>BOM</strong> (componentes principales, precios verificados el 08/10/2026, tipo de cambio de 18.5 MXN/USD):</p>
+<ul>
+<li>Claude Haiku 4.5: US$1 por millón de tokens de entrada y US$5 de salida; ~20 capítulos al mes por usuario, 3,000 tokens de entrada y 1,000 de salida por capítulo, +30 % por el español → $3.85 MXN por usuario al mes</li>
+<li>Worker con Stockfish (Railway Hobby): US$5 al mes con US$5 de uso incluido (≈ $92.50 MXN)</li>
+<li>Supabase: Free US$0 en la beta; Pro US$25 al mes a partir de ~100 usuarios</li>
+<li>Cloudflare Pages: US$0</li>
+<li>Dominio .com: US$11.08 al año</li>
+<li>Google Play: US$25, pago único</li>
+<li>Stripe México: 3.6 % + $3 MXN por cobro, más IVA sobre la comisión</li>
+</ul>
+<p>Proceso planeado: desarrollo propio en 8 semanas; despliegue continuo en Cloudflare Pages y Railway; análisis con Stockfish en el servidor y narración con el LLM; cobro por la web con Stripe.
+Volumen objetivo: 20 usuarios beta en la prueba de mercado y 100 usuarios en la escala inicial.
+Costo unitario actual (de nuestro modelo económico): $18.83 MXN por usuario activo al mes a 10 usuarios y $14.84 a 100, con 15 % de overhead y 25 % de contingencia. Precio recomendado: $59 MXN al mes con IVA ($44.92 netos).</p>
+<p>Aplica los 5 pasos:</p>
+<ol>
+<li><strong>ESTIMAR EL COSTO:</strong> desglosa el costo unitario por usuario activo al mes a 20 y a 100 usuarios: cloud, IA, overhead (15 %) y contingencia (25 %). Señala el componente de mayor costo.</li>
+<li><strong>REDUCIR EL COSTO DE LOS COMPONENTES:</strong> revisa los 3 componentes más caros y propone para cada uno una alternativa estándar (otro modelo de IA, Batch API, prompt caching, mover Stockfish al navegador con WASM, otro plan de hosting), con el ahorro estimado.</li>
+<li><strong>REDUCIR EL COSTO DE «ENSAMBLE» (DFA):</strong> compara antes y después de las mejoras: número de servicios que hay que integrar y mantener, horas estimadas de integración y número de pasos y minutos que el usuario tarda en recibir el primer valor.</li>
+<li><strong>REDUCIR EL COSTO DE SOPORTE:</strong> revisa monitoreo, control de calidad (validar que el narrador no invente jugadas), documentación y qué habilidades especializadas exige cada servicio.</li>
+<li><strong>OTROS FACTORES:</strong> para cada mejora, señala el trade-off en calidad de la experiencia, tiempo al mercado y costo de desarrollo.</li>
+</ol>
+<p><strong>FORMATO DE SALIDA:</strong> REVISIÓN DFM (concepto · volumen) → COSTO UNITARIO ACTUAL (a 20 y a 100, componente de mayor costo) → OPORTUNIDADES DE REDUCCIÓN (3: problema, alternativa, ahorro) → «ENSAMBLE» (DFA) antes y después → COSTO CON MEJORAS → TRADE-OFFS → COMPATIBILIDAD CON EL PDS Y PLANES GRATUITOS (✅ / ⚠️ / ❌).</p>
+</details>
+<details class="abstract">
+<summary>Respuesta completa — Prompt del profesor adaptado (Claude)</summary>
+<p><strong>Revisión DFM/DFA de Zaqora (Ghost Engine)</strong></p>
+<p><em>Concepto:</em> PWA de novela visual con un villano que encarna el error recurrente del jugador. Se integran 7 servicios (Cloudflare Pages, Supabase, worker de Python con Stockfish en Railway, Claude Haiku 4.5, API de Lichess, Stripe México y Google Play). <em>Volumen:</em> 20 usuarios en la beta (prueba de mercado) y 100 en la escala inicial.</p>
+<p>Antes de empezar, dos hallazgos que cambian el análisis:</p>
+<ul>
+<li><strong>Ya existe Claude Haiku 5.5.</strong> Cuesta US$0.10 por millón de tokens de entrada y US$0.50 de salida (en prompts de hasta 100 mil tokens). Es una décima parte del precio de Haiku 4.5.</li>
+<li><strong>El prompt caching no funciona con su diseño actual.</strong> Haiku 4.5 solo guarda en caché prompts de 4,096 tokens o más, y su capítulo usa 3,000 tokens de entrada. Si marcan el prompt para caché, la API lo procesa sin caché y no avisa con ningún error.</li>
+</ul>
+<hr />
+<p><strong>1. COSTO UNITARIO ACTUAL</strong></p>
+<p>Reconstruí su modelo para comprobar que entendí los supuestos. Con overhead y contingencia compuestos (×1.15 × 1.25 = ×1.4375), su cifra de $14.84 a 100 usuarios solo cuadra si Railway cuesta US$10 a esa escala (US$5 de uso extra). Usé ese supuesto. Además, su modelo deja fuera el dominio y Google Play, así que los agregué con Play amortizado en 12 meses.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">MXN por usuario activo al mes</th>
+<th style="text-align: right;">20 usuarios</th>
+<th style="text-align: right;">100 usuarios</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Railway (US$5 / US$10)</td>
+<td style="text-align: right;">4.63</td>
+<td style="text-align: right;">1.85</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supabase (Free / Pro)</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">4.63</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cloudflare Pages</td>
+<td style="text-align: right;">0.00</td>
+<td style="text-align: right;">0.00</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dominio ($17.08 al mes)</td>
+<td style="text-align: right;">0.85</td>
+<td style="text-align: right;">0.17</td>
+</tr>
+<tr>
+<td style="text-align: left;">Google Play (amortizado en 12 meses)</td>
+<td style="text-align: right;">1.93</td>
+<td style="text-align: right;">0.39</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cloud, subtotal</td>
+<td style="text-align: right;">7.41</td>
+<td style="text-align: right;">7.04</td>
+</tr>
+<tr>
+<td style="text-align: left;">IA (Haiku 4.5)</td>
+<td style="text-align: right;">3.85</td>
+<td style="text-align: right;">3.85</td>
+</tr>
+<tr>
+<td style="text-align: left;">Costo directo</td>
+<td style="text-align: right;">11.26</td>
+<td style="text-align: right;">10.89</td>
+</tr>
+<tr>
+<td style="text-align: left;">Overhead (15 %)</td>
+<td style="text-align: right;">1.69</td>
+<td style="text-align: right;">1.63</td>
+</tr>
+<tr>
+<td style="text-align: left;">Contingencia (25 %)</td>
+<td style="text-align: right;">3.24</td>
+<td style="text-align: right;">3.13</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: right;"><strong>$16.18</strong></td>
+<td style="text-align: right;"><strong>$15.64</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Total con el método de su modelo (sin dominio ni Play)</td>
+<td style="text-align: right;">$12.18</td>
+<td style="text-align: right;">$14.84</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Componente de mayor costo:</strong> a 20 usuarios, Railway ($4.63); a 100 usuarios, Supabase Pro ($4.63). La IA ($3.85) es el único costo que no se reparte al crecer. Con más usuarios, pasará a ser el mayor.</li>
+<li><strong>Costo oculto: Stripe cuesta más que cualquier partida de cloud.</strong> Cada cobro de $59 paga una comisión de $2.12 (3.6 %) más $3, más IVA sobre la comisión, que suma $5.94 por usuario de pago al mes. Ya está restado en su precio neto de $44.92, pero conviene verlo como lo que es: el costo más grande por usuario.</li>
+</ul>
+<hr />
+<p><strong>2. OPORTUNIDADES DE REDUCCIÓN</strong></p>
+<p><strong>A. IA: el narrador</strong></p>
+<ul>
+<li><em>Problema:</em> es el costo que crece en proporción a los usuarios. Las dos palancas habituales tampoco sirven aquí: el caché no se activa con Haiku 4.5, porque el prompt es demasiado corto; y aun con un modelo que sí lo active, un caché que dura 5 minutos casi nunca se reutilizaría con 20 a 100 usuarios repartidos a lo largo del día.</li>
+<li><em>Alternativa:</em> cambiar a Claude Haiku 5.5 con los mismos tokens. Entrada: 60 mil tokens × US$0.10/M = US$0.006. Salida: 20 mil tokens × US$0.50/M = US$0.010. Con +30 % por el español: $0.39 MXN por usuario al mes.</li>
+<li><em>Ahorro:</em> $3.46 directos, que con overhead y contingencia son ≈ $4.98 por usuario al mes, unos 90 % menos en IA.</li>
+<li><em>Lo que no recomiendo:</em> el Batch API daría otro 50 %, pero solo unos $0.19 más. No compensa la complejidad de procesar en asíncrono.</li>
+<li><em>Costo oculto:</em> hay que volver a calibrar la voz del villano y el formato de salida con el modelo nuevo. Calculen de 3 a 5 horas y un conjunto de partidas de prueba (ver paso 4).</li>
+</ul>
+<p><strong>B. Railway: el worker de Python con Stockfish</strong></p>
+<ul>
+<li><em>Problema:</em> es un servicio de pago aparte, en otro lenguaje y en un contenedor, solo para analizar partidas.</li>
+<li><em>Alternativa:</em> dos cambios. Stockfish WASM en un Web Worker del navegador, que es lo mismo que hace Lichess en su tablero de análisis; y el cron que consulta partidas nuevas pasa a pg_cron más una Edge Function de Supabase, incluidas en el plan Free. <em>Mejora adicional:</em> pedir las partidas a Lichess con <code>evals=true</code>. Si el jugador ya pidió el análisis en Lichess, las evaluaciones llegan hechas y no hay que calcular nada.</li>
+<li><em>Ahorro:</em> $92.50 a $185 al mes, que equivalen a ≈ $6.65 por usuario a 20 usuarios y ≈ $2.66 a 100, ya con overhead y contingencia.</li>
+<li><em>Costos ocultos:</em><ul>
+<li><strong>Licencia GPL-3 de Stockfish.</strong> En el servidor no distribuyen Stockfish. Al mandarlo al navegador y a la app de Play, sí lo distribuyen, y deben ofrecer su código fuente y aclarar la licencia. Es manejable, pero se documenta desde el día uno.</li>
+<li><strong>Tiempo de análisis en el teléfono.</strong> En un Android de gama media, analizar una partida completa toma decenas de segundos y gasta batería.</li>
+<li><strong>Peso del motor.</strong> La compilación «lite» pesa unos megas y la completa, decenas.</li>
+<li><strong>Multihilo.</strong> Para usar varios hilos hacen falta las cabeceras COOP/COEP, que se configuran en el archivo <code>_headers</code> de Pages.</li>
+<li><strong>El mensaje del villano cambia de momento.</strong> Ya no puede llegar con el error exacto, porque el análisis ocurre cuando el usuario abre la app. Lo que sí puede llegar es algo como «Te vi caer contra X en 23 jugadas. Ya sé dónde fue», y el detalle se revela al abrir.</li>
+</ul>
+</li>
+</ul>
+<p><strong>C. Supabase Pro a partir de ~100 usuarios</strong></p>
+<ul>
+<li><em>Problema:</em> con 100 usuarios no rebasan ningún límite del plan Free (500 MB de base de datos, 50 mil usuarios activos al mes). Pasar a Pro sería por el riesgo de pausa y por los respaldos, no por capacidad.</li>
+<li><em>Alternativa:</em> quedarse en Free. El cron horario de pg_cron mantiene actividad real en la base de datos; un <code>pg_dump</code> semanal con GitHub Actions (gratuito) sustituye los respaldos; un monitor de disponibilidad avisa si el proyecto se pausa.</li>
+<li><em>Ahorro:</em> $462.50 al mes, ≈ $6.65 por usuario a 100 usuarios con overhead y contingencia.</li>
+<li><em>Costos ocultos:</em> no hay respaldos diarios ni acuerdo de nivel de servicio. Si se pausa, la landing sigue cargando pero el villano deja de responder. Verifiquen qué cuenta como «actividad» para la regla de pausa vigente. Planeen pasar a Pro cuando lleguen ingresos reales.</li>
+</ul>
+<hr />
+<p><strong>3. «ENSAMBLE» (DFA): ANTES Y DESPUÉS</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Antes</th>
+<th style="text-align: left;">Después</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Servicios que se integran y mantienen</td>
+<td style="text-align: left;">7</td>
+<td style="text-align: left;">6 (sale Railway)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cuentas de pago con tarjeta</td>
+<td style="text-align: left;">3 (Railway, Anthropic, Supabase Pro)</td>
+<td style="text-align: left;">1 (Anthropic)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Lenguajes y entornos de ejecución</td>
+<td style="text-align: left;">Python, TypeScript y Docker</td>
+<td style="text-align: left;">Solo TypeScript (el navegador y Deno en las Edge Functions)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Horas de integración</td>
+<td style="text-align: left;">≈ 64 h</td>
+<td style="text-align: left;">≈ 64 h</td>
+</tr>
+<tr>
+<td style="text-align: left;">Mantenimiento mensual</td>
+<td style="text-align: left;">≈ 4 h</td>
+<td style="text-align: left;">≈ 2 h</td>
+</tr>
+<tr>
+<td style="text-align: left;">Pasos del usuario hasta el primer valor</td>
+<td style="text-align: left;">3: abrir la URL, escribir su usuario, confirmar</td>
+<td style="text-align: left;">3, sin cambio</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tiempo hasta la primera escena</td>
+<td style="text-align: left;">20 a 40 s de espera (servidor más LLM)</td>
+<td style="text-align: left;">5 s si Lichess ya tiene evaluaciones; 20 a 60 s en gama media si no</td>
+</tr>
+</tbody>
+</table>
+<p><em>Desglose de horas de integración:</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tarea</th>
+<th style="text-align: right;">Antes</th>
+<th style="text-align: right;">Después</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">PWA y CI</td>
+<td style="text-align: right;">6 h</td>
+<td style="text-align: right;">7 h</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supabase</td>
+<td style="text-align: right;">8 h</td>
+<td style="text-align: right;">10 h</td>
+</tr>
+<tr>
+<td style="text-align: left;">Análisis con Stockfish</td>
+<td style="text-align: right;">16 h (worker en Docker con cola)</td>
+<td style="text-align: right;">12 h (WASM en Web Worker)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Lichess</td>
+<td style="text-align: right;">6 h</td>
+<td style="text-align: right;">6 h</td>
+</tr>
+<tr>
+<td style="text-align: left;">Narrador</td>
+<td style="text-align: right;">12 h</td>
+<td style="text-align: right;">13 h</td>
+</tr>
+<tr>
+<td style="text-align: left;">Stripe</td>
+<td style="text-align: right;">8 h</td>
+<td style="text-align: right;">8 h</td>
+</tr>
+<tr>
+<td style="text-align: left;">Google Play</td>
+<td style="text-align: right;">8 h</td>
+<td style="text-align: right;">8 h</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: right;"><strong>≈ 64 h</strong></td>
+<td style="text-align: right;"><strong>≈ 64 h</strong></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lectura directa:</strong> el rediseño no ahorra horas de construcción. Lo que ahorra es dinero y mantenimiento. Para el usuario, la espera puede empeorar en teléfonos lentos.</p>
+<p><em>Cómo disimular la espera:</em> la escena de presentación del villano se muestra mientras el análisis corre; la franja de progreso de 24 px enseña el avance del análisis; se analizan primero las jugadas donde se perdió material, a poca profundidad.</p>
+<p><em>Dos costos ocultos de ensamble que ya existen y que el plan de 8 semanas no menciona:</em></p>
+<ul>
+<li><strong>Prueba cerrada de Google Play.</strong> Las cuentas personales de desarrollador nuevas deben hacer una prueba cerrada con al menos 12 testers durante 14 días seguidos antes de publicar en producción. Sus 20 usuarios beta alcanzan, pero son 2 semanas de calendario que hay que reservar.</li>
+<li><strong>Pagos dentro de Google Play.</strong> Una app de Play que vende contenido digital normalmente debe usar el sistema de facturación de Google, con 15 % de comisión en suscripciones (≈ $8.85 por cobro de $59), en lugar de Stripe. Revisen la política vigente para México antes de decidir. Si aplica, la app de Play no debe tener flujo de compra y el cobro con Stripe se queda solo en la web.</li>
+</ul>
+<hr />
+<p><strong>4. COSTO DE SOPORTE</strong></p>
+<p><em>Monitoreo:</em> un monitor de disponibilidad gratuito sobre un endpoint <code>/health</code> que consulte la base de datos (así detectan una pausa de Supabase y además generan actividad); un tope de gasto en la consola de Anthropic; una alerta si un webhook de Stripe falla. En la versión actual, añadan también el límite de uso de Railway.</p>
+<p><em>Control de calidad del narrador (que no invente jugadas):</em></p>
+<ul>
+<li>El LLM no recibe el PGN «para que lo lea». Recibe una lista cerrada de momentos clave: número de media jugada, jugada en notación algebraica, evaluación antes y después, y la mejor jugada según Stockfish.</li>
+<li>La salida es JSON estructurado. Las jugadas se citan como marcadores (<code>{p23}</code>) y no como texto libre.</li>
+<li>Un validador con chess.js comprueba tres cosas: que cada referencia exista en la partida; que la jugada en notación algebraica coincida; que la jugada sugerida sea legal en esa posición. Además, una expresión regular rechaza cualquier jugada escrita fuera de los marcadores.</li>
+<li>Si falla, se regenera una vez. Si vuelve a fallar, se usa un texto de plantilla. El costo de reintentos es de ~5 % más tokens, insignificante con Haiku 5.5.</li>
+<li>Conjunto de prueba: 30 partidas con sus momentos esperados. Se corren cada vez que cambien el modelo o el prompt.</li>
+</ul>
+<p><em>Documentación mínima:</em> diagrama de la arquitectura y lista de variables de entorno; guía de incidentes (Supabase pausado, error 429 de Lichess —esperar un minuto y no hacer peticiones en paralelo—, cuota de Anthropic agotada, webhook de Stripe caído); checklist de publicación en Play; nota sobre la licencia GPL de Stockfish.</p>
+<p><em>Habilidades especializadas por servicio:</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Servicio</th>
+<th style="text-align: left;">Antes</th>
+<th style="text-align: left;">Después</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Análisis</td>
+<td style="text-align: left;">Python, protocolo UCI de Stockfish, Docker, colas</td>
+<td style="text-align: left;">WASM y Web Workers, cabeceras COOP/COEP</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supabase</td>
+<td style="text-align: left;">SQL y políticas RLS</td>
+<td style="text-align: left;">SQL, RLS, pg_cron y Deno</td>
+</tr>
+<tr>
+<td style="text-align: left;">Anthropic</td>
+<td style="text-align: left;">Diseño de prompts y JSON estructurado</td>
+<td style="text-align: left;">Igual</td>
+</tr>
+<tr>
+<td style="text-align: left;">Stripe</td>
+<td style="text-align: left;">Webhooks y facturación con IVA</td>
+<td style="text-align: left;">Igual</td>
+</tr>
+<tr>
+<td style="text-align: left;">Google Play</td>
+<td style="text-align: left;">TWA con Bubblewrap, assetlinks y Play Console</td>
+<td style="text-align: left;">Igual</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>5. COSTO CON MEJORAS</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">MXN por usuario al mes</th>
+<th style="text-align: right;">20 usuarios</th>
+<th style="text-align: right;">100 usuarios</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Cloud (dominio y Play amortizados)</td>
+<td style="text-align: right;">2.78</td>
+<td style="text-align: right;">0.56</td>
+</tr>
+<tr>
+<td style="text-align: left;">IA (Haiku 5.5)</td>
+<td style="text-align: right;">0.39</td>
+<td style="text-align: right;">0.39</td>
+</tr>
+<tr>
+<td style="text-align: left;">Overhead y contingencia</td>
+<td style="text-align: right;">1.38</td>
+<td style="text-align: right;">0.40</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: right;"><strong>$4.55 (−72 %)</strong></td>
+<td style="text-align: right;"><strong>$1.35 (−91 %)</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Margen sobre $44.92 netos</td>
+<td style="text-align: right;">$40.37</td>
+<td style="text-align: right;">$43.57</td>
+</tr>
+</tbody>
+</table>
+<p>Con las mejoras, Stripe ($5.94 por cobro) pesa más de 4 veces el costo de operación. La siguiente palanca está en el cobro, no en la nube. Por ejemplo, un plan anual de $590 baja la comisión a ≈ $2.34 por usuario al mes, porque los $3 fijos se cobran una sola vez al año.</p>
+<hr />
+<p><strong>6. TRADE-OFFS</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Mejora</th>
+<th style="text-align: left;">Calidad de la experiencia</th>
+<th style="text-align: left;">Tiempo al mercado</th>
+<th style="text-align: left;">Costo de desarrollo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Haiku 5.5</td>
+<td style="text-align: left;">Neutral, o mejor si el modelo nuevo narra mejor. Requiere validarlo con el conjunto de prueba</td>
+<td style="text-align: left;">Más medio día</td>
+<td style="text-align: left;">3 a 5 h</td>
+</tr>
+<tr>
+<td style="text-align: left;">Stockfish en el navegador</td>
+<td style="text-align: left;">Peor en teléfonos lentos: espera y batería. El mensaje push es menos específico</td>
+<td style="text-align: left;">Neutral (se quita Docker y se suma WASM)</td>
+<td style="text-align: left;">≈ igual, más el trámite de la GPL</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supabase Free con respaldos</td>
+<td style="text-align: left;">Riesgo de caída por pausa y sin respaldos diarios</td>
+<td style="text-align: left;">Neutral</td>
+<td style="text-align: left;">2 a 3 h (respaldo y monitor)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Validador del narrador</td>
+<td style="text-align: left;">Mucho mejor: el villano nunca cita una jugada falsa</td>
+<td style="text-align: left;">Más 1 a 2 días</td>
+<td style="text-align: left;">8 a 10 h (incluidas en el narrador)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cobro solo en la web (por la política de Play)</td>
+<td style="text-align: left;">Un paso más para pagar desde la app de Android</td>
+<td style="text-align: left;">Neutral</td>
+<td style="text-align: left;">Bajo</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>7. COMPATIBILIDAD CON EL PDS Y LOS PLANES GRATUITOS</strong></p>
+<p>No tengo su PDS a la mano, así que tomé los requisitos de la descripción del concepto.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Requisito</th>
+<th style="text-align: center;">Estado</th>
+<th style="text-align: left;">Nota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Se abre desde una URL, sin cuenta</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Autenticación anónima en Supabase, sin cambio</td>
+</tr>
+<tr>
+<td style="text-align: left;">Pantalla de 360 × 640 px y tablero de 352 px con casillas de 44 px</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">El análisis no ocupa espacio. La franja de 24 px muestra su progreso</td>
+</tr>
+<tr>
+<td style="text-align: left;">Primera escena antes de ofrecer la instalación</td>
+<td style="text-align: center;">⚠️</td>
+<td style="text-align: left;">20 a 60 s en gama media si Lichess no tiene evaluaciones</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ilustración y piezas en SVG</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Sin impacto</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cloudflare Pages en plan gratuito</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Las Pages Functions sirven de proxy al LLM y reciben el webhook de Stripe</td>
+</tr>
+<tr>
+<td style="text-align: left;">Supabase en plan Free</td>
+<td style="text-align: center;">⚠️</td>
+<td style="text-align: left;">Pausa, sin respaldos y sin acuerdo de servicio</td>
+</tr>
+<tr>
+<td style="text-align: left;">Railway</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Desaparece; era el único hosting de pago</td>
+</tr>
+<tr>
+<td style="text-align: left;">Anthropic</td>
+<td style="text-align: center;">⚠️</td>
+<td style="text-align: left;">No tiene plan gratuito, pero cuesta ≈ $8 al mes en total a 20 usuarios</td>
+</tr>
+<tr>
+<td style="text-align: left;">Lichess</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Gratuito. Respetar una petición a la vez y esperar un minuto tras un error 429</td>
+</tr>
+<tr>
+<td style="text-align: left;">Stripe México</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Sin cuota fija; pagan solo por cobro</td>
+</tr>
+<tr>
+<td style="text-align: left;">Google Play: cuota única de US$25 y prueba cerrada de 14 días</td>
+<td style="text-align: center;">⚠️</td>
+<td style="text-align: left;">Reservar las 2 semanas en el calendario</td>
+</tr>
+<tr>
+<td style="text-align: left;">Google Play: cobro con Stripe dentro de la app</td>
+<td style="text-align: center;">❌</td>
+<td style="text-align: left;">Probable conflicto con la política de pagos; verificar para México</td>
+</tr>
+<tr>
+<td style="text-align: left;">Licencia de Stockfish al distribuirlo</td>
+<td style="text-align: center;">⚠️</td>
+<td style="text-align: left;">GPL-3: ofrecer el código fuente en la web y en Play</td>
+</tr>
+<tr>
+<td style="text-align: left;">Precio de $59 con IVA</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;">Margen de $40 a $44 por usuario</td>
+</tr>
+</tbody>
+</table>
+<p><em>Fuentes citadas en la respuesta:</em> Prompt caching y precios — Claude Platform Docs.</p>
+</details>
+<p><strong>Lectura del resultado</strong></p>
+<ul>
+<li><strong>El costo baja hasta 91 %, pero no las horas de construcción.</strong> Las mejoras (Haiku 5.5, Stockfish en el navegador y Supabase Free) llevan el costo de ~$16 a ~$4.55 por usuario a 20 usuarios. El trabajo de integración sigue en ~64 horas: lo que se ahorra es dinero y mantenimiento.</li>
+<li><strong>Quitar el servidor de análisis cambia la experiencia.</strong> Con Stockfish en el teléfono, el villano ya no puede escribir con el error exacto en el momento de la derrota, porque el análisis ocurre al abrir la app. Eso afecta justo al prototipo de esta semana: la variante del mensaje tendría que ser «Te vi caer en 23 jugadas. Ya sé dónde fue», y el detalle aparecería en la escena. Por eso los mensajes de la prueba (Paso 2) se ajustaron a esa versión.</li>
+<li><strong>El costo más grande ya no es la nube, es el cobro.</strong> Stripe se lleva $5.94 de cada $59, más de 4 veces el costo de operación. El plan anual es la siguiente palanca.</li>
+<li><strong>Dos riesgos de calendario que no estaban en ningún plan:</strong> la prueba cerrada obligatoria de Google Play (12 testers durante 14 días) y la probable obligación de cobrar con la facturación de Google (15 %) dentro de la app. Los dos chocan con la decisión de incluir Google Play en el piloto.</li>
+<li><strong>Datos verificados (15/10/2026).</strong> En la documentación oficial: el caché de Haiku 4.5 exige prompts de al menos 4,096 tokens y no avisa si no se aplica (el de Haiku 5.5 empieza en 512, pero dura 5 minutos, así que con pocos usuarios casi no se reutilizaría); las cuentas personales nuevas de Google Play deben hacer una prueba cerrada con al menos 12 testers durante 14 días seguidos; y las apps de Play que venden contenido digital o suscripciones deben usar la facturación de Google, que en México cobra 15 % en suscripciones, salvo que el país esté en sus programas de facturación alternativa (la página no lo menciona). Además, su costo de Haiku 5.5 ($0.39) no incluye el ~30 % de tokens extra del tokenizador de los modelos nuevos que indica la documentación de Anthropic; con ese ajuste sale en $0.50, que es lo que usa el BOM actualizado.</li>
+</ul>
+<hr />
+<h2 id="4-entregable-prototipo-y-dfm-de-zaqora">4) Entregable — Prototipo y DFM de Zaqora</h2>
+<p><strong>Equipo:</strong> <em>David López Ramírez</em> · <strong>Concepto:</strong> <em>Zaqora — Ghost Engine</em> · <strong>Fecha:</strong> <em>15/10/2026</em></p>
+<h3 id="1-plan-de-prototipado">1. Plan de prototipado</h3>
+<p>El plan completo está en el Paso 2: supuesto, pregunta precisa, prototipo de experiencia de baja resolución en modo «mago de Oz», evidencia de comportamiento y umbral de éxito de 3 de 5 que abren en menos de 30 minutos y 2 de 5 que terminan.</p>
+<h3 id="2-reporte-de-prototipo">2. Reporte de prototipo</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Campo</th>
+<th style="text-align: left;">Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Equipo</strong></td>
+<td style="text-align: left;">David López Ramírez</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Concepto</strong></td>
+<td style="text-align: left;">Zaqora — Ghost Engine</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Tipo de prototipo</strong></td>
+<td style="text-align: left;">Experiencia</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Resolución</strong></td>
+<td style="text-align: left;">Baja (mago de Oz)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Materiales y tiempo</strong></td>
+<td style="text-align: left;">PWA mínima (activación de avisos y escena), script en Python con la API de Lichess, python-chess y Web Push, y Supabase Free. Construcción y prueba de funcionamiento: 15/10/2026. <em>Falta el tiempo total tras la prueba.</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pregunta que respondía</strong></td>
+<td style="text-align: left;">¿Puede un jugador de Lichess que acaba de perder abrir y terminar el capítulo de su villano sin que nadie se lo pida ni le explique qué es?</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Evidencia recolectada — usuario 1</strong></td>
+<td style="text-align: left;"><em>Pendiente (comportamiento, no opinión)</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Evidencia recolectada — usuario 2</strong></td>
+<td style="text-align: left;"><em>Pendiente</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Evidencia recolectada — usuario 3</strong></td>
+<td style="text-align: left;"><em>Pendiente</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>¿Se validó el supuesto?</strong></td>
+<td style="text-align: left;"><em>Pendiente: Sí / No / Parcialmente</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Por qué</strong></td>
+<td style="text-align: left;"><em>Pendiente</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Aprendizaje clave</strong></td>
+<td style="text-align: left;"><em>Pendiente</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cambio al diseño</strong></td>
+<td style="text-align: left;"><em>Pendiente</em></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Siguiente hipótesis a prototipar</strong></td>
+<td style="text-align: left;"><em>Pendiente</em></td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-revision-dfm-y-bom-actualizado">3. Revisión DFM y BOM actualizado</h3>
+<p><a href="../recursos/archivos/PI4_S8/Zaqora_Modelo_Economico_S8_DFM.xlsx">Descargar el modelo con las mejoras DFM (Excel)</a></p>
+<p>Se adoptaron las tres mejoras de la revisión DFM. El libro es una copia del modelo de la semana 7 con los supuestos cambiados en naranja; todo lo demás se recalcula con las mismas fórmulas.</p>
+<p><strong>BOM actualizado</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Componente</th>
+<th style="text-align: left;">Antes (semana 7)</th>
+<th style="text-align: left;">Después (semana 8)</th>
+<th style="text-align: left;">Cambio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Narrador</td>
+<td style="text-align: left;">Claude Haiku 4.5: US$1 / US$5 por millón de tokens</td>
+<td style="text-align: left;"><strong>Claude Haiku 5.5:</strong> US$0.10 / US$0.50 por millón</td>
+<td style="text-align: left;">Mismo consumo de tokens; +30 % por el español y +30 % por el tokenizador nuevo</td>
+</tr>
+<tr>
+<td style="text-align: left;">Análisis de partidas</td>
+<td style="text-align: left;">Worker de Python con Stockfish en Railway, US$5 al mes</td>
+<td style="text-align: left;"><strong>Stockfish WASM en el navegador</strong>; cron en pg_cron + Edge Function de Supabase</td>
+<td style="text-align: left;">Sale Railway; se aprovechan las evaluaciones de Lichess (<code>evals=true</code>)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Base de datos a 100 usuarios</td>
+<td style="text-align: left;">Supabase Pro, US$25 al mes</td>
+<td style="text-align: left;"><strong>Supabase Free</strong> con <code>pg_dump</code> semanal y monitor de disponibilidad</td>
+<td style="text-align: left;">Se pasa a Pro cuando haya ingresos</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dominio, Google Play, Cloudflare Pages, Stripe</td>
+<td style="text-align: left;">Sin cambio</td>
+<td style="text-align: left;">Sin cambio</td>
+<td style="text-align: left;">Dominio y Play se amortizan en 12 meses en el costo unitario</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nuevo costo unitario</strong> (MXN por usuario activo al mes, con 15 % de overhead y 25 % de contingencia):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Concepto</th>
+<th style="text-align: right;">20 usuarios</th>
+<th style="text-align: right;">100 usuarios</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Cloud y fijos amortizados (dominio y Google Play)</td>
+<td style="text-align: right;">$2.78</td>
+<td style="text-align: right;">$0.56</td>
+</tr>
+<tr>
+<td style="text-align: left;">IA (Haiku 5.5)</td>
+<td style="text-align: right;">$0.50</td>
+<td style="text-align: right;">$0.50</td>
+</tr>
+<tr>
+<td style="text-align: left;">Overhead y contingencia</td>
+<td style="text-align: right;">$1.44</td>
+<td style="text-align: right;">$0.46</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Costo unitario</strong></td>
+<td style="text-align: right;"><strong>$4.72</strong></td>
+<td style="text-align: right;"><strong>$1.52</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Antes, mismo método (con dominio y Play amortizados)</td>
+<td style="text-align: right;">$16.18</td>
+<td style="text-align: right;">$15.64</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ingreso neto por suscriptor / costo unitario</td>
+<td style="text-align: right;">9.5 veces</td>
+<td style="text-align: right;">29.6 veces</td>
+</tr>
+</tbody>
+</table>
+<p>La diferencia con la revisión ($4.55 y $1.35) se debe a que el libro suma el ~30 % de tokens del tokenizador nuevo al costo de Haiku 5.5.</p>
+<p><strong>Efecto en el año 1</strong> (mismo plan de 20 usuarios beta, 5 % de conversión y cuenta de Google Play):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Semana 7</th>
+<th style="text-align: right;">Con mejoras DFM</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Inversión inicial</td>
+<td style="text-align: right;">$1,222.48</td>
+<td style="text-align: right;">$1,037.48 (sin worker prepagado)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Flujo mensual desde el mes 4</td>
+<td style="text-align: right;">−$88 a −$199</td>
+<td style="text-align: right;"><strong>+$44.92</strong> (ya no hay costos de operación en efectivo)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Primer mes con flujo positivo</td>
+<td style="text-align: right;">Ninguno</td>
+<td style="text-align: right;"><strong>Mes 4</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">VPN a 12 meses (15 %)</td>
+<td style="text-align: right;">−$2,636</td>
+<td style="text-align: right;"><strong>−$669</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Suscriptores necesarios todo el año</td>
+<td style="text-align: right;">8</td>
+<td style="text-align: right;"><strong>3</strong> (15 % de conversión)</td>
+</tr>
+</tbody>
+</table>
+<p>Las mejoras no vuelven viable el año 1 por sí solas, pero cambian la escala del problema: el negocio pasa de perder dinero cada mes a recuperar la inversión con 3 suscriptores en lugar de 8. Con una academia piloto (semana 7), el VPN ya era positivo antes de las mejoras.</p>
+<h3 id="4-economia-circular">4. Economía circular</h3>
+<p>La página del curso plantea cuatro preguntas de circularidad pensadas para hardware. Traducidas a Zaqora:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pregunta del curso</th>
+<th style="text-align: left;">Principio</th>
+<th style="text-align: left;">Equivalente en Zaqora</th>
+<th style="text-align: left;">Respuesta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">¿Los componentes son accesibles para reparación?</td>
+<td style="text-align: left;">Reparabilidad</td>
+<td style="text-align: left;">¿Se puede cambiar una pieza sin rehacer el producto?</td>
+<td style="text-align: left;">Sí: cada servicio se conecta por una API. Cambiar el narrador de Claude Haiku 4.5 a Haiku 5.5, o el hosting, es cambiar un proveedor, no reescribir la app.</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Los módulos se pueden reemplazar por separado?</td>
+<td style="text-align: left;">Modularidad</td>
+<td style="text-align: left;">¿El contenido y los servicios son independientes?</td>
+<td style="text-align: left;">Sí: villanos y capítulos son plantillas de datos (guion en JSON), y cada servicio se reemplaza por separado.</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Los materiales se pueden identificar para reciclaje?</td>
+<td style="text-align: left;">Ciclo de vida</td>
+<td style="text-align: left;">¿Los datos del usuario se pueden identificar, llevar y borrar?</td>
+<td style="text-align: left;">Parcialmente: el PDS ya exige derechos ARCO y borrado en 20 días hábiles; falta permitir exportar el progreso y las partidas.</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿El producto se puede actualizar sin reemplazarse?</td>
+<td style="text-align: left;">Atemporalidad</td>
+<td style="text-align: left;">¿Se actualiza solo y funciona en equipos viejos?</td>
+<td style="text-align: left;">Sí: la PWA se actualiza sola con su <em>service worker</em> (el equivalente a una actualización OTA) y el PDS fija un celular de 4 GB de RAM como mínimo, así que no obliga a cambiar de equipo.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-pendientes-del-entregable">5. Pendientes del entregable</h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> <strong>Plan de prototipado</strong> (Paso 2).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> <strong>Mensajes de la prueba</strong> en las dos variantes de tono.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> <strong>Prototipo construido:</strong> escena web, detector de derrotas y registro opcional de comportamiento (Paso 3).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> <strong>Prototipo publicado y probado de punta a punta</strong> con un celular real y una partida real (15/10/2026).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Probar con al menos 3 usuarios</strong> (idealmente 5) el viernes 16, sábado 17 y domingo 18 de octubre, y llenar la hoja de observación.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> <strong>Revisión DFM</strong> (Paso 4).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> <strong>Mejoras DFM aplicadas:</strong> BOM actualizado y nuevo costo unitario (sección 3).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> <strong>Mensajes ajustados a la revisión DFM:</strong> los dos tonos sin detalle de la jugada, y una tercera variante con detalle como alternativa.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> <strong>Políticas de Google Play verificadas:</strong> prueba cerrada de 12 testers durante 14 días y facturación de Google obligatoria (15 % en suscripciones).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Decidir cómo cobrar en la versión de Google Play:</strong> con la facturación de Google (15 %) o sin compras dentro de la app, cobrando solo en la PWA web.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Reporte de prototipo</strong> completo y reflexión.</li>
+</ul>
+<hr />
+<h2 id="5-reflexion">5) Reflexión</h2>
+<p><em>Pendiente: se escribe después de la prueba con usuarios y de la revisión DFM.</em></p>
+<h3 id="preguntas-de-cierre">Preguntas de cierre</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pregunta</th>
+<th style="text-align: left;">Respuesta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">¿Cuál es el supuesto más riesgoso y qué prototipo lo validará?</td>
+<td style="text-align: left;">Que un jugador que acaba de perder abra el capítulo de su villano. Lo valida un prototipo de experiencia de baja resolución en modo «mago de Oz»: avisos push de la app, disparados por un script tras derrotas reales, en dos tonos, con una escena armada sobre la posición de cada partida.</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Qué evidencia de comportamiento capturarán?</td>
+<td style="text-align: left;">Cuántos activan los avisos, minutos desde la derrota hasta abrir la escena, la elección en la escena («Muéstrame» o «Déjame en paz») y si termina el encuentro. No se pregunta si les gustó.</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Cuál es el componente de mayor costo del BOM y qué alternativa DFM lo reduce?</td>
+<td style="text-align: left;">A 20 usuarios, el worker de Stockfish en Railway ($4.63 por usuario); a 100, Supabase Pro ($4.63). Stockfish en el navegador elimina el primero y quedarse en Supabase Free el segundo; cambiar a Claude Haiku 5.5 baja el narrador de $3.85 a $0.50. El costo unitario pasa de $16.18 a $4.72 a 20 usuarios. Por usuario de pago, el costo más grande ya es la comisión de Stripe ($5.94 por cobro).</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Cuántas partes tiene la «carcasa» y cómo reducirlas?</td>
+<td style="text-align: left;">Siete servicios integrados. Mover Stockfish al navegador y el cron a Supabase quita Railway: quedan seis servicios, una sola cuenta de pago (Anthropic) en lugar de tres y un solo lenguaje (TypeScript). Las horas de integración no bajan (~64 h), pero el mantenimiento pasa de ~4 h a ~2 h al mes.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

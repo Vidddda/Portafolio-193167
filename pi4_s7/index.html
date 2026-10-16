@@ -1,0 +1,3756 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de proyectos realizados por David López Ramírez.">
+      
+      
+      
+      
+        <link rel="prev" href="../pi4_s6/">
+      
+      
+        <link rel="next" href="../pi4_s8/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.7">
+    
+    
+      
+        <title>Semana 7 - Viabilidad técnica y económica - Portafolio de Proyectos - David López Ramírez</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.ec1eaa64.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#semana-7-viabilidad-tecnica-y-economica" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Portafolio de Proyectos - David López Ramírez" class="md-header__button md-logo" aria-label="Portafolio de Proyectos - David López Ramírez" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Portafolio de Proyectos - David López Ramírez
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Semana 7 - Viabilidad técnica y económica
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Portafolio de Proyectos - David López Ramírez" class="md-nav__button md-logo" aria-label="Portafolio de Proyectos - David López Ramírez" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Portafolio de Proyectos - David López Ramírez
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Página principal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formación académica
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Formación académica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistemas Embebidos I
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sistemas Embebidos I
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tareas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tareas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea I - Comparación de microcontroladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea II - Outputs básicos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea III - Inputs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea IV - Mini-Pong
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea V - Comparación de alarmas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea VI - Alarmas aplicadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea VII - Modulación por ancho de pulso - PWM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea VIII - Comunicación UART
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea IX - Convertidor analógico a digital
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embedded Systems II
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Embedded Systems II
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tasks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tasks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esii_task1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task I - FreeRTOS Tasks and Priorities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esii_task2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task II - Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esii_task3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task III - Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esii_task4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task IV - HTTP_WiFi_Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esii_task5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task V - MQTT LAB pt1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esii_task6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task VI - MQTT LAB pt2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proyecto de ingeniería IV
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Proyecto de ingeniería IV
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 1 - Firma de Syllabus y método SCAMPER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 2 - Búsqueda de Oportunidades
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 3 - Propiedad intelectual, marca y vigilancia tecnológica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 4 - Mercado, valor y propuesta de valor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 5 - Diseño de producto, PDS y arquitectura del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 6 - Generación y selección de concepto de diseño
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 7 - Viabilidad técnica y económica
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 7 - Viabilidad técnica y económica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Resumen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-punto-de-partida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Punto de partida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-proceso-modelo-de-ingresos-y-modelo-economico-con-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Proceso — Modelo de ingresos y modelo económico con IA
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3) Proceso — Modelo de ingresos y modelo económico con IA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-benchmarking-de-modelos-de-ingresos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 1 — Benchmarking de modelos de ingresos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paso 1 — Benchmarking de modelos de ingresos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#segunda-ronda-prompt-de-autoria-propia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segunda ronda — prompt de autoría propia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparacion-de-los-dos-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparación de los dos prompts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-modelo-economico-del-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 2 — Modelo económico del producto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paso 2 — Modelo económico del producto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#segunda-ronda-prompt-de-autoria-propia_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segunda ronda — prompt de autoría propia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparacion-de-los-dos-prompts_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparación de los dos prompts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-entregable-viabilidad-economica-de-zaqora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) Entregable — Viabilidad económica de Zaqora
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Entregable — Viabilidad económica de Zaqora">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-benchmarking-consolidado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Benchmarking consolidado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-implicaciones-para-el-modelo-de-ingresos-de-zaqora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Implicaciones para el modelo de ingresos de Zaqora
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-modelo-economico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Modelo económico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-hoja-de-calculo-del-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Hoja de cálculo del modelo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Hoja de cálculo del modelo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bom-verificado-08102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        «BOM» verificado (08/10/2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ejercicios-49-vpn-tir-y-sensibilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Ejercicios 4–9 (VPN, TIR y sensibilidad)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-pendientes-del-entregable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Pendientes del entregable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-reflexion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) Reflexión
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Reflexión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preguntas-de-cierre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preguntas de cierre
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 8 - Prototipado y diseño para manufactura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Resumen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-punto-de-partida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Punto de partida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-proceso-modelo-de-ingresos-y-modelo-economico-con-ia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Proceso — Modelo de ingresos y modelo económico con IA
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3) Proceso — Modelo de ingresos y modelo económico con IA">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-benchmarking-de-modelos-de-ingresos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 1 — Benchmarking de modelos de ingresos
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paso 1 — Benchmarking de modelos de ingresos">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#segunda-ronda-prompt-de-autoria-propia" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segunda ronda — prompt de autoría propia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparacion-de-los-dos-prompts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparación de los dos prompts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-modelo-economico-del-producto" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 2 — Modelo económico del producto
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paso 2 — Modelo económico del producto">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#segunda-ronda-prompt-de-autoria-propia_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Segunda ronda — prompt de autoría propia
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#comparacion-de-los-dos-prompts_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Comparación de los dos prompts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-entregable-viabilidad-economica-de-zaqora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) Entregable — Viabilidad económica de Zaqora
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4) Entregable — Viabilidad económica de Zaqora">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-benchmarking-consolidado" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Benchmarking consolidado
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-implicaciones-para-el-modelo-de-ingresos-de-zaqora" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Implicaciones para el modelo de ingresos de Zaqora
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-modelo-economico" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Modelo económico
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-hoja-de-calculo-del-modelo" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Hoja de cálculo del modelo
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. Hoja de cálculo del modelo">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#bom-verificado-08102026" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        «BOM» verificado (08/10/2026)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-ejercicios-49-vpn-tir-y-sensibilidad" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Ejercicios 4–9 (VPN, TIR y sensibilidad)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#6-pendientes-del-entregable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        6. Pendientes del entregable
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-reflexion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) Reflexión
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Reflexión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preguntas-de-cierre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preguntas de cierre
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="semana-7-viabilidad-tecnica-y-economica">Semana 7 — Viabilidad técnica y económica</h1>
+<h2 id="1-resumen">1) Resumen</h2>
+<ul>
+<li><strong>Nombre de la actividad:</strong> <em>Benchmarking de modelos de ingresos y modelo económico del producto</em></li>
+<li><strong>Curso:</strong> <em>Proyecto de Ingeniería IV</em></li>
+<li><strong>Equipo:</strong> <em>David López Ramírez</em></li>
+<li><strong>Fecha:</strong> <em>08/10/2026</em></li>
+<li><strong>Descripción breve:</strong> <em>Con el concepto de diseño elegido en la semana 6 (<strong>Ghost Engine</strong>), esta semana se empezó a responder si el negocio de <strong>Zaqora</strong> «cierra»: si los ingresos pueden cubrir los costos de forma sostenible. El primer paso fue un benchmarking de modelos de ingresos con Perplexity para entender cómo cobran productos parecidos, dónde abandona el usuario el proceso de pago y quién más podría pagar. El segundo, el modelo económico con Claude: costo unitario, precio, punto de equilibrio, flujo de caja y VPN. En cada paso se usaron dos prompts de autoría distinta: el del profesor y uno propio.</em></li>
+</ul>
+<hr />
+<h2 id="2-punto-de-partida">2) Punto de partida</h2>
+<p><strong>Concepto elegido (semana 6):</strong> <strong>Ghost Engine</strong>, una PWA web en formato de novela visual: tras perder en Lichess, el villano que encarna el error del jugador le escribe y lo invita a un capítulo construido sobre esa misma partida.</p>
+<p><strong>Propuesta de valor (semana 4):</strong> <em>«Cuando pierdes en Lichess y estás por cerrar la app, Zaqora valida tu frustración y la convierte en el próximo capítulo de tu historia.»</em></p>
+<p><strong>Lo que ya sabíamos del dinero:</strong></p>
+<ul>
+<li><strong>Precio de referencia (semana 4):</strong> $300 MXN, tratado unas veces como suscripción mensual y otras como pago único. El modelo de ingresos seguía sin definirse.</li>
+<li><strong>Costo por usuario (semana 5):</strong> ≈ $5–10 MXN al mes con 15–20 usuarios beta, con un tope de $30 MXN en el PDS. El precio mínimo viable salió en ≈ $17–33 MXN al mes, y la arquitectura recomendó probar $49–79 MXN en el piloto.</li>
+<li><strong>Riesgo de fondo:</strong> el usuario usa Lichess precisamente porque es gratis, y su disposición a pagar no está verificada.</li>
+</ul>
+<p><strong>Pertinencia, factibilidad y viabilidad:</strong> las semanas 2 a 4 respondieron si vale la pena hacerlo; las semanas 5 y 6, cómo se puede hacer. Esta semana responde si es sostenible económicamente.</p>
+<ul>
+<li><strong>Objetivo de la semana:</strong> Elegir un modelo de ingresos con evidencia de cómo cobran productos similares, como base para el modelo económico (costo unitario, precio, punto de equilibrio, flujo de caja y VPN).</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Adaptación a un producto de software</p>
+<p>El modelo del curso es hardware (venta única o subsidiada) más suscripción. Zaqora no tiene hardware, así que, como en la semana 5, el BOM se traduce a costo por usuario activo (IA + infraestructura) y la «unidad» es el usuario beta.</p>
+</div>
+<hr />
+<h2 id="3-proceso-modelo-de-ingresos-y-modelo-economico-con-ia">3) Proceso — Modelo de ingresos y modelo económico con IA</h2>
+<h3 id="paso-1-benchmarking-de-modelos-de-ingresos">Paso 1 — Benchmarking de modelos de ingresos</h3>
+<p><strong>Herramienta:</strong> Perplexity.</p>
+<details class="quote">
+<summary>Prompt completo — Prompt del profesor (Perplexity, benchmarking de modelos de ingresos)</summary>
+<p>Actúa como analista de inteligencia competitiva especializado en modelos de negocio para productos de software en mercados latinoamericanos y globales. Tu metodología consiste en identificar cómo empresas con ofertas similares están capturando valor — no solo su precio de lista, sino el modelo completo: quién paga, cuándo, bajo qué condición, y qué fricción existe en ese proceso de pago.</p>
+<p>Somos emprendedores en México con el siguiente producto:
+Zaqora: una PWA web que convierte el aprendizaje de ajedrez en un videojuego de un solo jugador, donde cada «capítulo» es una lección disfrazada de misión y el villano encarna un patrón de error real y recurrente del jugador, detectado en sus partidas de Lichess. No hay ranking, rival humano ni partida en línea: solo el jugador contra el mapa de la campaña, a su propio ritmo. El coaching ocurre dentro de la ficción, nunca como corrección fría ni comparación social.
+Propuesta de valor: Cuando pierdes en Lichess y estás por cerrar la app, Zaqora valida tu frustración y la convierte en el próximo capítulo de tu historia.
+Segmento objetivo: jugador amateur de ajedrez online (Lichess) que, al perder o frustrarse, no tiene forma de regular esa frustración dentro del juego y solo sabe abandonar la sesión («apagar Lichess», «alejarme 20 minutos»). Usa Lichess precisamente porque es gratis, y su disposición de pago aún no está verificada.</p>
+<p>Investiga 3 empresas o productos con oferta similar a la nuestra — pueden ser competidores directos, indirectos, o productos que resuelven el mismo tipo de problema en otro sector o mercado.</p>
+<p>Para cada empresa entrega:</p>
+<ul>
+<li>EMPRESA: [nombre]</li>
+<li>Qué ofrece: [descripción en 1 oración]</li>
+<li>Modelo de ingresos: [cómo cobra — quién paga, cuándo, bajo qué condición]</li>
+<li>Rango de precio: [precios documentados o estimados con fuente]</li>
+<li>Momentos de fricción: [dónde el usuario típicamente duda o abandona el proceso de pago — prueba gratuita que no convierte, precio oculto hasta el final, contrato anual que genera resistencia]</li>
+<li>Otros stakeholders: [¿hay alguien más que paga o podría pagar además del usuario final? distribuidores, instituciones, gobiernos, seguros, marcas que patrocinan]</li>
+</ul>
+<p>Al terminar las 3 empresas, responde:
+¿Qué modelo de ingresos predomina en este espacio y por qué crees que es el elegido por la mayoría?
+¿Hay algún stakeholder que nadie está cobrando actualmente y que podría ser una oportunidad de ingresos para un nuevo entrante?</p>
+</details>
+<details class="abstract">
+<summary>Respuesta completa — Prompt del profesor (Perplexity)</summary>
+<p>Con base en la investigación realizada, aquí está el análisis competitivo solicitado:</p>
+<hr />
+<p><strong>EMPRESA 1: ChessMood</strong></p>
+<ul>
+<li><strong>Qué ofrece:</strong> Plataforma de cursos de ajedrez en video creados por Grandes Maestros, con más de 500 horas de contenido estructurado (aperturas, medio juego, finales, psicología) y eventos en vivo semanales. [1] [2] [3]</li>
+<li><strong>Modelo de ingresos:</strong> Suscripción recurrente con dos <em>tiers</em> (Essential y Pro). El usuario paga mensualmente o anualmente para mantener acceso a la biblioteca de cursos. [2] [4] [1]</li>
+<li><strong>Rango de precio:</strong> Essential: $79/mes (facturado anualmente, $948/año) o $99/mes (facturación mensual). Pro: $99/mes (anual, $1,188/año) o $129/mes (mensual). Plan gratuito básico disponible con acceso limitado. [3] [5] [6] [2]</li>
+<li><strong>Momentos de fricción:</strong><ul>
+<li><em>Precio elevado percibido:</em> casi $1,200/año para el <em>tier</em> Pro es una barrera significativa para jugadores amateur que vienen de Lichess gratuito. [2]</li>
+<li><em>Decisión anual vs. mensual:</em> aunque el plan anual ofrece descuento (~20 %), requiere compromiso de largo plazo que genera resistencia en usuarios no comprometidos. [2]</li>
+<li><em>Prueba de 30 días con reembolso:</em> aunque existe garantía de devolución, el usuario debe pagar por adelantado y luego solicitar reembolso, lo que añade fricción cognitiva. [2]</li>
+</ul>
+</li>
+<li><strong>Otros stakeholders:</strong> No hay evidencia de modelos B2B (escuelas, corporativos) en ChessMood. Solo B2C directo. [4] Potencial no explotado: academias de ajedrez o clubes podrían licenciar acceso grupal, pero no está documentado como oferta activa.</li>
+</ul>
+<p><strong>EMPRESA 2: Chessable</strong></p>
+<ul>
+<li><strong>Qué ofrece:</strong> Plataforma de estudio de ajedrez basada en repetición espaciada (MoveTrainer), con cursos individuales de aperturas, tácticas y finales creados por GMs y entrenadores. [7] [8] [9]</li>
+<li><strong>Modelo de ingresos:</strong> Híbrido: (1) venta de cursos individuales de por vida (modelo de tienda) + (2) suscripción PRO anual que actúa como «tarjeta de descuento» (20–30 % <em>off</em> en cursos) y desbloquea funciones adicionales. [8] [9] [10] [11]</li>
+<li><strong>Rango de precio:</strong> Cursos individuales: $20–$100+ cada uno (pago único, acceso perpetuo). PRO <em>membership</em>: $11.99/mes o $74.99/año (≈ $6.25/mes efectivo). [9] [11] [12] [7] [8]</li>
+<li><strong>Momentos de fricción:</strong><ul>
+<li><em>El modelo de tienda genera «fatiga de decisión»:</em> el usuario debe evaluar curso por curso, lo que puede retrasar o abortar la compra. [9]</li>
+<li><em>PRO solo vale la pena si gastas ~$250/año en cursos:</em> para jugadores casuales, el ROI no es claro, lo que reduce conversión a suscripción. [9]</li>
+<li><em>Cursos gratuitos limitados:</em> aunque hay decenas de cursos gratis, el contenido premium está fragmentado, obligando al usuario a navegar un <em>marketplace</em> en lugar de una biblioteca unificada. [10] [13]</li>
+</ul>
+</li>
+<li><strong>Otros stakeholders:</strong> Entrenadores/<em>coaches</em>: compran cursos para asignar a sus alumnos (B2B2C indirecto). [10] Escuelas: no hay programa documentado de licenciamiento institucional, pero el modelo de cursos individuales podría adaptarse para venta grupal. [10]</li>
+</ul>
+<p><strong>EMPRESA 3: Duolingo (referente de gamificación en aprendizaje)</strong></p>
+<ul>
+<li><strong>Qué ofrece:</strong> Aplicación de aprendizaje de idiomas gamificada, con lecciones cortas, rachas diarias, vidas limitadas y progresión por niveles. [14] [15] [16]</li>
+<li><strong>Modelo de ingresos:</strong> <em>Freemium</em> con dos <em>streams</em>: (1) suscripción «Super Duolingo» que elimina anuncios y fricciones (vidas ilimitadas, progreso offline) + (2) publicidad para usuarios gratuitos. [16] [17] [18] [14]</li>
+<li><strong>Rango de precio:</strong> Super Duolingo: $6.99/mes (≈ $84/año). Duolingo for Business: $75.09/año por usuario (licenciamiento corporativo). [18] [19] [14] [16]</li>
+<li><strong>Momentos de fricción:</strong><ul>
+<li><em>«Pagar para quitar fricción» vs. misión educativa:</em> históricamente, Duolingo tuvo resistencia interna a monetizar porque cobrar por aprender más rápido iba en contra de su misión. [14]</li>
+<li><em>Conversión baja:</em> solo una minoría de usuarios gratuitos convierte a Super, a pesar de la base masiva (38M+ usuarios). [17] [16]</li>
+<li><em>Anual vs. mensual:</em> 70 % de ingresos vienen de planes anuales, lo que sugiere que los usuarios prefieren compromiso de largo plazo una vez convencidos, pero la barrera inicial es alta. [20]</li>
+</ul>
+</li>
+<li><strong>Otros stakeholders:</strong> Empresas (B2B): Duolingo for Business licencia a corporativos para capacitación de empleados ($75/año por usuario). [19] [21] [18] Escuelas/universidades: licenciamiento institucional con precios académicos ($50–$100/estudiante/año para paquetes completos). [22] [18] Gobiernos/ONGs: potencial para programas de alfabetización o integración de migrantes, aunque no documentado como <em>stream</em> mayoritario. [22]</li>
+</ul>
+<hr />
+<p><strong>Síntesis: modelo predominante y oportunidad no explotada</strong></p>
+<p><strong>¿Qué modelo de ingresos predomina y por qué?</strong></p>
+<p>El modelo <em>freemium</em> con suscripción recurrente es el predominante en este espacio (ChessMood, Chessable PRO, Duolingo, Magnus Trainer, Noctie.ai). [23] [24] [25] [1] [4]</p>
+<p>Razones de su predominio:</p>
+<ol>
+<li><strong>Alineación con el valor continuo:</strong> El aprendizaje de ajedrez (como idiomas o fitness) es un proceso continuo. La suscripción refleja que el valor se entrega de forma recurrente (nuevos cursos, análisis de partidas, actualizaciones). [26] [27] [4]</li>
+<li><strong>Barrera de entrada baja:</strong> El <em>tier</em> gratuito permite capturar usuarios que vienen de Lichess sin fricción inicial. La conversión ocurre cuando el usuario ya está comprometido emocionalmente (tras frustración, racha, o progreso visible). [15] [28] [23]</li>
+<li><strong>LTV (<em>Lifetime Value</em>) predecible:</strong> Las suscripciones generan ingresos recurrentes que facilitan la planificación y la reinversión en contenido. Chess.com reporta ~88 % de ingresos por suscripciones. [29] [17]</li>
+<li><strong>Gamificación + fricción pagable:</strong> Modelos como Duolingo muestran que se puede monetizar quitando fricciones (vidas ilimitadas, sin anuncios) sin cobrar por el contenido en sí, lo que preserva la misión educativa mientras se genera <em>revenue</em>. [30] [15] [14]</li>
+</ol>
+<p><strong>¿Hay algún stakeholder que nadie está cobrando actualmente?</strong></p>
+<p>Sí: escuelas, clubes de ajedrez y programas educativos (B2B institucional).</p>
+<p>Evidencia de oportunidad:</p>
+<ul>
+<li>Chess.com ya explota esto con ChessKid.com como vehículo B2B para escuelas y academias, pero es un producto separado (enfocado en niños, interfaz segura para clases). [31] [29]</li>
+<li>Duolingo genera ingresos significativos con Duolingo for Schools y Duolingo for Business, con LTV 10–20x mayor que consumidores individuales y contratos de 12–36 meses. [32] [18] [19] [22]</li>
+<li>El mercado de licenciamiento B2B en apps educativas creció 37 % en 2025, con firmas educativas comprando licencias empresariales para integración en currículos. [33]</li>
+</ul>
+<p>Para Zaqora, esto representa una oportunidad porque:</p>
+<ol>
+<li>Tu producto resuelve regulación emocional post-derrota, lo cual es relevante no solo para jugadores individuales sino para entrenadores que gestionan grupos de alumnos frustrados. Un <em>coach</em> podría licenciar Zaqora para asignar «misiones de regulación» tras torneos o sesiones de práctica.</li>
+<li>Clubes y academias de ajedrez en Latinoamérica podrían integrar Zaqora como herramienta de retención: cuando un alumno pierde en Lichess, en lugar de abandonar, se le asigna un capítulo de Zaqora como «tarea de recuperación emocional».</li>
+<li>Modelo de licenciamiento institucional: vender acceso grupal a academias (ej. $5–10/alumno/mes en volumen) con <em>dashboard</em> para entrenadores (ver progreso de alumnos en misiones, patrones de error recurrentes del grupo). Esto sería análogo a Duolingo for Schools pero enfocado en regulación emocional + aprendizaje contextual.</li>
+<li>Ningún competidor directo (ChessMood, Chessable, Noctie) tiene oferta B2B documentada para escuelas o clubes. ChessKid existe pero es para niños y no aborda la frustración post-derrota. [29] [31]</li>
+</ol>
+<p><strong>Implicaciones para Zaqora</strong></p>
+<p>Dado que tu segmento objetivo son jugadores amateur de Lichess que no tienen disposición de pago verificada y usan la plataforma precisamente porque es gratis, el modelo <em>freemium</em> es casi obligatorio para capturar usuarios. Sin embargo, la conversión a pago será baja si solo cobras al usuario final.</p>
+<p>Recomendación estratégica:</p>
+<ol>
+<li><strong>Freemium B2C:</strong> Capítulos básicos gratuitos (3–5 misiones) para validar que el usuario completa el ciclo frustración → misión → regulación. Cobrar por biblioteca completa de misiones o por análisis avanzado de patrones de error.</li>
+<li><strong>B2B institucional como <em>stream</em> principal:</strong> Licenciar a academias, clubes y entrenadores en México/Latam como herramienta de retención de alumnos. El entrenador paga, el alumno usa gratis (o con funciones limitadas). Esto alinea incentivos: el <em>coach</em> quiere que el alumno no abandone tras perder; Zaqora es la solución.</li>
+<li><strong>Precio B2B sugerido:</strong> $5–10/alumno/mes en volumen (50+ alumnos), con <em>dashboard</em> básico incluido. Esto es 40–60 % más barato que ChessMood pero con propuesta de valor distinta (regulación emocional, no solo contenido).</li>
+</ol>
+<hr />
+<p><em>Fuentes (selección de las 58 citadas):</em> [1] chessentials.com · [2] chessmood.com/pricing · [7]–[13] chesspivot.com, chessily.com, chesscore.io, circlechess.com, raindropchess.com · [14] techcrunch.com (Duolingo EC-1) · [18] untaylored.com · [19] duolingo.com/business · [20] purchasely.com · [29] chess-com-application.daykhin.com · [31] pythonblogs.com · [33] marketreportsworld.com.</p>
+</details>
+<p><a href="../recursos/archivos/PI4_S7/Benchmarking_Prompt_Profesor.pdf">Descargar la respuesta completa con todas las fuentes (PDF)</a></p>
+<h4 id="segunda-ronda-prompt-de-autoria-propia">Segunda ronda — prompt de autoría propia</h4>
+<p>Para la segunda ronda escribí un prompt que obligara a presentar las tres empresas en una sola tabla comparativa y a pensar «fuera de la caja» quién más se beneficia indirectamente del valor de Zaqora.</p>
+<details class="quote">
+<summary>Prompt completo — Segunda ronda, prompt propio (Perplexity, benchmarking de modelos de ingresos)</summary>
+<p>Actúa como un analista de negocios y estratega de producto experto. Quiero que realices un ejercicio de "Benchmarking de modelos de ingresos" para mi producto.</p>
+<p>Mi producto/servicio es: Zaqora, una PWA web que convierte el aprendizaje de ajedrez en un videojuego de un solo jugador: cada «capítulo» es una lección disfrazada de misión y el villano encarna un patrón de error real y recurrente del jugador, detectado en sus partidas de Lichess. No hay ranking, rival humano ni partida en línea, y el coaching ocurre dentro de la ficción, nunca como corrección fría ni comparación social. Propuesta de valor: «Cuando pierdes en Lichess y estás por cerrar la app, Zaqora valida tu frustración y la convierte en el próximo capítulo de tu historia.» Nuestro usuario es un jugador amateur de ajedrez online en México que, al perder o frustrarse, solo sabe abandonar la sesión; usa Lichess precisamente porque es gratis y su disposición de pago aún no está verificada.</p>
+<p><strong>Objetivo:</strong> Investigar cómo otras empresas con ofertas similares están cobrando. El objetivo no es copiar, sino entender el espacio de posibilidades real y los momentos de fricción que ya existen en el mercado.</p>
+<p><strong>Instrucciones:</strong></p>
+<ol>
+<li>Selecciona 3 empresas del mundo real que ofrezcan productos o servicios similares al mío. Pueden ser competidores directos o productos análogos que resuelvan el mismo tipo de problema en otro sector o mercado.</li>
+<li>Para cada empresa, analiza y define:<ul>
+<li>Qué producto o servicio venden exactamente.</li>
+<li>Su modelo de ingresos (quién paga, cuándo, bajo qué condición).</li>
+<li>Su rango de precio visible en el mercado.</li>
+<li>Notas sobre fricción (¿cuáles son los posibles momentos de fricción que experimenta el usuario en su proceso de pago?).</li>
+<li>Otros stakeholders (¿qué otros actores podrían aportar ingresos a su modelo y actualmente están ignorando?).</li>
+</ul>
+</li>
+<li>Presenta los hallazgos estrictamente usando la siguiente tabla en formato Markdown, con las columnas: Producto o servicio similar ([Empresa] - [Breve descripción]) | Modelo de ingresos (quién paga, cuándo) | Rango de precio | Notas (Fricción en el pago y otros stakeholders).</li>
+<li>Después de generar la tabla, responde de forma analítica, estratégica y profunda a estas dos preguntas:<ul>
+<li>¿Qué modelo están usando mayoritariamente los competidores analizados y por qué crees que eligieron ese?</li>
+<li>¿Hay algún stakeholder (actor) al que los competidores no le están cobrando y que podría ser una fuente de ingresos innovadora para mi negocio? (Piensa fuera de la caja: ¿quién más se beneficia indirectamente del valor que aporta mi producto?).</li>
+</ul>
+</li>
+</ol>
+</details>
+<details class="abstract">
+<summary>Respuesta completa — Segunda ronda, prompt propio (Perplexity)</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Producto o servicio similar</th>
+<th style="text-align: left;">Modelo de ingresos (quién paga, cuándo)</th>
+<th style="text-align: left;">Rango de precio</th>
+<th style="text-align: left;">Notas (Fricción en el pago y otros stakeholders)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Chess.com</strong> — Plataforma de juego, análisis y aprendizaje de ajedrez online</td>
+<td style="text-align: left;">Suscripción escalonada B2C: el jugador paga mensual o anualmente por desbloquear lecciones, puzzles, análisis de partidas, estadísticas y funciones avanzadas. Existe un nivel gratuito con límites; los planes Premium amplían el acceso y Diamond incorpora explicaciones de entrenador y análisis más profundos. [1] [2] [3]</td>
+<td style="text-align: left;">Aproximadamente US$5.46–US$13.65 al mes y US$38.23–US$92.84 al año en México, según el nivel y el ciclo de cobro. [4]</td>
+<td style="text-align: left;"><strong>Fricción:</strong> el usuario gratuito debe entender qué límite le afecta y si el beneficio justifica una suscripción recurrente; los distintos niveles pueden generar confusión; el valor percibido depende de usar la plataforma con frecuencia. El pago puede sentirse como una barrera especialmente para usuarios acostumbrados a Lichess gratuito. <strong>Stakeholders no monetizados directamente:</strong> entrenadores independientes, clubes, escuelas y padres podrían pagar por paneles, seguimiento y contenido; también podrían existir acuerdos con plataformas de torneos o federaciones.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Chessable</strong> — Plataforma de cursos de ajedrez con repetición espaciada y entrenamiento de variantes</td>
+<td style="text-align: left;">Modelo híbrido: suscripción PRO B2C para funciones premium, cursos gratuitos y compra individual de cursos avanzados. El usuario paga una membresía mensual o anual y, adicionalmente, puede comprar cursos creados por autores o grandes maestros. [5] [6] [7]</td>
+<td style="text-align: left;">PRO: US$11.99 al mes o US$74.99 al año. Los cursos individuales suelen situarse aproximadamente entre US$20 y US$100, con descuentos para miembros PRO. [6] [8]</td>
+<td style="text-align: left;"><strong>Fricción:</strong> doble decisión de compra —suscripción más curso—; el usuario puede no saber si PRO incluye el contenido que quiere o solo mejora la experiencia; el precio anual exige confianza anticipada; los cursos de mayor valor suelen depender de un autor concreto. <strong>Stakeholders no monetizados directamente:</strong> autores y entrenadores podrían recibir herramientas de venta, analítica o financiación; clubes, academias y padres podrían adquirir licencias; plataformas como Lichess podrían participar mediante integración o afiliación, aunque eso requeriría acuerdos y una clara separación de intereses.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Habitica</strong> — Aplicación de hábitos y productividad convertida en un juego de rol</td>
+<td style="text-align: left;">Suscripción B2C opcional: el producto básico es gratuito y el usuario paga por beneficios premium, elementos cosméticos, gemas y ventajas de personalización. También ofrece planes grupales, donde un responsable paga una cuota mensual más un importe por miembro adicional. [9] [10] [11]</td>
+<td style="text-align: left;">US$4.99 al mes; US$14.99 trimestrales; US$29.99 semestrales; US$47.99 anuales. El plan grupal parte de US$9 al mes más US$3 por miembro adicional. Los precios pueden variar por ubicación. [9] [10]</td>
+<td style="text-align: left;"><strong>Fricción:</strong> el usuario puede percibir que está pagando por personalización más que por un resultado funcional; una suscripción opcional necesita recordatorios constantes de valor; el modelo grupal exige invitar y coordinar a otros usuarios. <strong>Stakeholders no monetizados directamente:</strong> empresas que quieren mejorar hábitos de empleados, <em>coaches</em>, terapeutas, profesores y comunidades podrían pagar por espacios privados, seguimiento agregado o programas patrocinados.</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<p><strong>Modelo predominante</strong></p>
+<p>El patrón dominante es el <em>freemium</em> con suscripción recurrente. Chess.com y Chessable convierten el acceso gratuito en un embudo hacia funciones avanzadas, contenido ilimitado o personalización; Habitica aplica la misma lógica, aunque hace más opcional la relación entre pago y progreso. La evidencia más clara en ajedrez es que las funciones que se cobran son análisis, explicación, profundidad, continuidad y comodidad, mientras que el acceso básico conserva suficiente utilidad para atraer usuarios. Chess.com, por ejemplo, mantiene funciones gratuitas de revisión, pero reserva el uso ilimitado y análisis avanzado para niveles Premium. [12]</p>
+<p>Las empresas probablemente eligen este modelo por cuatro razones:</p>
+<ol>
+<li><strong>Reduce la barrera de entrada.</strong> Un jugador puede probar el producto sin comprometer dinero, algo importante para un público acostumbrado a Lichess, cuyo servicio principal es gratuito y se financia mediante donaciones. [13] [14]</li>
+<li><strong>Conecta el ingreso con el hábito.</strong> La suscripción funciona cuando el usuario vuelve con frecuencia para estudiar, revisar partidas o mantener una racha.</li>
+<li><strong>Permite segmentar disposición de pago.</strong> Un usuario ocasional permanece gratis; uno intensivo paga por límites más altos; uno avanzado paga por análisis, contenido o explicaciones.</li>
+<li><strong>Mejora la previsibilidad financiera.</strong> El cobro mensual o anual es más estable que depender exclusivamente de compras individuales o donaciones.</li>
+</ol>
+<p>Para Zaqora, copiar una suscripción completa desde el día uno sería arriesgado. La propuesta no es simplemente «más análisis de ajedrez»: interviene en un momento emocional específico —la derrota inmediatamente después de jugar— y debe demostrar primero que consigue que el usuario no abandone la sesión. Por ello, el valor inicial podría ser más fácil de probar con un modelo híbrido: capítulos iniciales gratuitos, una temporada narrativa o paquete de misiones de pago, y una suscripción solo cuando Zaqora haya identificado suficientes patrones recurrentes para generar contenido personalizado de forma continua.</p>
+<p>La fricción crítica no será únicamente el precio. Será el momento del cobro. Si Zaqora muestra una pantalla de pago justo después de que el usuario pierda, puede parecer que monetiza su frustración. En cambio, podría presentar el siguiente capítulo gratuito como una respuesta inmediata y reservar el pago para una promesa futura clara: más patrones detectados, temporadas completas, análisis histórico o personalización narrativa.</p>
+<p><strong>Stakeholders alternativos</strong></p>
+<p>El stakeholder más interesante que los competidores de ajedrez suelen dejar fuera es <strong>Lichess como canal de adquisición e integración</strong>, no necesariamente como cliente directo. Zaqora se beneficia de las partidas jugadas en Lichess y convierte esa frustración en una experiencia de aprendizaje posterior. Si consigue aumentar la retención saludable —que el jugador vuelva a aprender en vez de abandonar—, podría aportar valor a Lichess sin competir frontalmente con su misión gratuita.</p>
+<p>Un modelo potencial sería una alianza de integración o afiliación en la que:</p>
+<ul>
+<li>Lichess recibe una comisión por usuarios que autorizan la conexión y se convierten en clientes de Zaqora.</li>
+<li>Zaqora financia parte de esa comisión mediante una cuota por activación, un porcentaje de suscripciones o una contribución fija.</li>
+<li>El usuario mantiene su experiencia gratuita en Lichess y recibe una transición voluntaria hacia Zaqora después de sus partidas.</li>
+<li>La colaboración se limita a consentimiento explícito, privacidad y exportación autorizada de datos; no debería convertir los datos de partidas en publicidad invasiva.</li>
+</ul>
+<p>No asumiría que Lichess aceptaría este acuerdo: su modelo está basado en donaciones, voluntariado y ausencia de anuncios, por lo que una alianza comercial podría entrar en tensión con sus principios. Sin embargo, precisamente por eso conviene considerar una variante compatible: Zaqora podría hacer una contribución proporcional a Lichess por cada usuario que conecte su cuenta, o permitir que el usuario divida su pago entre Zaqora y una donación a Lichess. [15] [13]</p>
+<p>Otros stakeholders potenciales son:</p>
+<ul>
+<li><strong>Academias, clubes y entrenadores:</strong> pagarían por asignar misiones, detectar patrones comunes de sus alumnos y revisar progreso sin necesidad de corregir cada partida manualmente.</li>
+<li><strong>Padres de jugadores jóvenes:</strong> podrían pagar por una experiencia que fomente perseverancia y aprendizaje sin rankings, presión social ni exposición pública.</li>
+<li><strong>Escuelas y programas extracurriculares:</strong> podrían comprar licencias por grupo o por cohorte para enseñar tolerancia al error y pensamiento estratégico.</li>
+<li><strong>Organizadores de torneos y comunidades de ajedrez:</strong> podrían patrocinar temporadas temáticas posteriores a eventos, por ejemplo, una campaña de «aprender de las derrotas del torneo».</li>
+<li><strong>Marcas de hardware, cafés, editoriales y plataformas educativas:</strong> podrían financiar capítulos patrocinados, pero solo si la integración es contextual y no interrumpe la ficción.</li>
+</ul>
+<p>La oportunidad más defendible parece ser un modelo <strong>B2C para validar el producto y B2B2C para escalarlo</strong>: comenzar con un jugador amateur que paga poco por una temporada o una suscripción ligera, y posteriormente vender licencias a clubes, entrenadores y academias. Así, Zaqora no depende únicamente de que un usuario acostumbrado a lo gratuito acepte pagar después de perder; también puede capturar el valor que reciben quienes quieren que ese jugador practique, persevere y mejore.</p>
+<hr />
+<p><em>Fuentes (selección de las 30 citadas):</em> [1]–[3] support.chess.com y chess.com/membership · [4] mobeigi.com (precios regionales de Chess.com) · [5]–[8] apps.apple.com, chesspivot.com, kingdomofchess.com · [9]–[11] apps.apple.com, habitica.com/static/plans, habitica.com/static/terms · [12] support.chess.com (Game Review) · [13]–[15] lichess.org/about, lichess.org/faq, lichess.org/patron.</p>
+</details>
+<p><a href="../recursos/archivos/PI4_S7/Benchmarking_Prompt_Propio.pdf">Descargar la respuesta completa con todas las fuentes (PDF)</a></p>
+<h4 id="comparacion-de-los-dos-prompts">Comparación de los dos prompts</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><strong>Prompt del profesor</strong></th>
+<th style="text-align: left;"><strong>Prompt propio</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Rol asignado</strong></td>
+<td style="text-align: left;">Analista de inteligencia competitiva en modelos de negocio.</td>
+<td style="text-align: left;">Analista de negocios y estratega de producto.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Formato</strong></td>
+<td style="text-align: left;">Ficha por empresa con 6 campos; la fricción trae ejemplos (prueba que no convierte, precio oculto, contrato anual).</td>
+<td style="text-align: left;">Una sola tabla de 4 columnas, con fricción y stakeholders en la misma celda.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Empresas elegidas</strong></td>
+<td style="text-align: left;">ChessMood, Chessable y Duolingo.</td>
+<td style="text-align: left;">Chess.com, Chessable y Habitica.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Precios</strong></td>
+<td style="text-align: left;">Precios de lista en dólares.</td>
+<td style="text-align: left;">Chess.com con precios regionales para México.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Modelo predominante</strong></td>
+<td style="text-align: left;"><em>Freemium</em> con suscripción recurrente.</td>
+<td style="text-align: left;"><em>Freemium</em> con suscripción recurrente.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Stakeholder no explotado</strong></td>
+<td style="text-align: left;">Escuelas, clubes y academias (B2B institucional).</td>
+<td style="text-align: left;">Lichess como canal de adquisición; después, academias, clubes, entrenadores y padres.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Recomendación</strong></td>
+<td style="text-align: left;"><em>Freemium</em> B2C + <strong>B2B institucional como fuente principal</strong>, a $5–10 por alumno al mes.</td>
+<td style="text-align: left;"><strong>B2C para validar y B2B2C para escalar</strong>: capítulos gratis, temporada o suscripción ligera, licencias después.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Qué aportó cada uno</strong></p>
+<ul>
+<li><strong>Coinciden en lo esencial.</strong> Las dos rondas encontraron que el modelo dominante es <em>freemium</em> con suscripción, que Chessable cobra con una doble decisión (PRO más cursos) y que academias, clubes y entrenadores son el stakeholder que casi nadie cobra. Esa coincidencia es la base más firme para elegir el modelo de ingresos.</li>
+<li><strong>Al profesor le faltó el competidor más obvio y a mí me sobró uno lejano.</strong> La ronda del profesor no incluye Chess.com, que es la alternativa de pago más directa para un jugador de Lichess. Mi ronda sí, y con precios regionales para México, que son el ancla real de precio para el usuario. A cambio, Habitica está más lejos del problema que Duolingo, aunque es la mejor referencia de «juego de rol para cambiar un hábito».</li>
+<li><strong>Mi ronda encontró la fricción que importa a Zaqora: el momento del cobro.</strong> Una pantalla de pago justo después de perder parecería monetizar la frustración. La ronda del profesor habla de fricciones genéricas (precio alto, plan anual, reembolso), útiles para el mercado pero no para la propuesta de valor.</li>
+<li><strong>La recomendación del profesor cambia de cliente.</strong> Poner al B2B institucional como fuente principal convierte a Zaqora en una herramienta para entrenadores, cuando el segmento es un jugador amateur que pierde solo en Lichess. Mi ronda llega a los mismos clubes y academias, pero como segunda etapa, después de validar con el jugador.</li>
+<li><strong>Mi ronda propuso un stakeholder que nadie más vería: Lichess.</strong> Como canal de adquisición, con una contribución por usuario conectado o una donación compartida. La propia respuesta advierte que choca con los principios de Lichess (sin anuncios, financiado por donaciones), así que es una hipótesis para explorar con cuidado, no un ingreso para el modelo.</li>
+<li><strong>El formato del profesor es más fácil de auditar.</strong> Cada afirmación lleva su fuente en el campo que corresponde. Mi tabla mete fricción y stakeholders en una sola celda, lo que dificulta compararlas empresa por empresa.</li>
+<li><strong>Ojo con los datos.</strong> No verifiqué los precios citados; algunos varían según la región y la fecha (por ejemplo, los de ChessMood y los de Chess.com). Antes de usarlos en el modelo económico hay que confirmarlos en las páginas oficiales.</li>
+</ul>
+<hr />
+<h3 id="paso-2-modelo-economico-del-producto">Paso 2 — Modelo económico del producto</h3>
+<p><strong>Herramienta:</strong> Claude.</p>
+<p>Con el modelo de ingresos del Paso 1 (<em>freemium</em> B2C, $49–99 MXN al mes), se construyó el modelo económico: costo unitario, precio, punto de equilibrio, flujo de caja y VPN.</p>
+<details class="quote">
+<summary>Prompt completo — Prompt del profesor (Claude, modelo económico del producto)</summary>
+<p>Actúa como un analista financiero con especialización en modelos de negocio para startups de software en mercados emergentes latinoamericanos. Tu metodología combina el análisis de costos reales con proyecciones financieras conservadoras — siempre que hay incertidumbre, usas el escenario menos favorable para no generar falsas expectativas. Cuando los números no cierran, lo dices directamente y propones qué palancas puede mover el equipo: reducir costos, ajustar precio, cambiar modelo de ingresos, o reducir el alcance.</p>
+<p>Somos un equipo de emprendedores en México con un producto de software sin hardware. Necesitamos construir nuestro modelo económico antes de comprometer recursos en el desarrollo. Como no hay hardware, el BOM se traduce a costo por usuario activo (IA + infraestructura) y la «unidad» es el usuario.</p>
+<p><strong>NUESTRO PRODUCTO:</strong>
+Nombre: Zaqora — concepto Ghost Engine
+Descripción: PWA web en formato de novela visual que convierte el aprendizaje de ajedrez en un videojuego de un solo jugador: tras perder en Lichess, el villano que encarna el error recurrente del jugador le escribe y lo invita a un capítulo construido sobre esa misma partida. Es para jugadores amateur de ajedrez online (Lichess) en México que, al perder, solo saben abandonar la sesión; usan Lichess porque es gratis y su disposición de pago aún no está verificada.
+Propuesta de valor: Cuando pierdes en Lichess y estás por cerrar la app, Zaqora valida tu frustración y la convierte en el próximo capítulo de tu historia.</p>
+<p><strong>MODELO DE INGRESOS ELEGIDO:</strong>
+Freemium B2C. Los primeros capítulos son gratis; se cobra una temporada narrativa o una suscripción ligera cuando ya hay patrones suficientes para personalizar. Las licencias para academias y entrenadores (B2B2C) no esperan al año 2, pero tampoco cambian el producto (ver la decisión de abajo). Nunca se cobra justo después de una derrota.
+Justificación: el benchmarking (Chess.com, Chessable, ChessMood, Duolingo, Habitica) mostró que el freemium con suscripción recurrente domina el espacio, y el usuario objetivo está acostumbrado a lo gratuito, así que hace falta un nivel gratis para captarlo.
+Precio de hardware: $0 MXN (no aplica: no hay hardware)
+Precio de suscripción: $49–99 MXN/mes, o un pago único por temporada (rango coherente con el benchmark; por validar con usuarios beta)</p>
+<p><strong>NUESTRO BOM (componentes principales):</strong></p>
+<ul>
+<li>LLM narrador (~20 capítulos/mes por usuario, modelo tipo Haiku), Anthropic o Google: $3–6 MXN por usuario/mes</li>
+<li>Worker con Stockfish (compartido), Railway o Fly.io: ~$5 USD/mes entre todos</li>
+<li>Costo variable total estimado: ≈ $5–10 MXN por usuario/mes (tope del PDS: $30 MXN)</li>
+</ul>
+<p>Costo fijo del piloto (en lugar de PCB + ensamble):</p>
+<ul>
+<li>Cuenta de Google Play (pago único): ~$460 MXN</li>
+<li>Dominio para la landing: ~$250 MXN</li>
+<li>Créditos de API del LLM ($20 USD): ~$370 MXN</li>
+<li>Worker durante 2 meses: ~$185 MXN</li>
+<li>Total del piloto: ~$1,300 MXN (tope del curso: $3,000 MXN)</li>
+</ul>
+<p>Costo de carcasa: $0 MXN (no aplica)
+Mano de obra de ensamble y prueba: $0 MXN (desarrollo propio, sin sueldo en el piloto)</p>
+<p><strong>COSTO DE LA IA:</strong>
+Modelo usado: Claude Haiku o Gemini Flash (salida JSON estructurada; el LLM solo narra, el análisis lo hace Stockfish)
+Llamadas por día por usuario: ~0.7 (≈ 20 capítulos al mes)
+Tokens promedio por llamada: ~3,000 de entrada y ~1,000 de salida (el español usa ~30 % más tokens que el inglés)
+Precio por token: [precio vigente del proveedor, por verificar]
+Costo calculado: ≈ $0.15–0.30 USD (≈ $3–6 MXN)/mes por usuario</p>
+<p><strong>INFRAESTRUCTURA CLOUD:</strong>
+Servicio: Supabase (Postgres + Auth + Edge Functions, plan gratuito) + worker en Python con Stockfish en Railway o Fly.io
+Costo estimado: ~$5 USD (≈ $93 MXN)/mes para 15–20 usuarios activos</p>
+<p><strong>VOLUMEN OBJETIVO:</strong>
+Prueba de mercado (año 1): 15–20 usuarios beta
+Crecimiento año 2: hasta 1,200 clientes de pago (SOM de la semana 4 para los años 1–2)</p>
+<p>Con esta información, construye el modelo económico completo:</p>
+<ol>
+<li><strong>COSTO UNITARIO REAL:</strong> Desglose completo del costo por usuario activo a volumen de 10 (prueba de mercado) y a volumen de 100 (escala inicial). Incluir: porción de cloud + porción de IA + overhead (15%) + contingencias (25%).</li>
+<li><strong>PRECIO DE VENTA:</strong> Cost-plus con margen del 40%: ¿cuánto sería? Value-based: dado el valor que entrega al usuario, ¿cuánto podría cobrar? ¿El segmento pagaría ese precio? Precio recomendado y por qué.</li>
+<li><strong>PUNTO DE EQUILIBRIO:</strong> Con el precio recomendado, ¿cuántos usuarios de pago necesitan para cubrir los costos fijos del primer año? ¿Es ese número alcanzable con los recursos del equipo?</li>
+<li><strong>FLUJO DE CAJA A 12 MESES:</strong> Proyección mes a mes asumiendo: altas de usuarios según el plan de volumen, con la conversión de gratis a pago que consideres conservadora; suscripciones acumuladas (usuarios de pago activos × precio mensual); costos fijos mensuales (cloud, IA, overhead); inversión inicial en el mes 0. ¿En qué mes se alcanza flujo de caja positivo?</li>
+<li><strong>VPN DEL PROYECTO (simplificado):</strong> Con los flujos del paso 4 y una tasa de descuento del 15% (costo de oportunidad razonable para emprendedor en México), ¿el VPN es positivo? ¿El proyecto crea valor en 12 meses?</li>
+</ol>
+<p><strong>FORMATO DE SALIDA:</strong> MODELO ECONÓMICO (producto · modelo de ingresos) → COSTO UNITARIO (a 10 y a 100 usuarios, componente de mayor costo, % de la IA) → PRECIO DE VENTA (cost-plus 40 %, value-based, recomendado y por qué) → PUNTO DE EQUILIBRIO (usuarios de pago año 1, ¿alcanzable? ✅/⚠️/❌) → FLUJO DE CAJA (mes de flujo positivo, inversión acumulada antes de <em>break-even</em>) → VPN A 12 MESES (tasa 15 %) → ALERTAS (si algo no cierra; si la IA destruye el margen; si el mercado paga menos que el cost-plus) → PALANCAS DISPONIBLES (2–3 decisiones para mejorar la viabilidad).</p>
+</details>
+<details class="abstract">
+<summary>Respuesta completa — Prompt del profesor (Claude)</summary>
+<p><strong>Modelo económico de Zaqora: freemium B2C</strong></p>
+<p><strong>Supuestos base</strong> (cuando hubo duda tomé el escenario menos favorable):</p>
+<ul>
+<li><strong>Precio de la IA:</strong> Claude Haiku 4.5 cuesta $1 USD por millón de tokens de entrada y $5 USD por millón de salida (lista vigente de Anthropic). El precio de Gemini Flash no lo verifiqué.</li>
+<li><strong>Tipo de cambio:</strong> $18.5 MXN/USD, el mismo que implican sus cifras.</li>
+<li><strong>Costo de IA por usuario:</strong> 20 capítulos × (3,000 tokens de entrada + 1,000 de salida) dan $0.16 USD. Le sumé 30 % por el español (por si sus tokens no lo incluían) y queda en <strong>$0.21 USD ≈ $3.85 MXN al mes</strong>. Coincide con su estimado.</li>
+<li><strong>Ingreso real por suscriptor:</strong> el precio al usuario incluye 16 % de IVA. La pasarela (Stripe o Mercado Pago) cobra cerca de 3.6 % + $3 MXN, más IVA sobre esa comisión. De $59 MXN les quedan <strong>$44.92 MXN netos</strong>.</li>
+<li><strong>Escala de 100 usuarios:</strong> el plan gratuito de Supabase pausa los proyectos inactivos, así que en producción conviene contar con el plan Pro ($25 USD). Para 100 usuarios supuse además un worker de $10 USD.</li>
+</ul>
+<hr />
+<p><strong>MODELO ECONÓMICO</strong> · Producto: Zaqora — Ghost Engine · Modelo de ingresos: <em>Freemium</em> B2C (suscripción ligera)</p>
+<p><strong>COSTO UNITARIO (por usuario activo al mes)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Concepto</th>
+<th style="text-align: right;">10 usuarios</th>
+<th style="text-align: right;">100 usuarios</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Cloud (prorrateo)</td>
+<td style="text-align: right;">$9.25</td>
+<td style="text-align: right;">$6.48 (Supabase Pro + worker de $10 USD)</td>
+</tr>
+<tr>
+<td style="text-align: left;">IA (Haiku 4.5)</td>
+<td style="text-align: right;">$3.85</td>
+<td style="text-align: right;">$3.85</td>
+</tr>
+<tr>
+<td style="text-align: left;">Subtotal directo</td>
+<td style="text-align: right;">$13.10</td>
+<td style="text-align: right;">$10.33</td>
+</tr>
+<tr>
+<td style="text-align: left;">+ Overhead 15 %</td>
+<td style="text-align: right;">$1.97</td>
+<td style="text-align: right;">$1.55</td>
+</tr>
+<tr>
+<td style="text-align: left;">+ Contingencia 25 %</td>
+<td style="text-align: right;">$3.77</td>
+<td style="text-align: right;">$2.97</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>TOTAL</strong></td>
+<td style="text-align: right;"><strong>$18.83 MXN</strong></td>
+<td style="text-align: right;"><strong>$14.85 MXN</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Componente de mayor costo:</strong> infraestructura <em>cloud</em>, 71 % del costo directo a 10 usuarios y 63 % a 100. Es un costo fijo que se reparte entre pocos usuarios.</li>
+<li><strong>El costo de la IA representa:</strong> 29 % del costo unitario a 10 usuarios y 37 % a 100. <strong>La IA NO destruye el margen.</strong></li>
+</ul>
+<p><strong>PRECIO DE VENTA</strong></p>
+<ul>
+<li><strong>Cost-plus (40 % de margen sobre el precio):</strong> $31 MXN/mes a 10 usuarios y $25 MXN/mes a 100. Antes de IVA y comisiones; ya incluidos, $40 y $33 MXN.</li>
+<li><strong>Value-based:</strong> hasta $79 MXN/mes. Ese es el techo psicológico frente a lo que un mexicano paga por <em>streaming</em> o por Duolingo Super. Pero el segmento eligió Lichess por ser gratis y su disposición de pago es CERO hasta demostrar lo contrario. Escenario conservador: $49 MXN.</li>
+<li><strong>Precio recomendado: $59 MXN/mes con IVA incluido</strong> (y una temporada de 3 meses a $149) — por qué: $49 deja solo $36.71 netos, porque la comisión fija de $3 MXN pesa mucho en tickets bajos. $59 deja $44.92 netos, unas 3 veces el costo unitario a escala, y sigue dentro de su benchmark de $49–99. La temporada reduce comisiones y la sensación de «suscripción».</li>
+</ul>
+<p><strong>PUNTO DE EQUILIBRIO</strong></p>
+<ul>
+<li><strong>Costos del año 1:</strong> piloto $1,300 + operación $1,548 = $2,848 MXN.</li>
+<li><strong>Usuarios de pago necesarios año 1:</strong> 7 usuarios pagando desde el mes 4 hasta el 12 (63 suscripciones-mes ÷ $44.92). Para cubrir solo la operación mensual: 4.</li>
+<li><strong>¿Alcanzable? ❌</strong> — Con 20 usuarios beta, 7 de pago es 35 % de conversión. El <em>freemium</em> suele convertir entre 2 % y 5 %. Con 5 % tendrán 1 usuario de pago. Ojo: el dinero en juego es pequeño (menos de $3,000). El costo real es el tiempo del equipo sin sueldo, que este modelo no cuenta.</li>
+</ul>
+<p><strong>FLUJO DE CAJA (resumen)</strong></p>
+<ul>
+<li><strong>Mes de flujo positivo:</strong> ninguno en 12 meses (cada mes desde el 4 cierra en −$98).</li>
+<li><strong>Inversión acumulada a 12 meses:</strong> −$2,444 MXN (no hay punto de equilibrio en el año).</li>
+</ul>
+<p><strong>VPN A 12 MESES (tasa 15 % anual = 1.17 % mensual)</strong></p>
+<p><strong>VPN = −$2,359 MXN → Proyecto inviable como negocio en 12 meses.</strong> El año 1, tal como está planeado, es un experimento de validación y no un negocio. Esto no es malo, pero hay que presupuestarlo así.</p>
+<hr />
+<p><strong>ALERTAS:</strong></p>
+<ol>
+<li><strong>El volumen del año 1 (20 usuarios) no puede sostener ni un worker de $5 USD.</strong> No es un problema de precio. Es un problema de escala: con 20 usuarios no hay precio razonable que cierre.</li>
+<li><strong>Los usuarios gratuitos son el costo oculto.</strong> Con 5 % de conversión, cada suscriptor carga con 19 usuarios gratis. Si los gratuitos consumen 20 capítulos al mes, cada suscriptor arrastra unos $73 de IA, por encima de los $44.92 que deja. Hay que poner un tope de unos 5 capítulos al mes en el plan gratuito; con eso baja a unos $18.</li>
+<li><strong>La disposición de pago no está verificada y es el supuesto que decide todo.</strong> Antes de escribir código de pagos, prueben una preventa o una lista de espera con precio. Si menos de 2 de los 20 beta pagan, el B2C puro no se sostiene.</li>
+<li><strong>Si distribuyen como TWA en Google Play y venden contenido digital dentro de la app, Google exige su sistema de cobro (15 %).</strong> Cobrar por la web les deja más.</li>
+<li><strong>Al pasar de 20 a 100 usuarios, Supabase Pro ($462/mes) se vuelve el costo dominante.</strong> Con 100 activos y 5 % de conversión (5 de pago) siguen en negativo; necesitan unos 15–20 de pago a ese volumen.</li>
+</ol>
+<p><strong>PALANCAS DISPONIBLES:</strong></p>
+<ol>
+<li><strong>Adelantar B2B2C (academias y entrenadores).</strong> Una licencia de $500–1,500 MXN al mes por academia cubre todo el costo fijo con un solo cliente. Es la palanca más fuerte, porque no depende de la conversión del jugador gratuito.</li>
+<li><strong>Volumen antes que precio.</strong> El <em>break-even</em> mensual está en unos 4 de pago a 20 activos y unos 8 a 100 (con Supabase gratuito). Lleguen a unos 150–200 activos en el año 1 con comunidades de Lichess, Discord y clubes en México, antes de optimizar el precio.</li>
+<li><strong>Bajar el costo fijo y de IA:</strong><ul>
+<li>Usar <em>prompt caching</em> en el prompt base del narrador. La parte cacheada baja unas 10 veces su costo de entrada; el ahorro estimado en IA es de 30–40 %.</li>
+<li>Usar el Batch API (50 % menos) para capítulos no urgentes. Encaja bien, porque la regla de «nunca cobrar justo después de una derrota» ya acepta que el capítulo no sea instantáneo.</li>
+<li>Correr Stockfish en el navegador (WASM) en lugar del worker. Eso elimina los $92.5 MXN al mes de costo fijo.</li>
+</ul>
+</li>
+</ol>
+<hr />
+<p><strong>Detalle del flujo de caja (MXN)</strong></p>
+<p>Supuestos de la tabla:</p>
+<ul>
+<li><strong>Usuarios activos:</strong> 5, 10 y 15 en los meses 1 a 3, y 20 a partir del mes 4.</li>
+<li><strong>Paywall:</strong> se activa en el mes 4, cuando ya hay patrones suficientes para personalizar. Desde ahí hay 1 usuario de pago (5 % de conversión).</li>
+<li><strong>Costos ya pagados en el piloto:</strong> el worker de los meses 1 y 2 y los créditos de API ($370 MXN). Los créditos alcanzan para los 12 meses si el plan gratuito tiene tope.</li>
+<li><strong>Egresos:</strong> incluyen 15 % de overhead y 25 % de contingencia.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Mes</th>
+<th style="text-align: center;">Activos</th>
+<th style="text-align: center;">Pago</th>
+<th style="text-align: right;">Ingreso neto</th>
+<th style="text-align: right;">Egresos</th>
+<th style="text-align: right;">Flujo</th>
+<th style="text-align: right;">Acumulado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">1,300.00</td>
+<td style="text-align: right;">−1,300.00</td>
+<td style="text-align: right;">−1,300.00</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">48.89</td>
+<td style="text-align: right;">−48.89</td>
+<td style="text-align: right;">−1,348.89</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">57.31</td>
+<td style="text-align: right;">−57.31</td>
+<td style="text-align: right;">−1,406.20</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">158.23</td>
+<td style="text-align: right;">−158.23</td>
+<td style="text-align: right;">−1,564.44</td>
+</tr>
+<tr>
+<td style="text-align: center;">4–12</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">44.92</td>
+<td style="text-align: right;">142.63</td>
+<td style="text-align: right;">−97.71 c/u</td>
+<td style="text-align: right;">−2,443.87</td>
+</tr>
+</tbody>
+</table>
+<p>Pueden pensarlo así: el año 1 es una validación que cuesta unos $2,500 MXN. La pregunta que tienen que contestar ahí no es «¿ganamos dinero?», sino «¿al menos 2 de cada 20 usuarios pagan, o una academia firma?». Si alguna se cumple, el modelo del año 2 cierra. Si ninguna se cumple, conviene replantear el modelo de ingresos antes de construir más.</p>
+</details>
+<h4 id="segunda-ronda-prompt-de-autoria-propia_1">Segunda ronda — prompt de autoría propia</h4>
+<p>Para la segunda ronda pedí un modelo a dos años de una startup con equipo, con métricas unitarias (LTV, CAC), embudo <em>freemium</em> y punto de equilibrio con sueldos.</p>
+<details class="quote">
+<summary>Prompt completo — Segunda ronda, prompt propio (Claude, modelo económico a 2 años)</summary>
+<p>Actúa como un CFO fraccional y analista financiero experto en startups B2C (SaaS y Gaming) en América Latina. Tu tarea es construir un modelo económico y financiero básico a 2 años para una startup en etapa inicial, utilizando un enfoque de cálculo desde los primeros principios (bottom-up y top-down). No inventes datos irrealistas; si asumes un porcentaje (ej. churn rate o costo de conversión), justifícalo con estándares de la industria del gaming/e-learning.</p>
+<p><strong>CONTEXTO DEL NEGOCIO:</strong></p>
+<ul>
+<li>Concepto: Zaqora, un videojuego de ajedrez de un solo jugador que usa IA (LLM integrado con API de Lichess) para convertir las derrotas del usuario en una campaña narrativa adaptativa.</li>
+<li>Segmento: Jugadores amateur en México que sufren "tilt" y abandonan la sesión por frustración.</li>
+<li>Modelo de Ingresos: Freemium con upsell a suscripción mensual de $300 MXN y opción anual.</li>
+<li>Mercado Obtenible (SOM Año 1-2): Meta de 1,200 clientes pagadores (ingresos brutos teóricos de ~$4.32 millones MXN/año).</li>
+<li>Estrategia de Go-to-Market: Adquisición B2B2C mediante 40 aliados clave (clubes de ajedrez y streamers), donde cada uno genera 30 clientes.</li>
+<li>Estructura Base: Startup conformada por un equipo operativo de 4 fundadores.</li>
+</ul>
+<p><strong>ENTREGABLES REQUERIDOS (Genera el reporte con tablas Markdown):</strong></p>
+<ol>
+<li><strong>Estructura de Costos (COGS y OPEX):</strong><ul>
+<li>Costos variables (COGS): Servidores de nube, costo estimado de tokens/API del motor LLM por usuario activo al mes, comisiones de pasarelas de pago (Stripe/Apple/Google) y márgenes o comisiones de ingresos compartidos para los aliados (streamers/clubes).</li>
+<li>Costos fijos (OPEX): Salario de supervivencia para el equipo de 4 personas, costos legales/contables y herramientas de software.</li>
+</ul>
+</li>
+<li><strong>Métricas Unitarias (Unit Economics):</strong><ul>
+<li>Estimación del LTV (Life Time Value) basada en un churn rate realista para aplicaciones gamificadas de nicho.</li>
+<li>Estimación del CAC (Costo de Adquisición de Clientes) contemplando el modelo orgánico y de alianzas.</li>
+<li>Ratio LTV:CAC esperado.</li>
+</ul>
+</li>
+<li><strong>Embudo de Adquisición Freemium:</strong> Considerando tasas de conversión estándar de la industria (ej. 3% al 5%), calcula cuántos usuarios gratuitos totales (MAU) necesitamos adquirir para alcanzar la meta de los 1,200 usuarios de pago.</li>
+<li><strong>Análisis de Punto de Equilibrio (Break-Even):</strong> ¿Cuántos usuarios de pago recurrentes activos a $300 MXN/mes se necesitan exactamente para cubrir los costos fijos y variables del equipo de 4 personas? Muestra la fórmula y el margen de contribución.</li>
+<li><strong>Riesgos del Modelo Financiero:</strong> Identifica los 2 mayores riesgos de flujo de caja de este modelo operativo (ej. el costo computacional del LLM a escala vs. el precio fijo de suscripción) y propone 2 mitigaciones tácticas.</li>
+</ol>
+</details>
+<details class="abstract">
+<summary>Respuesta completa — Segunda ronda, prompt propio (Claude)</summary>
+<p><strong>Zaqora: modelo económico y financiero a 24 meses</strong></p>
+<p><strong>Supuestos base:</strong> tipo de cambio de 18.5 MXN/USD. El precio de $300 MXN incluye IVA, porque en México el precio al consumidor debe mostrarse con impuestos. Plan anual de $2,400 MXN (equivale a $200 al mes, 33 % de descuento). Mezcla de 70 % mensual y 30 % anual.</p>
+<blockquote>
+<p>⚠️ <strong>Primer ajuste de CFO:</strong> los $4.32M de ingreso teórico (1,200 × $300 × 12) no son ingreso real. Quitando el IVA, la mezcla de planes y la rampa de adquisición, el <strong>Año 1 cierra en ~$1.19M MXN netos</strong> y el <strong>Año 2 en ~$4.7M MXN</strong>. Los $4.32M solo se alcanzan como <em>run-rate</em> hacia el mes 12.</p>
+</blockquote>
+<hr />
+<p><strong>1. Estructura de costos</strong></p>
+<p><em>1a. Costos variables (COGS) por usuario de pago al mes</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Concepto</th>
+<th style="text-align: right;">Plan mensual</th>
+<th style="text-align: right;">Plan anual (al mes)</th>
+<th style="text-align: left;">Justificación</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Ingreso neto de IVA</strong></td>
+<td style="text-align: right;"><strong>$258.6</strong></td>
+<td style="text-align: right;"><strong>$172.4</strong></td>
+<td style="text-align: left;">$300 / 1.16 y $2,400 / 1.16 / 12</td>
+</tr>
+<tr>
+<td style="text-align: left;">Pasarelas (50 % tiendas, 50 % web)</td>
+<td style="text-align: right;">$26.3</td>
+<td style="text-align: right;">$16.7</td>
+<td style="text-align: left;">Apple/Google cobran 15 % (Small Business Program). Stripe MX cobra 3.6 % + $3 por cobro. La web pesa más porque los aliados comparten links directos</td>
+</tr>
+<tr>
+<td style="text-align: left;">Revenue share para aliados (20 %)</td>
+<td style="text-align: right;">$51.7</td>
+<td style="text-align: right;">$34.5</td>
+<td style="text-align: left;">Estándar de afiliados en suscripción: 20–30 % recurrente. Propuesta: 20 % durante 12 meses</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tokens del LLM</td>
+<td style="text-align: right;">$10.0</td>
+<td style="text-align: right;">$10.0</td>
+<td style="text-align: left;">Ver cálculo abajo</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nube (backend, BD, análisis, CDN)</td>
+<td style="text-align: right;">$5.0</td>
+<td style="text-align: right;">$5.0</td>
+<td style="text-align: left;">~US$0.27 por usuario activo. La API de Lichess es gratuita; Stockfish puede correr en el cliente</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Subsidio freemium</strong> (24 usuarios gratuitos por cada pagador)</td>
+<td style="text-align: right;">$19.2</td>
+<td style="text-align: right;">$19.2</td>
+<td style="text-align: left;">Cada usuario gratuito cuesta ~$0.80 al mes (3 narrativas con modelo ligero + infraestructura). Es un costo oculto que suele olvidarse</td>
+</tr>
+<tr>
+<td style="text-align: left;">Reembolsos y contracargos (1.5 %)</td>
+<td style="text-align: right;">$3.9</td>
+<td style="text-align: right;">$2.6</td>
+<td style="text-align: left;">Estándar en suscripciones B2C</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Total COGS</strong></td>
+<td style="text-align: right;"><strong>$116.1</strong></td>
+<td style="text-align: right;"><strong>$87.9</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Margen de contribución</strong></td>
+<td style="text-align: right;"><strong>$142.5 (55 %)</strong></td>
+<td style="text-align: right;"><strong>$84.5 (49 %)</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Contribución ponderada (70/30)</strong></td>
+<td style="text-align: right;"><strong>$125.1 por usuario al mes</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p><em>Cálculo del costo del LLM (usuario de pago típico al mes):</em></p>
+<ul>
+<li>25 derrotas narradas × (6k tokens de entrada + 1k de salida) = 150k / 25k.</li>
+<li>20 mensajes de coach × (3k + 0.5k) = 60k / 10k.</li>
+<li>Total: <strong>210k tokens de entrada y 35k de salida al mes.</strong></li>
+<li>Con un ruteo de 70 % Haiku 4.5 (US$1 / US$5 por millón de tokens) y 30 % Sonnet 5.5 (US$2 / US$10), más <em>prompt caching</em> (las lecturas de caché cuestan ~10 %), sale en ~US$0.37, unos $6.9 MXN.</li>
+<li>Le sumo 40 % de colchón por reintentos y usuarios intensivos: <strong>$10 MXN</strong>.</li>
+</ul>
+<p><em>1b. Costos fijos (OPEX) al mes</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Concepto</th>
+<th style="text-align: right;">Año 1</th>
+<th style="text-align: right;">Año 2</th>
+<th style="text-align: left;">Nota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Salarios de supervivencia (4 × $18,000, asimilados) + 3 % de ISN</td>
+<td style="text-align: right;">$74,200</td>
+<td style="text-align: right;">$88,000</td>
+<td style="text-align: left;">En el Año 2 sube a ~$21,000 por persona</td>
+</tr>
+<tr>
+<td style="text-align: left;">Contador externo + legal amortizado</td>
+<td style="text-align: right;">$8,000</td>
+<td style="text-align: right;">$9,000</td>
+<td style="text-align: left;">Legal: SAPI, T&amp;C, aviso de privacidad (LFPDPPP), marca IMPI</td>
+</tr>
+<tr>
+<td style="text-align: left;">Herramientas de software</td>
+<td style="text-align: right;">$6,500</td>
+<td style="text-align: right;">$7,000</td>
+<td style="text-align: left;">Workspace, GitHub, Figma, Sentry, analítica, cuentas de desarrollador Apple y Google</td>
+</tr>
+<tr>
+<td style="text-align: left;">Infraestructura fija (staging, BD mínima)</td>
+<td style="text-align: right;">$3,000</td>
+<td style="text-align: right;">$3,000</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;">Programa de aliados (torneos, premios, kits)</td>
+<td style="text-align: right;">$8,000</td>
+<td style="text-align: right;">$8,000</td>
+<td style="text-align: left;"></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Total OPEX</strong></td>
+<td style="text-align: right;"><strong>$99,700</strong></td>
+<td style="text-align: right;"><strong>$115,000</strong></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p>Además hay un gasto único antes del lanzamiento de <strong>$125,000</strong>: constitución ($25k), bono de activación de $1,500 por aliado ($60k) y <em>streams</em> patrocinados ($40k).</p>
+<hr />
+<p><strong>2. Métricas unitarias (Unit Economics)</strong></p>
+<p><em>Churn:</em></p>
+<ul>
+<li><strong>Plan mensual: 10 % al mes.</strong> Los reportes de la industria, como <em>State of Subscription Apps</em> de RevenueCat, ubican la retención de planes mensuales en juegos y educación en 8–15 % de churn mensual. Un nicho de alta intención, como el ajedrez, cae en la parte baja del rango. Vida esperada: 10 meses.</li>
+<li><strong>Plan anual: 35 % de renovación.</strong> El rango típico B2C es 30–45 %. Vida esperada: 1.54 años (~18.5 meses).</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Métrica</th>
+<th style="text-align: right;">Mensual</th>
+<th style="text-align: right;">Anual</th>
+<th style="text-align: right;">Ponderado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">LTV de ingreso neto</td>
+<td style="text-align: right;">$2,586</td>
+<td style="text-align: right;">$3,183</td>
+<td style="text-align: right;">$2,765</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>LTV de contribución</strong> (después de COGS y rev share)</td>
+<td style="text-align: right;">$1,425</td>
+<td style="text-align: right;">$1,558</td>
+<td style="text-align: right;"><strong>$1,465</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>CAC:</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Canal</th>
+<th style="text-align: right;">CAC</th>
+<th style="text-align: left;">Cálculo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Aliados, solo efectivo</td>
+<td style="text-align: right;">$163</td>
+<td style="text-align: left;">($96k del programa anual + $60k de bonos + $40k de <em>streams</em>) / 1,200</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aliados, <em>fully loaded</em> (incluye 50 % del tiempo de un fundador)</td>
+<td style="text-align: right;"><strong>$253</strong></td>
+<td style="text-align: left;">+ $108k / 1,200</td>
+</tr>
+<tr>
+<td style="text-align: left;">Orgánico (ASO, contenido, referidos)</td>
+<td style="text-align: right;">~$100</td>
+<td style="text-align: left;">Herramientas de contenido</td>
+</tr>
+<tr>
+<td style="text-align: left;">Paid ads (solo referencia, no está en el plan)</td>
+<td style="text-align: right;">~$460</td>
+<td style="text-align: left;">CPI en LatAm ~US$1 / 4 % de conversión</td>
+</tr>
+</tbody>
+</table>
+<p><em>Ratio LTV:CAC:</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Vista</th>
+<th style="text-align: right;">LTV</th>
+<th style="text-align: right;">CAC</th>
+<th style="text-align: right;">Ratio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Operativa (rev share como COGS)</td>
+<td style="text-align: right;">$1,465</td>
+<td style="text-align: right;">$253</td>
+<td style="text-align: right;"><strong>5.8x</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Conservadora (rev share de 12 meses reclasificado como CAC)</td>
+<td style="text-align: right;">$2,018</td>
+<td style="text-align: right;">$637</td>
+<td style="text-align: right;"><strong>3.2x</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Payback del CAC</td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong>~2 meses</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Las dos vistas superan el umbral de 3x. La vista conservadora es la que conviene mostrarle a un inversionista.</p>
+<hr />
+<p><strong>3. Embudo de adquisición freemium</strong></p>
+<p>Para tener 1,200 usuarios de pago <strong>activos</strong> al mes 12 con un churn ponderado de 7 % al mes, hacen falta <strong>~1,730 altas brutas de pago</strong> en el año.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Conversión MAU → pago</th>
+<th style="text-align: right;">MAU necesarios en estado estable</th>
+<th style="text-align: right;">Instalaciones acumuladas (35 % de activación a MAU)</th>
+<th style="text-align: right;">Instalaciones por aliado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">3 % (conservador)</td>
+<td style="text-align: right;">40,000</td>
+<td style="text-align: right;">~114,000</td>
+<td style="text-align: right;">~2,860</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4 % (base)</strong></td>
+<td style="text-align: right;"><strong>30,000</strong></td>
+<td style="text-align: right;"><strong>~86,000</strong></td>
+<td style="text-align: right;"><strong>~2,140</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">5 % (optimista)</td>
+<td style="text-align: right;">24,000</td>
+<td style="text-align: right;">~69,000</td>
+<td style="text-align: right;">~1,710</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <strong>Hallazgo crítico sobre el GTM:</strong> «40 aliados × 30 clientes» no funciona parejo para todos. Un club de 80 miembros activos necesitaría que el 37 % pague, cuando en un club real esperaría cerca de 12 %. Lo recomiendo recomponer así: <strong>10 streamers × 90 pagadores = 900</strong> y <strong>30 clubes × 10 pagadores = 300</strong>. Los streamers generan el volumen y los clubes aportan retención y credibilidad.</p>
+</blockquote>
+<hr />
+<p><strong>4. Punto de equilibrio</strong></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Usuarios en equilibrio = Costos fijos mensuales / Margen de contribución por usuario
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Margen de contribución = Precio neto de IVA − COGS variable por usuario
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>                       = $258.6 − $116.1 = $142.5 (55.1%)
+</span></code></pre></div>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Escenario</th>
+<th style="text-align: left;">Cálculo</th>
+<th style="text-align: right;"><strong>Usuarios de pago activos</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">100 % plan mensual a $300, Año 1</td>
+<td style="text-align: left;">$99,700 / $142.5</td>
+<td style="text-align: right;"><strong>700</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Mezcla 70/30, Año 1</td>
+<td style="text-align: left;">$99,700 / $125.1</td>
+<td style="text-align: right;"><strong>797</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Mezcla 70/30, Año 2 (OPEX de $115k)</td>
+<td style="text-align: left;">$115,000 / $125.1</td>
+<td style="text-align: right;"><strong>920</strong></td>
+</tr>
+</tbody>
+</table>
+<p><em>Proyección trimestral</em> (contribución = ingreso neto menos COGS; EBITDA = contribución menos OPEX):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Trimestre</th>
+<th style="text-align: right;">Activos al cierre</th>
+<th style="text-align: right;">Ingreso neto</th>
+<th style="text-align: right;">Contribución</th>
+<th style="text-align: right;">OPEX</th>
+<th style="text-align: right;">EBITDA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Q1 (desarrollo)</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">$0</td>
+<td style="text-align: right;">$0</td>
+<td style="text-align: right;">$299k</td>
+<td style="text-align: right;">−$299k</td>
+</tr>
+<tr>
+<td style="text-align: left;">Q2</td>
+<td style="text-align: right;">250</td>
+<td style="text-align: right;">$105k</td>
+<td style="text-align: right;">$56k</td>
+<td style="text-align: right;">$299k</td>
+<td style="text-align: right;">−$243k</td>
+</tr>
+<tr>
+<td style="text-align: left;">Q3</td>
+<td style="text-align: right;">700</td>
+<td style="text-align: right;">$372k</td>
+<td style="text-align: right;">$200k</td>
+<td style="text-align: right;">$299k</td>
+<td style="text-align: right;">−$99k</td>
+</tr>
+<tr>
+<td style="text-align: left;">Q4</td>
+<td style="text-align: right;">1,200</td>
+<td style="text-align: right;">$715k</td>
+<td style="text-align: right;">$384k</td>
+<td style="text-align: right;">$299k</td>
+<td style="text-align: right;"><strong>+$85k</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Q5–Q8</td>
+<td style="text-align: right;">1,420 → 2,050</td>
+<td style="text-align: right;">$4.71M (Año 2)</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">$1.38M</td>
+<td style="text-align: right;"><strong>+$1.15M</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>El equilibrio operativo llega en el <strong>mes 10</strong>.</li>
+<li>El valle de caja es de <strong>−$766k MXN</strong>, contando el gasto de prelanzamiento.</li>
+<li><strong>Hay que levantar ~$1.0M MXN</strong> (pre-seed, FFF o un programa como Startup México), que cubre el valle más un colchón de 3 meses.</li>
+</ul>
+<hr />
+<p><strong>5. Riesgos de flujo de caja y mitigaciones</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">#</th>
+<th style="text-align: left;">Riesgo</th>
+<th style="text-align: left;">Impacto cuantificado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>R1</strong></td>
+<td style="text-align: left;"><strong>Costo del LLM a escala contra un precio fijo.</strong> Usuarios intensivos (más de 60 derrotas al mes) atendidos solo con Sonnet, sumado al subsidio de los usuarios gratuitos.</td>
+<td style="text-align: left;">Un usuario intensivo puede costar ~$43 al mes en vez de $10. Si 20 % de la base es intensiva, la contribución mensual cae de $142 a ~$115 y el equilibrio sube de 700 a ~870 usuarios. Una caída del peso a 21 MXN/USD encarece todavía más el costo en dólares.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>R2</strong></td>
+<td style="text-align: left;"><strong>Concentración en aliados y churn temprano.</strong> El 100 % de la adquisición pasa por 40 terceros. Si 3 de los 10 streamers bajan su actividad, se pierde ~27 % del <em>pipeline</em>. Además, el 20 % de rev share se paga desde el día 1, y los cobros de las tiendas llegan unos 45 días después.</td>
+<td style="text-align: left;">Con un churn mensual de 15 % en lugar de 10 %, el LTV baja a ~$950 y el valle de caja se profundiza a ~$1.1M.</td>
+</tr>
+</tbody>
+</table>
+<p><em>Mitigaciones tácticas:</em></p>
+<ol>
+<li><strong>Topes y ruteo del LLM (contra R1).</strong> Limitar el plan gratuito a 3 narrativas al mes y dar al de pago un uso justo de 40 narrativas, con un paquete extra de $49. Rutear el 80 % de las llamadas a Haiku y usar Sonnet solo en los capítulos clave de la campaña. Precalcular narrativas genéricas por tipo de apertura o error con la Batch API, que cuesta 50 % menos. Poner una alerta si el costo del LLM supera el 8 % del ingreso neto. <strong>Objetivo: costo del LLM por debajo de $8 por usuario de pago.</strong></li>
+<li><strong>Rev share escalonado y empuje al plan anual (contra R2).</strong> Pagar al aliado 20 % los primeros 6 meses y 10 % del mes 7 al 12, siempre después de que el cobro se liquide, nunca por adelantado. Ofrecer el plan anual con un incentivo, por ejemplo un capítulo exclusivo. Subir la mezcla de 30 % a 45 % anual adelanta ~$400k de caja en el Año 1 y reduce el churn efectivo. Abrir un canal orgánico (referidos y torneos propios) que llegue al 25 % de las altas en el Año 2.</li>
+</ol>
+<blockquote>
+<p><strong>Alerta de precio:</strong> $300 MXN (~US$16) está por encima de Chess.com Diamond (~US$14 al mes en EE. UU.), y Lichess es gratis. Antes de fijarlo, conviene probar dos precios en paralelo: <strong>$300 contra $179</strong>. Con $179 el equilibrio sube a unos 1,500 usuarios, pero la conversión podría duplicarse. Es la variable con más sensibilidad de todo el modelo.</p>
+</blockquote>
+</details>
+<h4 id="comparacion-de-los-dos-prompts_1">Comparación de los dos prompts</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;"><strong>Prompt del profesor</strong></th>
+<th style="text-align: left;"><strong>Prompt propio</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Rol asignado</strong></td>
+<td style="text-align: left;">Analista financiero conservador: si hay duda, el escenario menos favorable.</td>
+<td style="text-align: left;">CFO fraccional de startups B2C (SaaS y <em>gaming</em>).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Supuestos de entrada</strong></td>
+<td style="text-align: left;">Los de esta semana: precio de $49–99, 15–20 usuarios beta, costos del piloto de la semana 5, sin sueldos.</td>
+<td style="text-align: left;">Los de la semana 4: $300 al mes, 1,200 clientes, 40 aliados y 4 fundadores con sueldo.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Horizonte</strong></td>
+<td style="text-align: left;">12 meses, mes a mes, con VPN al 15 %.</td>
+<td style="text-align: left;">24 meses por trimestre, sin VPN ni TIR.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Precio</strong></td>
+<td style="text-align: left;">Recomienda <strong>$59 MXN</strong> con IVA ($44.92 netos).</td>
+<td style="text-align: left;">Usa <strong>$300 MXN</strong> ($258.6 netos) y propone probarlo contra $179.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Costo de la IA por usuario</strong></td>
+<td style="text-align: left;"><strong>$3.85 MXN</strong> (20 capítulos con Haiku 4.5).</td>
+<td style="text-align: left;"><strong>$10 MXN</strong> (25 derrotas + 20 mensajes, con 30 % de Sonnet y colchón de 40 %).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Punto de equilibrio</strong></td>
+<td style="text-align: left;">7 de pago en el año (35 % de conversión): <strong>no alcanzable</strong>.</td>
+<td style="text-align: left;"><strong>700–920</strong> usuarios de pago activos.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Veredicto</strong></td>
+<td style="text-align: left;"><strong>VPN = −$2,359 MXN</strong>: el año 1 es una validación de ~$2,500, no un negocio.</td>
+<td style="text-align: left;">Equilibrio en el <strong>mes 10</strong>, pero hay que levantar <strong>~$1.0M MXN</strong>.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Qué aportó cada uno</strong></p>
+<ul>
+<li><strong>Mi prompt usó supuestos que el propio Paso 1 ya había descartado.</strong> Volví a pedir $300 MXN al mes y 1,200 clientes con 40 aliados, cuando el benchmarking acababa de mostrar que ese precio está fuera de mercado. La respuesta lo detectó por su cuenta («$300 está por encima de Chess.com Diamond»). Los números de mi modelo son coherentes entre sí, pero describen una empresa que no es la que el benchmark recomienda.</li>
+<li><strong>Los dos modelos responden preguntas distintas, y las dos sirven.</strong> El del profesor pregunta si el piloto se sostiene, y la respuesta es no: con 20 usuarios no hay precio que cierre. El mío pregunta cuánto hace falta para que el equipo viva de esto: unos 800 usuarios de pago y ~$1.0M MXN de inversión. Juntos dicen que el problema de Zaqora no es la IA ni el precio, sino la escala.</li>
+<li><strong>El sueldo cambia todo el modelo.</strong> El del profesor no cuenta el tiempo del equipo (y lo advierte como alerta); el mío lo pone como el 74 % del OPEX. Con sueldos, los $2,500 del piloto pasan a $99,700 al mes.</li>
+<li><strong>Coinciden en el costo oculto: los usuarios gratuitos.</strong> El profesor calcula que cada suscriptor carga con 19 gratuitos (~$73 de IA si no hay tope) y propone 5 capítulos al mes; el mío, 24 gratuitos (~$19) con un tope de 3 narrativas. Los dos llegan a la misma regla: el plan gratuito necesita un límite.</li>
+<li><strong>Coinciden en el IVA, las comisiones y las palancas.</strong> Los dos descuentan el 16 % de IVA y la comisión de la pasarela antes de calcular el margen, y los dos proponen <em>prompt caching</em> y Batch API para bajar el costo de la IA.</li>
+<li><strong>El del profesor cumple el formato del curso; el mío, no.</strong> La tarea pide flujo de caja mes a mes a 12 meses y VPN al 15 %. Mi modelo da LTV, CAC y un embudo útiles para un inversionista, pero no calcula VPN ni TIR.</li>
+<li><strong>Mi modelo encontró un error en mi plan de adquisición.</strong> «40 aliados × 30 clientes» exigiría que el 37 % de un club pague; recomponerlo como 10 <em>streamers</em> y 30 clubes es un hallazgo que el modelo del profesor no podía dar, porque no incluía aliados.</li>
+<li><strong>Datos por verificar.</strong> El precio de Haiku 4.5 (US$1 / US$5 por millón de tokens) coincide con la lista de Anthropic. El modelo «Sonnet 5.5» y su precio (US$2 / US$10) también coinciden con la lista de Anthropic. La comisión de Stripe México (3.6 % + $3, sin IVA) se confirmó en su página; las de Mercado Pago y las tiendas siguen sin verificar.</li>
+</ul>
+<hr />
+<h2 id="4-entregable-viabilidad-economica-de-zaqora">4) Entregable — Viabilidad económica de Zaqora</h2>
+<p><strong>Equipo:</strong> <em>David López Ramírez</em> · <strong>Producto:</strong> <em>Zaqora</em> · <strong>Concepto:</strong> <em>Ghost Engine</em> · <strong>Fecha:</strong> <em>08/10/2026</em></p>
+<h3 id="1-benchmarking-consolidado">1. Benchmarking consolidado</h3>
+<p>Las cinco empresas de las dos rondas. Las conversiones a pesos usan un tipo de cambio de referencia de 18.5 MXN/USD (el mismo del PDS) y son solo orientativas.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Empresa</th>
+<th style="text-align: left;">Qué ofrece</th>
+<th style="text-align: left;">Modelo de ingresos</th>
+<th style="text-align: left;">Precio mensual</th>
+<th style="text-align: left;">≈ MXN al mes</th>
+<th style="text-align: left;">Fricción principal</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Chess.com</strong></td>
+<td style="text-align: left;">Juego, análisis y lecciones de ajedrez</td>
+<td style="text-align: left;"><em>Freemium</em> + suscripción escalonada</td>
+<td style="text-align: left;">US$5.46–13.65 (precio para México)</td>
+<td style="text-align: left;">≈ $101–253</td>
+<td style="text-align: left;">Entender qué límite gratuito te afecta y cuál de los niveles conviene.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Chessable</strong></td>
+<td style="text-align: left;">Cursos con repetición espaciada</td>
+<td style="text-align: left;">Híbrido: PRO + cursos de pago único</td>
+<td style="text-align: left;">PRO US$11.99 (US$74.99/año); cursos US$20–100</td>
+<td style="text-align: left;">≈ $222 (PRO mensual)</td>
+<td style="text-align: left;">Doble decisión: suscripción y curso.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ChessMood</strong></td>
+<td style="text-align: left;">Cursos en video de grandes maestros</td>
+<td style="text-align: left;">Suscripción en dos niveles</td>
+<td style="text-align: left;">US$79–129</td>
+<td style="text-align: left;">≈ $1,460–2,390</td>
+<td style="text-align: left;">Precio alto y compromiso anual.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Duolingo</strong></td>
+<td style="text-align: left;">Idiomas gamificados</td>
+<td style="text-align: left;"><em>Freemium</em> + Super + publicidad + B2B</td>
+<td style="text-align: left;">US$6.99</td>
+<td style="text-align: left;">≈ $129</td>
+<td style="text-align: left;">Poca conversión de gratis a pago.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Habitica</strong></td>
+<td style="text-align: left;">Hábitos como juego de rol</td>
+<td style="text-align: left;"><em>Freemium</em> + suscripción cosmética + planes grupales</td>
+<td style="text-align: left;">US$4.99 (US$47.99/año)</td>
+<td style="text-align: left;">≈ $92</td>
+<td style="text-align: left;">Se siente como pagar por personalización, no por un resultado.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Modelo predominante:</strong> <em>freemium</em> con suscripción recurrente, en las dos rondas.</p>
+<p><strong>Stakeholders no explotados:</strong> academias, clubes y entrenadores (las dos rondas); padres y escuelas; Lichess como canal de adquisición, condicionado a sus principios.</p>
+<h3 id="2-implicaciones-para-el-modelo-de-ingresos-de-zaqora">2. Implicaciones para el modelo de ingresos de Zaqora</h3>
+<div class="admonition warning">
+<p class="admonition-title">Modelo decidido, disposición a pagar por validar</p>
+<p>Este modelo resume lo que dicen las dos rondas de benchmarking. El modelo económico (Paso 2) confirma que el costo cabe, pero el año 1 no cierra: falta medir la disposición a pagar de los usuarios beta.</p>
+</div>
+<ul>
+<li><strong>Modelo propuesto:</strong> <em>freemium</em> B2C. Los primeros capítulos son gratis; se cobra una temporada narrativa o una suscripción ligera cuando ya hay patrones suficientes para personalizar. Las licencias para academias y entrenadores (B2B2C) no esperan al año 2, pero tampoco cambian el producto (ver la decisión de abajo).</li>
+<li><strong>Desafío de diseño:</strong> el momento del cobro. Nunca mostrar una pantalla de pago justo después de una derrota: el siguiente capítulo es gratis y el pago se ofrece a cambio de una promesa futura (más villanos, temporadas completas, historial).</li>
+<li><strong>El precio de la semana 4 queda fuera de mercado.</strong> $300 MXN al mes está por encima de Chess.com, Chessable, Duolingo y Habitica en México; solo ChessMood cobra más. Un rango coherente con el benchmark y con el piloto propuesto en la semana 5 está entre $49 y $99 MXN al mes, o un pago único por temporada.</li>
+<li><strong>Decisión sobre las licencias (B2B2C):</strong> buscar <strong>una academia piloto a partir del mes 7</strong>, después de tres meses de datos con jugadores, que pague el acceso de sus alumnos a Zaqora tal como es, <strong>sin construir un <em>dashboard</em></strong> para entrenadores. Es la única palanca que vuelve positivo el VPN del año 1, y hacerlo así no desvía el producto del jugador que pierde solo. El escenario base no cuenta ese ingreso hasta que haya una carta de intención firmada, para no inflar el modelo.</li>
+<li><strong>Decisión sobre Google Play:</strong> el piloto <strong>incluye</strong> la cuenta de desarrollador (US$25, pago único), además de la distribución por URL.</li>
+<li><strong>El costo no es el problema.</strong> El modelo económico pone el costo en $18.83 MXN por usuario a 10 usuarios y $14.85 a 100, y el precio recomendado ($59 MXN) deja $44.92 netos. El riesgo sigue siendo que el usuario acepte pagar algo.</li>
+</ul>
+<h3 id="3-modelo-economico">3. Modelo económico</h3>
+<p>Resumen del modelo del Paso 2 con el prompt del profesor, que es el que sigue el formato del curso (12 meses, VPN al 15 %) y usa el modelo de ingresos elegido. Tipo de cambio: 18.5 MXN/USD.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Concepto</th>
+<th style="text-align: left;">Resultado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Costo unitario</strong> (por usuario activo al mes)</td>
+<td style="text-align: left;"><strong>$18.83 MXN a 10 usuarios</strong> · $14.85 MXN a 100 usuarios (incluye 15 % de overhead y 25 % de contingencia)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Componente de mayor costo</strong></td>
+<td style="text-align: left;">Infraestructura <em>cloud</em>: 71 % del costo directo a 10 usuarios y 63 % a 100</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Peso de la IA</strong></td>
+<td style="text-align: left;">29 % del costo unitario a 10 usuarios y 37 % a 100: no destruye el margen</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Precio cost-plus (40 %)</strong></td>
+<td style="text-align: left;">$40 MXN al mes a 10 usuarios y $33 MXN a 100, con IVA y comisiones</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Precio value-based</strong></td>
+<td style="text-align: left;">Hasta $79 MXN al mes; escenario conservador, $49 MXN</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Precio recomendado</strong></td>
+<td style="text-align: left;"><strong>$59 MXN al mes con IVA</strong> ($44.92 netos) o temporada de 3 meses a $149 MXN</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Punto de equilibrio año 1</strong></td>
+<td style="text-align: left;">7 usuarios de pago desde el mes 4 (35 % de conversión sobre 20 beta): ❌ no alcanzable</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Flujo de caja</strong></td>
+<td style="text-align: left;">Ningún mes positivo en 12 meses; acumulado de −$2,444 MXN</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>VPN a 12 meses (15 %)</strong></td>
+<td style="text-align: left;"><strong>−$2,359 MXN → inviable como negocio en 12 meses</strong>: el año 1 es una validación</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Costo mensual de la IA</strong> (arquitectura del concepto Ghost Engine: el LLM solo narra; el análisis lo hace Stockfish):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Concepto</th>
+<th style="text-align: left;">Valor</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Modelo</td>
+<td style="text-align: left;">Claude Haiku 4.5: US$1 por millón de tokens de entrada y US$5 por millón de salida (<strong>verificado</strong> en la lista de precios de Anthropic el 08/10/2026)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Llamadas por usuario</td>
+<td style="text-align: left;">~20 capítulos al mes (≈ 0.7 al día)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tokens por llamada</td>
+<td style="text-align: left;">3,000 de entrada + 1,000 de salida, más 30 % por el español</td>
+</tr>
+<tr>
+<td style="text-align: left;">Costo por usuario activo</td>
+<td style="text-align: left;">US$0.21 ≈ <strong>$3.85 MXN al mes</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">20 usuarios beta</td>
+<td style="text-align: left;">≈ $77 MXN al mes</td>
+</tr>
+<tr>
+<td style="text-align: left;">100 usuarios</td>
+<td style="text-align: left;">≈ $385 MXN al mes</td>
+</tr>
+<tr>
+<td style="text-align: left;">1,200 usuarios</td>
+<td style="text-align: left;">≈ $4,620 MXN al mes</td>
+</tr>
+</tbody>
+</table>
+<p>Las cifras por volumen multiplican el costo por usuario activo; los usuarios gratuitos cuentan igual mientras el plan gratuito no tenga tope. Con un tope de 5 capítulos al mes, cada usuario gratuito cuesta cerca de una cuarta parte.</p>
+<p><strong>Qué falta para que cierre:</strong> al menos 2 de cada 20 usuarios beta pagando, o una academia con licencia de $500–1,500 MXN al mes. El modelo a dos años (prompt propio) agrega la otra cara: si el equipo cobra sueldo, el equilibrio está en ~800 usuarios de pago y hace falta levantar ~$1.0M MXN.</p>
+<h3 id="4-hoja-de-calculo-del-modelo">4. Hoja de cálculo del modelo</h3>
+<p><a href="../recursos/archivos/PI4_S7/Zaqora_Modelo_Economico_S7.xlsx">Descargar el modelo económico (Excel)</a></p>
+<p>El libro reconstruye el modelo del Paso 2 con todas las fórmulas visibles. Tiene siete hojas: <strong>Supuestos</strong> (todos los datos de entrada; azul = editable, verde = precio verificado, amarillo = supuesto clave), <strong>BOM</strong>, <strong>Costo IA</strong>, <strong>Costo unitario</strong>, <strong>Flujo de caja</strong>, <strong>Sensibilidad</strong> y <strong>Ejercicios</strong> (4–9). Al cambiar un supuesto, todo se recalcula.</p>
+<p>Coincide con la respuesta de la IA en el costo unitario ($18.83 y $14.84 MXN), el costo de la IA ($3.85 MXN) y el ingreso neto por suscriptor ($44.92 MXN). El VPN sale más negativo (<strong>−$2,636</strong> contra −$2,359) por una diferencia de supuestos: en la hoja, los créditos de API ($370 MXN) se consumen mes a mes y se agotan en el mes 7 si el plan gratuito no tiene tope; la respuesta de la IA suponía que alcanzaban para todo el año. La inversión inicial es de $1,222.48 porque el dominio verificado cuesta US$11.08 ($205) y no los $250 estimados.</p>
+<p><strong>Flujo de caja mes a mes (escenario base: 20 usuarios beta, 5 % de conversión, cobro desde el mes 4, sin tope gratuito, con cuenta de Google Play, sin ingresos de academias)</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Mes</th>
+<th style="text-align: center;">Activos</th>
+<th style="text-align: center;">De pago</th>
+<th style="text-align: right;">Ingreso neto</th>
+<th style="text-align: right;">Cloud</th>
+<th style="text-align: right;">IA pagada</th>
+<th style="text-align: right;">Egresos totales</th>
+<th style="text-align: right;">Flujo neto</th>
+<th style="text-align: right;">Acumulado</th>
+<th style="text-align: right;">Flujo descontado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: center;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">—</td>
+<td style="text-align: right;">1,222.48</td>
+<td style="text-align: right;">−1,222.48</td>
+<td style="text-align: right;">−1,222.48</td>
+<td style="text-align: right;">−1,222.48</td>
+</tr>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">−1,222.48</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">−1,222.48</td>
+<td style="text-align: right;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">15</td>
+<td style="text-align: center;">0</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">92.50</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">132.97</td>
+<td style="text-align: right;">−132.97</td>
+<td style="text-align: right;">−1,355.45</td>
+<td style="text-align: right;">−128.40</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">44.92</td>
+<td style="text-align: right;">92.50</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">132.97</td>
+<td style="text-align: right;">−88.05</td>
+<td style="text-align: right;">−1,443.50</td>
+<td style="text-align: right;">−84.04</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">44.92</td>
+<td style="text-align: right;">92.50</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">132.97</td>
+<td style="text-align: right;">−88.05</td>
+<td style="text-align: right;">−1,531.55</td>
+<td style="text-align: right;">−83.07</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">44.92</td>
+<td style="text-align: right;">92.50</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">132.97</td>
+<td style="text-align: right;">−88.05</td>
+<td style="text-align: right;">−1,619.60</td>
+<td style="text-align: right;">−82.11</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">44.92</td>
+<td style="text-align: right;">92.50</td>
+<td style="text-align: right;">53.28</td>
+<td style="text-align: right;">209.56</td>
+<td style="text-align: right;">−164.64</td>
+<td style="text-align: right;">−1,784.24</td>
+<td style="text-align: right;">−151.75</td>
+</tr>
+<tr>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">44.92</td>
+<td style="text-align: right;">92.50</td>
+<td style="text-align: right;">76.96</td>
+<td style="text-align: right;">243.60</td>
+<td style="text-align: right;">−198.68</td>
+<td style="text-align: right;">−1,982.92</td>
+<td style="text-align: right;">−181.00</td>
+</tr>
+<tr>
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">44.92</td>
+<td style="text-align: right;">92.50</td>
+<td style="text-align: right;">76.96</td>
+<td style="text-align: right;">243.60</td>
+<td style="text-align: right;">−198.68</td>
+<td style="text-align: right;">−2,181.60</td>
+<td style="text-align: right;">−178.91</td>
+</tr>
+<tr>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">44.92</td>
+<td style="text-align: right;">92.50</td>
+<td style="text-align: right;">76.96</td>
+<td style="text-align: right;">243.60</td>
+<td style="text-align: right;">−198.68</td>
+<td style="text-align: right;">−2,380.28</td>
+<td style="text-align: right;">−176.84</td>
+</tr>
+<tr>
+<td style="text-align: center;">11</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">44.92</td>
+<td style="text-align: right;">92.50</td>
+<td style="text-align: right;">76.96</td>
+<td style="text-align: right;">243.60</td>
+<td style="text-align: right;">−198.68</td>
+<td style="text-align: right;">−2,578.96</td>
+<td style="text-align: right;">−174.79</td>
+</tr>
+<tr>
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">44.92</td>
+<td style="text-align: right;">92.50</td>
+<td style="text-align: right;">76.96</td>
+<td style="text-align: right;">243.60</td>
+<td style="text-align: right;">−198.68</td>
+<td style="text-align: right;">−2,777.64</td>
+<td style="text-align: right;">−172.77</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Total</strong></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: right;"><strong>404.26</strong></td>
+<td style="text-align: right;"><strong>925.00</strong></td>
+<td style="text-align: right;"><strong>438.08</strong></td>
+<td style="text-align: right;"><strong>3,181.91</strong></td>
+<td style="text-align: right;"><strong>−2,777.64</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong>VPN = −2,636.16</strong></td>
+</tr>
+</tbody>
+</table>
+<p>Egresos = (cloud + IA pagada) × 1.4375 (15 % de overhead y 25 % de contingencia), más la inversión del mes 0. Los meses 1 y 2 no tienen egresos porque el worker está prepagado en el piloto y la IA se cubre con los créditos. La TIR no existe: ningún flujo es positivo. Tasa mensual equivalente al 15 % anual: 1.17 %.</p>
+<p><strong>Escenarios</strong> (calculados con la misma hoja, cambiando solo las palancas de Supuestos):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Escenario</th>
+<th style="text-align: right;">Flujo acumulado a 12 meses</th>
+<th style="text-align: right;">VPN (15 %)</th>
+<th style="text-align: center;">Primer mes positivo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Base</td>
+<td style="text-align: right;">−$2,778</td>
+<td style="text-align: right;"><strong>−$2,636</strong></td>
+<td style="text-align: center;">Ninguno</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tope de 5 capítulos en el plan gratuito</td>
+<td style="text-align: right;">−$2,148</td>
+<td style="text-align: right;"><strong>−$2,073</strong></td>
+<td style="text-align: center;">Ninguno</td>
+</tr>
+<tr>
+<td style="text-align: left;">Base + 1 academia piloto a $1,000/mes desde el mes 7</td>
+<td style="text-align: right;">+$3,222</td>
+<td style="text-align: right;"><strong>+$2,736</strong></td>
+<td style="text-align: center;">Mes 7</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tope de 5 + academia piloto desde el mes 7</td>
+<td style="text-align: right;">+$3,852</td>
+<td style="text-align: right;"><strong>+$3,299</strong></td>
+<td style="text-align: center;">Mes 7</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cambiar el narrador a Claude Haiku 5.5 (sin tope, sin academia)</td>
+<td style="text-align: right;">−$2,148</td>
+<td style="text-align: right;"><strong>−$2,073</strong></td>
+<td style="text-align: center;">Ninguno</td>
+</tr>
+</tbody>
+</table>
+<p>Todos los escenarios incluyen la cuenta de Google Play (inversión inicial de $1,222.48). Con Haiku 5.5 el costo de la IA baja de $3.85 a $0.50 MXN por usuario y el costo unitario de $18.83 a $14.02 a 10 usuarios; su VPN coincide con el del tope de 5 capítulos porque, en ambos casos, los créditos de API alcanzan para los 12 meses y la IA no genera pagos en efectivo.</p>
+<p><strong>Sensibilidad al precio:</strong> con la operación del mes 12, a $59 MXN hacen falta 6 suscriptores (30 % de 20 usuarios activos, o 6 % de 100); a $99, 4; a $300, 2. Ningún precio razonable cierra con 20 usuarios: el problema es la escala, no el precio.</p>
+<h4 id="bom-verificado-08102026">«BOM» verificado (08/10/2026)</h4>
+<p>Precios consultados en las páginas oficiales de cada proveedor. Están también en la hoja <strong>BOM</strong> del libro, con fondo verde. En servicios, el «tiempo de entrega» es el tiempo de alta o activación; el único con espera real es la cuenta de Google Play, así que conviene abrirla primero.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Componente</th>
+<th style="text-align: left;">Proveedor</th>
+<th style="text-align: left;">Precio verificado</th>
+<th style="text-align: left;">Fuente</th>
+<th style="text-align: left;">Nota</th>
+<th style="text-align: left;">Tiempo de entrega</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">LLM narrador</td>
+<td style="text-align: left;">Anthropic, Claude Haiku 4.5</td>
+<td style="text-align: left;">US$1 (entrada) / US$5 (salida) por millón de tokens</td>
+<td style="text-align: left;">platform.claude.com, <em>Pricing</em></td>
+<td style="text-align: left;">Ya aparece como modelo heredado; <em>cache</em> a US$0.10 y Batch API a US$0.50 / US$2.50</td>
+<td style="text-align: left;">Inmediato (clave de API)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Alternativa de LLM</td>
+<td style="text-align: left;">Anthropic, Claude Haiku 5.5</td>
+<td style="text-align: left;">US$0.10 / US$0.50 por millón (prompts de hasta 100k tokens)</td>
+<td style="text-align: left;">platform.claude.com, <em>Pricing</em></td>
+<td style="text-align: left;">Tokenizador nuevo: ~30 % más tokens por el mismo texto. Aun así, ~7.7 veces más barato</td>
+<td style="text-align: left;">Inmediato</td>
+</tr>
+<tr>
+<td style="text-align: left;">Worker con Stockfish</td>
+<td style="text-align: left;">Railway, plan Hobby</td>
+<td style="text-align: left;">US$5 al mes, con US$5 de uso incluido</td>
+<td style="text-align: left;">railway.com/pricing</td>
+<td style="text-align: left;">El uso extra se cobra aparte (~US$20 por vCPU al mes en uso continuo). Fly.io no tiene nivel gratuito</td>
+<td style="text-align: left;">Inmediato (despliegue en minutos)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Base de datos y autenticación</td>
+<td style="text-align: left;">Supabase Free</td>
+<td style="text-align: left;">US$0 (50,000 usuarios activos, 500 MB)</td>
+<td style="text-align: left;">supabase.com/pricing</td>
+<td style="text-align: left;">Pausa el proyecto tras 1 semana sin actividad</td>
+<td style="text-align: left;">Inmediato</td>
+</tr>
+<tr>
+<td style="text-align: left;">Base de datos a escala</td>
+<td style="text-align: left;">Supabase Pro</td>
+<td style="text-align: left;">Desde US$25 al mes</td>
+<td style="text-align: left;">supabase.com/pricing</td>
+<td style="text-align: left;">100,000 usuarios activos, 8 GB</td>
+<td style="text-align: left;">Inmediato (cambio de plan)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dominio</td>
+<td style="text-align: left;">Porkbun, .com</td>
+<td style="text-align: left;">US$11.08 al año (registro y renovación)</td>
+<td style="text-align: left;">porkbun.com</td>
+<td style="text-align: left;">Un .mx cuesta US$35.57</td>
+<td style="text-align: left;">Minutos (registro y DNS)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cuenta de desarrollador</td>
+<td style="text-align: left;">Google Play</td>
+<td style="text-align: left;">US$25, pago único</td>
+<td style="text-align: left;">Ayuda de Play Console</td>
+<td style="text-align: left;">Incluida en el piloto</td>
+<td style="text-align: left;">1–2 semanas (supuesto): exige verificación de identidad y Google no publica un plazo</td>
+</tr>
+<tr>
+<td style="text-align: left;">Pasarela de pago</td>
+<td style="text-align: left;">Stripe México</td>
+<td style="text-align: left;">3.6 % + $3.00 MXN por cobro con tarjeta nacional</td>
+<td style="text-align: left;">stripe.com/mx/pricing</td>
+<td style="text-align: left;">Las comisiones excluyen IVA</td>
+<td style="text-align: left;">Inmediato en modo de prueba; cobros reales tras verificar la cuenta</td>
+</tr>
+<tr>
+<td style="text-align: left;"><em>Hosting</em> de la PWA y la landing</td>
+<td style="text-align: left;">Cloudflare Pages, plan gratuito</td>
+<td style="text-align: left;">US$0</td>
+<td style="text-align: left;">developers.cloudflare.com</td>
+<td style="text-align: left;">500 <em>builds</em> al mes, 20,000 archivos. Vercel Hobby se descartó: solo permite uso personal no comercial</td>
+<td style="text-align: left;">Inmediato (despliegue en minutos)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tipo de cambio</td>
+<td style="text-align: left;">Banxico, FIX</td>
+<td style="text-align: left;">17.978 MXN/USD (07/10/2026)</td>
+<td style="text-align: left;">banxico.org.mx</td>
+<td style="text-align: left;">El modelo usa 18.5 como colchón conservador (~3 %)</td>
+<td style="text-align: left;">—</td>
+</tr>
+</tbody>
+</table>
+<h3 id="5-ejercicios-49-vpn-tir-y-sensibilidad">5. Ejercicios 4–9 (VPN, TIR y sensibilidad)</h3>
+<p>Resueltos con las fórmulas de la clase. La TIR se calcula por interpolación lineal, como pide el curso, y se compara con la TIR exacta (función <code>TIR</code> de Excel). Los mismos cálculos están, con fórmulas, en la hoja <strong>Ejercicios</strong> del libro de Excel.</p>
+<div class="arithmatex">\[
+VPN = -A + \sum_{t=1}^{n} \frac{F_t}{(1+r)^t} \qquad TIR \approx r_1 + (r_2 - r_1)\,\frac{VPN_1}{VPN_1 - VPN_2}
+\]</div>
+<p>Regla de decisión: <strong>VPN &gt; 0</strong> y <strong>TIR &gt; tasa de descuento</strong> → el proyecto es viable.</p>
+<details class="example">
+<summary>Ejercicio 4 — InnovaTech: $250,000 USD, $60,000 USD al año por 6 años, tasa del 11 %</summary>
+<p>Como los flujos son iguales, se puede usar el factor de anualidad:</p>
+<div class="arithmatex">\[
+FA = \frac{1-(1.11)^{-6}}{0.11} = 4.2305 \qquad VPN = -250{,}000 + 60{,}000 \times 4.2305 = -250{,}000 + 253{,}832.27
+\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Año</th>
+<th style="text-align: right;">Flujo</th>
+<th style="text-align: right;">÷ (1.11)^t</th>
+<th style="text-align: right;">Valor presente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">60,000</td>
+<td style="text-align: right;">1.1100</td>
+<td style="text-align: right;">54,054.05</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: right;">60,000</td>
+<td style="text-align: right;">1.2321</td>
+<td style="text-align: right;">48,697.35</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: right;">60,000</td>
+<td style="text-align: right;">1.3676</td>
+<td style="text-align: right;">43,871.48</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: right;">60,000</td>
+<td style="text-align: right;">1.5181</td>
+<td style="text-align: right;">39,523.86</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: right;">60,000</td>
+<td style="text-align: right;">1.6851</td>
+<td style="text-align: right;">35,607.08</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: right;">60,000</td>
+<td style="text-align: right;">1.8704</td>
+<td style="text-align: right;">32,078.45</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong>Suma</strong></td>
+<td style="text-align: right;"><strong>253,832.27</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>VPN (11 %) = +$3,832.27 USD</strong></li>
+<li><strong>TIR por interpolación:</strong> con r₁ = 11 % (VPN = +3,832.27) y r₂ = 12 % (VPN = −3,315.56): 11 % + 1 % × 3,832.27 / 7,147.83 = <strong>11.54 %</strong> (exacta: 11.53 %).</li>
+<li><strong>Decisión: viable, pero por muy poco.</strong> El VPN es apenas el 1.5 % de la inversión y la TIR supera la tasa por medio punto: un error pequeño en los flujos lo vuelve inviable.</li>
+</ul>
+</details>
+<details class="example">
+<summary>Ejercicio 5 — Inversión de $50,000 USD; flujos de 7,500 / 12,000 / 20,000 / 25,000; tasa del 4 %</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Año</th>
+<th style="text-align: right;">Flujo</th>
+<th style="text-align: right;">÷ (1.04)^t</th>
+<th style="text-align: right;">Valor presente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">7,500</td>
+<td style="text-align: right;">1.0400</td>
+<td style="text-align: right;">7,211.54</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: right;">12,000</td>
+<td style="text-align: right;">1.0816</td>
+<td style="text-align: right;">11,094.67</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: right;">20,000</td>
+<td style="text-align: right;">1.1249</td>
+<td style="text-align: right;">17,779.93</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: right;">25,000</td>
+<td style="text-align: right;">1.1699</td>
+<td style="text-align: right;">21,370.10</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong>Suma</strong></td>
+<td style="text-align: right;"><strong>57,456.24</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>VPN (4 %) = −50,000 + 57,456.24 = +$7,456.24 USD</strong></li>
+<li><strong>TIR por interpolación:</strong> r₁ = 4 % (+7,456.24) y r₂ = 10 % (−1,162.83): 4 % + 6 % × 7,456.24 / 8,619.07 = <strong>9.19 %</strong> (exacta: 9.10 %).</li>
+<li><strong>Decisión: viable.</strong> Los flujos crecen con el tiempo, así que el proyecto es sensible a la tasa: por encima de ~9.1 % deja de crear valor.</li>
+</ul>
+</details>
+<details class="example">
+<summary>Ejercicio 6 — Maquinaria: $1,000,000 USD; flujos de 300K / 350K / 375K / 300K + salvamento de 150K; tasa del 10 %</summary>
+<p>El valor de salvamento se suma al flujo del año 4: 300,000 + 150,000 = 450,000.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Año</th>
+<th style="text-align: right;">Flujo</th>
+<th style="text-align: right;">÷ (1.10)^t</th>
+<th style="text-align: right;">Valor presente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">300,000</td>
+<td style="text-align: right;">1.1000</td>
+<td style="text-align: right;">272,727.27</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: right;">350,000</td>
+<td style="text-align: right;">1.2100</td>
+<td style="text-align: right;">289,256.20</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: right;">375,000</td>
+<td style="text-align: right;">1.3310</td>
+<td style="text-align: right;">281,743.05</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: right;">450,000</td>
+<td style="text-align: right;">1.4641</td>
+<td style="text-align: right;">307,356.05</td>
+</tr>
+<tr>
+<td style="text-align: center;"></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong>Suma</strong></td>
+<td style="text-align: right;"><strong>1,151,082.58</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>VPN (10 %) = −1,000,000 + 1,151,082.58 = +$151,082.58 USD</strong></li>
+<li><strong>TIR por interpolación:</strong> r₁ = 10 % (+151,082.58) y r₂ = 20 % (−72,916.67): 10 % + 10 % × 151,082.58 / 223,999.25 = <strong>16.74 %</strong> (exacta: 16.35 %).</li>
+<li><strong>Decisión: viable.</strong> Sin el valor de salvamento, el VPN bajaría en 102,452 (150,000 / 1.4641) a +$48,630: el salvamento aporta dos tercios del valor creado.</li>
+</ul>
+</details>
+<details class="example">
+<summary>Ejercicio 7 — Proyecto X contra Y: $50,000 cada uno, tasa del 8 %</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Año</th>
+<th style="text-align: right;">Flujo X</th>
+<th style="text-align: right;">VP de X</th>
+<th style="text-align: right;">Flujo Y</th>
+<th style="text-align: right;">VP de Y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">25,000</td>
+<td style="text-align: right;">23,148.15</td>
+<td style="text-align: right;">10,000</td>
+<td style="text-align: right;">9,259.26</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: right;">25,000</td>
+<td style="text-align: right;">21,433.47</td>
+<td style="text-align: right;">20,000</td>
+<td style="text-align: right;">17,146.78</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: right;">25,000</td>
+<td style="text-align: right;">19,845.81</td>
+<td style="text-align: right;">45,000</td>
+<td style="text-align: right;">35,722.45</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>Suma</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong>64,427.42</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong>62,128.49</strong></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: right;">Proyecto X</th>
+<th style="text-align: right;">Proyecto Y</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>VPN (8 %)</strong></td>
+<td style="text-align: right;"><strong>+$14,427.42</strong></td>
+<td style="text-align: right;">+$12,128.49</td>
+</tr>
+<tr>
+<td style="text-align: left;">TIR por interpolación</td>
+<td style="text-align: right;">23.45 % (20 % y 25 %)</td>
+<td style="text-align: right;">18.31 % (15 % y 20 %)</td>
+</tr>
+<tr>
+<td style="text-align: left;">TIR exacta</td>
+<td style="text-align: right;">23.38 %</td>
+<td style="text-align: right;">18.22 %</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Decisión: el proyecto X es más rentable.</strong> Gana por VPN y por TIR. Los dos suman $75,000 sin descontar, pero X recupera el dinero antes; por eso, a cualquier tasa mayor que 0 %, X vale más que Y.</li>
+</ul>
+</details>
+<details class="example">
+<summary>Ejercicio 8 — Proyecto X ($50,000; $25,000 × 3 años) a distintas tasas</summary>
+<div class="arithmatex">\[
+VPN = -50{,}000 + 25{,}000 \times \frac{1-(1+r)^{-3}}{r}
+\]</div>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Tasa</th>
+<th style="text-align: right;">Factor de anualidad</th>
+<th style="text-align: right;">VPN</th>
+<th style="text-align: left;">Decisión</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">8 %</td>
+<td style="text-align: right;">2.5771</td>
+<td style="text-align: right;"><strong>+$14,427.42</strong></td>
+<td style="text-align: left;">Aceptar</td>
+</tr>
+<tr>
+<td style="text-align: center;">15 %</td>
+<td style="text-align: right;">2.2832</td>
+<td style="text-align: right;"><strong>+$7,080.63</strong></td>
+<td style="text-align: left;">Aceptar</td>
+</tr>
+<tr>
+<td style="text-align: center;">20 %</td>
+<td style="text-align: right;">2.1065</td>
+<td style="text-align: right;"><strong>+$2,662.04</strong></td>
+<td style="text-align: left;">Aceptar, con poco margen</td>
+</tr>
+<tr>
+<td style="text-align: center;">25 %</td>
+<td style="text-align: right;">1.9520</td>
+<td style="text-align: right;"><strong>−$1,200.00</strong></td>
+<td style="text-align: left;">Rechazar</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>Cómo cambia la decisión:</strong> el VPN cae conforme sube la tasa y cambia de signo en la TIR (23.38 %). Por debajo de esa tasa el proyecto se acepta; por encima, se rechaza.</li>
+</ul>
+</details>
+<details class="example">
+<summary>Ejercicio 9 — Global Solutions: $500,000 USD; flujos de 180K / 200K / 190K / 170K; costo de capital del 14 % (verificación de la solución de la clase)</summary>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Año</th>
+<th style="text-align: right;">Flujo</th>
+<th style="text-align: right;">VP al 14 %</th>
+<th style="text-align: right;">VP al 22 %</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: right;">180,000</td>
+<td style="text-align: right;">157,894.74</td>
+<td style="text-align: right;">147,540.98</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: right;">200,000</td>
+<td style="text-align: right;">153,893.51</td>
+<td style="text-align: right;">134,372.48</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: right;">190,000</td>
+<td style="text-align: right;">128,244.59</td>
+<td style="text-align: right;">104,634.31</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: right;">170,000</td>
+<td style="text-align: right;">100,653.65</td>
+<td style="text-align: right;">76,737.84</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>VPN</strong></td>
+<td style="text-align: right;"></td>
+<td style="text-align: right;"><strong>+$40,686.48</strong></td>
+<td style="text-align: right;"><strong>−$36,714.38</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>TIR por interpolación:</strong> 14 % + 8 % × 40,686.48 / 77,400.86 = <strong>18.21 %</strong> (exacta: 17.95 %).</li>
+<li><strong>Decisión: viable</strong>, porque la TIR (≈ 18 %) supera el costo de capital (14 %).</li>
+<li><strong>Diferencias con la solución de la clase:</strong> los años 3 y 4 al 14 % dan 128,244.59 y 100,653.65 (en clase, 128,384 y 100,560), así que el VPN al 14 % es +40,686 y no +40,732; al 22 %, −36,714 y no −36,560. La conclusión no cambia: la TIR interpolada sigue en ≈ 18.2 %.</li>
+</ul>
+</details>
+<p><strong>Lo que enseñan los seis ejercicios:</strong></p>
+<ul>
+<li><strong>La interpolación lineal sobrestima la TIR</strong> en todos los casos (entre 0.01 y 0.4 puntos), porque la curva del VPN es convexa: la recta entre dos tasas queda por encima de la curva. Mientras más separadas estén r₁ y r₂, mayor el error (ejercicio 6, con 10 puntos de separación).</li>
+<li><strong>Un VPN positivo pequeño no es una decisión segura</strong> (ejercicio 4): conviene mirarlo junto con la sensibilidad a la tasa (ejercicio 8).</li>
+<li><strong>Para Zaqora,</strong> la TIR no existe en los 12 meses porque ningún flujo es positivo: no hay tasa que haga el VPN igual a cero. Por eso la viabilidad se juzga por el VPN (−$2,681) y por lo que hace falta para volverlo positivo.</li>
+</ul>
+<h3 id="6-pendientes-del-entregable">6. Pendientes del entregable</h3>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> <strong>Modelo económico:</strong> costo unitario, precio cost-plus y value-based, punto de equilibrio, flujo de caja a 12 meses y VPN al 15 % (Paso 2).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> <strong>Costo mensual de la IA</strong> por usuario activo (sección 3 y hoja «Costo IA»).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> <strong>Hoja de cálculo con fórmulas visibles</strong> (sección 4).</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> <strong>Precios del «BOM» confirmados</strong> en las páginas oficiales (08/10/2026), con <em>hosting</em> en Cloudflare Pages.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> <strong>Palancas decididas:</strong> el piloto incluye cuenta de Google Play; se busca una academia piloto desde el mes 7, sin <em>dashboard</em>.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Carta de intención de una academia</strong> antes del mes 7, para pasar la licencia del escenario objetivo al base.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Evaluar Claude Haiku 5.5</strong> como narrador: la misma escena con los dos modelos, comparando calidad del español y tono.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox"/><span class="task-list-indicator"></span></label> <strong>Prueba de disposición a pagar:</strong> preventa o lista de espera con precio ($59 MXN) entre los usuarios beta, antes de programar los pagos.</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" checked/><span class="task-list-indicator"></span></label> <strong>Ejercicios 4–9</strong> de la presentación (sección 5 y hoja «Ejercicios»).</li>
+</ul>
+<hr />
+<h2 id="5-reflexion">5) Reflexión</h2>
+<ul>
+<li><strong>Todos cobran igual, y eso no es una buena noticia.</strong> Que el <em>freemium</em> con suscripción domine en ajedrez, idiomas y hábitos dice que es lo que funciona para retener, no que vaya a funcionar con un jugador que usa Lichess porque es gratis. El benchmark marca el piso; la disposición a pagar hay que medirla.</li>
+<li><strong>Mi precio de la semana 4 estaba fuera de mercado.</strong> $300 MXN al mes es más de lo que cobra Chess.com en México por su nivel más alto. Sin este benchmark lo habría llevado así al modelo económico.</li>
+<li><strong>El dónde se cobra pesa tanto como el cuánto.</strong> La idea más útil de la semana no es un precio, sino una regla de diseño: no cobrar en el momento de la derrota. Es la misma lógica de «validar antes de corregir», aplicada al pago.</li>
+<li><strong>Un nuevo cliente puede cambiar el producto.</strong> Poner a los entrenadores como fuente principal de ingresos parece atractivo, pero obligaría a diseñar un <em>dashboard</em> y misiones asignadas, y a dejar en segundo plano al jugador que pierde solo. Primero hay que validar con el usuario para el que se diseñó Zaqora.</li>
+<li><strong>El año 1 no es un negocio, es un experimento, y está bien.</strong> El modelo del profesor da un VPN de −$2,359 MXN: con 20 usuarios no hay precio que cierre. Lo que hay que presupuestar es una validación de unos $2,500 MXN con una pregunta clara: ¿pagan al menos 2 de cada 20?</li>
+<li><strong>Un modelo financiero responde la pregunta que le haces.</strong> Mi prompt reutilizó los supuestos de la semana 4 ($300 al mes, 1,200 clientes, sueldos) y armó una startup que necesita $1.0M MXN; el del profesor, con los datos de esta semana, armó un piloto de $2,500. Ninguno está mal, pero mezclar los supuestos de dos semanas distintas sin revisarlos fue un error mío.</li>
+<li><strong>La IA no es el costo que temía.</strong> Con Haiku, el narrador cuesta $3.85 MXN por usuario al mes; lo caro es la infraestructura fija repartida entre pocos usuarios, y los usuarios gratuitos sin tope. La decisión de que el LLM solo narre (semana 5) es la que mantiene ese número bajo.</li>
+<li><strong>Verificar los precios cambió una decisión.</strong> Al confirmar el BOM apareció Claude Haiku 5.5, unas 7.7 veces más barato por capítulo que el modelo que había elegido, y se descartó Vercel Hobby porque prohíbe el uso comercial. Ninguno de los dos hallazgos estaba en las respuestas de la IA.</li>
+<li><strong>Las cifras de una IA de búsqueda también hay que verificarlas.</strong> Las dos rondas citan fuentes, pero algunos precios son de reseñas de terceros y cambian por región. Antes del modelo económico hay que confirmarlos en las páginas oficiales.</li>
+</ul>
+<h3 id="preguntas-de-cierre">Preguntas de cierre</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pregunta</th>
+<th style="text-align: left;">Respuesta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">¿Cuál es el costo unitario real del producto a 10 unidades?</td>
+<td style="text-align: left;">$18.83 MXN por usuario activo al mes a 10 usuarios ($14.85 a 100), con overhead y contingencia. El 71 % del costo directo es infraestructura <em>cloud</em> fija.</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Qué modelo de ingresos eligieron y cuál es el desafío de diseño para que funcione?</td>
+<td style="text-align: left;"><em>Freemium</em> B2C: capítulos gratis y suscripción ligera de $59 MXN al mes o temporada de $149. El desafío es la conversión: cobrar sin hacerlo justo después de una derrota, con un tope en el plan gratuito, y lograr que paguen al menos 2 de cada 20 usuarios.</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Cuánto cuesta mensualmente la IA por usuario activo?</td>
+<td style="text-align: left;">≈ $3.85 MXN (US$0.21) con Claude Haiku 4.5 y 20 capítulos al mes. Mi modelo a dos años, con un uso más intenso y colchón, lo pone en $10 MXN.</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿El VPN a 12 meses es positivo con números reales?</td>
+<td style="text-align: left;">No: <strong>−$2,359 MXN</strong> al 15 % en la respuesta de la IA y <strong>−$2,636 MXN</strong> en la hoja de cálculo, donde los créditos de API se agotan en el mes 7. Solo se vuelve positivo (+$2,736) si se suma una academia piloto desde el mes 7. El año 1 es una validación.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.tooltips"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.d7400e89.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,14 @@
+{
+  "name": "Zaqora",
+  "short_name": "Zaqora",
+  "start_url": "./activar.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f4ef",
+  "theme_color": "#c2255c",
+  "lang": "es",
+  "icons": [
+    { "src": "icono-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icono-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
