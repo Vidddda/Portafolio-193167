@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#c2255c">
+<title>Zaqora · Capítulo</title>
+<style>
+  :root {
+    --fondo: #f7f4ef;
+    --tinta: #1f1d1b;
+    --tenue: #6b6560;
+    --villano: #c2255c;
+    --villano-suave: #fbe3ec;
+    --casilla-clara: #ece6dc;
+    --casilla-oscura: #b9ad9c;
+    --acierto: #2b8a3e;
+    --linea: #d9d2c7;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--fondo); color: var(--tinta);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  .app { max-width: 360px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; }
+  header { height: 48px; display: flex; align-items: center; justify-content: center; padding: 0 12px;
+    font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .villano { height: 80px; display: flex; align-items: center; gap: 10px; padding: 0 12px; }
+  .avatar { flex: 0 0 56px; height: 56px; border-radius: 50%; background: var(--villano-suave);
+    border: 2px solid var(--villano); display: grid; place-items: center; font-size: 30px; color: var(--villano);
+    transition: transform .2s; }
+  .avatar.despierto { background: var(--villano); color: #fff; }
+  .burbuja { flex: 1; background: var(--villano-suave); border: 1px solid var(--villano); border-radius: 12px;
+    padding: 8px 10px; font-size: 15px; line-height: 1.3; color: #6d1236; min-height: 44px; }
+  .tablero-marco { position: relative; width: 352px; height: 352px; margin: 0 auto; }
+  .tablero { display: grid; grid-template-columns: repeat(8, 44px); grid-template-rows: repeat(8, 44px);
+    border: 1px solid var(--linea); }
+  .casilla { width: 44px; height: 44px; display: grid; place-items: center; font-size: 34px; line-height: 1;
+    font-family: "Segoe UI Symbol", "Noto Sans Symbols 2", "DejaVu Sans", serif; font-variant-emoji: text;
+    border: 0; padding: 0; cursor: pointer; position: relative; }
+  .clara { background: var(--casilla-clara); }
+  .oscura { background: var(--casilla-oscura); }
+  .pieza-b { color: #fff; text-shadow: 0 0 2px #000, 0 0 1px #000; }
+  .pieza-n { color: #1f1d1b; }
+  .seleccion { outline: 3px solid var(--tinta); outline-offset: -3px; }
+  .pista { outline: 3px dashed var(--tinta); outline-offset: -4px; }
+  .acierto-casilla::after { content: "✓"; position: absolute; right: 2px; bottom: 0; font-size: 14px;
+    color: #fff; background: var(--acierto); border-radius: 50%; width: 16px; height: 16px; display: grid; place-items: center; }
+  .sello { position: absolute; inset: 0; background: rgba(247, 244, 239, .92); display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 12px; padding: 24px; text-align: center; }
+  .sello .candado { font-size: 32px; }
+  .sello .rotulo { font-size: 12px; letter-spacing: .12em; color: var(--tenue); }
+  .progreso { height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--tenue); }
+  footer { height: 64px; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); display: flex; align-items: center; }
+  button.accion { width: 100%; min-height: 48px; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; }
+  .primario { background: var(--tinta); color: #fff; border: 0; }
+  .secundario { background: transparent; color: var(--tinta); border: 1px solid var(--tinta); }
+  .contorno { background: transparent; color: var(--tinta); border: 1px solid var(--linea); }
+  .contorno:disabled { color: #b5aea6; cursor: default; }
+  .sello button.accion { width: 220px; }
+  .oculto { display: none !important; }
+  @media (prefers-reduced-motion: reduce) { .avatar { transition: none; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <header id="titulo">Capítulo · Zaqora</header>
+  <div class="villano">
+    <div class="avatar" id="avatar" aria-hidden="true">♞</div>
+    <div class="burbuja" id="burbuja" role="status" aria-live="polite"></div>
+  </div>
+  <div class="tablero-marco">
+    <div class="tablero" id="tablero" role="grid" aria-label="Tablero"></div>
+    <div class="sello" id="sello">
+      <div class="candado" aria-hidden="true">🔒</div>
+      <div class="rotulo">ENCUENTRO SELLADO</div>
+      <button class="accion primario" id="btn-muestrame">Muéstrame</button>
+      <button class="accion secundario" id="btn-dejame">Déjame en paz</button>
+    </div>
+  </div>
+  <div class="progreso" id="progreso">Encuentro 1 de 1</div>
+  <footer>
+    <button class="accion contorno" id="btn-pista" disabled>Pista del villano</button>
+  </footer>
+</div>
+
+<script src="config.js"></script>
+<script>
+/* El registro de eventos usa la configuración de config.js (ver LEEME.md).
+   Si está vacía, la escena funciona igual pero no registra nada. */
+const CFG = window.ZAQORA || {};
+const SUPABASE_URL = CFG.SUPABASE_URL || "";
+const SUPABASE_KEY = CFG.SUPABASE_KEY || "";   // clave pública (anon), nunca la service_role
+
+const q = new URLSearchParams(location.search);
+const P = q.get("p") || "demo";                    // participante (P1…P5), nunca su usuario
+const V = q.get("v") || "-";                       // variante del mensaje (A, B o C)
+const FEN = q.get("fen") || "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 2 3";
+const SOL = (q.get("sol") || "f3f7").slice(0, 4);  // jugada esperada en UCI
+const COLOR = q.get("color") === "b" ? "b" : "w";  // color con el que jugó el participante
+const VILLANO = q.get("villano") || "La Horquilla Hambrienta";
+const JUGADA = q.get("jugada") || "";
+
+const T = {
+  sellado: "Esa partida dolió. Yo estaba ahí.",
+  despierto: JUGADA ? `Jugada ${JUGADA}. Aquí fue. ¿Ves lo que yo vi?` : "Aquí fue. ¿Ves lo que yo vi?",
+  fallo: "Casi. Yo también lo habría intentado. Otra vez.",
+  pista: "Te ayudo un poco: empieza por la pieza marcada.",
+  resuelto: "…Esta vez no. Nos volveremos a ver.",
+  pausa: "Está bien. Aquí te espero cuando quieras."
+};
+
+const GLIFO = { k: "♚", q: "♛", r: "♜", b: "♝", n: "♞", p: "♟" };
+const NOMBRE = { k: "rey", q: "dama", r: "torre", b: "alfil", n: "caballo", p: "peón" };
+let tablero = {};          // "e4" -> "P" / "p"
+let origen = null, intentos = 0, estado = "sellado";
+
+function registrar(evento, extra) {
+  if (!SUPABASE_URL || !SUPABASE_KEY) return;
+  fetch(`${SUPABASE_URL}/rest/v1/eventos`, {
+    method: "POST",
+    headers: { "apikey": SUPABASE_KEY, "Authorization": `Bearer ${SUPABASE_KEY}`,
+               "Content-Type": "application/json", "Prefer": "return=minimal" },
+    body: JSON.stringify({ participante: P, variante: V, evento, detalle: extra || null }),
+    keepalive: true
+  }).catch(() => {});
+}
+
+function leerFen(fen) {
+  const filas = fen.split(" ")[0].split("/");
+  const t = {};
+  filas.forEach((fila, i) => {
+    let col = 0;
+    for (const ch of fila) {
+      if (/\d/.test(ch)) { col += +ch; continue; }
+      t["abcdefgh"[col] + (8 - i)] = ch;
+      col++;
+    }
+  });
+  return t;
+}
+
+function dibujar(marcas = {}) {
+  const el = document.getElementById("tablero");
+  el.innerHTML = "";
+  const filas = COLOR === "w" ? [8,7,6,5,4,3,2,1] : [1,2,3,4,5,6,7,8];
+  const cols = COLOR === "w" ? "abcdefgh" : "hgfedcba";
+  for (const r of filas) {
+    for (const c of cols) {
+      const sq = c + r;
+      const b = document.createElement("button");
+      const oscura = ("abcdefgh".indexOf(c) + r) % 2 === 1;
+      b.className = "casilla " + (oscura ? "oscura" : "clara");
+      const pz = tablero[sq];
+      if (pz) {
+        b.textContent = GLIFO[pz.toLowerCase()];
+        b.classList.add(pz === pz.toUpperCase() ? "pieza-b" : "pieza-n");
+      }
+      b.setAttribute("aria-label", sq + (pz ? ", " + NOMBRE[pz.toLowerCase()] + (pz === pz.toUpperCase() ? " blanco" : " negro") : ""));
+      if (marcas[sq]) b.classList.add(marcas[sq]);
+      b.onclick = () => tocar(sq);
+      el.appendChild(b);
+    }
+  }
+}
+
+function decir(texto) { document.getElementById("burbuja").textContent = texto; }
+
+function tocar(sq) {
+  if (estado !== "despierto") return;
+  if (!origen) {
+    if (!tablero[sq]) return;
+    origen = sq;
+    dibujar({ [sq]: "seleccion" });
+    return;
+  }
+  if (sq === origen) { origen = null; dibujar(); return; }
+  const jugada = origen + sq;
+  intentos++;
+  if (jugada === SOL) {
+    tablero[sq] = tablero[origen];
+    delete tablero[origen];
+    estado = "resuelto";
+    dibujar({ [sq]: "acierto-casilla" });
+    decir(T.resuelto);
+    document.getElementById("avatar").classList.remove("despierto");
+    document.getElementById("progreso").textContent = "Encuentro superado";
+    document.getElementById("btn-pista").disabled = true;
+    registrar("resuelto", { intentos });
+  } else {
+    origen = null;
+    dibujar();
+    decir(T.fallo);
+    registrar("intento_fallido", { jugada, intentos });
+  }
+}
+
+document.getElementById("btn-muestrame").onclick = () => {
+  estado = "despierto";
+  document.getElementById("sello").classList.add("oculto");
+  document.getElementById("avatar").classList.add("despierto");
+  document.getElementById("btn-pista").disabled = false;
+  decir(T.despierto);
+  dibujar();
+  registrar("muestrame");
+};
+document.getElementById("btn-dejame").onclick = () => {
+  estado = "pausa";
+  decir(T.pausa);
+  document.getElementById("btn-muestrame").textContent = "Ya estoy listo";
+  document.getElementById("btn-dejame").classList.add("oculto");
+  registrar("dejame_en_paz");
+};
+document.getElementById("btn-pista").onclick = () => {
+  if (estado !== "despierto") return;
+  origen = null;
+  dibujar({ [SOL.slice(0, 2)]: "pista" });
+  decir(T.pista);
+  registrar("pista");
+};
+
+document.getElementById("titulo").textContent = `Capítulo · ${VILLANO}`;
+tablero = leerFen(FEN);
+dibujar();
+decir(T.sellado);
+if (q.get("vista") === "despierto") document.getElementById("btn-muestrame").click();  // solo para capturas
+try {
+  if (!sessionStorage.getItem("abrio")) { registrar("abrio"); sessionStorage.setItem("abrio", "1"); }
+} catch (e) { registrar("abrio"); }
+</script>
+</body>
+</html>
