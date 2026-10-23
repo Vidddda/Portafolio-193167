@@ -6,7 +6,7 @@
 - **Curso:** _Proyecto de Ingeniería IV_
 - **Equipo:** _David López Ramírez_
 - **Fecha:** _15/10/2026_
-- **Descripción breve:** _Con el concepto **Ghost Engine** elegido (semana 6) y su modelo económico (semana 7), esta semana se formuló la pregunta más riesgosa de **Zaqora** —si un jugador que acaba de perder abre el capítulo de su villano— y se construyó el prototipo mínimo para responderla: un prototipo de experiencia de baja resolución, en modo «mago de Oz», con avisos push de la app en dos tonos. En paralelo, el concepto pasa por una revisión de diseño para manufactura (DFM) adaptada a un producto de software._
+- **Descripción breve:** _Con el concepto **Ghost Engine** elegido (semana 6) y su modelo económico (semana 7), esta semana se formuló la pregunta más riesgosa de **Zaqora** —si un jugador que acaba de perder abre el capítulo de su villano— y se construyó el prototipo mínimo para responderla: un prototipo de experiencia de baja resolución, en modo «mago de Oz», con avisos push de la app en dos tonos. El prototipo se probó de punta a punta con el equipo; la prueba con usuarios del segmento no se realizó. En paralelo, el concepto pasa por una revisión de diseño para manufactura (DFM) adaptada a un producto de software._
 
 ---
 
@@ -110,7 +110,7 @@ El supuesto de pago va después: antes de saber si alguien paga, hay que saber s
 
 *Capturas de la escena de ejemplo a 360 px de ancho. En la prueba, cada enlace lleva la posición real de la derrota del participante.*
 
-**Prueba de funcionamiento (15/10/2026).** Antes de invitar a los participantes, el prototipo se probó de punta a punta con un celular real y una partida real del equipo:
+**Prueba de funcionamiento (15/10/2026).** El prototipo se probó de punta a punta con un celular real y partidas reales del propio equipo:
 
 | Paso | Qué se comprobó | Resultado |
 | :--- | :--- | :---: |
@@ -121,8 +121,8 @@ El supuesto de pago va después: antes de saber si alguien paga, hay que saber s
 | Registro | Supabase guarda los eventos de la escena con la hora | ✅ |
 | Detección de derrotas | El script detecta una derrota real en Lichess, toma la posición antes del error y arma el aviso | ✅ |
 
-!!! warning "Prueba con usuarios: programada para el 16, 17 y 18 de octubre"
-    La prueba con los participantes todavía no se ha podido hacer porque necesita **3 días seguidos**: el aviso solo llega cuando el jugador pierde una partida real, y cada participante debe perder al menos dos veces para recibir los dos tonos. Se hará el **viernes 16, sábado 17 y domingo 18 de octubre de 2026**, cuando los participantes juegan más. El comportamiento se registra solo en Supabase y se pasa después a la hoja de observación, que calcula el umbral de éxito y la tasa de apertura por tono.
+!!! warning "Prueba con usuarios: no realizada"
+    La prueba con jugadores del segmento estaba programada para el 16, 17 y 18 de octubre de 2026, pero **no se realizó**. La única prueba hecha es la de funcionamiento del equipo (tabla de arriba). Por eso no hay evidencia de comportamiento de usuarios: el supuesto más riesgoso sigue **sin validar**, y el reporte de prototipo lo indica así en lugar de llenar resultados que no existen. El prototipo quedó publicado y listo para correr la prueba en cuanto haya participantes.
 
 ### Paso 4 — Revisión DFM del concepto
 
@@ -365,16 +365,16 @@ El plan completo está en el Paso 2: supuesto, pregunta precisa, prototipo de ex
 | **Concepto** | Zaqora — Ghost Engine |
 | **Tipo de prototipo** | Experiencia |
 | **Resolución** | Baja (mago de Oz) |
-| **Materiales y tiempo** | PWA mínima (activación de avisos y escena), script en Python con la API de Lichess, python-chess y Web Push, y Supabase Free. Construcción y prueba de funcionamiento: 15/10/2026. *Falta el tiempo total tras la prueba.* |
+| **Materiales y tiempo** | PWA mínima (activación de avisos y escena), script en Python con la API de Lichess, python-chess y Web Push, y Supabase Free. Construcción, configuración y prueba de funcionamiento en un día (15/10/2026). |
 | **Pregunta que respondía** | ¿Puede un jugador de Lichess que acaba de perder abrir y terminar el capítulo de su villano sin que nadie se lo pida ni le explique qué es? |
-| **Evidencia recolectada — usuario 1** | *Pendiente (comportamiento, no opinión)* |
-| **Evidencia recolectada — usuario 2** | *Pendiente* |
-| **Evidencia recolectada — usuario 3** | *Pendiente* |
-| **¿Se validó el supuesto?** | *Pendiente: Sí / No / Parcialmente* |
-| **Por qué** | *Pendiente* |
-| **Aprendizaje clave** | *Pendiente* |
-| **Cambio al diseño** | *Pendiente* |
-| **Siguiente hipótesis a prototipar** | *Pendiente* |
+| **Evidencia recolectada — usuario 1** | No hay: la prueba con usuarios del segmento no se realizó. La única prueba fue la de funcionamiento del equipo, que no cuenta como evidencia de usuario: el equipo ya sabía qué esperaba encontrar. |
+| **Evidencia recolectada — usuario 2** | No hay (prueba con usuarios no realizada). |
+| **Evidencia recolectada — usuario 3** | No hay (prueba con usuarios no realizada). |
+| **¿Se validó el supuesto?** | **No se puede determinar.** |
+| **Por qué** | Sin jugadores del segmento no hay comportamiento que medir. La prueba del equipo solo demuestra que el prototipo funciona técnicamente: el aviso llega, la escena se abre, los eventos se registran y la derrota se detecta. No dice nada sobre si un jugador que acaba de perder abriría el aviso. |
+| **Aprendizaje clave** | El canal real es factible y barato: un aviso push de la PWA llega al celular en el momento de la derrota sin servidor propio de análisis, con servicios gratuitos. Y el momento clave depende del análisis: en la prueba hubo que pedir a mano el análisis de la partida en Lichess; sin él, no hay posición del error que mostrar. |
+| **Cambio al diseño** | El análisis de la partida debe ocurrir dentro de Zaqora (Stockfish en el navegador, como propuso la revisión DFM) y no depender de que el jugador pida el análisis en Lichess. Además, el aviso sale de la app y no por WhatsApp, para medir el canal real. |
+| **Siguiente hipótesis a prototipar** | La misma, todavía sin validar: un jugador que acaba de perder abre el aviso del villano y termina el encuentro, y el tono validante retiene más que el burlón. Se prueba con el prototipo ya publicado. Después: que al menos 2 de cada 20 usuarios paguen \$59 al mes. |
 
 ### 3. Revisión DFM y BOM actualizado
 
@@ -433,25 +433,30 @@ La página del curso plantea cuatro preguntas de circularidad pensadas para hard
 - [x] **Mensajes de la prueba** en las dos variantes de tono.
 - [x] **Prototipo construido:** escena web, detector de derrotas y registro opcional de comportamiento (Paso 3).
 - [x] **Prototipo publicado y probado de punta a punta** con un celular real y una partida real (15/10/2026).
-- [ ] **Probar con al menos 3 usuarios** (idealmente 5) el viernes 16, sábado 17 y domingo 18 de octubre, y llenar la hoja de observación.
+- [ ] **Probar con al menos 3 usuarios** (idealmente 5): no se realizó en la fecha programada (16–18 de octubre). El prototipo está listo para correrla.
 - [x] **Revisión DFM** (Paso 4).
 - [x] **Mejoras DFM aplicadas:** BOM actualizado y nuevo costo unitario (sección 3).
 - [x] **Mensajes ajustados a la revisión DFM:** los dos tonos sin detalle de la jugada, y una tercera variante con detalle como alternativa.
 - [x] **Políticas de Google Play verificadas:** prueba cerrada de 12 testers durante 14 días y facturación de Google obligatoria (15 % en suscripciones).
 - [ ] **Decidir cómo cobrar en la versión de Google Play:** con la facturación de Google (15 %) o sin compras dentro de la app, cobrando solo en la PWA web.
-- [ ] **Reporte de prototipo** completo y reflexión.
+- [x] **Reporte de prototipo** con lo que hay: prueba de funcionamiento del equipo y supuesto sin validar.
+- [x] **Reflexión.**
 
 ---
 
 ## 5) Reflexión
 
-*Pendiente: se escribe después de la prueba con usuarios y de la revisión DFM.*
+- **Construí el prototipo, pero no hice la pregunta.** La semana pedía responder el supuesto más riesgoso con comportamiento real, y lo único que sé al cierre es que el prototipo funciona. Construir resultó más fácil que conseguir a cinco personas durante tres días seguidos. El supuesto que decide todo el concepto sigue sin respuesta.
+- **Probar el prototipo uno mismo no es evidencia.** Abrí el aviso porque yo lo había mandado y sabía qué contenía. La prueba de funcionamiento sirve para saber que la prueba con usuarios puede correr, no para sustituirla.
+- **Cambiar WhatsApp por la notificación de la app fue la mejor decisión de la semana.** Un mensaje personal se abre más que un aviso de una app desconocida; con WhatsApp habría obtenido un resultado inflado. Ahora el prototipo mide el canal que tendrá el producto, incluida la fricción de activar los avisos.
+- **La revisión DFM cambió el producto, no solo el costo.** Sacar el análisis del servidor bajó el costo de ~\$16 a ~\$4.72 por usuario, pero obligó a que el villano ya no cite el error exacto en el aviso. Y en la prueba de funcionamiento hubo que pedir a mano el análisis de la partida en Lichess para que hubiera escena: en el producto, ese análisis tiene que vivir en Zaqora.
+- **Lo siguiente es la prueba, no más diseño.** Todo lo demás de Zaqora —tono, precio, academias— depende de que alguien abra el aviso después de perder.
 
 ### Preguntas de cierre
 
 | Pregunta | Respuesta |
 | :--- | :--- |
-| ¿Cuál es el supuesto más riesgoso y qué prototipo lo validará? | Que un jugador que acaba de perder abra el capítulo de su villano. Lo valida un prototipo de experiencia de baja resolución en modo «mago de Oz»: avisos push de la app, disparados por un script tras derrotas reales, en dos tonos, con una escena armada sobre la posición de cada partida. |
-| ¿Qué evidencia de comportamiento capturarán? | Cuántos activan los avisos, minutos desde la derrota hasta abrir la escena, la elección en la escena («Muéstrame» o «Déjame en paz») y si termina el encuentro. No se pregunta si les gustó. |
+| ¿Cuál es el supuesto más riesgoso y qué prototipo lo validará? | Que un jugador que acaba de perder abra el capítulo de su villano; sigue sin validar porque la prueba con usuarios no se realizó. Lo valida un prototipo de experiencia de baja resolución en modo «mago de Oz»: avisos push de la app, disparados por un script tras derrotas reales, en dos tonos, con una escena armada sobre la posición de cada partida. |
+| ¿Qué evidencia de comportamiento capturarán? | Cuántos activan los avisos, minutos desde la derrota hasta abrir la escena, la elección en la escena («Muéstrame» o «Déjame en paz») y si termina el encuentro. No se pregunta si les gustó. El registro automático en Supabase ya se comprobó en la prueba de funcionamiento. |
 | ¿Cuál es el componente de mayor costo del BOM y qué alternativa DFM lo reduce? | A 20 usuarios, el worker de Stockfish en Railway (\$4.63 por usuario); a 100, Supabase Pro (\$4.63). Stockfish en el navegador elimina el primero y quedarse en Supabase Free el segundo; cambiar a Claude Haiku 5.5 baja el narrador de \$3.85 a \$0.50. El costo unitario pasa de \$16.18 a \$4.72 a 20 usuarios. Por usuario de pago, el costo más grande ya es la comisión de Stripe (\$5.94 por cobro). |
 | ¿Cuántas partes tiene la «carcasa» y cómo reducirlas? | Siete servicios integrados. Mover Stockfish al navegador y el cron a Supabase quita Railway: quedan seis servicios, una sola cuenta de pago (Anthropic) en lugar de tres y un solo lenguaje (TypeScript). Las horas de integración no bajan (~64 h), pero el mantenimiento pasa de ~4 h a ~2 h al mes. |
