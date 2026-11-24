@@ -35,14 +35,14 @@ Minutos después de una derrota en Lichess, un villano que encarna el error recu
 
 </div>
 
-**Enlaces:** [repositorio](https://github.com/Vidddda/Portafolio-193167) · [prototipo publicado](prototipo/activar.html) · landing (por publicar) · video del pitch (por grabar) · video de respaldo de la demo (por grabar)
+**Enlaces:** [repositorio](https://github.com/Vidddda/Portafolio-193167) · [Zaqora (prototipo publicado)](prototipo/inicio.html) · landing (por publicar) · video del pitch (por grabar) · video de respaldo de la demo (por grabar)
 
-**Estado en una oración:** el prototipo detecta una derrota real en Lichess, envía el aviso del villano y abre la escena con la posición del error, pero ningún jugador externo lo ha probado todavía y el narrador con IA solo existe en diseño.
+**Estado en una oración:** el jugador entra con su cuenta de Lichess, sus últimas 5 derrotas se vuelven capítulos con historia de IA y cada derrota nueva le llega sola como un reto, sin la laptop del equipo; un jugador externo lo probó y sus seis observaciones cambiaron el producto, pero todavía no se sabe si alguien que acaba de perder abre el reto.
 
 | | |
 | :--- | :--- |
-| **Versión y fecha** | Versión 1, 23/11/2026 |
-| **Qué falta** | Enlaces a la landing publicada y a los dos videos; reescribir el estado después de las pruebas con usuarios. |
+| **Versión y fecha** | Versión 2, 24/11/2026 |
+| **Qué falta** | Enlaces a la landing publicada y a los dos videos; cuatro sesiones de prueba más y la prueba de campo. |
 
 ---
 
@@ -140,68 +140,74 @@ Minutos después de una derrota en Lichess, un villano que encarna el error recu
 
 | | |
 | :--- | :--- |
-| **Versión y fecha** | Versión 1.0, semana 5 (24/09/2026); estado actualizado el 23/11/2026 |
+| **Versión y fecha** | Versión 1.0, semana 5 (24/09/2026); estado actualizado el 24/11/2026 |
 | **Decisión** | 16 requerimientos en cuatro categorías (4 por categoría), cada uno con su criterio de verificación. *First-iteration product:* una PWA en la que el jugador conecta su Lichess, recibe un capítulo con el villano de su error más frecuente y lo juega, sin que el equipo esté presente. |
 | **Evidencia** | [PDS completo (semana 5)](pi4_s5.md#4-entregable-pds-de-zaqora) |
 | **Qué cambió** | La revisión DFM (semana 8) movió el análisis del servidor al navegador: RI-01 cambia (Stockfish solo en el cliente) y el villano ya no cita el error exacto en el aviso. |
-| **Qué falta** | Casi todos los requerimientos están pendientes: el prototipo prueba la entrada (aviso y escena), no el capítulo completo. |
+| **Qué falta** | El rival que juega contra el jugador (RD-01, RD-03, RI-01) y las mediciones formales (RD-02, RI-03). El 24/11/2026 se cumplieron, en parte o por completo, el análisis, los villanos por patrón, los capítulos de varios encuentros y la plantilla de respaldo. |
 
 | ID | Requerimiento (resumen) | Estado | Prueba |
 | :--- | :--- | :---: | :--- |
-| RF-01 | Análisis con Stockfish ≥ 16 y clasificación por caída de Win% | ⏳ | Hoy se usan las evaluaciones de Lichess |
-| RF-02 | Taxonomía de 8–12 patrones, un villano por patrón | ⏳ | El prototipo usa un solo villano |
-| RF-03 | Capítulo de 1 villano, ≥ 3 encuentros y jefe en ≤ 20 s | ⏳ | El prototipo tiene un encuentro |
-| RF-04 | Evento narrativo tras derrotas, sin consejos fuera de la ficción | ✅ parcial | Escena del prototipo: solo voz del villano, sin Elo ni barra de evaluación |
+| RF-01 | Análisis con Stockfish ≥ 16 y clasificación por caída de Win% | ✅ parcial | Stockfish 19 analiza cada derrota y clasifica por caída de Win% con los umbrales del PDS (≥ 30 / 20 / 10); falta medir el F1 contra profundidad 24 |
+| RF-02 | Taxonomía de 8–12 patrones, un villano por patrón | ✅ parcial | 5 patrones con su villano (tiempo, pieza sin defensa, apertura, final, medio juego); faltan 3 a 7 más |
+| RF-03 | Capítulo de 1 villano, ≥ 3 encuentros y jefe en ≤ 20 s | ✅ parcial | Hasta 3 encuentros por capítulo (los errores más grandes); falta el «jefe» y medir el tiempo (el análisis tarda unos 3 s por partida) |
+| RF-04 | Evento narrativo tras derrotas, sin consejos fuera de la ficción | ✅ | El villano reta y el consejero del bando guía, siempre dentro de la ficción; sin Elo ni barra de evaluación |
 | RD-01 | Bandas de dificultad del rival | ⏳ | — |
 | RD-02 | Etiquetador de patrones con macro-F1 ≥ 0.70 | ⏳ | — |
 | RD-03 | Jugada del villano en p95 ≤ 3 s | ⏳ | — |
-| RD-04 | Diálogo del LLM con máximo 4 s y plantilla de respaldo | ⏳ | Prueba T5 |
+| RD-04 | Diálogo del LLM con plantilla de respaldo | ✅ | Prueba T5 con una falla real: Cloudflare retiró el modelo y Zaqora siguió con plantillas. El diálogo se genera antes de enviar el aviso, así que no bloquea la escena |
 | RI-01 | Stockfish WASM en el cliente | ⏳ | Revisión DFM (semana 8) |
-| RI-02 | Lichess por API con espera tras HTTP 429 | ✅ parcial | El detector espera 60 s tras un 429; usa el nombre de usuario, sin OAuth |
+| RI-02 | Lichess por OAuth 2.0 + PKCE, NDJSON y espera tras HTTP 429 | ✅ | «Entrar con Lichess» con PKCE y sin permisos extra; el detector espera 60 s tras un 429 y se identifica ante Lichess |
 | RI-03 | WCAG 2.2 AA, destinos táctiles ≥ 24 px | ✅ parcial | Escena con botones de 48 px y casillas de 44 px; falta auditoría con axe y lectores de pantalla |
-| RI-04 | El LLM recibe solo hechos del motor, sin datos personales | ⏳ | — |
+| RI-04 | El LLM recibe solo hechos del motor, sin datos personales | ✅ | La IA recibe color, ritmo, apertura, jugada, pieza y casilla; nunca el usuario ni el FEN. El validador rechaza casillas inventadas y soluciones reveladas |
 | RR-01 | Costo ≤ \$30 MXN por usuario activo al mes | ✅ | \$0.80 a 100 usuarios y \$4.00 a 20 ([semana 8](pi4_s8.md#3-revision-dfm-y-bom-actualizado)) |
-| RR-02 | ≥ 60 % de las palabras desde plantillas | ✅ en el prototipo | 100 % plantillas |
+| RR-02 | ≥ 60 % de las palabras desde plantillas | ❌ por decisión | Con la historia de IA, la mayoría del texto ya no es de plantilla. Se cambió porque el primer participante pidió una historia; el tope de costo (RR-01) se sigue cumpliendo. Hay que reescribir este requerimiento |
 | RR-03 | Licencia GPLv3 de Stockfish | ⏳ | Verificada la obligación ([semana 9](pi4_s9.md#paso-4-regulacion-minima-viable)); falta el enlace en la app |
-| RR-04 | LFPDPPP: aviso de privacidad, ARCO, menores | ✅ parcial | Aviso de la landing y prueba solo con mayores; falta el aviso de la app completa |
+| RR-04 | LFPDPPP: aviso de privacidad, ARCO, menores | ✅ | [Aviso de privacidad de la app](prototipo/privacidad.html) publicado (24/11/2026), ARCO por correo y solo mayores de edad |
 
 ### 8. Arquitectura del sistema
 
 | | |
 | :--- | :--- |
-| **Versión y fecha** | Versión 3, semana 9 (23/11/2026) |
-| **Decisión** | **Híbrido con el cómputo pesado en el teléfono**: (1) Stockfish corre en el navegador, así no se paga servidor por partida; (2) el narrador corre en la nube, porque un modelo que escribe bien no cabe en un celular; (3) la PWA se instala desde una URL, sin tienda. Consecuencia: el aviso no puede citar la jugada exacta, solo «ya sé dónde fue». |
-| **Evidencia** | [Arquitectura de la semana 5](pi4_s5.md#diagrama-de-arquitectura) · [revisión DFM (semana 8)](pi4_s8.md#paso-4-revision-dfm-del-concepto) · prototipo funcionando de punta a punta (15/10/2026) |
-| **Qué cambió** | Semana 5: monolito en FastAPI con Stockfish en servidor, Redis y Postgres (7 servicios). Semana 8: Stockfish al navegador, cron en Supabase, sin Railway (6 servicios). Semana 9: narrador en la capa gratuita de Cloudflare Workers AI. |
-| **Qué falta** | El narrador y el análisis en el navegador no están construidos; el detector del prototipo corre en una laptop. |
+| **Versión y fecha** | Versión 4, 24/11/2026 |
+| **Decisión** | **Todo en servicios gratuitos, sin servidor propio y sin la laptop del equipo**: (1) el análisis (Stockfish 19) y el detector corren en **GitHub Actions** cada 10 minutos o a petición del jugador; (2) el narrador corre en **Cloudflare Workers AI** (Mistral Small 3.1), con plantilla de respaldo; (3) cuentas, capítulos y estado en **Supabase**, con una función que confirma la identidad con Lichess; (4) la PWA se instala desde una URL. Consecuencia: el reto llega entre segundos y unos 20 minutos después de perder, no al instante. |
+| **Evidencia** | [Arquitectura de la semana 5](pi4_s5.md#diagrama-de-arquitectura) · [revisión DFM (semana 8)](pi4_s8.md#paso-4-revision-dfm-del-concepto) · [integración del 24/11/2026 (semana 9)](pi4_s9.md#paso-1-integracion-del-sistema) |
+| **Qué cambió** | Semana 5: monolito en FastAPI con Stockfish en servidor (7 servicios). Semana 8: Stockfish al navegador y cron en Supabase, en diseño; el prototipo era un script en la laptop. 24/11/2026: el análisis se quedó en el detector (Stockfish 19, unos 3 s por partida) y el detector pasó a GitHub Actions, porque Supabase no puede correr Stockfish; entrada con OAuth de Lichess. |
+| **Qué falta** | El rival en el navegador (Stockfish WASM) para jugar contra el villano; ver si el retraso de GitHub Actions es aceptable para los jugadores. |
 
-**Por qué cada protocolo:** HTTPS con NDJSON para Lichess porque es lo que expone su API; Web Push con VAPID porque es la única forma de avisar a una PWA cerrada sin tienda; REST de Supabase porque permite insertar eventos desde el navegador con una clave pública y RLS de solo inserción.
+**Por qué cada protocolo:** HTTPS con NDJSON para Lichess porque es lo que expone su API; OAuth 2.0 con PKCE porque Lichess acepta aplicaciones sin registro y así Zaqora nunca ve la contraseña; Web Push con VAPID porque es la única forma de avisar a una PWA cerrada sin tienda; REST de Supabase con RLS y una función (*Edge Function*) para que cada jugador lea solo sus capítulos.
 
-**Prototipo actual (lo que funciona hoy):**
-
-```mermaid
-flowchart LR
-    LI["Lichess API<br/>partidas + evaluaciones"] -->|"HTTPS NDJSON<br/>cada N min"| DET["Detector de derrotas<br/>Python en la laptop"]
-    DET -->|"Web Push (VAPID)"| PUSH["Servicio push<br/>del navegador"]
-    PUSH --> SW["Service worker<br/>de la PWA"]
-    SW -->|"abre"| ESC["Escena<br/>villano + tablero"]
-    ACT["Página de activación"] -->|"suscripción"| SB[("Supabase<br/>suscripciones · eventos")]
-    DET -->|"lee suscripciones<br/>(service_role)"| SB
-    ESC -->|"eventos (anon, solo inserción)"| SB
-    LAND["Landing"] -->|"visitas · CTA · pre-registros"| SB
-```
-
-**Producto (siguiente versión):**
+**Arquitectura actual (24/11/2026):**
 
 ```mermaid
 flowchart LR
-    LI["Lichess API"] -->|"HTTPS NDJSON"| CRON["pg_cron + Edge Function<br/>(Supabase)"]
-    CRON -->|"Web Push"| SW["PWA en el celular"]
-    SW --> ESC["Escena y capítulo"]
-    ESC <-->|"UCI por mensajes"| SF["Stockfish WASM<br/>análisis y rival"]
-    ESC -->|"hechos del motor (JSON)"| NAR["Narrador<br/>Workers AI · Llama 3.1 8B"]
-    NAR -->|"frase validada<br/>o plantilla a los 4 s"| ESC
-    ESC <--> SB[("Supabase<br/>progreso · eventos")]
+    subgraph CEL["Celular del jugador · PWA"]
+        INI["Inicio<br/>capítulos · Revisar ahora"]
+        ESC["Escena<br/>villano · consejero · tablero"]
+        SW["Service worker<br/>avisos"]
+    end
+    LI["Lichess<br/>OAuth · API de partidas"]
+    subgraph SB["Supabase"]
+        FN["Función «capitulos»<br/>confirma identidad con Lichess"]
+        DB[("jugadores · capitulos<br/>estado · suscripciones · eventos")]
+    end
+    subgraph GH["GitHub Actions · cada 10 min o a petición"]
+        DET["Detector<br/>Stockfish 19"]
+    end
+    IA["Cloudflare Workers AI<br/>Mistral Small 3.1"]
+
+    INI -->|"Entrar con Lichess (PKCE)"| LI
+    INI -->|"token de Lichess"| FN
+    FN -->|"¿quién es?"| LI
+    FN <--> DB
+    FN -->|"Revisar ahora"| GH
+    DET -->|"NDJSON"| LI
+    DET -->|"hechos de la partida"| IA
+    DET <-->|"service_role"| DB
+    DET -->|"Web Push (VAPID)"| SW
+    SW --> ESC
+    ESC -->|"avance"| FN
+    ESC -->|"eventos (solo inserción)"| DB
 ```
 
 ### 9. Diseño del producto
@@ -211,8 +217,8 @@ flowchart LR
 | **Versión y fecha** | Versión 2, semana 6 (01/10/2026) |
 | **Decisión** | Concepto **C1 · Ghost Engine**: novela visual en PWA, aviso push en la voz del villano, vector plano en SVG, *tap* origen → destino. |
 | **Evidencia** | [Tabla morfológica, 3 conceptos y matriz de Pugh (semana 6)](pi4_s6.md#4-entregable-conceptos-de-diseno-de-zaqora): Ghost Engine **+39** frente a –3 (Cazador Fricción-Cero) y 0 (datum, El Entrenador Invisible); deseabilidad con 55 % del peso. La segunda matriz, con prompt propio, da el mismo ganador. |
-| **Qué cambió** | Del primer boceto (tablero que desbordaba, 947 px de alto) al presupuesto vertical de 568 px; tono del villano de burlón a validante; entrada sin OAuth, solo con el usuario de Lichess. |
-| **Qué falta** | Bestiario único de villanos; estados de jugada incorrecta, sin partidas y sin conexión; probar el tono con usuarios. |
+| **Qué cambió** | Del primer boceto (tablero que desbordaba, 947 px de alto) al presupuesto vertical de 568 px; tono del villano de burlón a validante. El 24/11/2026: **dos personajes** (el villano reta y reacciona; un consejero del bando del jugador guía y da las pistas, en una franja bajo el tablero), **bandos** con assets propios (elfos, goblins, hombres lobo, humanos) y un **bestiario** de 5 villanos por patrón de error. |
+| **Qué falta** | Ampliar el bestiario a 8–12 patrones; probar el tono y los personajes con más jugadores. |
 
 **Principios aplicados:** tecnología calmada (un solo aviso por derrota, sin recordatorios), omitir también es diseñar (sin Elo, barra de evaluación ni historial de derrotas), tarea primero e instalación después («Guarda a tu villano» aparece al terminar el primer encuentro). **Boceto con cotas:** encabezado 48 px, franja del villano 80 px, tablero 352 px con casillas de 44 px, pie 64 px ([vista frontal](pi4_s6.md#4-boceto-tecnico-del-concepto-elegido)).
 
@@ -220,11 +226,11 @@ flowchart LR
 
 | | |
 | :--- | :--- |
-| **Versión y fecha** | Versión 1, semana 8 (15/10/2026) |
+| **Versión y fecha** | Versión 2, 24/11/2026 |
 | **Decisión** | Probar primero el supuesto más riesgoso —que un jugador que acaba de perder abre el aviso del villano— con un prototipo de **experiencia** de **baja resolución** en modo «mago de Oz». |
 | **Evidencia** | [Plan, construcción y reporte (semana 8)](pi4_s8.md#4-entregable-prototipo-y-dfm-de-zaqora). Prueba de funcionamiento del 15/10/2026: el aviso llega, la escena abre, los eventos se registran y la derrota se detecta. |
 | **Qué cambió** | El aviso pasó de WhatsApp a notificación de la app para medir el canal real; los mensajes ya no dan el detalle de la jugada (revisión DFM). |
-| **Qué falta** | **La prueba con usuarios no se realizó** (estaba programada del 16 al 18 de octubre). El supuesto sigue sin validar. |
+| **Qué falta** | La prueba de la semana 8 no se realizó en su fecha. El 24/11/2026 hubo una primera sesión con un jugador externo que cambió el producto (ver la línea de tiempo), pero el supuesto central —que abre el reto justo después de perder— sigue sin validar: falta la prueba de campo. |
 
 | Fecha | Prototipo | Pregunta | Aprendizaje |
 | :--- | :--- | :--- | :--- |
@@ -232,30 +238,37 @@ flowchart LR
 | 01/10/2026 | Segunda iteración en Figma | ¿El flujo de entrada funciona sin cuenta? | Entrada con un solo campo; instalación como recompensa |
 | 15/10/2026 | PWA con avisos push, escena y detector (mago de Oz) | ¿Abre el jugador el aviso tras perder? | Técnicamente factible y gratis; sin respuesta sobre el comportamiento |
 | 23/11/2026 | Revisión del detector frontera por frontera | ¿Qué pasa si la partida no tiene análisis? | Se enviaba una posición de ejemplo; corregido para esperar el análisis ([semana 9](pi4_s9.md#paso-1-integracion-del-sistema)) |
+| 24/11/2026 | Bandos con assets propios | ¿Se puede elegir personaje y que el rival cambie? | El rival cambia por derrota entre los bandos que existan; las piezas pasaron de 39 MB a 1.9 MB |
+| 24/11/2026 | Primera sesión con un jugador externo (P1) | ¿Se entiende y se usa sin ayuda? | Seis observaciones, dos críticas (pedir el análisis a mano, instrucciones de iPhone); todas se corrigieron el mismo día ([semana 9](pi4_s9.md#paso-2-pruebas-con-usuarios)) |
+| 24/11/2026 | Stockfish local, capítulos de 3 encuentros e historia con IA | ¿Puede llegar el capítulo sin que nadie pida el análisis y con una historia? | Sí: unos 3 s de análisis por partida; la IA escribe historia y diálogos y la plantilla cubre si falla |
+| 24/11/2026 | Villano y consejero separados | ¿Quién ayuda al jugador? | El villano no puede enseñar a vencerlo; las pistas pasan al consejero del bando |
+| 24/11/2026 | Entrar con Lichess, Inicio y detector en GitHub Actions | ¿Funciona sin la laptop y con el historial del jugador? | El primer contacto convierte sus últimas 5 derrotas en capítulos; «Revisar ahora» corre el detector en 31 s |
 
 ### 11. Manufactura, DFM y circularidad
 
 | | |
 | :--- | :--- |
-| **Versión y fecha** | Versión 3, semana 8 (actualización del 23/11/2026) |
+| **Versión y fecha** | Versión 4, 24/11/2026 |
 | **Decisión** | Volumen objetivo: piloto de 20 usuarios y hasta 1,000 activos al año 5. «Manufactura» = despliegue en servicios con capa gratuita. Tres cambios DFM: Stockfish al navegador, narrador más barato (capa gratuita de Workers AI) y Supabase Free hasta el año 3. |
 | **Evidencia** | [Revisión DFM y BOM actualizado (semana 8)](pi4_s8.md#3-revision-dfm-y-bom-actualizado) · [BOM verificado (semana 7)](pi4_s7.md#bom-verificado-08102026) · [Economía circular](pi4_s8.md#4-economia-circular) |
 | **Qué cambió** | Costo por usuario activo de \$16.18 (semana 7) a \$4.72 (DFM) y a \$4.00 (IA gratuita) a 20 usuarios. Servicios de 7 a 6; cuentas de pago de 3 a 1. |
-| **Qué falta** | Comprobar la calidad del español del modelo gratuito; decidir si se publica en Google Play (prueba cerrada de 12 testers durante 14 días y facturación de Google al 15 %). |
+| **Qué falta** | Medir el consumo real de la IA por capítulo; decidir si se publica en Google Play (prueba cerrada de 12 testers durante 14 días y facturación de Google al 15 %). |
 
 **BOM final (por mes, piloto):**
 
 | Componente | Especificación | Precio unitario | Proveedor | Tiempo de entrega |
 | :--- | :--- | :--- | :--- | :--- |
-| Narrador | Llama 3.1 8B, 10,000 neurons al día gratis (~148 capítulos) | US\$0; excedente a precio de Haiku 5.5 (US\$0.10 / US\$0.50 por millón de tokens) | Cloudflare Workers AI | Inmediato |
-| Análisis y rival | Stockfish WASM en el navegador | US\$0 | Código abierto (GPLv3) | — |
+| Narrador | Mistral Small 3.1 (Apache 2.0), dentro de la capa gratuita de 10,000 neurons al día (~190 capítulos, estimado) | US\$0; excedente a US\$0.351 / US\$0.555 por millón de tokens | Cloudflare Workers AI | Inmediato |
+| Análisis | Stockfish 19 en el detector | US\$0 | Código abierto (GPLv3) | — |
+| Detector | GitHub Actions cada 10 minutos y a petición | US\$0 (repositorio público) | GitHub | Inmediato |
+| Rival (siguiente versión) | Stockfish WASM en el navegador | US\$0 | Código abierto (GPLv3) | — |
 | Base de datos y cron | Supabase Free; Pro desde el año 4 | US\$0; Pro desde US\$25 al mes | Supabase | Inmediato |
-| *Hosting* de la PWA y la landing | Plan gratuito | US\$0 | Cloudflare Pages (hoy, GitHub Pages) | Inmediato |
+| *Hosting* de la PWA y la landing | Plan gratuito | US\$0 | GitHub Pages (Cloudflare Pages si se vuelve comercial) | Inmediato |
 | Dominio | .com | US\$11.08 al año | Porkbun | Minutos |
 | Cuenta de desarrollador | Pago único | US\$25 | Google Play | 1–2 semanas (supuesto) |
 | Pasarela de pago | Tarjeta nacional | 3.6 % + \$3 MXN por cobro, sin IVA | Stripe México | Inmediato en modo de prueba |
 
-**Cómo reproducir una unidad:** el [README del prototipo](#anexo-b-repositorio-readme-y-bitacoras) explica cómo crear las tablas en Supabase, generar las claves VAPID, publicar los archivos y correr el detector.
+**Cómo reproducir una unidad:** el [README del prototipo](#anexo-b-repositorio-readme-y-bitacoras) explica cómo crear las tablas y la función en Supabase, generar las claves VAPID, guardar los secretos en GitHub y activar el detector.
 
 **Circularidad:** reparabilidad (cada servicio se cambia por su API), modularidad (villanos y capítulos como plantillas de datos), ciclo de vida (derechos ARCO y borrado; falta exportar el progreso) y atemporalidad (la PWA se actualiza sola y funciona en un celular de 4 GB).
 
@@ -263,44 +276,57 @@ flowchart LR
 
 | | |
 | :--- | :--- |
-| **Versión y fecha** | Versión 1, semana 8 (15/10/2026); documentada el 23/11/2026 |
-| **Decisión** | PWA instalable desde una URL, sin tienda: [página de activación](prototipo/activar.html) y [escena](prototipo/escena.html). Conexión con la «fuente de datos» (Lichess) por un detector que envía Web Push. |
-| **Evidencia** | Wireframes y flujo de instalación ([semana 6](pi4_s6.md#5-wireframe-de-la-app)); capturas y prueba de funcionamiento ([semana 8](pi4_s8.md#paso-3-construccion-y-prueba-con-usuarios)); [repositorio](https://github.com/Vidddda/Portafolio-193167) con un commit por sesión de trabajo. |
-| **Qué cambió** | Del prototipo navegable de v0 (datos inventados) a una escena que recibe la posición real por la URL (`?fen=&sol=&color=&villano=&jugada=`). |
-| **Qué falta** | Estados de jugada incorrecta con reacción del villano, sin conexión y error; capítulo de 3 encuentros; narrador. |
+| **Versión y fecha** | Versión 2, 24/11/2026 |
+| **Decisión** | PWA instalable desde una URL, sin tienda: [Inicio](prototipo/inicio.html), [activación](prototipo/activar.html) y escena. El jugador entra con Lichess; los capítulos llegan como aviso y quedan en Inicio, ligados a su cuenta. |
+| **Evidencia** | Wireframes y flujo de instalación ([semana 6](pi4_s6.md#5-wireframe-de-la-app)); prueba de funcionamiento ([semana 8](pi4_s8.md#paso-3-construccion-y-prueba-con-usuarios)); integración y primera sesión ([semana 9](pi4_s9.md#paso-1-integracion-del-sistema)); [repositorio](https://github.com/Vidddda/Portafolio-193167) con un commit por cambio. |
+| **Qué cambió** | De una escena de un ejercicio a una app con navegación: activación por pasos, Inicio con el historial, capítulos de hasta 3 encuentros, consejero, bandos y cuenta de Lichess. |
+| **Qué falta** | Jugar contra el villano (rival con Stockfish en el navegador); un mensaje visible sin conexión. |
 
-**Formato del dato:** el detector arma el enlace de la escena con la posición antes del error (FEN), la mejor jugada (UCI), el color del jugador, el villano y el número de jugada. El aviso push lleva `{titulo, cuerpo, url, etiqueta}`; la etiqueta es el id de la partida, así que nunca se acumulan dos avisos de la misma derrota.
+**Pantallas:**
+
+| Pantalla | Qué hace |
+| :--- | :--- |
+| **Activación** | Introducción, (en iPhone) agregar a la pantalla de inicio con instrucciones ilustradas, elegir bando, entrar con Lichess y activar los avisos |
+| **Inicio** | «Comienza tu historia con tu cuenta de Lichess»; con sesión: último capítulo con su avance, capítulos anteriores, «Revisar mis partidas ahora», «Jugar en Lichess», cambiar de bando y «Salir» (borra los capítulos del teléfono y deja de recibir avisos) |
+| **Escena** | Historia en 3 partes → «Muéstrame» → encuentros con el villano arriba y el consejero abajo → «Siguiente encuentro» → «Capítulo superado» → «Jugar en Lichess» |
+
+**Formato del dato:** cada capítulo es un enlace con un parámetro `c` (JSON en base64url) que lleva la historia y, por encuentro, la posición (FEN), la solución (UCI), la jugada, el color y los diálogos del villano y del consejero. El aviso push lleva `{titulo, cuerpo, url, etiqueta}`. La tabla `capitulos` guarda ese mismo enlace con el usuario de Lichess y el avance.
 
 **Estados de la escena:**
 
 | Estado | Qué se ve | ¿Existe? |
 | :--- | :--- | :---: |
-| Cargando | Villano en paleta «dormida» | ✅ |
-| Normal (sellado) | Villano reconoce la derrota; tablero cerrado; «Muéstrame» y «Déjame en paz» | ✅ |
-| Alerta (despierto) | Posición real antes del error; pista del villano | ✅ |
-| Resuelto | Palomita en la jugada correcta | ✅ |
-| Jugada incorrecta | Se registra el intento; falta la reacción del villano | ⚠️ parcial |
-| Sin conexión | La escena ya cargada se juega sin red; el evento no se registra | ⚠️ sin mensaje visible |
-| Error (enlace sin posición) | Posición de ejemplo | ⚠️ |
+| Elegir bando | Cuatro bandos con sus piezas | ✅ |
+| Historia | 3 partes con «Continuar» | ✅ |
+| Normal (sellado) | Tablero cerrado; «Muéstrame» y «Déjame en paz» | ✅ |
+| Encuentro | Posición real; el villano reta y el consejero guía | ✅ |
+| Jugada incorrecta | El villano se burla y el consejero anima; tras 3 fallos, «Muéstrame la jugada» | ✅ |
+| Encuentro superado | Palomita y «Siguiente encuentro» | ✅ |
+| Capítulo superado | Despedida del villano y «Jugar en Lichess» | ✅ |
+| Sin historial | «Tu historia aún no empieza» y «Comienza tu historia» (abre Lichess) | ✅ |
+| Sin conexión | La escena ya cargada se juega sin red; el avance se guarda en el teléfono | ⚠️ sin mensaje visible |
 
 <div class="grid" markdown>
 
-![Escena sellada](recursos/imgs/PI4_S8/escena_sellada.png){ width="220" }
+![Escena sellada (versión de la semana 8)](recursos/imgs/PI4_S8/escena_sellada.png){ width="220" }
 
-![Escena despierta](recursos/imgs/PI4_S8/escena_despierta.png){ width="220" }
+![Escena despierta (versión de la semana 8)](recursos/imgs/PI4_S8/escena_despierta.png){ width="220" }
 
 </div>
 
-**Manual de usuario (beta):**
+*Capturas de la semana 8; la versión actual agrega los bandos, la historia y el consejero.*
 
-1. Abre en tu celular el enlace que te mandamos (por ejemplo, `…/prototipo/activar.html?p=P3`).
-2. **Android:** toca «Activar avisos del villano» y acepta el permiso. **iPhone (iOS 16.4 o más reciente):** primero toca Compartir → «Agregar a pantalla de inicio», abre Zaqora desde el ícono y ahí activa los avisos.
-3. Juega en Lichess como siempre. Cuando pierdas, en unos minutos te llegará un aviso del villano. Solo uno por derrota; si no lo abres, no insiste.
-4. Toca el aviso. Elige «Muéstrame» para ver la posición antes de tu error, o «Déjame en paz» si no quieres verla ahora.
-5. Encuentra la jugada que se te escapó tocando la pieza y luego la casilla. Si te atoras, usa «Pista del villano».
-6. Para salir de la prueba, escribe ALTO o desactiva las notificaciones de Zaqora en tu navegador.
+**Manual de usuario:**
 
-**Limitaciones conocidas:** el aviso solo llega si la derrota tiene análisis en Lichess (o en un máximo de 30 minutos con una posición de ejemplo); si el celular pasa más de 1 hora sin red, el aviso se pierde; en iPhone hay que instalar la app antes de activar los avisos.
+1. Abre Zaqora en tu celular: `vidddda.github.io/Portafolio-193167/prototipo/activar.html`. En iPhone, sigue los pasos para agregarla a tu pantalla de inicio y ábrela desde el ícono.
+2. Elige tu bando y toca **Entrar con Lichess**. Autoriza a Zaqora en Lichess: solo confirma quién eres; nunca ve tu contraseña.
+3. En Inicio, toca **Activar** y permite las notificaciones.
+4. En unos minutos llega un aviso: tus **últimas 5 derrotas** ya son capítulos. Si aún no tienes partidas, te invita a jugar en Lichess.
+5. Abre un capítulo: lee la historia, toca **Muéstrame** y encuentra la jugada que se te escapó (toca la pieza y luego la casilla). Si te atoras, pide **Pista del consejero**.
+6. Juega en Lichess como siempre. Cada derrota nueva te llega como un reto; si no quieres esperar, toca **Revisar mis partidas ahora** en Inicio.
+7. Para dejar de recibir avisos en un teléfono, toca **Salir** en Inicio.
+
+**Limitaciones conocidas:** el capítulo de una derrota llega cuando corre el detector (cada 10 minutos, con posibles retrasos de GitHub) o al tocar «Revisar ahora»; si el celular pasa más de 1 hora sin red, el aviso se pierde; en iPhone hay que instalar la app antes de activar los avisos y entrar con Lichess desde la app.
 
 ---
 
@@ -324,7 +350,7 @@ flowchart LR
 | **Modelo de ingresos y precio** | Primeros capítulos gratis; \$59 MXN al mes con IVA o temporada de \$149 | [§14](#14-costos-precio-y-viabilidad-financiera) |
 | **Canales** | Venta directa (clubes y conocidos), landing con pre-registro, comunidades y *streamers* en español | [§15](#15-go-to-market-y-economia-unitaria) |
 | **Costos** | Casi todos fijos y pequeños: dominio, cuenta de Play, Supabase Pro desde el año 4; IA en capa gratuita | [§11](#11-manufactura-dfm-y-circularidad) |
-| **Socios** | Lichess (datos, sin acuerdo formal), Cloudflare, Supabase, Stripe; una academia piloto desde el mes 7 | [§16](#16-regulacion-y-aspectos-legales) |
+| **Socios** | Lichess (cuenta y datos, sin acuerdo formal), Cloudflare (IA), Supabase (datos), GitHub (detector y página), Stripe; una academia piloto desde el mes 7 | [§16](#16-regulacion-y-aspectos-legales) |
 | **Equipo y recursos** | Una persona; código abierto (Stockfish, python-chess) | [§1](#1-equipo) |
 
 **Desafío de diseño del modelo:** cobrar sin hacerlo después de una derrota, con un tope de capítulos gratis que lleve la conversión del 5 % supuesto al 10 % que necesita la economía unitaria.
@@ -337,7 +363,7 @@ flowchart LR
 | **Decisión** | Precio de **\$59 MXN al mes con IVA**: entre el *cost-plus* (\$33–40) y el *value-based* (hasta \$79). El año 1 es una validación; el negocio se evalúa a 5 años. |
 | **Evidencia** | [Modelo económico (semana 7)](pi4_s7.md#3-modelo-economico) · [flujo a 5 años (semana 8)](pi4_s8.md#3-revision-dfm-y-bom-actualizado) · [hoja de cálculo con fórmulas](recursos/archivos/PI4_S8/Zaqora_Modelo_Economico_S8_DFM.xlsx) |
 | **Qué cambió** | VPN a 12 meses de −\$2,636 (semana 7) a −\$299 (vigente); VPN a 5 años de +\$9,281. |
-| **Qué falta** | **El costo de la IA no está medido con tokens reales**: es una estimación (20 capítulos al mes, 3,000 + 1,000 tokens por capítulo). Se mide cuando el narrador exista. |
+| **Qué falta** | **El costo de la IA no está medido con tokens reales.** El narrador ya existe (Mistral Small 3.1); la estimación es de unos 900 + 450 tokens por capítulo (US\$0.00057) y unos 190 capítulos al día gratis. Falta leer el consumo real en Cloudflare durante el piloto. |
 
 | Concepto | Resultado |
 | :--- | :--- |
@@ -377,16 +403,16 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 
 | | |
 | :--- | :--- |
-| **Versión y fecha** | Versión 1, semana 9 (23/11/2026) |
+| **Versión y fecha** | Versión 2, 24/11/2026 |
 | **Decisión** | Durante el curso, solo pre-registro con aviso de privacidad y pruebas con consentimiento de mayores de edad. Antes de cobrar: RFC, CFDI, Stripe verificado y términos que cumplan el art. 76 BIS de la LFPC. |
-| **Evidencia** | [Checklist regulatorio (semana 9)](pi4_s9.md#paso-4-regulacion-minima-viable), con texto vigente de la LFPDPPP y la LFPC, y licencias de Stockfish, Llama 3.1, Workers AI y Lichess. Aviso de privacidad de la landing (redactado, se publica con la landing). |
-| **Qué cambió** | El PDS (semana 5) ya pedía aviso de privacidad y ARCO; ahora se suman los cobros recurrentes de la LFPC (reforma del 12/12/2025). |
-| **Qué falta** | POR VERIFICAR: requisitos fiscales del SAT, alta en Stripe y costo del registro de marca. Domicilio del responsable en el aviso de privacidad. |
+| **Evidencia** | [Checklist regulatorio (semana 9)](pi4_s9.md#paso-4-regulacion-minima-viable), con texto vigente de la LFPDPPP y la LFPC, y licencias de Stockfish, Mistral Small 3.1, Workers AI, Lichess (API y OAuth). [Aviso de privacidad de la app](prototipo/privacidad.html), publicado el 24/11/2026. |
+| **Qué cambió** | El PDS (semana 5) ya pedía aviso de privacidad y ARCO; se suman los cobros recurrentes de la LFPC (reforma del 12/12/2025). Desde que se entra con Lichess, Supabase guarda el usuario de Lichess con sus capítulos y GitHub analiza las partidas: el aviso lo declara. |
+| **Qué falta** | POR VERIFICAR: requisitos fiscales del SAT, alta en Stripe y costo del registro de marca. |
 
 | Tema | Estatus |
 | :--- | :--- |
 | Datos personales (LFPDPPP, 2025) | VERIFICADO |
-| Licencias: Stockfish GPLv3, Llama 3.1, Workers AI, API de Lichess | VERIFICADO |
+| Licencias: Stockfish GPLv3, Mistral Small 3.1 (Apache 2.0), Workers AI, API y OAuth de Lichess | VERIFICADO |
 | Comercio electrónico y suscripciones (LFPC, art. 76 BIS) | VERIFICADO |
 | Google Play | VERIFICADO (semana 8) |
 | Stripe, SAT y marca en el IMPI | POR VERIFICAR |
@@ -400,27 +426,27 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 
 | | |
 | :--- | :--- |
-| **Versión y fecha** | Versión 1, semana 9 (23/11/2026) |
-| **Decisión** | Cuatro fronteras: F1 Lichess → detector, F2 detector → celular, F3 motor → narrador, F4 escena → jugador y registro. Seis pruebas T1 a T6 adaptadas a software. |
-| **Evidencia** | [Fronteras, pruebas y degradación (semana 9)](pi4_s9.md#paso-1-integracion-del-sistema) · registro del 15/10/2026 (`registro_envios.csv`) |
-| **Qué cambió** | Al revisar F1 se encontró que una derrota sin análisis se enviaba con una posición de ejemplo; se corrigió para esperar el análisis hasta 30 minutos. |
-| **Qué falta** | T1, T3, T5 y T6. |
+| **Versión y fecha** | Versión 2, 24/11/2026 |
+| **Decisión** | Cinco fronteras: F1 Lichess → detector, F2 detector → celular, F3 motor → narrador, F4 escena → jugador y registro, F5 cuenta → capítulos. Seis pruebas T1 a T6 adaptadas a software. |
+| **Evidencia** | [Fronteras, pruebas, fallas encontradas y degradación (semana 9)](pi4_s9.md#paso-1-integracion-del-sistema) · registros de las corridas en [GitHub Actions](https://github.com/Vidddda/Portafolio-193167/actions) |
+| **Qué cambió** | El detector pasó a la nube, el análisis a Stockfish y la entrada a OAuth. Se encontraron y corrigieron seis fallas de frontera el mismo día (clave VAPID mal pegada, modelo de IA retirado, ícono de iPhone sin código, entre otras). |
+| **Qué falta** | T1 con alguien nuevo, T2 con una derrota nueva, T3 y T6. |
 
 | Prueba | Resultado |
 | :--- | :--- |
-| T1 Activación sin ayuda (< 5 min) | ⏳ Pendiente con alguien externo |
-| T2 Derrota → aviso (≤ 10 min) | ⚠️ No cumple con `--cada 15`; se corre con `--cada 5` |
+| T1 Activación sin ayuda (< 5 min) | ⚠️ No cumplió en la primera sesión («complicado de seguir»); activación rehecha, falta repetir |
+| T2 Derrota → aviso (≤ 10 min) | ⚠️ Parcial: el detector corre cada 10 min y «Revisar ahora» tarda 31 s; falta medir con una derrota nueva |
 | T3 Celular sin red | ⏳ Pendiente; el aviso dura 1 hora en el servicio push |
-| T4 Autonomía de la capa gratuita | ✅ 222 usuarios activos a 20 capítulos al mes |
-| T5 Falla de la API de IA | ⏳ Pendiente en el producto |
-| T6 48 h continuas | ⏳ Pendiente |
+| T4 Autonomía de la capa gratuita | ✅ Unos 285 usuarios activos a 20 capítulos al mes (estimado) |
+| T5 Falla de la API de IA | ✅ Con una falla real: el modelo se retiró y Zaqora siguió con plantillas |
+| T6 48 h continuas | ⏳ Pendiente (ya no depende de la laptop) |
 
 | Checklist de listo | Estado |
 | :--- | :---: |
-| Funciona sin la laptop del equipo | ❌ |
+| Funciona sin la laptop del equipo | ✅ |
 | App desplegada | ✅ |
 | Landing publicada | ⏳ |
-| Flujo sin intervención | ❌ (análisis pedido a mano) |
+| Flujo sin intervención | ✅ |
 
 ### 18. Pruebas con usuarios
 
@@ -429,8 +455,17 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | **Versión y fecha** | Versión 1, semana 9 (23/11/2026) |
 | **Decisión** | Protocolo de 30 minutos con tres tareas (activar los avisos; abrir el aviso y jugar el encuentro; encontrar el precio y pre-registrarse) más una prueba de campo de 3 a 5 días. |
 | **Evidencia** | [Protocolo (semana 9)](pi4_s9.md#paso-2-pruebas-con-usuarios) |
-| **Qué cambió** | La prueba de la semana 8 se suma a esta: misma pregunta, más la tarea de la landing. |
-| **Qué falta** | **Las cinco sesiones** (tres del segmento y dos de otro equipo), la tabla por tarea con éxito sin ayuda, tiempo y SEQ, los hallazgos por severidad y la señal de negocio. **No hay ningún resultado todavía.** |
+| **Qué cambió** | La prueba de la semana 8 se suma a esta. **24/11/2026: primera sesión con un jugador externo (P1)**: seis observaciones, dos críticas, todas corregidas el mismo día ([detalle](pi4_s9.md#paso-2-pruebas-con-usuarios)). Las tareas se adaptaron a la versión nueva (entrar con Lichess; primer contacto con las 5 derrotas). |
+| **Qué falta** | Cuatro sesiones más (dos del segmento y dos de otro equipo), la tabla por tarea con éxito sin ayuda, tiempo y SEQ (en la primera no se registraron), la señal de negocio y la prueba de campo. |
+
+| # | Hallazgo de la primera sesión | Severidad (propuesta) | Cambio |
+| :---: | :--- | :--- | :--- |
+| 1 | «Complicado de seguir» | Mayor | Activación por pasos |
+| 2 | Falta una introducción | Mayor | Pantalla de introducción |
+| 3 | Instrucciones de iPhone «no intuitivas» | Crítico | Instrucciones ilustradas en 4 pasos |
+| 4 | Hay que pedir el análisis a mano | Crítico | Stockfish analiza cada derrota |
+| 5 | «Solo es un ejercicio»; quiere una historia | Mayor | Hasta 3 encuentros e historia con IA |
+| 6 | El ícono del villano se repite | Menor | El villano cambia entre bandos rivales |
 
 ### 19. Landing page
 
@@ -446,10 +481,10 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 
 | | |
 | :--- | :--- |
-| **Versión y fecha** | Versión 1, semana 9 (23/11/2026) |
-| **Decisión** | Pitch de 344 palabras (2:39) que abre con un jugador real de las entrevistas y cierra con el ask: cinco jugadores y un club o *streamer* para un piloto de 20. Demo de 7 minutos con una derrota en vivo contra la computadora de Lichess. |
+| **Versión y fecha** | Versión 2, 24/11/2026 |
+| **Decisión** | Pitch de 342 palabras (2:38) que abre con un jugador real de las entrevistas y cierra con el ask: cinco jugadores y un club o *streamer* para un piloto de 20. Demo de 7 minutos: entrar con Lichess, capítulos de las últimas derrotas, una derrota en vivo contra la computadora y «Revisar mis partidas ahora». |
 | **Evidencia** | [Guion del pitch con la evidencia de cada cifra](pi4_s9.md#paso-5-el-pitch-de-3-minutos) · [guion de la demo con plan B](pi4_s9.md#paso-6-la-demo-de-7-minutos) |
-| **Qué cambió** | Primera versión. |
+| **Qué cambió** | La tracción ahora cuenta la primera sesión con un jugador; la confesión pasó a ser «todavía no sabemos si abren el reto justo después de perder». La demo ya no usa la laptop. |
 | **Qué falta** | Grabar el pitch y verlo; tres ensayos de la demo con operador y el video de respaldo. |
 
 ---
@@ -460,11 +495,11 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 
 | | |
 | :--- | :--- |
-| **Versión y fecha** | Versión 1, 23/11/2026 |
+| **Versión y fecha** | Versión 2, 24/11/2026 |
 | **Decisión** | En el proceso, la IA generó insumos y el equipo eligió. En el producto, **el motor calcula y el LLM solo narra**, siempre con una plantilla de respaldo. |
 | **Evidencia** | Prompts del profesor y de autoría propia con sus respuestas en cada semana ([2](pi4_s2.md) a [8](pi4_s8.md)). |
-| **Qué cambió** | El narrador pasó de Claude Haiku 4.5 a Haiku 5.5 y después a la capa gratuita de Llama 3.1 en Workers AI. |
-| **Qué falta** | Medir el costo real del narrador por usuario y la calidad de su español. |
+| **Qué cambió** | El narrador pasó de Claude Haiku 4.5 a Haiku 5.5, después a Llama 3.1 en la capa gratuita de Workers AI y, cuando Cloudflare lo retiró, a **Mistral Small 3.1** (elegido tras probar 5 modelos con la misma partida). Ahora escribe la historia y los diálogos del villano y del consejero. |
+| **Qué falta** | Medir el costo real por usuario; comparar con jugadores la historia de IA contra la de plantilla (la escena registra cuál vio cada uno). |
 
 **Los cinco prompts que más cambiaron el proyecto:**
 
@@ -476,26 +511,26 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | Matriz de Pugh (semana 6) | Elegir entre 3 conceptos | Ghost Engine (+39), con la advertencia del tono | Se descartó un criterio en el que todos empataban |
 | Revisión DFM (semana 8) | Reducir costo y partes | Stockfish al navegador; costo de \$16 a \$4.72 | Se verificó cada precio en la página del proveedor |
 
-**Un caso donde la IA se equivocó:** el modelo económico de la semana 7 con prompt propio armó una startup que necesitaba \$1.0 M MXN, porque reutilizó supuestos de la semana 4 (\$300 al mes, 1,200 clientes, sueldos). Además, ninguna respuesta de IA mencionó que Vercel Hobby prohíbe el uso comercial ni que existía Claude Haiku 5.5: los dos hallazgos salieron de verificar los precios a mano.
+**Un caso donde la IA se equivocó:** el modelo económico de la semana 7 con prompt propio armó una startup que necesitaba \$1.0 M MXN, porque reutilizó supuestos de la semana 4 (\$300 al mes, 1,200 clientes, sueldos). Además, ninguna respuesta de IA mencionó que Vercel Hobby prohíbe el uso comercial ni que existía Claude Haiku 5.5: los dos hallazgos salieron de verificar los precios a mano. **En el producto:** la IA del narrador malinterpretó un dato del resumen («solo analizaste la mitad» de las derrotas, cuando era un dato interno del detector) y en otra prueba dijo «seis veces» cuando eran cinco; se quitó ese dato de lo que recibe y los números del aviso se escriben sin IA.
 
 **En el producto:**
 
 | | |
 | :--- | :--- |
-| Qué hace | Escribe la frase del villano a partir de los hechos del motor (patrón, jugada, pieza, casilla) |
-| Dónde corre | Cloudflare Workers AI (Llama 3.1 8B); el análisis, Stockfish en el navegador |
-| Qué recibe | Un JSON con hechos calculados, sin FEN crudo ni datos personales (RI-04) |
-| Qué devuelve | `{line, emotion, hint_level}`, máximo 2 frases |
-| Costo por usuario | \$0 dentro de la capa gratuita (hasta 222 usuarios activos); unos \$0.50 al mes por encima, a precio de Haiku 5.5 · **estimado, no medido** |
-| Si falla | A los 4 s se usa una plantilla; nunca se muestra un texto inválido |
+| Qué hace | Escribe la historia del capítulo (3 partes) y, por encuentro, el reto del villano, la guía del consejero y la reacción del villano |
+| Dónde corre | Cloudflare Workers AI (Mistral Small 3.1); el análisis, Stockfish 19 en el detector (GitHub Actions) |
+| Qué recibe | Un JSON con hechos calculados (color, ritmo, apertura, jugada, pieza, casilla, gravedad), sin FEN ni datos personales (RI-04) |
+| Qué devuelve | `{historia: [3], encuentros: [{antes, consejo, despues}]}`, con largos máximos; el validador rechaza casillas inventadas y soluciones reveladas |
+| Costo por usuario | \$0 dentro de la capa gratuita (unos 285 usuarios activos); unos US\$0.00057 por capítulo por encima · **estimado, no medido** |
+| Si falla | Se usa la plantilla; nunca se muestra un texto inválido. Pasó de verdad cuando Cloudflare retiró Llama 3.1 |
 | Por qué sería peor sin IA | Sin el motor (Stockfish, una red neuronal) no hay posición del error. Sin el LLM, el villano repetiría plantillas y dejaría de sonar como alguien que vio *tu* partida: HIPÓTESIS, por probar con usuarios |
 
 ### 22. Reflexión y siguientes pasos
 
 | | |
 | :--- | :--- |
-| **Versión y fecha** | Versión 1, 23/11/2026 |
-| **Decisión** | El siguiente paso es la prueba con usuarios, no más diseño. |
+| **Versión y fecha** | Versión 2, 24/11/2026 |
+| **Decisión** | El siguiente paso es la prueba con usuarios, no más diseño. La primera sesión lo confirmó: una hora con un jugador cambió más que una semana de diseño. |
 | **Evidencia** | Reflexiones de cada semana ([5](pi4_s5.md#5-reflexion), [6](pi4_s6.md#5-reflexion), [7](pi4_s7.md#5-reflexion), [8](pi4_s8.md#5-reflexion), [9](pi4_s9.md#5-reflexion)). |
 | **Qué cambió** | — |
 | **Qué falta** | El párrafo firmado de aprendizaje del semestre (lo escribe David). |
@@ -513,17 +548,17 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | Un jugador que acaba de perder abre el aviso del villano | Prueba de campo de 3 a 5 días con el prototipo publicado | 3 de 5 abren en < 30 min; 2 de 5 terminan |
 | El tono validante retiene más que el burlón | Las dos variantes en las mismas personas | Mayor apertura en la variante A |
 | 1 de cada 20 usuarios activos paga \$59 | Landing con precio y, después, preventa en el piloto | ≥ 5 % de pre-registros que aceptan pagar |
-| El modelo gratuito escribe bien en español | La misma escena con Llama 3.1 8B y con Haiku 5.5, a ciegas | El jugador no distingue o prefiere la gratuita |
+| La historia con IA retiene más que la de plantilla | La escena registra cuál vio cada jugador (`historia_leida` con su fuente) | Más encuentros superados con la de IA |
 
 **Plan de 90 días:**
 
 | Días | Qué | Resultado esperado |
 | :--- | :--- | :--- |
-| 1–14 | Cinco pruebas de usuario y prueba de campo; landing publicada | Respuesta al supuesto más riesgoso |
-| 15–45 | Narrador conectado y análisis en el navegador; detector en Supabase (sin laptop) | Flujo sin intervención |
+| 1–14 | Cuatro pruebas de usuario más y prueba de campo; landing publicada | Respuesta al supuesto más riesgoso |
+| 15–45 | Jugar contra el villano (rival con Stockfish en el navegador); ampliar el bestiario a 8–12 patrones | El capítulo completo del PDS |
 | 46–90 | Piloto de 20 usuarios con un club o *streamer*; tope de capítulos gratis | Conversión y churn medidos |
 
-**Riesgos principales:** que nadie abra el aviso (el concepto entero cae); que la conversión se quede en 5 % o menos (la economía por cliente no cierra); que Lichess limite o revoque el acceso a su API sin aviso; que se acabe o cambie la capa gratuita de IA.
+**Riesgos principales:** que nadie abra el aviso (el concepto entero cae); que la conversión se quede en 5 % o menos (la economía por cliente no cierra); que Lichess limite o revoque el acceso a su API sin aviso; que se acabe o cambie la capa gratuita de IA (ya pasó una vez: Cloudflare retiró el modelo); que GitHub retrase o pause las corridas programadas.
 
 ---
 
@@ -555,8 +590,8 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 ### Anexo C. Archivos de diseño y código
 
 - Boceto en Figma ([primera](recursos/imgs/PI4_S6/boceto_figma.png) y [segunda iteración](recursos/imgs/PI4_S6/flujo_instalacion_figma.png)) y [prototipo de v0 en video](recursos/archivos/PI4_S6/prototipo_v0.mp4).
-- Código público del prototipo: [activación](prototipo/activar.html), [escena](prototipo/escena.html), `sw.js`, `manifest.webmanifest`, `config.js` (en `docs/prototipo/` del repositorio).
-- El detector de derrotas, las claves privadas y los datos de participantes se guardan fuera del repositorio; el README explica cómo reproducirlos.
+- Código público del prototipo: [Inicio](prototipo/inicio.html), [activación](prototipo/activar.html), escena, `sesion.js`, `sw.js`, `manifest.webmanifest`, `config.js` y las piezas de los bandos (en `docs/prototipo/` del repositorio).
+- Detector de derrotas (`zaqora/detector/`) y flujo de GitHub Actions (`.github/workflows/detector.yml`). Las claves privadas viven en los secretos de GitHub y de Supabase; nunca en el repositorio.
 
 ### Anexo D. Datos crudos
 
@@ -574,7 +609,7 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 - Páginas de precios de Anthropic, Cloudflare, Supabase, Railway, Porkbun, Stripe México, Google Play Console y Banxico (BOM, semanas 7 y 8).
 - [Ley Federal de Protección de Datos Personales en Posesión de los Particulares](https://www.diputados.gob.mx/LeyesBiblio/ref/lfpdppp.htm), DOF 20-03-2025, última reforma DOF 14-11-2025.
 - [Ley Federal de Protección al Consumidor](https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPC.pdf), última reforma DOF 12-12-2025.
-- [Licencia de Stockfish (GPLv3)](https://github.com/official-stockfish/Stockfish/blob/master/Copying.txt) · [Llama 3.1 Community License](https://www.llama.com/llama3_1/license/) · [Uso de datos de Workers AI](https://developers.cloudflare.com/workers-ai/platform/data-usage/) · [Términos de servicio de Lichess](https://lichess.org/terms-of-service).
+- [Licencia de Stockfish (GPLv3)](https://github.com/official-stockfish/Stockfish/blob/master/Copying.txt) · [Mistral Small 3.1 (Apache 2.0)](https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503) · [OAuth de la API de Lichess](https://lichess.org/api#tag/oauth) · [Uso de datos de Workers AI](https://developers.cloudflare.com/workers-ai/platform/data-usage/) · [Términos de servicio de Lichess](https://lichess.org/terms-of-service).
 - Ulrich, K. T., Eppinger, S. D. y Yang, M. C. (2026). *Product Design and Development* (7.ª ed.). McGraw-Hill.
 - Nielsen, J. (2000). *Why You Only Need to Test with 5 Users*. Nielsen Norman Group.
 - Skok, D. *SaaS Metrics 2.0*. For Entrepreneurs.
