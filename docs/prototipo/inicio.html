@@ -296,7 +296,8 @@ async function sesion() {
       const local = porId.get(s.id) || {};
       porId.set(s.id, { id: s.id, q: s.enlace, villano: s.villano, fecha: s.creado, modo: s.modo, total: s.total,
                         superados: Math.max(s.superados || 0, local.superados || 0),
-                        superado: !!(s.superado || local.superado), rival: s.rival || local.rival });
+                        superado: !!(s.superado || local.superado), rival: s.rival || local.rival,
+                        cuenta: String(datos.usuario || "").toLowerCase() });   // de la cuenta: se borra al salir
     }
     capitulos = [...porId.values()].sort((a, b) => String(b.fecha).localeCompare(String(a.fecha))).slice(0, 30);
     guardar("zaqora_capitulos", JSON.stringify(capitulos));
@@ -338,7 +339,32 @@ document.getElementById("btn-revisar").onclick = async () => {
 };
 
 document.getElementById("btn-entrar").onclick = () => { registrar("entrar_lichess"); ZaqoraSesion.entrar(); };
-document.getElementById("btn-salir").onclick = async () => { await ZaqoraSesion.salir(); registrar("salio_lichess"); pintarCuenta(); };
+document.getElementById("btn-salir").onclick = async () => {
+  if (!confirm("Al salir, este teléfono deja de mostrar los capítulos de tu cuenta y de recibir sus avisos. ¿Salir?")) return;
+  registrar("salio_lichess");
+  await ZaqoraSesion.salir();
+  // Capítulos de la cuenta: fuera de este teléfono (siguen guardados en la cuenta)
+  capitulos = capitulos.filter((c) => !c.cuenta);
+  guardar("zaqora_capitulos", JSON.stringify(capitulos));
+  // Avisos: este teléfono deja de recibir los de esa cuenta
+  try {
+    const reg = await navigator.serviceWorker.getRegistration();
+    const sub = reg && await reg.pushManager.getSubscription();
+    if (sub) await sub.unsubscribe();
+  } catch (e) {}
+  if (P && /^J\d/.test(P)) {
+    try { localStorage.removeItem("zaqora_activado_" + P); localStorage.removeItem("zaqora_p"); localStorage.removeItem("zaqora_revision"); } catch (e) {}
+    P = null;
+  }
+  try { localStorage.removeItem("zaqora_activado"); } catch (e) {}
+  document.getElementById("pie").textContent = "";
+  document.getElementById("enlace-activar").href = "activar.html";
+  document.getElementById("sin-avisos").classList.remove("oculto");
+  errorSesion("");
+  pintarCuenta();
+  pintarConsejero();
+  pintarCapitulos();
+};
 
 (async () => {
   try { BANDOS = (await (await fetch("piezas/bandos.json", { cache: "no-cache" })).json()).bandos || []; } catch (e) {}

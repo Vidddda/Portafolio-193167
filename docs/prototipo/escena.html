@@ -492,7 +492,8 @@ function guardarCapitulo(cambios) {
     ["desde", "vista", "bando", "rival"].forEach((k) => limpia.delete(k));
     cap = { id: ID_CAP, q: limpia.toString(), villano: VILLANO, fecha: new Date().toISOString(),
             modo: q.get("m") === "h" ? "historia" : "derrota",
-            total: ENC.length, superados: 0, superado: false };
+            total: ENC.length, superados: 0, superado: false,
+            cuenta: window.ZaqoraSesion && ZaqoraSesion.usuario() ? ZaqoraSesion.usuario().toLowerCase() : null };
     lista.unshift(cap);
   }
   Object.assign(cap, cambios);
