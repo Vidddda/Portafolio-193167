@@ -1,0 +1,264 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Zaqora · Inicio</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#c2255c">
+<link rel="apple-touch-icon" href="icono-192.png">
+<style>
+  :root { --fondo: #f7f4ef; --tinta: #1f1d1b; --tenue: #6b6560; --linea: #d9d2c7;
+    --villano: #c2255c; --villano-suave: #fbe3ec; --acierto: #2b8a3e; --acierto-suave: #e6f2e8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--fondo); color: var(--tinta);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  .app { max-width: 380px; margin: 0 auto; min-height: 100vh; padding: 12px 16px calc(28px + env(safe-area-inset-bottom));
+    display: flex; flex-direction: column; gap: 16px; }
+  header { height: 48px; display: flex; align-items: center; justify-content: space-between; }
+  header b { font-size: 20px; }
+  .icono-btn { width: 44px; height: 44px; border: 0; background: transparent; border-radius: 10px; padding: 4px; cursor: pointer; }
+  .icono-btn img { width: 36px; height: 36px; display: block; }
+  .aviso { background: var(--villano-suave); border: 1px solid var(--villano); border-radius: 12px; padding: 10px 12px;
+    font-size: 14px; display: flex; gap: 10px; align-items: center; justify-content: space-between; }
+  .aviso a { color: var(--tinta); font-weight: 700; white-space: nowrap; }
+  .consejero { display: flex; gap: 10px; align-items: center; }
+  .avatar-c { flex: 0 0 52px; height: 52px; border-radius: 50%; background: var(--acierto-suave); border: 2px solid var(--acierto);
+    display: grid; place-items: center; font-size: 26px; color: var(--acierto); }
+  .avatar-c img { width: 42px; height: 42px; }
+  .burbuja-c { flex: 1; background: #fff; border: 1px solid var(--linea); border-radius: 12px; padding: 6px 10px; font-size: 14px; line-height: 1.35; }
+  .quien { display: block; font-size: 11px; color: var(--tenue); }
+  h2 { font-size: 13px; letter-spacing: .08em; color: var(--tenue); margin: 4px 0 0; font-weight: 600; }
+  .tarjeta { background: #fff; border: 1px solid var(--linea); border-radius: 14px; padding: 14px; display: grid; gap: 12px; }
+  .cap { display: flex; gap: 12px; align-items: center; }
+  .avatar-v { flex: 0 0 52px; height: 52px; border-radius: 50%; background: var(--villano-suave); border: 2px solid var(--villano);
+    display: grid; place-items: center; font-size: 26px; color: var(--villano); }
+  .avatar-v img { width: 42px; height: 42px; }
+  .cap b { display: block; font-size: 16px; }
+  .meta { font-size: 13px; color: var(--tenue); }
+  .barra { height: 6px; background: var(--linea); border-radius: 3px; overflow: hidden; margin-top: 6px; }
+  .barra span { display: block; height: 100%; background: var(--acierto); }
+  button.accion, a.accion { width: 100%; min-height: 48px; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer;
+    display: grid; place-items: center; text-decoration: none; border: 0; }
+  .primario { background: var(--tinta); color: #fff; }
+  .secundario { background: transparent; color: var(--tinta); border: 1px solid var(--tinta) !important; }
+  .lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .lista button { width: 100%; background: #fff; border: 1px solid var(--linea); border-radius: 12px; padding: 8px 10px; cursor: pointer;
+    display: flex; gap: 10px; align-items: center; text-align: left; color: var(--tinta); min-height: 56px; }
+  .lista .mini { flex: 0 0 40px; height: 40px; border-radius: 50%; background: var(--villano-suave); display: grid; place-items: center; }
+  .lista .mini img { width: 32px; height: 32px; }
+  .lista .txt { flex: 1; font-size: 14px; }
+  .chip { font-size: 12px; padding: 3px 8px; border-radius: 999px; background: var(--linea); white-space: nowrap; }
+  .chip.ok { background: var(--acierto-suave); color: var(--acierto); font-weight: 600; }
+  .vacio { font-size: 14px; color: var(--tenue); }
+  .bandos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  button.bando { background: #fff; color: var(--tinta); border: 1px solid var(--linea); border-radius: 12px; padding: 10px 6px; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 15px; font-weight: 600; }
+  button.bando img { width: 34px; height: 34px; }
+  button.bando .fila { display: flex; }
+  button.bando[aria-pressed="true"] { border: 3px solid var(--tinta); padding: 8px 4px; }
+  button:focus-visible, a:focus-visible { outline: 3px solid var(--villano); outline-offset: 2px; }
+  .nota { font-size: 12px; color: var(--tenue); text-align: center; }
+  .oculto { display: none !important; }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <b>Zaqora</b>
+    <button class="icono-btn" id="btn-bando" aria-label="Cambiar de bando"></button>
+  </header>
+
+  <div class="aviso oculto" id="sin-avisos">
+    <span>Los avisos del villano no están activos en este teléfono.</span>
+    <a href="activar.html" id="enlace-activar">Activar</a>
+  </div>
+
+  <div class="consejero">
+    <div class="avatar-c" id="avatar-c" aria-hidden="true">♝</div>
+    <div class="burbuja-c"><span class="quien" id="nombre-c">Tu consejero</span><span id="dice-c"></span></div>
+  </div>
+
+  <section id="s-ultimo" class="oculto">
+    <h2>TU ÚLTIMO CAPÍTULO</h2>
+    <div class="tarjeta">
+      <div class="cap">
+        <div class="avatar-v" id="ultimo-avatar" aria-hidden="true">♚</div>
+        <div style="flex:1">
+          <b id="ultimo-villano"></b>
+          <span class="meta" id="ultimo-meta"></span>
+          <div class="barra" aria-hidden="true"><span id="ultimo-barra" style="width:0"></span></div>
+        </div>
+      </div>
+      <button class="accion primario" id="btn-ultimo">Continuar</button>
+    </div>
+  </section>
+
+  <section id="s-anteriores" class="oculto">
+    <h2>CAPÍTULOS ANTERIORES</h2>
+    <ul class="lista" id="lista"></ul>
+  </section>
+
+  <section id="s-vacio" class="oculto">
+    <div class="tarjeta">
+      <p class="vacio" style="margin:0">Todavía no tienes capítulos. Cuando activas los avisos, tu primer capítulo llega en unos minutos, hecho con tus partidas recientes de Lichess. Si aún no tienes partidas, juega una.</p>
+    </div>
+  </section>
+
+  <a class="accion primario" id="btn-lichess" href="https://lichess.org/" target="_blank" rel="noopener">Jugar en Lichess</a>
+
+  <section id="s-bando" class="oculto">
+    <h2>ELIGE TU BANDO</h2>
+    <div class="bandos" id="bandos"></div>
+  </section>
+
+  <p class="nota" id="pie"></p>
+</div>
+
+<script src="config.js"></script>
+<script>
+const CFG = window.ZAQORA || {};
+const leer = (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+const guardar = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
+const q = new URLSearchParams(location.search);
+let P = q.get("p");
+if (P) guardar("zaqora_p", P); else P = leer("zaqora_p");
+
+let BANDOS = [];
+let bando = leer("zaqora_bando");
+const capitulos = (() => { try { return JSON.parse(leer("zaqora_capitulos") || "[]"); } catch (e) { return []; } })();
+
+function registrar(evento, detalle) {
+  if (!CFG.SUPABASE_URL || !P) return;
+  fetch(`${CFG.SUPABASE_URL}/rest/v1/eventos`, {
+    method: "POST", keepalive: true,
+    headers: { "apikey": CFG.SUPABASE_KEY, "Authorization": `Bearer ${CFG.SUPABASE_KEY}`,
+               "Content-Type": "application/json", "Prefer": "return=minimal" },
+    body: JSON.stringify({ participante: P, evento, detalle: detalle || null })
+  }).catch(() => {});
+}
+function img(src) { const i = document.createElement("img"); i.src = src; i.alt = ""; return i; }
+function nombreBando(id) { const b = BANDOS.find((x) => x.id === id); return b ? b.nombre : ""; }
+function fecha(iso) {
+  const d = new Date(iso);
+  if (isNaN(d)) return "";
+  const hoy = new Date(), ayer = new Date(Date.now() - 864e5);
+  if (d.toDateString() === hoy.toDateString()) return "Hoy";
+  if (d.toDateString() === ayer.toDateString()) return "Ayer";
+  return d.toLocaleDateString("es-MX", { day: "numeric", month: "short" });
+}
+function estado(c) {
+  if (c.superado) return "Superado";
+  if (c.superados) return `${c.superados} de ${c.total}`;
+  return "Nuevo";
+}
+function abrir(c) {
+  registrar("abrir_capitulo", { desde: "inicio", superado: !!c.superado });
+  location.href = "escena.html?" + c.q + "&desde=inicio";
+}
+
+function pintarConsejero() {
+  const av = document.getElementById("avatar-c");
+  if (bando) {
+    av.replaceChildren(img(`piezas/${bando}/b-clara.png`));
+    document.getElementById("nombre-c").textContent = `Consejero de los ${nombreBando(bando).toLowerCase()}`;
+    document.getElementById("btn-bando").replaceChildren(img(`piezas/${bando}/k-clara.png`));
+  }
+  const pendiente = capitulos.find((c) => !c.superado);
+  document.getElementById("dice-c").textContent =
+    !bando ? "Antes que nada: ¿de qué lado vas a estar? Elige tu bando abajo." :
+    !capitulos.length ? "Todavía no tenemos historia. Cuando llegue tu primer capítulo, aquí lo vas a encontrar." :
+    pendiente ? `${pendiente.villano} sigue esperando. Cuando quieras, volvemos.` :
+    "Vamos bien. Juega en Lichess; si pierdes, aquí estaré.";
+}
+
+function pintarCapitulos() {
+  if (!capitulos.length) {
+    document.getElementById("s-vacio").classList.remove("oculto");
+    document.getElementById("btn-lichess").textContent = "Comienza tu historia";
+    return;
+  }
+  const [u, ...resto] = capitulos;
+  document.getElementById("s-ultimo").classList.remove("oculto");
+  document.getElementById("ultimo-villano").textContent = u.villano;
+  document.getElementById("ultimo-meta").textContent =
+    `${fecha(u.fecha)} · ${u.modo === "historia" ? "Tus últimas partidas" : "Tu última derrota"} · ${estado(u)}`;
+  document.getElementById("ultimo-barra").style.width = `${Math.round(100 * (u.superado ? u.total : (u.superados || 0)) / (u.total || 1))}%`;
+  if (u.rival) document.getElementById("ultimo-avatar").replaceChildren(img(`piezas/${u.rival}/k-oscura.png`));
+  const b = document.getElementById("btn-ultimo");
+  b.textContent = u.superado ? "Repetir" : (u.superados ? "Continuar" : "Empezar");
+  b.onclick = () => abrir(u);
+  if (!resto.length) return;
+  document.getElementById("s-anteriores").classList.remove("oculto");
+  const lista = document.getElementById("lista");
+  for (const c of resto) {
+    const li = document.createElement("li");
+    const btn = document.createElement("button");
+    const mini = document.createElement("span");
+    mini.className = "mini";
+    if (c.rival) mini.appendChild(img(`piezas/${c.rival}/k-oscura.png`));
+    else mini.textContent = "♚";
+    const txt = document.createElement("span");
+    txt.className = "txt";
+    txt.innerHTML = "<b></b><br><span class='meta'></span>";
+    txt.querySelector("b").textContent = c.villano;
+    txt.querySelector(".meta").textContent = `${fecha(c.fecha)} · ${c.total} ${c.total === 1 ? "encuentro" : "encuentros"}`;
+    const chip = document.createElement("span");
+    chip.className = "chip" + (c.superado ? " ok" : "");
+    chip.textContent = estado(c);
+    btn.append(mini, txt, chip);
+    btn.setAttribute("aria-label", `${c.villano}, ${fecha(c.fecha)}, ${estado(c)}`);
+    btn.onclick = () => abrir(c);
+    li.appendChild(btn);
+    lista.appendChild(li);
+  }
+}
+
+function pintarBandos() {
+  const cont = document.getElementById("bandos");
+  cont.replaceChildren();
+  for (const b of BANDOS) {
+    const c = document.createElement("button");
+    c.className = "bando";
+    c.setAttribute("aria-pressed", String(b.id === bando));
+    const fila = document.createElement("span");
+    fila.className = "fila";
+    for (const t of ["n", "k", "q"]) fila.appendChild(img(`piezas/${b.id}/${t}-clara.png`));
+    c.append(fila, b.nombre);
+    c.onclick = () => {
+      bando = b.id;
+      guardar("zaqora_bando", bando);
+      registrar("bando", { jugador: bando, desde: "inicio" });
+      document.getElementById("s-bando").classList.add("oculto");
+      pintarBandos();
+      pintarConsejero();
+    };
+    cont.appendChild(c);
+  }
+}
+document.getElementById("btn-bando").onclick = () => {
+  document.getElementById("s-bando").classList.toggle("oculto");
+  document.getElementById("s-bando").scrollIntoView({ behavior: "smooth" });
+};
+document.getElementById("btn-lichess").addEventListener("click", () =>
+  registrar(capitulos.length ? "jugar_lichess" : "comienza_historia", { desde: "inicio" }));
+
+(async () => {
+  try { BANDOS = (await (await fetch("piezas/bandos.json", { cache: "no-cache" })).json()).bandos || []; } catch (e) {}
+  if (bando && !BANDOS.some((b) => b.id === bando)) bando = null;
+  pintarBandos();
+  if (!bando && BANDOS.length) document.getElementById("s-bando").classList.remove("oculto");
+  pintarConsejero();
+  pintarCapitulos();
+  const activos = leer("zaqora_activado") === "1" && "Notification" in window && Notification.permission === "granted";
+  if (!activos) {
+    document.getElementById("sin-avisos").classList.remove("oculto");
+    if (P) document.getElementById("enlace-activar").href = `activar.html?p=${encodeURIComponent(P)}&paso=activar`;
+  }
+  document.getElementById("pie").textContent = P ? `Participante: ${P}` : "";
+  registrar("inicio", { capitulos: capitulos.length });
+})();
+</script>
+</body>
+</html>

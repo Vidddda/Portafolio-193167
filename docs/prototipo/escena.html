@@ -76,6 +76,10 @@
     filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .35)); }
   .avatar img { width: 46px; height: 46px; display: block; }
   header { position: relative; }
+  .btn-volver { position: absolute; left: 2px; top: 2px; width: 44px; height: 44px; display: grid; place-items: center;
+    font-size: 30px; line-height: 1; color: var(--tinta); text-decoration: none; border-radius: 10px; }
+  .btn-volver:focus-visible { outline: 3px solid var(--villano); outline-offset: 1px; }
+  header span#titulo { padding: 0 44px; overflow: hidden; text-overflow: ellipsis; }
   .btn-bando { position: absolute; right: 2px; top: 2px; width: 44px; height: 44px; border: 0; background: transparent;
     border-radius: 10px; cursor: pointer; padding: 4px; }
   .btn-bando img { width: 36px; height: 36px; display: block; }
@@ -95,7 +99,8 @@
 </head>
 <body>
 <div class="app">
-  <header><span id="titulo">Capítulo · Zaqora</span>
+  <header><a class="btn-volver" id="btn-volver" href="inicio.html" aria-label="Ir al inicio">‹</a>
+    <span id="titulo">Capítulo · Zaqora</span>
     <button class="btn-bando oculto" id="btn-bando" aria-label="Cambiar de bando"></button></header>
   <div class="villano">
     <div class="avatar" id="avatar" aria-hidden="true">♞</div>
@@ -313,6 +318,8 @@ function resolverEncuentro(vista) {
   aconsejar(vista ? C.solucion : (ultimo ? C.final : C.bien));
   document.getElementById("btn-pista").disabled = true;
   registrar(vista ? "solucion_vista" : "resuelto", { encuentro: actual + 1, de: ENC.length, intentos });
+  guardarCapitulo({ superados: Math.max(actual + 1, (capitulos().find((c) => c.id === ID_CAP) || {}).superados || 0),
+                    superado: ultimo || ((capitulos().find((c) => c.id === ID_CAP) || {}).superado || false) });
   if (ultimo) {
     estado = "resuelto";
     document.getElementById("avatar").classList.remove("despierto");
@@ -443,6 +450,7 @@ function mostrarElegir() {
       pintarBandos();
       dibujar();
       registrar("bando", { jugador: JUGADOR, rival: RIVAL });
+      guardarCapitulo({ rival: RIVAL });
     };
     cont.appendChild(card);
   }
@@ -469,6 +477,25 @@ if (HISTORIA.length) {
   document.getElementById("historia").classList.remove("oculto");
   document.getElementById("btn-sigue").onclick = () => { parrafo++; mostrarParrafo(); };
   mostrarParrafo();
+}
+
+/* Capítulos guardados en el teléfono (los muestra inicio.html). Solo la dirección y el avance; nada personal. */
+const ID_CAP = String(semilla(q.get("c") || `${q.get("fen")}|${q.get("sol")}`));
+function capitulos() { try { return JSON.parse(leerGuardado("zaqora_capitulos") || "[]"); } catch (e) { return []; } }
+function guardarCapitulo(cambios) {
+  if (q.get("modo") === "nueva" || q.get("vista")) return;
+  const lista = capitulos();
+  let cap = lista.find((c) => c.id === ID_CAP);
+  if (!cap) {
+    const limpia = new URLSearchParams(location.search);
+    ["desde", "vista", "bando", "rival"].forEach((k) => limpia.delete(k));
+    cap = { id: ID_CAP, q: limpia.toString(), villano: VILLANO, fecha: new Date().toISOString(),
+            modo: q.get("m") === "h" ? "historia" : "derrota",
+            total: ENC.length, superados: 0, superado: false };
+    lista.unshift(cap);
+  }
+  Object.assign(cap, cambios);
+  guardarLocal("zaqora_capitulos", JSON.stringify(lista.slice(0, 30)));
 }
 
 /* Sin historial: el consejero invita a jugar en Lichess («Comienza tu historia»). */
@@ -511,11 +538,12 @@ async function iniciar() {
   }
   dibujar();
   if (NUEVA) modoNueva();
+  else guardarCapitulo(RIVAL ? { rival: RIVAL } : {});
   if (q.get("vista") === "despierto") document.getElementById("btn-muestrame").click();  // solo para capturas
 }
 iniciar();
 try {
-  if (!sessionStorage.getItem("abrio")) { registrar("abrio"); sessionStorage.setItem("abrio", "1"); }
+  if (!sessionStorage.getItem("abrio" + ID_CAP)) { registrar("abrio", { desde: q.get("desde") || "aviso" }); sessionStorage.setItem("abrio" + ID_CAP, "1"); }
 } catch (e) { registrar("abrio"); }
 </script>
 </body>

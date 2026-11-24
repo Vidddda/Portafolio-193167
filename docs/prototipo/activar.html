@@ -141,7 +141,7 @@
       <p>En unos minutos te llegará tu primer capítulo, hecho con tus partidas recientes de Lichess. Si todavía no tienes partidas, te diré cómo empezar.</p>
       <p>Después, juega como siempre: cada vez que pierdas, te llegará un capítulo nuevo.</p>
       <p class="nota">Si no quieres más avisos, desactiva las notificaciones de Zaqora en los ajustes de tu teléfono.</p>
-      <button class="secundario" id="btn-cambiar">Cambiar de bando</button>
+      <button id="btn-inicio">Ir a mi inicio</button>
     </div>
   </section>
 
@@ -239,10 +239,11 @@ function pintarBandos() {
   document.getElementById("btn-bando").disabled = !bandoElegido;
 }
 document.getElementById("btn-bando").onclick = () => {
-  if (leer("zaqora_activado") === "1" && Notification.permission === "granted") mostrar("listo");
+  if (leer("zaqora_activado") === "1" && Notification.permission === "granted") irAlInicio();
   else { prepararActivar(); mostrar("activar"); }
 };
-document.getElementById("btn-cambiar").onclick = () => mostrar("bando");
+function irAlInicio() { location.replace("inicio.html" + (P ? `?p=${encodeURIComponent(P)}` : "")); }
+document.getElementById("btn-inicio").onclick = irAlInicio;
 
 /* ---------- activar ---------- */
 function prepararActivar() {
@@ -329,7 +330,8 @@ btn.onclick = async () => {
   animarVillano();
   const siguiente = BANDOS.length ? "bando" : "activar";
   if (siguiente === "activar") prepararActivar();
-  if (leer("zaqora_activado") === "1" && puedeAvisar && Notification.permission === "granted") mostrar("listo");
+  // Ya activado: el ícono de Zaqora lleva directo a Inicio.
+  if (leer("zaqora_activado") === "1" && puedeAvisar && Notification.permission === "granted") { irAlInicio(); return; }
   // En iPhone, la app de la pantalla de inicio no comparte memoria con Safari: si está instalada, ya vio la introducción.
   else if (esIOS && instalada) mostrar(siguiente);
   else if (esIOS) mostrar(leer("zaqora_intro") === "1" ? (enSafari ? "instalar" : "safari") : "intro");
