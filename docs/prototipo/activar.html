@@ -29,13 +29,21 @@
   .ok { color: #2b8a3e; } .error { color: #c92a2a; }
   .oculto { display: none; }
   ol { margin: 0; padding-left: 20px; font-size: 15px; line-height: 1.5; }
+  .avatar img { width: 46px; height: 46px; }
+  h2 { font-size: 16px; margin: 0 0 8px; }
+  .bandos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  button.bando { background: #fff; color: var(--tinta); border: 1px solid #d9d2c7; min-height: 0; padding: 8px 6px;
+    display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 14px; }
+  button.bando img { width: 34px; height: 34px; }
+  button.bando .fila { display: flex; }
+  button.bando[aria-pressed="true"] { border: 2px solid var(--tinta); }
 </style>
 </head>
 <body>
 <div class="app">
   <h1>Zaqora</h1>
   <div class="villano">
-    <div class="avatar" aria-hidden="true">♞</div>
+    <div class="avatar" id="avatar" aria-hidden="true">♞</div>
     <div class="burbuja">Cuando pierdas en Lichess, te aviso aquí. No te voy a perseguir: un aviso por derrota, nada más.</div>
   </div>
 
@@ -46,6 +54,12 @@
       <li>Elige <strong>Agregar a pantalla de inicio</strong>.</li>
       <li>Abre Zaqora desde el ícono nuevo y vuelve a esta pantalla.</li>
     </ol>
+  </div>
+
+  <div id="elegir" class="oculto">
+    <h2>Elige tu bando</h2>
+    <div class="bandos" id="bandos"></div>
+    <p class="nota" style="margin-top:8px">Tus piezas serán de este bando; el villano llegará con otro. Puedes cambiarlo después.</p>
   </div>
 
   <div id="paso">
@@ -80,6 +94,31 @@ if (!("serviceWorker" in navigator) || !("PushManager" in window)) {
   if (!esIOS) est.textContent = "Este navegador no permite avisos. Prueba con Chrome en Android.";
 }
 if (!P) btn.disabled = true;
+
+/* Elección de bando (la escena la lee del mismo almacenamiento local). */
+(async () => {
+  let bandos = [];
+  try { bandos = (await (await fetch("piezas/bandos.json", { cache: "no-cache" })).json()).bandos || []; } catch (e) {}
+  if (!bandos.length) return;
+  let actual = null;
+  try { actual = localStorage.getItem("zaqora_bando"); } catch (e) {}
+  const cont = document.getElementById("bandos");
+  const pintar = () => {
+    cont.querySelectorAll(".bando").forEach((c) => c.setAttribute("aria-pressed", String(c.dataset.id === actual)));
+    const otro = bandos.find((b) => b.id !== actual) || bandos[0];
+    document.getElementById("avatar").innerHTML = `<img src="piezas/${otro.id}/k-oscura.png" alt="">`;
+  };
+  for (const b of bandos) {
+    const c = document.createElement("button");
+    c.className = "bando"; c.dataset.id = b.id;
+    c.innerHTML = `<span class="fila">${["n", "k", "q"].map((t) => `<img src="piezas/${b.id}/${t}-clara.png" alt="">`).join("")}</span>`;
+    c.append(b.nombre);
+    c.onclick = () => { actual = b.id; try { localStorage.setItem("zaqora_bando", actual); } catch (e) {} pintar(); };
+    cont.appendChild(c);
+  }
+  document.getElementById("elegir").classList.remove("oculto");
+  pintar();
+})();
 
 function claveBytes(b64) {
   const pad = "=".repeat((4 - (b64.length % 4)) % 4);

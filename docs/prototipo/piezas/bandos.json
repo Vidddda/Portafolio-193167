@@ -1,0 +1,20 @@
+{
+  "bandos": [
+    {
+      "id": "elfos",
+      "nombre": "Elfos"
+    },
+    {
+      "id": "goblin",
+      "nombre": "Goblins"
+    },
+    {
+      "id": "hombrelobo",
+      "nombre": "Hombres lobo"
+    },
+    {
+      "id": "humanos",
+      "nombre": "Humanos"
+    }
+  ]
+}

@@ -59,12 +59,32 @@
   .contorno:disabled { color: #b5aea6; cursor: default; }
   .sello button.accion { width: 220px; }
   .oculto { display: none !important; }
+  /* Piezas con imagen (bandos de assets/) */
+  .casilla img { width: 40px; height: 40px; display: block; pointer-events: none;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .35)); }
+  .avatar img { width: 46px; height: 46px; display: block; }
+  header { position: relative; }
+  .btn-bando { position: absolute; right: 2px; top: 2px; width: 44px; height: 44px; border: 0; background: transparent;
+    border-radius: 10px; cursor: pointer; padding: 4px; }
+  .btn-bando img { width: 36px; height: 36px; display: block; }
+  .btn-bando:focus-visible, .bando:focus-visible { outline: 3px solid var(--villano); outline-offset: 1px; }
+  .elegir { position: absolute; inset: 0; background: var(--fondo); display: flex; flex-direction: column;
+    padding: 14px 12px; gap: 10px; overflow-y: auto; }
+  .elegir h2 { margin: 0; font-size: 16px; text-align: center; }
+  .elegir p { margin: 0; font-size: 13px; color: var(--tenue); text-align: center; }
+  .bandos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .bando { background: #fff; border: 1px solid var(--linea); border-radius: 12px; padding: 8px 6px; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 14px; font-weight: 600; color: var(--tinta); }
+  .bando .fila { display: flex; justify-content: center; }
+  .bando .fila img { width: 34px; height: 34px; }
+  .bando[aria-pressed="true"] { border: 2px solid var(--tinta); }
   @media (prefers-reduced-motion: reduce) { .avatar { transition: none; } }
 </style>
 </head>
 <body>
 <div class="app">
-  <header id="titulo">Capítulo · Zaqora</header>
+  <header><span id="titulo">Capítulo · Zaqora</span>
+    <button class="btn-bando oculto" id="btn-bando" aria-label="Cambiar de bando"></button></header>
   <div class="villano">
     <div class="avatar" id="avatar" aria-hidden="true">♞</div>
     <div class="burbuja" id="burbuja" role="status" aria-live="polite"></div>
@@ -76,6 +96,11 @@
       <div class="rotulo">ENCUENTRO SELLADO</div>
       <button class="accion primario" id="btn-muestrame">Muéstrame</button>
       <button class="accion secundario" id="btn-dejame">Déjame en paz</button>
+    </div>
+    <div class="elegir oculto" id="elegir" role="dialog" aria-labelledby="elegir-titulo">
+      <h2 id="elegir-titulo">Elige tu bando</h2>
+      <p>Tus piezas serán de este bando. El villano llega con otro.</p>
+      <div class="bandos" id="bandos"></div>
     </div>
   </div>
   <div class="progreso" id="progreso">Encuentro 1 de 1</div>
@@ -112,6 +137,29 @@ const T = {
 
 const GLIFO = { k: "♚", q: "♛", r: "♜", b: "♝", n: "♞", p: "♟" };
 const NOMBRE = { k: "rey", q: "dama", r: "torre", b: "alfil", n: "caballo", p: "peón" };
+/* Bandos: los genera preparar_piezas.py a partir de las carpetas de assets/.
+   El jugador elige el suyo; el rival sale de los demás bandos y cambia con cada derrota.
+   Si piezas/bandos.json no carga, la escena usa los glifos de siempre. */
+let BANDOS = [];           // [{ id, nombre }]
+let JUGADOR = null, RIVAL = null;
+function leerGuardado(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+function guardarLocal(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+function semilla(txt) {    // hash FNV-1a: la misma derrota siempre trae el mismo rival
+  let h = 2166136261;
+  for (const ch of txt) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); }
+  return h >>> 0;
+}
+function existe(id) { return !!id && BANDOS.some((b) => b.id === id); }
+function nombreBando(id) { const b = BANDOS.find((x) => x.id === id); return b ? b.nombre : ""; }
+function elegirRival() {
+  if (existe(q.get("rival"))) return q.get("rival");
+  const otros = BANDOS.filter((b) => b.id !== JUGADOR);
+  const lista = otros.length ? otros : BANDOS;
+  return lista[semilla(`${FEN}|${SOL}|${P}`) % lista.length].id;
+}
+function srcPieza(bando, tipo, blanca) { return `piezas/${bando}/${tipo}-${blanca ? "clara" : "oscura"}.png`; }
+function imagen(src) { const i = document.createElement("img"); i.src = src; i.alt = ""; return i; }
+
 let tablero = {};          // "e4" -> "P" / "p"
 let origen = null, intentos = 0, estado = "sellado";
 
@@ -152,11 +200,17 @@ function dibujar(marcas = {}) {
       const oscura = ("abcdefgh".indexOf(c) + r) % 2 === 1;
       b.className = "casilla " + (oscura ? "oscura" : "clara");
       const pz = tablero[sq];
+      let etiqueta = sq;
       if (pz) {
-        b.textContent = GLIFO[pz.toLowerCase()];
-        b.classList.add(pz === pz.toUpperCase() ? "pieza-b" : "pieza-n");
+        const blanca = pz === pz.toUpperCase();
+        const tipo = pz.toLowerCase();
+        const propia = (blanca ? "w" : "b") === COLOR;
+        const bando = propia ? JUGADOR : RIVAL;
+        if (bando) b.appendChild(imagen(srcPieza(bando, tipo, blanca)));
+        else { b.textContent = GLIFO[tipo]; b.classList.add(blanca ? "pieza-b" : "pieza-n"); }
+        etiqueta += `, ${NOMBRE[tipo]} ${blanca ? "blanco" : "negro"}` + (bando ? ` (${propia ? "tuyo" : nombreBando(bando)})` : "");
       }
-      b.setAttribute("aria-label", sq + (pz ? ", " + NOMBRE[pz.toLowerCase()] + (pz === pz.toUpperCase() ? " blanco" : " negro") : ""));
+      b.setAttribute("aria-label", etiqueta);
       if (marcas[sq]) b.classList.add(marcas[sq]);
       b.onclick = () => tocar(sq);
       el.appendChild(b);
@@ -219,11 +273,61 @@ document.getElementById("btn-pista").onclick = () => {
   registrar("pista");
 };
 
-document.getElementById("titulo").textContent = `Capítulo · ${VILLANO}`;
-tablero = leerFen(FEN);
-dibujar();
-decir(T.sellado);
-if (q.get("vista") === "despierto") document.getElementById("btn-muestrame").click();  // solo para capturas
+function pintarBandos() {
+  const av = document.getElementById("avatar");
+  const btnBando = document.getElementById("btn-bando");
+  if (!JUGADOR || !RIVAL) { av.textContent = "♞"; btnBando.classList.add("oculto"); return; }
+  av.replaceChildren(imagen(srcPieza(RIVAL, "k", COLOR === "b")));   // el rey del bando rival es el villano
+  btnBando.replaceChildren(imagen(srcPieza(JUGADOR, "k", COLOR === "w")));
+  btnBando.classList.toggle("oculto", BANDOS.length < 2);
+  document.querySelector(".sello .rotulo").textContent = `ENCUENTRO SELLADO · ${nombreBando(RIVAL).toUpperCase()}`;
+}
+
+function mostrarElegir() {
+  const cont = document.getElementById("bandos");
+  cont.replaceChildren();
+  for (const bd of BANDOS) {
+    const card = document.createElement("button");
+    card.className = "bando";
+    card.setAttribute("aria-pressed", String(bd.id === JUGADOR));
+    const fila = document.createElement("div");
+    fila.className = "fila";
+    for (const t of ["n", "k", "q"]) fila.appendChild(imagen(srcPieza(bd.id, t, true)));
+    card.append(fila, document.createTextNode(bd.nombre));
+    card.onclick = () => {
+      JUGADOR = bd.id;
+      guardarLocal("zaqora_bando", JUGADOR);
+      RIVAL = elegirRival();
+      document.getElementById("elegir").classList.add("oculto");
+      pintarBandos();
+      dibujar();
+      registrar("bando", { jugador: JUGADOR, rival: RIVAL });
+    };
+    cont.appendChild(card);
+  }
+  document.getElementById("elegir").classList.remove("oculto");
+  (cont.querySelector('[aria-pressed="true"]') || cont.firstChild).focus();
+}
+document.getElementById("btn-bando").onclick = mostrarElegir;
+
+async function iniciar() {
+  document.getElementById("titulo").textContent = `Capítulo · ${VILLANO}`;
+  tablero = leerFen(FEN);
+  decir(T.sellado);
+  try {
+    const r = await fetch("piezas/bandos.json", { cache: "no-cache" });
+    BANDOS = (await r.json()).bandos || [];
+  } catch (e) { BANDOS = []; }
+  if (BANDOS.length) {
+    JUGADOR = [q.get("bando"), leerGuardado("zaqora_bando")].find(existe) || null;
+    if (JUGADOR) RIVAL = elegirRival();
+    pintarBandos();
+    if (!JUGADOR && q.get("vista") !== "despierto") mostrarElegir();
+  }
+  dibujar();
+  if (q.get("vista") === "despierto") document.getElementById("btn-muestrame").click();  // solo para capturas
+}
+iniciar();
 try {
   if (!sessionStorage.getItem("abrio")) { registrar("abrio"); sessionStorage.setItem("abrio", "1"); }
 } catch (e) { registrar("abrio"); }
