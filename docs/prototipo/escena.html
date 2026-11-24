@@ -57,6 +57,8 @@
   .burbuja-c { flex: 1; background: #fff; border: 1px solid var(--linea); border-radius: 12px; padding: 5px 10px;
     font-size: 14px; line-height: 1.3; color: var(--tinta); min-height: 48px; }
   .quien { display: block; font-size: 11px; color: var(--tenue); margin-bottom: 1px; }
+  a.accion { width: 100%; min-height: 48px; border-radius: 10px; font-size: 15px; font-weight: 600; box-sizing: border-box; }
+  .boton-enlace { display: grid; place-items: center; text-decoration: none; }
   footer { height: 64px; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); display: flex; align-items: center; }
   button.accion { width: 100%; min-height: 48px; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; }
   .primario { background: var(--tinta); color: #fff; border: 0; }
@@ -127,6 +129,7 @@
   <footer>
     <button class="accion contorno" id="btn-pista" disabled>Pista del consejero</button>
     <button class="accion primario oculto" id="btn-siguiente">Siguiente encuentro</button>
+    <a class="accion primario boton-enlace oculto" id="btn-lichess" href="https://lichess.org/" target="_blank" rel="noopener">Jugar en Lichess</a>
   </footer>
 </div>
 
@@ -141,7 +144,7 @@ const SUPABASE_KEY = CFG.SUPABASE_KEY || "";   // clave pública (anon), nunca l
 const q = new URLSearchParams(location.search);
 const P = q.get("p") || "demo";                    // participante (P1…P5), nunca su usuario
 const V = q.get("v") || "-";                       // variante del mensaje (A, B o C)
-const COLOR = q.get("color") === "b" ? "b" : "w";  // color con el que jugó el participante
+let COLOR = q.get("color") === "b" ? "b" : "w";    // color con el que jugó el participante (puede cambiar por encuentro)
 const VILLANO = q.get("villano") || "La Horquilla Hambrienta";
 const FEN_EJEMPLO = "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 2 3";
 
@@ -160,13 +163,15 @@ function leerCapitulo() {
       const enc = (Array.isArray(c.e) ? c.e : [])
         .filter((x) => x && typeof x.f === "string" && typeof x.s === "string").slice(0, 5)
         .map((x) => ({ fen: x.f, sol: x.s.slice(0, 4), jugada: String(x.j || ""), antes: txt(x.a), despues: txt(x.d),
-                      consejo: txt(x.k) }));
+                      consejo: txt(x.k), color: x.c === "b" || x.c === "w" ? x.c : null }));
       const historia = (Array.isArray(c.h) ? c.h : []).map(txt).filter(Boolean).slice(0, 5);
       if (enc.length) return { historia, encuentros: enc };
     }
   } catch (e) {}
   let historia = [];
   try { if (q.get("h")) historia = decodificar(q.get("h")).map(txt).filter(Boolean).slice(0, 5); } catch (e) {}
+  if (q.get("modo") === "nueva") return { historia: [], encuentros: [{ fen: "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+                                                                       sol: "e2e4", jugada: "", antes: "", despues: "", consejo: "", color: null }] };
   return { historia, encuentros: [{ fen: q.get("fen") || FEN_EJEMPLO, sol: (q.get("sol") || "f3f7").slice(0, 4),
                                     jugada: q.get("jugada") || "", antes: "", despues: "", consejo: "" }] };
 }
@@ -313,6 +318,8 @@ function resolverEncuentro(vista) {
     document.getElementById("avatar").classList.remove("despierto");
     document.getElementById("progreso").textContent = ENC.length > 1 ? "Capítulo superado" : "Encuentro superado";
     if (ENC.length > 1) registrar("capitulo_superado", { encuentros: ENC.length });
+    document.getElementById("btn-pista").classList.add("oculto");
+    document.getElementById("btn-lichess").classList.remove("oculto");
     if (vista) setTimeout(() => { decir(e.despues || T.resuelto); aconsejar(C.final); }, 2500);
   } else {
     estado = "entre";
@@ -356,6 +363,7 @@ function empezarEncuentro() {
   intentos = 0;
   origen = null;
   tablero = leerFen(e.fen);
+  if (e.color && e.color !== COLOR) { COLOR = e.color; pintarBandos(); }
   const bp = document.getElementById("btn-pista");
   bp.textContent = "Pista del consejero";
   bp.dataset.modo = "pista";
@@ -413,7 +421,7 @@ function pintarBandos() {
   document.getElementById("avatar-c").replaceChildren(imagen(srcPieza(JUGADOR, "b", COLOR === "w")));
   document.getElementById("nombre-c").textContent = `Consejero de los ${nombreBando(JUGADOR).toLowerCase()}`;
   btnBando.classList.toggle("oculto", BANDOS.length < 2);
-  document.querySelector(".sello .rotulo").textContent = `ENCUENTRO SELLADO · ${nombreBando(RIVAL).toUpperCase()}`;
+  if (!NUEVA) document.querySelector(".sello .rotulo").textContent = `ENCUENTRO SELLADO · ${nombreBando(RIVAL).toUpperCase()}`;
 }
 
 function mostrarElegir() {
@@ -463,8 +471,31 @@ if (HISTORIA.length) {
   mostrarParrafo();
 }
 
+/* Sin historial: el consejero invita a jugar en Lichess («Comienza tu historia»). */
+const NUEVA = q.get("modo") === "nueva";
+function modoNueva() {
+  document.getElementById("titulo").textContent = "Zaqora";
+  document.getElementById("historia").classList.add("oculto");
+  document.getElementById("btn-muestrame").classList.add("oculto");
+  document.getElementById("btn-dejame").classList.add("oculto");
+  document.querySelector(".sello .rotulo").textContent = "TU HISTORIA AÚN NO EMPIEZA";
+  document.getElementById("explica").classList.remove("oculto");
+  document.getElementById("explica").textContent =
+    "Todavía no tienes partidas para contar. Juega en Lichess como siempre: cuando pierdas, tu primer capítulo llegará aquí.";
+  document.getElementById("btn-pista").classList.add("oculto");
+  const b = document.getElementById("btn-lichess");
+  b.textContent = "Comienza tu historia";
+  b.classList.remove("oculto");
+  document.getElementById("progreso").textContent = "Antes de empezar";
+  decir("Todavía no te conozco. Pronto lo haré.");
+  aconsejar("Juega una partida en Lichess. Cuando pierdas, aquí empieza tu historia.");
+}
+document.getElementById("btn-lichess").addEventListener("click", () =>
+  registrar(NUEVA ? "comienza_historia" : "jugar_lichess"));
+
 async function iniciar() {
   document.getElementById("titulo").textContent = `Capítulo · ${VILLANO}`;
+  if (ENC[0].color) COLOR = ENC[0].color;
   tablero = leerFen(ENC[0].fen);
   document.getElementById("progreso").textContent = `Encuentro 1 de ${ENC.length}`;
   decir(T.sellado);
@@ -479,6 +510,7 @@ async function iniciar() {
     if (!JUGADOR && q.get("vista") !== "despierto") mostrarElegir();
   }
   dibujar();
+  if (NUEVA) modoNueva();
   if (q.get("vista") === "despierto") document.getElementById("btn-muestrame").click();  // solo para capturas
 }
 iniciar();
