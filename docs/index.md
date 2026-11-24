@@ -8,6 +8,10 @@ Mi lado como desarrollador es muy versátil: me encanta programar en múltiples 
     <img src="recursos/imgs/index/david_ajedrez.jpg" alt="David López Ramírez en un torneo de ajedrez" width="520">
 </div>
 
+## Proyecto final
+
+**[Zaqora — página del proyecto final](proyecto_final.md)**: la memoria completa del proyecto de Proyecto de Ingeniería IV, una PWA en la que, después de perder en Lichess, un villano que encarna tu error recurrente te invita a un capítulo construido sobre esa partida.
+
 ## Datos de contacto
 - **Correo:** _davidlopezramirez2005@gmail.com_
 - **Número de teléfono:** _971 190 0150_
