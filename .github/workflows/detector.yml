@@ -39,6 +39,18 @@ jobs:
         run: |
           printf '%s\n' "$VAPID" > "$RUNNER_TEMP/vapid.pem"
           chmod 600 "$RUNNER_TEMP/vapid.pem"
+          # Revisión del formato, sin mostrar la clave
+          python -m pip install --quiet py-vapid
+          python - "$RUNNER_TEMP/vapid.pem" <<'PY'
+          import sys
+          from py_vapid import Vapid
+          try:
+              Vapid.from_file(sys.argv[1])
+              print("Clave VAPID: formato correcto.")
+          except Exception as e:
+              print("::error::El secreto ZAQORA_VAPID_PRIVADA no tiene un formato válido. Pégalo en una sola línea (ver LEEME).")
+              sys.exit(1)
+          PY
 
       - name: Revisar derrotas y enviar avisos
         env:
