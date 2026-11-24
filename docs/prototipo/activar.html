@@ -128,7 +128,6 @@
         <p style="margin:0"><b>Primero, entra con tu cuenta de Lichess.</b> Así Zaqora sabe qué partidas leer y guarda tus capítulos. No ve tu contraseña.</p>
         <button id="btn-entrar">Entrar con Lichess</button>
         <p class="nota" style="margin:0">Al entrar aceptas el <a href="privacidad.html">aviso de privacidad</a>. Después regresas a tu inicio para activar los avisos.</p>
-        <button class="secundario" id="btn-tengo-codigo">Tengo un código de participante</button>
       </div>
       <div id="codigo" class="tarjeta oculto">
         <label for="campo-codigo" style="font-size:15px;font-weight:600">Tu código de participante</label>
@@ -270,12 +269,6 @@ function prepararActivar() {
   }
 }
 document.getElementById("btn-entrar").onclick = () => window.ZaqoraSesion && ZaqoraSesion.entrar();
-document.getElementById("btn-tengo-codigo").onclick = () => {
-  document.getElementById("entrar").classList.add("oculto");
-  document.getElementById("codigo").classList.remove("oculto");
-  btn.classList.remove("oculto");
-  btn.disabled = true;
-};
 document.getElementById("campo-codigo").addEventListener("input", (e) => {
   const v = e.target.value.trim().toUpperCase();
   P = /^P\d{1,2}$/.test(v) ? v : null;

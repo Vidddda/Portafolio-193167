@@ -270,6 +270,8 @@ function pintarCuenta() {
   document.getElementById("s-entrar").classList.toggle("oculto", !!u);
   document.getElementById("s-cuenta").classList.toggle("oculto", !u);
   document.getElementById("s-revisar").classList.toggle("oculto", !u);
+  // Sin cuenta vinculada no tiene sentido jugar: Zaqora no sabría qué partidas leer.
+  document.getElementById("btn-lichess").classList.toggle("oculto", !u);
   if (u) pintarRevisar();
   document.getElementById("usuario-l").textContent = u || "";
 }
