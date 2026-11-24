@@ -102,7 +102,7 @@
 
   <section id="s-vacio" class="oculto">
     <div class="tarjeta">
-      <p class="vacio" style="margin:0">Todavía no tienes capítulos. Cuando activas los avisos, tu primer capítulo llega en unos minutos, hecho con tus partidas recientes de Lichess. Si aún no tienes partidas, juega una.</p>
+      <p class="vacio" style="margin:0">Aún no has abierto ningún capítulo en este teléfono. Tu primer capítulo te llegará como aviso, hecho con tus partidas recientes de Lichess. Ábrelo desde la notificación y aquí quedará guardado.</p>
     </div>
   </section>
 
@@ -168,7 +168,7 @@ function pintarConsejero() {
   const pendiente = capitulos.find((c) => !c.superado);
   document.getElementById("dice-c").textContent =
     !bando ? "Antes que nada: ¿de qué lado vas a estar? Elige tu bando abajo." :
-    !capitulos.length ? "Todavía no tenemos historia. Cuando llegue tu primer capítulo, aquí lo vas a encontrar." :
+    !capitulos.length ? "Tu primer capítulo viene en camino. Cuando llegue el aviso, ábrelo y aquí lo guardo." :
     pendiente ? `${pendiente.villano} sigue esperando. Cuando quieras, volvemos.` :
     "Vamos bien. Juega en Lichess; si pierdes, aquí estaré.";
 }
@@ -176,7 +176,6 @@ function pintarConsejero() {
 function pintarCapitulos() {
   if (!capitulos.length) {
     document.getElementById("s-vacio").classList.remove("oculto");
-    document.getElementById("btn-lichess").textContent = "Comienza tu historia";
     return;
   }
   const [u, ...resto] = capitulos;
@@ -242,7 +241,7 @@ document.getElementById("btn-bando").onclick = () => {
   document.getElementById("s-bando").scrollIntoView({ behavior: "smooth" });
 };
 document.getElementById("btn-lichess").addEventListener("click", () =>
-  registrar(capitulos.length ? "jugar_lichess" : "comienza_historia", { desde: "inicio" }));
+  registrar("jugar_lichess", { desde: "inicio", capitulos: capitulos.length }));
 
 (async () => {
   try { BANDOS = (await (await fetch("piezas/bandos.json", { cache: "no-cache" })).json()).bandos || []; } catch (e) {}
