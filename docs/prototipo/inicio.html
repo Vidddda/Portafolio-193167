@@ -176,6 +176,19 @@ function abrir(c) {
   location.href = "escena.html?" + c.q + "&desde=inicio";
 }
 
+const conCuenta = () => !!(window.ZaqoraSesion && ZaqoraSesion.usuario());
+
+/* Sin sesión no hay nada que mostrar: se limpia lo que haya quedado guardado en el teléfono
+   (capítulos, código y activación de pruebas anteriores). */
+function limpiarTelefono() {
+  capitulos = [];
+  try {
+    Object.keys(localStorage).filter((k) => /^zaqora_(capitulos|p|activado.*|revision)$/.test(k))
+      .forEach((k) => localStorage.removeItem(k));
+  } catch (e) {}
+  P = null;
+}
+
 function pintarConsejero() {
   const av = document.getElementById("avatar-c");
   if (bando) {
@@ -186,6 +199,7 @@ function pintarConsejero() {
   const pendiente = capitulos.find((c) => !c.superado);
   document.getElementById("dice-c").textContent =
     !bando ? "Antes que nada: ¿de qué lado vas a estar? Elige tu bando abajo." :
+    !conCuenta() ? "Entra con tu cuenta de Lichess y te cuento la historia de tus derrotas." :
     !capitulos.length ? "Tu primer capítulo viene en camino. Cuando llegue el aviso, ábrelo y aquí lo guardo." :
     pendiente ? `${pendiente.villano} sigue esperando. Cuando quieras, volvemos.` :
     "Vamos bien. Juega en Lichess; si pierdes, aquí estaré.";
@@ -194,6 +208,7 @@ function pintarConsejero() {
 function pintarCapitulos() {
   ["s-ultimo", "s-anteriores", "s-vacio"].forEach((id) => document.getElementById(id).classList.add("oculto"));
   document.getElementById("lista").replaceChildren();
+  if (!conCuenta()) return;
   if (!capitulos.length) {
     document.getElementById("s-vacio").classList.remove("oculto");
     return;
@@ -360,8 +375,8 @@ document.getElementById("btn-salir").onclick = async () => {
   }
   try { localStorage.removeItem("zaqora_activado"); } catch (e) {}
   document.getElementById("pie").textContent = "";
-  document.getElementById("enlace-activar").href = "activar.html";
-  document.getElementById("sin-avisos").classList.remove("oculto");
+  limpiarTelefono();
+  document.getElementById("sin-avisos").classList.add("oculto");
   errorSesion("");
   pintarCuenta();
   pintarConsejero();
@@ -373,16 +388,18 @@ document.getElementById("btn-salir").onclick = async () => {
   if (bando && !BANDOS.some((b) => b.id === bando)) bando = null;
   pintarBandos();
   if (!bando && BANDOS.length) document.getElementById("s-bando").classList.remove("oculto");
+  if (!conCuenta() && !new URLSearchParams(location.search).get("code")) limpiarTelefono();
   pintarConsejero();
   pintarCapitulos();
   await sesion();
-  const activos = (leer("zaqora_activado_" + P) === "1" || leer("zaqora_activado") === "1") &&
-    "Notification" in window && Notification.permission === "granted";
-  if (!activos && !(window.ZaqoraSesion && ZaqoraSesion.usuario())) {
-    document.getElementById("sin-avisos").classList.remove("oculto");
-    if (P) document.getElementById("enlace-activar").href = `activar.html?p=${encodeURIComponent(P)}&paso=activar`;
+  if (!conCuenta()) {
+    // Sin cuenta: solo la tarjeta para entrar (activar los avisos viene después de entrar).
+    limpiarTelefono();
+    document.getElementById("sin-avisos").classList.add("oculto");
+    pintarConsejero();
+    pintarCapitulos();
   }
-  document.getElementById("pie").textContent = P ? `Participante: ${P}` : "";
+  document.getElementById("pie").textContent = P && conCuenta() ? `Código: ${P}` : "";
   registrar("inicio", { capitulos: capitulos.length });
 })();
 </script>
