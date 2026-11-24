@@ -58,6 +58,7 @@
   .contorno { background: transparent; color: var(--tinta); border: 1px solid var(--linea); }
   .contorno:disabled { color: #b5aea6; cursor: default; }
   .sello button.accion { width: 220px; }
+  .explica { margin: 0; font-size: 14px; line-height: 1.35; color: var(--tinta); max-width: 260px; }
   .oculto { display: none !important; }
   /* Piezas con imagen (bandos de assets/) */
   .casilla img { width: 40px; height: 40px; display: block; pointer-events: none;
@@ -94,6 +95,7 @@
     <div class="sello" id="sello">
       <div class="candado" aria-hidden="true">🔒</div>
       <div class="rotulo">ENCUENTRO SELLADO</div>
+      <p class="explica">Aquí está tu última derrota, justo antes de la jugada donde se te fue. ¿La quieres ver?</p>
       <button class="accion primario" id="btn-muestrame">Muéstrame</button>
       <button class="accion secundario" id="btn-dejame">Déjame en paz</button>
     </div>
@@ -254,6 +256,7 @@ document.getElementById("btn-muestrame").onclick = () => {
   document.getElementById("sello").classList.add("oculto");
   document.getElementById("avatar").classList.add("despierto");
   document.getElementById("btn-pista").disabled = false;
+  document.getElementById("progreso").textContent = `Juegas con ${COLOR === "w" ? "blancas" : "negras"}: toca una pieza y luego su casilla`;
   decir(T.despierto);
   dibujar();
   registrar("muestrame");
