@@ -935,8 +935,16 @@ def main():
                     help="genera la historia de la última derrota de ese participante con la IA y la muestra, sin enviar nada")
     args = ap.parse_args()
     if args.historia or args.ver_historia:
-        enviar_historia((args.historia or args.ver_historia).strip(), None if args.ver_historia else config(),
-                        args.variante, solo_mostrar=bool(args.ver_historia))
+        alias = (args.historia or args.ver_historia).strip()
+        ok = enviar_historia(alias, None if args.ver_historia else config(), args.variante,
+                             solo_mostrar=bool(args.ver_historia))
+        if ok and args.historia:
+            # Que el detector automático (laptop o GitHub) no lo vuelva a enviar
+            estado = leer_estado()
+            info = estado.setdefault(alias, {"vistas": [], "enviados": 0,
+                                             "desde": int(datetime.now(timezone.utc).timestamp() * 1000)})
+            info["historia"] = f"{datetime.now():%d/%m/%Y %H:%M}"
+            guardar_estado(estado)
         return
     if args.probar_ia:
         p = next((x for x in leer_participantes() if x["alias"].strip() == args.probar_ia.strip()), None)
