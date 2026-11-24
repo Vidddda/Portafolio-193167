@@ -59,6 +59,9 @@
   .contorno:disabled { color: #b5aea6; cursor: default; }
   .sello button.accion { width: 220px; }
   .explica { margin: 0; font-size: 14px; line-height: 1.35; color: var(--tinta); max-width: 260px; }
+  .historia { display: flex; flex-direction: column; gap: 14px; align-items: center; max-width: 290px; }
+  .historia p { margin: 0; font-size: 16px; line-height: 1.45; color: var(--tinta); font-style: italic; }
+  .historia-pie { display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 12px; color: var(--tenue); }
   .oculto { display: none !important; }
   /* Piezas con imagen (bandos de assets/) */
   .casilla img { width: 40px; height: 40px; display: block; pointer-events: none;
@@ -95,7 +98,12 @@
     <div class="sello" id="sello">
       <div class="candado" aria-hidden="true">🔒</div>
       <div class="rotulo">ENCUENTRO SELLADO</div>
-      <p class="explica">Aquí está tu última derrota, justo antes de la jugada donde se te fue. ¿La quieres ver?</p>
+      <p class="explica" id="explica">Aquí está tu última derrota, justo antes de la jugada donde se te fue. ¿La quieres ver?</p>
+      <div class="historia oculto" id="historia">
+        <p id="historia-texto" aria-live="polite"></p>
+        <div class="historia-pie"><span id="historia-paso"></span>
+          <button class="accion primario" id="btn-sigue">Continuar</button></div>
+      </div>
       <button class="accion primario" id="btn-muestrame">Muéstrame</button>
       <button class="accion secundario" id="btn-dejame">Déjame en paz</button>
     </div>
@@ -312,6 +320,36 @@ function mostrarElegir() {
   (cont.querySelector('[aria-pressed="true"]') || cont.firstChild).focus();
 }
 document.getElementById("btn-bando").onclick = mostrarElegir;
+
+/* Historia del villano: párrafos que arma el detector (IA o plantilla) y viajan en el enlace (?h=, base64url). */
+function leerHistoria() {
+  const h = q.get("h");
+  if (!h) return [];
+  try {
+    const b64 = h.replace(/-/g, "+").replace(/_/g, "/") + "=".repeat((4 - (h.length % 4)) % 4);
+    const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
+    const lista = JSON.parse(new TextDecoder().decode(bytes));
+    return Array.isArray(lista) ? lista.filter((x) => typeof x === "string" && x.trim()).slice(0, 5) : [];
+  } catch (e) { return []; }
+}
+const HISTORIA = leerHistoria();
+let parrafo = 0;
+function mostrarParrafo() {
+  document.getElementById("historia-texto").textContent = HISTORIA[parrafo];
+  document.getElementById("historia-paso").textContent = `${parrafo + 1} de ${HISTORIA.length}`;
+  const ultimo = parrafo === HISTORIA.length - 1;
+  document.getElementById("btn-sigue").classList.toggle("oculto", ultimo);
+  document.getElementById("btn-muestrame").classList.toggle("oculto", !ultimo);
+  document.getElementById("btn-dejame").classList.toggle("oculto", !ultimo);
+  if (ultimo) registrar("historia_leida", { fuente: q.get("hf") || "", parrafos: HISTORIA.length });
+}
+if (HISTORIA.length) {
+  document.getElementById("explica").classList.add("oculto");
+  document.querySelector(".sello .candado").classList.add("oculto");
+  document.getElementById("historia").classList.remove("oculto");
+  document.getElementById("btn-sigue").onclick = () => { parrafo++; mostrarParrafo(); };
+  mostrarParrafo();
+}
 
 async function iniciar() {
   document.getElementById("titulo").textContent = `Capítulo · ${VILLANO}`;
