@@ -65,6 +65,12 @@
   <div id="paso">
     <p>Para recibir los avisos del villano, actívalos en este teléfono. Solo se usan durante la prueba.</p>
   </div>
+  <div id="codigo" class="oculto">
+    <label for="campo-codigo" style="font-size:15px;font-weight:600;display:block;margin-bottom:6px">Tu código de participante</label>
+    <input id="campo-codigo" autocomplete="off" autocapitalize="characters" placeholder="Por ejemplo, P1"
+      style="width:100%;font-size:17px;padding:12px;border:1px solid #a8a097;border-radius:10px;min-height:48px">
+    <p class="nota" style="margin-top:6px">Viene al final del enlace que te mandaron (…?p=<strong>P1</strong>).</p>
+  </div>
   <button id="activar">Activar avisos del villano</button>
   <div class="estado" id="estado" role="status" aria-live="polite"></div>
   <p class="nota" id="alias"></p>
@@ -81,19 +87,35 @@ try {
 } catch (e) {}
 const est = document.getElementById("estado");
 const btn = document.getElementById("activar");
-document.getElementById("alias").textContent = P ? `Participante: ${P}` : "Abre el enlace que te mandamos (lleva tu código de participante).";
-
 const esIOS = /iPhone|iPad|iPod/.test(navigator.userAgent);
 const instalada = window.matchMedia("(display-mode: standalone)").matches || navigator.standalone === true;
-if (esIOS && !instalada) {
-  document.getElementById("ios").classList.remove("oculto");
-  btn.disabled = true;
+let puedeAvisar = "serviceWorker" in navigator && "PushManager" in window && "Notification" in window;
+
+function actualizar() {
+  document.getElementById("alias").textContent = P ? `Participante: ${P}` : "";
+  btn.disabled = !P || !puedeAvisar || (esIOS && !instalada);
 }
-if (!("serviceWorker" in navigator) || !("PushManager" in window)) {
-  btn.disabled = true;
-  if (!esIOS) est.textContent = "Este navegador no permite avisos. Prueba con Chrome en Android.";
+// En iPhone, la app de la pantalla de inicio no comparte memoria con Safari:
+// si se abre sin el código en la dirección, se pide aquí.
+if (!P) {
+  document.getElementById("codigo").classList.remove("oculto");
+  document.getElementById("campo-codigo").addEventListener("input", (e) => {
+    const v = e.target.value.trim().toUpperCase();
+    P = /^P\d{1,2}$/.test(v) ? v : null;
+    if (P) { try { localStorage.setItem("zaqora_p", P); } catch (err) {} }
+    actualizar();
+  });
 }
-if (!P) btn.disabled = true;
+if (esIOS && !instalada) document.getElementById("ios").classList.remove("oculto");
+if (!puedeAvisar && !(esIOS && !instalada)) {
+  est.textContent = esIOS
+    ? "Este iPhone no permite avisos web. Revisa que tenga iOS 16.4 o más reciente y que abriste Zaqora desde el ícono."
+    : "Este navegador no permite avisos. Prueba con Chrome en Android.";
+}
+// El service worker se registra al cargar, para que al tocar el botón el permiso se pida de inmediato
+// (iPhone solo muestra el permiso si se pide justo al tocar).
+const registro = puedeAvisar ? navigator.serviceWorker.register("sw.js") : null;
+actualizar();
 
 /* Elección de bando (la escena la lee del mismo almacenamiento local). */
 (async () => {
@@ -138,19 +160,23 @@ async function guardar(suscripcion) {
 }
 
 btn.onclick = async () => {
+  // Primero el permiso, sin esperar nada antes: iPhone lo exige así.
+  const pedirPermiso = Notification.requestPermission();
   btn.disabled = true;
   est.className = "estado";
   est.textContent = "Activando…";
   try {
-    const reg = await navigator.serviceWorker.register("sw.js");
-    await navigator.serviceWorker.ready;
-    const permiso = await Notification.requestPermission();
+    const permiso = await pedirPermiso;
     if (permiso !== "granted") {
       est.className = "estado error";
-      est.textContent = "No se activaron los avisos. Puedes permitirlos después en los ajustes del navegador.";
+      est.textContent = esIOS
+        ? "No se activaron los avisos. En Ajustes → Notificaciones → Zaqora, permite las notificaciones y vuelve a intentarlo."
+        : "No se activaron los avisos. Puedes permitirlos después en los ajustes del navegador.";
       btn.disabled = false;
       return;
     }
+    await registro;
+    const reg = await navigator.serviceWorker.ready;
     const sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: claveBytes(CFG.VAPID_PUBLICA) });
     await guardar(sub.toJSON());
     est.className = "estado ok";
