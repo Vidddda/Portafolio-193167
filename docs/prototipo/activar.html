@@ -124,6 +124,12 @@
     <div style="display:grid;gap:14px">
       <h2>Activa los avisos del villano</h2>
       <p>Al tocar el botón, tu teléfono te pedirá permiso para mostrar notificaciones. Toca <b>Permitir</b>.</p>
+      <div id="entrar" class="tarjeta oculto">
+        <p style="margin:0"><b>Primero, entra con tu cuenta de Lichess.</b> Así Zaqora sabe qué partidas leer y guarda tus capítulos. No ve tu contraseña.</p>
+        <button id="btn-entrar">Entrar con Lichess</button>
+        <p class="nota" style="margin:0">Al entrar aceptas el <a href="privacidad.html">aviso de privacidad</a>. Después regresas a tu inicio para activar los avisos.</p>
+        <button class="secundario" id="btn-tengo-codigo">Tengo un código de participante</button>
+      </div>
       <div id="codigo" class="tarjeta oculto">
         <label for="campo-codigo" style="font-size:15px;font-weight:600">Tu código de participante</label>
         <input id="campo-codigo" autocomplete="off" autocapitalize="characters" placeholder="Por ejemplo, P1">
@@ -149,6 +155,7 @@
 </div>
 
 <script src="config.js"></script>
+<script src="sesion.js"></script>
 <script>
 const CFG = window.ZAQORA || {};
 const q = new URLSearchParams(location.search);
@@ -239,17 +246,20 @@ function pintarBandos() {
   document.getElementById("btn-bando").disabled = !bandoElegido;
 }
 document.getElementById("btn-bando").onclick = () => {
-  if (leer("zaqora_activado") === "1" && Notification.permission === "granted") irAlInicio();
+  if (yaActivado() && Notification.permission === "granted") irAlInicio();
   else { prepararActivar(); mostrar("activar"); }
 };
+// Activado para ESTE código (con cuenta de Lichess el código cambia a J1, J2…, y hay que volver a activar).
+function yaActivado() { return P ? leer("zaqora_activado_" + P) === "1" || (/^P\d/.test(P) && leer("zaqora_activado") === "1") : leer("zaqora_activado") === "1"; }
 function irAlInicio() { location.replace("inicio.html" + (P ? `?p=${encodeURIComponent(P)}` : "")); }
 document.getElementById("btn-inicio").onclick = irAlInicio;
 
 /* ---------- activar ---------- */
 function prepararActivar() {
   if (!P) {
-    document.getElementById("codigo").classList.remove("oculto");
-    btn.disabled = true;
+    // Sin código: lo normal es entrar con Lichess (la cuenta asigna el código). El código a mano queda para la prueba.
+    document.getElementById("entrar").classList.remove("oculto");
+    btn.classList.add("oculto");
   }
   if (!puedeAvisar) {
     btn.disabled = true;
@@ -259,6 +269,13 @@ function prepararActivar() {
       : "Este navegador no permite avisos. Prueba con Chrome en Android.";
   }
 }
+document.getElementById("btn-entrar").onclick = () => window.ZaqoraSesion && ZaqoraSesion.entrar();
+document.getElementById("btn-tengo-codigo").onclick = () => {
+  document.getElementById("entrar").classList.add("oculto");
+  document.getElementById("codigo").classList.remove("oculto");
+  btn.classList.remove("oculto");
+  btn.disabled = true;
+};
 document.getElementById("campo-codigo").addEventListener("input", (e) => {
   const v = e.target.value.trim().toUpperCase();
   P = /^P\d{1,2}$/.test(v) ? v : null;
@@ -313,6 +330,7 @@ btn.onclick = async () => {
     const sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: claveBytes(CFG.VAPID_PUBLICA) });
     await guardar(sub.toJSON());
     guardarLocal("zaqora_activado", "1");
+    guardarLocal("zaqora_activado_" + P, "1");
     registrarEvento("activo", { bando: bandoElegido });
     mostrar("listo");
   } catch (e) {
@@ -331,7 +349,7 @@ btn.onclick = async () => {
   const siguiente = BANDOS.length ? "bando" : "activar";
   if (siguiente === "activar") prepararActivar();
   // Ya activado: el ícono de Zaqora lleva directo a Inicio.
-  if (leer("zaqora_activado") === "1" && puedeAvisar && Notification.permission === "granted") { irAlInicio(); return; }
+  if (yaActivado() && puedeAvisar && Notification.permission === "granted") { irAlInicio(); return; }
   // En iPhone, la app de la pantalla de inicio no comparte memoria con Safari: si está instalada, ya vio la introducción.
   else if (esIOS && instalada) mostrar(siguiente);
   else if (esIOS) mostrar(leer("zaqora_intro") === "1" ? (enSafari ? "instalar" : "safari") : "intro");

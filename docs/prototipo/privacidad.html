@@ -27,7 +27,7 @@
 <main>
   <a href="inicio.html">← Volver a Zaqora</a>
   <h1>Aviso de privacidad</h1>
-  <p class="fecha">Prototipo de Zaqora (versión de prueba) · Última actualización: 24 de noviembre de 2026</p>
+  <p class="fecha">Prototipo de Zaqora (versión de prueba) · Última actualización: 24 de noviembre de 2026 (versión 2)</p>
 
   <div class="resumen">
     <p style="margin:0"><strong>En corto:</strong> usamos tu usuario de Lichess y tus partidas públicas para armar capítulos con tus errores, los guardamos para que los veas en cualquier teléfono y registramos qué haces en ellos para mejorar Zaqora. No vendemos ni compartimos tus datos con nadie para publicidad. Nunca vemos tu contraseña de Lichess. Puedes pedir que borremos todo cuando quieras.</p>
@@ -41,10 +41,10 @@
   <h2>2. Qué datos tratamos</h2>
   <div class="tabla"><table>
     <tr><th>Dato</th><th>De dónde sale</th><th>Dónde se guarda</th></tr>
-    <tr><td>Tu usuario de Lichess</td><td>Nos lo das al inscribirte en la prueba, o Lichess nos lo confirma cuando entras con tu cuenta</td><td>En la computadora del responsable y en la base de datos de Zaqora, junto a tus capítulos</td></tr>
-    <tr><td>Tus partidas públicas de Lichess (jugadas, resultado, reloj y apertura)</td><td>La API pública de Lichess</td><td>Se analizan en la computadora del responsable; no se guarda la partida completa, solo las posiciones de los capítulos</td></tr>
+    <tr><td>Tu usuario de Lichess</td><td>Lichess nos lo confirma cuando entras con tu cuenta (o nos lo das al inscribirte en la prueba)</td><td>En la base de datos de Zaqora, con el código que te asignamos (J1, J2…) y junto a tus capítulos</td></tr>
+    <tr><td>Tus partidas públicas de Lichess (jugadas, resultado, reloj y apertura)</td><td>La API pública de Lichess</td><td>Se analizan en servidores de GitHub (GitHub Actions) o en la computadora del responsable; no se guarda la partida completa, solo las posiciones de los capítulos</td></tr>
     <tr><td>Tus capítulos (posiciones de tus errores, textos del villano y del consejero) y tu avance</td><td>Los genera Zaqora</td><td>Base de datos de Zaqora y tu teléfono</td></tr>
-    <tr><td>Registro de uso: qué abres y qué tocas (abrir, pistas, intentos, encuentros superados), con la hora</td><td>Las páginas de Zaqora</td><td>Base de datos de Zaqora, con tu código de participante (P1, P2…), no con tu nombre</td></tr>
+    <tr><td>Registro de uso: qué abres y qué tocas (abrir, pistas, intentos, encuentros superados), con la hora</td><td>Las páginas de Zaqora</td><td>Base de datos de Zaqora, con tu código (J1, P1…), no con tu nombre</td></tr>
     <tr><td>La suscripción a avisos de tu teléfono (una dirección técnica del servicio de notificaciones, no tu número)</td><td>Tu navegador, al activar los avisos</td><td>Base de datos de Zaqora, con tu código de participante</td></tr>
     <tr><td>Tu bando y tus capítulos abiertos</td><td>Tus elecciones en la app</td><td>Solo en tu teléfono</td></tr>
   </table></div>
@@ -59,11 +59,11 @@
     <tr><td>Medir cómo se usa Zaqora (aperturas, encuentros superados, pistas) para el reporte del proyecto escolar y para mejorar el producto. En el reporte solo aparecen códigos de participante y frases sin nombre.</td><td>No: puedes negarte (ver punto 4)</td></tr>
   </table></div>
   <p>Para escribir los textos del villano, Zaqora envía a un servicio de inteligencia artificial (Cloudflare Workers AI) solo hechos de la partida: color, ritmo, número de jugada, pieza y casilla. Nunca tu usuario ni tu nombre. Cloudflare indica que no usa ese contenido para entrenar modelos.</p>
-  <p>Tus datos se guardan en servicios que actúan como encargados, por cuenta del responsable: <strong>Supabase</strong> (base de datos), <strong>Cloudflare</strong> (inteligencia artificial) y <strong>GitHub Pages</strong> (la página). No transferimos tus datos a terceros para otros fines.</p>
+  <p>Tus datos se guardan en servicios que actúan como encargados, por cuenta del responsable: <strong>Supabase</strong> (base de datos), <strong>Cloudflare</strong> (inteligencia artificial) y <strong>GitHub</strong> (la página, con GitHub Pages, y el análisis automático de partidas, con GitHub Actions). No transferimos tus datos a terceros para otros fines.</p>
 
   <h2>4. Cómo limitar el uso de tus datos</h2>
   <ul>
-    <li><strong>Salir de tu cuenta:</strong> en Inicio, toca «Salir». Zaqora borra la sesión de tu teléfono y le pide a Lichess que anule el permiso.</li>
+    <li><strong>Salir de tu cuenta:</strong> en Inicio, toca «Salir». Zaqora borra la sesión de tu teléfono y le pide a Lichess que anule el permiso. Para que dejemos de analizar tus partidas, escríbenos: te damos de baja.</li>
     <li><strong>Dejar de recibir avisos:</strong> desactiva las notificaciones de Zaqora en los ajustes de tu teléfono, o escribe ALTO durante la prueba.</li>
     <li><strong>Negarte a la finalidad de medición:</strong> escríbenos y dejamos de usar tu registro de uso en el reporte.</li>
   </ul>

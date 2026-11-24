@@ -277,6 +277,13 @@ async function sesion() {
   try {
     const datos = await ZaqoraSesion.capitulos("GET");
     if (!datos) return;
+    // La cuenta de Lichess trae su propio código (J1, J2…): con él se activan los avisos.
+    if (datos.alias && datos.alias !== P) { P = datos.alias; guardar("zaqora_p", P); }
+    document.getElementById("pie").textContent = P ? `Código: ${P}` : "";
+    const banner = document.getElementById("sin-avisos");
+    const avisosAqui = "Notification" in window && Notification.permission === "granted" && leer("zaqora_activado_" + P) === "1";
+    banner.classList.toggle("oculto", !!datos.avisos && avisosAqui);
+    document.getElementById("enlace-activar").href = `activar.html?p=${encodeURIComponent(P)}`;
     const porId = new Map(capitulos.map((c) => [c.id, c]));
     for (const s of datos.capitulos || []) {
       const local = porId.get(s.id) || {};
@@ -304,8 +311,9 @@ document.getElementById("btn-salir").onclick = async () => { await ZaqoraSesion.
   pintarConsejero();
   pintarCapitulos();
   await sesion();
-  const activos = leer("zaqora_activado") === "1" && "Notification" in window && Notification.permission === "granted";
-  if (!activos) {
+  const activos = (leer("zaqora_activado_" + P) === "1" || leer("zaqora_activado") === "1") &&
+    "Notification" in window && Notification.permission === "granted";
+  if (!activos && !(window.ZaqoraSesion && ZaqoraSesion.usuario())) {
     document.getElementById("sin-avisos").classList.remove("oculto");
     if (P) document.getElementById("enlace-activar").href = `activar.html?p=${encodeURIComponent(P)}&paso=activar`;
   }

@@ -1,0 +1,52 @@
+# Detector de derrotas de Zaqora en la nube.
+# Cada 10 minutos revisa las partidas de los jugadores registrados (al entrar con Lichess),
+# manda el primer contacto (un capítulo por cada una de sus últimas 5 derrotas) y un capítulo
+# por cada derrota nueva. Las claves vienen de los secretos del repositorio; nunca se imprimen.
+name: Detector de derrotas
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"
+  workflow_dispatch: {}
+
+concurrency:
+  group: detector-zaqora
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  detectar:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Instalar Stockfish y librerías
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq stockfish
+          python -m pip install --quiet chess pywebpush
+
+      - name: Preparar la clave privada VAPID
+        env:
+          VAPID: ${{ secrets.ZAQORA_VAPID_PRIVADA }}
+        run: |
+          printf '%s\n' "$VAPID" > "$RUNNER_TEMP/vapid.pem"
+          chmod 600 "$RUNNER_TEMP/vapid.pem"
+
+      - name: Revisar derrotas y enviar avisos
+        env:
+          ZAQORA_SUPABASE_URL: ${{ secrets.ZAQORA_SUPABASE_URL }}
+          ZAQORA_SUPABASE_SERVICE_KEY: ${{ secrets.ZAQORA_SUPABASE_SERVICE_KEY }}
+          ZAQORA_VAPID_CONTACTO: ${{ secrets.ZAQORA_VAPID_CONTACTO }}
+          ZAQORA_VAPID_PRIVADA_ARCHIVO: ${{ runner.temp }}/vapid.pem
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
+          ZAQORA_STOCKFISH: /usr/games/stockfish
+        run: python zaqora/detector/detectar_derrotas.py --enviar
