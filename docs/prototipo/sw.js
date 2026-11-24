@@ -20,3 +20,13 @@ self.addEventListener("notificationclick", (event) => {
   const url = new URL(event.notification.data.url, self.registration.scope).href;
   event.waitUntil(self.clients.openWindow(url));
 });
+
+/* Páginas y scripts siempre frescos: GitHub Pages permite guardarlos 10 minutos y el teléfono
+   mostraba versiones viejas. "no-cache" pregunta al servidor si cambió (rápido si no cambió). */
+self.addEventListener("fetch", (event) => {
+  const r = event.request;
+  if (r.method !== "GET" || new URL(r.url).origin !== self.location.origin) return;
+  if (r.mode === "navigate" || r.destination === "script" || r.destination === "style" || r.url.endsWith(".json")) {
+    event.respondWith(fetch(r, { cache: "no-cache" }).catch(() => fetch(r)));
+  }
+});
