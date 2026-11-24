@@ -50,7 +50,13 @@
     align-items: center; justify-content: center; gap: 12px; padding: 24px; text-align: center; }
   .sello .candado { font-size: 32px; }
   .sello .rotulo { font-size: 12px; letter-spacing: .12em; color: var(--tenue); }
-  .progreso { height: 24px; display: flex; align-items: center; justify-content: center; font-size: 12px; color: var(--tenue); }
+  .consejero { height: 72px; display: flex; align-items: center; gap: 10px; padding: 4px 12px; }
+  .avatar-c { flex: 0 0 48px; height: 48px; border-radius: 50%; background: #e6f2e8; border: 2px solid var(--acierto);
+    display: grid; place-items: center; font-size: 26px; color: var(--acierto); }
+  .avatar-c img { width: 40px; height: 40px; display: block; }
+  .burbuja-c { flex: 1; background: #fff; border: 1px solid var(--linea); border-radius: 12px; padding: 5px 10px;
+    font-size: 14px; line-height: 1.3; color: var(--tinta); min-height: 48px; }
+  .quien { display: block; font-size: 11px; color: var(--tenue); margin-bottom: 1px; }
   footer { height: 64px; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); display: flex; align-items: center; }
   button.accion { width: 100%; min-height: 48px; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; }
   .primario { background: var(--tinta); color: #fff; border: 0; }
@@ -113,9 +119,13 @@
       <div class="bandos" id="bandos"></div>
     </div>
   </div>
-  <div class="progreso" id="progreso">Encuentro 1 de 1</div>
+  <div class="consejero">
+    <div class="avatar-c" id="avatar-c" aria-hidden="true">♝</div>
+    <div class="burbuja-c"><span class="quien"><span id="nombre-c">Tu consejero</span> · <span id="progreso">Encuentro 1 de 1</span></span>
+      <span id="dice-c" role="status" aria-live="polite">Estoy contigo. Cuando quieras, volvemos a esa partida.</span></div>
+  </div>
   <footer>
-    <button class="accion contorno" id="btn-pista" disabled>Pista del villano</button>
+    <button class="accion contorno" id="btn-pista" disabled>Pista del consejero</button>
     <button class="accion primario oculto" id="btn-siguiente">Siguiente encuentro</button>
   </footer>
 </div>
@@ -149,7 +159,8 @@ function leerCapitulo() {
       const c = decodificar(q.get("c"));
       const enc = (Array.isArray(c.e) ? c.e : [])
         .filter((x) => x && typeof x.f === "string" && typeof x.s === "string").slice(0, 5)
-        .map((x) => ({ fen: x.f, sol: x.s.slice(0, 4), jugada: String(x.j || ""), antes: txt(x.a), despues: txt(x.d) }));
+        .map((x) => ({ fen: x.f, sol: x.s.slice(0, 4), jugada: String(x.j || ""), antes: txt(x.a), despues: txt(x.d),
+                      consejo: txt(x.k) }));
       const historia = (Array.isArray(c.h) ? c.h : []).map(txt).filter(Boolean).slice(0, 5);
       if (enc.length) return { historia, encuentros: enc };
     }
@@ -157,26 +168,38 @@ function leerCapitulo() {
   let historia = [];
   try { if (q.get("h")) historia = decodificar(q.get("h")).map(txt).filter(Boolean).slice(0, 5); } catch (e) {}
   return { historia, encuentros: [{ fen: q.get("fen") || FEN_EJEMPLO, sol: (q.get("sol") || "f3f7").slice(0, 4),
-                                    jugada: q.get("jugada") || "", antes: "", despues: "" }] };
+                                    jugada: q.get("jugada") || "", antes: "", despues: "", consejo: "" }] };
 }
 const CAP = leerCapitulo();
 const ENC = CAP.encuentros;
 let actual = 0;                                    // encuentro en juego
 
+// El villano reta y reacciona; nunca da pistas. El consejero (de tu bando) guía y ayuda.
 const T = {
   sellado: "Esa partida dolió. Yo estaba ahí.",
-  fallo: "Casi. Yo también lo habría intentado. Otra vez.",
-  pista: "Te ayudo un poco: empieza por la pieza marcada.",
-  solucion: "Era esta. Mírala bien: la próxima vez no te la voy a enseñar.",
-  siguiente: "Bien visto. Pero todavía no terminamos.",
+  burlaFallo: ["Je. Eso esperaba.", "Otra vez lo mismo. Me encanta.", "¿Eso es todo?"],
+  burlaSolucion: "Te la tuvieron que enseñar… Ya me acordaré.",
+  siguiente: "Una no basta. Te espero en la siguiente.",
   resuelto: "…Esta vez no. Nos volveremos a ver.",
   pausa: "Está bien. Aquí te espero cuando quieras."
 };
+const C = {
+  inicio: "Estoy contigo. Cuando quieras, volvemos a esa partida.",
+  consejo: "Aquí había algo mejor. Encuéntralo: toca una pieza y luego su casilla.",
+  fallo: "No es esa. Respira y mira qué amenaza el rival.",
+  pista: (pieza) => `Fíjate en tu ${pieza}: te marqué su casilla.`,
+  rendirse: "Si quieres, te enseño la jugada. Toca «Muéstrame la jugada».",
+  solucion: "Era esta. Recuérdala: la próxima vez la verás tú.",
+  bien: "¡Eso es! Vamos al siguiente momento.",
+  final: "Lo lograste. Esa partida ya no es suya.",
+  pausa: "Aquí estaré cuando quieras volver."
+};
+function aconsejar(texto) { document.getElementById("dice-c").textContent = texto; }
 function textoAntes(e) {
   return e.antes || (e.jugada ? `Jugada ${e.jugada}. Aquí fue. ¿Ves lo que yo vi?` : "Aquí fue. ¿Ves lo que yo vi?");
 }
 function indicacion() {
-  return `Encuentro ${actual + 1} de ${ENC.length} · toca una pieza y luego su casilla`;
+  return `Encuentro ${actual + 1} de ${ENC.length}`;
 }
 
 const GLIFO = { k: "♚", q: "♛", r: "♜", b: "♝", n: "♞", p: "♟" };
@@ -281,7 +304,8 @@ function resolverEncuentro(vista) {
   const ultimo = actual === ENC.length - 1;
   mover(e.sol.slice(0, 2), e.sol.slice(2, 4));
   dibujar({ [e.sol.slice(2, 4)]: "acierto-casilla" });
-  decir(vista ? T.solucion : (e.despues || (ultimo ? T.resuelto : T.siguiente)));
+  decir(vista ? T.burlaSolucion : (e.despues || (ultimo ? T.resuelto : T.siguiente)));
+  aconsejar(vista ? C.solucion : (ultimo ? C.final : C.bien));
   document.getElementById("btn-pista").disabled = true;
   registrar(vista ? "solucion_vista" : "resuelto", { encuentro: actual + 1, de: ENC.length, intentos });
   if (ultimo) {
@@ -289,7 +313,7 @@ function resolverEncuentro(vista) {
     document.getElementById("avatar").classList.remove("despierto");
     document.getElementById("progreso").textContent = ENC.length > 1 ? "Capítulo superado" : "Encuentro superado";
     if (ENC.length > 1) registrar("capitulo_superado", { encuentros: ENC.length });
-    if (vista) setTimeout(() => decir(e.despues || T.resuelto), 2500);
+    if (vista) setTimeout(() => { decir(e.despues || T.resuelto); aconsejar(C.final); }, 2500);
   } else {
     estado = "entre";
     document.getElementById("progreso").textContent = `Encuentro ${actual + 1} de ${ENC.length} superado`;
@@ -314,12 +338,14 @@ function tocar(sq) {
     resolverEncuentro(false);
   } else {
     dibujar();
-    decir(T.fallo);
+    decir(T.burlaFallo[(intentos - 1) % T.burlaFallo.length]);
+    aconsejar(C.fallo);
     registrar("intento_fallido", { encuentro: actual + 1, jugada, intentos });
     if (intentos >= 3) {                       // no dejar al jugador atorado
       const bp = document.getElementById("btn-pista");
       bp.textContent = "Muéstrame la jugada";
       bp.dataset.modo = "solucion";
+      aconsejar(C.rendirse);
     }
   }
 }
@@ -331,7 +357,7 @@ function empezarEncuentro() {
   origen = null;
   tablero = leerFen(e.fen);
   const bp = document.getElementById("btn-pista");
-  bp.textContent = "Pista del villano";
+  bp.textContent = "Pista del consejero";
   bp.dataset.modo = "pista";
   bp.disabled = false;
   bp.classList.remove("oculto");
@@ -339,6 +365,7 @@ function empezarEncuentro() {
   document.getElementById("avatar").classList.add("despierto");
   document.getElementById("progreso").textContent = indicacion();
   decir(textoAntes(e));
+  aconsejar(e.consejo || C.consejo);
   dibujar();
 }
 
@@ -350,6 +377,7 @@ document.getElementById("btn-muestrame").onclick = () => {
 document.getElementById("btn-dejame").onclick = () => {
   estado = "pausa";
   decir(T.pausa);
+  aconsejar(C.pausa);
   document.getElementById("btn-muestrame").textContent = "Ya estoy listo";
   document.getElementById("btn-dejame").classList.add("oculto");
   registrar("dejame_en_paz");
@@ -360,12 +388,14 @@ document.getElementById("btn-pista").onclick = () => {
   const sol = ENC[actual].sol;
   if (document.getElementById("btn-pista").dataset.modo === "solucion") {
     estado = "mostrando";
+    aconsejar("Mira: de aquí… a aquí.");
     dibujar({ [sol.slice(0, 2)]: "pista", [sol.slice(2, 4)]: "pista" });
     setTimeout(() => resolverEncuentro(true), 900);
     return;
   }
   dibujar({ [sol.slice(0, 2)]: "pista" });
-  decir(T.pista);
+  const pz = tablero[sol.slice(0, 2)];
+  aconsejar(C.pista(pz ? NOMBRE[pz.toLowerCase()] : "pieza"));
   registrar("pista", { encuentro: actual + 1 });
 };
 document.getElementById("btn-siguiente").onclick = () => {
@@ -380,6 +410,8 @@ function pintarBandos() {
   if (!JUGADOR || !RIVAL) { av.textContent = "♞"; btnBando.classList.add("oculto"); return; }
   av.replaceChildren(imagen(srcPieza(RIVAL, "k", COLOR === "b")));   // el rey del bando rival es el villano
   btnBando.replaceChildren(imagen(srcPieza(JUGADOR, "k", COLOR === "w")));
+  document.getElementById("avatar-c").replaceChildren(imagen(srcPieza(JUGADOR, "b", COLOR === "w")));
+  document.getElementById("nombre-c").textContent = `Consejero de los ${nombreBando(JUGADOR).toLowerCase()}`;
   btnBando.classList.toggle("oculto", BANDOS.length < 2);
   document.querySelector(".sello .rotulo").textContent = `ENCUENTRO SELLADO · ${nombreBando(RIVAL).toUpperCase()}`;
 }
