@@ -380,6 +380,9 @@ El plan completo está en el Paso 2: supuesto, pregunta precisa, prototipo de ex
 
 [Descargar el modelo con las mejoras DFM (Excel)](recursos/archivos/PI4_S8/Zaqora_Modelo_Economico_S8_DFM.xlsx)
 
+!!! note "Actualización (23/11/2026)"
+    El Excel descargable incluye cambios posteriores a esta semana: una hoja de **flujo de caja a 5 años** (año 1 mensual, año 2 trimestral, años 3 a 5 anuales), el narrador con la **capa gratuita de Cloudflare Workers AI** (sin créditos de IA en la inversión) y **Supabase Pro desde el año 4**. Por eso sus cifras difieren de las tablas de esta sección, que corresponden a la revisión DFM.
+
 Se adoptaron las tres mejoras de la revisión DFM. El libro es una copia del modelo de la semana 7 con los supuestos cambiados en naranja; todo lo demás se recalcula con las mismas fórmulas.
 
 **BOM actualizado**
