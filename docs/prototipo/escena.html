@@ -116,6 +116,7 @@
   <div class="progreso" id="progreso">Encuentro 1 de 1</div>
   <footer>
     <button class="accion contorno" id="btn-pista" disabled>Pista del villano</button>
+    <button class="accion primario oculto" id="btn-siguiente">Siguiente encuentro</button>
   </footer>
 </div>
 
@@ -130,20 +131,53 @@ const SUPABASE_KEY = CFG.SUPABASE_KEY || "";   // clave pública (anon), nunca l
 const q = new URLSearchParams(location.search);
 const P = q.get("p") || "demo";                    // participante (P1…P5), nunca su usuario
 const V = q.get("v") || "-";                       // variante del mensaje (A, B o C)
-const FEN = q.get("fen") || "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 2 3";
-const SOL = (q.get("sol") || "f3f7").slice(0, 4);  // jugada esperada en UCI
 const COLOR = q.get("color") === "b" ? "b" : "w";  // color con el que jugó el participante
 const VILLANO = q.get("villano") || "La Horquilla Hambrienta";
-const JUGADA = q.get("jugada") || "";
+const FEN_EJEMPLO = "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 2 3";
+
+/* El capítulo viaja en el enlace como base64url de un JSON:
+   {"h": [párrafos de la historia], "e": [{"f": FEN, "s": solución UCI, "j": jugada, "a": antes, "d": después}]}
+   Si no viene (?c=), se usa el formato anterior de un solo encuentro (?fen=&sol=&jugada=&h=). */
+function decodificar(b) {
+  const b64 = b.replace(/-/g, "+").replace(/_/g, "/") + "=".repeat((4 - (b.length % 4)) % 4);
+  return JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(b64), (c) => c.charCodeAt(0))));
+}
+function leerCapitulo() {
+  const txt = (x) => (typeof x === "string" ? x.slice(0, 300) : "");
+  try {
+    if (q.get("c")) {
+      const c = decodificar(q.get("c"));
+      const enc = (Array.isArray(c.e) ? c.e : [])
+        .filter((x) => x && typeof x.f === "string" && typeof x.s === "string").slice(0, 5)
+        .map((x) => ({ fen: x.f, sol: x.s.slice(0, 4), jugada: String(x.j || ""), antes: txt(x.a), despues: txt(x.d) }));
+      const historia = (Array.isArray(c.h) ? c.h : []).map(txt).filter(Boolean).slice(0, 5);
+      if (enc.length) return { historia, encuentros: enc };
+    }
+  } catch (e) {}
+  let historia = [];
+  try { if (q.get("h")) historia = decodificar(q.get("h")).map(txt).filter(Boolean).slice(0, 5); } catch (e) {}
+  return { historia, encuentros: [{ fen: q.get("fen") || FEN_EJEMPLO, sol: (q.get("sol") || "f3f7").slice(0, 4),
+                                    jugada: q.get("jugada") || "", antes: "", despues: "" }] };
+}
+const CAP = leerCapitulo();
+const ENC = CAP.encuentros;
+let actual = 0;                                    // encuentro en juego
 
 const T = {
   sellado: "Esa partida dolió. Yo estaba ahí.",
-  despierto: JUGADA ? `Jugada ${JUGADA}. Aquí fue. ¿Ves lo que yo vi?` : "Aquí fue. ¿Ves lo que yo vi?",
   fallo: "Casi. Yo también lo habría intentado. Otra vez.",
   pista: "Te ayudo un poco: empieza por la pieza marcada.",
+  solucion: "Era esta. Mírala bien: la próxima vez no te la voy a enseñar.",
+  siguiente: "Bien visto. Pero todavía no terminamos.",
   resuelto: "…Esta vez no. Nos volveremos a ver.",
   pausa: "Está bien. Aquí te espero cuando quieras."
 };
+function textoAntes(e) {
+  return e.antes || (e.jugada ? `Jugada ${e.jugada}. Aquí fue. ¿Ves lo que yo vi?` : "Aquí fue. ¿Ves lo que yo vi?");
+}
+function indicacion() {
+  return `Encuentro ${actual + 1} de ${ENC.length} · toca una pieza y luego su casilla`;
+}
 
 const GLIFO = { k: "♚", q: "♛", r: "♜", b: "♝", n: "♞", p: "♟" };
 const NOMBRE = { k: "rey", q: "dama", r: "torre", b: "alfil", n: "caballo", p: "peón" };
@@ -165,7 +199,7 @@ function elegirRival() {
   if (existe(q.get("rival"))) return q.get("rival");
   const otros = BANDOS.filter((b) => b.id !== JUGADOR);
   const lista = otros.length ? otros : BANDOS;
-  return lista[semilla(`${FEN}|${SOL}|${P}`) % lista.length].id;
+  return lista[semilla(`${ENC[0].fen}|${ENC[0].sol}|${P}`) % lista.length].id;
 }
 function srcPieza(bando, tipo, blanca) { return `piezas/${bando}/${tipo}-${blanca ? "clara" : "oscura"}.png`; }
 function imagen(src) { const i = document.createElement("img"); i.src = src; i.alt = ""; return i; }
@@ -230,6 +264,40 @@ function dibujar(marcas = {}) {
 
 function decir(texto) { document.getElementById("burbuja").textContent = texto; }
 
+function mover(de, a) {
+  const pz = tablero[de];
+  tablero[a] = pz;
+  delete tablero[de];
+  if (pz && pz.toLowerCase() === "k" && Math.abs("abcdefgh".indexOf(de[0]) - "abcdefgh".indexOf(a[0])) === 2) {
+    const fila = de[1], corto = a[0] === "g";                     // enroque: también se mueve la torre
+    tablero[(corto ? "f" : "d") + fila] = tablero[(corto ? "h" : "a") + fila];
+    delete tablero[(corto ? "h" : "a") + fila];
+  }
+  if (pz && pz.toLowerCase() === "p" && (a[1] === "8" || a[1] === "1")) tablero[a] = pz === "P" ? "Q" : "q";
+}
+
+function resolverEncuentro(vista) {
+  const e = ENC[actual];
+  const ultimo = actual === ENC.length - 1;
+  mover(e.sol.slice(0, 2), e.sol.slice(2, 4));
+  dibujar({ [e.sol.slice(2, 4)]: "acierto-casilla" });
+  decir(vista ? T.solucion : (e.despues || (ultimo ? T.resuelto : T.siguiente)));
+  document.getElementById("btn-pista").disabled = true;
+  registrar(vista ? "solucion_vista" : "resuelto", { encuentro: actual + 1, de: ENC.length, intentos });
+  if (ultimo) {
+    estado = "resuelto";
+    document.getElementById("avatar").classList.remove("despierto");
+    document.getElementById("progreso").textContent = ENC.length > 1 ? "Capítulo superado" : "Encuentro superado";
+    if (ENC.length > 1) registrar("capitulo_superado", { encuentros: ENC.length });
+    if (vista) setTimeout(() => decir(e.despues || T.resuelto), 2500);
+  } else {
+    estado = "entre";
+    document.getElementById("progreso").textContent = `Encuentro ${actual + 1} de ${ENC.length} superado`;
+    document.getElementById("btn-pista").classList.add("oculto");
+    document.getElementById("btn-siguiente").classList.remove("oculto");
+  }
+}
+
 function tocar(sq) {
   if (estado !== "despierto") return;
   if (!origen) {
@@ -241,33 +309,43 @@ function tocar(sq) {
   if (sq === origen) { origen = null; dibujar(); return; }
   const jugada = origen + sq;
   intentos++;
-  if (jugada === SOL) {
-    tablero[sq] = tablero[origen];
-    delete tablero[origen];
-    estado = "resuelto";
-    dibujar({ [sq]: "acierto-casilla" });
-    decir(T.resuelto);
-    document.getElementById("avatar").classList.remove("despierto");
-    document.getElementById("progreso").textContent = "Encuentro superado";
-    document.getElementById("btn-pista").disabled = true;
-    registrar("resuelto", { intentos });
+  origen = null;
+  if (jugada === ENC[actual].sol) {
+    resolverEncuentro(false);
   } else {
-    origen = null;
     dibujar();
     decir(T.fallo);
-    registrar("intento_fallido", { jugada, intentos });
+    registrar("intento_fallido", { encuentro: actual + 1, jugada, intentos });
+    if (intentos >= 3) {                       // no dejar al jugador atorado
+      const bp = document.getElementById("btn-pista");
+      bp.textContent = "Muéstrame la jugada";
+      bp.dataset.modo = "solucion";
+    }
   }
 }
 
-document.getElementById("btn-muestrame").onclick = () => {
+function empezarEncuentro() {
+  const e = ENC[actual];
   estado = "despierto";
-  document.getElementById("sello").classList.add("oculto");
+  intentos = 0;
+  origen = null;
+  tablero = leerFen(e.fen);
+  const bp = document.getElementById("btn-pista");
+  bp.textContent = "Pista del villano";
+  bp.dataset.modo = "pista";
+  bp.disabled = false;
+  bp.classList.remove("oculto");
+  document.getElementById("btn-siguiente").classList.add("oculto");
   document.getElementById("avatar").classList.add("despierto");
-  document.getElementById("btn-pista").disabled = false;
-  document.getElementById("progreso").textContent = `Juegas con ${COLOR === "w" ? "blancas" : "negras"}: toca una pieza y luego su casilla`;
-  decir(T.despierto);
+  document.getElementById("progreso").textContent = indicacion();
+  decir(textoAntes(e));
   dibujar();
-  registrar("muestrame");
+}
+
+document.getElementById("btn-muestrame").onclick = () => {
+  document.getElementById("sello").classList.add("oculto");
+  empezarEncuentro();
+  registrar("muestrame", { encuentros: ENC.length });
 };
 document.getElementById("btn-dejame").onclick = () => {
   estado = "pausa";
@@ -279,9 +357,21 @@ document.getElementById("btn-dejame").onclick = () => {
 document.getElementById("btn-pista").onclick = () => {
   if (estado !== "despierto") return;
   origen = null;
-  dibujar({ [SOL.slice(0, 2)]: "pista" });
+  const sol = ENC[actual].sol;
+  if (document.getElementById("btn-pista").dataset.modo === "solucion") {
+    estado = "mostrando";
+    dibujar({ [sol.slice(0, 2)]: "pista", [sol.slice(2, 4)]: "pista" });
+    setTimeout(() => resolverEncuentro(true), 900);
+    return;
+  }
+  dibujar({ [sol.slice(0, 2)]: "pista" });
   decir(T.pista);
-  registrar("pista");
+  registrar("pista", { encuentro: actual + 1 });
+};
+document.getElementById("btn-siguiente").onclick = () => {
+  actual++;
+  empezarEncuentro();
+  registrar("encuentro", { encuentro: actual + 1, de: ENC.length });
 };
 
 function pintarBandos() {
@@ -321,18 +411,8 @@ function mostrarElegir() {
 }
 document.getElementById("btn-bando").onclick = mostrarElegir;
 
-/* Historia del villano: párrafos que arma el detector (IA o plantilla) y viajan en el enlace (?h=, base64url). */
-function leerHistoria() {
-  const h = q.get("h");
-  if (!h) return [];
-  try {
-    const b64 = h.replace(/-/g, "+").replace(/_/g, "/") + "=".repeat((4 - (h.length % 4)) % 4);
-    const bytes = Uint8Array.from(atob(b64), (c) => c.charCodeAt(0));
-    const lista = JSON.parse(new TextDecoder().decode(bytes));
-    return Array.isArray(lista) ? lista.filter((x) => typeof x === "string" && x.trim()).slice(0, 5) : [];
-  } catch (e) { return []; }
-}
-const HISTORIA = leerHistoria();
+/* Historia del villano: párrafos que arma el detector (IA o plantilla); vienen en el capítulo. */
+const HISTORIA = CAP.historia;
 let parrafo = 0;
 function mostrarParrafo() {
   document.getElementById("historia-texto").textContent = HISTORIA[parrafo];
@@ -353,7 +433,8 @@ if (HISTORIA.length) {
 
 async function iniciar() {
   document.getElementById("titulo").textContent = `Capítulo · ${VILLANO}`;
-  tablero = leerFen(FEN);
+  tablero = leerFen(ENC[0].fen);
+  document.getElementById("progreso").textContent = `Encuentro 1 de ${ENC.length}`;
   decir(T.sellado);
   try {
     const r = await fetch("piezas/bandos.json", { cache: "no-cache" });
