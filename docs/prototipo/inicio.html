@@ -340,11 +340,11 @@ document.getElementById("btn-revisar").onclick = async () => {
 
 document.getElementById("btn-entrar").onclick = () => { registrar("entrar_lichess"); ZaqoraSesion.entrar(); };
 document.getElementById("btn-salir").onclick = async () => {
-  if (!confirm("Al salir, este teléfono deja de mostrar los capítulos de tu cuenta y de recibir sus avisos. ¿Salir?")) return;
+  if (!confirm("Al salir, este teléfono deja de mostrar tus capítulos y de recibir tus avisos. Vuelven cuando entres otra vez. ¿Salir?")) return;
   registrar("salio_lichess");
   await ZaqoraSesion.salir();
-  // Capítulos de la cuenta: fuera de este teléfono (siguen guardados en la cuenta)
-  capitulos = capitulos.filter((c) => !c.cuenta);
+  // Capítulos: fuera de este teléfono (siguen guardados en la cuenta y vuelven al entrar)
+  capitulos = [];
   guardar("zaqora_capitulos", JSON.stringify(capitulos));
   // Avisos: este teléfono deja de recibir los de esa cuenta
   try {
