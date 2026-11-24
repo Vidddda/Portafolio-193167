@@ -139,6 +139,7 @@
 </div>
 
 <script src="config.js"></script>
+<script src="sesion.js"></script>
 <script>
 /* El registro de eventos usa la configuración de config.js (ver LEEME.md).
    Si está vacía, la escena funciona igual pero no registra nada. */
@@ -496,6 +497,11 @@ function guardarCapitulo(cambios) {
   }
   Object.assign(cap, cambios);
   guardarLocal("zaqora_capitulos", JSON.stringify(lista.slice(0, 30)));
+  // Con sesión de Lichess, el avance también se guarda en la cuenta (si el capítulo es suyo).
+  if (window.ZaqoraSesion && ZaqoraSesion.usuario() && ("superados" in cambios || "rival" in cambios)) {
+    ZaqoraSesion.capitulos("POST", { id: ID_CAP, superados: cap.superados, superado: cap.superado, rival: cap.rival })
+      .catch(() => {});
+  }
 }
 
 /* Sin historial: el consejero invita a jugar en Lichess («Comienza tu historia»). */

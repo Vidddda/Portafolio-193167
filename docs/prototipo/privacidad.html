@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Zaqora · Aviso de privacidad</title>
+<link rel="icon" href="icono-192.png">
+<style>
+  :root { --fondo: #f7f4ef; --tinta: #1f1d1b; --tenue: #6b6560; --linea: #d9d2c7; --villano-osc: #6d1236; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--fondo); color: var(--tinta); line-height: 1.6;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  main { max-width: 720px; margin: 0 auto; padding: 20px 16px 64px; }
+  a { color: var(--villano-osc); }
+  h1 { font-size: 28px; line-height: 1.2; margin: 12px 0 4px; }
+  h2 { font-size: 18px; margin: 28px 0 8px; }
+  .fecha { color: var(--tenue); font-size: 14px; margin: 0 0 20px; }
+  .resumen { background: #fff; border: 1px solid var(--linea); border-radius: 12px; padding: 12px 16px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; vertical-align: top; padding: 8px; border-bottom: 1px solid var(--linea); }
+  th { font-size: 13px; color: var(--tenue); font-weight: 600; }
+  .tabla { overflow-x: auto; }
+</style>
+</head>
+<body>
+<main>
+  <a href="inicio.html">← Volver a Zaqora</a>
+  <h1>Aviso de privacidad</h1>
+  <p class="fecha">Prototipo de Zaqora (versión de prueba) · Última actualización: 24 de noviembre de 2026</p>
+
+  <div class="resumen">
+    <p style="margin:0"><strong>En corto:</strong> usamos tu usuario de Lichess y tus partidas públicas para armar capítulos con tus errores, los guardamos para que los veas en cualquier teléfono y registramos qué haces en ellos para mejorar Zaqora. No vendemos ni compartimos tus datos con nadie para publicidad. Nunca vemos tu contraseña de Lichess. Puedes pedir que borremos todo cuando quieras.</p>
+  </div>
+
+  <h2>1. Quién es responsable de tus datos</h2>
+  <p><strong>David López Ramírez</strong>, persona física, responsable del proyecto Zaqora (proyecto escolar de Proyecto de Ingeniería IV).<br>
+  Domicilio: San Andrés Cholula, Puebla, México.<br>
+  Contacto de privacidad: <a href="mailto:davidlopezramirez2005@gmail.com">davidlopezramirez2005@gmail.com</a>.</p>
+
+  <h2>2. Qué datos tratamos</h2>
+  <div class="tabla"><table>
+    <tr><th>Dato</th><th>De dónde sale</th><th>Dónde se guarda</th></tr>
+    <tr><td>Tu usuario de Lichess</td><td>Nos lo das al inscribirte en la prueba, o Lichess nos lo confirma cuando entras con tu cuenta</td><td>En la computadora del responsable y en la base de datos de Zaqora, junto a tus capítulos</td></tr>
+    <tr><td>Tus partidas públicas de Lichess (jugadas, resultado, reloj y apertura)</td><td>La API pública de Lichess</td><td>Se analizan en la computadora del responsable; no se guarda la partida completa, solo las posiciones de los capítulos</td></tr>
+    <tr><td>Tus capítulos (posiciones de tus errores, textos del villano y del consejero) y tu avance</td><td>Los genera Zaqora</td><td>Base de datos de Zaqora y tu teléfono</td></tr>
+    <tr><td>Registro de uso: qué abres y qué tocas (abrir, pistas, intentos, encuentros superados), con la hora</td><td>Las páginas de Zaqora</td><td>Base de datos de Zaqora, con tu código de participante (P1, P2…), no con tu nombre</td></tr>
+    <tr><td>La suscripción a avisos de tu teléfono (una dirección técnica del servicio de notificaciones, no tu número)</td><td>Tu navegador, al activar los avisos</td><td>Base de datos de Zaqora, con tu código de participante</td></tr>
+    <tr><td>Tu bando y tus capítulos abiertos</td><td>Tus elecciones en la app</td><td>Solo en tu teléfono</td></tr>
+  </table></div>
+  <p>No tratamos datos personales sensibles. No pedimos tu nombre, correo ni teléfono dentro de la app. <strong>Nunca vemos tu contraseña de Lichess:</strong> al entrar con Lichess, Lichess solo nos confirma tu usuario; el permiso que nos da no permite jugar, escribir ni leer nada privado de tu cuenta.</p>
+
+  <h2>3. Para qué los usamos</h2>
+  <div class="tabla"><table>
+    <tr><th>Finalidad</th><th>¿Necesaria para el servicio?</th></tr>
+    <tr><td>Analizar tus partidas y armar tus capítulos (el villano de tu error y los encuentros).</td><td>Sí</td></tr>
+    <tr><td>Avisarte cuando haya un capítulo nuevo.</td><td>Sí</td></tr>
+    <tr><td>Guardar tus capítulos y tu avance para que los veas en cualquier teléfono al entrar con Lichess.</td><td>Sí</td></tr>
+    <tr><td>Medir cómo se usa Zaqora (aperturas, encuentros superados, pistas) para el reporte del proyecto escolar y para mejorar el producto. En el reporte solo aparecen códigos de participante y frases sin nombre.</td><td>No: puedes negarte (ver punto 4)</td></tr>
+  </table></div>
+  <p>Para escribir los textos del villano, Zaqora envía a un servicio de inteligencia artificial (Cloudflare Workers AI) solo hechos de la partida: color, ritmo, número de jugada, pieza y casilla. Nunca tu usuario ni tu nombre. Cloudflare indica que no usa ese contenido para entrenar modelos.</p>
+  <p>Tus datos se guardan en servicios que actúan como encargados, por cuenta del responsable: <strong>Supabase</strong> (base de datos), <strong>Cloudflare</strong> (inteligencia artificial) y <strong>GitHub Pages</strong> (la página). No transferimos tus datos a terceros para otros fines.</p>
+
+  <h2>4. Cómo limitar el uso de tus datos</h2>
+  <ul>
+    <li><strong>Salir de tu cuenta:</strong> en Inicio, toca «Salir». Zaqora borra la sesión de tu teléfono y le pide a Lichess que anule el permiso.</li>
+    <li><strong>Dejar de recibir avisos:</strong> desactiva las notificaciones de Zaqora en los ajustes de tu teléfono, o escribe ALTO durante la prueba.</li>
+    <li><strong>Negarte a la finalidad de medición:</strong> escríbenos y dejamos de usar tu registro de uso en el reporte.</li>
+  </ul>
+
+  <h2>5. Tus derechos ARCO</h2>
+  <p>Tienes derecho a <strong>acceder</strong> a tus datos, <strong>rectificarlos</strong>, <strong>cancelarlos</strong> u <strong>oponerte</strong> a su uso, y a revocar tu consentimiento. Escribe al contacto de privacidad con tu usuario de Lichess (o tu código de participante) y qué derecho quieres ejercer. Te responderemos en un máximo de 20 días y, si procede, lo aplicaremos dentro de los 15 días siguientes, como marca el artículo 31 de la Ley Federal de Protección de Datos Personales en Posesión de los Particulares.</p>
+  <p>Al terminar el piloto, los datos de los participantes se borran de la base de datos de Zaqora.</p>
+
+  <h2>6. Cambios a este aviso</h2>
+  <p>Si este aviso cambia, publicaremos la nueva versión en esta página con su fecha. Si el cambio afecta cómo usamos tus datos, te lo diremos en la app antes de aplicarlo.</p>
+
+  <h2>Menores de edad</h2>
+  <p>Zaqora es solo para personas mayores de 18 años.</p>
+</main>
+</body>
+</html>

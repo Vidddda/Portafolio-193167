@@ -61,6 +61,9 @@
   button:focus-visible, a:focus-visible { outline: 3px solid var(--villano); outline-offset: 2px; }
   .nota { font-size: 12px; color: var(--tenue); text-align: center; }
   .oculto { display: none !important; }
+  .cuenta { font-size: 13px; color: var(--tenue); display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .cuenta button { background: transparent; border: 0; color: var(--tinta); text-decoration: underline; font-size: 13px; cursor: pointer; padding: 8px 0; }
+  .error { font-size: 13px; color: #b3261e; margin: 0; }
 </style>
 </head>
 <body>
@@ -74,6 +77,15 @@
     <span>Los avisos del villano no están activos en este teléfono.</span>
     <a href="activar.html" id="enlace-activar">Activar</a>
   </div>
+
+  <div class="tarjeta oculto" id="s-entrar">
+    <b style="font-size:16px">Guarda tu historia con tu cuenta de Lichess</b>
+    <p class="vacio" style="margin:0">Así tus capítulos y tu avance quedan ligados a tu cuenta y los ves en cualquier teléfono. Zaqora nunca ve tu contraseña: Lichess solo le confirma quién eres.</p>
+    <button class="accion primario" id="btn-entrar">Entrar con Lichess</button>
+    <p class="nota" style="margin:0">Al entrar aceptas el <a href="privacidad.html">aviso de privacidad</a>.</p>
+  </div>
+  <div class="cuenta oculto" id="s-cuenta"><span>Conectado como <b id="usuario-l"></b></span><button id="btn-salir">Salir</button></div>
+  <p class="error" id="error-sesion" role="alert"></p>
 
   <div class="consejero">
     <div class="avatar-c" id="avatar-c" aria-hidden="true">♝</div>
@@ -117,6 +129,7 @@
 </div>
 
 <script src="config.js"></script>
+<script src="sesion.js"></script>
 <script>
 const CFG = window.ZAQORA || {};
 const leer = (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } };
@@ -127,7 +140,7 @@ if (P) guardar("zaqora_p", P); else P = leer("zaqora_p");
 
 let BANDOS = [];
 let bando = leer("zaqora_bando");
-const capitulos = (() => { try { return JSON.parse(leer("zaqora_capitulos") || "[]"); } catch (e) { return []; } })();
+let capitulos = (() => { try { return JSON.parse(leer("zaqora_capitulos") || "[]"); } catch (e) { return []; } })();
 
 function registrar(evento, detalle) {
   if (!CFG.SUPABASE_URL || !P) return;
@@ -174,6 +187,8 @@ function pintarConsejero() {
 }
 
 function pintarCapitulos() {
+  ["s-ultimo", "s-anteriores", "s-vacio"].forEach((id) => document.getElementById(id).classList.add("oculto"));
+  document.getElementById("lista").replaceChildren();
   if (!capitulos.length) {
     document.getElementById("s-vacio").classList.remove("oculto");
     return;
@@ -243,6 +258,44 @@ document.getElementById("btn-bando").onclick = () => {
 document.getElementById("btn-lichess").addEventListener("click", () =>
   registrar("jugar_lichess", { desde: "inicio", capitulos: capitulos.length }));
 
+/* ---------- Cuenta de Lichess ---------- */
+const errorSesion = (m) => { document.getElementById("error-sesion").textContent = m || ""; };
+function pintarCuenta() {
+  const u = window.ZaqoraSesion && ZaqoraSesion.usuario();
+  document.getElementById("s-entrar").classList.toggle("oculto", !!u);
+  document.getElementById("s-cuenta").classList.toggle("oculto", !u);
+  document.getElementById("usuario-l").textContent = u || "";
+}
+async function sesion() {
+  if (!window.ZaqoraSesion) return;
+  try {
+    const nuevo = await ZaqoraSesion.terminarEntrada();
+    if (nuevo) registrar("entro_lichess");
+  } catch (e) { errorSesion(e.message); }
+  pintarCuenta();
+  if (!ZaqoraSesion.usuario()) return;
+  try {
+    const datos = await ZaqoraSesion.capitulos("GET");
+    if (!datos) return;
+    const porId = new Map(capitulos.map((c) => [c.id, c]));
+    for (const s of datos.capitulos || []) {
+      const local = porId.get(s.id) || {};
+      porId.set(s.id, { id: s.id, q: s.enlace, villano: s.villano, fecha: s.creado, modo: s.modo, total: s.total,
+                        superados: Math.max(s.superados || 0, local.superados || 0),
+                        superado: !!(s.superado || local.superado), rival: s.rival || local.rival });
+    }
+    capitulos = [...porId.values()].sort((a, b) => String(b.fecha).localeCompare(String(a.fecha))).slice(0, 30);
+    guardar("zaqora_capitulos", JSON.stringify(capitulos));
+    pintarConsejero();
+    pintarCapitulos();
+  } catch (e) {
+    errorSesion("No pude traer tus capítulos guardados (" + e.message + "). Te muestro los de este teléfono.");
+    pintarCuenta();
+  }
+}
+document.getElementById("btn-entrar").onclick = () => { registrar("entrar_lichess"); ZaqoraSesion.entrar(); };
+document.getElementById("btn-salir").onclick = async () => { await ZaqoraSesion.salir(); registrar("salio_lichess"); pintarCuenta(); };
+
 (async () => {
   try { BANDOS = (await (await fetch("piezas/bandos.json", { cache: "no-cache" })).json()).bandos || []; } catch (e) {}
   if (bando && !BANDOS.some((b) => b.id === bando)) bando = null;
@@ -250,6 +303,7 @@ document.getElementById("btn-lichess").addEventListener("click", () =>
   if (!bando && BANDOS.length) document.getElementById("s-bando").classList.remove("oculto");
   pintarConsejero();
   pintarCapitulos();
+  await sesion();
   const activos = leer("zaqora_activado") === "1" && "Notification" in window && Notification.permission === "granted";
   if (!activos) {
     document.getElementById("sin-avisos").classList.remove("oculto");
