@@ -70,7 +70,7 @@
     });
     const datos = await r.json().catch(() => ({}));
     if (r.status === 401) { guardar("zaqora_lichess_token", null); guardar("zaqora_lichess_usuario", null); }
-    if (!r.ok) throw new Error(datos.error || `La función respondió ${r.status}`);
+    if (!r.ok) { const err = new Error(datos.error || `La función respondió ${r.status}`); err.datos = datos; err.estado = r.status; throw err; }
     return datos;
   }
 

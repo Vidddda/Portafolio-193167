@@ -928,6 +928,7 @@ def main():
                     help="sesión de prueba: envía el aviso con la última derrota analizada de ese participante")
     ap.add_argument("--variante", choices=["A", "B", "C"], help="con --ultima: variante del mensaje")
     ap.add_argument("--partida", metavar="ID", help="con --ultima: envía esa partida (id o enlace de Lichess)")
+    ap.add_argument("--solo", metavar="ALIAS", help="con --enviar: revisa solo a ese jugador («Revisar ahora»)")
     ap.add_argument("--historia", metavar="ALIAS",
                     help="envía el primer capítulo hecho con las últimas partidas (o la invitación a jugar si no tiene)")
     ap.add_argument("--ver-historia", metavar="ALIAS", help="como --historia, pero solo lo muestra, sin enviar")
@@ -980,6 +981,8 @@ def main():
     cfg = config() if args.enviar else None
     while True:
         participantes = leer_participantes()
+        if args.solo:
+            participantes = [p for p in participantes if p["alias"].strip() == args.solo.strip()]
         estado = leer_estado()
         print(f"[{datetime.now():%d/%m %H:%M}] Revisando {len(participantes)} participantes…")
         if args.enviar and os.environ.get("GITHUB_ACTIONS") == "true" and _ESTADO_EN != "supabase":

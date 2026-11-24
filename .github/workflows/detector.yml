@@ -3,11 +3,17 @@
 # manda el primer contacto (un capítulo por cada una de sus últimas 5 derrotas) y un capítulo
 # por cada derrota nueva. Las claves vienen de los secretos del repositorio; nunca se imprimen.
 name: Detector de derrotas
+run-name: ${{ inputs.alias && format('Revisar ahora · {0}', inputs.alias) || 'Detector de derrotas' }}
 
 on:
   schedule:
     - cron: "*/10 * * * *"
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      alias:
+        description: "Código del jugador (J1, J2…) para revisar solo a ese jugador. Vacío = todos."
+        required: false
+        default: ""
 
 concurrency:
   group: detector-zaqora
@@ -61,4 +67,11 @@ jobs:
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CLOUDFLARE_TOKEN: ${{ secrets.CLOUDFLARE_TOKEN }}
           ZAQORA_STOCKFISH: /usr/games/stockfish
-        run: python zaqora/detector/detectar_derrotas.py --enviar
+          SOLO: ${{ inputs.alias }}
+        run: |
+          # «Revisar ahora» manda el código del jugador; solo se acepta J1, J2… o P0…P9.
+          if [[ "$SOLO" =~ ^[JP][0-9]{1,5}$ ]]; then
+            python zaqora/detector/detectar_derrotas.py --enviar --solo "$SOLO"
+          else
+            python zaqora/detector/detectar_derrotas.py --enviar
+          fi
