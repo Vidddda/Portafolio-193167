@@ -381,43 +381,67 @@ El plan completo está en el Paso 2: supuesto, pregunta precisa, prototipo de ex
 [Descargar el modelo con las mejoras DFM (Excel)](recursos/archivos/PI4_S8/Zaqora_Modelo_Economico_S8_DFM.xlsx)
 
 !!! note "Actualización (23/11/2026)"
-    El Excel descargable incluye cambios posteriores a esta semana: una hoja de **flujo de caja a 5 años** (año 1 mensual, año 2 trimestral, años 3 a 5 anuales), el narrador con la **capa gratuita de Cloudflare Workers AI** (sin créditos de IA en la inversión) y **Supabase Pro desde el año 4**. Por eso sus cifras difieren de las tablas de esta sección, que corresponden a la revisión DFM.
+    Las tablas de esta sección muestran los números vigentes del modelo. Después de la revisión DFM se hicieron tres cambios más: el narrador usa la **capa gratuita de Cloudflare Workers AI** (y ya no se compran créditos de IA), **Supabase Pro se retrasa al año 4** y el libro incluye un **flujo de caja a 5 años**. La columna «Revisión DFM» conserva los números de esta semana para comparar.
 
-Se adoptaron las tres mejoras de la revisión DFM. El libro es una copia del modelo de la semana 7 con los supuestos cambiados en naranja; todo lo demás se recalcula con las mismas fórmulas.
+Se adoptaron las tres mejoras de la revisión DFM y, después, la IA gratuita. El libro es una copia del modelo de la semana 7 con los supuestos cambiados en naranja (revisión DFM) y en amarillo (cambios posteriores); todo lo demás se recalcula con las mismas fórmulas.
 
 **BOM actualizado**
 
-| Componente | Antes (semana 7) | Después (semana 8) | Cambio |
+| Componente | Antes (semana 7) | Vigente | Cambio |
 | :--- | :--- | :--- | :--- |
-| Narrador | Claude Haiku 4.5: US\$1 / US\$5 por millón de tokens | **Claude Haiku 5.5:** US\$0.10 / US\$0.50 por millón | Mismo consumo de tokens; +30 % por el español y +30 % por el tokenizador nuevo |
+| Narrador | Claude Haiku 4.5: US\$1 / US\$5 por millón de tokens | **Cloudflare Workers AI, capa gratuita** (10,000 neurons al día, unos 148 capítulos diarios con Llama 3.1 8B); el excedente se valora a Claude Haiku 5.5 (US\$0.10 / US\$0.50 por millón) | La revisión DFM lo cambió a Haiku 5.5; después pasó a la capa gratuita. Falta comprobar la calidad del español del modelo gratuito |
+| Créditos de IA (inversión) | US\$20 | **US\$0** | Con la capa gratuita no hacen falta |
 | Análisis de partidas | Worker de Python con Stockfish en Railway, US\$5 al mes | **Stockfish WASM en el navegador**; cron en pg_cron + Edge Function de Supabase | Sale Railway; se aprovechan las evaluaciones de Lichess (`evals=true`) |
-| Base de datos a 100 usuarios | Supabase Pro, US\$25 al mes | **Supabase Free** con `pg_dump` semanal y monitor de disponibilidad | Se pasa a Pro cuando haya ingresos |
+| Base de datos | Supabase Pro desde ~100 usuarios, US\$25 al mes | **Supabase Free hasta el año 3; Pro desde el año 4** | Se pasa a Pro cuando el ingreso mensual (~\$1,000) ya duplica su costo (~\$462.50) |
 | Dominio, Google Play, Cloudflare Pages, Stripe | Sin cambio | Sin cambio | Dominio y Play se amortizan en 12 meses en el costo unitario |
 
-**Nuevo costo unitario** (MXN por usuario activo al mes, con 15 % de overhead y 25 % de contingencia):
+**Costo unitario** (MXN por usuario activo al mes, con 15 % de overhead y 25 % de contingencia):
 
 | Concepto | 20 usuarios | 100 usuarios |
 | :--- | ---: | ---: |
 | Cloud y fijos amortizados (dominio y Google Play) | \$2.78 | \$0.56 |
-| IA (Haiku 5.5) | \$0.50 | \$0.50 |
-| Overhead y contingencia | \$1.44 | \$0.46 |
-| **Costo unitario** | **\$4.72** | **\$1.52** |
-| Antes, mismo método (con dominio y Play amortizados) | \$16.18 | \$15.64 |
-| Ingreso neto por suscriptor / costo unitario | 9.5 veces | 29.6 veces |
+| IA | **\$0** (dentro de la capa gratuita) | **\$0** (dentro de la capa gratuita) |
+| Overhead y contingencia | \$1.22 | \$0.24 |
+| **Costo unitario vigente** | **\$4.00** | **\$0.80** |
+| Revisión DFM (Haiku 5.5 de pago) | \$4.72 | \$1.52 |
+| Semana 7, mismo método (con dominio y Play amortizados) | \$16.18 | \$15.64 |
+| Ingreso neto por suscriptor / costo unitario | 11.2 veces | 56.2 veces |
 
-La diferencia con la revisión (\$4.55 y \$1.35) se debe a que el libro suma el ~30 % de tokens del tokenizador nuevo al costo de Haiku 5.5.
+La capa gratuita alcanza para unos 220 usuarios activos a 20 capítulos al mes. Por encima de eso, el excedente se paga.
 
 **Efecto en el año 1** (mismo plan de 20 usuarios beta, 5 % de conversión y cuenta de Google Play):
 
-| | Semana 7 | Con mejoras DFM |
-| :--- | ---: | ---: |
-| Inversión inicial | \$1,222.48 | \$1,037.48 (sin worker prepagado) |
-| Flujo mensual desde el mes 4 | −\$88 a −\$199 | **+\$44.92** (ya no hay costos de operación en efectivo) |
-| Primer mes con flujo positivo | Ninguno | **Mes 4** |
-| VPN a 12 meses (15 %) | −\$2,636 | **−\$669** |
-| Suscriptores necesarios todo el año | 8 | **3** (15 % de conversión) |
+| | Semana 7 | Revisión DFM | Vigente |
+| :--- | ---: | ---: | ---: |
+| Inversión inicial | \$1,222.48 | \$1,037.48 | **\$667.48** (sin worker prepagado ni créditos de IA) |
+| Flujo mensual desde el mes 4 | −\$88 a −\$199 | +\$44.92 | **+\$44.92** |
+| Primer mes con flujo positivo | Ninguno | Mes 4 | **Mes 4** |
+| VPN a 12 meses (15 %) | −\$2,636 | −\$669 | **−\$299** |
+| Suscriptores necesarios todo el año | 8 | 3 | **2** (10 % de conversión) |
 
-Las mejoras no vuelven viable el año 1 por sí solas, pero cambian la escala del problema: el negocio pasa de perder dinero cada mes a recuperar la inversión con 3 suscriptores en lugar de 8. Con una academia piloto (semana 7), el VPN ya era positivo antes de las mejoras.
+El año 1 sigue sin ser viable por sí solo, pero ya solo pierde lo que cuesta empezar: desde el mes 4 cada mes deja dinero, y bastan 2 suscriptores para recuperar la inversión en el año.
+
+**Flujo de caja a 5 años** (año 1 mensual, año 2 trimestral, años 3 a 5 anuales; hoja «Flujo 5 años» del Excel):
+
+| Año | Ingresos | Egresos | Flujo neto | Acumulado |
+| :---: | ---: | ---: | ---: | ---: |
+| 1 | \$404 | \$667 | −\$263 | −\$263 |
+| 2 | \$1,617 | \$295 | +\$1,322 | +\$1,059 |
+| 3 | \$5,390 | \$295 | +\$5,096 | +\$6,155 |
+| 4 | \$12,128 | \$10,240 | +\$1,888 | +\$8,042 |
+| 5 | \$21,561 | \$13,260 | +\$8,300 | **+\$16,343** |
+
+| Indicador | Resultado |
+| :--- | :--- |
+| VPN a 5 años (15 %) | **+\$9,281** |
+| Recuperación de la inversión | **Mes 21**, sin volver a números negativos |
+| Peor momento de caja | −\$667 (solo la inversión inicial) |
+| Usuarios de pago al cierre del año 5 | 50 |
+
+- **Supuestos que más pesan:** usuarios activos al cierre de cada año (100, 300, 600 y 1,000) y conversión del 5 %. Ninguno está medido todavía; la prueba con usuarios de esta semana no se realizó.
+- **El cambio con más efecto fue retrasar Supabase Pro.** Con Pro desde el año 3 el VPN a 5 años sería de +\$4,035; con Pro desde el año 4, +\$9,281. La IA gratuita aporta unos \$3,700 más al VPN.
+- **La TIR (190 %) no dice mucho aquí:** la inversión es tan pequeña (\$667) que cualquier ganancia la vuelve enorme. El VPN y el acumulado son mejores indicadores.
+- **El modelo no incluye sueldos.** El equipo es una sola persona y su tiempo no se cuenta como costo.
 
 ### 4. Economía circular
 
@@ -452,7 +476,7 @@ La página del curso plantea cuatro preguntas de circularidad pensadas para hard
 - **Construí el prototipo, pero no hice la pregunta.** La semana pedía responder el supuesto más riesgoso con comportamiento real, y lo único que sé al cierre es que el prototipo funciona. Construir resultó más fácil que conseguir a cinco personas durante tres días seguidos. El supuesto que decide todo el concepto sigue sin respuesta.
 - **Probar el prototipo uno mismo no es evidencia.** Abrí el aviso porque yo lo había mandado y sabía qué contenía. La prueba de funcionamiento sirve para saber que la prueba con usuarios puede correr, no para sustituirla.
 - **Cambiar WhatsApp por la notificación de la app fue la mejor decisión de la semana.** Un mensaje personal se abre más que un aviso de una app desconocida; con WhatsApp habría obtenido un resultado inflado. Ahora el prototipo mide el canal que tendrá el producto, incluida la fricción de activar los avisos.
-- **La revisión DFM cambió el producto, no solo el costo.** Sacar el análisis del servidor bajó el costo de ~\$16 a ~\$4.72 por usuario, pero obligó a que el villano ya no cite el error exacto en el aviso. Y en la prueba de funcionamiento hubo que pedir a mano el análisis de la partida en Lichess para que hubiera escena: en el producto, ese análisis tiene que vivir en Zaqora.
+- **La revisión DFM cambió el producto, no solo el costo.** Sacar el análisis del servidor bajó el costo de ~\$16 a ~\$4.72 por usuario (y a ~\$4.00 después, con la IA gratuita), pero obligó a que el villano ya no cite el error exacto en el aviso. Y en la prueba de funcionamiento hubo que pedir a mano el análisis de la partida en Lichess para que hubiera escena: en el producto, ese análisis tiene que vivir en Zaqora.
 - **Lo siguiente es la prueba, no más diseño.** Todo lo demás de Zaqora —tono, precio, academias— depende de que alguien abra el aviso después de perder.
 
 ### Preguntas de cierre
@@ -461,5 +485,5 @@ La página del curso plantea cuatro preguntas de circularidad pensadas para hard
 | :--- | :--- |
 | ¿Cuál es el supuesto más riesgoso y qué prototipo lo validará? | Que un jugador que acaba de perder abra el capítulo de su villano; sigue sin validar porque la prueba con usuarios no se realizó. Lo valida un prototipo de experiencia de baja resolución en modo «mago de Oz»: avisos push de la app, disparados por un script tras derrotas reales, en dos tonos, con una escena armada sobre la posición de cada partida. |
 | ¿Qué evidencia de comportamiento capturarán? | Cuántos activan los avisos, minutos desde la derrota hasta abrir la escena, la elección en la escena («Muéstrame» o «Déjame en paz») y si termina el encuentro. No se pregunta si les gustó. El registro automático en Supabase ya se comprobó en la prueba de funcionamiento. |
-| ¿Cuál es el componente de mayor costo del BOM y qué alternativa DFM lo reduce? | A 20 usuarios, el worker de Stockfish en Railway (\$4.63 por usuario); a 100, Supabase Pro (\$4.63). Stockfish en el navegador elimina el primero y quedarse en Supabase Free el segundo; cambiar a Claude Haiku 5.5 baja el narrador de \$3.85 a \$0.50. El costo unitario pasa de \$16.18 a \$4.72 a 20 usuarios. Por usuario de pago, el costo más grande ya es la comisión de Stripe (\$5.94 por cobro). |
+| ¿Cuál es el componente de mayor costo del BOM y qué alternativa DFM lo reduce? | A 20 usuarios, el worker de Stockfish en Railway (\$4.63 por usuario); a 100, Supabase Pro (\$4.63). Stockfish en el navegador elimina el primero y quedarse en Supabase Free el segundo; cambiar a Claude Haiku 5.5 baja el narrador de \$3.85 a \$0.50. El costo unitario pasa de \$16.18 a \$4.72 a 20 usuarios, y a \$4.00 con la capa gratuita de IA que se adoptó después. Por usuario de pago, el costo más grande ya es la comisión de Stripe (\$5.94 por cobro). |
 | ¿Cuántas partes tiene la «carcasa» y cómo reducirlas? | Siete servicios integrados. Mover Stockfish al navegador y el cron a Supabase quita Railway: quedan seis servicios, una sola cuenta de pago (Anthropic) en lugar de tres y un solo lenguaje (TypeScript). Las horas de integración no bajan (~64 h), pero el mantenimiento pasa de ~4 h a ~2 h al mes. |
