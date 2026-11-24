@@ -36,6 +36,18 @@
     | **Detector** | Script en la laptop del equipo | **GitHub Actions** cada 10 minutos, con las claves en secretos del repositorio; el estado vive en Supabase |
     | **Datos** | Solo alias en Supabase | Capítulos y avance ligados a la cuenta de Lichess (tabla `capitulos`), leídos solo a través de una función que confirma la identidad con Lichess; [aviso de privacidad de la app](prototipo/privacidad.html) publicado |
 
+<div class="grid" markdown>
+
+![Activación: qué es Zaqora y sus tres pasos](recursos/imgs/PI4_S9/activacion.png){ width="230" }
+
+![Historia del capítulo: el villano cuenta la partida antes de abrir el tablero](recursos/imgs/PI4_S9/historia.png){ width="230" }
+
+![Encuentro: el villano reta arriba y el consejero del bando guía abajo](recursos/imgs/PI4_S9/encuentro.png){ width="230" }
+
+</div>
+
+*Activación, historia del capítulo y encuentro (24/11/2026). El capítulo es un ejemplo armado para la captura; no es la partida de ningún participante.*
+
 ---
 
 ## 3) Proceso — Integración, lanzamiento y pitch

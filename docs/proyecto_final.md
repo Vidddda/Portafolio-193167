@@ -29,7 +29,7 @@ Minutos después de una derrota en Lichess, un villano que encarna el error recu
 
 <div markdown>
 
-![Escena de Zaqora: el villano reconoce la derrota y el tablero espera sellado](recursos/imgs/PI4_S8/escena_sellada.png){ width="240" }
+![Encuentro de Zaqora: el villano reta y el consejero del bando guía](recursos/imgs/PI4_S9/encuentro.png){ width="240" }
 
 </div>
 
@@ -308,13 +308,15 @@ flowchart LR
 
 <div class="grid" markdown>
 
-![Escena sellada (versión de la semana 8)](recursos/imgs/PI4_S8/escena_sellada.png){ width="220" }
+![Activación: qué es Zaqora y sus tres pasos](recursos/imgs/PI4_S9/activacion.png){ width="230" }
 
-![Escena despierta (versión de la semana 8)](recursos/imgs/PI4_S8/escena_despierta.png){ width="220" }
+![Historia del capítulo: el villano cuenta la partida antes de abrir el tablero](recursos/imgs/PI4_S9/historia.png){ width="230" }
+
+![Encuentro: el villano reta arriba y el consejero del bando guía abajo](recursos/imgs/PI4_S9/encuentro.png){ width="230" }
 
 </div>
 
-*Capturas de la semana 8; la versión actual agrega los bandos, la historia y el consejero.*
+*Versión del 24/11/2026, a 360 px de ancho: activación, historia del capítulo y encuentro (el jugador juega con elfos y el villano llega con goblins). El capítulo es un ejemplo armado para la captura, con la posición de la amenaza de mate del pastor; no es la partida de ningún participante.*
 
 **Manual de usuario:**
 
