@@ -70,7 +70,7 @@ Con la actualización del 24/11/2026, F1 la corre el detector en **GitHub Action
 
 | # | Prueba (adaptada) | Qué se mide | Aprobado si | Estado y evidencia |
 | :---: | :--- | :--- | :--- | :--- |
-| **T1** | Activación sin ayuda | Tiempo y errores de alguien que no conoce Zaqora al abrir el enlace y activar los avisos | < 5 minutos sin intervención (en iPhone, incluida la instalación) | ⚠️ **No cumplió en la primera sesión (24/11/2026).** El participante la encontró «complicada de seguir» y las instrucciones de iPhone «no intuitivas» (no se midió el tiempo). Se rehízo la activación por pasos; falta repetir la prueba con alguien nuevo. |
+| **T1** | Activación sin ayuda | Tiempo y errores de alguien que no conoce Zaqora al abrir el enlace y activar los avisos | < 5 minutos sin intervención (en iPhone, incluida la instalación) | ⚠️ **No cumplió en la primera sesión (24/11/2026).** El participante la encontró «complicada de seguir» y las instrucciones de iPhone «no intuitivas» (no se midió el tiempo). Se rehízo la activación por pasos. **En la segunda sesión (P2), ya con la activación nueva, el participante tampoco pudo usar la app solo**: falta ubicar en qué paso se atora. |
 | **T2** | Latencia derrota → aviso | Minutos entre el fin de la partida (Lichess) y el aviso (registro del script) | ≤ 10 minutos (plan de la semana 8) | ⚠️ **Parcial.** El detector corre en GitHub Actions cada 10 minutos (GitHub puede retrasarlo) y el botón «Revisar mis partidas ahora» lo lanza al momento: la corrida del 24/11/2026 tardó **31 s** de la petición al final (17:38:23 → 17:38:54). Falta medir el camino completo con una derrota nueva. |
 | **T3** | Celular sin conexión | Se apaga la red del celular mientras sale el aviso y se vuelve a encender | El aviso llega al reconectar | ⏳ **Pendiente.** Hallazgo de diseño: el aviso se envía con `ttl=3600`, así que **si el celular pasa más de 1 hora sin red, el aviso se pierde**. Es aceptable (un aviso tardío ya no llega «justo después de perder»), pero hay que declararlo. |
 | **T4** | Autonomía de la capa gratuita (equivalente de la batería) | Capítulos al mes que caben en la capa gratuita de Workers AI | Alcanza para el piloto de 20 usuarios | ✅ **Cumple (cálculo).** Con Mistral Small 3.1: unos **190 capítulos al día** ≈ 5,700 al mes → **unos 285 usuarios activos** a 20 capítulos al mes. Ver el cálculo abajo. |
@@ -147,8 +147,8 @@ Es una estimación con los precios que da la cuenta de Cloudflare, no una medici
 
 ### Paso 2 — Pruebas con usuarios
 
-!!! warning "Estado: 1 de 5 sesiones"
-    El 24/11/2026 se hizo la primera sesión (P1). Sus hallazgos están abajo con el cambio que provocó cada uno. Faltan cuatro sesiones y la prueba de campo. Los tiempos y el SEQ de la primera sesión no se registraron.
+!!! warning "Estado: 2 de 5 sesiones"
+    El 24/11/2026 se hicieron dos sesiones: P1, con el flujo de la semana 8, y P2, con el flujo nuevo (entrar con Lichess). Sus hallazgos están abajo con el cambio que provocó cada uno. Faltan tres sesiones y la prueba de campo. En ninguna de las dos se registraron los tiempos ni el SEQ.
 
 **Con quién:** 5 personas, mayores de edad. **Tres del segmento** (jugadores amateur de Lichess que juegan al menos 3 veces por semana) y **dos de otro equipo** del curso.
 
@@ -178,6 +178,31 @@ Por cada tarea se registra: completó sin ayuda (sí o no), tiempo, errores y du
 | 6 | «El ícono del villano se repite para 3 facciones» | Menor | El villano cambia entre los reyes de los bandos rivales |
 
 Después de la sesión, el equipo tomó una decisión de diseño que no vino del participante: **el villano no puede ser quien te ayuda a vencerlo**. Desde entonces el villano reta y reacciona, y las pistas las da un consejero del bando del jugador.
+
+**Lo que P1 respondió en la entrevista de cierre** (citas textuales; se omiten los nombres propios):
+
+| Pregunta | Respuesta de P1 |
+| :--- | :--- |
+| La última vez que perdiste en Lichess, ¿qué hiciste justo después? | «Cerrar la aplicación» |
+| Cuando te llegó el aviso, ¿qué pensaste que era? | «No entendí muy bien, se entendía como una forma de reto de parte del personaje en el programa» |
+| En el capítulo, ¿quién te estaba ayudando? | Nombró al moderador, no al villano ni a un consejero |
+| ¿Qué fue lo que más te costó? | «Seguir las instrucciones para usarlo como app web» |
+| Si pudieras cambiar una sola cosa, ¿cuál sería? | «Hacer más claras y completas las instrucciones» |
+| Si costara 59 pesos al mes, ¿qué tendría que pasar para que lo pagaras? | «Ofrecer más ejercicios guiados y más explicación» |
+| ¿A quién se lo mandarías? | Nombró a un conocido: «se lo mandaría si pudiera» |
+
+Tres lecturas: al perder, P1 **cierra la app** en lugar de analizar, igual que los tres entrevistados de la semana 3; el aviso **no se entendió solo**, lo que respalda separar al villano (reta) del consejero (ayuda); y su primera respuesta sobre el pago apunta a **más práctica guiada**, no a la historia.
+
+**Segunda sesión (P2, 24/11/2026): hallazgos y cambios.** Ya con la versión nueva: entrar con Lichess, primer contacto con las 5 derrotas y «Revisar mis partidas ahora». Tampoco se registraron tiempos ni SEQ.
+
+| # | Hallazgo | Severidad (propuesta) | Cambio |
+| :---: | :--- | :--- | :--- |
+| 1 | No pudo manejar la aplicación solo | Mayor (crítico si no terminó la tarea; no se anotó) | Pendiente: ubicar en las próximas sesiones el paso donde se atora |
+| 2 | Al analizar sus derrotas, sintió que «tardaban mucho en dar el resultado» | Mayor | Inicio muestra el avance de la revisión por etapas (tiempos aproximados) y enseña el capítulo en cuanto llega, sin recargar |
+| 3 | El botón «Jugar en Lichess» se sentía muy llamativo y le daban ganas de tocarlo | Menor | En Inicio pasó a botón secundario para no competir con el capítulo |
+| 4 | En la revisión quiso navegar por sus jugadas: pidió un tablero de análisis con la partida completa | Petición | Pendiente: visor de la partida completa dentro del capítulo |
+
+**Lo que se repite en P1 y P2:** los dos necesitaron ayuda para empezar. La activación sigue siendo el problema principal y es lo primero que medirá T1 en las tres sesiones que faltan.
 
 **Prueba de campo (la de la semana 8, todavía pendiente):** además de la sesión de 30 minutos, los tres participantes del segmento dejan los avisos activos 3 a 5 días con el detector corriendo. Es la única forma de medir lo que la sesión no puede: si alguien que **de verdad** acaba de perder abre el aviso.
 
@@ -408,7 +433,7 @@ Equipo de una persona: todas las tareas son de David, salvo la ayuda del operado
 | | Pruebas T1 (con alguien que no conozca Zaqora) y T3 (modo avión) | Resultados en la tabla del Paso 1 |
 | | Checklist regulatorio (hecho) y aviso de privacidad de la app publicado (hecho el 24/11/2026) | — |
 | | Secciones 1 a 16 de la página de proyecto final al día | Hecho en la versión del 23/11/2026 |
-| **B · probar, corregir y contar** | Cinco pruebas de usuario (tres del segmento, dos de otro equipo) y prueba de campo de 3 a 5 días · **1 de 5 hecha** | Notas por tarea, síntesis con el Prompt 2 |
+| **B · probar, corregir y contar** | Cinco pruebas de usuario (tres del segmento, dos de otro equipo) y prueba de campo de 3 a 5 días · **2 de 5 hechas** | Notas por tarea, síntesis con el Prompt 2 |
 | | Pruebas T5 y T6 (48 h del detector durante la prueba de campo) | — |
 | | Pitch grabado en video, visto y reescrito | Video publicado sin iniciar sesión |
 | | Demo ensayada tres veces con el operador y video de respaldo grabado | Tercer ensayo sin detenerse |
@@ -430,7 +455,7 @@ Equipo de una persona: todas las tareas son de David, salvo la ayuda del operado
 | Fronteras y plan de pruebas T1 a T6 | ✅ T4 y T5 cumplen; T1 y T2 parciales; T3 y T6 pendientes | [Paso 1](#paso-1-integracion-del-sistema) |
 | Sistema integrado sin la laptop del equipo | ✅ Entrar con Lichess, detector en GitHub Actions, capítulos en la cuenta (24/11/2026) | [Actualización](#2-punto-de-partida) |
 | Landing publicada y accesible en internet | ✅ [landing](landing/index.html) (24/11/2026) | Paso 3 |
-| Reporte de pruebas de usuario con cinco sesiones | ⏳ 1 de 5 (hallazgos y cambios de la primera) | [Paso 2](#paso-2-pruebas-con-usuarios) |
+| Reporte de pruebas de usuario con cinco sesiones | ⏳ 2 de 5 (hallazgos y cambios de P1 y P2) | [Paso 2](#paso-2-pruebas-con-usuarios) |
 | Pitch grabado en video | ⏳ Guion listo (actualizado el 24/11/2026) | Paso 5 |
 | Demo ensayada tres veces con video de respaldo | ⏳ Guion listo (actualizado el 24/11/2026) | Paso 6 |
 | Página de proyecto final | ✅ Primera versión | [Proyecto final](proyecto_final.md) |

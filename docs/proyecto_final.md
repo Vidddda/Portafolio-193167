@@ -37,12 +37,12 @@ Minutos después de una derrota en Lichess, un villano que encarna el error recu
 
 **Enlaces:** [repositorio](https://github.com/Vidddda/Portafolio-193167) · [Zaqora (prototipo publicado)](prototipo/inicio.html) · landing (por publicar) · video del pitch (por grabar) · video de respaldo de la demo (por grabar)
 
-**Estado en una oración:** el jugador entra con su cuenta de Lichess, sus últimas 5 derrotas se vuelven capítulos con historia de IA y cada derrota nueva le llega sola como un reto, sin la laptop del equipo; un jugador externo lo probó y sus seis observaciones cambiaron el producto, pero todavía no se sabe si alguien que acaba de perder abre el reto.
+**Estado en una oración:** el jugador entra con su cuenta de Lichess, sus últimas 5 derrotas se vuelven capítulos con historia de IA y cada derrota nueva le llega sola como un reto, sin la laptop del equipo; dos jugadores externos lo probaron y sus observaciones cambiaron el producto, pero todavía no se sabe si alguien que acaba de perder abre el reto.
 
 | | |
 | :--- | :--- |
 | **Versión y fecha** | Versión 2, 24/11/2026 |
-| **Qué falta** | El video del pitch; cuatro sesiones de prueba más y la prueba de campo. La [landing](landing/index.html) ya está publicada. |
+| **Qué falta** | El video del pitch; tres sesiones de prueba más y la prueba de campo. La [landing](landing/index.html) ya está publicada. |
 
 ---
 
@@ -240,6 +240,7 @@ flowchart LR
 | 23/11/2026 | Revisión del detector frontera por frontera | ¿Qué pasa si la partida no tiene análisis? | Se enviaba una posición de ejemplo; corregido para esperar el análisis ([semana 9](pi4_s9.md#paso-1-integracion-del-sistema)) |
 | 24/11/2026 | Bandos con assets propios | ¿Se puede elegir personaje y que el rival cambie? | El rival cambia por derrota entre los bandos que existan; las piezas pasaron de 39 MB a 1.9 MB |
 | 24/11/2026 | Primera sesión con un jugador externo (P1) | ¿Se entiende y se usa sin ayuda? | Seis observaciones, dos críticas (pedir el análisis a mano, instrucciones de iPhone); todas se corrigieron el mismo día ([semana 9](pi4_s9.md#paso-2-pruebas-con-usuarios)) |
+| 24/11/2026 | Segunda sesión (P2), ya con la versión nueva | ¿Se usa sin ayuda? | Tampoco pudo usarla solo; el análisis «tardaba mucho»; «Jugar en Lichess» distraía; pidió ver la partida completa. Inicio ahora muestra el avance de la revisión y el botón pasó a secundario |
 | 24/11/2026 | Stockfish local, capítulos de 3 encuentros e historia con IA | ¿Puede llegar el capítulo sin que nadie pida el análisis y con una historia? | Sí: unos 3 s de análisis por partida; la IA escribe historia y diálogos y la plantilla cubre si falla |
 | 24/11/2026 | Villano y consejero separados | ¿Quién ayuda al jugador? | El villano no puede enseñar a vencerlo; las pistas pasan al consejero del bando |
 | 24/11/2026 | Entrar con Lichess, Inicio y detector en GitHub Actions | ¿Funciona sin la laptop y con el historial del jugador? | El primer contacto convierte sus últimas 5 derrotas en capítulos; «Revisar ahora» corre el detector en 31 s |
@@ -436,7 +437,7 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 
 | Prueba | Resultado |
 | :--- | :--- |
-| T1 Activación sin ayuda (< 5 min) | ⚠️ No cumplió en la primera sesión («complicado de seguir»); activación rehecha, falta repetir |
+| T1 Activación sin ayuda (< 5 min) | ⚠️ No cumplió en P1 («complicado de seguir») ni en P2, ya con la activación rehecha; falta ubicar el paso donde se atoran |
 | T2 Derrota → aviso (≤ 10 min) | ⚠️ Parcial: el detector corre cada 10 min y «Revisar ahora» tarda 31 s; falta medir con una derrota nueva |
 | T3 Celular sin red | ⏳ Pendiente; el aviso dura 1 hora en el servicio push |
 | T4 Autonomía de la capa gratuita | ✅ Unos 285 usuarios activos a 20 capítulos al mes (estimado) |
@@ -457,10 +458,10 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | **Versión y fecha** | Versión 1, semana 9 (23/11/2026) |
 | **Decisión** | Protocolo de 30 minutos con tres tareas (activar los avisos; abrir el aviso y jugar el encuentro; encontrar el precio y pre-registrarse) más una prueba de campo de 3 a 5 días. |
 | **Evidencia** | [Protocolo (semana 9)](pi4_s9.md#paso-2-pruebas-con-usuarios) |
-| **Qué cambió** | La prueba de la semana 8 se suma a esta. **24/11/2026: primera sesión con un jugador externo (P1)**: seis observaciones, dos críticas, todas corregidas el mismo día ([detalle](pi4_s9.md#paso-2-pruebas-con-usuarios)). Las tareas se adaptaron a la versión nueva (entrar con Lichess; primer contacto con las 5 derrotas). |
-| **Qué falta** | Cuatro sesiones más (dos del segmento y dos de otro equipo), la tabla por tarea con éxito sin ayuda, tiempo y SEQ (en la primera no se registraron), la señal de negocio y la prueba de campo. |
+| **Qué cambió** | La prueba de la semana 8 se suma a esta. **24/11/2026: primera sesión con un jugador externo (P1)**: seis observaciones, dos críticas, todas corregidas el mismo día ([detalle](pi4_s9.md#paso-2-pruebas-con-usuarios)). Las tareas se adaptaron a la versión nueva (entrar con Lichess; primer contacto con las 5 derrotas). **Segunda sesión (P2)**, con la versión nueva: no pudo usarla solo, el análisis le pareció lento y pidió ver la partida completa. |
+| **Qué falta** | Tres sesiones más, la tabla por tarea con éxito sin ayuda, tiempo y SEQ (en P1 y P2 no se registraron), la señal de negocio y la prueba de campo. |
 
-| # | Hallazgo de la primera sesión | Severidad (propuesta) | Cambio |
+| # | Hallazgo (1–6: P1; 7–10: P2) | Severidad (propuesta) | Cambio |
 | :---: | :--- | :--- | :--- |
 | 1 | «Complicado de seguir» | Mayor | Activación por pasos |
 | 2 | Falta una introducción | Mayor | Pantalla de introducción |
@@ -468,6 +469,10 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | 4 | Hay que pedir el análisis a mano | Crítico | Stockfish analiza cada derrota |
 | 5 | «Solo es un ejercicio»; quiere una historia | Mayor | Hasta 3 encuentros e historia con IA |
 | 6 | El ícono del villano se repite | Menor | El villano cambia entre bandos rivales |
+| 7 | No pudo usar la app solo | Mayor | Pendiente: ubicar el paso donde se atora |
+| 8 | El análisis «tardaba mucho» | Mayor | Avance de la revisión por etapas; el capítulo aparece en cuanto llega |
+| 9 | «Jugar en Lichess» distraía | Menor | Botón secundario en Inicio |
+| 10 | Quiere ver la partida completa | Petición | Pendiente: visor de la partida |
 
 ### 19. Landing page
 

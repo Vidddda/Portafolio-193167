@@ -64,6 +64,17 @@
   .cuenta { font-size: 13px; color: var(--tenue); display: flex; align-items: center; justify-content: space-between; gap: 8px; }
   .cuenta button { background: transparent; border: 0; color: var(--tinta); text-decoration: underline; font-size: 13px; cursor: pointer; padding: 8px 0; }
   .error { font-size: 13px; color: #b3261e; margin: 0; }
+  .avance { display: grid; gap: 8px; }
+  .etapas { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 14px; }
+  .etapas li { display: flex; gap: 8px; align-items: center; color: var(--tenue); }
+  .etapas li::before { content: ""; flex: 0 0 16px; height: 16px; border-radius: 50%; border: 2px solid var(--linea); box-sizing: border-box; }
+  .etapas li.activa { color: var(--tinta); font-weight: 600; }
+  .etapas li.activa::before { border-color: var(--acierto); border-top-color: transparent; animation: girar 0.9s linear infinite; }
+  .etapas li.lista-ok { color: var(--tinta); }
+  .etapas li.lista-ok::before { content: "✓"; border: 0; background: var(--acierto); color: #fff; font-size: 11px; display: grid; place-items: center; }
+  @keyframes girar { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .etapas li.activa::before { animation: none; } }
+  .nuevo-cap { outline: 3px solid var(--acierto); outline-offset: 2px; border-radius: 14px; }
 </style>
 </head>
 <body>
@@ -89,6 +100,10 @@
   <div class="tarjeta oculto" id="s-revisar">
     <span style="font-size:14px">¿Acabas de perder en Lichess? No esperes al siguiente aviso.</span>
     <button class="accion secundario" id="btn-revisar">Revisar mis partidas ahora</button>
+    <div class="avance oculto" id="avance">
+      <ol class="etapas" id="etapas"></ol>
+      <div class="barra" aria-hidden="true"><span id="avance-barra" style="width:0"></span></div>
+    </div>
     <span class="meta" id="msg-revisar" role="status" aria-live="polite"></span>
   </div>
 
@@ -123,7 +138,7 @@
     </div>
   </section>
 
-  <a class="accion primario" id="btn-lichess" href="https://lichess.org/" target="_blank" rel="noopener">Jugar en Lichess</a>
+  <a class="accion secundario" id="btn-lichess" href="https://lichess.org/" target="_blank" rel="noopener">Jugar en Lichess</a>
 
   <section id="s-bando" class="oculto">
     <h2>ELIGE TU BANDO</h2>
@@ -183,7 +198,7 @@ const conCuenta = () => !!(window.ZaqoraSesion && ZaqoraSesion.usuario());
 function limpiarTelefono() {
   capitulos = [];
   try {
-    Object.keys(localStorage).filter((k) => /^zaqora_(capitulos|p|activado.*|revision)$/.test(k))
+    Object.keys(localStorage).filter((k) => /^zaqora_(capitulos|p|activado.*|revision.*)$/.test(k))
       .forEach((k) => localStorage.removeItem(k));
   } catch (e) {}
   P = null;
@@ -337,6 +352,67 @@ function pintarRevisar() {
   b.textContent = s > 0 ? `Revisar de nuevo en ${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}` : "Revisar mis partidas ahora";
   if (s > 0) setTimeout(pintarRevisar, 1000);
 }
+/* Avance de la revisión. El análisis corre en GitHub Actions y no informa su avance:
+   las etapas siguen los tiempos medidos (31 a 37 s de punta a punta) y se marcan como «aprox.».
+   Lo que sí es real: Inicio pregunta cada 5 s si ya hay un capítulo nuevo y lo muestra en cuanto llega. */
+const ETAPAS = [
+  [0, "Despertando al analista en la nube"],
+  [10, "Leyendo tus partidas en Lichess"],
+  [18, "Stockfish revisa cada jugada"],
+  [28, "La IA escribe tu capítulo"],
+];
+const FIN_ESTIMADO = 45, LIMITE_VIGILANCIA = 150;
+let vigilando = null;
+const idsActuales = () => capitulos.map((c) => c.id);
+function pintarAvance(seg) {
+  const ol = document.getElementById("etapas");
+  if (!ol.children.length) ETAPAS.forEach(([, t]) => { const li = document.createElement("li"); li.textContent = t; ol.appendChild(li); });
+  let actual = 0;
+  ETAPAS.forEach(([desde], i) => { if (seg >= desde) actual = i; });
+  [...ol.children].forEach((li, i) => {
+    li.className = i < actual ? "lista-ok" : (i === actual ? "activa" : "");
+  });
+  document.getElementById("avance-barra").style.width = `${Math.min(95, Math.round(100 * seg / FIN_ESTIMADO))}%`;
+}
+function terminarAvance(texto, llego) {
+  clearInterval(vigilando); vigilando = null;
+  try { localStorage.removeItem("zaqora_revision_ids"); } catch (e) {}
+  const ol = document.getElementById("etapas");
+  [...ol.children].forEach((li) => { li.className = llego ? "lista-ok" : ""; });
+  document.getElementById("avance-barra").style.width = llego ? "100%" : "0";
+  document.getElementById("msg-revisar").textContent = texto;
+  if (llego) {
+    const t = document.querySelector("#s-ultimo .tarjeta");
+    if (t) { t.classList.add("nuevo-cap"); t.scrollIntoView({ behavior: "smooth", block: "center" }); }
+    registrar("revision_llego");
+  } else setTimeout(() => document.getElementById("avance").classList.add("oculto"), 4000);
+}
+function vigilarRevision() {
+  const inicio = Number(leer("zaqora_revision") || 0);
+  let antes = [];
+  try { antes = JSON.parse(leer("zaqora_revision_ids") || "[]"); } catch (e) {}
+  const seg0 = (Date.now() - inicio) / 1000;
+  if (!inicio || seg0 > LIMITE_VIGILANCIA) return;
+  document.getElementById("avance").classList.remove("oculto");
+  document.getElementById("msg-revisar").textContent = "Tiempos aproximados: suele tardar menos de un minuto.";
+  let consultando = false, ultimaConsulta = 0;
+  const paso = async () => {
+    const seg = (Date.now() - inicio) / 1000;
+    pintarAvance(seg);
+    if (seg > LIMITE_VIGILANCIA) {
+      terminarAvance("No apareció un capítulo nuevo. Si perdiste hace menos de un minuto, Lichess puede tardar en publicar la partida: revisa otra vez en cuanto se pueda.", false);
+      return;
+    }
+    if (seg < 15 || consultando || Date.now() - ultimaConsulta < 5000) return;
+    consultando = true; ultimaConsulta = Date.now();
+    await sesion();
+    consultando = false;
+    if (idsActuales().some((id) => !antes.includes(id))) terminarAvance("¡Llegó tu capítulo! Ya está arriba en «Tu último capítulo».", true);
+  };
+  clearInterval(vigilando);
+  vigilando = setInterval(paso, 1000);
+  paso();
+}
 document.getElementById("btn-revisar").onclick = async () => {
   const msg = document.getElementById("msg-revisar");
   document.getElementById("btn-revisar").disabled = true;
@@ -344,10 +420,9 @@ document.getElementById("btn-revisar").onclick = async () => {
   try {
     await ZaqoraSesion.capitulos("POST", { accion: "revisar" });
     guardar("zaqora_revision", String(Date.now()));
+    guardar("zaqora_revision_ids", JSON.stringify(idsActuales()));
     registrar("revisar_ahora");
-    msg.textContent = "Listo. Si perdiste desde tu último capítulo, en 1 o 2 minutos te llega el aviso y tu capítulo aparece aquí.";
-    setTimeout(sesion, 90000);
-    setTimeout(sesion, 180000);
+    vigilarRevision();
   } catch (e) {
     if (e.datos && e.datos.segundos) guardar("zaqora_revision", String(Date.now() - (ESPERA_REVISION - e.datos.segundos) * 1000));
     msg.textContent = e.datos && e.datos.segundos ? "Ya pediste una revisión hace poco. Espera un momento." : "No se pudo pedir la revisión: " + e.message;
@@ -359,6 +434,9 @@ document.getElementById("btn-entrar").onclick = () => { registrar("entrar_liches
 document.getElementById("btn-salir").onclick = async () => {
   if (!confirm("Al salir, este teléfono deja de mostrar tus capítulos y de recibir tus avisos. Vuelven cuando entres otra vez. ¿Salir?")) return;
   registrar("salio_lichess");
+  clearInterval(vigilando); vigilando = null;
+  document.getElementById("avance").classList.add("oculto");
+  document.getElementById("msg-revisar").textContent = "";
   await ZaqoraSesion.salir();
   // Capítulos: fuera de este teléfono (siguen guardados en la cuenta y vuelven al entrar)
   capitulos = [];
@@ -400,6 +478,7 @@ document.getElementById("btn-salir").onclick = async () => {
     pintarCapitulos();
   }
   document.getElementById("pie").textContent = P && conCuenta() ? `Código: ${P}` : "";
+  if (conCuenta()) vigilarRevision();   // si se pidió una revisión hace poco y se volvió a abrir Inicio
   registrar("inicio", { capitulos: capitulos.length });
 })();
 </script>
