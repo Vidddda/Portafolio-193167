@@ -121,7 +121,7 @@ Es una estimación con los precios que da la cuenta de Cloudflare, no una medici
 | :--- | :---: |
 | Funciona sin la laptop del equipo | ✅ El detector corre en GitHub Actions cada 10 minutos (24/11/2026) |
 | La app está desplegada, no en el entorno de desarrollo | ✅ [Publicada en GitHub Pages](prototipo/activar.html) con https |
-| La landing está publicada en internet | ⏳ Construida; falta publicarla (Paso 3) |
+| La landing está publicada en internet | ✅ Publicada el 24/11/2026: [landing](landing/index.html); la tabla `preregistros` responde en Supabase (Paso 3) |
 | El dato fluye de la partida a la pantalla sin intervención | ✅ Registro con Lichess, análisis con Stockfish y envío automáticos; nadie del equipo interviene |
 
 ??? quote "Prompt 1 del curso — plan de integración y pruebas (adaptado a Zaqora)"
@@ -273,14 +273,14 @@ Llegar a 3 necesita **dos** palancas, y las dos dependen de algo que no se ha me
 
 **Costos después del 24/11/2026:** el detector en GitHub Actions no cuesta nada (el repositorio es público) y la IA sigue dentro de la capa gratuita de Cloudflare (T4). El costo operativo por usuario no cambia.
 
-**Landing.** Se construyó con la anatomía de la clase y está lista para publicarse en `…/landing/`:
+**Landing.** Se construyó con la anatomía de la clase y está publicada en [`…/landing/`](landing/index.html) desde el 24/11/2026, con el video real del prototipo en el lugar del celular:
 
 | Elemento | En la landing de Zaqora |
 | :--- | :--- |
 | Headline | «Perdiste en Lichess. Tu villano ya sabe dónde fue.» y, debajo, la propuesta de valor de la semana 4 |
 | Visual | La escena real del prototipo (sellada y despierta) en un celular |
 | Tres beneficios | No tienes que analizar en caliente · Tu error de siempre tiene cara y se puede vencer · Sin rating ni comparaciones |
-| Demo corta | ⏳ Video de 30 s del aviso llegando y la escena abriéndose (por grabar); por ahora, las capturas |
+| Demo corta | ✅ Video de 35 s grabado en el prototipo: derrota real en Lichess → «Revisar mis partidas ahora» → notificación del villano → capítulo con el consejero (la espera de 34 s va acelerada). Está en la [landing](landing/index.html) |
 | Evidencia | Cita de las entrevistas de la semana 3 |
 | Precio visible | \$59 MXN al mes con IVA; los primeros capítulos, gratis; sin cobro durante la beta |
 | Un solo CTA | «Quiero entrar a la beta»: pre-registro con correo |
@@ -429,7 +429,7 @@ Equipo de una persona: todas las tareas son de David, salvo la ayuda del operado
 | Checklist regulatorio con estatus VERIFICADO o POR VERIFICAR | ✅ | [Paso 4](#paso-4-regulacion-minima-viable) |
 | Fronteras y plan de pruebas T1 a T6 | ✅ T4 y T5 cumplen; T1 y T2 parciales; T3 y T6 pendientes | [Paso 1](#paso-1-integracion-del-sistema) |
 | Sistema integrado sin la laptop del equipo | ✅ Entrar con Lichess, detector en GitHub Actions, capítulos en la cuenta (24/11/2026) | [Actualización](#2-punto-de-partida) |
-| Landing publicada y accesible en internet | ⏳ Construida, falta publicar | Paso 3 |
+| Landing publicada y accesible en internet | ✅ [landing](landing/index.html) (24/11/2026) | Paso 3 |
 | Reporte de pruebas de usuario con cinco sesiones | ⏳ 1 de 5 (hallazgos y cambios de la primera) | [Paso 2](#paso-2-pruebas-con-usuarios) |
 | Pitch grabado en video | ⏳ Guion listo (actualizado el 24/11/2026) | Paso 5 |
 | Demo ensayada tres veces con video de respaldo | ⏳ Guion listo (actualizado el 24/11/2026) | Paso 6 |

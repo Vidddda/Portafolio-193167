@@ -42,7 +42,7 @@ Minutos después de una derrota en Lichess, un villano que encarna el error recu
 | | |
 | :--- | :--- |
 | **Versión y fecha** | Versión 2, 24/11/2026 |
-| **Qué falta** | Enlaces a la landing publicada y a los dos videos; cuatro sesiones de prueba más y la prueba de campo. |
+| **Qué falta** | El video del pitch; cuatro sesiones de prueba más y la prueba de campo. La [landing](landing/index.html) ya está publicada. |
 
 ---
 
@@ -447,7 +447,7 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | :--- | :---: |
 | Funciona sin la laptop del equipo | ✅ |
 | App desplegada | ✅ |
-| Landing publicada | ⏳ |
+| Landing publicada | ✅ [landing](landing/index.html) (24/11/2026) |
 | Flujo sin intervención | ✅ |
 
 ### 18. Pruebas con usuarios
@@ -476,8 +476,8 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | **Versión y fecha** | Versión 1, semana 9 (23/11/2026) |
 | **Decisión** | Una página, una acción: pre-registro con correo para la beta, con el precio visible (\$59 MXN al mes con IVA, beta gratuita). |
 | **Evidencia** | Landing construida en `docs/landing/` con headline, visual, tres beneficios, cita de las entrevistas, precio, CTA único, Open Graph y aviso de privacidad (se publican juntos). [Anatomía (semana 9)](pi4_s9.md#paso-3-go-to-market-y-economia-unitaria). |
-| **Qué cambió** | Primera versión. |
-| **Qué falta** | Publicarla (requiere crear la tabla `preregistros` en Supabase y completar el domicilio del aviso de privacidad); el video de 30 s; las métricas de visitas, clics y pre-registros. |
+| **Qué cambió** | 24/11/2026: publicada en [landing/](landing/index.html), con el video real del prototipo (35 s) en lugar de la captura de la semana 8, capturas nuevas del capítulo y el consejero en vez del villano como guía. |
+| **Qué falta** | Las métricas de visitas, clics y pre-registros (se registran desde la publicación). |
 
 ### 20. Pitch y demo
 
