@@ -42,7 +42,7 @@ Minutos después de una derrota en Lichess, un villano que encarna el error recu
 | | |
 | :--- | :--- |
 | **Versión y fecha** | Versión 2, 24/11/2026 |
-| **Qué falta** | El video del pitch; tres sesiones de prueba más y la prueba de campo. La [landing](landing/index.html) ya está publicada. |
+| **Qué falta** | El video del pitch; tres sesiones de prueba más y los resultados de la prueba de campo, que ya está en curso. La [landing](landing/index.html) ya está publicada. |
 
 ---
 
@@ -230,7 +230,7 @@ flowchart LR
 | **Decisión** | Probar primero el supuesto más riesgoso —que un jugador que acaba de perder abre el aviso del villano— con un prototipo de **experiencia** de **baja resolución** en modo «mago de Oz». |
 | **Evidencia** | [Plan, construcción y reporte (semana 8)](pi4_s8.md#4-entregable-prototipo-y-dfm-de-zaqora). Prueba de funcionamiento del 15/10/2026: el aviso llega, la escena abre, los eventos se registran y la derrota se detecta. |
 | **Qué cambió** | El aviso pasó de WhatsApp a notificación de la app para medir el canal real; los mensajes ya no dan el detalle de la jugada (revisión DFM). |
-| **Qué falta** | La prueba de la semana 8 no se realizó en su fecha. El 24/11/2026 hubo una primera sesión con un jugador externo que cambió el producto (ver la línea de tiempo), pero el supuesto central —que abre el reto justo después de perder— sigue sin validar: falta la prueba de campo. |
+| **Qué falta** | La prueba de la semana 8 no se realizó en su fecha. El 24/11/2026 hubo una primera sesión con un jugador externo que cambió el producto (ver la línea de tiempo), pero el supuesto central —que abre el reto justo después de perder— sigue sin validar: la prueba de campo ya está en curso con los participantes que tienen acceso. |
 
 | Fecha | Prototipo | Pregunta | Aprendizaje |
 | :--- | :--- | :--- | :--- |
@@ -253,7 +253,7 @@ flowchart LR
 | **Decisión** | Volumen objetivo: piloto de 20 usuarios y hasta 1,000 activos al año 5. «Manufactura» = despliegue en servicios con capa gratuita. Tres cambios DFM: Stockfish al navegador, narrador más barato (capa gratuita de Workers AI) y Supabase Free hasta el año 3. |
 | **Evidencia** | [Revisión DFM y BOM actualizado (semana 8)](pi4_s8.md#3-revision-dfm-y-bom-actualizado) · [BOM verificado (semana 7)](pi4_s7.md#bom-verificado-08102026) · [Economía circular](pi4_s8.md#4-economia-circular) |
 | **Qué cambió** | Costo por usuario activo de \$16.18 (semana 7) a \$4.72 (DFM) y a \$4.00 (IA gratuita) a 20 usuarios. Servicios de 7 a 6; cuentas de pago de 3 a 1. |
-| **Qué falta** | Medir el consumo real de la IA por capítulo; decidir si se publica en Google Play (prueba cerrada de 12 testers durante 14 días y facturación de Google al 15 %). |
+| **Qué falta** | Medir el consumo real de la IA por capítulo; publicar en Google Play **después de concretar la prueba piloto** (decisión del 24/11/2026; exige una prueba cerrada de 12 testers durante 14 días y la facturación de Google al 15 %). Mientras tanto, Zaqora se usa como app web desde el navegador. |
 
 **BOM final (por mes, piloto):**
 
@@ -459,7 +459,7 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | **Decisión** | Protocolo de 30 minutos con tres tareas (activar los avisos; abrir el aviso y jugar el encuentro; encontrar el precio y pre-registrarse) más una prueba de campo de 3 a 5 días. |
 | **Evidencia** | [Protocolo (semana 9)](pi4_s9.md#paso-2-pruebas-con-usuarios) |
 | **Qué cambió** | La prueba de la semana 8 se suma a esta. **24/11/2026: primera sesión con un jugador externo (P1)**: seis observaciones, dos críticas, todas corregidas el mismo día ([detalle](pi4_s9.md#paso-2-pruebas-con-usuarios)). Las tareas se adaptaron a la versión nueva (entrar con Lichess; primer contacto con las 5 derrotas). **Segunda sesión (P2)**, con la versión nueva: no pudo usarla solo, el análisis le pareció lento y pidió ver la partida completa. |
-| **Qué falta** | Tres sesiones más, la tabla por tarea con éxito sin ayuda, tiempo y SEQ (en P1 y P2 no se registraron), la señal de negocio y la prueba de campo. |
+| **Qué falta** | Tres sesiones más, la tabla por tarea con éxito sin ayuda, tiempo y SEQ (en P1 y P2 no se registraron), la señal de negocio y los resultados de la prueba de campo (en curso). |
 
 | # | Hallazgo (1–6: P1; 7–10: P2) | Severidad (propuesta) | Cambio |
 | :---: | :--- | :--- | :--- |
@@ -539,12 +539,12 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | **Versión y fecha** | Versión 2, 24/11/2026 |
 | **Decisión** | El siguiente paso es la prueba con usuarios, no más diseño. La primera sesión lo confirmó: una hora con un jugador cambió más que una semana de diseño. |
 | **Evidencia** | Reflexiones de cada semana ([5](pi4_s5.md#5-reflexion), [6](pi4_s6.md#5-reflexion), [7](pi4_s7.md#5-reflexion), [8](pi4_s8.md#5-reflexion), [9](pi4_s9.md#5-reflexion)). |
-| **Qué cambió** | — |
-| **Qué falta** | El párrafo firmado de aprendizaje del semestre (lo escribe David). |
+| **Qué cambió** | Se agregó el aprendizaje del semestre a partir de las reflexiones semanales. |
+| **Qué falta** | Los resultados de la prueba de campo (en curso) y de las sesiones P3–P5. |
 
 **Aprendizaje más importante del semestre** (David López Ramírez):
 
-> *[Pendiente: lo escribe David.]*
+> Lo más importante que aprendí este semestre es que el producto lo deciden las personas, no mis documentos. Cada giro de Zaqora vino de alguien real: una sola frase de una entrevista, «sabía que iba a buscar excusas», cambió el problema de «no sé qué estudiar» al *tilt*; el análisis de competencia no terminó en otra app, sino en un hábito, cerrar la sesión después de perder; y una hora con el primer jugador que lo probó cambió más que una semana de diseño. También aprendí que construir es más fácil que preguntar: en la semana 8 tenía un prototipo funcionando y ninguna respuesta al supuesto que decide todo. Por eso ahora cada cifra que presento lleva su fuente o dice que está pendiente, y por eso el siguiente paso no es agregar funciones, sino saber si alguien que acaba de perder abre el reto.
 
 **Qué haría distinto:** conseguir a los participantes de la prueba antes de construir el prototipo; construir resultó más fácil que conseguir a cinco personas durante tres días.
 

@@ -75,7 +75,7 @@ Con la actualización del 24/11/2026, F1 la corre el detector en **GitHub Action
 | **T3** | Celular sin conexión | Se apaga la red del celular mientras sale el aviso y se vuelve a encender | El aviso llega al reconectar | ⏳ **Pendiente.** Hallazgo de diseño: el aviso se envía con `ttl=3600`, así que **si el celular pasa más de 1 hora sin red, el aviso se pierde**. Es aceptable (un aviso tardío ya no llega «justo después de perder»), pero hay que declararlo. |
 | **T4** | Autonomía de la capa gratuita (equivalente de la batería) | Capítulos al mes que caben en la capa gratuita de Workers AI | Alcanza para el piloto de 20 usuarios | ✅ **Cumple (cálculo).** Con Mistral Small 3.1: unos **190 capítulos al día** ≈ 5,700 al mes → **unos 285 usuarios activos** a 20 capítulos al mes. Ver el cálculo abajo. |
 | **T5** | Falla de la API de IA | Qué ve el jugador si el LLM no responde | Sale una plantilla; nunca un texto vacío ni inválido (RD-04) | ✅ **Cumple, con una falla real.** El 24/11/2026 Cloudflare retiró Llama 3.1 8B (HTTP 410, «deprecated on 2026-11-20»): el detector siguió armando capítulos con plantilla, sin romperse. Además, el validador rechaza la respuesta de la IA si inventa casillas o revela la solución. |
-| **T6** | Operación continua | El detector corre 48 h seguidas con los participantes | Sin caídas ni derrotas sin aviso; los HTTP 429 de Lichess se esperan 60 s | ⏳ **Pendiente.** Ya no depende de la laptop: corre en GitHub Actions. Se mide durante la prueba de campo. |
+| **T6** | Operación continua | El detector corre 48 h seguidas con los participantes | Sin caídas ni derrotas sin aviso; los HTTP 429 de Lichess se esperan 60 s | ⏳ **Pendiente.** Ya no depende de la laptop: corre en GitHub Actions. Se mide durante la prueba de campo, que ya está en curso. |
 
 **Cómo se calcula T4**, con números (igual que la autonomía de batería del ejemplo de la clase):
 
@@ -148,7 +148,7 @@ Es una estimación con los precios que da la cuenta de Cloudflare, no una medici
 ### Paso 2 — Pruebas con usuarios
 
 !!! warning "Estado: 2 de 5 sesiones"
-    El 24/11/2026 se hicieron dos sesiones: P1, con el flujo de la semana 8, y P2, con el flujo nuevo (entrar con Lichess). Sus hallazgos están abajo con el cambio que provocó cada uno. Faltan tres sesiones y la prueba de campo. En ninguna de las dos se registraron los tiempos ni el SEQ.
+    El 24/11/2026 se hicieron dos sesiones: P1, con el flujo de la semana 8, y P2, con el flujo nuevo (entrar con Lichess). Sus hallazgos están abajo con el cambio que provocó cada uno. Faltan tres sesiones (P3–P5). La prueba de campo ya está en curso con los participantes que tienen acceso a Zaqora. En ninguna de las dos se registraron los tiempos ni el SEQ.
 
 **Con quién:** 5 personas, mayores de edad. **Tres del segmento** (jugadores amateur de Lichess que juegan al menos 3 veces por semana) y **dos de otro equipo** del curso.
 
@@ -204,7 +204,7 @@ Tres lecturas: al perder, P1 **cierra la app** en lugar de analizar, igual que l
 
 **Lo que se repite en P1 y P2:** los dos necesitaron ayuda para empezar. La activación sigue siendo el problema principal y es lo primero que medirá T1 en las tres sesiones que faltan.
 
-**Prueba de campo (la de la semana 8, todavía pendiente):** además de la sesión de 30 minutos, los tres participantes del segmento dejan los avisos activos 3 a 5 días con el detector corriendo. Es la única forma de medir lo que la sesión no puede: si alguien que **de verdad** acaba de perder abre el aviso.
+**Prueba de campo (la de la semana 8, en curso):** además de la sesión de 30 minutos, los tres participantes del segmento dejan los avisos activos 3 a 5 días con el detector corriendo. Es la única forma de medir lo que la sesión no puede: si alguien que **de verdad** acaba de perder abre el aviso.
 
 ??? quote "Prompt 2 del curso — síntesis de pruebas de usuario (se ejecuta con las notas reales)"
     Actúa como investigador de usabilidad de productos conectados. Sintetizas observaciones sin defender el diseño: reportas lo que la gente hizo, no lo que dijo que le gustaba. Distingues el problema de su causa y no propones rediseños sin evidencia.
@@ -363,7 +363,7 @@ Checklist hecho con búsqueda en fuentes oficiales el 23/11/2026. Zaqora es soft
 | **6. Ask y cierre** (25 s) | Pedimos cinco jugadores de Lichess que reciban el aviso durante una semana, y un club o streamer en español para un piloto de 20 usuarios. En 90 días mediremos si abren el aviso y si uno de cada veinte paga. Cuando pierdes, Zaqora convierte esa derrota en tu próximo capítulo. | 50 | 23.1 |
 | **Total** | | **352** | **162.4** |
 
-La confesión honesta es una sola: todavía no se sabe si el jugador abre el reto justo después de perder (la prueba de campo está pendiente). Las palabras prohibidas (innovador, plataforma, solución integral, revolucionario) no aparecen.
+La confesión honesta es una sola: todavía no se sabe si el jugador abre el reto justo después de perder (la prueba de campo está en curso y aún no hay resultados). Las palabras prohibidas (innovador, plataforma, solución integral, revolucionario) no aparecen.
 
 **Evidencia de cada cifra:**
 
