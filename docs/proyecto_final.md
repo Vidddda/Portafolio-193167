@@ -35,7 +35,7 @@ Minutos después de una derrota en Lichess, un villano que encarna el error recu
 
 </div>
 
-**Enlaces:** [repositorio](https://github.com/Vidddda/Portafolio-193167) · [Zaqora (prototipo publicado)](prototipo/inicio.html) · landing (por publicar) · video del pitch (por grabar) · video de respaldo de la demo (por grabar)
+**Enlaces:** [repositorio](https://github.com/Vidddda/Portafolio-193167) · [Zaqora (prototipo publicado)](prototipo/inicio.html) · [landing](landing/index.html) · video del pitch (por grabar) · [video de respaldo de la demo](videos/zaqora-demo-respaldo.mp4)
 
 **Estado en una oración:** el jugador entra con su cuenta de Lichess, sus últimas 5 derrotas se vuelven capítulos con historia de IA y cada derrota nueva le llega sola como un reto, sin la laptop del equipo; dos jugadores externos lo probaron y sus observaciones cambiaron el producto, pero todavía no se sabe si alguien que acaba de perder abre el reto.
 
@@ -489,10 +489,10 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | | |
 | :--- | :--- |
 | **Versión y fecha** | Versión 2, 24/11/2026 |
-| **Decisión** | Pitch de 342 palabras (2:38) que abre con un jugador real de las entrevistas y cierra con el ask: cinco jugadores y un club o *streamer* para un piloto de 20. Demo de 7 minutos: entrar con Lichess, capítulos de las últimas derrotas, una derrota en vivo contra la computadora y «Revisar mis partidas ahora». |
-| **Evidencia** | [Guion del pitch con la evidencia de cada cifra](pi4_s9.md#paso-5-el-pitch-de-3-minutos) · [guion de la demo con plan B](pi4_s9.md#paso-6-la-demo-de-7-minutos) |
-| **Qué cambió** | La tracción ahora cuenta la primera sesión con un jugador; la confesión pasó a ser «todavía no sabemos si abren el reto justo después de perder». La demo ya no usa la laptop. |
-| **Qué falta** | Grabar el pitch y verlo; tres ensayos de la demo con operador y el video de respaldo. |
+| **Decisión** | Pitch de 352 palabras (2:42) que abre con un jugador real de las entrevistas y cierra con el ask: cinco jugadores y un club o *streamer* para un piloto de 20. Demo de 7 minutos: entrar con Lichess, capítulos de las últimas derrotas, una derrota en vivo contra la computadora y «Revisar mis partidas ahora». |
+| **Evidencia** | [Guion del pitch con la evidencia de cada cifra](pi4_s9.md#paso-5-el-pitch-de-3-minutos) · [guion de la demo con plan B](pi4_s9.md#paso-6-la-demo-de-7-minutos) · [video de respaldo de la demo](videos/zaqora-demo-respaldo.mp4) (1:49: entrar con Lichess, derrota real, «Revisar mis partidas ahora» y el capítulo; esperas aceleradas y marcadas) |
+| **Qué cambió** | La tracción ahora cuenta las dos sesiones con jugadores y una respuesta de P1 («cerrar la aplicación»); la confesión pasó a ser «todavía no sabemos si abren el reto justo después de perder». La demo ya no usa la laptop. |
+| **Qué falta** | Grabar el pitch, verlo y enlazarlo aquí; tres ensayos de la demo con operador. |
 
 ---
 

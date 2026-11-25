@@ -351,17 +351,17 @@ Checklist hecho con búsqueda en fuentes oficiales el 23/11/2026. Zaqora es soft
 
 ### Paso 5 — El pitch de 3 minutos
 
-**Guion** (342 palabras, 2:38 hablados a 130 palabras por minuto; quedan 22 segundos de aire). Versión del 24/11/2026: las partes 2, 3 y 4 cambiaron con el prototipo nuevo.
+**Guion** (352 palabras, 2:42 hablados a 130 palabras por minuto; quedan 18 segundos de aire). Versión del 24/11/2026: las partes 2, 3 y 4 cambiaron con el prototipo nuevo, y la 4 suma la segunda sesión y una respuesta de P1.
 
 | Parte | Guion | Palabras | Segundos |
 | :--- | :--- | :---: | :---: |
 | **1. Impacto y problema** (35 s) | Un jugador de Lichess nos contó que perdió tres partidas seguidas y apagó todo. No las analizó, porque, en sus palabras, «sabía que iba a buscar excusas». Otro puede pasar una hora jugando partidas que no quería, solo para recuperar la anterior. Esa racha le cuesta rating y tiempo, y una clase particular de 229 pesos la hora no llega en el momento en que todo se rompe: justo después de perder. | 72 | 33.2 |
 | **2. Solución y por qué nosotros** (35 s) | Zaqora llega en ese momento. Minutos después de tu derrota, un villano que encarna tu error de siempre te reta a volver a esa partida, y un consejero de tu bando te ayuda a encontrar lo que se te escapó. Chess.com te da un análisis frío cuando estás enojado; Zaqora primero reconoce que dolió, sin rating ni comparaciones. En la demostración verán llegar ese reto. | 65 | 30.0 |
 | **3. Mercado y modelo** (35 s) | En México estimamos 66 mil jugadores en línea que se frustran al perder y pagarían por mejorar. Cobramos 59 pesos al mes, menos que Chess.com o Duolingo. Como el análisis corre en servidores gratuitos y el narrador usa una capa gratuita de inteligencia artificial, cada usuario activo nos cuesta 80 centavos al mes. Con 50 suscriptores al quinto año, la inversión se recupera en el mes 21. | 67 | 30.9 |
-| **4. Tracción** (35 s) | Entrevistamos a tres jugadores, y los tres, después de perder, dejan de jugar en lugar de analizar. El primer jugador que probó Zaqora nos dejó seis observaciones y cambiamos el producto con cada una: ahora entras con tu cuenta de Lichess y tus últimas cinco derrotas se vuelven capítulos. Lo que aún no sabemos es si abren el reto justo después de perder. | 63 | 29.1 |
+| **4. Tracción** (35 s) | Entrevistamos a tres jugadores, y los tres, después de perder, dejan de jugar en lugar de analizar. Ya lo probaron dos jugadores. Al primero le preguntamos qué hizo tras su última derrota y respondió: «cerrar la aplicación». Con lo que vimos cambiamos el producto: ahora entras con tu cuenta de Lichess y tus últimas cinco derrotas se vuelven capítulos. Lo que aún no sabemos es si abren el reto justo después de perder. | 73 | 33.7 |
 | **5. Equipo** (15 s) | Soy David López: ingeniero mecatrónico, desarrollador y maestro de ajedrez. Diseñé, programé y calculé solo todo lo que verán hoy, y sigo después del curso. | 25 | 11.5 |
 | **6. Ask y cierre** (25 s) | Pedimos cinco jugadores de Lichess que reciban el aviso durante una semana, y un club o streamer en español para un piloto de 20 usuarios. En 90 días mediremos si abren el aviso y si uno de cada veinte paga. Cuando pierdes, Zaqora convierte esa derrota en tu próximo capítulo. | 50 | 23.1 |
-| **Total** | | **342** | **157.8** |
+| **Total** | | **352** | **162.4** |
 
 La confesión honesta es una sola: todavía no se sabe si el jugador abre el reto justo después de perder (la prueba de campo está pendiente). Las palabras prohibidas (innovador, plataforma, solución integral, revolucionario) no aparecen.
 
@@ -378,7 +378,8 @@ La confesión honesta es una sola: todavía no se sabe si el jugador abre el ret
 | 50 suscriptores al año 5; recuperación en el mes 21 | Flujo de caja a 5 años, semana 8 | **PENDIENTE**: conversión y crecimiento supuestos |
 | Los tres dejan de jugar en lugar de analizar | Entrevistas, semana 3 | Evidencia (muestra de 3) |
 | El prototipo funciona de punta a punta | Prueba de funcionamiento del 15/10/2026 (semana 8) y flujo completo con cuenta de Lichess el 24/11/2026 | Evidencia |
-| El primer jugador dejó seis observaciones y cada una cambió el producto | Primera sesión, Paso 2 | Evidencia (1 sesión) |
+| Ya lo probaron dos jugadores y lo que vimos cambió el producto | Sesiones P1 y P2, Paso 2 | Evidencia (2 sesiones) |
+| Al perder, P1 «cerrar la aplicación» | Entrevista de cierre de P1, Paso 2 | Evidencia (1 respuesta) |
 | Las últimas cinco derrotas se vuelven capítulos | Primer contacto probado con la cuenta del equipo (J1) el 24/11/2026 | Evidencia |
 
 **Las preguntas más difíciles del jurado:**
@@ -457,7 +458,7 @@ Equipo de una persona: todas las tareas son de David, salvo la ayuda del operado
 | Landing publicada y accesible en internet | ✅ [landing](landing/index.html) (24/11/2026) | Paso 3 |
 | Reporte de pruebas de usuario con cinco sesiones | ⏳ 2 de 5 (hallazgos y cambios de P1 y P2) | [Paso 2](#paso-2-pruebas-con-usuarios) |
 | Pitch grabado en video | ⏳ Guion listo (actualizado el 24/11/2026) | Paso 5 |
-| Demo ensayada tres veces con video de respaldo | ⏳ Guion listo (actualizado el 24/11/2026) | Paso 6 |
+| Demo ensayada tres veces con video de respaldo | ⏳ [video de respaldo de la demo](videos/zaqora-demo-respaldo.mp4) listo (1:49); faltan los tres ensayos | Paso 6 |
 | Página de proyecto final | ✅ Primera versión | [Proyecto final](proyecto_final.md) |
 | Documentación técnica (README, arquitectura, manual de usuario) | ✅ | [Proyecto final, secciones 8 y 12 y anexos B y C](proyecto_final.md) |
 
