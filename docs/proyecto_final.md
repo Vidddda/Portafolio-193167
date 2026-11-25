@@ -230,7 +230,7 @@ flowchart LR
 | **Decisión** | Probar primero el supuesto más riesgoso —que un jugador que acaba de perder abre el aviso del villano— con un prototipo de **experiencia** de **baja resolución** en modo «mago de Oz». |
 | **Evidencia** | [Plan, construcción y reporte (semana 8)](pi4_s8.md#4-entregable-prototipo-y-dfm-de-zaqora). Prueba de funcionamiento del 15/10/2026: el aviso llega, la escena abre, los eventos se registran y la derrota se detecta. |
 | **Qué cambió** | El aviso pasó de WhatsApp a notificación de la app para medir el canal real; los mensajes ya no dan el detalle de la jugada (revisión DFM). |
-| **Qué falta** | La prueba de la semana 8 no se realizó en su fecha. El 24/11/2026 hubo una primera sesión con un jugador externo que cambió el producto (ver la línea de tiempo), pero el supuesto central —que abre el reto justo después de perder— sigue sin validar: la prueba de campo ya está en curso con los participantes que tienen acceso. |
+| **Qué falta** | La prueba de la semana 8 no se realizó en su fecha. El 23/11/2026 hubo una primera sesión con un jugador externo que cambió el producto (ver la línea de tiempo), pero el supuesto central —que abre el reto justo después de perder— sigue sin validar: la prueba de campo ya está en curso con los participantes que tienen acceso. |
 
 | Fecha | Prototipo | Pregunta | Aprendizaje |
 | :--- | :--- | :--- | :--- |
@@ -238,12 +238,12 @@ flowchart LR
 | 01/10/2026 | Segunda iteración en Figma | ¿El flujo de entrada funciona sin cuenta? | Entrada con un solo campo; instalación como recompensa |
 | 15/10/2026 | PWA con avisos push, escena y detector (mago de Oz) | ¿Abre el jugador el aviso tras perder? | Técnicamente factible y gratis; sin respuesta sobre el comportamiento |
 | 23/11/2026 | Revisión del detector frontera por frontera | ¿Qué pasa si la partida no tiene análisis? | Se enviaba una posición de ejemplo; corregido para esperar el análisis ([semana 9](pi4_s9.md#paso-1-integracion-del-sistema)) |
+| 23/11/2026 | Primera sesión con un jugador externo (P1) | ¿Se entiende y se usa sin ayuda? | Seis observaciones, dos críticas (pedir el análisis a mano, instrucciones de iPhone); todas se corrigieron al día siguiente ([semana 9](pi4_s9.md#paso-2-pruebas-con-usuarios)) |
 | 24/11/2026 | Bandos con assets propios | ¿Se puede elegir personaje y que el rival cambie? | El rival cambia por derrota entre los bandos que existan; las piezas pasaron de 39 MB a 1.9 MB |
-| 24/11/2026 | Primera sesión con un jugador externo (P1) | ¿Se entiende y se usa sin ayuda? | Seis observaciones, dos críticas (pedir el análisis a mano, instrucciones de iPhone); todas se corrigieron el mismo día ([semana 9](pi4_s9.md#paso-2-pruebas-con-usuarios)) |
-| 24/11/2026 | Segunda sesión (P2), ya con la versión nueva | ¿Se usa sin ayuda? | Tampoco pudo usarla solo; el análisis «tardaba mucho»; «Jugar en Lichess» distraía; pidió ver la partida completa. Inicio ahora muestra el avance de la revisión y el botón pasó a secundario |
 | 24/11/2026 | Stockfish local, capítulos de 3 encuentros e historia con IA | ¿Puede llegar el capítulo sin que nadie pida el análisis y con una historia? | Sí: unos 3 s de análisis por partida; la IA escribe historia y diálogos y la plantilla cubre si falla |
 | 24/11/2026 | Villano y consejero separados | ¿Quién ayuda al jugador? | El villano no puede enseñar a vencerlo; las pistas pasan al consejero del bando |
 | 24/11/2026 | Entrar con Lichess, Inicio y detector en GitHub Actions | ¿Funciona sin la laptop y con el historial del jugador? | El primer contacto convierte sus últimas 5 derrotas en capítulos; «Revisar ahora» corre el detector en 31 s |
+| 24/11/2026 | Segunda sesión (P2), ya con la versión nueva | ¿Se usa sin ayuda? | Tampoco pudo usarla solo; el análisis «tardaba mucho»; «Jugar en Lichess» distraía; pidió ver la partida completa. Inicio ahora muestra el avance de la revisión y el botón pasó a secundario |
 
 ### 11. Manufactura, DFM y circularidad
 
@@ -458,7 +458,7 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | **Versión y fecha** | Versión 1, semana 9 (23/11/2026) |
 | **Decisión** | Protocolo de 30 minutos con tres tareas (activar los avisos; abrir el aviso y jugar el encuentro; encontrar el precio y pre-registrarse) más una prueba de campo de 3 a 5 días. |
 | **Evidencia** | [Protocolo (semana 9)](pi4_s9.md#paso-2-pruebas-con-usuarios) |
-| **Qué cambió** | La prueba de la semana 8 se suma a esta. **24/11/2026: primera sesión con un jugador externo (P1)**: seis observaciones, dos críticas, todas corregidas el mismo día ([detalle](pi4_s9.md#paso-2-pruebas-con-usuarios)). Las tareas se adaptaron a la versión nueva (entrar con Lichess; primer contacto con las 5 derrotas). **Segunda sesión (P2)**, con la versión nueva: no pudo usarla solo, el análisis le pareció lento y pidió ver la partida completa. |
+| **Qué cambió** | La prueba de la semana 8 se suma a esta. **23/11/2026: primera sesión con un jugador externo (P1)**: seis observaciones, dos críticas, todas corregidas al día siguiente ([detalle](pi4_s9.md#paso-2-pruebas-con-usuarios)). Las tareas se adaptaron a la versión nueva (entrar con Lichess; primer contacto con las 5 derrotas). **Segunda sesión (P2)**, con la versión nueva: no pudo usarla solo, el análisis le pareció lento y pidió ver la partida completa. |
 | **Qué falta** | Tres sesiones más, la tabla por tarea con éxito sin ayuda, tiempo y SEQ (en P1 y P2 no se registraron), la señal de negocio y los resultados de la prueba de campo (en curso). |
 
 | # | Hallazgo (1–6: P1; 7–10: P2) | Severidad (propuesta) | Cambio |

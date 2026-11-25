@@ -70,7 +70,7 @@ Con la actualización del 24/11/2026, F1 la corre el detector en **GitHub Action
 
 | # | Prueba (adaptada) | Qué se mide | Aprobado si | Estado y evidencia |
 | :---: | :--- | :--- | :--- | :--- |
-| **T1** | Activación sin ayuda | Tiempo y errores de alguien que no conoce Zaqora al abrir el enlace y activar los avisos | < 5 minutos sin intervención (en iPhone, incluida la instalación) | ⚠️ **No cumplió en la primera sesión (24/11/2026).** El participante la encontró «complicada de seguir» y las instrucciones de iPhone «no intuitivas» (no se midió el tiempo). Se rehízo la activación por pasos. **En la segunda sesión (P2), ya con la activación nueva, el participante tampoco pudo usar la app solo**: falta ubicar en qué paso se atora. |
+| **T1** | Activación sin ayuda | Tiempo y errores de alguien que no conoce Zaqora al abrir el enlace y activar los avisos | < 5 minutos sin intervención (en iPhone, incluida la instalación) | ⚠️ **No cumplió en la primera sesión (23/11/2026).** El participante la encontró «complicada de seguir» y las instrucciones de iPhone «no intuitivas» (no se midió el tiempo). Se rehízo la activación por pasos. **En la segunda sesión (P2), ya con la activación nueva, el participante tampoco pudo usar la app solo**: falta ubicar en qué paso se atora. |
 | **T2** | Latencia derrota → aviso | Minutos entre el fin de la partida (Lichess) y el aviso (registro del script) | ≤ 10 minutos (plan de la semana 8) | ⚠️ **Parcial.** El detector corre en GitHub Actions cada 10 minutos (GitHub puede retrasarlo) y el botón «Revisar mis partidas ahora» lo lanza al momento: la corrida del 24/11/2026 tardó **31 s** de la petición al final (17:38:23 → 17:38:54). Falta medir el camino completo con una derrota nueva. |
 | **T3** | Celular sin conexión | Se apaga la red del celular mientras sale el aviso y se vuelve a encender | El aviso llega al reconectar | ⏳ **Pendiente.** Hallazgo de diseño: el aviso se envía con `ttl=3600`, así que **si el celular pasa más de 1 hora sin red, el aviso se pierde**. Es aceptable (un aviso tardío ya no llega «justo después de perder»), pero hay que declararlo. |
 | **T4** | Autonomía de la capa gratuita (equivalente de la batería) | Capítulos al mes que caben en la capa gratuita de Workers AI | Alcanza para el piloto de 20 usuarios | ✅ **Cumple (cálculo).** Con Mistral Small 3.1: unos **190 capítulos al día** ≈ 5,700 al mes → **unos 285 usuarios activos** a 20 capítulos al mes. Ver el cálculo abajo. |
@@ -148,7 +148,7 @@ Es una estimación con los precios que da la cuenta de Cloudflare, no una medici
 ### Paso 2 — Pruebas con usuarios
 
 !!! warning "Estado: 2 de 5 sesiones"
-    El 24/11/2026 se hicieron dos sesiones: P1, con el flujo de la semana 8, y P2, con el flujo nuevo (entrar con Lichess). Sus hallazgos están abajo con el cambio que provocó cada uno. Faltan tres sesiones (P3–P5). La prueba de campo ya está en curso con los participantes que tienen acceso a Zaqora. En ninguna de las dos se registraron los tiempos ni el SEQ.
+    Se hicieron dos sesiones: P1 el 23/11/2026, con el flujo de la semana 8, y P2 el 24/11/2026, con el flujo nuevo (entrar con Lichess). Sus hallazgos están abajo con el cambio que provocó cada uno. Faltan tres sesiones (P3–P5). La prueba de campo ya está en curso con los participantes que tienen acceso a Zaqora. En ninguna de las dos se registraron los tiempos ni el SEQ.
 
 **Con quién:** 5 personas, mayores de edad. **Tres del segmento** (jugadores amateur de Lichess que juegan al menos 3 veces por semana) y **dos de otro equipo** del curso.
 
@@ -166,9 +166,9 @@ Es una estimación con los precios que da la cuenta de Cloudflare, no una medici
 
 Por cada tarea se registra: completó sin ayuda (sí o no), tiempo, errores y dudas, SEQ de 1 a 7 y citas textuales. Los hallazgos se clasifican en crítico, mayor y menor antes de corregir nada. La hoja de observación de la semana 8 se reutiliza con estas tres tareas.
 
-**Primera sesión (P1, 24/11/2026): hallazgos y cambios.** La severidad es la que propone el equipo con las notas que hay; se confirma con las siguientes sesiones.
+**Primera sesión (P1, 23/11/2026): hallazgos y cambios.** La severidad es la que propone el equipo con las notas que hay; se confirma con las siguientes sesiones.
 
-| # | Hallazgo (palabras del participante) | Severidad | Cambio hecho el mismo día |
+| # | Hallazgo (palabras del participante) | Severidad | Cambio (hecho el 24/11/2026) |
 | :---: | :--- | :--- | :--- |
 | 1 | «Complicado de seguir» | Mayor | Activación por pasos («Paso 2 de 3»), una acción por pantalla; la escena explica qué hacer |
 | 2 | Falta una introducción que explique qué es | Mayor | Primera pantalla: qué es Zaqora y sus tres pasos |
@@ -471,7 +471,7 @@ Equipo de una persona: todas las tareas son de David, salvo la ayuda del operado
 - **Leer la ley cambió el producto.** La reforma a la LFPC de diciembre de 2025 obliga a avisar 5 días antes de renovar una suscripción y a permitir cancelar de inmediato. No estaba en ningún documento de las semanas anteriores, y ahora es un requisito de la app.
 - **Las reglas de Lichess cambiaron la demo.** Mi primera idea para provocar el evento era perder a propósito contra otra cuenta; eso es *sandbagging* según sus términos. La demo pierde contra la computadora.
 - **Un pitch honesto con una sola confesión obliga a elegir.** Tenía dos datos débiles (la economía por cliente y la falta de usuarios). Dejé la falta de usuarios porque es la que el ask resuelve; la otra queda para las preguntas.
-- **Una sola sesión con un jugador cambió más que una semana de diseño** *(24/11/2026)*. Sus seis observaciones eran concretas: pedir el análisis a mano, un solo ejercicio, instrucciones de iPhone confusas. Ninguna estaba en mis listas de riesgos, y dos eran críticas.
+- **Una sola sesión con un jugador cambió más que una semana de diseño** *(23/11/2026)*. Sus seis observaciones eran concretas: pedir el análisis a mano, un solo ejercicio, instrucciones de iPhone confusas. Ninguna estaba en mis listas de riesgos, y dos eran críticas.
 - **El villano no puede ser quien te ayuda a vencerlo.** Lo vi al probar la escena: el antagonista daba las pistas. Separar al villano (reta y reacciona) del consejero de tu bando (guía) hizo la ficción coherente y le dio sentido a elegir bando.
 - **Depender de un servicio gratuito es depender de que siga existiendo.** Cloudflare retiró el modelo que usaba la semana 8 sin que yo me enterara; Zaqora siguió funcionando solo porque cada texto tiene una plantilla de respaldo. La prueba T5 la hizo el proveedor, no yo.
 - **Cada mejora movió un pedazo del sistema y abrió una frontera nueva.** Pasar el detector a la nube trajo secretos mal pegados; el inicio de sesión trajo datos que ya no se borraban al salir; la caché de GitHub Pages escondía las versiones nuevas. Todas se encontraron revisando registros frontera por frontera, que es justo el método de esta semana.
