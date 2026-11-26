@@ -35,14 +35,14 @@ Minutos después de una derrota en Lichess, un villano que encarna el error recu
 
 </div>
 
-**Enlaces:** [repositorio](https://github.com/Vidddda/Portafolio-193167) · [Zaqora (prototipo publicado)](prototipo/inicio.html) · [landing](landing/index.html) · video del pitch (por grabar) · [video de respaldo de la demo](videos/zaqora-demo-respaldo.mp4)
+**Enlaces:** [repositorio](https://github.com/Vidddda/Portafolio-193167) · [Zaqora (prototipo publicado)](prototipo/inicio.html) · [landing](landing/index.html) · [video de respaldo de la demo](videos/zaqora-demo-respaldo.mp4)
 
-**Estado en una oración:** el jugador entra con su cuenta de Lichess, sus últimas 5 derrotas se vuelven capítulos con historia de IA y cada derrota nueva le llega sola como un reto, sin la laptop del equipo; dos jugadores externos lo probaron y sus observaciones cambiaron el producto, pero todavía no se sabe si alguien que acaba de perder abre el reto.
+**Estado en una oración:** el jugador entra con su cuenta de Lichess, sus últimas 5 derrotas se vuelven capítulos con historia de IA y cada derrota nueva le llega sola como un reto, sin la laptop del equipo; cinco personas lo probaron y sus observaciones cambiaron el producto, pero todavía no se sabe si alguien que acaba de perder abre el reto.
 
 | | |
 | :--- | :--- |
 | **Versión y fecha** | Versión 2, 24/11/2026 |
-| **Qué falta** | El video del pitch; tres sesiones de prueba más y los resultados de la prueba de campo, que ya está en curso. La [landing](landing/index.html) ya está publicada. |
+| **Qué falta** | Los resultados de la prueba de campo, que ya está en curso. Las cinco sesiones de prueba están hechas. La [landing](landing/index.html) ya está publicada. |
 
 ---
 
@@ -244,6 +244,7 @@ flowchart LR
 | 24/11/2026 | Villano y consejero separados | ¿Quién ayuda al jugador? | El villano no puede enseñar a vencerlo; las pistas pasan al consejero del bando |
 | 24/11/2026 | Entrar con Lichess, Inicio y detector en GitHub Actions | ¿Funciona sin la laptop y con el historial del jugador? | El primer contacto convierte sus últimas 5 derrotas en capítulos; «Revisar ahora» corre el detector en 31 s |
 | 24/11/2026 | Segunda sesión (P2), ya con la versión nueva | ¿Se usa sin ayuda? | Tampoco pudo usarla solo; el análisis «tardaba mucho»; «Jugar en Lichess» distraía; pidió ver la partida completa. Inicio ahora muestra el avance de la revisión y el botón pasó a secundario |
+| 25/11/2026 | Sesiones P3, P4 y P5 | ¿Se entiende el reto? ¿Pagarían? | Los que juegan entendieron el reto solos; «Revisar ahora» dio error 500 y se corrigió ese día; P3 pagaría «porque quiero aprender». P3 y P4 no tenían cuenta de Lichess, así que el aviso no se midió |
 
 ### 11. Manufactura, DFM y circularidad
 
@@ -437,7 +438,7 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 
 | Prueba | Resultado |
 | :--- | :--- |
-| T1 Activación sin ayuda (< 5 min) | ⚠️ No cumplió en P1 («complicado de seguir») ni en P2, ya con la activación rehecha; falta ubicar el paso donde se atoran |
+| T1 Activación sin ayuda (< 5 min) | ⚠️ No cumplió en P1 («complicado de seguir») ni en P2, ya con la activación rehecha; falta ubicar el paso donde se atoran. En P3 y P4 no se midió (sin cuenta de Lichess) |
 | T2 Derrota → aviso (≤ 10 min) | ⚠️ Parcial: el detector corre cada 10 min y «Revisar ahora» tarda 31 s; falta medir con una derrota nueva |
 | T3 Celular sin red | ⏳ Pendiente; el aviso dura 1 hora en el servicio push |
 | T4 Autonomía de la capa gratuita | ✅ Unos 285 usuarios activos a 20 capítulos al mes (estimado) |
@@ -458,10 +459,10 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | **Versión y fecha** | Versión 1, semana 9 (23/11/2026) |
 | **Decisión** | Protocolo de 30 minutos con tres tareas (activar los avisos; abrir el aviso y jugar el encuentro; encontrar el precio y pre-registrarse) más una prueba de campo de 3 a 5 días. |
 | **Evidencia** | [Protocolo (semana 9)](pi4_s9.md#paso-2-pruebas-con-usuarios) |
-| **Qué cambió** | La prueba de la semana 8 se suma a esta. **23/11/2026: primera sesión con un jugador externo (P1)**: seis observaciones, dos críticas, todas corregidas al día siguiente ([detalle](pi4_s9.md#paso-2-pruebas-con-usuarios)). Las tareas se adaptaron a la versión nueva (entrar con Lichess; primer contacto con las 5 derrotas). **Segunda sesión (P2)**, con la versión nueva: no pudo usarla solo, el análisis le pareció lento y pidió ver la partida completa. |
-| **Qué falta** | Tres sesiones más, la tabla por tarea con éxito sin ayuda, tiempo y SEQ (en P1 y P2 no se registraron), la señal de negocio y los resultados de la prueba de campo (en curso). |
+| **Qué cambió** | La prueba de la semana 8 se suma a esta. **23/11/2026: primera sesión con un jugador externo (P1)**: seis observaciones, dos críticas, todas corregidas al día siguiente ([detalle](pi4_s9.md#paso-2-pruebas-con-usuarios)). Las tareas se adaptaron a la versión nueva (entrar con Lichess; primer contacto con las 5 derrotas). **Segunda sesión (P2)**, con la versión nueva: no pudo usarla solo, el análisis le pareció lento y pidió ver la partida completa. **25/11/2026: P3, P4 y P5**: entendieron el reto, «Revisar ahora» falló con error 500 (corregido ese día) y salieron dos peticiones: pistas más graduales e iluminar las jugadas posibles. |
+| **Qué falta** | La tabla por tarea con éxito sin ayuda, tiempo y SEQ (no se registraron completos), la señal de negocio y los resultados de la prueba de campo (en curso). |
 
-| # | Hallazgo (1–6: P1; 7–10: P2) | Severidad (propuesta) | Cambio |
+| # | Hallazgo (1–6: P1; 7–10: P2; 11–15: P3 a P5) | Severidad (propuesta) | Cambio |
 | :---: | :--- | :--- | :--- |
 | 1 | «Complicado de seguir» | Mayor | Activación por pasos |
 | 2 | Falta una introducción | Mayor | Pantalla de introducción |
@@ -473,6 +474,11 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | 8 | El análisis «tardaba mucho» | Mayor | Avance de la revisión por etapas; el capítulo aparece en cuanto llega |
 | 9 | «Jugar en Lichess» distraía | Menor | Botón secundario en Inicio |
 | 10 | Quiere ver la partida completa | Petición | Pendiente: visor de la partida |
+| 11 | «Revisar ahora» dio error 500 (P3, P4) | Crítico | Corregido el 25/11/2026 |
+| 12 | Sin cuenta de Lichess no hay aviso que probar (P3, P4) | Menor | Reclutar solo a quien juega en Lichess |
+| 13 | Los encuentros costaron demasiado (P3) | Mayor | Pendiente: pistas más graduales |
+| 14 | Iluminar las jugadas posibles (P4) | Petición | Pendiente |
+| 15 | No juega ajedrez y no la entendió (P5) | Fuera del segmento | Ninguno |
 
 ### 19. Landing page
 
@@ -491,8 +497,8 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | **Versión y fecha** | Versión 2, 24/11/2026 |
 | **Decisión** | Pitch de 352 palabras (2:42) que abre con un jugador real de las entrevistas y cierra con el ask: cinco jugadores y un club o *streamer* para un piloto de 20. Demo de 7 minutos: entrar con Lichess, capítulos de las últimas derrotas, una derrota en vivo contra la computadora y «Revisar mis partidas ahora». |
 | **Evidencia** | [Guion del pitch con la evidencia de cada cifra](pi4_s9.md#paso-5-el-pitch-de-3-minutos) · [guion de la demo con plan B](pi4_s9.md#paso-6-la-demo-de-7-minutos) · [video de respaldo de la demo](videos/zaqora-demo-respaldo.mp4) (1:49: entrar con Lichess, derrota real, «Revisar mis partidas ahora» y el capítulo; esperas aceleradas y marcadas) |
-| **Qué cambió** | La tracción ahora cuenta las dos sesiones con jugadores y una respuesta de P1 («cerrar la aplicación»); la confesión pasó a ser «todavía no sabemos si abren el reto justo después de perder». La demo ya no usa la laptop. |
-| **Qué falta** | Grabar el pitch, verlo y enlazarlo aquí; tres ensayos de la demo con operador. |
+| **Qué cambió** | La tracción ahora cuenta las cinco sesiones y una respuesta de P1 («cerrar la aplicación»); la confesión pasó a ser «todavía no sabemos si abren el reto justo después de perder». La demo ya no usa la laptop. |
+| **Qué falta** | Nada obligatorio. La demo ya se ensayó tres veces (25/11/2026). El video del pitch es opcional y no se grabó: el pitch se presenta en vivo con este guion. |
 
 ---
 
@@ -540,7 +546,7 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | **Decisión** | El siguiente paso es la prueba con usuarios, no más diseño. La primera sesión lo confirmó: una hora con un jugador cambió más que una semana de diseño. |
 | **Evidencia** | Reflexiones de cada semana ([5](pi4_s5.md#5-reflexion), [6](pi4_s6.md#5-reflexion), [7](pi4_s7.md#5-reflexion), [8](pi4_s8.md#5-reflexion), [9](pi4_s9.md#5-reflexion)). |
 | **Qué cambió** | Se agregó el aprendizaje del semestre a partir de las reflexiones semanales. |
-| **Qué falta** | Los resultados de la prueba de campo (en curso) y de las sesiones P3–P5. |
+| **Qué falta** | Los resultados de la prueba de campo (en curso). |
 
 **Aprendizaje más importante del semestre** (David López Ramírez):
 

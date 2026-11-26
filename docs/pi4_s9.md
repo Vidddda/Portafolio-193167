@@ -70,7 +70,7 @@ Con la actualización del 24/11/2026, F1 la corre el detector en **GitHub Action
 
 | # | Prueba (adaptada) | Qué se mide | Aprobado si | Estado y evidencia |
 | :---: | :--- | :--- | :--- | :--- |
-| **T1** | Activación sin ayuda | Tiempo y errores de alguien que no conoce Zaqora al abrir el enlace y activar los avisos | < 5 minutos sin intervención (en iPhone, incluida la instalación) | ⚠️ **No cumplió en la primera sesión (23/11/2026).** El participante la encontró «complicada de seguir» y las instrucciones de iPhone «no intuitivas» (no se midió el tiempo). Se rehízo la activación por pasos. **En la segunda sesión (P2), ya con la activación nueva, el participante tampoco pudo usar la app solo**: falta ubicar en qué paso se atora. |
+| **T1** | Activación sin ayuda | Tiempo y errores de alguien que no conoce Zaqora al abrir el enlace y activar los avisos | < 5 minutos sin intervención (en iPhone, incluida la instalación) | ⚠️ **No cumplió en la primera sesión (23/11/2026).** El participante la encontró «complicada de seguir» y las instrucciones de iPhone «no intuitivas» (no se midió el tiempo). Se rehízo la activación por pasos. **En la segunda sesión (P2), ya con la activación nueva, el participante tampoco pudo usar la app solo**: falta ubicar en qué paso se atora. **En P3 y P4 no se pudo medir**: no tenían cuenta de Lichess y usaron una prestada. |
 | **T2** | Latencia derrota → aviso | Minutos entre el fin de la partida (Lichess) y el aviso (registro del script) | ≤ 10 minutos (plan de la semana 8) | ⚠️ **Parcial.** El detector corre en GitHub Actions cada 10 minutos (GitHub puede retrasarlo) y el botón «Revisar mis partidas ahora» lo lanza al momento: la corrida del 24/11/2026 tardó **31 s** de la petición al final (17:38:23 → 17:38:54). Falta medir el camino completo con una derrota nueva. |
 | **T3** | Celular sin conexión | Se apaga la red del celular mientras sale el aviso y se vuelve a encender | El aviso llega al reconectar | ⏳ **Pendiente.** Hallazgo de diseño: el aviso se envía con `ttl=3600`, así que **si el celular pasa más de 1 hora sin red, el aviso se pierde**. Es aceptable (un aviso tardío ya no llega «justo después de perder»), pero hay que declararlo. |
 | **T4** | Autonomía de la capa gratuita (equivalente de la batería) | Capítulos al mes que caben en la capa gratuita de Workers AI | Alcanza para el piloto de 20 usuarios | ✅ **Cumple (cálculo).** Con Mistral Small 3.1: unos **190 capítulos al día** ≈ 5,700 al mes → **unos 285 usuarios activos** a 20 capítulos al mes. Ver el cálculo abajo. |
@@ -147,8 +147,8 @@ Es una estimación con los precios que da la cuenta de Cloudflare, no una medici
 
 ### Paso 2 — Pruebas con usuarios
 
-!!! warning "Estado: 2 de 5 sesiones"
-    Se hicieron dos sesiones: P1 el 23/11/2026, con el flujo de la semana 8, y P2 el 24/11/2026, con el flujo nuevo (entrar con Lichess). Sus hallazgos están abajo con el cambio que provocó cada uno. Faltan tres sesiones (P3–P5). La prueba de campo ya está en curso con los participantes que tienen acceso a Zaqora. En ninguna de las dos se registraron los tiempos ni el SEQ.
+!!! success "Estado: 5 de 5 sesiones"
+    Se hicieron las cinco sesiones: P1 el 23/11/2026, con el flujo de la semana 8; P2 el 24/11/2026, y P3, P4 y P5 el 25/11/2026, con el flujo nuevo (entrar con Lichess). Sus hallazgos están abajo con el cambio que provocó cada uno. P3 y P4 no tenían cuenta de Lichess y usaron una prestada, y P5 no juega ajedrez, así que el aviso solo se probó con P1 y P2. La prueba de campo ya está en curso con los participantes que tienen acceso a Zaqora. El SEQ no se registró en ninguna sesión; en P3 y P4 los tiempos son aproximados.
 
 **Con quién:** 5 personas, mayores de edad. **Tres del segmento** (jugadores amateur de Lichess que juegan al menos 3 veces por semana) y **dos de otro equipo** del curso.
 
@@ -203,6 +203,20 @@ Tres lecturas: al perder, P1 **cierra la app** en lugar de analizar, igual que l
 | 4 | En la revisión quiso navegar por sus jugadas: pidió un tablero de análisis con la partida completa | Petición | Pendiente: visor de la partida completa dentro del capítulo |
 
 **Lo que se repite en P1 y P2:** los dos necesitaron ayuda para empezar. La activación sigue siendo el problema principal y es lo primero que medirá T1 en las tres sesiones que faltan.
+
+**Sesiones 3 a 5 (P3, P4 y P5, 25/11/2026): hallazgos y cambios.** P3 es jugador del segmento; P4 es un compañero del curso que casi no juega; P5 no juega ajedrez. **P3 y P4 no tenían cuenta de Lichess** y usaron una cuenta prestada del equipo, así que con ellos no se pudo medir el aviso ni la entrada. Los tiempos son aproximados, sacados de los audios y de los registros de la app.
+
+| # | Hallazgo | Quién | Severidad (propuesta) | Cambio |
+| :---: | :--- | :---: | :--- | :--- |
+| 1 | «Revisar mis partidas ahora» dio error 500 («GitHub no pudo correr la revisión») | P3, P4 | Crítico | **Corregido el mismo 25/11/2026**: la revisión volvió a correr sin errores |
+| 2 | Sin cuenta de Lichess no hay aviso que probar: el reclutamiento debe pedir que jueguen en Lichess | P3, P4 | Menor (del protocolo) | Reclutar solo a quien juega en Lichess; la landing ya dice que se entra con la cuenta de Lichess |
+| 3 | Los encuentros le costaron: 15 intentos fallidos y tuvo que ver la solución en 2 de 3 | P3 | Mayor | Pendiente: pistas más graduales antes de mostrar la solución (también lo pidió P1) |
+| 4 | Pidió iluminar las casillas a las que puede moverse una pieza | P4 | Petición | Pendiente: marcar las jugadas posibles al tocar una pieza |
+| 5 | Los dos entendieron el concepto solos: «son como partidas de prueba… para practicar», «repites la partida con la que perdiste»; a P3 la landing le pareció «muy clean, intuitiva» | P3, P4 | Positivo | — |
+| 6 | Precio: P3 pagaría «porque quiero aprender», si le sobra el dinero; P4 no pagaría ni imaginando que juega | P3, P4 | Señal | La señal positiva viene del segmento; P4 está fuera |
+| 7 | Le gustó, pero no la entendió del todo porque no juega ajedrez; se omitió la entrevista | P5 | Fuera del segmento | Ninguno: confirma que Zaqora es para quien ya juega |
+
+**Lo que se repite en las cinco sesiones:** nadie empezó solo (P1 y P2 con su cuenta; P3 y P4 sin cuenta de Lichess), pero los que juegan entendieron el reto en cuanto lo vieron. Lo que sigue sin medirse es lo más importante: si alguien que acaba de perder abre el aviso, y eso solo lo responde la prueba de campo.
 
 **Prueba de campo (la de la semana 8, en curso):** además de la sesión de 30 minutos, los tres participantes del segmento dejan los avisos activos 3 a 5 días con el detector corriendo. Es la única forma de medir lo que la sesión no puede: si alguien que **de verdad** acaba de perder abre el aviso.
 
@@ -358,7 +372,7 @@ Checklist hecho con búsqueda en fuentes oficiales el 23/11/2026. Zaqora es soft
 | **1. Impacto y problema** (35 s) | Un jugador de Lichess nos contó que perdió tres partidas seguidas y apagó todo. No las analizó, porque, en sus palabras, «sabía que iba a buscar excusas». Otro puede pasar una hora jugando partidas que no quería, solo para recuperar la anterior. Esa racha le cuesta rating y tiempo, y una clase particular de 229 pesos la hora no llega en el momento en que todo se rompe: justo después de perder. | 72 | 33.2 |
 | **2. Solución y por qué nosotros** (35 s) | Zaqora llega en ese momento. Minutos después de tu derrota, un villano que encarna tu error de siempre te reta a volver a esa partida, y un consejero de tu bando te ayuda a encontrar lo que se te escapó. Chess.com te da un análisis frío cuando estás enojado; Zaqora primero reconoce que dolió, sin rating ni comparaciones. En la demostración verán llegar ese reto. | 65 | 30.0 |
 | **3. Mercado y modelo** (35 s) | En México estimamos 66 mil jugadores en línea que se frustran al perder y pagarían por mejorar. Cobramos 59 pesos al mes, menos que Chess.com o Duolingo. Como el análisis corre en servidores gratuitos y el narrador usa una capa gratuita de inteligencia artificial, cada usuario activo nos cuesta 80 centavos al mes. Con 50 suscriptores al quinto año, la inversión se recupera en el mes 21. | 67 | 30.9 |
-| **4. Tracción** (35 s) | Entrevistamos a tres jugadores, y los tres, después de perder, dejan de jugar en lugar de analizar. Ya lo probaron dos jugadores. Al primero le preguntamos qué hizo tras su última derrota y respondió: «cerrar la aplicación». Con lo que vimos cambiamos el producto: ahora entras con tu cuenta de Lichess y tus últimas cinco derrotas se vuelven capítulos. Lo que aún no sabemos es si abren el reto justo después de perder. | 73 | 33.7 |
+| **4. Tracción** (35 s) | Entrevistamos a tres jugadores, y los tres, después de perder, dejan de jugar en lugar de analizar. Ya lo probaron cinco personas. Al primero le preguntamos qué hizo tras su última derrota y respondió: «cerrar la aplicación». Con lo que vimos cambiamos el producto: ahora entras con tu cuenta de Lichess y tus últimas cinco derrotas se vuelven capítulos. Lo que aún no sabemos es si abren el reto justo después de perder. | 73 | 33.7 |
 | **5. Equipo** (15 s) | Soy David López: ingeniero mecatrónico, desarrollador y maestro de ajedrez. Diseñé, programé y calculé solo todo lo que verán hoy, y sigo después del curso. | 25 | 11.5 |
 | **6. Ask y cierre** (25 s) | Pedimos cinco jugadores de Lichess que reciban el aviso durante una semana, y un club o streamer en español para un piloto de 20 usuarios. En 90 días mediremos si abren el aviso y si uno de cada veinte paga. Cuando pierdes, Zaqora convierte esa derrota en tu próximo capítulo. | 50 | 23.1 |
 | **Total** | | **352** | **162.4** |
@@ -378,7 +392,7 @@ La confesión honesta es una sola: todavía no se sabe si el jugador abre el ret
 | 50 suscriptores al año 5; recuperación en el mes 21 | Flujo de caja a 5 años, semana 8 | **PENDIENTE**: conversión y crecimiento supuestos |
 | Los tres dejan de jugar en lugar de analizar | Entrevistas, semana 3 | Evidencia (muestra de 3) |
 | El prototipo funciona de punta a punta | Prueba de funcionamiento del 15/10/2026 (semana 8) y flujo completo con cuenta de Lichess el 24/11/2026 | Evidencia |
-| Ya lo probaron dos jugadores y lo que vimos cambió el producto | Sesiones P1 y P2, Paso 2 | Evidencia (2 sesiones) |
+| Ya lo probaron cinco personas y lo que vimos cambió el producto | Sesiones P1 a P5, Paso 2 | Evidencia (5 sesiones) |
 | Al perder, P1 «cerrar la aplicación» | Entrevista de cierre de P1, Paso 2 | Evidencia (1 respuesta) |
 | Las últimas cinco derrotas se vuelven capítulos | Primer contacto probado con la cuenta del equipo (J1) el 24/11/2026 | Evidencia |
 
@@ -434,7 +448,7 @@ Equipo de una persona: todas las tareas son de David, salvo la ayuda del operado
 | | Pruebas T1 (con alguien que no conozca Zaqora) y T3 (modo avión) | Resultados en la tabla del Paso 1 |
 | | Checklist regulatorio (hecho) y aviso de privacidad de la app publicado (hecho el 24/11/2026) | — |
 | | Secciones 1 a 16 de la página de proyecto final al día | Hecho en la versión del 23/11/2026 |
-| **B · probar, corregir y contar** | Cinco pruebas de usuario (tres del segmento, dos de otro equipo) y prueba de campo de 3 a 5 días · **2 de 5 hechas** | Notas por tarea, síntesis con el Prompt 2 |
+| **B · probar, corregir y contar** | Cinco pruebas de usuario (tres del segmento, dos de otro equipo) y prueba de campo de 3 a 5 días · **5 de 5 hechas** | Notas por tarea, síntesis con el Prompt 2 |
 | | Pruebas T5 y T6 (48 h del detector durante la prueba de campo) | — |
 | | Pitch grabado en video, visto y reescrito | Video publicado sin iniciar sesión |
 | | Demo ensayada tres veces con el operador y video de respaldo grabado | Tercer ensayo sin detenerse |
@@ -456,9 +470,9 @@ Equipo de una persona: todas las tareas son de David, salvo la ayuda del operado
 | Fronteras y plan de pruebas T1 a T6 | ✅ T4 y T5 cumplen; T1 y T2 parciales; T3 y T6 pendientes | [Paso 1](#paso-1-integracion-del-sistema) |
 | Sistema integrado sin la laptop del equipo | ✅ Entrar con Lichess, detector en GitHub Actions, capítulos en la cuenta (24/11/2026) | [Actualización](#2-punto-de-partida) |
 | Landing publicada y accesible en internet | ✅ [landing](landing/index.html) (24/11/2026) | Paso 3 |
-| Reporte de pruebas de usuario con cinco sesiones | ⏳ 2 de 5 (hallazgos y cambios de P1 y P2) | [Paso 2](#paso-2-pruebas-con-usuarios) |
-| Pitch grabado en video | ⏳ Guion listo (actualizado el 24/11/2026) | Paso 5 |
-| Demo ensayada tres veces con video de respaldo | ⏳ [video de respaldo de la demo](videos/zaqora-demo-respaldo.mp4) listo (1:49); faltan los tres ensayos | Paso 6 |
+| Reporte de pruebas de usuario con cinco sesiones | ✅ 5 de 5 (hallazgos y cambios de P1 a P5) | [Paso 2](#paso-2-pruebas-con-usuarios) |
+| Pitch grabado en video | Opcional: no se grabó. El guion está listo (actualizado el 24/11/2026) y el pitch se presenta en vivo | Paso 5 |
+| Demo ensayada tres veces con video de respaldo | ⏳ [video de respaldo de la demo](videos/zaqora-demo-respaldo.mp4) listo (1:49) y tres ensayos hechos (25/11/2026) | Paso 6 |
 | Página de proyecto final | ✅ Primera versión | [Proyecto final](proyecto_final.md) |
 | Documentación técnica (README, arquitectura, manual de usuario) | ✅ | [Proyecto final, secciones 8 y 12 y anexos B y C](proyecto_final.md) |
 
