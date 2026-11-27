@@ -41,7 +41,7 @@ Minutos después de una derrota en Lichess, un villano que encarna el error recu
 
 | | |
 | :--- | :--- |
-| **Versión y fecha** | Versión 2, 24/11/2026 |
+| **Versión y fecha** | Versión 3, 27/11/2026 |
 | **Qué falta** | Los resultados de la prueba de campo, que ya está en curso. Las cinco sesiones de prueba están hechas. La [landing](landing/index.html) ya está publicada. |
 
 ---
@@ -52,11 +52,11 @@ Minutos después de una derrota en Lichess, un villano que encarna el error recu
 
 | | |
 | :--- | :--- |
-| **Versión y fecha** | Versión 1, semana 1 (28/08/2026); actualizada el 23/11/2026 |
+| **Versión y fecha** | Versión 1, semana 1 (28/08/2026); actualizada el 27/11/2026 |
 | **Decisión** | Equipo de una persona: **David López Ramírez**, ingeniero mecatrónico, desarrollador y maestro de ajedrez. Hace todos los roles: investigación, diseño, programación, modelo económico y pitch. |
 | **Evidencia** | [Firma del syllabus (semana 1)](pi4_s1.md) · [página principal](index.md) |
 | **Qué cambió** | El concepto de la semana 2 hablaba de «el equipo»; el modelo económico de la semana 8 dejó de contar sueldos porque el equipo es una sola persona. |
-| **Qué falta** | Un compañero que opere la demo en la evaluación (un solo presentador no puede narrar y operar a la vez). |
+| **Qué falta** | Nada para la evaluación: un compañero opera la demo mientras David narra, y la ensayaron tres veces el 25/11/2026. |
 
 ### 2. Problema y oportunidad
 
@@ -230,7 +230,7 @@ flowchart LR
 | **Decisión** | Probar primero el supuesto más riesgoso —que un jugador que acaba de perder abre el aviso del villano— con un prototipo de **experiencia** de **baja resolución** en modo «mago de Oz». |
 | **Evidencia** | [Plan, construcción y reporte (semana 8)](pi4_s8.md#4-entregable-prototipo-y-dfm-de-zaqora). Prueba de funcionamiento del 15/10/2026: el aviso llega, la escena abre, los eventos se registran y la derrota se detecta. |
 | **Qué cambió** | El aviso pasó de WhatsApp a notificación de la app para medir el canal real; los mensajes ya no dan el detalle de la jugada (revisión DFM). |
-| **Qué falta** | La prueba de la semana 8 no se realizó en su fecha. El 23/11/2026 hubo una primera sesión con un jugador externo que cambió el producto (ver la línea de tiempo), pero el supuesto central —que abre el reto justo después de perder— sigue sin validar: la prueba de campo ya está en curso con los participantes que tienen acceso. |
+| **Qué falta** | La prueba de la semana 8 no se realizó en su fecha. Del 23 al 25/11/2026 se hicieron las cinco sesiones con usuarios, que cambiaron el producto (ver la línea de tiempo y la [§18](#18-pruebas-con-usuarios)), pero el supuesto central —que abre el reto justo después de perder— sigue sin validar: la prueba de campo ya está en curso con los participantes que tienen acceso. |
 
 | Fecha | Prototipo | Pregunta | Aprendizaje |
 | :--- | :--- | :--- | :--- |
@@ -254,13 +254,13 @@ flowchart LR
 | **Decisión** | Volumen objetivo: piloto de 20 usuarios y hasta 1,000 activos al año 5. «Manufactura» = despliegue en servicios con capa gratuita. Tres cambios DFM: Stockfish al navegador, narrador más barato (capa gratuita de Workers AI) y Supabase Free hasta el año 3. |
 | **Evidencia** | [Revisión DFM y BOM actualizado (semana 8)](pi4_s8.md#3-revision-dfm-y-bom-actualizado) · [BOM verificado (semana 7)](pi4_s7.md#bom-verificado-08102026) · [Economía circular](pi4_s8.md#4-economia-circular) |
 | **Qué cambió** | Costo por usuario activo de \$16.18 (semana 7) a \$4.72 (DFM) y a \$4.00 (IA gratuita) a 20 usuarios. Servicios de 7 a 6; cuentas de pago de 3 a 1. |
-| **Qué falta** | Medir el consumo real de la IA por capítulo; publicar en Google Play **después de concretar la prueba piloto** (decisión del 24/11/2026; exige una prueba cerrada de 12 testers durante 14 días y la facturación de Google al 15 %). Mientras tanto, Zaqora se usa como app web desde el navegador. |
+| **Qué falta** | Confirmar en el piloto el consumo de IA medido el 27/11/2026 (38 neurons por capítulo); publicar en Google Play **después de concretar la prueba piloto** (decisión del 24/11/2026; exige una prueba cerrada de 12 testers durante 14 días y la facturación de Google al 15 %). Mientras tanto, Zaqora se usa como app web desde el navegador. |
 
 **BOM final (por mes, piloto):**
 
 | Componente | Especificación | Precio unitario | Proveedor | Tiempo de entrega |
 | :--- | :--- | :--- | :--- | :--- |
-| Narrador | Mistral Small 3.1 (Apache 2.0), dentro de la capa gratuita de 10,000 neurons al día (~190 capítulos, estimado) | US\$0; excedente a US\$0.351 / US\$0.555 por millón de tokens | Cloudflare Workers AI | Inmediato |
+| Narrador | Mistral Small 3.1 (Apache 2.0), dentro de la capa gratuita de 10,000 neurons al día (~263 capítulos al día; 38 neurons por capítulo, medido el 27/11/2026) | US\$0; excedente a US\$0.351 / US\$0.555 por millón de tokens | Cloudflare Workers AI | Inmediato |
 | Análisis | Stockfish 19 en el detector | US\$0 | Código abierto (GPLv3) | — |
 | Detector | GitHub Actions cada 10 minutos y a petición | US\$0 (repositorio público) | GitHub | Inmediato |
 | Rival (siguiente versión) | Stockfish WASM en el navegador | US\$0 | Código abierto (GPLv3) | — |
@@ -367,7 +367,19 @@ flowchart LR
 | **Decisión** | Precio de **\$59 MXN al mes con IVA**: entre el *cost-plus* (\$5.87 a 100 usuarios y \$12.37 a 20, con el modelo vigente; era \$33–40 en la semana 7) y el *value-based* (hasta \$79). El año 1 es una validación; el negocio se evalúa a 5 años. |
 | **Evidencia** | [Modelo económico (semana 7)](pi4_s7.md#3-modelo-economico) · [flujo a 5 años (semana 8)](pi4_s8.md#3-revision-dfm-y-bom-actualizado) · [hoja de cálculo con fórmulas](recursos/archivos/PI4_S8/Zaqora_Modelo_Economico_S8_DFM.xlsx) |
 | **Qué cambió** | VPN a 12 meses de −\$2,636 (semana 7) a −\$299 (vigente); VPN a 5 años de +\$9,281. |
-| **Qué falta** | **El costo de la IA no está medido con tokens reales.** El narrador ya existe (Mistral Small 3.1); la estimación es de unos 900 + 450 tokens por capítulo (US\$0.00057) y unos 190 capítulos al día gratis. Falta leer el consumo real en Cloudflare durante el piloto. |
+| **Qué falta** | Confirmar los tokens medidos con el consumo del piloto en el panel de Cloudflare. |
+
+**Costo de la IA medido (27/11/2026).** Seis llamadas reales a Mistral Small 3.1 en Workers AI con el prompt del detector ([cálculo y rangos](pi4_s9.md#paso-1-integracion-del-sistema), prueba T4):
+
+| Medida | Valor |
+| :--- | :--- |
+| Tokens por capítulo de 3 encuentros | 666 de entrada + 334 de salida (promedio de 4 llamadas) |
+| Neurons por capítulo | 38 (de 35 a 42) |
+| Costo por capítulo, sin capa gratuita | US\$0.00042 ≈ \$0.008 MXN |
+| Costo por usuario al mes (20 capítulos) | \$0 dentro de la capa gratuita · \$0.16 MXN si se pagara todo |
+| Capa gratuita | 10,000 neurons al día ≈ 263 capítulos ≈ 390 usuarios activos |
+
+El modelo económico sigue usando el costo de IA de Claude Haiku 5.5 (\$0.50 al mes por usuario) para el excedente, como criterio conservador: es tres veces lo medido.
 
 | Concepto | Resultado |
 | :--- | :--- |
@@ -442,7 +454,7 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | T1 Activación sin ayuda (< 5 min) | ⚠️ No cumplió en P1 («complicado de seguir») ni en P2, ya con la activación rehecha; falta ubicar el paso donde se atoran. En P3 y P4 no se midió (sin cuenta de Lichess) |
 | T2 Derrota → aviso (≤ 10 min) | ⚠️ Parcial: «Revisar ahora» tarda 31 s; solo, el detector está programado cada 10 min, pero GitHub lo corre cada 6 a 9 horas; falta medir con una derrota nueva |
 | T3 Celular sin red | ⏳ Pendiente; el aviso dura 1 hora en el servicio push |
-| T4 Autonomía de la capa gratuita | ✅ Unos 285 usuarios activos a 20 capítulos al mes (estimado) |
+| T4 Autonomía de la capa gratuita | ✅ Unos 390 usuarios activos a 20 capítulos al mes (38 neurons por capítulo, medido el 27/11/2026) |
 | T5 Falla de la API de IA | ✅ Con una falla real: el modelo se retiró y Zaqora siguió con plantillas |
 | T6 48 h continuas | ✅ 19 de 19 corridas sin error en 67 h (24 al 27/11/2026), sin la laptop. ⚠️ La frecuencia no cumple: GitHub corrió las programadas cada 6 a 9 horas |
 
@@ -521,7 +533,7 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | ¿Por qué alguien usaría esto y no el análisis de Chess.com? | Justo después de perder nadie quiere un análisis frío: los tres entrevistados cierran la app. Zaqora compite contra cerrar la app, no contra Chess.com. | [§3](#3-usuario-y-evidencia-de-campo), [§4](#4-mercado-y-competencia) |
 | Tu LTV ÷ CAC es 0.72. ¿No funciona el negocio? | Con los supuestos de hoy no cierra. El problema no es el costo (\$0.80 por usuario), es que cada suscriptor cuesta 20 activaciones. Con conversión de 10 % y churn de 6 % llega a 3.08; eso mide el piloto. | [§15](#15-go-to-market-y-economia-unitaria) |
 | ¿Por qué \$59? | El costo está muy por debajo (*cost-plus* de \$5.87–12.37) y el techo estimado es \$79; es menos que Chess.com o Duolingo. La disposición a pagar sigue siendo HIPÓTESIS. | [§14](#14-costos-precio-y-viabilidad-financiera) |
-| ¿Y si se acaba la capa gratuita de IA? | Alcanza para unos 285 usuarios activos. Pagando, un capítulo cuesta cerca de un centavo; con un modelo comercial serían unos \$0.50 al mes por usuario contra \$44.92 de ingreso neto. | [§14](#14-costos-precio-y-viabilidad-financiera), [§21](#21-uso-de-ia-en-el-proyecto) |
+| ¿Y si se acaba la capa gratuita de IA? | Alcanza para unos 390 usuarios activos. Pagando, un capítulo cuesta menos de un centavo (\$0.008, medido): \$0.16 al mes por usuario contra \$44.92 de ingreso neto. | [§14](#14-costos-precio-y-viabilidad-financiera), [§21](#21-uso-de-ia-en-el-proyecto) |
 | ¿Qué pasa si Lichess cambia su API? | Es el riesgo de plataforma principal. Sus términos permiten el uso comercial con límites razonables, y Zaqora los respeta (una petición a la vez, espera tras un 429). | [§16](#16-regulacion-y-aspectos-legales), [§22](#22-reflexion-y-siguientes-pasos) |
 | ¿Alguien abrió el aviso justo después de perder? | Todavía no se sabe: es el supuesto que decide todo y lo mide la prueba de campo, en curso. Por eso el ask son cinco jugadores durante una semana. | [§18](#18-pruebas-con-usuarios), [§22](#22-reflexion-y-siguientes-pasos) |
 | ¿Es rentable? | El año 1 es validación (VPN de −\$299). A 5 años, VPN de +\$9,281 y recuperación en el mes 21, con usuarios supuestos. | [§14](#14-costos-precio-y-viabilidad-financiera) |
@@ -535,11 +547,11 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 
 | | |
 | :--- | :--- |
-| **Versión y fecha** | Versión 2, 24/11/2026 |
+| **Versión y fecha** | Versión 3, 27/11/2026 |
 | **Decisión** | En el proceso, la IA generó insumos y el equipo eligió. En el producto, **el motor calcula y el LLM solo narra**, siempre con una plantilla de respaldo. |
 | **Evidencia** | Prompts del profesor y de autoría propia con sus respuestas en cada semana ([2](pi4_s2.md) a [8](pi4_s8.md)). |
 | **Qué cambió** | El narrador pasó de Claude Haiku 4.5 a Haiku 5.5, después a Llama 3.1 en la capa gratuita de Workers AI y, cuando Cloudflare lo retiró, a **Mistral Small 3.1** (elegido tras probar 5 modelos con la misma partida). Ahora escribe la historia y los diálogos del villano y del consejero. |
-| **Qué falta** | Medir el costo real por usuario; comparar con jugadores la historia de IA contra la de plantilla (la escena registra cuál vio cada uno). |
+| **Qué falta** | Confirmar el costo medido con el consumo del piloto; comparar con jugadores la historia de IA contra la de plantilla (la escena registra cuál vio cada uno). |
 
 **Los cinco prompts que más cambiaron el proyecto:**
 
@@ -561,7 +573,7 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | Dónde corre | Cloudflare Workers AI (Mistral Small 3.1); el análisis, Stockfish 19 en el detector (GitHub Actions) |
 | Qué recibe | Un JSON con hechos calculados (color, ritmo, apertura, jugada, pieza, casilla, gravedad), sin FEN ni datos personales (RI-04) |
 | Qué devuelve | `{historia: [3], encuentros: [{antes, consejo, despues}]}`, con largos máximos; el validador rechaza casillas inventadas y soluciones reveladas |
-| Costo por usuario | \$0 dentro de la capa gratuita (unos 285 usuarios activos); unos US\$0.00057 por capítulo por encima · **estimado, no medido** |
+| Costo por usuario | \$0 dentro de la capa gratuita (unos 390 usuarios activos). Por encima: US\$0.00042 por capítulo (666 + 334 tokens, 38 neurons), unos \$0.16 MXN al mes por usuario · **medido el 27/11/2026** con llamadas reales ([§14](#14-costos-precio-y-viabilidad-financiera)) |
 | Si falla | Se usa la plantilla; nunca se muestra un texto inválido. Pasó de verdad cuando Cloudflare retiró Llama 3.1 |
 | Por qué sería peor sin IA | Sin el motor (Stockfish, una red neuronal) no hay posición del error. Sin el LLM, el villano repetiría plantillas y dejaría de sonar como alguien que vio *tu* partida: HIPÓTESIS, por probar con usuarios |
 
