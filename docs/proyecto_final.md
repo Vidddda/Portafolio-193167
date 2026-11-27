@@ -162,7 +162,7 @@ Minutos después de una derrota en Lichess, un villano que encarna el error recu
 | RI-04 | El LLM recibe solo hechos del motor, sin datos personales | ✅ | La IA recibe color, ritmo, apertura, jugada, pieza y casilla; nunca el usuario ni el FEN. El validador rechaza casillas inventadas y soluciones reveladas |
 | RR-01 | Costo ≤ \$30 MXN por usuario activo al mes | ✅ | \$0.80 a 100 usuarios y \$4.00 a 20 ([semana 8](pi4_s8.md#3-revision-dfm-y-bom-actualizado)) |
 | RR-02 | ≥ 60 % de las palabras desde plantillas | ❌ por decisión | Con la historia de IA, la mayoría del texto ya no es de plantilla. Se cambió porque el primer participante pidió una historia; el tope de costo (RR-01) se sigue cumpliendo. Hay que reescribir este requerimiento |
-| RR-03 | Licencia GPLv3 de Stockfish | ⏳ | Verificada la obligación ([semana 9](pi4_s9.md#paso-4-regulacion-minima-viable)); falta el enlace en la app |
+| RR-03 | Licencia GPLv3 de Stockfish | ✅ | Inicio muestra el aviso de licencia GPLv3 con enlace al código fuente de Stockfish (27/11/2026). Stockfish corre en GitHub Actions y no se distribuye al celular ([semana 9](pi4_s9.md#paso-4-regulacion-minima-viable)) |
 | RR-04 | LFPDPPP: aviso de privacidad, ARCO, menores | ✅ | [Aviso de privacidad de la app](prototipo/privacidad.html) publicado (24/11/2026), ARCO por correo y solo mayores de edad |
 
 ### 8. Arquitectura del sistema
@@ -364,7 +364,7 @@ flowchart LR
 | | |
 | :--- | :--- |
 | **Versión y fecha** | Versión 3, semana 8 (actualización del 23/11/2026) |
-| **Decisión** | Precio de **\$59 MXN al mes con IVA**: entre el *cost-plus* (\$33–40) y el *value-based* (hasta \$79). El año 1 es una validación; el negocio se evalúa a 5 años. |
+| **Decisión** | Precio de **\$59 MXN al mes con IVA**: entre el *cost-plus* (\$5.87 a 100 usuarios y \$12.37 a 20, con el modelo vigente; era \$33–40 en la semana 7) y el *value-based* (hasta \$79). El año 1 es una validación; el negocio se evalúa a 5 años. |
 | **Evidencia** | [Modelo económico (semana 7)](pi4_s7.md#3-modelo-economico) · [flujo a 5 años (semana 8)](pi4_s8.md#3-revision-dfm-y-bom-actualizado) · [hoja de cálculo con fórmulas](recursos/archivos/PI4_S8/Zaqora_Modelo_Economico_S8_DFM.xlsx) |
 | **Qué cambió** | VPN a 12 meses de −\$2,636 (semana 7) a −\$299 (vigente); VPN a 5 años de +\$9,281. |
 | **Qué falta** | **El costo de la IA no está medido con tokens reales.** El narrador ya existe (Mistral Small 3.1); la estimación es de unos 900 + 450 tokens por capítulo (US\$0.00057) y unos 190 capítulos al día gratis. Falta leer el consumo real en Cloudflare durante el piloto. |
@@ -373,8 +373,9 @@ flowchart LR
 | :--- | :--- |
 | Costo unitario por usuario activo (con 15 % de overhead y 25 % de contingencia) | \$4.00 a 20 usuarios · \$0.80 a 100 |
 | Clasificación de costos | Fijos: dominio, cuenta de Play, Supabase Pro (año 4+) · Variables: IA por encima de la capa gratuita, comisión de Stripe por cobro |
-| Costo de desarrollo por ciclos | Integración del producto estimada en ~64 h (semana 8) · HIPÓTESIS |
+| Costo de desarrollo por ciclos | Mínimo 48 h (\$3,840) · promedio 64 h (\$5,120) · máximo 96 h (\$7,680), a \$80 la hora · HIPÓTESIS: el promedio es la estimación de la semana 8; el mínimo es −25 % y el máximo +50 % |
 | Inversión inicial | \$667.48 |
+| Precio *cost-plus* (40 % de margen, con IVA y comisión) | \$12.37 a 20 usuarios · \$5.87 a 100 (Excel vigente, hoja «Costo unitario») |
 | Punto de equilibrio año 1 | 2 suscriptores (10 % de 20 usuarios) |
 | VPN a 12 meses (15 %) | −\$299 |
 | Flujo a 5 años | Recuperación en el mes 21; acumulado de +\$16,343 al año 5 |
@@ -434,16 +435,16 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | **Decisión** | Cinco fronteras: F1 Lichess → detector, F2 detector → celular, F3 motor → narrador, F4 escena → jugador y registro, F5 cuenta → capítulos. Seis pruebas T1 a T6 adaptadas a software. |
 | **Evidencia** | [Fronteras, pruebas, fallas encontradas y degradación (semana 9)](pi4_s9.md#paso-1-integracion-del-sistema) · registros de las corridas en [GitHub Actions](https://github.com/Vidddda/Portafolio-193167/actions) |
 | **Qué cambió** | El detector pasó a la nube, el análisis a Stockfish y la entrada a OAuth. Se encontraron y corrigieron seis fallas de frontera el mismo día (clave VAPID mal pegada, modelo de IA retirado, ícono de iPhone sin código, entre otras). |
-| **Qué falta** | T1 con alguien nuevo, T2 con una derrota nueva, T3 y T6. |
+| **Qué falta** | T1 con alguien nuevo, T2 con una derrota nueva y T3. Lanzar el detector desde Supabase para que corra de verdad cada 10 minutos. |
 
 | Prueba | Resultado |
 | :--- | :--- |
 | T1 Activación sin ayuda (< 5 min) | ⚠️ No cumplió en P1 («complicado de seguir») ni en P2, ya con la activación rehecha; falta ubicar el paso donde se atoran. En P3 y P4 no se midió (sin cuenta de Lichess) |
-| T2 Derrota → aviso (≤ 10 min) | ⚠️ Parcial: el detector corre cada 10 min y «Revisar ahora» tarda 31 s; falta medir con una derrota nueva |
+| T2 Derrota → aviso (≤ 10 min) | ⚠️ Parcial: «Revisar ahora» tarda 31 s; solo, el detector está programado cada 10 min, pero GitHub lo corre cada 6 a 9 horas; falta medir con una derrota nueva |
 | T3 Celular sin red | ⏳ Pendiente; el aviso dura 1 hora en el servicio push |
 | T4 Autonomía de la capa gratuita | ✅ Unos 285 usuarios activos a 20 capítulos al mes (estimado) |
 | T5 Falla de la API de IA | ✅ Con una falla real: el modelo se retiró y Zaqora siguió con plantillas |
-| T6 48 h continuas | ⏳ Pendiente (ya no depende de la laptop) |
+| T6 48 h continuas | ✅ 19 de 19 corridas sin error en 67 h (24 al 27/11/2026), sin la laptop. ⚠️ La frecuencia no cumple: GitHub corrió las programadas cada 6 a 9 horas |
 
 | Checklist de listo | Estado |
 | :--- | :---: |
@@ -456,11 +457,11 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 
 | | |
 | :--- | :--- |
-| **Versión y fecha** | Versión 1, semana 9 (23/11/2026) |
+| **Versión y fecha** | Versión 2, 27/11/2026 |
 | **Decisión** | Protocolo de 30 minutos con tres tareas (activar los avisos; abrir el aviso y jugar el encuentro; encontrar el precio y pre-registrarse) más una prueba de campo de 3 a 5 días. |
 | **Evidencia** | [Protocolo (semana 9)](pi4_s9.md#paso-2-pruebas-con-usuarios) |
 | **Qué cambió** | La prueba de la semana 8 se suma a esta. **23/11/2026: primera sesión con un jugador externo (P1)**: seis observaciones, dos críticas, todas corregidas al día siguiente ([detalle](pi4_s9.md#paso-2-pruebas-con-usuarios)). Las tareas se adaptaron a la versión nueva (entrar con Lichess; primer contacto con las 5 derrotas). **Segunda sesión (P2)**, con la versión nueva: no pudo usarla solo, el análisis le pareció lento y pidió ver la partida completa. **25/11/2026: P3, P4 y P5**: entendieron el reto, «Revisar ahora» falló con error 500 (corregido ese día) y salieron dos peticiones: pistas más graduales e iluminar las jugadas posibles. |
-| **Qué falta** | La tabla por tarea con éxito sin ayuda, tiempo y SEQ (no se registraron completos), la señal de negocio y los resultados de la prueba de campo (en curso). |
+| **Qué falta** | El SEQ y los tiempos completos (solo P2 los tiene), una sesión con aviso real en P3 y P4, y los resultados de la prueba de campo (en curso). |
 
 | # | Hallazgo (1–6: P1; 7–10: P2; 11–15: P3 a P5) | Severidad (propuesta) | Cambio |
 | :---: | :--- | :--- | :--- |
@@ -480,6 +481,19 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | 14 | Iluminar las jugadas posibles (P4) | Petición | Pendiente |
 | 15 | No juega ajedrez y no la entendió (P5) | Fuera del segmento | Ninguno |
 
+**Resultados por tarea (P1 a P5).** Formato: ¿sin ayuda? · tiempo · SEQ (facilidad de 1 a 7, preguntada al terminar la tarea). «—» = no se registró. En P3 y P4 los tiempos son aproximados (audios y registros de la app) y el SEQ no se preguntó.
+
+| Tarea | P1 (23/11) | P2 (24/11) | P3 (25/11) | P4 (25/11) | P5 (25/11) |
+| :--- | :--- | :--- | :--- | :--- | :--- |
+| T1 Empezar | No · — · — | No · 3 min · 5 | No (sin cuenta de Lichess) · ~0.5 min · — | No (sin cuenta de Lichess) · ~0.5 min · — | — |
+| T2 Primer capítulo | No · — · — | No · 3 min · 5 | No (vio la solución en 2 de 3 encuentros) · ~3 min · — | **Sí** · ~2 min · — | No (no juega ajedrez) · — · — |
+| T3 Revisar ahora | No existía (versión de la semana 8) | No · 3 min · 5 | Falló (error 500) | Falló (error 500) | — |
+| T4 Precio en la landing | Landing sin publicar | — | **Sí** · ~1 min · — | **Sí** · ~0.5 min · — | — |
+
+**Éxito sin ayuda:** T1, 0 de 4 · T2, 1 de 5 · T4, 2 de 2. **SEQ** solo en P2 (5 de 7 en sus tres tareas).
+
+**Señal de negocio.** Compromisos reales, de la tabla `eventos` de Supabase al 27/11/2026: **8 visitas a la landing, 4 clics en «Quiero entrar a la beta» y 1 pre-registro**. Tres de esos clics y el pre-registro son de una misma sesión de la noche del 24/11, que puede ser una prueba del equipo; P3 visitó la landing y tocó el botón, pero no dejó su correo. Opiniones (no cuentan como compromiso): P3 «sí, pagaría… porque quiero aprender»; P4, fuera del segmento, «la verdad no»; P1 le mandaría la página a un conocido «si pudiera».
+
 ### 19. Landing page
 
 | | |
@@ -488,7 +502,7 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | **Decisión** | Una página, una acción: pre-registro con correo para la beta, con el precio visible (\$59 MXN al mes con IVA, beta gratuita). |
 | **Evidencia** | Landing construida en `docs/landing/` con headline, visual, tres beneficios, cita de las entrevistas, precio, CTA único, Open Graph y aviso de privacidad (se publican juntos). [Anatomía (semana 9)](pi4_s9.md#paso-3-go-to-market-y-economia-unitaria). |
 | **Qué cambió** | 24/11/2026: publicada en [landing/](landing/index.html), con el video real del prototipo (35 s) en lugar de la captura de la semana 8, capturas nuevas del capítulo y el consejero en vez del villano como guía. |
-| **Qué falta** | Las métricas de visitas, clics y pre-registros (se registran desde la publicación). |
+| **Qué falta** | Más tráfico: al 27/11/2026 hay 8 visitas, 4 clics en el CTA y 1 pre-registro, que puede ser una prueba del equipo ([§18](#18-pruebas-con-usuarios)). |
 
 ### 20. Pitch y demo
 
@@ -496,9 +510,22 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 | :--- | :--- |
 | **Versión y fecha** | Versión 2, 24/11/2026 |
 | **Decisión** | Pitch de 352 palabras (2:42) que abre con un jugador real de las entrevistas y cierra con el ask: cinco jugadores y un club o *streamer* para un piloto de 20. Demo de 7 minutos: entrar con Lichess, capítulos de las últimas derrotas, una derrota en vivo contra la computadora y «Revisar mis partidas ahora». |
-| **Evidencia** | [Guion del pitch con la evidencia de cada cifra](pi4_s9.md#paso-5-el-pitch-de-3-minutos) · [guion de la demo con plan B](pi4_s9.md#paso-6-la-demo-de-7-minutos) · [video de respaldo de la demo](videos/zaqora-demo-respaldo.mp4) (1:49: entrar con Lichess, derrota real, «Revisar mis partidas ahora» y el capítulo; esperas aceleradas y marcadas) |
+| **Evidencia** | Preguntas difíciles con su respuesta (abajo) · [Guion del pitch con la evidencia de cada cifra](pi4_s9.md#paso-5-el-pitch-de-3-minutos) · [guion de la demo con plan B](pi4_s9.md#paso-6-la-demo-de-7-minutos) · [video de respaldo de la demo](videos/zaqora-demo-respaldo.mp4) (1:49: entrar con Lichess, derrota real, «Revisar mis partidas ahora» y el capítulo; esperas aceleradas y marcadas) |
 | **Qué cambió** | La tracción ahora cuenta las cinco sesiones y una respuesta de P1 («cerrar la aplicación»); la confesión pasó a ser «todavía no sabemos si abren el reto justo después de perder». La demo ya no usa la laptop. |
 | **Qué falta** | Nada obligatorio. La demo ya se ensayó tres veces (25/11/2026). El video del pitch es opcional y no se grabó: el pitch se presenta en vivo con este guion. |
+
+**Preguntas difíciles de inversionista:**
+
+| Pregunta | Respuesta corta | Dónde se sostiene |
+| :--- | :--- | :--- |
+| ¿Por qué alguien usaría esto y no el análisis de Chess.com? | Justo después de perder nadie quiere un análisis frío: los tres entrevistados cierran la app. Zaqora compite contra cerrar la app, no contra Chess.com. | [§3](#3-usuario-y-evidencia-de-campo), [§4](#4-mercado-y-competencia) |
+| Tu LTV ÷ CAC es 0.72. ¿No funciona el negocio? | Con los supuestos de hoy no cierra. El problema no es el costo (\$0.80 por usuario), es que cada suscriptor cuesta 20 activaciones. Con conversión de 10 % y churn de 6 % llega a 3.08; eso mide el piloto. | [§15](#15-go-to-market-y-economia-unitaria) |
+| ¿Por qué \$59? | El costo está muy por debajo (*cost-plus* de \$5.87–12.37) y el techo estimado es \$79; es menos que Chess.com o Duolingo. La disposición a pagar sigue siendo HIPÓTESIS. | [§14](#14-costos-precio-y-viabilidad-financiera) |
+| ¿Y si se acaba la capa gratuita de IA? | Alcanza para unos 285 usuarios activos. Pagando, un capítulo cuesta cerca de un centavo; con un modelo comercial serían unos \$0.50 al mes por usuario contra \$44.92 de ingreso neto. | [§14](#14-costos-precio-y-viabilidad-financiera), [§21](#21-uso-de-ia-en-el-proyecto) |
+| ¿Qué pasa si Lichess cambia su API? | Es el riesgo de plataforma principal. Sus términos permiten el uso comercial con límites razonables, y Zaqora los respeta (una petición a la vez, espera tras un 429). | [§16](#16-regulacion-y-aspectos-legales), [§22](#22-reflexion-y-siguientes-pasos) |
+| ¿Alguien abrió el aviso justo después de perder? | Todavía no se sabe: es el supuesto que decide todo y lo mide la prueba de campo, en curso. Por eso el ask son cinco jugadores durante una semana. | [§18](#18-pruebas-con-usuarios), [§22](#22-reflexion-y-siguientes-pasos) |
+| ¿Es rentable? | El año 1 es validación (VPN de −\$299). A 5 años, VPN de +\$9,281 y recuperación en el mes 21, con usuarios supuestos. | [§14](#14-costos-precio-y-viabilidad-financiera) |
+| Eres una sola persona. ¿Lo puedes sostener? | Todo corre en servicios automáticos y gratuitos: el detector y el análisis no dependen de la laptop (19 de 19 corridas sin error en 67 h). | [§1](#1-equipo), [§17](#17-integracion-y-pruebas-del-sistema) |
 
 ---
 
@@ -567,7 +594,7 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 
 | Días | Qué | Resultado esperado |
 | :--- | :--- | :--- |
-| 1–14 | Cuatro pruebas de usuario más y prueba de campo; landing publicada | Respuesta al supuesto más riesgoso |
+| 1–14 | Prueba de campo con jugadores de Lichess (las cinco sesiones y la landing ya están hechas); detector lanzado desde Supabase cada 10 minutos | Respuesta al supuesto más riesgoso |
 | 15–45 | Jugar contra el villano (rival con Stockfish en el navegador); ampliar el bestiario a 8–12 patrones | El capítulo completo del PDS |
 | 46–90 | Piloto de 20 usuarios con un club o *streamer*; tope de capítulos gratis | Conversión y churn medidos |
 
@@ -609,7 +636,7 @@ La tasa del 15 % anual es la del curso: el costo de oportunidad de un proyecto p
 ### Anexo D. Datos crudos
 
 - Notas de las entrevistas: [semana 3, Paso 7](pi4_s3.md#paso-7-sintesis-de-entrevistas-de-validacion).
-- Notas de las pruebas de usuario: pendientes. Se publicarán sin nombres ni usuarios de Lichess, solo con alias y con consentimiento.
+- Notas de las pruebas de usuario: hallazgos, citas y resultados por tarea de P1 a P5 en la [semana 9, Paso 2](pi4_s9.md#paso-2-pruebas-con-usuarios) y en la [§18](#18-pruebas-con-usuarios), solo con alias. Las hojas de sesión completas se guardan fuera del repositorio porque tienen datos personales.
 
 ### Anexo E. Hojas de cálculo
 
