@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Zaqora · Inicio</title>
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#c2255c">
+<link rel="apple-touch-icon" href="icono-192.png">
+<style>
+  :root { --fondo: #f7f4ef; --tinta: #1f1d1b; --tenue: #6b6560; --linea: #d9d2c7;
+    --villano: #c2255c; --villano-suave: #fbe3ec; --acierto: #2b8a3e; --acierto-suave: #e6f2e8; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--fondo); color: var(--tinta);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  .app { max-width: 380px; margin: 0 auto; min-height: 100vh; padding: 12px 16px calc(28px + env(safe-area-inset-bottom));
+    display: flex; flex-direction: column; gap: 16px; }
+  header { height: 48px; display: flex; align-items: center; justify-content: space-between; }
+  header b { font-size: 20px; }
+  .icono-btn { width: 44px; height: 44px; border: 0; background: transparent; border-radius: 10px; padding: 4px; cursor: pointer; }
+  .icono-btn img { width: 36px; height: 36px; display: block; }
+  .aviso { background: var(--villano-suave); border: 1px solid var(--villano); border-radius: 12px; padding: 10px 12px;
+    font-size: 14px; display: flex; gap: 10px; align-items: center; justify-content: space-between; }
+  .aviso a { color: var(--tinta); font-weight: 700; white-space: nowrap; }
+  .consejero { display: flex; gap: 10px; align-items: center; }
+  .avatar-c { flex: 0 0 52px; height: 52px; border-radius: 50%; background: var(--acierto-suave); border: 2px solid var(--acierto);
+    display: grid; place-items: center; font-size: 26px; color: var(--acierto); }
+  .avatar-c img { width: 42px; height: 42px; }
+  .burbuja-c { flex: 1; background: #fff; border: 1px solid var(--linea); border-radius: 12px; padding: 6px 10px; font-size: 14px; line-height: 1.35; }
+  .quien { display: block; font-size: 11px; color: var(--tenue); }
+  h2 { font-size: 13px; letter-spacing: .08em; color: var(--tenue); margin: 4px 0 0; font-weight: 600; }
+  .tarjeta { background: #fff; border: 1px solid var(--linea); border-radius: 14px; padding: 14px; display: grid; gap: 12px; }
+  .cap { display: flex; gap: 12px; align-items: center; }
+  .avatar-v { flex: 0 0 52px; height: 52px; border-radius: 50%; background: var(--villano-suave); border: 2px solid var(--villano);
+    display: grid; place-items: center; font-size: 26px; color: var(--villano); }
+  .avatar-v img { width: 42px; height: 42px; }
+  .cap b { display: block; font-size: 16px; }
+  .meta { font-size: 13px; color: var(--tenue); }
+  .barra { height: 6px; background: var(--linea); border-radius: 3px; overflow: hidden; margin-top: 6px; }
+  .barra span { display: block; height: 100%; background: var(--acierto); }
+  button.accion, a.accion { width: 100%; min-height: 48px; border-radius: 12px; font-size: 16px; font-weight: 600; cursor: pointer;
+    display: grid; place-items: center; text-decoration: none; border: 0; }
+  .primario { background: var(--tinta); color: #fff; }
+  .secundario { background: transparent; color: var(--tinta); border: 1px solid var(--tinta) !important; }
+  .lista { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .lista button { width: 100%; background: #fff; border: 1px solid var(--linea); border-radius: 12px; padding: 8px 10px; cursor: pointer;
+    display: flex; gap: 10px; align-items: center; text-align: left; color: var(--tinta); min-height: 56px; }
+  .lista .mini { flex: 0 0 40px; height: 40px; border-radius: 50%; background: var(--villano-suave); display: grid; place-items: center; }
+  .lista .mini img { width: 32px; height: 32px; }
+  .lista .txt { flex: 1; font-size: 14px; }
+  .chip { font-size: 12px; padding: 3px 8px; border-radius: 999px; background: var(--linea); white-space: nowrap; }
+  .chip.ok { background: var(--acierto-suave); color: var(--acierto); font-weight: 600; }
+  .vacio { font-size: 14px; color: var(--tenue); }
+  .bandos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  button.bando { background: #fff; color: var(--tinta); border: 1px solid var(--linea); border-radius: 12px; padding: 10px 6px; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 15px; font-weight: 600; }
+  button.bando img { width: 34px; height: 34px; }
+  button.bando .fila { display: flex; }
+  button.bando[aria-pressed="true"] { border: 3px solid var(--tinta); padding: 8px 4px; }
+  button:focus-visible, a:focus-visible { outline: 3px solid var(--villano); outline-offset: 2px; }
+  .nota { font-size: 12px; color: var(--tenue); text-align: center; }
+  .oculto { display: none !important; }
+  .cuenta { font-size: 13px; color: var(--tenue); display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+  .cuenta button { background: transparent; border: 0; color: var(--tinta); text-decoration: underline; font-size: 13px; cursor: pointer; padding: 8px 0; }
+  .error { font-size: 13px; color: #b3261e; margin: 0; }
+  .avance { display: grid; gap: 8px; }
+  .etapas { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; font-size: 14px; }
+  .etapas li { display: flex; gap: 8px; align-items: center; color: var(--tenue); }
+  .etapas li::before { content: ""; flex: 0 0 16px; height: 16px; border-radius: 50%; border: 2px solid var(--linea); box-sizing: border-box; }
+  .etapas li.activa { color: var(--tinta); font-weight: 600; }
+  .etapas li.activa::before { border-color: var(--acierto); border-top-color: transparent; animation: girar 0.9s linear infinite; }
+  .etapas li.lista-ok { color: var(--tinta); }
+  .etapas li.lista-ok::before { content: "✓"; border: 0; background: var(--acierto); color: #fff; font-size: 11px; display: grid; place-items: center; }
+  @keyframes girar { to { transform: rotate(360deg); } }
+  @media (prefers-reduced-motion: reduce) { .etapas li.activa::before { animation: none; } }
+  .nuevo-cap { outline: 3px solid var(--acierto); outline-offset: 2px; border-radius: 14px; }
+</style>
+</head>
+<body>
+<div class="app">
+  <header>
+    <b>Zaqora</b>
+    <button class="icono-btn" id="btn-bando" aria-label="Cambiar de bando"></button>
+  </header>
+
+  <div class="aviso oculto" id="sin-avisos">
+    <span>Los avisos del villano no están activos en este teléfono.</span>
+    <a href="activar.html" id="enlace-activar">Activar</a>
+  </div>
+
+  <div class="tarjeta oculto" id="s-entrar">
+    <b style="font-size:16px">Comienza tu historia con tu cuenta de Lichess</b>
+    <p class="vacio" style="margin:0">Zaqora lee tus partidas, convierte tus últimas derrotas en capítulos y guarda tu avance para que lo veas en cualquier teléfono. Nunca ve tu contraseña: Lichess solo le confirma quién eres.</p>
+    <button class="accion primario" id="btn-entrar">Entrar con Lichess</button>
+    <p class="nota" style="margin:0">Al entrar aceptas el <a href="privacidad.html">aviso de privacidad</a>.</p>
+  </div>
+  <div class="cuenta oculto" id="s-cuenta"><span>Conectado como <b id="usuario-l"></b></span><button id="btn-salir">Salir</button></div>
+  <p class="error" id="error-sesion" role="alert"></p>
+  <div class="tarjeta oculto" id="s-revisar">
+    <span style="font-size:14px">¿Acabas de perder en Lichess? No esperes al siguiente aviso.</span>
+    <button class="accion secundario" id="btn-revisar">Revisar mis partidas ahora</button>
+    <div class="avance oculto" id="avance">
+      <ol class="etapas" id="etapas"></ol>
+      <div class="barra" aria-hidden="true"><span id="avance-barra" style="width:0"></span></div>
+    </div>
+    <span class="meta" id="msg-revisar" role="status" aria-live="polite"></span>
+  </div>
+
+  <div class="consejero">
+    <div class="avatar-c" id="avatar-c" aria-hidden="true">♝</div>
+    <div class="burbuja-c"><span class="quien" id="nombre-c">Tu consejero</span><span id="dice-c"></span></div>
+  </div>
+
+  <section id="s-ultimo" class="oculto">
+    <h2>TU ÚLTIMO CAPÍTULO</h2>
+    <div class="tarjeta">
+      <div class="cap">
+        <div class="avatar-v" id="ultimo-avatar" aria-hidden="true">♚</div>
+        <div style="flex:1">
+          <b id="ultimo-villano"></b>
+          <span class="meta" id="ultimo-meta"></span>
+          <div class="barra" aria-hidden="true"><span id="ultimo-barra" style="width:0"></span></div>
+        </div>
+      </div>
+      <button class="accion primario" id="btn-ultimo">Continuar</button>
+    </div>
+  </section>
+
+  <section id="s-anteriores" class="oculto">
+    <h2>CAPÍTULOS ANTERIORES</h2>
+    <ul class="lista" id="lista"></ul>
+  </section>
+
+  <section id="s-vacio" class="oculto">
+    <div class="tarjeta">
+      <p class="vacio" style="margin:0">Aún no has abierto ningún capítulo en este teléfono. Tu primer capítulo te llegará como aviso, hecho con tus partidas recientes de Lichess. Ábrelo desde la notificación y aquí quedará guardado.</p>
+    </div>
+  </section>
+
+  <a class="accion secundario" id="btn-lichess" href="https://lichess.org/" target="_blank" rel="noopener">Jugar en Lichess</a>
+
+  <section id="s-bando" class="oculto">
+    <h2>ELIGE TU BANDO</h2>
+    <div class="bandos" id="bandos"></div>
+  </section>
+
+  <p class="nota" id="pie"></p>
+  <p class="nota" id="licencias">El análisis usa <a href="https://stockfishchess.org" target="_blank" rel="noopener">Stockfish</a>, software libre con licencia <a href="https://github.com/official-stockfish/Stockfish/blob/master/Copying.txt" target="_blank" rel="noopener">GPLv3</a> (<a href="https://github.com/official-stockfish/Stockfish" target="_blank" rel="noopener">código fuente</a>). El código de Zaqora es <a href="https://github.com/Vidddda/Portafolio-193167" target="_blank" rel="noopener">público</a>.</p>
+</div>
+
+<script src="config.js"></script>
+<script src="sesion.js"></script>
+<script>
+const CFG = window.ZAQORA || {};
+const leer = (k) => { try { return localStorage.getItem(k); } catch (e) { return null; } };
+const guardar = (k, v) => { try { localStorage.setItem(k, v); } catch (e) {} };
+const q = new URLSearchParams(location.search);
+let P = q.get("p");
+if (P) guardar("zaqora_p", P); else P = leer("zaqora_p");
+
+let BANDOS = [];
+let bando = leer("zaqora_bando");
+let capitulos = (() => { try { return JSON.parse(leer("zaqora_capitulos") || "[]"); } catch (e) { return []; } })();
+
+function registrar(evento, detalle) {
+  if (!CFG.SUPABASE_URL || !P) return;
+  fetch(`${CFG.SUPABASE_URL}/rest/v1/eventos`, {
+    method: "POST", keepalive: true,
+    headers: { "apikey": CFG.SUPABASE_KEY, "Authorization": `Bearer ${CFG.SUPABASE_KEY}`,
+               "Content-Type": "application/json", "Prefer": "return=minimal" },
+    body: JSON.stringify({ participante: P, evento, detalle: detalle || null })
+  }).catch(() => {});
+}
+function img(src) { const i = document.createElement("img"); i.src = src; i.alt = ""; return i; }
+function nombreBando(id) { const b = BANDOS.find((x) => x.id === id); return b ? b.nombre : ""; }
+function fecha(iso) {
+  const d = new Date(iso);
+  if (isNaN(d)) return "";
+  const hoy = new Date(), ayer = new Date(Date.now() - 864e5);
+  if (d.toDateString() === hoy.toDateString()) return "Hoy";
+  if (d.toDateString() === ayer.toDateString()) return "Ayer";
+  return d.toLocaleDateString("es-MX", { day: "numeric", month: "short" });
+}
+function estado(c) {
+  if (c.superado) return "Superado";
+  if (c.superados) return `${c.superados} de ${c.total}`;
+  return "Nuevo";
+}
+function abrir(c) {
+  registrar("abrir_capitulo", { desde: "inicio", superado: !!c.superado });
+  location.href = "escena.html?" + c.q + "&desde=inicio";
+}
+
+const conCuenta = () => !!(window.ZaqoraSesion && ZaqoraSesion.usuario());
+
+/* Sin sesión no hay nada que mostrar: se limpia lo que haya quedado guardado en el teléfono
+   (capítulos, código y activación de pruebas anteriores). */
+function limpiarTelefono() {
+  capitulos = [];
+  try {
+    Object.keys(localStorage).filter((k) => /^zaqora_(capitulos|p|activado.*|revision.*)$/.test(k))
+      .forEach((k) => localStorage.removeItem(k));
+  } catch (e) {}
+  P = null;
+}
+
+function pintarConsejero() {
+  const av = document.getElementById("avatar-c");
+  if (bando) {
+    av.replaceChildren(img(`piezas/${bando}/b-clara.png`));
+    document.getElementById("nombre-c").textContent = `Consejero de los ${nombreBando(bando).toLowerCase()}`;
+    document.getElementById("btn-bando").replaceChildren(img(`piezas/${bando}/k-clara.png`));
+  }
+  const pendiente = capitulos.find((c) => !c.superado);
+  document.getElementById("dice-c").textContent =
+    !bando ? "Antes que nada: ¿de qué lado vas a estar? Elige tu bando abajo." :
+    !conCuenta() ? "Entra con tu cuenta de Lichess y te cuento la historia de tus derrotas." :
+    !capitulos.length ? "Tu primer capítulo viene en camino. Cuando llegue el aviso, ábrelo y aquí lo guardo." :
+    pendiente ? `${pendiente.villano} sigue esperando. Cuando quieras, volvemos.` :
+    "Vamos bien. Juega en Lichess; si pierdes, aquí estaré.";
+}
+
+function pintarCapitulos() {
+  ["s-ultimo", "s-anteriores", "s-vacio"].forEach((id) => document.getElementById(id).classList.add("oculto"));
+  document.getElementById("lista").replaceChildren();
+  if (!conCuenta()) return;
+  if (!capitulos.length) {
+    document.getElementById("s-vacio").classList.remove("oculto");
+    return;
+  }
+  const [u, ...resto] = capitulos;
+  document.getElementById("s-ultimo").classList.remove("oculto");
+  document.getElementById("ultimo-villano").textContent = u.villano;
+  document.getElementById("ultimo-meta").textContent =
+    `${fecha(u.fecha)} · ${u.modo === "historia" ? "Tus últimas partidas" : "Tu última derrota"} · ${estado(u)}`;
+  document.getElementById("ultimo-barra").style.width = `${Math.round(100 * (u.superado ? u.total : (u.superados || 0)) / (u.total || 1))}%`;
+  if (u.rival) document.getElementById("ultimo-avatar").replaceChildren(img(`piezas/${u.rival}/k-oscura.png`));
+  const b = document.getElementById("btn-ultimo");
+  b.textContent = u.superado ? "Repetir" : (u.superados ? "Continuar" : "Empezar");
+  b.onclick = () => abrir(u);
+  if (!resto.length) return;
+  document.getElementById("s-anteriores").classList.remove("oculto");
+  const lista = document.getElementById("lista");
+  for (const c of resto) {
+    const li = document.createElement("li");
+    const btn = document.createElement("button");
+    const mini = document.createElement("span");
+    mini.className = "mini";
+    if (c.rival) mini.appendChild(img(`piezas/${c.rival}/k-oscura.png`));
+    else mini.textContent = "♚";
+    const txt = document.createElement("span");
+    txt.className = "txt";
+    txt.innerHTML = "<b></b><br><span class='meta'></span>";
+    txt.querySelector("b").textContent = c.villano;
+    txt.querySelector(".meta").textContent = `${fecha(c.fecha)} · ${c.total} ${c.total === 1 ? "encuentro" : "encuentros"}`;
+    const chip = document.createElement("span");
+    chip.className = "chip" + (c.superado ? " ok" : "");
+    chip.textContent = estado(c);
+    btn.append(mini, txt, chip);
+    btn.setAttribute("aria-label", `${c.villano}, ${fecha(c.fecha)}, ${estado(c)}`);
+    btn.onclick = () => abrir(c);
+    li.appendChild(btn);
+    lista.appendChild(li);
+  }
+}
+
+function pintarBandos() {
+  const cont = document.getElementById("bandos");
+  cont.replaceChildren();
+  for (const b of BANDOS) {
+    const c = document.createElement("button");
+    c.className = "bando";
+    c.setAttribute("aria-pressed", String(b.id === bando));
+    const fila = document.createElement("span");
+    fila.className = "fila";
+    for (const t of ["n", "k", "q"]) fila.appendChild(img(`piezas/${b.id}/${t}-clara.png`));
+    c.append(fila, b.nombre);
+    c.onclick = () => {
+      bando = b.id;
+      guardar("zaqora_bando", bando);
+      registrar("bando", { jugador: bando, desde: "inicio" });
+      document.getElementById("s-bando").classList.add("oculto");
+      pintarBandos();
+      pintarConsejero();
+    };
+    cont.appendChild(c);
+  }
+}
+document.getElementById("btn-bando").onclick = () => {
+  document.getElementById("s-bando").classList.toggle("oculto");
+  document.getElementById("s-bando").scrollIntoView({ behavior: "smooth" });
+};
+document.getElementById("btn-lichess").addEventListener("click", () =>
+  registrar("jugar_lichess", { desde: "inicio", capitulos: capitulos.length }));
+
+/* ---------- Cuenta de Lichess ---------- */
+const errorSesion = (m) => { document.getElementById("error-sesion").textContent = m || ""; };
+function pintarCuenta() {
+  const u = window.ZaqoraSesion && ZaqoraSesion.usuario();
+  document.getElementById("s-entrar").classList.toggle("oculto", !!u);
+  document.getElementById("s-cuenta").classList.toggle("oculto", !u);
+  document.getElementById("s-revisar").classList.toggle("oculto", !u);
+  // Sin cuenta vinculada no tiene sentido jugar: Zaqora no sabría qué partidas leer.
+  document.getElementById("btn-lichess").classList.toggle("oculto", !u);
+  if (u) pintarRevisar();
+  document.getElementById("usuario-l").textContent = u || "";
+}
+async function sesion() {
+  if (!window.ZaqoraSesion) return;
+  try {
+    const nuevo = await ZaqoraSesion.terminarEntrada();
+    if (nuevo) registrar("entro_lichess");
+  } catch (e) { errorSesion(e.message); }
+  pintarCuenta();
+  if (!ZaqoraSesion.usuario()) return;
+  try {
+    const datos = await ZaqoraSesion.capitulos("GET");
+    if (!datos) return;
+    // La cuenta de Lichess trae su propio código (J1, J2…): con él se activan los avisos.
+    if (datos.alias && datos.alias !== P) { P = datos.alias; guardar("zaqora_p", P); }
+    document.getElementById("pie").textContent = P ? `Código: ${P}` : "";
+    const banner = document.getElementById("sin-avisos");
+    const avisosAqui = "Notification" in window && Notification.permission === "granted" && leer("zaqora_activado_" + P) === "1";
+    banner.classList.toggle("oculto", !!datos.avisos && avisosAqui);
+    document.getElementById("enlace-activar").href = `activar.html?p=${encodeURIComponent(P)}`;
+    const porId = new Map(capitulos.map((c) => [c.id, c]));
+    for (const s of datos.capitulos || []) {
+      const local = porId.get(s.id) || {};
+      porId.set(s.id, { id: s.id, q: s.enlace, villano: s.villano, fecha: s.creado, modo: s.modo, total: s.total,
+                        superados: Math.max(s.superados || 0, local.superados || 0),
+                        superado: !!(s.superado || local.superado), rival: s.rival || local.rival,
+                        cuenta: String(datos.usuario || "").toLowerCase() });   // de la cuenta: se borra al salir
+    }
+    capitulos = [...porId.values()].sort((a, b) => String(b.fecha).localeCompare(String(a.fecha))).slice(0, 30);
+    guardar("zaqora_capitulos", JSON.stringify(capitulos));
+    pintarConsejero();
+    pintarCapitulos();
+  } catch (e) {
+    errorSesion("No pude traer tus capítulos guardados (" + e.message + "). Te muestro los de este teléfono.");
+    pintarCuenta();
+  }
+}
+/* ---------- Revisar mis partidas ahora ---------- */
+const ESPERA_REVISION = 180;   // segundos entre revisiones (igual que en la función)
+function segundosRestantes() {
+  const t = Number(leer("zaqora_revision") || 0);
+  return Math.max(0, Math.ceil(ESPERA_REVISION - (Date.now() - t) / 1000));
+}
+function pintarRevisar() {
+  const s = segundosRestantes(), b = document.getElementById("btn-revisar");
+  b.disabled = s > 0;
+  b.textContent = s > 0 ? `Revisar de nuevo en ${Math.floor(s / 60)}:${String(s % 60).padStart(2, "0")}` : "Revisar mis partidas ahora";
+  if (s > 0) setTimeout(pintarRevisar, 1000);
+}
+/* Avance de la revisión. El análisis corre en GitHub Actions y no informa su avance:
+   las etapas siguen los tiempos medidos (31 a 37 s de punta a punta) y se marcan como «aprox.».
+   Lo que sí es real: Inicio pregunta cada 5 s si ya hay un capítulo nuevo y lo muestra en cuanto llega. */
+const ETAPAS = [
+  [0, "Despertando al analista en la nube"],
+  [10, "Leyendo tus partidas en Lichess"],
+  [18, "Stockfish revisa cada jugada"],
+  [28, "La IA escribe tu capítulo"],
+];
+const FIN_ESTIMADO = 45, LIMITE_VIGILANCIA = 150;
+let vigilando = null;
+const idsActuales = () => capitulos.map((c) => c.id);
+function pintarAvance(seg) {
+  const ol = document.getElementById("etapas");
+  if (!ol.children.length) ETAPAS.forEach(([, t]) => { const li = document.createElement("li"); li.textContent = t; ol.appendChild(li); });
+  let actual = 0;
+  ETAPAS.forEach(([desde], i) => { if (seg >= desde) actual = i; });
+  [...ol.children].forEach((li, i) => {
+    li.className = i < actual ? "lista-ok" : (i === actual ? "activa" : "");
+  });
+  document.getElementById("avance-barra").style.width = `${Math.min(95, Math.round(100 * seg / FIN_ESTIMADO))}%`;
+}
+function terminarAvance(texto, llego) {
+  clearInterval(vigilando); vigilando = null;
+  try { localStorage.removeItem("zaqora_revision_ids"); } catch (e) {}
+  const ol = document.getElementById("etapas");
+  [...ol.children].forEach((li) => { li.className = llego ? "lista-ok" : ""; });
+  document.getElementById("avance-barra").style.width = llego ? "100%" : "0";
+  document.getElementById("msg-revisar").textContent = texto;
+  if (llego) {
+    const t = document.querySelector("#s-ultimo .tarjeta");
+    if (t) { t.classList.add("nuevo-cap"); t.scrollIntoView({ behavior: "smooth", block: "center" }); }
+    registrar("revision_llego");
+  } else setTimeout(() => document.getElementById("avance").classList.add("oculto"), 4000);
+}
+function vigilarRevision() {
+  const inicio = Number(leer("zaqora_revision") || 0);
+  let antes = [];
+  try { antes = JSON.parse(leer("zaqora_revision_ids") || "[]"); } catch (e) {}
+  const seg0 = (Date.now() - inicio) / 1000;
+  if (!inicio || seg0 > LIMITE_VIGILANCIA) return;
+  document.getElementById("avance").classList.remove("oculto");
+  document.getElementById("msg-revisar").textContent = "Tiempos aproximados: suele tardar menos de un minuto.";
+  let consultando = false, ultimaConsulta = 0;
+  const paso = async () => {
+    const seg = (Date.now() - inicio) / 1000;
+    pintarAvance(seg);
+    if (seg > LIMITE_VIGILANCIA) {
+      terminarAvance("No apareció un capítulo nuevo. Si perdiste hace menos de un minuto, Lichess puede tardar en publicar la partida: revisa otra vez en cuanto se pueda.", false);
+      return;
+    }
+    if (seg < 15 || consultando || Date.now() - ultimaConsulta < 5000) return;
+    consultando = true; ultimaConsulta = Date.now();
+    await sesion();
+    consultando = false;
+    if (idsActuales().some((id) => !antes.includes(id))) terminarAvance("¡Llegó tu capítulo! Ya está arriba en «Tu último capítulo».", true);
+  };
+  clearInterval(vigilando);
+  vigilando = setInterval(paso, 1000);
+  paso();
+}
+document.getElementById("btn-revisar").onclick = async () => {
+  const msg = document.getElementById("msg-revisar");
+  document.getElementById("btn-revisar").disabled = true;
+  msg.textContent = "Pidiendo la revisión…";
+  try {
+    await ZaqoraSesion.capitulos("POST", { accion: "revisar" });
+    guardar("zaqora_revision", String(Date.now()));
+    guardar("zaqora_revision_ids", JSON.stringify(idsActuales()));
+    registrar("revisar_ahora");
+    vigilarRevision();
+  } catch (e) {
+    if (e.datos && e.datos.segundos) guardar("zaqora_revision", String(Date.now() - (ESPERA_REVISION - e.datos.segundos) * 1000));
+    msg.textContent = e.datos && e.datos.segundos ? "Ya pediste una revisión hace poco. Espera un momento." : "No se pudo pedir la revisión: " + e.message;
+  }
+  pintarRevisar();
+};
+
+document.getElementById("btn-entrar").onclick = () => { registrar("entrar_lichess"); ZaqoraSesion.entrar(); };
+document.getElementById("btn-salir").onclick = async () => {
+  if (!confirm("Al salir, este teléfono deja de mostrar tus capítulos y de recibir tus avisos. Vuelven cuando entres otra vez. ¿Salir?")) return;
+  registrar("salio_lichess");
+  clearInterval(vigilando); vigilando = null;
+  document.getElementById("avance").classList.add("oculto");
+  document.getElementById("msg-revisar").textContent = "";
+  await ZaqoraSesion.salir();
+  // Capítulos: fuera de este teléfono (siguen guardados en la cuenta y vuelven al entrar)
+  capitulos = [];
+  guardar("zaqora_capitulos", JSON.stringify(capitulos));
+  // Avisos: este teléfono deja de recibir los de esa cuenta
+  try {
+    const reg = await navigator.serviceWorker.getRegistration();
+    const sub = reg && await reg.pushManager.getSubscription();
+    if (sub) await sub.unsubscribe();
+  } catch (e) {}
+  if (P && /^J\d/.test(P)) {
+    try { localStorage.removeItem("zaqora_activado_" + P); localStorage.removeItem("zaqora_p"); localStorage.removeItem("zaqora_revision"); } catch (e) {}
+    P = null;
+  }
+  try { localStorage.removeItem("zaqora_activado"); } catch (e) {}
+  document.getElementById("pie").textContent = "";
+  limpiarTelefono();
+  document.getElementById("sin-avisos").classList.add("oculto");
+  errorSesion("");
+  pintarCuenta();
+  pintarConsejero();
+  pintarCapitulos();
+};
+
+(async () => {
+  try { BANDOS = (await (await fetch("piezas/bandos.json", { cache: "no-cache" })).json()).bandos || []; } catch (e) {}
+  if (bando && !BANDOS.some((b) => b.id === bando)) bando = null;
+  pintarBandos();
+  if (!bando && BANDOS.length) document.getElementById("s-bando").classList.remove("oculto");
+  if (!conCuenta() && !new URLSearchParams(location.search).get("code")) limpiarTelefono();
+  pintarConsejero();
+  pintarCapitulos();
+  await sesion();
+  if (!conCuenta()) {
+    // Sin cuenta: solo la tarjeta para entrar (activar los avisos viene después de entrar).
+    limpiarTelefono();
+    document.getElementById("sin-avisos").classList.add("oculto");
+    pintarConsejero();
+    pintarCapitulos();
+  }
+  document.getElementById("pie").textContent = P && conCuenta() ? `Código: ${P}` : "";
+  if (conCuenta()) vigilarRevision();   // si se pidió una revisión hace poco y se volvió a abrir Inicio
+  registrar("inicio", { capitulos: capitulos.length });
+})();
+</script>
+</body>
+</html>

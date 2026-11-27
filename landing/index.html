@@ -1,0 +1,245 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Zaqora · Tu derrota es el próximo capítulo</title>
+<meta name="description" content="Cuando pierdes en Lichess y estás por cerrar la app, Zaqora valida tu frustración y la convierte en el próximo capítulo de tu historia. Beta gratuita; después, $59 MXN al mes.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Zaqora · Perdiste en Lichess. Tu villano ya sabe dónde fue.">
+<meta property="og:description" content="Un villano que encarna tu error de siempre te invita a un capítulo construido sobre tu última derrota. Sin rating ni comparaciones.">
+<meta property="og:image" content="https://vidddda.github.io/Portafolio-193167/recursos/imgs/PI4_S8/escena_sellada.png">
+<meta property="og:url" content="https://vidddda.github.io/Portafolio-193167/landing/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#c2255c">
+<link rel="icon" href="../prototipo/icono-192.png">
+<style>
+  :root {
+    --fondo: #f7f4ef; --tinta: #1f1d1b; --tenue: #6b6560; --linea: #d9d2c7;
+    --villano: #c2255c; --villano-suave: #fbe3ec; --villano-osc: #6d1236; --blanco: #fff;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--fondo); color: var(--tinta);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; line-height: 1.5; }
+  a { color: var(--villano-osc); }
+  .envoltura { max-width: 1040px; margin: 0 auto; padding: 0 16px; }
+  header.barra { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+  .marca { display: flex; align-items: center; gap: 10px; font-weight: 700; letter-spacing: .02em; font-size: 18px; }
+  .marca img { width: 32px; height: 32px; border-radius: 8px; }
+  .heroe { display: grid; grid-template-columns: 1.1fr .9fr; gap: 40px; align-items: center; padding: 32px 0 56px; }
+  h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.08; margin: 0 0 16px; letter-spacing: -.02em; }
+  h1 em { font-style: normal; color: var(--villano); }
+  .bajada { font-size: 19px; color: #3d3935; margin: 0 0 24px; max-width: 34em; }
+  .cta { display: inline-block; background: var(--tinta); color: var(--blanco); text-decoration: none; border: 0;
+    font-size: 17px; font-weight: 600; padding: 15px 26px; border-radius: 12px; cursor: pointer; min-height: 48px; }
+  .cta:hover { background: #000; }
+  .cta:focus-visible, input:focus-visible { outline: 3px solid var(--villano); outline-offset: 2px; }
+  .precio-corto { margin-top: 12px; font-size: 14px; color: var(--tenue); }
+  .telefono { justify-self: center; width: 300px; max-width: 100%; border: 10px solid var(--tinta); border-radius: 34px;
+    overflow: hidden; background: var(--fondo); box-shadow: 0 20px 50px rgba(31,29,27,.18); }
+  .telefono img, .telefono video { display: block; width: 100%; height: auto; aspect-ratio: 392 / 850; background: #2B1D4A; }
+  .nota-video { text-align: center; font-size: 13px; color: var(--tenue); margin-top: 10px; }
+  .aviso { position: relative; margin: -8px auto 0; width: 300px; max-width: 100%; }
+  .notificacion { background: var(--blanco); border: 1px solid var(--linea); border-radius: 14px; padding: 10px 12px;
+    font-size: 13px; box-shadow: 0 8px 24px rgba(31,29,27,.12); display: flex; gap: 10px; align-items: flex-start;
+    margin-bottom: 14px; }
+  .notificacion img { width: 28px; height: 28px; border-radius: 6px; }
+  .notificacion b { display: block; font-size: 13px; }
+  section { padding: 56px 0; border-top: 1px solid var(--linea); }
+  h2 { font-size: clamp(24px, 3.4vw, 32px); margin: 0 0 24px; letter-spacing: -.01em; }
+  .beneficios { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .beneficio { background: var(--blanco); border: 1px solid var(--linea); border-radius: 14px; padding: 22px; }
+  .beneficio h3 { margin: 0 0 8px; font-size: 18px; }
+  .beneficio p { margin: 0; color: #3d3935; }
+  .num { display: inline-grid; place-items: center; width: 30px; height: 30px; border-radius: 50%;
+    background: var(--villano-suave); color: var(--villano-osc); font-weight: 700; margin-bottom: 12px; }
+  .pasos { display: grid; grid-template-columns: repeat(2, minmax(0, 300px)); gap: 24px; justify-content: center; }
+  .pasos figure { margin: 0; }
+  .pasos img { display: block; width: 100%; height: auto; border-radius: 14px; border: 1px solid var(--linea); background: var(--blanco); }
+  .pasos figcaption { font-size: 14px; color: var(--tenue); margin-top: 8px; }
+  blockquote { margin: 0; font-size: clamp(20px, 2.6vw, 26px); line-height: 1.35; max-width: 36em;
+    border-left: 4px solid var(--villano); padding-left: 20px; }
+  blockquote footer { font-size: 14px; color: var(--tenue); margin-top: 12px; }
+  .precio { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: start; }
+  .tarjeta { background: var(--blanco); border: 2px solid var(--tinta); border-radius: 16px; padding: 28px; }
+  .monto { font-size: 44px; font-weight: 700; letter-spacing: -.02em; }
+  .monto small { font-size: 16px; font-weight: 400; color: var(--tenue); }
+  .tarjeta ul { padding-left: 20px; margin: 16px 0 0; }
+  form { display: grid; gap: 12px; }
+  label { font-weight: 600; font-size: 15px; }
+  input[type=email] { width: 100%; font-size: 17px; padding: 13px 14px; border: 1px solid #a8a097; border-radius: 10px;
+    background: var(--blanco); color: var(--tinta); min-height: 48px; }
+  .casilla { display: flex; gap: 10px; align-items: flex-start; font-weight: 400; font-size: 14px; }
+  .casilla input { margin-top: 4px; width: 18px; height: 18px; flex: 0 0 18px; }
+  .estado { font-size: 15px; min-height: 22px; }
+  .estado.ok { color: #2b8a3e; font-weight: 600; }
+  .estado.error { color: #b3261e; }
+  .letra-chica { font-size: 13px; color: var(--tenue); }
+  footer.pie { padding: 32px 0 48px; border-top: 1px solid var(--linea); font-size: 13px; color: var(--tenue); }
+  @media (max-width: 760px) {
+    .heroe, .precio { grid-template-columns: 1fr; gap: 28px; }
+    .heroe { padding-top: 8px; }
+    .beneficios { grid-template-columns: 1fr; }
+    .pasos { grid-template-columns: minmax(0, 320px); }
+    .telefono { width: 260px; }
+  }
+</style>
+</head>
+<body>
+<div class="envoltura">
+  <header class="barra">
+    <div class="marca"><img src="../prototipo/icono-192.png" alt="">Zaqora</div>
+    <a href="#beta" class="letra-chica">Beta gratuita</a>
+  </header>
+
+  <main>
+    <div class="heroe">
+      <div>
+        <h1>Perdiste en Lichess. <em>Tu villano ya sabe dónde fue.</em></h1>
+        <p class="bajada">Cuando pierdes en Lichess y estás por cerrar la app, Zaqora valida tu frustración y la convierte en el próximo capítulo de tu historia.</p>
+        <a class="cta" href="#beta" data-cta="heroe">Quiero entrar a la beta</a>
+        <p class="precio-corto">Beta gratuita · después, $59 MXN al mes con IVA</p>
+      </div>
+      <div>
+        <div class="aviso">
+          <div class="notificacion" aria-hidden="true">
+            <img src="../prototipo/icono-192.png" alt="">
+            <div><b>La Niebla</b>Esa partida dolió. Te vi caer con negras en 3 jugadas, y yo estaba ahí. ¿Te atreves a volver a esa partida?</div>
+          </div>
+        </div>
+        <div class="telefono">
+          <video src="zaqora-demo.mp4" poster="zaqora-demo.jpg" autoplay muted loop playsinline preload="metadata" width="392" height="850"
+            aria-label="Video de 35 segundos: una derrota real en Lichess, el botón Revisar mis partidas ahora, la notificación del villano y el capítulo con el consejero"></video>
+        </div>
+        <p class="nota-video">Grabación real del prototipo. La espera del análisis (34 s) va acelerada.</p>
+      </div>
+    </div>
+
+    <section aria-labelledby="t-beneficios">
+      <h2 id="t-beneficios">Lo que cambia después de perder</h2>
+      <div class="beneficios">
+        <div class="beneficio">
+          <span class="num">1</span>
+          <h3>No tienes que analizar en caliente</h3>
+          <p>El villano te escribe unos minutos después de la derrota. Primero reconoce que dolió; la posición de tu error aparece solo cuando tú decides verla.</p>
+        </div>
+        <div class="beneficio">
+          <span class="num">2</span>
+          <h3>Tu error de siempre tiene cara</h3>
+          <p>Cada villano encarna un error que repites en tus partidas reales. Vencerlo en su capítulo es practicar justo lo que te está costando partidas.</p>
+        </div>
+        <div class="beneficio">
+          <span class="num">3</span>
+          <h3>Sin rating ni comparaciones</h3>
+          <p>No hay puntos, rankings ni barras de evaluación. Solo tú, tu villano y la jugada que se te escapó.</p>
+        </div>
+      </div>
+    </section>
+
+    <section aria-labelledby="t-como">
+      <h2 id="t-como">Así se ve un capítulo</h2>
+      <div class="pasos">
+        <figure>
+          <img src="../recursos/imgs/PI4_S9/historia.png" alt="Inicio de un capítulo: el villano reconoce la derrota y la historia de la partida se cuenta en tres partes" loading="lazy" width="754" height="1240">
+          <figcaption>1 · Tocas el aviso y el villano te cuenta la historia de tu partida. Tú decides: «Muéstrame» o «Déjame en paz».</figcaption>
+        </figure>
+        <figure>
+          <img src="../recursos/imgs/PI4_S9/encuentro.png" alt="Encuentro: la posición real antes del error, con el consejero de tu bando dando una pista" loading="lazy" width="754" height="1240">
+          <figcaption>2 · Aparece la posición real, justo antes de tu error. El consejero de tu bando te guía hasta la jugada que se te escapó.</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section aria-labelledby="t-evidencia">
+      <h2 id="t-evidencia" class="letra-chica" style="font-size:14px;font-weight:600;letter-spacing:.08em;color:var(--tenue)">LO QUE NOS DIJERON LOS JUGADORES</h2>
+      <blockquote>
+        «No intenté analizar las partidas en ese momento porque sabía que iba a buscar excusas.»
+        <footer>Jugador de Lichess entrevistado durante el diseño de Zaqora, después de perder tres partidas seguidas</footer>
+      </blockquote>
+    </section>
+
+    <section id="beta" aria-labelledby="t-beta">
+      <div class="precio">
+        <div>
+          <h2 id="t-beta">Entra a la beta</h2>
+          <div class="tarjeta">
+            <div class="monto">$59 <small>MXN al mes, IVA incluido</small></div>
+            <ul>
+              <li>Durante la beta no se cobra nada.</li>
+              <li>Los primeros capítulos siempre son gratis.</li>
+              <li>Cuando empecemos a cobrar te avisaremos antes, y podrás cancelar cuando quieras.</li>
+              <li>Funciona en el navegador del celular; entras con tu cuenta de Lichess.</li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <form id="formulario" novalidate>
+            <label for="correo">Tu correo</label>
+            <input type="email" id="correo" name="correo" autocomplete="email" required placeholder="nombre@ejemplo.com">
+            <label class="casilla"><input type="checkbox" id="acepto" required>
+              <span>Leí el <a href="privacidad.html">aviso de privacidad</a> y acepto que usen mi correo para avisarme cuando abra la beta. Soy mayor de edad.</span></label>
+            <button class="cta" type="submit" data-cta="formulario">Quiero entrar a la beta</button>
+            <p class="estado" id="estado" role="status" aria-live="polite"></p>
+            <p class="letra-chica">Solo te escribiremos para invitarte a la beta. Puedes pedir que borremos tu correo en cualquier momento.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="pie">
+    Zaqora es un proyecto de David López Ramírez para Proyecto de Ingeniería IV. ·
+    <a href="privacidad.html">Aviso de privacidad</a> ·
+    <a href="../proyecto_final/">Cómo se construyó</a>
+  </footer>
+</div>
+
+<script src="../prototipo/config.js"></script>
+<script>
+  const CFG = window.ZAQORA || {};
+  const cabeceras = { "apikey": CFG.SUPABASE_KEY, "Authorization": "Bearer " + CFG.SUPABASE_KEY,
+    "Content-Type": "application/json", "Prefer": "return=minimal" };
+
+  // Embudo de la demanda: visitas, clics en el CTA y pre-registros (sin datos personales, salvo el correo del pre-registro).
+  function registrar(evento, detalle) {
+    if (!CFG.SUPABASE_URL) return Promise.resolve();
+    return fetch(CFG.SUPABASE_URL + "/rest/v1/eventos", {
+      method: "POST", headers: cabeceras, keepalive: true,
+      body: JSON.stringify({ participante: "landing", evento, detalle: detalle || null })
+    }).catch(() => {});
+  }
+  try {
+    if (!sessionStorage.getItem("zq_visita")) {
+      registrar("visita", { ref: document.referrer ? new URL(document.referrer).hostname : null });
+      sessionStorage.setItem("zq_visita", "1");
+    }
+  } catch (e) { registrar("visita"); }
+  document.querySelectorAll("[data-cta]").forEach((el) =>
+    el.addEventListener("click", () => registrar("clic_cta", { donde: el.dataset.cta })));
+
+  const form = document.getElementById("formulario");
+  const estado = document.getElementById("estado");
+  form.addEventListener("submit", async (ev) => {
+    ev.preventDefault();
+    const correo = document.getElementById("correo").value.trim();
+    estado.className = "estado";
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(correo)) { estado.textContent = "Revisa tu correo."; estado.className = "estado error"; return; }
+    if (!document.getElementById("acepto").checked) { estado.textContent = "Para registrarte, acepta el aviso de privacidad."; estado.className = "estado error"; return; }
+    estado.textContent = "Enviando…";
+    try {
+      const r = await fetch(CFG.SUPABASE_URL + "/rest/v1/preregistros", {
+        method: "POST", headers: cabeceras, body: JSON.stringify({ correo, acepto_aviso: true })
+      });
+      if (!r.ok) throw new Error(r.status);
+      registrar("preregistro");
+      form.reset();
+      estado.textContent = "Listo. Te escribiremos cuando abra la beta.";
+      estado.className = "estado ok";
+    } catch (e) {
+      estado.textContent = "No se pudo enviar. Intenta de nuevo en un momento.";
+      estado.className = "estado error";
+    }
+  });
+</script>
+</body>
+</html>

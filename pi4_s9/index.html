@@ -1,0 +1,3225 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Documentación de proyectos realizados por David López Ramírez.">
+      
+      
+      
+      
+        <link rel="prev" href="../pi4_s8/">
+      
+      
+        <link rel="next" href="../proyecto_final/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.8.2">
+    
+    
+      
+        <title>Semana 9 - Integración, go-to-market y pitch - Portafolio de Proyectos - David López Ramírez</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.57a0d79d.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.fb2fffe2.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v6.5.2/css/all.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#semana-9-integracion-go-to-market-y-pitch" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Portafolio de Proyectos - David López Ramírez" class="md-header__button md-logo" aria-label="Portafolio de Proyectos - David López Ramírez" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Portafolio de Proyectos - David López Ramírez
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Semana 9 - Integración, go-to-market y pitch
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="red" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Portafolio de Proyectos - David López Ramírez" class="md-nav__button md-logo" aria-label="Portafolio de Proyectos - David López Ramírez" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Portafolio de Proyectos - David López Ramírez
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Página principal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Formación académica
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Formación académica
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Sistemas Embebidos I
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Sistemas Embebidos I
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1_1" id="__nav_2_1_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tareas
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tareas
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea I - Comparación de microcontroladores
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea II - Outputs básicos
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea III - Inputs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea IV - Mini-Pong
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea V - Comparación de alarmas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea VI - Alarmas aplicadas
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea VII - Modulación por ancho de pulso - PWM
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea VIII - Comunicación UART
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tarea_9/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tarea IX - Convertidor analógico a digital
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Embedded Systems II
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Embedded Systems II
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2_1" id="__nav_2_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Tasks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_2_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Tasks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esii_task1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task I - FreeRTOS Tasks and Priorities
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esii_task2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task II - Labs
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esii_task3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task III - Tasks
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esii_task4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task IV - HTTP_WiFi_Lab
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esii_task5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task V - MQTT LAB pt1
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../esii_task6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Task VI - MQTT LAB pt2
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proyecto de ingeniería IV
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Proyecto de ingeniería IV
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s1/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 1 - Firma de Syllabus y método SCAMPER
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s2/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 2 - Búsqueda de Oportunidades
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s3/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 3 - Propiedad intelectual, marca y vigilancia tecnológica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s4/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 4 - Mercado, valor y propuesta de valor
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s5/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 5 - Diseño de producto, PDS y arquitectura del sistema
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s6/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 6 - Generación y selección de concepto de diseño
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s7/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 7 - Viabilidad técnica y económica
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pi4_s8/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 8 - Prototipado y diseño para manufactura
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 9 - Integración, go-to-market y pitch
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Semana 9 - Integración, go-to-market y pitch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Resumen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-punto-de-partida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Punto de partida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-proceso-integracion-lanzamiento-y-pitch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Proceso — Integración, lanzamiento y pitch
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3) Proceso — Integración, lanzamiento y pitch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-integracion-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 1 — Integración del sistema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-pruebas-con-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 2 — Pruebas con usuarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-3-go-to-market-y-economia-unitaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 3 — Go-to-market y economía unitaria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-4-regulacion-minima-viable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 4 — Regulación mínima viable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-5-el-pitch-de-3-minutos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 5 — El pitch de 3 minutos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-6-la-demo-de-7-minutos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 6 — La demo de 7 minutos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-7-ruta-de-cierre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 7 — Ruta de cierre
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-entregable-semana-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) Entregable — Semana 9
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-reflexion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) Reflexión
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Reflexión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preguntas-de-cierre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preguntas de cierre
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../proyecto_final/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Proyecto final - Zaqora
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-resumen" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1) Resumen
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-punto-de-partida" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2) Punto de partida
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-proceso-integracion-lanzamiento-y-pitch" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3) Proceso — Integración, lanzamiento y pitch
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3) Proceso — Integración, lanzamiento y pitch">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#paso-1-integracion-del-sistema" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 1 — Integración del sistema
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-2-pruebas-con-usuarios" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 2 — Pruebas con usuarios
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-3-go-to-market-y-economia-unitaria" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 3 — Go-to-market y economía unitaria
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-4-regulacion-minima-viable" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 4 — Regulación mínima viable
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-5-el-pitch-de-3-minutos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 5 — El pitch de 3 minutos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-6-la-demo-de-7-minutos" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 6 — La demo de 7 minutos
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#paso-7-ruta-de-cierre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Paso 7 — Ruta de cierre
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-entregable-semana-9" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4) Entregable — Semana 9
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-reflexion" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5) Reflexión
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="5) Reflexión">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#preguntas-de-cierre" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Preguntas de cierre
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="semana-9-integracion-go-to-market-y-pitch">Semana 9 — Integración, go-to-market y pitch</h1>
+<h2 id="1-resumen">1) Resumen</h2>
+<ul>
+<li><strong>Nombre de la actividad:</strong> <em>Integración del sistema, pruebas con usuarios, economía unitaria, regulación, pitch y demo</em></li>
+<li><strong>Curso:</strong> <em>Proyecto de Ingeniería IV</em></li>
+<li><strong>Equipo:</strong> <em>David López Ramírez</em></li>
+<li><strong>Fecha:</strong> <em>23/11/2026 (actualizada el 24/11/2026)</em></li>
+<li><strong>Descripción breve:</strong> <em>Última clase de contenido. Con el prototipo de la semana 8 funcionando y el modelo económico actualizado, esta semana se preparó todo lo que <strong>Zaqora</strong> necesita para la evaluación final: las fronteras del sistema y sus seis pruebas, el protocolo de pruebas con usuarios, la economía unitaria de lanzamiento (CAC, churn, LTV y payback), el checklist regulatorio con fuentes oficiales, el guion del pitch de 3 minutos, el guion de la demo de 7 minutos y la ruta de las dos semanas de trabajo. El trabajo se hizo con Claude a partir de los prompts del curso, con los datos de Zaqora. <strong>El 24/11/2026</strong>, después de la primera sesión de prueba con un jugador, el prototipo cambió de fondo: entrada con la cuenta de Lichess, primer contacto con las últimas 5 derrotas, capítulos de varios encuentros con historia de IA, un consejero del bando del jugador, pantalla de inicio y un detector que corre en la nube sin la laptop del equipo.</em></li>
+</ul>
+<hr />
+<h2 id="2-punto-de-partida">2) Punto de partida</h2>
+<p><strong>Concepto (semana 6):</strong> <strong>Ghost Engine</strong>, una PWA en formato de novela visual: tras perder en Lichess, el villano que encarna el error del jugador le escribe y lo invita a un capítulo construido sobre esa misma partida.</p>
+<p><strong>Lo que ya hay:</strong></p>
+<ul>
+<li><strong>Prototipo publicado y probado de punta a punta</strong> (semana 8): aviso push de la app, escena con la posición real del error y registro de eventos en Supabase. La prueba con usuarios del segmento <strong>no se ha hecho</strong>.</li>
+<li><strong>Modelo económico vigente</strong> (semana 8, actualización del 23/11/2026): $59 MXN al mes con IVA ($44.92 netos), costo de $0.80 por usuario activo a 100 usuarios, narrador en la capa gratuita de Cloudflare Workers AI, VPN a 5 años de +$9,281 y recuperación en el mes 21.</li>
+<li>
+<p><strong>Producto de software</strong>, sin componente físico: así se acordó con el profesor desde el inicio del curso. Por eso cada bloque de la clase, pensado para hardware, se traduce a su equivalente de software.</p>
+</li>
+<li>
+<p><strong>Objetivo de la semana:</strong> Dejar decidido cómo se integra, se prueba, se lanza y se cuenta Zaqora, con números propios y con cada pendiente marcado.</p>
+</li>
+</ul>
+<div class="admonition note">
+<p class="admonition-title">Actualización del 24/11/2026: cómo es Zaqora ahora</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;"></th>
+<th style="text-align: left;">Semana 8 (prototipo «mago de Oz»)</th>
+<th style="text-align: left;">Ahora</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Entrada</strong></td>
+<td style="text-align: left;">Enlace con código de participante (P1…P5) que el equipo anotaba a mano en un CSV</td>
+<td style="text-align: left;"><strong>Entrar con Lichess</strong> (OAuth con PKCE, sin contraseña ni permisos extra). El jugador queda registrado solo, con su código J1, J2…</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Primer contacto</strong></td>
+<td style="text-align: left;">Esperar a la siguiente derrota</td>
+<td style="text-align: left;">Al activar los avisos, Zaqora analiza sus <strong>últimas 5 derrotas</strong> y crea <strong>un capítulo por cada una</strong>; llega un solo aviso que abre Inicio</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Análisis</strong></td>
+<td style="text-align: left;">El de Lichess, que alguien tenía que pedir a mano</td>
+<td style="text-align: left;"><strong>Stockfish 19</strong> analiza cada derrota en unos 3 s; nadie tiene que pedir nada</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Capítulo</strong></td>
+<td style="text-align: left;">Un ejercicio con frases de plantilla</td>
+<td style="text-align: left;"><strong>Hasta 3 encuentros</strong> (los errores más grandes de la partida) con una <strong>historia de 3 partes</strong> y diálogos escritos por IA (Mistral Small 3.1 en la capa gratuita de Cloudflare Workers AI)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Personajes</strong></td>
+<td style="text-align: left;">El villano daba las pistas</td>
+<td style="text-align: left;"><strong>El villano reta y reacciona</strong>; un <strong>consejero del bando del jugador</strong> (su alfil) guía, da las pistas y enseña la jugada tras 3 intentos fallidos</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Villanos</strong></td>
+<td style="text-align: left;">Uno fijo</td>
+<td style="text-align: left;">Uno por patrón de error: El Reloj de Arena (tiempo), El Carroñero (pieza sin defensa), La Niebla (apertura), El Último Peón (final) y La Horquilla Hambrienta (medio juego)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Bandos</strong></td>
+<td style="text-align: left;">Glifos de ajedrez</td>
+<td style="text-align: left;">Elfos, goblins, hombres lobo o humanos (assets propios); el rival cambia en cada derrota</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Navegación</strong></td>
+<td style="text-align: left;">Solo se llegaba a la escena por el aviso</td>
+<td style="text-align: left;"><strong>Inicio</strong>: último capítulo con su avance, capítulos anteriores, «Revisar mis partidas ahora» y «Jugar en Lichess»</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Detector</strong></td>
+<td style="text-align: left;">Script en la laptop del equipo</td>
+<td style="text-align: left;"><strong>GitHub Actions</strong> cada 10 minutos, con las claves en secretos del repositorio; el estado vive en Supabase</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Datos</strong></td>
+<td style="text-align: left;">Solo alias en Supabase</td>
+<td style="text-align: left;">Capítulos y avance ligados a la cuenta de Lichess (tabla <code>capitulos</code>), leídos solo a través de una función que confirma la identidad con Lichess; <a href="../prototipo/privacidad.html">aviso de privacidad de la app</a> publicado</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="grid">
+<p><img alt="Activación: qué es Zaqora y sus tres pasos" src="../recursos/imgs/PI4_S9/activacion.png" width="230" /></p>
+<p><img alt="Historia del capítulo: el villano cuenta la partida antes de abrir el tablero" src="../recursos/imgs/PI4_S9/historia.png" width="230" /></p>
+<p><img alt="Encuentro: el villano reta arriba y el consejero del bando guía abajo" src="../recursos/imgs/PI4_S9/encuentro.png" width="230" /></p>
+</div>
+<p><em>Activación, historia del capítulo y encuentro (24/11/2026). El capítulo es un ejemplo armado para la captura; no es la partida de ningún participante.</em></p>
+<hr />
+<h2 id="3-proceso-integracion-lanzamiento-y-pitch">3) Proceso — Integración, lanzamiento y pitch</h2>
+<h3 id="paso-1-integracion-del-sistema">Paso 1 — Integración del sistema</h3>
+<p><strong>Las cuatro fronteras de Zaqora</strong> (la clase usa sensor → microcontrolador → red → IA → app; en Zaqora la «lectura» es la partida de Lichess):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">#</th>
+<th style="text-align: left;">Frontera</th>
+<th style="text-align: left;">Lado A → lado B</th>
+<th style="text-align: left;">Protocolo</th>
+<th style="text-align: left;">Pregunta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>F1</strong></td>
+<td style="text-align: left;">Partida → detector</td>
+<td style="text-align: left;">API de Lichess → detector de derrotas</td>
+<td style="text-align: left;">HTTPS, NDJSON (<code>/api/games/user</code>, <code>evals=true</code>)</td>
+<td style="text-align: left;">¿La derrota se detecta y trae análisis?</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>F2</strong></td>
+<td style="text-align: left;">Detector → celular</td>
+<td style="text-align: left;">Detector → servicio push del navegador → <em>service worker</em></td>
+<td style="text-align: left;">Web Push con VAPID</td>
+<td style="text-align: left;">¿El aviso sale y llega?</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>F3</strong></td>
+<td style="text-align: left;">Motor → narrador</td>
+<td style="text-align: left;">Hechos del motor (JSON) → LLM → validador</td>
+<td style="text-align: left;">HTTPS (Workers AI)</td>
+<td style="text-align: left;">¿La frase del villano es utilizable?</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>F4</strong></td>
+<td style="text-align: left;">Escena → usuario y registro</td>
+<td style="text-align: left;">PWA → jugador; PWA → Supabase</td>
+<td style="text-align: left;">HTTPS / REST</td>
+<td style="text-align: left;">¿El jugador ve la posición correcta y queda registrado lo que hace?</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>F5</strong> <em>(nueva, 24/11)</em></td>
+<td style="text-align: left;">Cuenta → capítulos</td>
+<td style="text-align: left;">Lichess (OAuth) → función <code>capitulos</code> de Supabase → Inicio</td>
+<td style="text-align: left;">HTTPS; token de Lichess solo para confirmar quién es</td>
+<td style="text-align: left;">¿Cada jugador ve sus capítulos y solo los suyos?</td>
+</tr>
+</tbody>
+</table>
+<p>Con la actualización del 24/11/2026, F1 la corre el detector en <strong>GitHub Actions</strong> (ya no la laptop) y F3 usa <strong>Stockfish 19</strong> para el análisis y <strong>Mistral Small 3.1</strong> para la narración.</p>
+<p><strong>Seis pruebas del sistema</strong>, de la más barata a la más cara. Los criterios salen del PDS (semana 5) y del plan de la semana 8:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">#</th>
+<th style="text-align: left;">Prueba (adaptada)</th>
+<th style="text-align: left;">Qué se mide</th>
+<th style="text-align: left;">Aprobado si</th>
+<th style="text-align: left;">Estado y evidencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;"><strong>T1</strong></td>
+<td style="text-align: left;">Activación sin ayuda</td>
+<td style="text-align: left;">Tiempo y errores de alguien que no conoce Zaqora al abrir el enlace y activar los avisos</td>
+<td style="text-align: left;">&lt; 5 minutos sin intervención (en iPhone, incluida la instalación)</td>
+<td style="text-align: left;">⚠️ <strong>No cumplió en la primera sesión (23/11/2026).</strong> El participante la encontró «complicada de seguir» y las instrucciones de iPhone «no intuitivas» (no se midió el tiempo). Se rehízo la activación por pasos. <strong>En la segunda sesión (P2), ya con la activación nueva, el participante tampoco pudo usar la app solo</strong>: falta ubicar en qué paso se atora. <strong>En P3 y P4 no se pudo medir</strong>: no tenían cuenta de Lichess y usaron una prestada.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>T2</strong></td>
+<td style="text-align: left;">Latencia derrota → aviso</td>
+<td style="text-align: left;">Minutos entre el fin de la partida (Lichess) y el aviso (registro del script)</td>
+<td style="text-align: left;">≤ 10 minutos (plan de la semana 8)</td>
+<td style="text-align: left;">⚠️ <strong>Parcial.</strong> El detector está programado en GitHub Actions cada 10 minutos, pero GitHub lo corre cada 6 a 9 horas (ver T6), y el botón «Revisar mis partidas ahora» lo lanza al momento: la corrida del 24/11/2026 tardó <strong>31 s</strong> de la petición al final (17:38:23 → 17:38:54). Falta medir el camino completo con una derrota nueva.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>T3</strong></td>
+<td style="text-align: left;">Celular sin conexión</td>
+<td style="text-align: left;">Se apaga la red del celular mientras sale el aviso y se vuelve a encender</td>
+<td style="text-align: left;">El aviso llega al reconectar</td>
+<td style="text-align: left;">⏳ <strong>Pendiente.</strong> Hallazgo de diseño: el aviso se envía con <code>ttl=3600</code>, así que <strong>si el celular pasa más de 1 hora sin red, el aviso se pierde</strong>. Es aceptable (un aviso tardío ya no llega «justo después de perder»), pero hay que declararlo.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>T4</strong></td>
+<td style="text-align: left;">Autonomía de la capa gratuita (equivalente de la batería)</td>
+<td style="text-align: left;">Capítulos al mes que caben en la capa gratuita de Workers AI</td>
+<td style="text-align: left;">Alcanza para el piloto de 20 usuarios</td>
+<td style="text-align: left;">✅ <strong>Cumple (tokens medidos el 27/11/2026).</strong> Con Mistral Small 3.1, un capítulo gasta 38 neurons: <strong>unos 263 capítulos al día</strong> ≈ 7,900 al mes → <strong>unos 390 usuarios activos</strong> a 20 capítulos al mes. Ver el cálculo abajo.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>T5</strong></td>
+<td style="text-align: left;">Falla de la API de IA</td>
+<td style="text-align: left;">Qué ve el jugador si el LLM no responde</td>
+<td style="text-align: left;">Sale una plantilla; nunca un texto vacío ni inválido (RD-04)</td>
+<td style="text-align: left;">✅ <strong>Cumple, con una falla real.</strong> El 24/11/2026 Cloudflare retiró Llama 3.1 8B (HTTP 410, «deprecated on 2026-11-20»): el detector siguió armando capítulos con plantilla, sin romperse. Además, el validador rechaza la respuesta de la IA si inventa casillas o revela la solución.</td>
+</tr>
+<tr>
+<td style="text-align: center;"><strong>T6</strong></td>
+<td style="text-align: left;">Operación continua</td>
+<td style="text-align: left;">El detector corre 48 h seguidas con los participantes</td>
+<td style="text-align: left;">Sin caídas ni derrotas sin aviso; los HTTP 429 de Lichess se esperan 60 s</td>
+<td style="text-align: left;">✅ <strong>Cumple (continuidad), 24 al 27/11/2026.</strong> 19 corridas en 67 horas, del 24/11 a las 17:11 al 27/11 a las 12:37 (UTC), <strong>19 de 19 sin error</strong> y sin la laptop del equipo (<a href="https://github.com/Vidddda/Portafolio-193167/actions/workflows/detector.yml">registros de GitHub Actions</a>). ⚠️ <strong>Lo que no cumple es la frecuencia:</strong> el detector está programado cada 10 minutos, pero GitHub solo corrió 7 revisiones programadas en esos 3 días (una cada 6 a 9 horas). Las otras 12 las lanzó «Revisar mis partidas ahora». Siguiente paso: lanzar el detector desde Supabase con pg_cron.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cómo se calcula T4</strong>, con números (igual que la autonomía de batería del ejemplo de la clase):</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Capa gratuita de Cloudflare Workers AI     = 10,000 neurons al día ≈ US$0.11 al día
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Precio de Mistral Small 3.1 en Workers AI  = US$0.351 por millón de tokens de entrada, US$0.555 de salida
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>Un capítulo (historia + 3 encuentros)      = 666 tokens de entrada + 334 de salida = 38 neurons  (MEDIDO)
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>Costo de un capítulo                       = 666 × 0.351/M + 334 × 0.555/M ≈ US$0.00042 ≈ $0.008 MXN
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>Capítulos al día                           = 10,000 / 38 ≈ 263
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>Capítulos al mes                           ≈ 263 × 30 ≈ 7,900
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>Uso supuesto por usuario activo            = 20 capítulos al mes (semana 7)
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>Usuarios activos que caben                 ≈ 7,900 / 20 ≈ 390  →  cumple (piloto de 20)
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>Si se pagara todo (sin capa gratuita)      = 20 × US$0.00042 ≈ US$0.0084 ≈ $0.16 MXN al mes por usuario
+</span></code></pre></div>
+<p><strong>Medido el 27/11/2026</strong> con seis llamadas reales a Workers AI, usando el mismo prompt del detector: el campo <code>usage</code> de cada respuesta da los tokens y los neurons. Los capítulos de 3 encuentros gastaron de 652 a 681 tokens de entrada, de 288 a 402 de salida y de 35 a 42 neurons; uno de 1 encuentro, unos 592 + 213 tokens (30 neurons). La estimación anterior (900 + 450 tokens, 190 capítulos al día) era un 35 % más cara. Precios verificados ese día en la <a href="https://developers.cloudflare.com/workers-ai/platform/pricing/">página de precios de Workers AI</a> (US$0.011 por 1,000 neurons por encima de la capa gratuita). Falta confirmarlo con el consumo del piloto en el panel de Cloudflare. El primer contacto gasta 5 capítulos de golpe por jugador nuevo. Llama 3.1 8B (el modelo del cálculo anterior) se retiró el 20/11/2026.</p>
+<p><strong>Falla encontrada al revisar F1 (23/11/2026).</strong> Si una derrota no tenía análisis, el detector la marcaba como revisada y enviaba el aviso con una <strong>posición de ejemplo</strong>; el consejo de «pide el análisis y vuelve a correr el script» no servía, porque la partida ya no se volvía a leer. Se encontró leyendo el código frontera por frontera, no en una prueba. Corrección: la derrota sin análisis no se marca como revisada y se reintenta en cada vuelta hasta 30 minutos. <em>(El 24/11/2026 la espera dejó de hacer falta: Stockfish analiza la partida si Lichess no la tiene analizada.)</em></p>
+<p><strong>Fallas encontradas en la integración del 24/11/2026:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Falla</th>
+<th style="text-align: left;">Frontera</th>
+<th style="text-align: left;">Cómo se encontró</th>
+<th style="text-align: left;">Corrección</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">El modelo de IA dejó de existir (HTTP 410)</td>
+<td style="text-align: left;">F3</td>
+<td style="text-align: left;">Al probar la historia con IA</td>
+<td style="text-align: left;">Cambio a Mistral Small 3.1, elegido tras probar 5 modelos con la misma partida; la plantilla cubrió mientras tanto (T5)</td>
+</tr>
+<tr>
+<td style="text-align: left;">GitHub no pudo leer la clave VAPID del secreto</td>
+<td style="text-align: left;">F2</td>
+<td style="text-align: left;">Registro de la corrida: «Could not deserialize key data»</td>
+<td style="text-align: left;">Clave en una sola línea y una revisión de formato en el flujo, que avisa sin mostrar la clave</td>
+</tr>
+<tr>
+<td style="text-align: left;">En iPhone el ícono abría la activación sin el código y el permiso se pedía tarde</td>
+<td style="text-align: left;">F2</td>
+<td style="text-align: left;">Prueba en iPhone del equipo</td>
+<td style="text-align: left;">El ícono conserva la dirección con la que se instaló y el permiso se pide al tocar el botón</td>
+</tr>
+<tr>
+<td style="text-align: left;">Revisar sin <code>--enviar</code> gastaba la derrota y la variante</td>
+<td style="text-align: left;">F1</td>
+<td style="text-align: left;">P1 aparecía con sus variantes «ya recibidas»</td>
+<td style="text-align: left;">Revisar ya no toca el estado</td>
+</tr>
+<tr>
+<td style="text-align: left;"><code>--historia</code> no dejaba marcado el primer contacto</td>
+<td style="text-align: left;">F1</td>
+<td style="text-align: left;">Revisando Supabase: el siguiente ciclo iba a reenviar los 5 capítulos</td>
+<td style="text-align: left;">El comando marca el primer contacto en <code>estado_detector</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">«Salir» dejaba capítulos de pruebas anteriores y el teléfono mostraba versiones viejas</td>
+<td style="text-align: left;">F5</td>
+<td style="text-align: left;">Prueba del equipo en su celular</td>
+<td style="text-align: left;">Sin sesión Inicio limpia el teléfono; el <em>service worker</em> pide siempre la versión más reciente (GitHub Pages permite guardar 10 minutos)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Cómo debe degradarse Zaqora:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Si falla…</th>
+<th style="text-align: left;">Qué pasa</th>
+<th style="text-align: left;">Qué ve el jugador</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Internet del jugador</strong></td>
+<td style="text-align: left;">El aviso espera en el servicio push hasta 1 hora</td>
+<td style="text-align: left;">Nada; si vuelve a tiempo, el aviso llega. La escena abierta ya no necesita red para jugarse; el registro del evento se pierde sin romper nada.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Lichess (o un 429)</strong></td>
+<td style="text-align: left;">El detector espera 60 s y reintenta</td>
+<td style="text-align: left;">Nada: el aviso llega más tarde.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>El análisis de Lichess</strong> (partida sin evaluar)</td>
+<td style="text-align: left;">Stockfish analiza la partida en el detector (unos 3 s)</td>
+<td style="text-align: left;">Nada: el capítulo llega con la posición real.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>La API de IA</strong> (lenta, caída o modelo retirado)</td>
+<td style="text-align: left;">Se usa la plantilla del villano y del consejero</td>
+<td style="text-align: left;">Una historia de plantilla, sin aviso de error (pasó de verdad el 24/11/2026)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>GitHub Actions</strong> (retrasa o no corre)</td>
+<td style="text-align: left;">El capítulo llega más tarde</td>
+<td style="text-align: left;">«Revisar mis partidas ahora» lanza el detector al momento</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>La función de cuentas</strong></td>
+<td style="text-align: left;">Inicio muestra los capítulos guardados en el teléfono y explica el error</td>
+<td style="text-align: left;">Un aviso: «No pude traer tus capítulos guardados»</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Definición de listo:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Condición (adaptada)</th>
+<th style="text-align: center;">Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Funciona sin la laptop del equipo</td>
+<td style="text-align: center;">✅ El detector corre en GitHub Actions cada 10 minutos (24/11/2026)</td>
+</tr>
+<tr>
+<td style="text-align: left;">La app está desplegada, no en el entorno de desarrollo</td>
+<td style="text-align: center;">✅ <a href="../prototipo/activar.html">Publicada en GitHub Pages</a> con https</td>
+</tr>
+<tr>
+<td style="text-align: left;">La landing está publicada en internet</td>
+<td style="text-align: center;">✅ Publicada el 24/11/2026: <a href="../landing/">landing</a>; la tabla <code>preregistros</code> responde en Supabase (Paso 3)</td>
+</tr>
+<tr>
+<td style="text-align: left;">El dato fluye de la partida a la pantalla sin intervención</td>
+<td style="text-align: center;">✅ Registro con Lichess, análisis con Stockfish y envío automáticos; nadie del equipo interviene</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Prompt 1 del curso — plan de integración y pruebas (adaptado a Zaqora)</summary>
+<p>Actúa como ingeniero de pruebas de sistemas conectados, con experiencia en productos con componentes de IA. Tu método es la bisección por fronteras: probar cada interfaz entre componentes con evidencia (log, medición, captura) antes de culpar al sistema completo. No propones pruebas que el equipo no pueda ejecutar con sus medios: laptop y teléfonos.</p>
+<p>Somos un equipo de ingeniería en México. Nuestro producto:<br />
+Nombre y qué hace: Zaqora. Cuando un jugador pierde en Lichess, un villano que encarna su error le manda un aviso push y lo invita a una escena con la posición real de su error.<br />
+Arquitectura (semana 5, revisada en la 8): PWA con <em>service worker</em>; detector en Python que lee la API pública de Lichess (NDJSON) y envía Web Push (VAPID); registro en Supabase; narrador con LLM en Cloudflare Workers AI (todavía no conectado).<br />
+Requerimientos de desempeño del PDS: primera frase del villano &lt; 5 s; LLM con tiempo máximo de 4 s y después plantilla; aviso ≤ 10 min tras la derrota; costo ≤ $30 MXN por usuario activo al mes.<br />
+Qué ya funciona por separado: aviso push, escena, registro de eventos, detección de derrotas.<br />
+Qué nunca hemos probado junto: el flujo completo con un jugador externo, el narrador con LLM, el detector corriendo días seguidos.</p>
+<p>Entrega: (1) las fronteras, (2) seis pruebas de la más barata a la más cara con criterio numérico, (3) los dos fallos más probables por frontera y (4) cómo debe degradarse si falla internet o la API de IA. Si falta un número en el PDS, dilo. No inventes requerimientos.</p>
+</details>
+<p><strong>Los dos fallos más probables por frontera:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Frontera</th>
+<th style="text-align: left;">Fallo probable 1</th>
+<th style="text-align: left;">Fallo probable 2</th>
+<th style="text-align: left;">Primera prueba para distinguirlos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">F1</td>
+<td style="text-align: left;">La partida no tiene análisis y no hay posición del error</td>
+<td style="text-align: left;">Lichess responde 429 y la derrota se detecta tarde</td>
+<td style="text-align: left;">Revisar la columna <code>con_analisis</code> y la hora de detección en <code>registro_envios.csv</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">F2</td>
+<td style="text-align: left;">El participante no activó los avisos (o en iPhone no instaló la app)</td>
+<td style="text-align: left;">La suscripción caducó o el celular estuvo &gt; 1 h sin red</td>
+<td style="text-align: left;">Buscar su alias en la tabla <code>suscripciones</code>; si está, enviar <code>--probar</code></td>
+</tr>
+<tr>
+<td style="text-align: left;">F3</td>
+<td style="text-align: left;">El LLM tarda más de 4 s</td>
+<td style="text-align: left;">La frase inventa una jugada o rompe el formato</td>
+<td style="text-align: left;">Guardar la entrada y la salida crudas de cada llamada y pasarlas por el validador</td>
+</tr>
+<tr>
+<td style="text-align: left;">F4</td>
+<td style="text-align: left;">La escena abre con una posición equivocada (FEN o color)</td>
+<td style="text-align: left;">El evento no llega a Supabase (sin red o clave errónea)</td>
+<td style="text-align: left;">Comparar el FEN del enlace con la partida en Lichess; revisar la tabla <code>eventos</code></td>
+</tr>
+</tbody>
+</table>
+<h3 id="paso-2-pruebas-con-usuarios">Paso 2 — Pruebas con usuarios</h3>
+<div class="admonition success">
+<p class="admonition-title">Estado: 5 de 5 sesiones</p>
+<p>Se hicieron las cinco sesiones: P1 el 23/11/2026, con el flujo de la semana 8; P2 el 24/11/2026, y P3, P4 y P5 el 25/11/2026, con el flujo nuevo (entrar con Lichess). Sus hallazgos están abajo con el cambio que provocó cada uno. P3 y P4 no tenían cuenta de Lichess y usaron una prestada, y P5 no juega ajedrez, así que el aviso solo se probó con P1 y P2. La prueba de campo ya está en curso con los participantes que tienen acceso a Zaqora. El SEQ no se registró en ninguna sesión; en P3 y P4 los tiempos son aproximados.</p>
+</div>
+<p><strong>Con quién:</strong> 5 personas, mayores de edad. <strong>Tres del segmento</strong> (jugadores amateur de Lichess que juegan al menos 3 veces por semana) y <strong>dos de otro equipo</strong> del curso.</p>
+<p><strong>Protocolo de 30 minutos adaptado a Zaqora:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">Min</th>
+<th style="text-align: left;">Qué pasa</th>
+<th style="text-align: left;">Qué se observa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">0–3</td>
+<td style="text-align: left;">Guion fijo: «Estamos probando el producto, no a ti. Piensa en voz alta.»</td>
+<td style="text-align: left;">Nada que explicar del producto</td>
+</tr>
+<tr>
+<td style="text-align: center;">3–10</td>
+<td style="text-align: left;"><strong>Tarea 1:</strong> abrir el enlace de activación en su celular y activar los avisos del villano (en iPhone, primero agregar a la pantalla de inicio)</td>
+<td style="text-align: left;">¿Lo logra sin ayuda? Tiempo, errores, dudas (es la prueba T1)</td>
+</tr>
+<tr>
+<td style="text-align: center;">10–20</td>
+<td style="text-align: left;"><strong>Tarea 2:</strong> el operador dispara el aviso con su última derrota real; el participante lo abre y juega el encuentro</td>
+<td style="text-align: left;">¿Abre el aviso? ¿Elige «Muéstrame» o «Déjame en paz»? ¿Entiende qué le pide el villano? ¿Resuelve?</td>
+</tr>
+<tr>
+<td style="text-align: center;">20–25</td>
+<td style="text-align: left;"><strong>Tarea 3:</strong> encontrar el precio en la landing y dejar su correo en el pre-registro</td>
+<td style="text-align: left;">¿Encuentra el precio? ¿Completa el CTA?</td>
+</tr>
+<tr>
+<td style="text-align: center;">25–30</td>
+<td style="text-align: left;">Entrevista de cierre</td>
+<td style="text-align: left;">La última vez que perdiste, ¿qué hiciste justo después? ¿Qué te costó? ¿Cuánto pagarías? ¿A quién se lo mandarías?</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Desde el 24/11/2026 cambian dos tareas:</strong> en la tarea 1 el participante <strong>entra con Lichess</strong> y activa los avisos; en la tarea 2 ya no hace falta que el operador dispare el aviso: llega solo el <strong>primer contacto con sus últimas 5 derrotas</strong>, y el participante abre uno de esos capítulos.</p>
+<p>Por cada tarea se registra: completó sin ayuda (sí o no), tiempo, errores y dudas, SEQ de 1 a 7 y citas textuales. Los hallazgos se clasifican en crítico, mayor y menor antes de corregir nada. La hoja de observación de la semana 8 se reutiliza con estas tres tareas.</p>
+<p><strong>Primera sesión (P1, 23/11/2026): hallazgos y cambios.</strong> La severidad es la que propone el equipo con las notas que hay; se confirma con las siguientes sesiones.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">#</th>
+<th style="text-align: left;">Hallazgo (palabras del participante)</th>
+<th style="text-align: left;">Severidad</th>
+<th style="text-align: left;">Cambio (hecho el 24/11/2026)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">«Complicado de seguir»</td>
+<td style="text-align: left;">Mayor</td>
+<td style="text-align: left;">Activación por pasos («Paso 2 de 3»), una acción por pantalla; la escena explica qué hacer</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Falta una introducción que explique qué es</td>
+<td style="text-align: left;">Mayor</td>
+<td style="text-align: left;">Primera pantalla: qué es Zaqora y sus tres pasos</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">En iPhone, las instrucciones «no son intuitivas»</td>
+<td style="text-align: left;">Crítico (impide recibir avisos en iPhone)</td>
+<td style="text-align: left;">Instrucciones en 4 pasos con los íconos de Compartir y de Agregar; aviso si se abre fuera de Safari</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">«Se tiene que solicitar el análisis al ordenador»</td>
+<td style="text-align: left;">Crítico (sin análisis no hay posición real)</td>
+<td style="text-align: left;">Stockfish analiza cada derrota; nadie pide nada</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">«Solo es un ejercicio»; quiere que le cuente una historia de la partida</td>
+<td style="text-align: left;">Mayor (el valor del capítulo)</td>
+<td style="text-align: left;">Capítulos de hasta 3 encuentros con una historia de 3 partes escrita por IA</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">«El ícono del villano se repite para 3 facciones»</td>
+<td style="text-align: left;">Menor</td>
+<td style="text-align: left;">El villano cambia entre los reyes de los bandos rivales</td>
+</tr>
+</tbody>
+</table>
+<p>Después de la sesión, el equipo tomó una decisión de diseño que no vino del participante: <strong>el villano no puede ser quien te ayuda a vencerlo</strong>. Desde entonces el villano reta y reacciona, y las pistas las da un consejero del bando del jugador.</p>
+<p><strong>Lo que P1 respondió en la entrevista de cierre</strong> (citas textuales; se omiten los nombres propios):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pregunta</th>
+<th style="text-align: left;">Respuesta de P1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">La última vez que perdiste en Lichess, ¿qué hiciste justo después?</td>
+<td style="text-align: left;">«Cerrar la aplicación»</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cuando te llegó el aviso, ¿qué pensaste que era?</td>
+<td style="text-align: left;">«No entendí muy bien, se entendía como una forma de reto de parte del personaje en el programa»</td>
+</tr>
+<tr>
+<td style="text-align: left;">En el capítulo, ¿quién te estaba ayudando?</td>
+<td style="text-align: left;">Nombró al moderador, no al villano ni a un consejero</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Qué fue lo que más te costó?</td>
+<td style="text-align: left;">«Seguir las instrucciones para usarlo como app web»</td>
+</tr>
+<tr>
+<td style="text-align: left;">Si pudieras cambiar una sola cosa, ¿cuál sería?</td>
+<td style="text-align: left;">«Hacer más claras y completas las instrucciones»</td>
+</tr>
+<tr>
+<td style="text-align: left;">Si costara 59 pesos al mes, ¿qué tendría que pasar para que lo pagaras?</td>
+<td style="text-align: left;">«Ofrecer más ejercicios guiados y más explicación»</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿A quién se lo mandarías?</td>
+<td style="text-align: left;">Nombró a un conocido: «se lo mandaría si pudiera»</td>
+</tr>
+</tbody>
+</table>
+<p>Tres lecturas: al perder, P1 <strong>cierra la app</strong> en lugar de analizar, igual que los tres entrevistados de la semana 3; el aviso <strong>no se entendió solo</strong>, lo que respalda separar al villano (reta) del consejero (ayuda); y su primera respuesta sobre el pago apunta a <strong>más práctica guiada</strong>, no a la historia.</p>
+<p><strong>Segunda sesión (P2, 24/11/2026): hallazgos y cambios.</strong> Ya con la versión nueva: entrar con Lichess, primer contacto con las 5 derrotas y «Revisar mis partidas ahora». Tampoco se registraron tiempos ni SEQ.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">#</th>
+<th style="text-align: left;">Hallazgo</th>
+<th style="text-align: left;">Severidad (propuesta)</th>
+<th style="text-align: left;">Cambio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">No pudo manejar la aplicación solo</td>
+<td style="text-align: left;">Mayor (crítico si no terminó la tarea; no se anotó)</td>
+<td style="text-align: left;">Pendiente: ubicar en las próximas sesiones el paso donde se atora</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Al analizar sus derrotas, sintió que «tardaban mucho en dar el resultado»</td>
+<td style="text-align: left;">Mayor</td>
+<td style="text-align: left;">Inicio muestra el avance de la revisión por etapas (tiempos aproximados) y enseña el capítulo en cuanto llega, sin recargar</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">El botón «Jugar en Lichess» se sentía muy llamativo y le daban ganas de tocarlo</td>
+<td style="text-align: left;">Menor</td>
+<td style="text-align: left;">En Inicio pasó a botón secundario para no competir con el capítulo</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">En la revisión quiso navegar por sus jugadas: pidió un tablero de análisis con la partida completa</td>
+<td style="text-align: left;">Petición</td>
+<td style="text-align: left;">Pendiente: visor de la partida completa dentro del capítulo</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lo que se repite en P1 y P2:</strong> los dos necesitaron ayuda para empezar. La activación sigue siendo el problema principal y es lo primero que medirá T1 en las tres sesiones que faltan.</p>
+<p><strong>Sesiones 3 a 5 (P3, P4 y P5, 25/11/2026): hallazgos y cambios.</strong> P3 es jugador del segmento; P4 es un compañero del curso que casi no juega; P5 no juega ajedrez. <strong>P3 y P4 no tenían cuenta de Lichess</strong> y usaron una cuenta prestada del equipo, así que con ellos no se pudo medir el aviso ni la entrada. Los tiempos son aproximados, sacados de los audios y de los registros de la app.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">#</th>
+<th style="text-align: left;">Hallazgo</th>
+<th style="text-align: center;">Quién</th>
+<th style="text-align: left;">Severidad (propuesta)</th>
+<th style="text-align: left;">Cambio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">1</td>
+<td style="text-align: left;">«Revisar mis partidas ahora» dio error 500 («GitHub no pudo correr la revisión»)</td>
+<td style="text-align: center;">P3, P4</td>
+<td style="text-align: left;">Crítico</td>
+<td style="text-align: left;"><strong>Corregido el mismo 25/11/2026</strong>: la revisión volvió a correr sin errores</td>
+</tr>
+<tr>
+<td style="text-align: center;">2</td>
+<td style="text-align: left;">Sin cuenta de Lichess no hay aviso que probar: el reclutamiento debe pedir que jueguen en Lichess</td>
+<td style="text-align: center;">P3, P4</td>
+<td style="text-align: left;">Menor (del protocolo)</td>
+<td style="text-align: left;">Reclutar solo a quien juega en Lichess; la landing ya dice que se entra con la cuenta de Lichess</td>
+</tr>
+<tr>
+<td style="text-align: center;">3</td>
+<td style="text-align: left;">Los encuentros le costaron: 15 intentos fallidos y tuvo que ver la solución en 2 de 3</td>
+<td style="text-align: center;">P3</td>
+<td style="text-align: left;">Mayor</td>
+<td style="text-align: left;">Pendiente: pistas más graduales antes de mostrar la solución (también lo pidió P1)</td>
+</tr>
+<tr>
+<td style="text-align: center;">4</td>
+<td style="text-align: left;">Pidió iluminar las casillas a las que puede moverse una pieza</td>
+<td style="text-align: center;">P4</td>
+<td style="text-align: left;">Petición</td>
+<td style="text-align: left;">Pendiente: marcar las jugadas posibles al tocar una pieza</td>
+</tr>
+<tr>
+<td style="text-align: center;">5</td>
+<td style="text-align: left;">Los dos entendieron el concepto solos: «son como partidas de prueba… para practicar», «repites la partida con la que perdiste»; a P3 la landing le pareció «muy clean, intuitiva»</td>
+<td style="text-align: center;">P3, P4</td>
+<td style="text-align: left;">Positivo</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: center;">6</td>
+<td style="text-align: left;">Precio: P3 pagaría «porque quiero aprender», si le sobra el dinero; P4 no pagaría ni imaginando que juega</td>
+<td style="text-align: center;">P3, P4</td>
+<td style="text-align: left;">Señal</td>
+<td style="text-align: left;">La señal positiva viene del segmento; P4 está fuera</td>
+</tr>
+<tr>
+<td style="text-align: center;">7</td>
+<td style="text-align: left;">Le gustó, pero no la entendió del todo porque no juega ajedrez; se omitió la entrevista</td>
+<td style="text-align: center;">P5</td>
+<td style="text-align: left;">Fuera del segmento</td>
+<td style="text-align: left;">Ninguno: confirma que Zaqora es para quien ya juega</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lo que se repite en las cinco sesiones:</strong> nadie empezó solo (P1 y P2 con su cuenta; P3 y P4 sin cuenta de Lichess), pero los que juegan entendieron el reto en cuanto lo vieron. Lo que sigue sin medirse es lo más importante: si alguien que acaba de perder abre el aviso, y eso solo lo responde la prueba de campo.</p>
+<p><strong>Prueba de campo (la de la semana 8, en curso):</strong> además de la sesión de 30 minutos, los tres participantes del segmento dejan los avisos activos 3 a 5 días con el detector corriendo. Es la única forma de medir lo que la sesión no puede: si alguien que <strong>de verdad</strong> acaba de perder abre el aviso.</p>
+<details class="quote">
+<summary>Prompt 2 del curso — síntesis de pruebas de usuario (se ejecuta con las notas reales)</summary>
+<p>Actúa como investigador de usabilidad de productos conectados. Sintetizas observaciones sin defender el diseño: reportas lo que la gente hizo, no lo que dijo que le gustaba. Distingues el problema de su causa y no propones rediseños sin evidencia.</p>
+<p>Notas de [N] sesiones de prueba, una por usuario. Por cada tarea registramos: si completó sin ayuda, tiempo, errores, SEQ (1 a 7) y citas textuales.</p>
+<p>[pegar las notas]</p>
+<p>Entrega: (1) tabla por tarea con tasa de éxito sin ayuda, tiempo mediano y SEQ promedio; (2) hallazgos por severidad, con cuántos usuarios lo vivieron y una cita; (3) los tres cambios de mayor impacto con menor esfuerzo y la hipótesis que prueba cada uno; (4) lo que NO podemos concluir con esta muestra; (5) señal de negocio, separando compromisos reales (dejó datos, pre-registró, pagó) de opiniones.</p>
+</details>
+<h3 id="paso-3-go-to-market-y-economia-unitaria">Paso 3 — Go-to-market y economía unitaria</h3>
+<p><strong>Cliente número 1.</strong> Un jugador de Lichess mexicano, adulto, de 1200 a 1800, que juega varias veces por semana y que la semana pasada perdió tres partidas seguidas y cerró la sesión. Los cuatro rasgos del <em>early adopter</em>:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Rasgo</th>
+<th style="text-align: left;">En Zaqora</th>
+<th style="text-align: left;">Evidencia</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Tiene el dolor agudo</td>
+<td style="text-align: left;">Pierde rachas de partidas y rating</td>
+<td style="text-align: left;">Entrevistas de la semana 3: «Perdí tres partidas seguidas… apagué Lichess»</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ya intentó resolverlo</td>
+<td style="text-align: left;">Cierra la sesión o se aleja 20 minutos; revisa la partida sin motor</td>
+<td style="text-align: left;">Entrevistas de la semana 3</td>
+</tr>
+<tr>
+<td style="text-align: left;">Puede decidir y pagar</td>
+<td style="text-align: left;">El propio jugador paga; no hay comprador institucional</td>
+<td style="text-align: left;">Segmento de la semana 4</td>
+</tr>
+<tr>
+<td style="text-align: left;">Habla con otros como él</td>
+<td style="text-align: left;">Clubes, Discord, grupos de WhatsApp y <em>streamers</em> de ajedrez en español</td>
+<td style="text-align: left;">HIPÓTESIS: no medido</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Canales elegidos:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Canal</th>
+<th style="text-align: left;">Por qué</th>
+<th style="text-align: left;">Qué se aprende</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Venta directa</strong> a jugadores de clubes y conocidos (los primeros 20)</td>
+<td style="text-align: left;">David es maestro de ajedrez: es el canal con menos costo y más aprendizaje</td>
+<td style="text-align: left;">Objeciones, activación, uso real</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Landing con pre-registro y precio visible</strong></td>
+<td style="text-align: left;">Mide si alguien deja su correo por una promesa con precio, antes de programar los pagos</td>
+<td style="text-align: left;">Visitas → clics en el CTA → pre-registros</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Comunidades y <em>streamers</em> en español</strong> (siguiente paso)</td>
+<td style="text-align: left;">El jugador en <em>tilt</em> no busca ayuda: hay que llegarle donde ya está</td>
+<td style="text-align: left;">Costo por usuario activado</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Sin cobro anticipado.</strong> Durante el curso solo se mide intención con pre-registro y precio visible. Cobrar exige RFC, CFDI y cumplir la LFPC en suscripciones (Paso 4).</p>
+<p><strong>Economía unitaria.</strong> Zaqora no tiene hardware subsidiado, así que la inversión por cliente es solo el CAC. Cada cifra va marcada como <strong>medida</strong> (sale de una fuente o de un precio verificado) o <strong>supuesta</strong> (no se ha medido).</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Dato</th>
+<th style="text-align: right;">Valor</th>
+<th style="text-align: left;">Origen</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Precio de suscripción</td>
+<td style="text-align: right;">$59 MXN al mes con IVA</td>
+<td style="text-align: left;">Decisión de la semana 7 · <strong>supuesto</strong> (no validado con usuarios)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ingreso neto por suscriptor (sin IVA ni comisión de Stripe)</td>
+<td style="text-align: right;">$44.92</td>
+<td style="text-align: left;">Precios de Stripe MX verificados (semana 7) · <strong>medido</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;">Costo operativo por usuario activo</td>
+<td style="text-align: right;">$0.80 al mes</td>
+<td style="text-align: left;">Modelo vigente a 100 usuarios (semana 8) · <strong>medido</strong> sobre precios verificados</td>
+</tr>
+<tr>
+<td style="text-align: left;">Conversión de activo a pago</td>
+<td style="text-align: right;">5 %</td>
+<td style="text-align: left;"><strong>Supuesto</strong> (semana 7)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Horas para activar a un usuario</td>
+<td style="text-align: right;">0.25 h (15 min)</td>
+<td style="text-align: left;"><strong>Supuesto</strong>: mensajes, explicación y activación de avisos</td>
+</tr>
+<tr>
+<td style="text-align: left;">Costo de la hora del equipo</td>
+<td style="text-align: right;">$80 MXN</td>
+<td style="text-align: left;"><strong>Supuesto</strong> (tarifa del ejemplo del curso)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Churn mensual</td>
+<td style="text-align: right;">10 %</td>
+<td style="text-align: left;"><strong>Supuesto</strong>: no hay ningún suscriptor todavía</td>
+</tr>
+</tbody>
+</table>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Usuarios activos por cada usuario de pago = 1 ÷ 0.05                     = 20
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>Costo operativo por usuario de pago       = 20 × $0.80                    = $16.00
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>Contribución mensual                      = 44.92 − 16.00                  = $28.92
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>CAC                                       = 20 usuarios × 0.25 h × $80      = $400
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>Inversión por cliente                     = CAC + hardware (0)             = $400
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>Vida media                                = 1 ÷ 0.10                       = 10 meses
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>LTV                                       = 28.92 × 10                     = $289
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>LTV ÷ inversión                           = 289 ÷ 400                      = 0.72
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>Payback                                   = 400 ÷ 28.92                    = 13.8 meses
+</span></code></pre></div>
+<p><strong>Lectura:</strong> con estos supuestos <strong>no cierra</strong>: LTV ÷ inversión de 0.72 contra la regla de 3, y payback de 13.8 meses contra la regla de 12. El costo de la nube no es el problema ($0.80 por usuario); el problema es que cada suscriptor cuesta 20 usuarios activados.</p>
+<p><strong>Qué palanca mueve más</strong> (cada insumo cambia 25 % por separado):</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Cambio de 25 %</th>
+<th style="text-align: center;">LTV ÷ inversión</th>
+<th style="text-align: center;">Payback</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Caso base</td>
+<td style="text-align: center;">0.72</td>
+<td style="text-align: center;">13.8 meses</td>
+</tr>
+<tr>
+<td style="text-align: left;">Precio sube a $73.75</td>
+<td style="text-align: center;">1.03</td>
+<td style="text-align: center;">9.8</td>
+</tr>
+<tr>
+<td style="text-align: left;">Precio baja a $44.25</td>
+<td style="text-align: center;">0.42</td>
+<td style="text-align: center;">23.8</td>
+</tr>
+<tr>
+<td style="text-align: left;">Conversión sube a 6.25 %</td>
+<td style="text-align: center;">1.00</td>
+<td style="text-align: center;">10.0</td>
+</tr>
+<tr>
+<td style="text-align: left;">Conversión baja a 3.75 %</td>
+<td style="text-align: center;">0.44</td>
+<td style="text-align: center;">22.6</td>
+</tr>
+<tr>
+<td style="text-align: left;">Churn baja a 7.5 %</td>
+<td style="text-align: center;">0.96</td>
+<td style="text-align: center;">13.8</td>
+</tr>
+<tr>
+<td style="text-align: left;">Churn sube a 12.5 %</td>
+<td style="text-align: center;">0.58</td>
+<td style="text-align: center;">13.8</td>
+</tr>
+<tr>
+<td style="text-align: left;">CAC baja a $300</td>
+<td style="text-align: center;">0.96</td>
+<td style="text-align: center;">10.4</td>
+</tr>
+<tr>
+<td style="text-align: left;">CAC sube a $500</td>
+<td style="text-align: center;">0.58</td>
+<td style="text-align: center;">17.3</td>
+</tr>
+</tbody>
+</table>
+<p>El <strong>precio</strong> y la <strong>conversión</strong> mueven más que el churn y el CAC. La conversión pesa doble porque cambia al mismo tiempo el CAC y la contribución: cada usuario de pago carga menos usuarios gratuitos.</p>
+<p><strong>Tres palancas concretas:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Palanca</th>
+<th style="text-align: left;">Qué la sostiene</th>
+<th style="text-align: center;">LTV ÷ inversión</th>
+<th style="text-align: center;">Payback</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Conversión de 5 % a 10 %</strong></td>
+<td style="text-align: left;">Tope de capítulos gratis y cobro fuera del momento de la derrota (semana 7)</td>
+<td style="text-align: center;">1.85</td>
+<td style="text-align: center;">5.4 meses</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>+ churn de 10 % a 6 %</strong></td>
+<td style="text-align: left;">Valor que se acumula: el elenco de villanos y el historial de cada jugador</td>
+<td style="text-align: center;"><strong>3.08</strong></td>
+<td style="text-align: center;">5.4 meses</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Conversión de 10 % y activación en 9 minutos</strong> (en lugar de 15)</td>
+<td style="text-align: left;">Activación sin ayuda (T1) y llegada por comunidades</td>
+<td style="text-align: center;"><strong>3.08</strong></td>
+<td style="text-align: center;">3.3 meses</td>
+</tr>
+</tbody>
+</table>
+<p>Llegar a 3 necesita <strong>dos</strong> palancas, y las dos dependen de algo que no se ha medido. Eso es lo que se va a ir a medir en el piloto: qué tasa de conversión y cuánto tiempo de activación son reales.</p>
+<details class="quote">
+<summary>Prompt 3 del curso — economía unitaria (con los datos de Zaqora)</summary>
+<p>Actúa como analista financiero de startups de software con suscripción. Calculas con los números que te dan, muestras la aritmética completa y no completas datos faltantes con supuestos propios: si falta uno, lo pides. Cuando el resultado no cierra, no lo suavizas.</p>
+<p>Datos de nuestro modelo (semanas 7 y 8): precio de suscripción mensual $59 MXN con IVA ($44.92 netos); costo operativo mensual por usuario activo $0.80; sin hardware.<br />
+Datos de adquisición: conversión de activo a pago 5 % (supuesto); 0.25 h por usuario activado a $80 la hora (supuesto); sin viáticos ni publicidad; churn mensual esperado 10 % (supuesto).</p>
+<p>Calcula: CAC, contribución mensual, vida media, LTV, inversión por cliente, LTV ÷ inversión y payback. Después: si cumple la regla práctica; cuál de los insumos mueve más el resultado, cambiando cada uno 25 % por separado; y tres palancas concretas con su efecto numérico. Formato: tabla de cálculo y después máximo 8 líneas de lectura.</p>
+</details>
+<p><strong>Costos después del 24/11/2026:</strong> el detector en GitHub Actions no cuesta nada (el repositorio es público) y la IA sigue dentro de la capa gratuita de Cloudflare (T4). El costo operativo por usuario no cambia.</p>
+<p><strong>Landing.</strong> Se construyó con la anatomía de la clase y está publicada en <a href="../landing/"><code>…/landing/</code></a> desde el 24/11/2026, con el video real del prototipo en el lugar del celular:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Elemento</th>
+<th style="text-align: left;">En la landing de Zaqora</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Headline</td>
+<td style="text-align: left;">«Perdiste en Lichess. Tu villano ya sabe dónde fue.» y, debajo, la propuesta de valor de la semana 4</td>
+</tr>
+<tr>
+<td style="text-align: left;">Visual</td>
+<td style="text-align: left;">La escena real del prototipo (sellada y despierta) en un celular</td>
+</tr>
+<tr>
+<td style="text-align: left;">Tres beneficios</td>
+<td style="text-align: left;">No tienes que analizar en caliente · Tu error de siempre tiene cara y se puede vencer · Sin rating ni comparaciones</td>
+</tr>
+<tr>
+<td style="text-align: left;">Demo corta</td>
+<td style="text-align: left;">✅ Video de 35 s grabado en el prototipo: derrota real en Lichess → «Revisar mis partidas ahora» → notificación del villano → capítulo con el consejero (la espera de 34 s va acelerada). Está en la <a href="../landing/">landing</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Evidencia</td>
+<td style="text-align: left;">Cita de las entrevistas de la semana 3</td>
+</tr>
+<tr>
+<td style="text-align: left;">Precio visible</td>
+<td style="text-align: left;">$59 MXN al mes con IVA; los primeros capítulos, gratis; sin cobro durante la beta</td>
+</tr>
+<tr>
+<td style="text-align: left;">Un solo CTA</td>
+<td style="text-align: left;">«Quiero entrar a la beta»: pre-registro con correo</td>
+</tr>
+<tr>
+<td style="text-align: left;">Metadatos</td>
+<td style="text-align: left;"><code>title</code>, <code>description</code> y Open Graph con la captura de la escena</td>
+</tr>
+<tr>
+<td style="text-align: left;">Métricas</td>
+<td style="text-align: left;">Visitas, clics en el CTA y pre-registros, en Supabase (tabla <code>eventos</code> y tabla <code>preregistros</code>, solo inserción)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Aviso de privacidad</td>
+<td style="text-align: left;">Página aparte con los seis elementos del artículo 15 de la LFPDPPP</td>
+</tr>
+</tbody>
+</table>
+<h3 id="paso-4-regulacion-minima-viable">Paso 4 — Regulación mínima viable</h3>
+<p>Checklist hecho con búsqueda en fuentes oficiales el 23/11/2026. Zaqora es software, así que radio, NOM, baterías y REP no aplican. <strong>No es asesoría legal: es una ruta de verificación.</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tema</th>
+<th style="text-align: center;">¿Aplica?</th>
+<th style="text-align: left;">Qué exige</th>
+<th style="text-align: left;">Documento o trámite</th>
+<th style="text-align: left;">Quién lo emite</th>
+<th style="text-align: left;">Costo y tiempo</th>
+<th style="text-align: left;">Estatus</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Radio y homologación</strong></td>
+<td style="text-align: center;">No</td>
+<td style="text-align: left;">Zaqora no tiene radio propia: usa el celular del jugador</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">No aplica</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Datos personales</strong></td>
+<td style="text-align: center;"><strong>Sí</strong></td>
+<td style="text-align: left;"><em>(24/11/2026: desde que se entra con Lichess, Supabase guarda el usuario de Lichess con sus capítulos; GitHub analiza las partidas. El <a href="../prototipo/privacidad.html">aviso de privacidad de la app</a> ya está publicado y lo declara.)</em> Aviso de privacidad desde que se recaban los datos, con 6 elementos mínimos: identidad y domicilio del responsable, datos tratados, finalidades, opciones para limitar su uso, medios para los derechos ARCO y cómo se avisan los cambios (art. 15). Respuesta a una solicitud ARCO en máximo 20 días y aplicarla en los 15 siguientes (art. 31). La autoridad es la Secretaría Anticorrupción y Buen Gobierno (art. 2, fr. XV).</td>
+<td style="text-align: left;">Aviso de privacidad (lo redacta el responsable)</td>
+<td style="text-align: left;">David López Ramírez, como responsable</td>
+<td style="text-align: left;">Sin costo; ya redactado para la landing</td>
+<td style="text-align: left;"><strong>VERIFICADO</strong> · <a href="https://www.diputados.gob.mx/LeyesBiblio/ref/lfpdppp.htm">LFPDPPP, texto vigente</a> (DOF 20-03-2025, vigente desde el día siguiente; última reforma DOF 14-11-2025)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Seguridad, etiquetado y baterías</strong></td>
+<td style="text-align: center;">No</td>
+<td style="text-align: left;">Sin producto físico</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">No aplica</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Licencia de Stockfish</strong> (rival y análisis)</td>
+<td style="text-align: center;"><strong>Sí</strong></td>
+<td style="text-align: left;">GPLv3: al distribuir el binario WASM hay que ofrecer su código fuente correspondiente y el aviso de licencia, sin restricciones adicionales (secciones 5, 6 y 10)</td>
+<td style="text-align: left;">Enlace a la fuente exacta del <em>build</em> y aviso en la app (ya lo exige RR-03)</td>
+<td style="text-align: left;">El equipo</td>
+<td style="text-align: left;">Sin costo</td>
+<td style="text-align: left;"><strong>VERIFICADO</strong> · <a href="https://github.com/official-stockfish/Stockfish/blob/master/Copying.txt">Copying.txt de Stockfish</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Licencia de Mistral Small 3.1</strong> (narrador desde el 24/11/2026)</td>
+<td style="text-align: center;"><strong>Sí</strong></td>
+<td style="text-align: left;">Apache 2.0: uso comercial permitido; conservar el aviso de licencia solo si se redistribuye el modelo (Zaqora lo usa como servicio, sin redistribuirlo). Ya no hace falta «Built with Llama»: Llama 3.1 8B se retiró de Workers AI</td>
+<td style="text-align: left;">Ninguno mientras no se redistribuya</td>
+<td style="text-align: left;">El equipo</td>
+<td style="text-align: left;">Sin costo</td>
+<td style="text-align: left;"><strong>VERIFICADO</strong> · <a href="https://huggingface.co/mistralai/Mistral-Small-3.1-24B-Instruct-2503">ficha oficial del modelo</a> («License: apache-2.0»)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Entrar con Lichess</strong> (OAuth)</td>
+<td style="text-align: center;"><strong>Sí</strong></td>
+<td style="text-align: left;">Lichess acepta aplicaciones sin registro (cliente público con PKCE); el token dura alrededor de un año y se puede anular</td>
+<td style="text-align: left;">Sin trámite; «Salir» anula el token</td>
+<td style="text-align: left;">Lichess</td>
+<td style="text-align: left;">Sin costo</td>
+<td style="text-align: left;"><strong>VERIFICADO</strong> · <a href="https://lichess.org/api#tag/oauth">documentación OAuth de la API de Lichess</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Cloudflare Workers AI</strong></td>
+<td style="text-align: center;"><strong>Sí</strong></td>
+<td style="text-align: left;">No usa el contenido de los clientes para entrenar modelos; no retiene entradas ni salidas en la inferencia estándar</td>
+<td style="text-align: left;">Declararlo en el aviso de privacidad como encargado</td>
+<td style="text-align: left;">Cloudflare</td>
+<td style="text-align: left;">Capa gratuita</td>
+<td style="text-align: left;"><strong>VERIFICADO</strong> · <a href="https://developers.cloudflare.com/workers-ai/platform/data-usage/">Data usage de Workers AI</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>API de Lichess</strong></td>
+<td style="text-align: center;"><strong>Sí</strong></td>
+<td style="text-align: left;">Se permite el uso personal y comercial de sus servicios, API incluida, con límites razonables que decide Lichess; el abuso de la API está prohibido y el acceso se puede revocar sin aviso</td>
+<td style="text-align: left;">Respetar límites (1 petición a la vez, esperar tras un 429)</td>
+<td style="text-align: left;">Lichess</td>
+<td style="text-align: left;">Sin costo</td>
+<td style="text-align: left;"><strong>VERIFICADO</strong> · <a href="https://lichess.org/terms-of-service">Terms of Service de Lichess</a> (01/08/2026)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Términos de venta y consumidor</strong></td>
+<td style="text-align: center;"><strong>Sí</strong></td>
+<td style="text-align: left;">En comercio electrónico: domicilio físico, teléfonos y medios para reclamar antes de la transacción; conocer términos, costos y cargos; informar de forma clara y destacada los <strong>cobros automáticos recurrentes</strong> (periodicidad, monto y fecha), con consentimiento expreso; avisar al menos <strong>5 días naturales antes de una renovación automática</strong> y permitir <strong>cancelar de inmediato</strong> (art. 76 BIS, fr. III, V, VIII y IX; las dos últimas, DOF 12-12-2025)</td>
+<td style="text-align: left;">Términos de servicio y flujo de cancelación en la app</td>
+<td style="text-align: left;">El equipo (PROFECO vigila)</td>
+<td style="text-align: left;">Sin costo</td>
+<td style="text-align: left;"><strong>VERIFICADO</strong> · <a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LFPC.pdf">LFPC, texto vigente</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Pagos con tarjeta</strong></td>
+<td style="text-align: center;">Al cobrar</td>
+<td style="text-align: left;">Cuenta de Stripe México verificada</td>
+<td style="text-align: left;">Alta en Stripe</td>
+<td style="text-align: left;">Stripe</td>
+<td style="text-align: left;">3.6 % + $3 MXN por cobro (verificado en la semana 7)</td>
+<td style="text-align: left;"><strong>POR VERIFICAR</strong> · requisitos de alta (RFC, cuenta bancaria) no publicados en <a href="https://stripe.com/mx">stripe.com/mx</a></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Obligaciones fiscales</strong></td>
+<td style="text-align: center;">Al cobrar</td>
+<td style="text-align: left;">RFC con actividad, CFDI e IVA de 16 % en servicios digitales</td>
+<td style="text-align: left;">Inscripción en el RFC</td>
+<td style="text-align: left;">SAT</td>
+<td style="text-align: left;">Sin dato verificado</td>
+<td style="text-align: left;"><strong>POR VERIFICAR</strong> · el portal del SAT no se pudo consultar; confirmar con el SAT o un contador</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Google Play</strong></td>
+<td style="text-align: center;">Si se publica ahí</td>
+<td style="text-align: left;">Prueba cerrada con 12 testers durante 14 días (cuentas personales) y facturación de Google obligatoria en bienes digitales (15 % en suscripciones)</td>
+<td style="text-align: left;">Cuenta de desarrollador</td>
+<td style="text-align: left;">Google</td>
+<td style="text-align: left;">US$25, pago único</td>
+<td style="text-align: left;"><strong>VERIFICADO</strong> en la semana 8 (Ayuda de Play Console)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Economía circular</strong></td>
+<td style="text-align: center;">No</td>
+<td style="text-align: left;">Sin residuos físicos; el equivalente es borrar los datos del usuario (derechos ARCO)</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">No aplica</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Exportación</strong></td>
+<td style="text-align: center;">No, por ahora</td>
+<td style="text-align: left;">Se vende primero en México</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">—</td>
+<td style="text-align: left;">No aplica</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Marca</strong></td>
+<td style="text-align: center;"><strong>Sí</strong></td>
+<td style="text-align: left;">Registro de «Zaqora» en las clases 9 y 41</td>
+<td style="text-align: left;">Solicitud de registro de marca</td>
+<td style="text-align: left;">IMPI</td>
+<td style="text-align: left;">Sin dato verificado</td>
+<td style="text-align: left;"><strong>POR VERIFICAR</strong> · la búsqueda de la semana 3 no encontró registros; la solicitud no se ha presentado</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Qué se puede hacer en una prueba de mercado de 5 a 10 usuarios</strong> (sin cobrar):</p>
+<ul>
+<li>Pre-registro en la landing con el aviso de privacidad publicado.</li>
+<li>Prueba del prototipo con consentimiento por escrito y solo mayores de edad. Desde el 24/11/2026 el usuario de Lichess sí se guarda (al entrar con Lichess), con el aviso de privacidad publicado.</li>
+<li>Usar la API de Lichess dentro de sus límites.</li>
+</ul>
+<p><strong>Qué debe estar resuelto antes de vender a un tercero:</strong></p>
+<ul>
+<li>RFC y CFDI (SAT) y la cuenta de Stripe verificada.</li>
+<li>Términos de servicio con domicilio físico y teléfono, cobro recurrente explicado, aviso 5 días antes de renovar y cancelación inmediata en la app (LFPC 76 BIS).</li>
+<li>~~Aviso de privacidad de la app completa~~ — publicado el 24/11/2026.</li>
+<li>El enlace a la fuente de Stockfish dentro de la app.</li>
+<li>Solicitud de marca en el IMPI.</li>
+</ul>
+<h3 id="paso-5-el-pitch-de-3-minutos">Paso 5 — El pitch de 3 minutos</h3>
+<p><strong>Guion</strong> (352 palabras, 2:42 hablados a 130 palabras por minuto; quedan 18 segundos de aire). Versión del 24/11/2026: las partes 2, 3 y 4 cambiaron con el prototipo nuevo, y la 4 suma la segunda sesión y una respuesta de P1.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Parte</th>
+<th style="text-align: left;">Guion</th>
+<th style="text-align: center;">Palabras</th>
+<th style="text-align: center;">Segundos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>1. Impacto y problema</strong> (35 s)</td>
+<td style="text-align: left;">Un jugador de Lichess nos contó que perdió tres partidas seguidas y apagó todo. No las analizó, porque, en sus palabras, «sabía que iba a buscar excusas». Otro puede pasar una hora jugando partidas que no quería, solo para recuperar la anterior. Esa racha le cuesta rating y tiempo, y una clase particular de 229 pesos la hora no llega en el momento en que todo se rompe: justo después de perder.</td>
+<td style="text-align: center;">72</td>
+<td style="text-align: center;">33.2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>2. Solución y por qué nosotros</strong> (35 s)</td>
+<td style="text-align: left;">Zaqora llega en ese momento. Minutos después de tu derrota, un villano que encarna tu error de siempre te reta a volver a esa partida, y un consejero de tu bando te ayuda a encontrar lo que se te escapó. Chess.com te da un análisis frío cuando estás enojado; Zaqora primero reconoce que dolió, sin rating ni comparaciones. En la demostración verán llegar ese reto.</td>
+<td style="text-align: center;">65</td>
+<td style="text-align: center;">30.0</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3. Mercado y modelo</strong> (35 s)</td>
+<td style="text-align: left;">En México estimamos 66 mil jugadores en línea que se frustran al perder y pagarían por mejorar. Cobramos 59 pesos al mes, menos que Chess.com o Duolingo. Como el análisis corre en servidores gratuitos y el narrador usa una capa gratuita de inteligencia artificial, cada usuario activo nos cuesta 80 centavos al mes. Con 50 suscriptores al quinto año, la inversión se recupera en el mes 21.</td>
+<td style="text-align: center;">67</td>
+<td style="text-align: center;">30.9</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4. Tracción</strong> (35 s)</td>
+<td style="text-align: left;">Entrevistamos a tres jugadores, y los tres, después de perder, dejan de jugar en lugar de analizar. Ya lo probaron cinco personas. Al primero le preguntamos qué hizo tras su última derrota y respondió: «cerrar la aplicación». Con lo que vimos cambiamos el producto: ahora entras con tu cuenta de Lichess y tus últimas cinco derrotas se vuelven capítulos. Lo que aún no sabemos es si abren el reto justo después de perder.</td>
+<td style="text-align: center;">73</td>
+<td style="text-align: center;">33.7</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5. Equipo</strong> (15 s)</td>
+<td style="text-align: left;">Soy David López: ingeniero mecatrónico, desarrollador y maestro de ajedrez. Diseñé, programé y calculé solo todo lo que verán hoy, y sigo después del curso.</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">11.5</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>6. Ask y cierre</strong> (25 s)</td>
+<td style="text-align: left;">Pedimos cinco jugadores de Lichess que reciban el aviso durante una semana, y un club o streamer en español para un piloto de 20 usuarios. En 90 días mediremos si abren el aviso y si uno de cada veinte paga. Cuando pierdes, Zaqora convierte esa derrota en tu próximo capítulo.</td>
+<td style="text-align: center;">50</td>
+<td style="text-align: center;">23.1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: center;"><strong>352</strong></td>
+<td style="text-align: center;"><strong>162.4</strong></td>
+</tr>
+</tbody>
+</table>
+<p>La confesión honesta es una sola: todavía no se sabe si el jugador abre el reto justo después de perder (la prueba de campo está en curso y aún no hay resultados). Las palabras prohibidas (innovador, plataforma, solución integral, revolucionario) no aparecen.</p>
+<p><strong>Evidencia de cada cifra:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Afirmación</th>
+<th style="text-align: left;">Fuente</th>
+<th style="text-align: left;">Estado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Perdió tres partidas seguidas y «sabía que iba a buscar excusas»</td>
+<td style="text-align: left;">Entrevistas 2 y 3, semana 3</td>
+<td style="text-align: left;">Evidencia</td>
+</tr>
+<tr>
+<td style="text-align: left;">Una hora jugando partidas que no quería</td>
+<td style="text-align: left;">Entrevista 1, semana 3</td>
+<td style="text-align: left;">Evidencia</td>
+</tr>
+<tr>
+<td style="text-align: left;">Clase particular de 229 pesos la hora</td>
+<td style="text-align: left;">Precio promedio en México, semana 2</td>
+<td style="text-align: left;">Evidencia (fuentes de la semana 2)</td>
+</tr>
+<tr>
+<td style="text-align: left;">66 mil jugadores que se frustran y pagarían</td>
+<td style="text-align: left;">SAM de 65,952, semana 4</td>
+<td style="text-align: left;"><strong>PENDIENTE</strong>: tres filtros del embudo son supuestos propios</td>
+</tr>
+<tr>
+<td style="text-align: left;">59 pesos, menos que Chess.com ($101–253) o Duolingo ($129)</td>
+<td style="text-align: left;">Benchmarking, semana 7</td>
+<td style="text-align: left;">Evidencia</td>
+</tr>
+<tr>
+<td style="text-align: left;">80 centavos por usuario activo al mes</td>
+<td style="text-align: left;">Modelo vigente a 100 usuarios, semana 8</td>
+<td style="text-align: left;">Evidencia (a 20 usuarios son $4.00)</td>
+</tr>
+<tr>
+<td style="text-align: left;">50 suscriptores al año 5; recuperación en el mes 21</td>
+<td style="text-align: left;">Flujo de caja a 5 años, semana 8</td>
+<td style="text-align: left;"><strong>PENDIENTE</strong>: conversión y crecimiento supuestos</td>
+</tr>
+<tr>
+<td style="text-align: left;">Los tres dejan de jugar en lugar de analizar</td>
+<td style="text-align: left;">Entrevistas, semana 3</td>
+<td style="text-align: left;">Evidencia (muestra de 3)</td>
+</tr>
+<tr>
+<td style="text-align: left;">El prototipo funciona de punta a punta</td>
+<td style="text-align: left;">Prueba de funcionamiento del 15/10/2026 (semana 8) y flujo completo con cuenta de Lichess el 24/11/2026</td>
+<td style="text-align: left;">Evidencia</td>
+</tr>
+<tr>
+<td style="text-align: left;">Ya lo probaron cinco personas y lo que vimos cambió el producto</td>
+<td style="text-align: left;">Sesiones P1 a P5, Paso 2</td>
+<td style="text-align: left;">Evidencia (5 sesiones)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Al perder, P1 «cerrar la aplicación»</td>
+<td style="text-align: left;">Entrevista de cierre de P1, Paso 2</td>
+<td style="text-align: left;">Evidencia (1 respuesta)</td>
+</tr>
+<tr>
+<td style="text-align: left;">Las últimas cinco derrotas se vuelven capítulos</td>
+<td style="text-align: left;">Primer contacto probado con la cuenta del equipo (J1) el 24/11/2026</td>
+<td style="text-align: left;">Evidencia</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Las preguntas más difíciles del jurado:</strong></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pregunta</th>
+<th style="text-align: left;">Respuesta corta</th>
+<th style="text-align: left;">Dónde está</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">¿Cuánto cuesta servir a un usuario y cómo lo sabes?</td>
+<td style="text-align: left;">$0.80 al mes a 100 usuarios y $4.00 a 20, con precios verificados en las páginas de cada proveedor</td>
+<td style="text-align: left;">Semanas 7 y 8 (BOM y DFM)</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Por qué no lo hace Chess.com?</td>
+<td style="text-align: left;">Su análisis llega frío y con evaluación numérica; Zaqora apuesta a que el jugador en <em>tilt</em> no quiere eso. El competidor más peligroso no es Chess.com, es cerrar la app</td>
+<td style="text-align: left;">Semana 4 (mapa competitivo y lienzo)</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Qué pasa si se acaba la IA gratuita o sube su precio?</td>
+<td style="text-align: left;">La capa gratuita alcanza para unos 390 usuarios (tokens medidos); si la IA falla o el modelo desaparece, el villano y el consejero hablan con plantillas. Pasó de verdad: Cloudflare retiró Llama 3.1 y Zaqora siguió funcionando</td>
+<td style="text-align: left;">Paso 1 (T4, T5)</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Cuántos clientes necesitas para no perder dinero?</td>
+<td style="text-align: left;">2 suscriptores recuperan la inversión del año 1; la economía por cliente pide conversión de 10 % y churn de 6 % para llegar a 3</td>
+<td style="text-align: left;">Semanas 7 y 8, Paso 3</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Qué necesitas para vender legalmente?</td>
+<td style="text-align: left;">Aviso de privacidad (listo), términos con cobro recurrente y cancelación inmediata (LFPC 76 BIS), RFC y CFDI, Stripe verificado</td>
+<td style="text-align: left;">Paso 4</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Qué hace que un jugador no cancele?</td>
+<td style="text-align: left;">HIPÓTESIS: que el elenco de villanos y su historial se vuelvan suyos. No hay datos de churn</td>
+<td style="text-align: left;">Paso 3</td>
+</tr>
+</tbody>
+</table>
+<details class="quote">
+<summary>Prompt 5 del curso — guion de pitch (con el material de Zaqora)</summary>
+<p>Actúa como coach de pitch para fundadores técnicos, con experiencia en jurados de aceleradoras. Tu objetivo es que el pitch venda: que el jurado sienta el problema, quiera el producto, crea los números y sepa qué se le pide. Cada afirmación tiene evidencia detrás; sin evidencia no hay afirmación, hay un pendiente. Prefieres una persona o una cifra a un adjetivo.</p>
+<p>Propuesta de valor (semana 4): «Cuando pierdes en Lichess y estás por cerrar la app, Zaqora valida tu frustración y la convierte en el próximo capítulo de tu historia.»<br />
+Usuario y evidencia (semana 3): 3 entrevistas; citas «No intenté analizar las partidas en ese momento porque sabía que iba a buscar excusas» y «Puedo pasar una hora jugando partidas que realmente no quería jugar».<br />
+Mercado (semana 4): TAM 82,440, SAM 65,952, SOM 1,200 personas, con tres filtros supuestos.<br />
+Modelo: $59 MXN al mes con IVA; $0.80 por usuario activo; LTV ÷ inversión 0.72; payback 13.8 meses.<br />
+Evidencia de pruebas: prototipo probado de punta a punta por el equipo; ninguna prueba con usuarios externos todavía; ningún pre-registro.<br />
+Equipo: David López Ramírez, una sola persona.<br />
+Ask: 5 jugadores para la prueba y un club o <em>streamer</em> para un piloto de 20 usuarios durante 90 días.</p>
+<p>Escribe el guion de 3 minutos con el presupuesto de 35, 35, 35, 35, 15 y 25 segundos (76, 76, 76, 76, 32 y 54 palabras; total entre 330 y 360). Después entrega (a) las afirmaciones sin evidencia marcadas como PENDIENTE y (b) las 5 preguntas más difíciles del jurado y de dónde sale la respuesta.</p>
+</details>
+<h3 id="paso-6-la-demo-de-7-minutos">Paso 6 — La demo de 7 minutos</h3>
+<p>La demo recorre un solo camino: el jugador entra con Lichess, recibe sus capítulos, pierde en vivo, le llega el reto del villano y termina en la landing. Necesita <strong>dos personas</strong>: David narra y un compañero opera el celular (ya no hace falta la laptop para el detector). <em>Versión del 24/11/2026.</em></p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Tiempo</th>
+<th style="text-align: left;">Quién</th>
+<th style="text-align: left;">Qué se hace y se dice</th>
+<th style="text-align: left;">Plan B</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>0:00–0:45</strong> · Contexto</td>
+<td style="text-align: left;">Narrador</td>
+<td style="text-align: left;">Muestra el celular. «Este jugador acaba de perder tres partidas. Les voy a mostrar el camino completo: pierde, el villano le escribe, enfrenta su error y decide si lo compra.»</td>
+<td style="text-align: left;">Captura de la escena sellada</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>0:45–3:15</strong> · Camino principal</td>
+<td style="text-align: left;">Operador</td>
+<td style="text-align: left;">En el celular de demo (con la sesión de Lichess iniciada antes), abre Inicio: están los capítulos de sus últimas 5 derrotas. Abre uno: el villano cuenta la historia, «Muéstrame», el villano reta, el consejero del bando guía y el operador resuelve el primer encuentro. Narrador: «el villano no te ayuda; te ayuda alguien de tu lado».</td>
+<td style="text-align: left;">Video de respaldo de este tramo (90 s)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>3:15–4:45</strong> · Provocar el evento</td>
+<td style="text-align: left;">Operador</td>
+<td style="text-align: left;">Pierde en vivo una partida <strong>casual contra la computadora de Lichess</strong> (no contra otra cuenta: abandonar a propósito contra una persona viola las reglas de juego limpio de Lichess). En Inicio toca <strong>«Revisar mis partidas ahora»</strong>: en 1 o 2 minutos llega el reto del villano con <strong>esa</strong> partida, ya analizada por Stockfish. Narrador: «solo, el detector revisa por su cuenta varias veces al día; el botón lo adelanta para que lo vean».</td>
+<td style="text-align: left;">Capítulo de una derrota del día anterior y video</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>4:45–5:45</strong> · Fallo manejado</td>
+<td style="text-align: left;">Operador</td>
+<td style="text-align: left;">Pone el celular en modo avión y se envía otro aviso: no llega. Quita el modo avión: el aviso llega solo, porque el servicio push lo guarda hasta 1 hora. Narrador: «si pasa más de una hora sin red, el aviso ya no llega, y es a propósito: un aviso tardío ya no es "justo después de perder"».</td>
+<td style="text-align: left;">Video de la prueba T3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>5:45–6:30</strong> · La compra</td>
+<td style="text-align: left;">Narrador</td>
+<td style="text-align: left;">Muestra un QR. El jurado abre la landing en su teléfono: headline, precio de 59 pesos al mes y el botón de pre-registro. Un integrante del jurado o el operador deja su correo y se ve entrar el registro en Supabase.</td>
+<td style="text-align: left;">Captura de la landing y de la tabla de pre-registros</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>6:30–7:00</strong> · Cierre</td>
+<td style="text-align: left;">Narrador</td>
+<td style="text-align: left;">«Hoy funciona esto: entras con Lichess, tus derrotas se vuelven capítulos y el reto llega solo. Falta esto: saber si alguien que de verdad acaba de perder abre el reto. Siguiente paso: cuatro jugadores más esta semana y un piloto de 20.»</td>
+<td style="text-align: left;">Ninguno: es solo voz</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Atajos que se declaran en voz alta:</strong> «Revisar mis partidas ahora» adelanta la revisión que el detector hace solo varias veces al día, y la sesión de Lichess del celular de demo se inició antes de la presentación.</p>
+<p><strong>Lista de verificación 15 minutos antes:</strong> celular cargado; hotspot propio probado (no depender del Wi-Fi del salón); sesión de Lichess iniciada y avisos activados en el celular de demo; la última corrida de GitHub Actions en verde; capítulo de respaldo de una derrota del día anterior; landing abierta en una pestaña y QR impreso; videos de respaldo en el celular y en la laptop; proyección y cronómetro probados.</p>
+<h3 id="paso-7-ruta-de-cierre">Paso 7 — Ruta de cierre</h3>
+<p>Equipo de una persona: todas las tareas son de David, salvo la ayuda del operador en los ensayos y la demo.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Semana de trabajo</th>
+<th style="text-align: left;">Tarea</th>
+<th style="text-align: left;">Punto de control</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>A · construir y conectar</strong></td>
+<td style="text-align: left;">Publicar la landing y crear la tabla <code>preregistros</code> en Supabase</td>
+<td style="text-align: left;">La landing responde en internet y un pre-registro de prueba aparece en la tabla</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">~~Detector con <code>--cada 5</code>~~ → detector en GitHub Actions cada 10 min y «Revisar ahora» (hecho el 24/11/2026); falta T2 con una derrota propia</td>
+<td style="text-align: left;">Aviso ≤ 10 min tras la derrota</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Pruebas T1 (con alguien que no conozca Zaqora) y T3 (modo avión)</td>
+<td style="text-align: left;">Resultados en la tabla del Paso 1</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Checklist regulatorio (hecho) y aviso de privacidad de la app publicado (hecho el 24/11/2026)</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Secciones 1 a 16 de la página de proyecto final al día</td>
+<td style="text-align: left;">Hecho en la versión del 23/11/2026</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>B · probar, corregir y contar</strong></td>
+<td style="text-align: left;">Cinco pruebas de usuario (tres del segmento, dos de otro equipo) y prueba de campo de 3 a 5 días · <strong>5 de 5 hechas</strong></td>
+<td style="text-align: left;">Notas por tarea, síntesis con el Prompt 2</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Pruebas T5 y T6 (48 h del detector durante la prueba de campo)</td>
+<td style="text-align: left;">—</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Pitch grabado en video, visto y reescrito</td>
+<td style="text-align: left;">Video publicado sin iniciar sesión</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Demo ensayada tres veces con el operador y video de respaldo grabado</td>
+<td style="text-align: left;">Tercer ensayo sin detenerse</td>
+</tr>
+<tr>
+<td style="text-align: left;"></td>
+<td style="text-align: left;">Secciones 17 a 22, resumen ejecutivo y anexos de la página de proyecto final</td>
+<td style="text-align: left;">—</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Congelamiento:</strong> después del último ensayo solo se corrigen fallas críticas.</p>
+<hr />
+<h2 id="4-entregable-semana-9">4) Entregable — Semana 9</h2>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Entregable</th>
+<th style="text-align: center;">Estado</th>
+<th style="text-align: left;">Dónde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Economía unitaria con los números propios</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;"><a href="#paso-3-go-to-market-y-economia-unitaria">Paso 3</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Esqueleto del pitch de 3 minutos con pendientes marcados</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;"><a href="#paso-5-el-pitch-de-3-minutos">Paso 5</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Guion de la demo de 7 minutos con plan B por tramo</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;"><a href="#paso-6-la-demo-de-7-minutos">Paso 6</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Ruta de las dos semanas con responsables</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;"><a href="#paso-7-ruta-de-cierre">Paso 7</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Checklist regulatorio con estatus VERIFICADO o POR VERIFICAR</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;"><a href="#paso-4-regulacion-minima-viable">Paso 4</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Fronteras y plan de pruebas T1 a T6</td>
+<td style="text-align: center;">✅ T4, T5 y T6 cumplen (T6 con la frecuencia baja); T1 y T2 parciales; T3 pendiente</td>
+<td style="text-align: left;"><a href="#paso-1-integracion-del-sistema">Paso 1</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Sistema integrado sin la laptop del equipo</td>
+<td style="text-align: center;">✅ Entrar con Lichess, detector en GitHub Actions, capítulos en la cuenta (24/11/2026)</td>
+<td style="text-align: left;"><a href="#2-punto-de-partida">Actualización</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Landing publicada y accesible en internet</td>
+<td style="text-align: center;">✅ <a href="../landing/">landing</a> (24/11/2026)</td>
+<td style="text-align: left;">Paso 3</td>
+</tr>
+<tr>
+<td style="text-align: left;">Reporte de pruebas de usuario con cinco sesiones</td>
+<td style="text-align: center;">✅ 5 de 5 (hallazgos y cambios de P1 a P5)</td>
+<td style="text-align: left;"><a href="#paso-2-pruebas-con-usuarios">Paso 2</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Pitch grabado en video</td>
+<td style="text-align: center;">Opcional: no se grabó. El guion está listo (actualizado el 24/11/2026) y el pitch se presenta en vivo</td>
+<td style="text-align: left;">Paso 5</td>
+</tr>
+<tr>
+<td style="text-align: left;">Demo ensayada tres veces con video de respaldo</td>
+<td style="text-align: center;">⏳ <a href="../videos/zaqora-demo-respaldo.mp4">video de respaldo de la demo</a> listo (1:49) y tres ensayos hechos (25/11/2026)</td>
+<td style="text-align: left;">Paso 6</td>
+</tr>
+<tr>
+<td style="text-align: left;">Página de proyecto final</td>
+<td style="text-align: center;">✅ Primera versión</td>
+<td style="text-align: left;"><a href="../proyecto_final/">Proyecto final</a></td>
+</tr>
+<tr>
+<td style="text-align: left;">Documentación técnica (README, arquitectura, manual de usuario)</td>
+<td style="text-align: center;">✅</td>
+<td style="text-align: left;"><a href="../proyecto_final/">Proyecto final, secciones 8 y 12 y anexos B y C</a></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="5-reflexion">5) Reflexión</h2>
+<ul>
+<li><strong>La economía unitaria contradice al flujo de caja, y los dos tienen razón.</strong> El flujo a 5 años es positivo porque los costos son casi cero; la economía por cliente no cierra porque cada suscriptor cuesta 20 usuarios activados. El primer número dice que el negocio no quiebra; el segundo, que todavía no crece.</li>
+<li><strong>La palanca más fuerte es la que no he medido.</strong> La conversión mueve el resultado más que el churn o el CAC, y no tengo un solo dato de conversión. Lo mismo pasa con la apertura del aviso. Todo lo que falta medir cabe en una prueba con cinco personas.</li>
+<li><strong>Leer la ley cambió el producto.</strong> La reforma a la LFPC de diciembre de 2025 obliga a avisar 5 días antes de renovar una suscripción y a permitir cancelar de inmediato. No estaba en ningún documento de las semanas anteriores, y ahora es un requisito de la app.</li>
+<li><strong>Las reglas de Lichess cambiaron la demo.</strong> Mi primera idea para provocar el evento era perder a propósito contra otra cuenta; eso es <em>sandbagging</em> según sus términos. La demo pierde contra la computadora.</li>
+<li><strong>Un pitch honesto con una sola confesión obliga a elegir.</strong> Tenía dos datos débiles (la economía por cliente y la falta de usuarios). Dejé la falta de usuarios porque es la que el ask resuelve; la otra queda para las preguntas.</li>
+<li><strong>Una sola sesión con un jugador cambió más que una semana de diseño</strong> <em>(23/11/2026)</em>. Sus seis observaciones eran concretas: pedir el análisis a mano, un solo ejercicio, instrucciones de iPhone confusas. Ninguna estaba en mis listas de riesgos, y dos eran críticas.</li>
+<li><strong>El villano no puede ser quien te ayuda a vencerlo.</strong> Lo vi al probar la escena: el antagonista daba las pistas. Separar al villano (reta y reacciona) del consejero de tu bando (guía) hizo la ficción coherente y le dio sentido a elegir bando.</li>
+<li><strong>Depender de un servicio gratuito es depender de que siga existiendo.</strong> Cloudflare retiró el modelo que usaba la semana 8 sin que yo me enterara; Zaqora siguió funcionando solo porque cada texto tiene una plantilla de respaldo. La prueba T5 la hizo el proveedor, no yo.</li>
+<li><strong>Cada mejora movió un pedazo del sistema y abrió una frontera nueva.</strong> Pasar el detector a la nube trajo secretos mal pegados; el inicio de sesión trajo datos que ya no se borraban al salir; la caché de GitHub Pages escondía las versiones nuevas. Todas se encontraron revisando registros frontera por frontera, que es justo el método de esta semana.</li>
+</ul>
+<h3 id="preguntas-de-cierre">Preguntas de cierre</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Pregunta</th>
+<th style="text-align: left;">Respuesta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">¿En cuál de las cuatro fronteras es más probable que falle y qué registro pondrán ahí?</td>
+<td style="text-align: left;">En F2: el aviso es lo que más depende de terceros (el servicio push del teléfono, la clave en los secretos de GitHub, el permiso en iPhone). El registro: cada corrida de GitHub Actions guarda si el aviso salió o el error exacto, y la tabla <code>suscripciones</code> dice quién activó. F1 dejó de ser la más frágil cuando Stockfish reemplazó al análisis de Lichess (24/11/2026).</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Cuál es su CAC, su LTV y su relación LTV ÷ inversión, y qué palanca mueve más?</td>
+<td style="text-align: left;">CAC $400, LTV $289 y LTV ÷ inversión 0.72, todos con supuestos. Lo que más mueve es el precio y, sobre todo, la conversión, que cambia a la vez el CAC y la contribución.</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Cuál tema regulatorio puede impedirles vender y qué fuente lo confirma?</td>
+<td style="text-align: left;">Cobrar una suscripción sin RFC y sin cumplir el art. 76 BIS de la LFPC (cobro recurrente claro, aviso de renovación y cancelación inmediata). La LFPC está verificada en el texto vigente de la Cámara de Diputados; lo fiscal, POR VERIFICAR con el SAT.</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Qué evidencia tienen para cada parte del pitch y cuáles son pendientes?</td>
+<td style="text-align: left;">Problema y tracción: entrevistas, la prueba de funcionamiento y la primera sesión con un jugador (seis observaciones). Pendientes: el tamaño del mercado (filtros supuestos), las proyecciones a 5 años y si el jugador abre el reto justo después de perder.</td>
+</tr>
+<tr>
+<td style="text-align: left;">¿Cuál es el camino principal de la demo, qué evento provocan y cuál es su plan B?</td>
+<td style="text-align: left;">Entrar con Lichess → capítulos de las últimas derrotas → derrota en vivo contra la computadora → «Revisar mis partidas ahora» → reto del villano → landing. Plan B: el capítulo de una derrota del día anterior y el video de respaldo.</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.copy", "content.tooltips"], "search": "../assets/javascripts/workers/search.a7633da7.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.a5f9d56c.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+      
+    
+  </body>
+</html>

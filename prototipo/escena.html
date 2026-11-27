@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#c2255c">
+<title>Zaqora · Capítulo</title>
+<style>
+  :root {
+    --fondo: #f7f4ef;
+    --tinta: #1f1d1b;
+    --tenue: #6b6560;
+    --villano: #c2255c;
+    --villano-suave: #fbe3ec;
+    --casilla-clara: #ece6dc;
+    --casilla-oscura: #b9ad9c;
+    --acierto: #2b8a3e;
+    --linea: #d9d2c7;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--fondo); color: var(--tinta);
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif; }
+  .app { max-width: 360px; margin: 0 auto; min-height: 100vh; display: flex; flex-direction: column; }
+  header { height: 48px; display: flex; align-items: center; justify-content: center; padding: 0 12px;
+    font-size: 14px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .villano { height: 80px; display: flex; align-items: center; gap: 10px; padding: 0 12px; }
+  .avatar { flex: 0 0 56px; height: 56px; border-radius: 50%; background: var(--villano-suave);
+    border: 2px solid var(--villano); display: grid; place-items: center; font-size: 30px; color: var(--villano);
+    transition: transform .2s; }
+  .avatar.despierto { background: var(--villano); color: #fff; }
+  .burbuja { flex: 1; background: var(--villano-suave); border: 1px solid var(--villano); border-radius: 12px;
+    padding: 8px 10px; font-size: 15px; line-height: 1.3; color: #6d1236; min-height: 44px; }
+  .tablero-marco { position: relative; width: 352px; height: 352px; margin: 0 auto; }
+  .tablero { display: grid; grid-template-columns: repeat(8, 44px); grid-template-rows: repeat(8, 44px);
+    border: 1px solid var(--linea); }
+  .casilla { width: 44px; height: 44px; display: grid; place-items: center; font-size: 34px; line-height: 1;
+    font-family: "Segoe UI Symbol", "Noto Sans Symbols 2", "DejaVu Sans", serif; font-variant-emoji: text;
+    border: 0; padding: 0; cursor: pointer; position: relative; }
+  .clara { background: var(--casilla-clara); }
+  .oscura { background: var(--casilla-oscura); }
+  .pieza-b { color: #fff; text-shadow: 0 0 2px #000, 0 0 1px #000; }
+  .pieza-n { color: #1f1d1b; }
+  .seleccion { outline: 3px solid var(--tinta); outline-offset: -3px; }
+  .pista { outline: 3px dashed var(--tinta); outline-offset: -4px; }
+  .acierto-casilla::after { content: "✓"; position: absolute; right: 2px; bottom: 0; font-size: 14px;
+    color: #fff; background: var(--acierto); border-radius: 50%; width: 16px; height: 16px; display: grid; place-items: center; }
+  .sello { position: absolute; inset: 0; background: rgba(247, 244, 239, .92); display: flex; flex-direction: column;
+    align-items: center; justify-content: center; gap: 12px; padding: 24px; text-align: center; }
+  .sello .candado { font-size: 32px; }
+  .sello .rotulo { font-size: 12px; letter-spacing: .12em; color: var(--tenue); }
+  .consejero { height: 72px; display: flex; align-items: center; gap: 10px; padding: 4px 12px; }
+  .avatar-c { flex: 0 0 48px; height: 48px; border-radius: 50%; background: #e6f2e8; border: 2px solid var(--acierto);
+    display: grid; place-items: center; font-size: 26px; color: var(--acierto); }
+  .avatar-c img { width: 40px; height: 40px; display: block; }
+  .burbuja-c { flex: 1; background: #fff; border: 1px solid var(--linea); border-radius: 12px; padding: 5px 10px;
+    font-size: 14px; line-height: 1.3; color: var(--tinta); min-height: 48px; }
+  .quien { display: block; font-size: 11px; color: var(--tenue); margin-bottom: 1px; }
+  a.accion { width: 100%; min-height: 48px; border-radius: 10px; font-size: 15px; font-weight: 600; box-sizing: border-box; }
+  .boton-enlace { display: grid; place-items: center; text-decoration: none; }
+  footer { height: 64px; padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); display: flex; align-items: center; }
+  button.accion { width: 100%; min-height: 48px; border-radius: 10px; font-size: 15px; font-weight: 600; cursor: pointer; }
+  .primario { background: var(--tinta); color: #fff; border: 0; }
+  .secundario { background: transparent; color: var(--tinta); border: 1px solid var(--tinta); }
+  .contorno { background: transparent; color: var(--tinta); border: 1px solid var(--linea); }
+  .contorno:disabled { color: #b5aea6; cursor: default; }
+  .sello button.accion { width: 220px; }
+  .explica { margin: 0; font-size: 14px; line-height: 1.35; color: var(--tinta); max-width: 260px; }
+  .historia { display: flex; flex-direction: column; gap: 14px; align-items: center; max-width: 290px; }
+  .historia p { margin: 0; font-size: 16px; line-height: 1.45; color: var(--tinta); font-style: italic; }
+  .historia-pie { display: flex; flex-direction: column; align-items: center; gap: 8px; font-size: 12px; color: var(--tenue); }
+  .oculto { display: none !important; }
+  /* Piezas con imagen (bandos de assets/) */
+  .casilla img { width: 40px; height: 40px; display: block; pointer-events: none;
+    filter: drop-shadow(0 1px 1px rgba(0, 0, 0, .35)); }
+  .avatar img { width: 46px; height: 46px; display: block; }
+  header { position: relative; }
+  .btn-volver { position: absolute; left: 2px; top: 2px; width: 44px; height: 44px; display: grid; place-items: center;
+    font-size: 30px; line-height: 1; color: var(--tinta); text-decoration: none; border-radius: 10px; }
+  .btn-volver:focus-visible { outline: 3px solid var(--villano); outline-offset: 1px; }
+  header span#titulo { padding: 0 44px; overflow: hidden; text-overflow: ellipsis; }
+  .btn-bando { position: absolute; right: 2px; top: 2px; width: 44px; height: 44px; border: 0; background: transparent;
+    border-radius: 10px; cursor: pointer; padding: 4px; }
+  .btn-bando img { width: 36px; height: 36px; display: block; }
+  .btn-bando:focus-visible, .bando:focus-visible { outline: 3px solid var(--villano); outline-offset: 1px; }
+  .elegir { position: absolute; inset: 0; background: var(--fondo); display: flex; flex-direction: column;
+    padding: 14px 12px; gap: 10px; overflow-y: auto; }
+  .elegir h2 { margin: 0; font-size: 16px; text-align: center; }
+  .elegir p { margin: 0; font-size: 13px; color: var(--tenue); text-align: center; }
+  .bandos { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+  .bando { background: #fff; border: 1px solid var(--linea); border-radius: 12px; padding: 8px 6px; cursor: pointer;
+    display: flex; flex-direction: column; align-items: center; gap: 4px; font-size: 14px; font-weight: 600; color: var(--tinta); }
+  .bando .fila { display: flex; justify-content: center; }
+  .bando .fila img { width: 34px; height: 34px; }
+  .bando[aria-pressed="true"] { border: 2px solid var(--tinta); }
+  @media (prefers-reduced-motion: reduce) { .avatar { transition: none; } }
+</style>
+</head>
+<body>
+<div class="app">
+  <header><a class="btn-volver" id="btn-volver" href="inicio.html" aria-label="Ir al inicio">‹</a>
+    <span id="titulo">Capítulo · Zaqora</span>
+    <button class="btn-bando oculto" id="btn-bando" aria-label="Cambiar de bando"></button></header>
+  <div class="villano">
+    <div class="avatar" id="avatar" aria-hidden="true">♞</div>
+    <div class="burbuja" id="burbuja" role="status" aria-live="polite"></div>
+  </div>
+  <div class="tablero-marco">
+    <div class="tablero" id="tablero" role="grid" aria-label="Tablero"></div>
+    <div class="sello" id="sello">
+      <div class="candado" aria-hidden="true">🔒</div>
+      <div class="rotulo">ENCUENTRO SELLADO</div>
+      <p class="explica" id="explica">Aquí está tu última derrota, justo antes de la jugada donde se te fue. ¿La quieres ver?</p>
+      <div class="historia oculto" id="historia">
+        <p id="historia-texto" aria-live="polite"></p>
+        <div class="historia-pie"><span id="historia-paso"></span>
+          <button class="accion primario" id="btn-sigue">Continuar</button></div>
+      </div>
+      <button class="accion primario" id="btn-muestrame">Muéstrame</button>
+      <button class="accion secundario" id="btn-dejame">Déjame en paz</button>
+    </div>
+    <div class="elegir oculto" id="elegir" role="dialog" aria-labelledby="elegir-titulo">
+      <h2 id="elegir-titulo">Elige tu bando</h2>
+      <p>Tus piezas serán de este bando. El villano llega con otro.</p>
+      <div class="bandos" id="bandos"></div>
+    </div>
+  </div>
+  <div class="consejero">
+    <div class="avatar-c" id="avatar-c" aria-hidden="true">♝</div>
+    <div class="burbuja-c"><span class="quien"><span id="nombre-c">Tu consejero</span> · <span id="progreso">Encuentro 1 de 1</span></span>
+      <span id="dice-c" role="status" aria-live="polite">Estoy contigo. Cuando quieras, volvemos a esa partida.</span></div>
+  </div>
+  <footer>
+    <button class="accion contorno" id="btn-pista" disabled>Pista del consejero</button>
+    <button class="accion primario oculto" id="btn-siguiente">Siguiente encuentro</button>
+    <a class="accion primario boton-enlace oculto" id="btn-lichess" href="https://lichess.org/" target="_blank" rel="noopener">Jugar en Lichess</a>
+  </footer>
+</div>
+
+<script src="config.js"></script>
+<script src="sesion.js"></script>
+<script>
+/* El registro de eventos usa la configuración de config.js (ver LEEME.md).
+   Si está vacía, la escena funciona igual pero no registra nada. */
+const CFG = window.ZAQORA || {};
+const SUPABASE_URL = CFG.SUPABASE_URL || "";
+const SUPABASE_KEY = CFG.SUPABASE_KEY || "";   // clave pública (anon), nunca la service_role
+
+const q = new URLSearchParams(location.search);
+const P = q.get("p") || "demo";                    // participante (P1…P5), nunca su usuario
+const V = q.get("v") || "-";                       // variante del mensaje (A, B o C)
+let COLOR = q.get("color") === "b" ? "b" : "w";    // color con el que jugó el participante (puede cambiar por encuentro)
+const VILLANO = q.get("villano") || "La Horquilla Hambrienta";
+const FEN_EJEMPLO = "r1bqkbnr/pppp1ppp/2n5/4p3/2B1P3/5Q2/PPPP1PPP/RNB1K1NR w KQkq - 2 3";
+
+/* El capítulo viaja en el enlace como base64url de un JSON:
+   {"h": [párrafos de la historia], "e": [{"f": FEN, "s": solución UCI, "j": jugada, "a": antes, "d": después}]}
+   Si no viene (?c=), se usa el formato anterior de un solo encuentro (?fen=&sol=&jugada=&h=). */
+function decodificar(b) {
+  const b64 = b.replace(/-/g, "+").replace(/_/g, "/") + "=".repeat((4 - (b.length % 4)) % 4);
+  return JSON.parse(new TextDecoder().decode(Uint8Array.from(atob(b64), (c) => c.charCodeAt(0))));
+}
+function leerCapitulo() {
+  const txt = (x) => (typeof x === "string" ? x.slice(0, 300) : "");
+  try {
+    if (q.get("c")) {
+      const c = decodificar(q.get("c"));
+      const enc = (Array.isArray(c.e) ? c.e : [])
+        .filter((x) => x && typeof x.f === "string" && typeof x.s === "string").slice(0, 5)
+        .map((x) => ({ fen: x.f, sol: x.s.slice(0, 4), jugada: String(x.j || ""), antes: txt(x.a), despues: txt(x.d),
+                      consejo: txt(x.k), color: x.c === "b" || x.c === "w" ? x.c : null }));
+      const historia = (Array.isArray(c.h) ? c.h : []).map(txt).filter(Boolean).slice(0, 5);
+      if (enc.length) return { historia, encuentros: enc };
+    }
+  } catch (e) {}
+  let historia = [];
+  try { if (q.get("h")) historia = decodificar(q.get("h")).map(txt).filter(Boolean).slice(0, 5); } catch (e) {}
+  if (q.get("modo") === "nueva") return { historia: [], encuentros: [{ fen: "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+                                                                       sol: "e2e4", jugada: "", antes: "", despues: "", consejo: "", color: null }] };
+  return { historia, encuentros: [{ fen: q.get("fen") || FEN_EJEMPLO, sol: (q.get("sol") || "f3f7").slice(0, 4),
+                                    jugada: q.get("jugada") || "", antes: "", despues: "", consejo: "" }] };
+}
+const CAP = leerCapitulo();
+const ENC = CAP.encuentros;
+let actual = 0;                                    // encuentro en juego
+
+// El villano reta y reacciona; nunca da pistas. El consejero (de tu bando) guía y ayuda.
+const T = {
+  sellado: "Esa partida dolió. Yo estaba ahí.",
+  burlaFallo: ["Je. Eso esperaba.", "Otra vez lo mismo. Me encanta.", "¿Eso es todo?"],
+  burlaSolucion: "Te la tuvieron que enseñar… Ya me acordaré.",
+  siguiente: "Una no basta. Te espero en la siguiente.",
+  resuelto: "…Esta vez no. Nos volveremos a ver.",
+  pausa: "Está bien. Aquí te espero cuando quieras."
+};
+const C = {
+  inicio: "Estoy contigo. Cuando quieras, volvemos a esa partida.",
+  consejo: "Aquí había algo mejor. Encuéntralo: toca una pieza y luego su casilla.",
+  fallo: "No es esa. Respira y mira qué amenaza el rival.",
+  pista: (pieza) => `Fíjate en tu ${pieza}: te marqué su casilla.`,
+  rendirse: "Si quieres, te enseño la jugada. Toca «Muéstrame la jugada».",
+  solucion: "Era esta. Recuérdala: la próxima vez la verás tú.",
+  bien: "¡Eso es! Vamos al siguiente momento.",
+  final: "Lo lograste. Esa partida ya no es suya.",
+  pausa: "Aquí estaré cuando quieras volver."
+};
+function aconsejar(texto) { document.getElementById("dice-c").textContent = texto; }
+function textoAntes(e) {
+  return e.antes || (e.jugada ? `Jugada ${e.jugada}. Aquí fue. ¿Ves lo que yo vi?` : "Aquí fue. ¿Ves lo que yo vi?");
+}
+function indicacion() {
+  return `Encuentro ${actual + 1} de ${ENC.length}`;
+}
+
+const GLIFO = { k: "♚", q: "♛", r: "♜", b: "♝", n: "♞", p: "♟" };
+const NOMBRE = { k: "rey", q: "dama", r: "torre", b: "alfil", n: "caballo", p: "peón" };
+/* Bandos: los genera preparar_piezas.py a partir de las carpetas de assets/.
+   El jugador elige el suyo; el rival sale de los demás bandos y cambia con cada derrota.
+   Si piezas/bandos.json no carga, la escena usa los glifos de siempre. */
+let BANDOS = [];           // [{ id, nombre }]
+let JUGADOR = null, RIVAL = null;
+function leerGuardado(k) { try { return localStorage.getItem(k); } catch (e) { return null; } }
+function guardarLocal(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+function semilla(txt) {    // hash FNV-1a: la misma derrota siempre trae el mismo rival
+  let h = 2166136261;
+  for (const ch of txt) { h ^= ch.charCodeAt(0); h = Math.imul(h, 16777619); }
+  return h >>> 0;
+}
+function existe(id) { return !!id && BANDOS.some((b) => b.id === id); }
+function nombreBando(id) { const b = BANDOS.find((x) => x.id === id); return b ? b.nombre : ""; }
+function elegirRival() {
+  if (existe(q.get("rival"))) return q.get("rival");
+  const otros = BANDOS.filter((b) => b.id !== JUGADOR);
+  const lista = otros.length ? otros : BANDOS;
+  return lista[semilla(`${ENC[0].fen}|${ENC[0].sol}|${P}`) % lista.length].id;
+}
+function srcPieza(bando, tipo, blanca) { return `piezas/${bando}/${tipo}-${blanca ? "clara" : "oscura"}.png`; }
+function imagen(src) { const i = document.createElement("img"); i.src = src; i.alt = ""; return i; }
+
+let tablero = {};          // "e4" -> "P" / "p"
+let origen = null, intentos = 0, estado = "sellado";
+
+function registrar(evento, extra) {
+  if (!SUPABASE_URL || !SUPABASE_KEY) return;
+  fetch(`${SUPABASE_URL}/rest/v1/eventos`, {
+    method: "POST",
+    headers: { "apikey": SUPABASE_KEY, "Authorization": `Bearer ${SUPABASE_KEY}`,
+               "Content-Type": "application/json", "Prefer": "return=minimal" },
+    body: JSON.stringify({ participante: P, variante: V, evento, detalle: extra || null }),
+    keepalive: true
+  }).catch(() => {});
+}
+
+function leerFen(fen) {
+  const filas = fen.split(" ")[0].split("/");
+  const t = {};
+  filas.forEach((fila, i) => {
+    let col = 0;
+    for (const ch of fila) {
+      if (/\d/.test(ch)) { col += +ch; continue; }
+      t["abcdefgh"[col] + (8 - i)] = ch;
+      col++;
+    }
+  });
+  return t;
+}
+
+function dibujar(marcas = {}) {
+  const el = document.getElementById("tablero");
+  el.innerHTML = "";
+  const filas = COLOR === "w" ? [8,7,6,5,4,3,2,1] : [1,2,3,4,5,6,7,8];
+  const cols = COLOR === "w" ? "abcdefgh" : "hgfedcba";
+  for (const r of filas) {
+    for (const c of cols) {
+      const sq = c + r;
+      const b = document.createElement("button");
+      const oscura = ("abcdefgh".indexOf(c) + r) % 2 === 1;
+      b.className = "casilla " + (oscura ? "oscura" : "clara");
+      const pz = tablero[sq];
+      let etiqueta = sq;
+      if (pz) {
+        const blanca = pz === pz.toUpperCase();
+        const tipo = pz.toLowerCase();
+        const propia = (blanca ? "w" : "b") === COLOR;
+        const bando = propia ? JUGADOR : RIVAL;
+        if (bando) b.appendChild(imagen(srcPieza(bando, tipo, blanca)));
+        else { b.textContent = GLIFO[tipo]; b.classList.add(blanca ? "pieza-b" : "pieza-n"); }
+        etiqueta += `, ${NOMBRE[tipo]} ${blanca ? "blanco" : "negro"}` + (bando ? ` (${propia ? "tuyo" : nombreBando(bando)})` : "");
+      }
+      b.setAttribute("aria-label", etiqueta);
+      if (marcas[sq]) b.classList.add(marcas[sq]);
+      b.onclick = () => tocar(sq);
+      el.appendChild(b);
+    }
+  }
+}
+
+function decir(texto) { document.getElementById("burbuja").textContent = texto; }
+
+function mover(de, a) {
+  const pz = tablero[de];
+  tablero[a] = pz;
+  delete tablero[de];
+  if (pz && pz.toLowerCase() === "k" && Math.abs("abcdefgh".indexOf(de[0]) - "abcdefgh".indexOf(a[0])) === 2) {
+    const fila = de[1], corto = a[0] === "g";                     // enroque: también se mueve la torre
+    tablero[(corto ? "f" : "d") + fila] = tablero[(corto ? "h" : "a") + fila];
+    delete tablero[(corto ? "h" : "a") + fila];
+  }
+  if (pz && pz.toLowerCase() === "p" && (a[1] === "8" || a[1] === "1")) tablero[a] = pz === "P" ? "Q" : "q";
+}
+
+function resolverEncuentro(vista) {
+  const e = ENC[actual];
+  const ultimo = actual === ENC.length - 1;
+  mover(e.sol.slice(0, 2), e.sol.slice(2, 4));
+  dibujar({ [e.sol.slice(2, 4)]: "acierto-casilla" });
+  decir(vista ? T.burlaSolucion : (e.despues || (ultimo ? T.resuelto : T.siguiente)));
+  aconsejar(vista ? C.solucion : (ultimo ? C.final : C.bien));
+  document.getElementById("btn-pista").disabled = true;
+  registrar(vista ? "solucion_vista" : "resuelto", { encuentro: actual + 1, de: ENC.length, intentos });
+  guardarCapitulo({ superados: Math.max(actual + 1, (capitulos().find((c) => c.id === ID_CAP) || {}).superados || 0),
+                    superado: ultimo || ((capitulos().find((c) => c.id === ID_CAP) || {}).superado || false) });
+  if (ultimo) {
+    estado = "resuelto";
+    document.getElementById("avatar").classList.remove("despierto");
+    document.getElementById("progreso").textContent = ENC.length > 1 ? "Capítulo superado" : "Encuentro superado";
+    if (ENC.length > 1) registrar("capitulo_superado", { encuentros: ENC.length });
+    document.getElementById("btn-pista").classList.add("oculto");
+    document.getElementById("btn-lichess").classList.remove("oculto");
+    if (vista) setTimeout(() => { decir(e.despues || T.resuelto); aconsejar(C.final); }, 2500);
+  } else {
+    estado = "entre";
+    document.getElementById("progreso").textContent = `Encuentro ${actual + 1} de ${ENC.length} superado`;
+    document.getElementById("btn-pista").classList.add("oculto");
+    document.getElementById("btn-siguiente").classList.remove("oculto");
+  }
+}
+
+function tocar(sq) {
+  if (estado !== "despierto") return;
+  if (!origen) {
+    if (!tablero[sq]) return;
+    origen = sq;
+    dibujar({ [sq]: "seleccion" });
+    return;
+  }
+  if (sq === origen) { origen = null; dibujar(); return; }
+  const jugada = origen + sq;
+  intentos++;
+  origen = null;
+  if (jugada === ENC[actual].sol) {
+    resolverEncuentro(false);
+  } else {
+    dibujar();
+    decir(T.burlaFallo[(intentos - 1) % T.burlaFallo.length]);
+    aconsejar(C.fallo);
+    registrar("intento_fallido", { encuentro: actual + 1, jugada, intentos });
+    if (intentos >= 3) {                       // no dejar al jugador atorado
+      const bp = document.getElementById("btn-pista");
+      bp.textContent = "Muéstrame la jugada";
+      bp.dataset.modo = "solucion";
+      aconsejar(C.rendirse);
+    }
+  }
+}
+
+function empezarEncuentro() {
+  const e = ENC[actual];
+  estado = "despierto";
+  intentos = 0;
+  origen = null;
+  tablero = leerFen(e.fen);
+  if (e.color && e.color !== COLOR) { COLOR = e.color; pintarBandos(); }
+  const bp = document.getElementById("btn-pista");
+  bp.textContent = "Pista del consejero";
+  bp.dataset.modo = "pista";
+  bp.disabled = false;
+  bp.classList.remove("oculto");
+  document.getElementById("btn-siguiente").classList.add("oculto");
+  document.getElementById("avatar").classList.add("despierto");
+  document.getElementById("progreso").textContent = indicacion();
+  decir(textoAntes(e));
+  aconsejar(e.consejo || C.consejo);
+  dibujar();
+}
+
+document.getElementById("btn-muestrame").onclick = () => {
+  document.getElementById("sello").classList.add("oculto");
+  empezarEncuentro();
+  registrar("muestrame", { encuentros: ENC.length });
+};
+document.getElementById("btn-dejame").onclick = () => {
+  estado = "pausa";
+  decir(T.pausa);
+  aconsejar(C.pausa);
+  document.getElementById("btn-muestrame").textContent = "Ya estoy listo";
+  document.getElementById("btn-dejame").classList.add("oculto");
+  registrar("dejame_en_paz");
+};
+document.getElementById("btn-pista").onclick = () => {
+  if (estado !== "despierto") return;
+  origen = null;
+  const sol = ENC[actual].sol;
+  if (document.getElementById("btn-pista").dataset.modo === "solucion") {
+    estado = "mostrando";
+    aconsejar("Mira: de aquí… a aquí.");
+    dibujar({ [sol.slice(0, 2)]: "pista", [sol.slice(2, 4)]: "pista" });
+    setTimeout(() => resolverEncuentro(true), 900);
+    return;
+  }
+  dibujar({ [sol.slice(0, 2)]: "pista" });
+  const pz = tablero[sol.slice(0, 2)];
+  aconsejar(C.pista(pz ? NOMBRE[pz.toLowerCase()] : "pieza"));
+  registrar("pista", { encuentro: actual + 1 });
+};
+document.getElementById("btn-siguiente").onclick = () => {
+  actual++;
+  empezarEncuentro();
+  registrar("encuentro", { encuentro: actual + 1, de: ENC.length });
+};
+
+function pintarBandos() {
+  const av = document.getElementById("avatar");
+  const btnBando = document.getElementById("btn-bando");
+  if (!JUGADOR || !RIVAL) { av.textContent = "♞"; btnBando.classList.add("oculto"); return; }
+  av.replaceChildren(imagen(srcPieza(RIVAL, "k", COLOR === "b")));   // el rey del bando rival es el villano
+  btnBando.replaceChildren(imagen(srcPieza(JUGADOR, "k", COLOR === "w")));
+  document.getElementById("avatar-c").replaceChildren(imagen(srcPieza(JUGADOR, "b", COLOR === "w")));
+  document.getElementById("nombre-c").textContent = `Consejero de los ${nombreBando(JUGADOR).toLowerCase()}`;
+  btnBando.classList.toggle("oculto", BANDOS.length < 2);
+  if (!NUEVA) document.querySelector(".sello .rotulo").textContent = `ENCUENTRO SELLADO · ${nombreBando(RIVAL).toUpperCase()}`;
+}
+
+function mostrarElegir() {
+  const cont = document.getElementById("bandos");
+  cont.replaceChildren();
+  for (const bd of BANDOS) {
+    const card = document.createElement("button");
+    card.className = "bando";
+    card.setAttribute("aria-pressed", String(bd.id === JUGADOR));
+    const fila = document.createElement("div");
+    fila.className = "fila";
+    for (const t of ["n", "k", "q"]) fila.appendChild(imagen(srcPieza(bd.id, t, true)));
+    card.append(fila, document.createTextNode(bd.nombre));
+    card.onclick = () => {
+      JUGADOR = bd.id;
+      guardarLocal("zaqora_bando", JUGADOR);
+      RIVAL = elegirRival();
+      document.getElementById("elegir").classList.add("oculto");
+      pintarBandos();
+      dibujar();
+      registrar("bando", { jugador: JUGADOR, rival: RIVAL });
+      guardarCapitulo({ rival: RIVAL });
+    };
+    cont.appendChild(card);
+  }
+  document.getElementById("elegir").classList.remove("oculto");
+  (cont.querySelector('[aria-pressed="true"]') || cont.firstChild).focus();
+}
+document.getElementById("btn-bando").onclick = mostrarElegir;
+
+/* Historia del villano: párrafos que arma el detector (IA o plantilla); vienen en el capítulo. */
+const HISTORIA = CAP.historia;
+let parrafo = 0;
+function mostrarParrafo() {
+  document.getElementById("historia-texto").textContent = HISTORIA[parrafo];
+  document.getElementById("historia-paso").textContent = `${parrafo + 1} de ${HISTORIA.length}`;
+  const ultimo = parrafo === HISTORIA.length - 1;
+  document.getElementById("btn-sigue").classList.toggle("oculto", ultimo);
+  document.getElementById("btn-muestrame").classList.toggle("oculto", !ultimo);
+  document.getElementById("btn-dejame").classList.toggle("oculto", !ultimo);
+  if (ultimo) registrar("historia_leida", { fuente: q.get("hf") || "", parrafos: HISTORIA.length });
+}
+if (HISTORIA.length) {
+  document.getElementById("explica").classList.add("oculto");
+  document.querySelector(".sello .candado").classList.add("oculto");
+  document.getElementById("historia").classList.remove("oculto");
+  document.getElementById("btn-sigue").onclick = () => { parrafo++; mostrarParrafo(); };
+  mostrarParrafo();
+}
+
+/* Capítulos guardados en el teléfono (los muestra inicio.html). Solo la dirección y el avance; nada personal. */
+const ID_CAP = String(semilla(q.get("c") || `${q.get("fen")}|${q.get("sol")}`));
+function capitulos() { try { return JSON.parse(leerGuardado("zaqora_capitulos") || "[]"); } catch (e) { return []; } }
+function guardarCapitulo(cambios) {
+  if (q.get("modo") === "nueva" || q.get("vista")) return;
+  const lista = capitulos();
+  let cap = lista.find((c) => c.id === ID_CAP);
+  if (!cap) {
+    const limpia = new URLSearchParams(location.search);
+    ["desde", "vista", "bando", "rival"].forEach((k) => limpia.delete(k));
+    cap = { id: ID_CAP, q: limpia.toString(), villano: VILLANO, fecha: new Date().toISOString(),
+            modo: q.get("m") === "h" ? "historia" : "derrota",
+            total: ENC.length, superados: 0, superado: false,
+            cuenta: window.ZaqoraSesion && ZaqoraSesion.usuario() ? ZaqoraSesion.usuario().toLowerCase() : null };
+    lista.unshift(cap);
+  }
+  Object.assign(cap, cambios);
+  guardarLocal("zaqora_capitulos", JSON.stringify(lista.slice(0, 30)));
+  // Con sesión de Lichess, el avance también se guarda en la cuenta (si el capítulo es suyo).
+  if (window.ZaqoraSesion && ZaqoraSesion.usuario() && ("superados" in cambios || "rival" in cambios)) {
+    ZaqoraSesion.capitulos("POST", { id: ID_CAP, superados: cap.superados, superado: cap.superado, rival: cap.rival })
+      .catch(() => {});
+  }
+}
+
+/* Sin historial: el consejero invita a jugar en Lichess («Comienza tu historia»). */
+const NUEVA = q.get("modo") === "nueva";
+function modoNueva() {
+  document.getElementById("titulo").textContent = "Zaqora";
+  document.getElementById("historia").classList.add("oculto");
+  document.getElementById("btn-muestrame").classList.add("oculto");
+  document.getElementById("btn-dejame").classList.add("oculto");
+  document.querySelector(".sello .rotulo").textContent = "TU HISTORIA AÚN NO EMPIEZA";
+  document.getElementById("explica").classList.remove("oculto");
+  document.getElementById("explica").textContent =
+    "Todavía no tienes partidas para contar. Juega en Lichess como siempre: cuando pierdas, tu primer capítulo llegará aquí.";
+  document.getElementById("btn-pista").classList.add("oculto");
+  const b = document.getElementById("btn-lichess");
+  b.textContent = "Comienza tu historia";
+  b.classList.remove("oculto");
+  document.getElementById("progreso").textContent = "Antes de empezar";
+  decir("Todavía no te conozco. Pronto lo haré.");
+  aconsejar("Juega una partida en Lichess. Cuando pierdas, aquí empieza tu historia.");
+}
+document.getElementById("btn-lichess").addEventListener("click", () =>
+  registrar(NUEVA ? "comienza_historia" : "jugar_lichess"));
+
+async function iniciar() {
+  document.getElementById("titulo").textContent = `Capítulo · ${VILLANO}`;
+  if (ENC[0].color) COLOR = ENC[0].color;
+  tablero = leerFen(ENC[0].fen);
+  document.getElementById("progreso").textContent = `Encuentro 1 de ${ENC.length}`;
+  decir(T.sellado);
+  try {
+    const r = await fetch("piezas/bandos.json", { cache: "no-cache" });
+    BANDOS = (await r.json()).bandos || [];
+  } catch (e) { BANDOS = []; }
+  if (BANDOS.length) {
+    JUGADOR = [q.get("bando"), leerGuardado("zaqora_bando")].find(existe) || null;
+    if (JUGADOR) RIVAL = elegirRival();
+    pintarBandos();
+    if (!JUGADOR && q.get("vista") !== "despierto") mostrarElegir();
+  }
+  dibujar();
+  if (NUEVA) modoNueva();
+  else guardarCapitulo(RIVAL ? { rival: RIVAL } : {});
+  if (q.get("vista") === "despierto") document.getElementById("btn-muestrame").click();  // solo para capturas
+}
+iniciar();
+try {
+  if (!sessionStorage.getItem("abrio" + ID_CAP)) { registrar("abrio", { desde: q.get("desde") || "aviso" }); sessionStorage.setItem("abrio" + ID_CAP, "1"); }
+} catch (e) { registrar("abrio"); }
+</script>
+</body>
+</html>
